@@ -1,8 +1,8 @@
 import { runGraphInFile, startDebuggerServer, NodeDatasetProvider } from '@ironclad/rivet-node';
 // Start debugger server
 const debuggerServer = await startDebuggerServer({});
-let project = "./example.rivet-project";
-let graph = "example-graph";
+let project = "./Master graph.rivet-graph";
+let graph = "Master graph";
 // Get OPEN_API_KEY from environment
 let openAiKey = process.env.OPEN_API_KEY;
 // Create a dataset provider
