@@ -17,7 +17,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const project = path.resolve(__dirname, 'data', 'Mastergraph.rivet-project');
-    const graph = 'cGJILKi8TD1YSzAKUAzKV';
+    const graph = 'Mastergraph';
 
     const datasetProvider = await NodeDatasetProvider.fromProjectFile(project, {
       save: false
