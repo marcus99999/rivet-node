@@ -14,7 +14,7 @@
                 "${workspaceFolder}/dist/*.js"
             ],
             "env": {
-                "OPEN_API_KEY": "Put your OpenAI API Key here!"
+                "OPEN_API_KEY": "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"
             }
         }
     ]

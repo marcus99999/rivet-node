@@ -1,0 +1,117 @@
+version: 4
+data:
+  metadata:
+    description: ""
+    id: WoecD9--01VjQHhXTmwtU
+    name: Rewrite and check subgraph
+  nodes:
+    '[6JMB-7JMK_o3mDn4Nyw66]:graphOutput "Graph Output"':
+      data:
+        dataType: object
+        id: output
+      visualData: 1258.7271129531503/520.4678330040314/330/830/var(--node-color-3)/var(--node-color-3)
+    '[DoFPfiuu4N09HPHWXsChM]:extractJson "Extract JSON"':
+      visualData: 1208.41057417019/1563.7069637185684/280/847//
+    '[ZqDtSofTEoqAtIupdx6LE]:loopController "Loop Controller"':
+      data:
+        atMaxIterationsAction: break
+        maxIterations: 3
+      outgoingConnections:
+        - break->"Text" lMF6X1DupFsFWvPRvsKDS/input
+        - output1->"Subgraph" pUmp7YYzE2Qb2_bjZOcA4/input
+      visualData: 360.31557351020456/848.9658434310018/280/848//
+    '[ciUiQ68fQrG9LaF4DJ793]:extractJson "Extract JSON"':
+      outgoingConnections:
+        - output->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/input2Default
+      visualData: -33.476318182167034/1249.2933133288675/280/825//
+    '[hMUq6kbncxOCny_zFBnBZ]:comment "Comment"':
+      data:
+        backgroundColor: rgba(223,7,7,0.05)
+        color: rgba(159,4,4,1)
+        height: 684.2365662431089
+        text: |
+          Build would have to happen here
+      visualData: 1111.8152171722897/1118.0125972194849/441.2289723496983/842//
+    '[i7kT2H3x6xAu97ghQnLuR]:text "Text"':
+      data:
+        text: |-
+          {
+            "data": {
+              "history": [
+                {
+                  "original": "{{input}}",
+                  "rewrite": "No rewrite yet",
+                  "fails": "No fails yet",
+                  "updates": "No updates yet"
+                }
+              ]
+            }
+          }
+      outgoingConnections:
+        - output->"Extract JSON" ciUiQ68fQrG9LaF4DJ793/input
+        - output->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/input1Default
+      visualData: -424.9448898104006/1110.7488805715502/330/824//
+    '[lMF6X1DupFsFWvPRvsKDS]:text "Text"':
+      data:
+        text: "{{input}}"
+      outgoingConnections:
+        - output->"Graph Output" 6JMB-7JMK_o3mDn4Nyw66/value
+      visualData: 759.32689689925/638.42512300184/330/840//
+    '[nQoPwHb3U2PvvKnnx-8Yc]:graphInput "Graph Input"':
+      data:
+        dataType: string
+        id: input
+        useDefaultValueInput: false
+      outgoingConnections:
+        - data->"Code" oxshKtZF9z_6bYbFPv9OO/input1
+      visualData: -1107.295211390256/969.3638671234115/330/826/var(--node-color-3)/var(--node-color-3)
+    '[oxshKtZF9z_6bYbFPv9OO]:code "Code"':
+      data:
+        code: >-
+          // This is a code node, you can write and JS in here and it will be
+          executed.
+
+          // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+          // Return an object with named outputs that match the output names specified in the node's config.
+
+          // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
+          const inputText = inputs.input1.value;
+
+
+          // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+          const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
+
+          return {
+            output1: {
+              type: 'string',
+              value: escapedText
+            }
+          };
+        inputNames: input1
+        outputNames: output1
+      outgoingConnections:
+        - output1->"Text" i7kT2H3x6xAu97ghQnLuR/input
+      visualData: -702.0337553250351/988.3142655767119/230/827//
+    '[pUmp7YYzE2Qb2_bjZOcA4]:subGraph "Subgraph"':
+      data:
+        graphId: 3soSwiUKQ_X4fGdokyxAH
+        useAsGraphPartialOutput: false
+        useErrorOutput: false
+      outgoingConnections:
+        - output->"Extract JSON" DoFPfiuu4N09HPHWXsChM/input
+        - output->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/input1
+        - output->"Subgraph" tGjoPWvOpRqQlUEhNXlhw/input
+      visualData: 726.2367257395616/1297.609652967238/330/816/var(--node-color-1)/var(--node-color-1)
+    '[tGjoPWvOpRqQlUEhNXlhw]:subGraph "Subgraph"':
+      data:
+        graphId: hcy2UDhZVh6QP8e0AjKC7
+        useAsGraphPartialOutput: false
+        useErrorOutput: false
+      outgoingConnections:
+        - Analysis->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/continue
+      visualData: 1627.2704294133807/1097.4463750107182/330/846/var(--node-color-1)/var(--node-color-1)

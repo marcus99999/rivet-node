@@ -1,0 +1,99 @@
+version: 4
+data:
+  metadata:
+    description: ""
+    id: GHgi_Qdv5HEfN9Cwup8cY
+    name: Estimate severity
+  nodes:
+    '[7ouISIuZoDgTyf0yhM7sj]:destructure "Destructure"':
+      data:
+        paths:
+          - $.data.title
+          - $.data.date
+          - $.data.description
+        text: ""
+      outgoingConnections:
+        - match_2->"Chat" Zou1WVfmrjIXBvaAODJSm/prompt
+      visualData: 111.30582592289832/988.3819104985239/280/29//
+    '[BU8e6sHxaj-sPedekwuzX]:text "Text"':
+      data:
+        text: >
+          You are a PR professional and it is your job to estmate the severity
+          of a crisis situation.
+
+
+          YIn the prompt you will receive some text describing ta crisis issue and you should assess its severity as either:
+
+
+          - High
+
+          - Medium
+
+          - Low
+
+
+          The severity you determine should be based on both the commercial impact to the business and any potential impact to brand reputation.
+
+
+          Output the answer as a JSON object in the format of:
+
+
+          "data": {
+              "severity": "The severity that you have determined",
+              }
+          }
+      outgoingConnections:
+        - output->"Chat" Zou1WVfmrjIXBvaAODJSm/systemPrompt
+      visualData: 207.11055781902314/218.31839696192336/330/9//
+    '[KfOHARDNuJGbsL7wsQRjB]:graphOutput "Graph Output"':
+      data:
+        dataType: object
+        id: output
+      visualData: 1408.550798268462/533.1137487416689/330/26/var(--node-color-3)/var(--node-color-3)
+    '[Zou1WVfmrjIXBvaAODJSm]:chat "Chat"':
+      data:
+        additionalParameters: []
+        cache: false
+        enableFunctionUse: false
+        headers: []
+        maxTokens: 1024
+        modalitiesIncludeAudio: false
+        modalitiesIncludeText: false
+        model: gpt-4o-mini
+        outputUsage: false
+        parallelFunctionCalling: true
+        reasoningEffort: medium
+        stop: ""
+        temperature: 0.5
+        top_p: 1
+        useAdditionalParametersInput: false
+        useAsGraphPartialOutput: true
+        useFrequencyPenaltyInput: false
+        useMaxTokensInput: false
+        useModelInput: false
+        usePredictedOutput: false
+        usePresencePenaltyInput: false
+        useReasoningEffortInput: false
+        useServerTokenCalculation: true
+        useStop: false
+        useStopInput: false
+        useTemperatureInput: false
+        useTopP: false
+        useTopPInput: false
+        useUseTopPInput: false
+        useUserInput: false
+      outgoingConnections:
+        - response->"Extract JSON" jogL2mVfh_6t9C3K43J4e/input
+      visualData: 662.2765957446807/600.3297872340426/230/5//
+    '[_FwqVLMhnvJzzdKNQ6sPG]:graphInput "Graph Input"':
+      data:
+        dataType: object
+        id: input
+        useDefaultValueInput: false
+      outgoingConnections:
+        - data->"Destructure" 7ouISIuZoDgTyf0yhM7sj/object
+      visualData: -235.80283213259628/717.3870558715296/330/30/var(--node-color-3)/var(--node-color-3)
+    '[jogL2mVfh_6t9C3K43J4e]:extractJson "Extract JSON"':
+      outgoingConnections:
+        - output->"Graph Output" KfOHARDNuJGbsL7wsQRjB/value
+      visualData: 995.1437802957063/833.1874038318044/280/22//

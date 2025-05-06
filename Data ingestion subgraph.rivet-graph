@@ -1,0 +1,48 @@
+version: 4
+data:
+  metadata:
+    description: ""
+    id: -k1Yw6ilmLqv5MnUb-ujk
+    name: Data ingestion subgraph
+  nodes:
+    '[9aFXJRQ7D8qaMsmWgCWhr]:text "Text"':
+      data:
+        text: "{{input}}"
+      visualData: 1261/653/330/420//
+    '[H-caOMxx1_MX6rTVoj6yD]:httpCall "Http Call"':
+      data:
+        body: ""
+        errorOnNon200: true
+        headers: >-
+          {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+          }
+        method: GET
+        url: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/
+      outgoingConnections:
+        - json->"Destructure" WaNviajSXdkAT8o19Xfuu/object
+      visualData: 315/276/280/421/var(--node-color-4)/var(--node-color-4)
+    '[SzxZpbWd0MigBpUt8AOa3]:text "Text"':
+      data:
+        text: "{{input}}"
+      visualData: 1261/453/330/420//
+    '[WaNviajSXdkAT8o19Xfuu]:destructure "Destructure"':
+      data:
+        paths:
+          - $.data[0].title
+          - $.data[0].description
+          - $.data[0].location
+          - $.data[0].company
+          - $.data[0].date
+          - $.data[0].severity
+          - $.data[0].product
+      outgoingConnections:
+        - match_0->"Text" mThdj06olWt7pC4g-ihq6/input
+        - match_1->"Text" SzxZpbWd0MigBpUt8AOa3/input
+        - match_3->"Text" 9aFXJRQ7D8qaMsmWgCWhr/input
+      visualData: 716/352/280/422//
+    '[mThdj06olWt7pC4g-ihq6]:text "Text"':
+      data:
+        text: "{{input}}"
+      visualData: 1261/253/330/420//
