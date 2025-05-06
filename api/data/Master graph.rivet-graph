@@ -3,7 +3,7 @@ data:
   metadata:
     description: ""
     id: cGJILKi8TD1YSzAKUAzKV
-    name: Mastergraph
+    name: Master graph
   nodes:
     '[0mouFF980bt242hGgYlXk]:setGlobal "Set Global"':
       data:
