@@ -5,53 +5,6 @@ data:
       testSuites: []
       version: 1
   graphs:
-    -k1Yw6ilmLqv5MnUb-ujk:
-      metadata:
-        description: ""
-        id: -k1Yw6ilmLqv5MnUb-ujk
-        name: Data ingestion subgraph
-      nodes:
-        '[9aFXJRQ7D8qaMsmWgCWhr]:text "Text"':
-          data:
-            text: "{{input}}"
-          visualData: 1261/653/330/420//
-        '[H-caOMxx1_MX6rTVoj6yD]:httpCall "Http Call"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: GET
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/
-          outgoingConnections:
-            - json->"Destructure" WaNviajSXdkAT8o19Xfuu/object
-          visualData: 315/276/280/421/var(--node-color-4)/var(--node-color-4)
-        '[SzxZpbWd0MigBpUt8AOa3]:text "Text"':
-          data:
-            text: "{{input}}"
-          visualData: 1261/453/330/420//
-        '[WaNviajSXdkAT8o19Xfuu]:destructure "Destructure"':
-          data:
-            paths:
-              - $.data[0].title
-              - $.data[0].description
-              - $.data[0].location
-              - $.data[0].company
-              - $.data[0].date
-              - $.data[0].severity
-              - $.data[0].product
-          outgoingConnections:
-            - match_0->"Text" mThdj06olWt7pC4g-ihq6/input
-            - match_1->"Text" SzxZpbWd0MigBpUt8AOa3/input
-            - match_3->"Text" 9aFXJRQ7D8qaMsmWgCWhr/input
-          visualData: 716/352/280/422//
-        '[mThdj06olWt7pC4g-ihq6]:text "Text"':
-          data:
-            text: "{{input}}"
-          visualData: 1261/253/330/420//
     3soSwiUKQ_X4fGdokyxAH:
       metadata:
         description: ""
@@ -887,63 +840,6 @@ data:
           visualData: 1627.2704294133807/1097.4463750107182/330/846/var(--node-color-1)/var(--node-color-1)
         '[tWf_cGiOZl68AjQtgJqe_]:extractJson "Extract JSON"':
           visualData: 1547.591695510024/1471.2992723419281/280/860//
-    YSnWEzVg6iWDMFsvcz8dF:
-      metadata:
-        description: ""
-        id: YSnWEzVg6iWDMFsvcz8dF
-        name: Test
-      nodes:
-        '[2HYOMQYt7b1jJ_L3j1F4l]:httpCall "Http Call"':
-          data:
-            body: |-
-              {
-                "data": {
-                  "qa_pair": 1
-                }
-              }
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: PUT
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/1
-            useBodyInput: false
-            useHeadersInput: false
-          visualData: 175.47230946387646/688.2008849226988/280/632/var(--node-color-4)/var(--node-color-4)
-        '[BFe2YEW1m4RUiXWy5PcFm]:text "Text"':
-          data:
-            body: ""
-            text: >+
-              {
-                "data": {
-                  "title": "Customer Concern About Product Safety",
-                  "pressrelease": "We are investigating the issue and will provide an update shortly."
-                }
-              }
-
-          outgoingConnections:
-            - output->"Extract JSON" OPvoP4U4E0DjTUFc2MvrS/input
-          visualData: 109.991904680641/430.0761456812575/330/515//
-        '[GqM37rp0mkAVS6txX8Iuz]:httpCall "Http Call"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases
-            useBodyInput: true
-            useHeadersInput: false
-          visualData: 829.7520221767147/235.49595564657096/280/512/var(--node-color-4)/var(--node-color-4)
-        '[OPvoP4U4E0DjTUFc2MvrS]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Http Call" GqM37rp0mkAVS6txX8Iuz/req_body
-          visualData: 491.28991592205773/457.2562483155743/280/517//
     cGJILKi8TD1YSzAKUAzKV:
       metadata:
         description: ""
@@ -1103,6 +999,11 @@ data:
           outgoingConnections:
             - output->"Chat" DOH9j6ldq5b44D5MY0YHO/prompt
           visualData: -418.8247388018126/564.2780695714856/330/null//
+        '[DCAvenAK0LxQyA8hPoUmT]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 4408.048136450702/-962.6728252563717/330/776/var(--node-color-3)/var(--node-color-3)
         '[DOH9j6ldq5b44D5MY0YHO]:chat "Chat"':
           data:
             additionalParameters: []
@@ -1287,6 +1188,8 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/holding-statements/
             useBodyInput: true
             useHeadersInput: false
+          outgoingConnections:
+            - res_body->"Graph Output" DCAvenAK0LxQyA8hPoUmT/value
           visualData: 3833.951166041122/-1085.03834529198/280/731/var(--node-color-4)/var(--node-color-4)
         '[KJ0n7LZTEzcnuQDvmpaz4]:destructure "Destructure"':
           data:
