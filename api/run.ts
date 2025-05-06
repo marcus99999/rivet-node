@@ -16,12 +16,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(500).json({ error: 'Missing OPEN_API_KEY environment variable.' });
     }
 
-    const project = path.resolve(__dirname, 'data', 'example.rivet-project');
-    const graph = 'example-graph';
+    const project = path.resolve(__dirname, 'data', 'Master.rivet-project');
+    const graph = 'cGJILKi8TD1YSzAKUAzKV'; // Master graph
 
     const datasetProvider = await NodeDatasetProvider.fromProjectFile(project, {
-      save: false
-    });
+  	save: false // prevents file writes on Vercel
+	});
 
     const result = await runGraphInFile(project, {
       graph,
