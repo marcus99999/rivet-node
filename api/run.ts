@@ -7,16 +7,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // ✅ Respond immediately to client
-  res.status(202).json({ message: 'Graph execution started in background.' });
-
   try {
-    console.log("🔁 Background execution started");
+    console.log("API called");
 
     const openAiKey = process.env.OPEN_API_KEY;
     if (!openAiKey) {
-      console.error("❌ Missing OPEN_API_KEY");
-      return;
+      return res.status(500).json({ error: 'Missing OPEN_API_KEY environment variable.' });
     }
 
     const project = path.resolve(__dirname, 'data', 'Master.rivet-project');
@@ -26,6 +22,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       save: false
     });
 
+    console.log("Running graph...");
     const result = await runGraphInFile(project, {
       graph,
       remoteDebugger: undefined,
@@ -39,9 +36,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       datasetProvider,
     } as RunGraphOptions);
 
-    console.log("✅ Graph completed");
+    console.log("✅ Graph executed.");
 
-    // Log all graph outputs
+    // Log and return all outputs
     const outputs = result.outputs || {};
     if (Object.keys(outputs).length > 0) {
       console.log("📤 Graph outputs:");
@@ -49,10 +46,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         console.log(`- ${key}:`, value);
       }
     } else {
-      console.log("⚠️ No graph outputs returned.");
+      console.log("⚠️ No outputs returned from graph.");
     }
 
-    // Log subgraph partial outputs
     const partials = result.partialOutputs || {};
     if (Object.keys(partials).length > 0) {
       console.log("🧩 Subgraph partial outputs:");
@@ -61,7 +57,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }
     }
 
+    res.status(200).json({
+      outputs,
+      partialOutputs: partials,
+      message:
+        Object.keys(outputs).length === 0 && Object.keys(partials).length === 0
+          ? 'Graph ran, but no outputs were returned.'
+          : 'Graph executed successfully.'
+    });
+
   } catch (err: any) {
-    console.error("❌ Error in background execution:", err.message || err);
+    console.error("❌ Error running graph:", err);
+    res.status(500).json({ error: err.message || 'Unknown error occurred.' });
   }
 }
