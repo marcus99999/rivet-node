@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@gentrace/core": "^3.5.8",
     "@ironclad/rivet-node": "^1.14.0"
   },
   "devDependencies": {
