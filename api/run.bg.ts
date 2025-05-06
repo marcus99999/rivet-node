@@ -63,7 +63,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       partialOutputs: partials,
       message:
         Object.keys(outputs).length === 0 && Object.keys(partials).length === 0
-          ? 'Graph ran, but no outputs were returned.'
+          ? 'Graph ran, no outputs were returned.'
           : 'Graph executed successfully.'
     });
   } catch (err: any) {
