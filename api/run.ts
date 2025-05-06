@@ -1,6 +1,11 @@
+import { fileURLToPath } from 'url';
+import path from 'path';
 import { runGraphInFile, NodeDatasetProvider, RunGraphOptions } from '@ironclad/rivet-node';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import path from 'path';
+
+// 👇 This replaces __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
@@ -8,21 +13,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const openAiKey = process.env.OPEN_API_KEY;
     if (!openAiKey) {
-      console.error("Missing OPEN_API_KEY");
       return res.status(500).json({ error: 'Missing OPEN_API_KEY environment variable.' });
     }
 
-    // ✅ Safer absolute path — assumes file is located in /api/data/
     const project = path.resolve(__dirname, 'data', 'example.rivet-project');
     const graph = 'example-graph';
-
-    console.log("Resolved project path:", project);
 
     const datasetProvider = await NodeDatasetProvider.fromProjectFile(project, {
       save: true
     });
 
-    console.log("Running graph...");
     const result = await runGraphInFile(project, {
       graph,
       remoteDebugger: undefined,
@@ -36,7 +36,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       datasetProvider,
     } as RunGraphOptions);
 
-    console.log("Graph complete");
     res.status(200).json({ result: result.response.value });
   } catch (err: any) {
     console.error("Error running graph:", err);
