@@ -27,7 +27,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       graph,
       remoteDebugger: undefined,
       inputs: {
-        prompt: 'Please write me a short poem about a dog.',
+        prompt: 'eg2mhbnnt16dyaomt4dvtti2.',
       },
       context: {},
       externalFunctions: {},
@@ -36,18 +36,38 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       datasetProvider,
     } as RunGraphOptions);
 
-    console.log("Graph result:", result);
+    console.log("✅ Graph executed.");
 
+    // Log standard outputs
     const outputs = result.outputs || {};
+    if (Object.keys(outputs).length > 0) {
+      console.log("📤 Graph outputs:");
+      for (const [key, value] of Object.entries(outputs)) {
+        console.log(`- ${key}:`, value);
+      }
+    } else {
+      console.log("⚠️ No outputs returned from graph.");
+    }
+
+    // Log subgraph partial outputs (if any)
+    const partials = result.partialOutputs || {};
+    if (Object.keys(partials).length > 0) {
+      console.log("🧩 Subgraph partial outputs:");
+      for (const [key, value] of Object.entries(partials)) {
+        console.log(`- ${key}:`, value);
+      }
+    }
 
     res.status(200).json({
       outputs,
-      message: Object.keys(outputs).length === 0
-        ? 'Graph ran, but no outputs were returned.'
-        : 'Graph executed successfully.'
+      partialOutputs: partials,
+      message:
+        Object.keys(outputs).length === 0 && Object.keys(partials).length === 0
+          ? 'Graph ran, but no outputs were returned.'
+          : 'Graph executed successfully.'
     });
   } catch (err: any) {
-    console.error("Error running graph:", err);
+    console.error("❌ Error running graph:", err);
     res.status(500).json({ error: err.message || 'Unknown error occurred.' });
   }
 }

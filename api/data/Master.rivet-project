@@ -851,6 +851,8 @@ data:
             dataType: string
             id: documentId
             useIdInput: false
+          outgoingConnections:
+            - saved-value->"Graph Output" DCAvenAK0LxQyA8hPoUmT/value
           visualData: -650.8080025739744/1022.0258718277165/230/768//
         '[1d_I3CvsuxquLLL25ctDS]:destructure "Destructure"':
           data:
@@ -1003,7 +1005,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: 4408.048136450702/-962.6728252563717/330/776/var(--node-color-3)/var(--node-color-3)
+          visualData: -269.5951067460716/1164.2562144607964/330/781/var(--node-color-3)/var(--node-color-3)
         '[DOH9j6ldq5b44D5MY0YHO]:chat "Chat"':
           data:
             additionalParameters: []
@@ -1188,8 +1190,6 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/holding-statements/
             useBodyInput: true
             useHeadersInput: false
-          outgoingConnections:
-            - res_body->"Graph Output" DCAvenAK0LxQyA8hPoUmT/value
           visualData: 3833.951166041122/-1085.03834529198/280/731/var(--node-color-4)/var(--node-color-4)
         '[KJ0n7LZTEzcnuQDvmpaz4]:destructure "Destructure"':
           data:
@@ -1665,7 +1665,7 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/req_body
-          visualData: 589.6662804897164/1310.5427193914584/330/435/var(--node-color-1)/var(--node-color-1)
+          visualData: 724.7372478169955/1259.7362087454176/330/782/var(--node-color-1)/var(--node-color-1)
         '[tmcvLEtdnIE8PFCGXhgrq]:text "Text"':
           data:
             text: |
