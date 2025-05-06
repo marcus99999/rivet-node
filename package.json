@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "@ironclad/rivet-node": "^1.14.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
   }
 }
