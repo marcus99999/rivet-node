@@ -1,5 +1,6 @@
 import { runGraphInFile, startDebuggerServer, NodeDatasetProvider, RunGraphOptions } from '@ironclad/rivet-node';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import path from 'path';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
@@ -11,7 +12,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(500).json({ error: 'Missing OPEN_API_KEY environment variable.' });
     }
 
-    const project = './example.rivet-project';
+    const project = path.resolve(process.cwd(), 'example.rivet-project');
     const graph = 'example-graph';
 
     console.log("Starting debugger...");
@@ -19,8 +20,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     console.log("Debugger started");
 
     const datasetProvider = await NodeDatasetProvider.fromProjectFile(project, {
-      save: true,
-      filePath: project,
+      save: true
     });
 
     console.log("Running graph...");
