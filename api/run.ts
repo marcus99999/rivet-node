@@ -20,7 +20,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const graph = 'example-graph';
 
     const datasetProvider = await NodeDatasetProvider.fromProjectFile(project, {
-      save: true
+      save: false
     });
 
     const result = await runGraphInFile(project, {
