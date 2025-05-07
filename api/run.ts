@@ -26,8 +26,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(200).end();
   }
 
-  // ✅ Debug OPEN_API_KEY presence
-  console.log('🔍 OPEN_API_KEY:', process.env.OPEN_API_KEY ? '✅ Present' : '❌ Missing');
+  // ✅ Debug OPEN_AI_KEY presence and list all env vars
+  console.log('🔍 OPEN_AI_KEY:', process.env.OPEN_AI_KEY ? '✅ Present' : '❌ Missing');
+  console.log('🧪 All ENV Keys:', Object.keys(process.env));
 
   if (req.method === 'GET') {
     return res.status(200).json({
@@ -67,10 +68,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     console.log('📥 Received prompt:', inputPrompt);
 
-    const openAiKey = process.env.OPEN_API_KEY;
+    const openAiKey = process.env.OPEN_AI_KEY;
     if (!openAiKey) {
-      console.error('❌ OPEN_API_KEY is missing.');
-      return res.status(500).json({ error: 'Missing OPEN_API_KEY environment variable.' });
+      console.error('❌ OPEN_AI_KEY is missing.');
+      return res.status(500).json({ error: 'Missing OPEN_AI_KEY environment variable.' });
     }
 
     const project = path.resolve(__dirname, 'data', 'Master.rivet-project');
