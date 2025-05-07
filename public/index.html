@@ -63,9 +63,12 @@
       partialsEl.innerHTML = '';
 
       try {
-        const res = await fetch('/api/run', {
+        const res = await fetch('https://rivet-node.vercel.app/api/run', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer rivet-xyz-123' // 🔐 Replace with actual token
+          },
           body: JSON.stringify({ prompt })
         });
 
