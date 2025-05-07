@@ -7,30 +7,40 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // Respond immediately
-  res.status(202).json({ message: 'Graph execution started in background.' });
+  // ✅ Handle browser GET requests (informational only)
+  if (req.method === 'GET') {
+    return res.status(200).json({
+      info: 'This is a background function. Use POST with a "prompt" to trigger graph execution.',
+    });
+  }
 
-  try {
-    console.log("🔁 Background task started");
-
-    // Parse JSON body manually for background function
-    if (req.method === 'POST') {
-      req.body = await new Promise(resolve => {
-        let data = '';
-        req.on('data', chunk => data += chunk);
-        req.on('end', () => {
-          try {
-            resolve(JSON.parse(data || '{}'));
-          } catch (e) {
-            console.error("❌ Failed to parse JSON body:", e);
-            resolve({});
-          }
-        });
+  // ✅ Parse incoming JSON body manually
+  let inputPrompt = 'Please write me a short poem about a dog.';
+  if (req.method === 'POST') {
+    req.body = await new Promise((resolve) => {
+      let data = '';
+      req.on('data', (chunk) => (data += chunk));
+      req.on('end', () => {
+        try {
+          const parsed = JSON.parse(data || '{}');
+          inputPrompt = parsed.prompt || inputPrompt;
+          resolve(parsed);
+        } catch (err) {
+          console.error('❌ Invalid JSON body:', err);
+          resolve({});
+        }
       });
-    }
+    });
+  }
 
-    const { prompt } = req.body || {};
-    const inputPrompt = prompt || 'Please write me a short poem about a dog.';
+  // ✅ Respond to client right away
+  res.status(202).json({
+    message: `Graph started with prompt: "${inputPrompt}"`,
+  });
+
+  // ✅ Background work
+  try {
+    console.log("🔁 Background task started with prompt:", inputPrompt);
 
     const openAiKey = process.env.OPEN_API_KEY;
     if (!openAiKey) {
@@ -48,9 +58,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const result = await runGraphInFile(project, {
       graph,
       remoteDebugger: undefined,
-      inputs: {
-        prompt: inputPrompt,
-      },
+      inputs: { prompt: inputPrompt },
       context: {},
       externalFunctions: {},
       onUserEvent: {},
