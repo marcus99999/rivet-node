@@ -4,21 +4,36 @@
   <meta charset="UTF-8" />
   <title>Run Rivet Graph</title>
   <style>
-    body { font-family: sans-serif; padding: 2em; }
-    #spinner { margin-top: 1em; display: none; }
-    #status { margin-top: 1em; }
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 2em auto;
+      padding: 1em;
+    }
+    label, input, button {
+      display: block;
+      margin-top: 1em;
+    }
+    #spinner {
+      margin-top: 1em;
+      display: none;
+    }
+    #status {
+      margin-top: 1em;
+      white-space: pre-wrap;
+    }
   </style>
 </head>
 <body>
-  <h1>Run Rivet Graph (Background)</h1>
+  <h1>Run Rivet Graph</h1>
 
   <form id="runForm" onsubmit="runGraph(event)">
     <label for="prompt">Prompt:</label>
-    <input type="text" id="prompt" name="prompt" required placeholder="Enter your prompt..." style="width: 300px;" />
+    <input type="text" id="prompt" name="prompt" required placeholder="Enter your prompt..." />
     <button type="submit">Run</button>
   </form>
 
-  <div id="spinner">⏳ Running graph...</div>
+  <div id="spinner">⏳ Starting graph...</div>
   <div id="status"></div>
 
   <script>
@@ -26,8 +41,11 @@
       event.preventDefault();
 
       const prompt = document.getElementById('prompt').value;
-      document.getElementById('spinner').style.display = 'block';
-      document.getElementById('status').textContent = '';
+      const spinner = document.getElementById('spinner');
+      const status = document.getElementById('status');
+
+      spinner.style.display = 'block';
+      status.textContent = '';
 
       try {
         const res = await fetch('/api/run', {
@@ -37,12 +55,12 @@
         });
 
         const data = await res.json();
-        document.getElementById('spinner').style.display = 'none';
-        document.getElementById('status').textContent = data.message || 'Graph started.';
+        spinner.style.display = 'none';
+        status.textContent = data.message || 'Graph started.';
       } catch (err) {
-        document.getElementById('spinner').style.display = 'none';
-        document.getElementById('status').textContent = '❌ Error starting graph.';
-        console.error('Graph error:', err);
+        spinner.style.display = 'none';
+        status.textContent = '❌ Error starting graph.';
+        console.error(err);
       }
     }
   </script>
