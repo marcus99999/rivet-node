@@ -2,19 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Crisis Comms Hub Trigger</title>
+  <title>Run Rivet Graph</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; }
+    #spinner { margin-top: 1em; display: none; }
+    #status { margin-top: 1em; }
+  </style>
 </head>
 <body>
-  <h1>Crisis Comms Hub Trigger</h1>
+  <h1>Run Rivet Graph (Background)</h1>
 
   <form id="runForm" onsubmit="runGraph(event)">
     <label for="prompt">Prompt:</label>
     <input type="text" id="prompt" name="prompt" required placeholder="Enter your prompt..." style="width: 300px;" />
-    <button type="submit">Run Graph</button>
+    <button type="submit">Run</button>
   </form>
 
-  <div id="spinner" style="display: none; margin-top: 1em;">⏳ Running graph...</div>
-  <div id="status" style="margin-top: 1em;"></div>
+  <div id="spinner">⏳ Running graph...</div>
+  <div id="status"></div>
 
   <script>
     async function runGraph(event) {
@@ -24,15 +29,21 @@
       document.getElementById('spinner').style.display = 'block';
       document.getElementById('status').textContent = '';
 
-      const res = await fetch('/api/run', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt })
-      });
+      try {
+        const res = await fetch('/api/run', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt })
+        });
 
-      const data = await res.json();
-      document.getElementById('spinner').style.display = 'none';
-      document.getElementById('status').textContent = data.message || 'Done.';
+        const data = await res.json();
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('status').textContent = data.message || 'Graph started.';
+      } catch (err) {
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('status').textContent = '❌ Error starting graph.';
+        console.error('Graph error:', err);
+      }
     }
   </script>
 </body>
