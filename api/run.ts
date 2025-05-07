@@ -6,11 +6,32 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// ✅ Your frontend domain (set this to your actual app domain)
+const ALLOWED_ORIGIN = 'https://v0-crisis-comms-control-input-yf.vercel.app';
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  // ✅ CORS headers
+  res.setHeader('Access-Control-Allow-Origin', ALLOWED_ORIGIN);
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+  // ✅ Preflight support
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method === 'GET') {
     return res.status(200).json({
       info: 'Send a POST request with a prompt to run the Rivet graph.',
     });
+  }
+
+  // ✅ Check token
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  const expectedToken = process.env.AUTH_TOKEN;
+
+  if (!expectedToken || token !== expectedToken) {
+    return res.status(403).json({ error: 'Forbidden: Invalid or missing token.' });
   }
 
   try {
@@ -41,7 +62,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const project = path.resolve(__dirname, 'data', 'Master.rivet-project');
-    const graph = 'cGJILKi8TD1YSzAKUAzKV'; // Replace if using a different graph ID
+    const graph = 'cGJILKi8TD1YSzAKUAzKV'; // Replace with your actual graph ID
 
     const datasetProvider = await NodeDatasetProvider.fromProjectFile(project, {
       save: false,
