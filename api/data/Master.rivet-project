@@ -785,6 +785,11 @@ data:
             - match_0->"Text" ZEJe86ipFxX2Pgn0SpYkX/Tone
             - match_0->"Text" lTDwHyIvD8GtM-vUQWnZJ/Tone
           visualData: 788.9012376674186/-912.817285325704/280/775//
+        '[2uPrdf3woHnGtAJDrw2Lz]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: -730.6698048661066/465.7170142024777/330/800/var(--node-color-3)/var(--node-color-3)
         '[72AXK4CYiiIN6rUy5bTNW]:chat "Chat"':
           data:
             additionalParameters: []
@@ -835,6 +840,7 @@ data:
               - $.data.brand
               - $.data.documentId
           outgoingConnections:
+            - match_0->"Graph Output" 2uPrdf3woHnGtAJDrw2Lz/value
             - match_0->"Text" CocxXqVO7vwIgKSISUEL9/Crisis
             - match_1->"Text" CocxXqVO7vwIgKSISUEL9/Description
             - match_2->"Text" CocxXqVO7vwIgKSISUEL9/Location
@@ -928,7 +934,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: -1013.5716705188604/1245.198109130521/330/787/var(--node-color-3)/var(--node-color-3)
+          visualData: -1013.5716705188604/1245.198109130521/330/799/var(--node-color-3)/var(--node-color-3)
         '[DOH9j6ldq5b44D5MY0YHO]:chat "Chat"':
           data:
             additionalParameters: []
