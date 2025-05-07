@@ -37,8 +37,8 @@
   <h1>Run Rivet Graph</h1>
 
   <form id="runForm" onsubmit="runGraph(event)">
-    <label for="prompt">Prompt:</label>
-    <input type="text" id="prompt" name="prompt" required placeholder="Enter your prompt..." />
+    <label for="prompt">Crisis ID:</label>
+    <input type="text" id="prompt" name="prompt" required value="ye8w2fo87pymtxxfx0vyfzaa" />
     <button type="submit">Run</button>
   </form>
 
@@ -77,16 +77,14 @@
           return;
         }
 
-        status.textContent = `✅ Graph completed with prompt: "${data.prompt}"`;
+        status.textContent = `✅ Graph completed with Crisis ID: "${data.prompt}"`;
 
-        // Display outputs
         if (data.outputs && Object.keys(data.outputs).length > 0) {
           outputsEl.innerHTML = `<h3>Outputs</h3>` + Object.entries(data.outputs)
             .map(([key, val]) => `<strong>${key}:</strong><br>${val}<br><br>`)
             .join('');
         }
 
-        // Display partial outputs
         if (data.partialOutputs && Object.keys(data.partialOutputs).length > 0) {
           partialsEl.innerHTML = `<h3>Partial Outputs</h3>` + Object.entries(data.partialOutputs)
             .map(([key, val]) => `<strong>${key}:</strong><br>${val}<br><br>`)

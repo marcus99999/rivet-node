@@ -31,86 +31,8 @@ data:
           data:
             dataType: object
             id: output
-          visualData: 2376.3742299771907/1041.061261418121/330/834/var(--node-color-3)/var(--node-color-3)
-        '[4rTYTD_fZKqZrz-gXdQId]:text "Text"':
-          data:
-            text: "{{input}}"
-          visualData: 844.7532343256412/1201.4516390239473/330/850//
-        '[6nfmWOfUuvmxKv_aRlj3k]:chat "Chat"':
-          data:
-            additionalParameters: []
-            cache: false
-            enableFunctionUse: false
-            headers: []
-            maxTokens: 2048
-            modalitiesIncludeAudio: false
-            modalitiesIncludeText: false
-            model: gpt-4o-mini
-            outputUsage: false
-            parallelFunctionCalling: true
-            reasoningEffort: medium
-            stop: ""
-            temperature: 0.5
-            top_p: 1
-            useAdditionalParametersInput: false
-            useAsGraphPartialOutput: true
-            useFrequencyPenaltyInput: false
-            useMaxTokensInput: false
-            useModelInput: false
-            usePredictedOutput: false
-            usePresencePenaltyInput: false
-            useReasoningEffortInput: false
-            useServerTokenCalculation: true
-            useStop: false
-            useStopInput: false
-            useTemperatureInput: false
-            useTopP: false
-            useTopPInput: false
-            useUseTopPInput: false
-            useUserInput: false
-          outgoingConnections:
-            - response->"Extract JSON" IeW5OiYv4h_tCjn3XT7LJ/input
-            - response->"Graph Output" 4IRH4YJ1BKdchejYhJkUO/value
-          visualData: 911.4331694633281/626.7246312924881/230/840//
-        '[IeW5OiYv4h_tCjn3XT7LJ]:extractJson "Extract JSON"':
-          visualData: 1315.3756166110195/499.3799727751199/280/838//
-        '[P1r9iwgzkDm2OPRK2ilpS]:text "Text"':
-          data:
-            text: "{{input}}"
-          outgoingConnections:
-            - output->"Extract JSON" tQGduqzWcgHz2MGHb4tU6/input
-          visualData: 713.9477148740614/1429.7632496456758/330/849//
-        '[RLBF2blfneDpgAJzTpzjf]:extractJson "Extract JSON"':
-          visualData: 1861.054080429073/1129.9133011951312/280/841//
-        '[UIQtiQ7nK1T_wUjGMKQKA]:destructure "Destructure"':
-          data:
-            paths:
-              - $.data.history[0].original
-              - $.data.history
-          outgoingConnections:
-            - match_0->"Chat" 6nfmWOfUuvmxKv_aRlj3k/prompt
-            - match_0->"Text" 4rTYTD_fZKqZrz-gXdQId/input
-            - match_1->"Text" P1r9iwgzkDm2OPRK2ilpS/input
-          visualData: 483.6194675083708/889.6990736422448/280/844//
-        '[Xmbnoh9LlbLMA2d7kR3iV]:graphInput "Graph Input"':
-          data:
-            dataType: any
-            id: input
-            useDefaultValueInput: false
-          outgoingConnections:
-            - data->"Extract JSON" yZoOp6ik3X4HAKc_4WOzJ/input
-          visualData: -272.92583538122926/716.0695657300618/330/839/var(--node-color-3)/var(--node-color-3)
-        '[ah4enKZnetb-7VonC8qlx]:comment "Comment"':
-          data:
-            backgroundColor: rgba(218,4,4,0.05)
-            color: rgba(154,2,2,1)
-            height: 625.39387367782
-            text: |-
-              Combine into a larger JSON with previous outputs
-              ONLY EVER COMBINING 2
-              BECAUSE IT'S NOT REALLY PUSH / POPPING
-          visualData: 1285.459610398486/901.3684380947511/981.2819192098432/823//
-        '[bKoHjyTD-oOwlkBN5ksSL]:text "Text"':
+          visualData: 1757.511551277159/469.28596044526546/330/845/var(--node-color-3)/var(--node-color-3)
+        '[6On-V0OoNztz0gpmiCtQw]:text "Text"':
           data:
             text: >-
               You are an agent who updates the content of a press releases if
@@ -147,21 +69,125 @@ data:
                   "rewrite": "The updated, improved text",
                   "fails": "3 bullet points of why it failed",
                   "updates": "3 bullet points of how the text has been improved"
+          visualData: 472.3587113217679/1013.2937030503298/330/843//
+        '[6nfmWOfUuvmxKv_aRlj3k]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 2048
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: medium
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Extract JSON" dHOn8TeIWKUpxenSiL3eX/input
+          visualData: 911.4331694633281/626.7246312924881/230/840//
+        '[RLBF2blfneDpgAJzTpzjf]:extractJson "Extract JSON"':
+          visualData: 1861.054080429073/1129.9133011951312/280/841//
+        '[Xmbnoh9LlbLMA2d7kR3iV]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat" 6nfmWOfUuvmxKv_aRlj3k/prompt
+          visualData: -272.92583538122926/716.0695657300618/330/839/var(--node-color-3)/var(--node-color-3)
+        '[ah4enKZnetb-7VonC8qlx]:comment "Comment"':
+          data:
+            backgroundColor: rgba(218,4,4,0.05)
+            color: rgba(154,2,2,1)
+            height: 625.39387367782
+            text: |-
+              Combine into a larger JSON with previous outputs
+              ONLY EVER COMBINING 2
+              BECAUSE IT'S NOT REALLY PUSH / POPPING
+          visualData: 1285.459610398486/901.3684380947511/981.2819192098432/823//
+        '[bKoHjyTD-oOwlkBN5ksSL]:text "Text"':
+          data:
+            text: >-
+              You are an agent who updates the content of a press releases if
+              you believe it fails to meet best practice guidance.
+
+
+              Best practice is defined as {{Bestpractice}}.
+
+
+              You will be given a string of text and you will first analyse it to see how well it aligns to the best practice.
+
+
+              If you believe it falls short of the direction and standards in the best practice then you will adjust the text in such a way that will better conform to the guidance.
+
+
+              You should not rewrite the text entirely but just adjust or add small portions to make the text align better with the best practice guidance.
+
+
+              You should also ensure that the updated text remains coherent.
+
+
+              Use escaped line breaks when creating the copy in the format \n
+
+
+              You will output the improved text as a JSON object.
+
+
+              Additionally you will create a list of 3 bullet points that describe why it failed and 3 bullet points of how you have improved the text.
+
+
+              Output the content in a JSON object like this:
+
+
+              {
+                "data": {
+                  "original": "The original text passed to you in the prompt",
+                  "rewrite": "The updated, improved text",
+                  "fails": [
+                    "The original text lacked a clear call to action.",
+                    "There was no expression of empathy.",
+                    "It did not address the audience directly."
+                  ],
+                  "updates": [
+                    "Added a clear call to action at the end.",
+                    "Included an empathetic tone in the introduction.",
+                    "Used direct language to engage the reader."
+                  ]
+                }
+              }
           outgoingConnections:
             - output->"Chat" 6nfmWOfUuvmxKv_aRlj3k/systemPrompt
-          visualData: 467.3136351367133/175.93241167176447/330/569//
+          visualData: 467.3136351367133/175.93241167176447/330/842//
+        '[dHOn8TeIWKUpxenSiL3eX]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Graph Output" 4IRH4YJ1BKdchejYhJkUO/value
+          visualData: 1273.0185944650275/501.4739251978184/280/847//
         '[lZUXWikwZ9xjE1pbYDB6g]:loadDataset "Load Dataset"':
           data:
             datasetId: xLJpaKaUKaZBupQgz34vW
           outgoingConnections:
             - dataset->"Text" bKoHjyTD-oOwlkBN5ksSL/Bestpractice
           visualData: 94.7476280850866/298.02005963527665/280/570//
-        '[tQGduqzWcgHz2MGHb4tU6]:extractJson "Extract JSON"':
-          visualData: 1184.707392484667/1687.3732155911807/280/null//
-        '[yZoOp6ik3X4HAKc_4WOzJ]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Destructure" UIQtiQ7nK1T_wUjGMKQKA/object
-          visualData: 112.96075778407457/1047.023070921221/280/842//
     8fhBx64QGpVrIT6XqLMrt:
       metadata:
         description: ""
@@ -208,7 +234,7 @@ data:
           outgoingConnections:
             - res_body->"Text" AfphfrSO09nbODmD0BfoV/input
             - res_headers->"Text" n2BWnImUBrJAZMOpk_2I5/input
-          visualData: 2659.6253971712263/-560.093298304731/280/708/var(--node-color-4)/var(--node-color-4)
+          visualData: 2949.281010172971/-561.4099147274662/280/835/var(--node-color-4)/var(--node-color-4)
         '[5Hx49_3tx7vg11u5zDxnB]:subGraph "Subgraph"':
           data:
             graphId: zYlQ2Xk75J--kr6X__Awr
@@ -249,7 +275,7 @@ data:
         '[AfphfrSO09nbODmD0BfoV]:text "Text"':
           data:
             text: "{{input}}"
-          visualData: 3111.440787222195/-651.9266786220576/330/824//
+          visualData: 3386.6136195738527/-507.0988721211852/330/834//
         '[Et3sjdxYDIfmMn_vmhBMN]:subGraph "Subgraph"':
           data:
             graphId: zYlQ2Xk75J--kr6X__Awr
@@ -265,10 +291,9 @@ data:
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
+            - output->"Code" cC_XKF4Gxqp9WQfyS9sPz/input1
             - output->"Subgraph" h5k-44eeEQKUVT6CVVEBp/input
-            - output->"Subgraph" tStPSxD7oOqaWyMgw629d/input
-            - output->"Text" XopQYLGFUzhQeyHRRNB9H/history
-          visualData: 958.1970673093098/166.49814452683142/330/803/var(--node-color-1)/var(--node-color-1)
+          visualData: 964.5977177069665/152.09668113210384/330/829/var(--node-color-1)/var(--node-color-1)
         '[H3Fm81x8gTwGXYoLLSlLk]:text "Text"':
           data:
             text: |-
@@ -355,19 +380,17 @@ data:
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
+            - output->"Code" IdjcxcsH57ePL8QTaxYTq/input1
             - output->"Subgraph" 5Hx49_3tx7vg11u5zDxnB/input
-            - output->"Subgraph" c6VmUtT-Bl0ln6nQeSF58/input
-            - output->"Text" d0PAVTcOCZeb0W8Lh-Cf7/history
-          visualData: 972.7210656439721/-120.16410595381419/330/802/var(--node-color-1)/var(--node-color-1)
+          visualData: 975.3542984894425/-120.16410595381419/330/831/var(--node-color-1)/var(--node-color-1)
         '[WOolU6oaL7Oiht_zsJrpo]:subGraph "Subgraph"':
           data:
             graphId: WoecD9--01VjQHhXTmwtU
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
+            - output->"Code" jAYCzFIZlQio_0I1AacdY/input1
             - output->"Subgraph" Et3sjdxYDIfmMn_vmhBMN/input
-            - output->"Subgraph" pD3wbiydyGyxym3x2prhl/input
-            - output->"Text" j_w4n98HL-0NqWvq9nBt9/history
           visualData: 963.6444629165164/405.9164609880693/330/804/var(--node-color-1)/var(--node-color-1)
         '[WnXhs0d1-hpjlGoOM8hev]:destructure "Destructure"':
           data:
@@ -395,8 +418,7 @@ data:
                 "data": {
                   "detail": "{{input}}",
                   "severity": "Medium",
-                  "crisis": "{{documentId}}",
-                  "history": {{history}}
+                  "crisis": "{{documentId}}"
                 }
               }
           outgoingConnections:
@@ -437,9 +459,7 @@ data:
             graphId: l_qOMNG_p0UM3yOSO2O29
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          outgoingConnections:
-            - output->"Code" IdjcxcsH57ePL8QTaxYTq/input1
-          visualData: 1345.015819584239/-122.87414234134567/330/801/var(--node-color-1)/var(--node-color-1)
+          visualData: 1249.7517949333305/-450.4340715046975/330/839/var(--node-color-1)/var(--node-color-1)
         '[cC_XKF4Gxqp9WQfyS9sPz]:code "Code"':
           data:
             code: >-
@@ -479,12 +499,11 @@ data:
                 "data": {
                   "detail": "{{input}}",
                   "severity": "High",
-                  "crisis": "{{documentId}}",
-                  "history": {{history}}
+                  "crisis": "{{documentId}}"
                 }
               }
           outgoingConnections:
-            - output->"Http Call" 2-1stJD-1ZlJeod6DgIgb/req_body
+            - output->"Extract JSON" k02faHRnfQ9GDK6aVcWGd/input
           visualData: 2236.7281359333174/-631.2169212975992/330/712//
         '[d2ngvaOMizgfgPCRbP-DP]:comment "Comment"':
           data:
@@ -555,13 +574,16 @@ data:
                 "data": {
                   "detail": "{{input}}",
                   "severity": "Low",
-                  "crisis": "{{documentId}}",
-                  "history": {{history}}
+                  "crisis": "{{documentId}}"
                 }
               }
           outgoingConnections:
             - output->"Http Call" -HvpH3_vlr-lQwwFbODFe/req_body
-          visualData: 2228.5689669846574/293.34617532780027/330/710//
+          visualData: 2228.5689669846574/293.34617532780027/330/832//
+        '[k02faHRnfQ9GDK6aVcWGd]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" 2-1stJD-1ZlJeod6DgIgb/req_body
+          visualData: 2637.067981324864/-499.9246735438236/280/838//
         '[khiwBEZ1TBidGeoldXUHD]:httpCall "Http Call"':
           data:
             body: ""
@@ -579,23 +601,7 @@ data:
         '[n2BWnImUBrJAZMOpk_2I5]:text "Text"':
           data:
             text: "{{input}}"
-          visualData: 3114.9606395853266/-379.9643768453679/330/825//
-        '[pD3wbiydyGyxym3x2prhl]:subGraph "Subgraph"':
-          data:
-            graphId: l_qOMNG_p0UM3yOSO2O29
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          outgoingConnections:
-            - output->"Code" jAYCzFIZlQio_0I1AacdY/input1
-          visualData: 1333.3202668490103/408.7008259299746/330/805/var(--node-color-1)/var(--node-color-1)
-        '[tStPSxD7oOqaWyMgw629d]:subGraph "Subgraph"':
-          data:
-            graphId: l_qOMNG_p0UM3yOSO2O29
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          outgoingConnections:
-            - output->"Code" cC_XKF4Gxqp9WQfyS9sPz/input1
-          visualData: 1326.0105463894924/170.6902795404821/330/800/var(--node-color-1)/var(--node-color-1)
+          visualData: 3396.7165540506603/-285.1679944084333/330/833//
         '[wOjyfm5GpYlcB2L_GOh87]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" khiwBEZ1TBidGeoldXUHD/req_body
@@ -706,17 +712,20 @@ data:
       nodes:
         '[6JMB-7JMK_o3mDn4Nyw66]:graphOutput "Graph Output"':
           data:
-            dataType: object
+            dataType: string
             id: output
-          visualData: 1258.7271129531503/520.4678330040314/330/830/var(--node-color-3)/var(--node-color-3)
-        '[Rc4Puxy1KMK7Cugwwdmd_]:extractJson "Extract JSON"':
-          visualData: 1175.884810083245/821.7109442543001/280/855//
-        '[XsEnSzQbymbnXXFx3rAmw]:text "Text"':
+          visualData: 1813.6176691846756/636.1963994533993/330/866/var(--node-color-3)/var(--node-color-3)
+        '[88euR6HVHV0b5NzrRGMEq]:destructure "Destructure"':
           data:
-            text: "{{input}}"
+            paths:
+              - $.data.rewrite
           outgoingConnections:
-            - output->"Extract JSON" tWf_cGiOZl68AjQtgJqe_/input
-          visualData: 1155.3696537288033/1469.658513451463/330/854//
+            - match_0->"Graph Output" 6JMB-7JMK_o3mDn4Nyw66/value
+          visualData: 1405.1619967824556/734.6193111632829/280/867//
+        '[Rc4Puxy1KMK7Cugwwdmd_]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" 88euR6HVHV0b5NzrRGMEq/object
+          visualData: 1031.6280287102998/694.0209371909128/280/865//
         '[ZqDtSofTEoqAtIupdx6LE]:loopController "Loop Controller"':
           data:
             atMaxIterationsAction: break
@@ -725,82 +734,20 @@ data:
             - break->"Text" lMF6X1DupFsFWvPRvsKDS/input
             - output1->"Subgraph" pUmp7YYzE2Qb2_bjZOcA4/input
           visualData: 360.31557351020456/848.9658434310018/280/848//
-        '[ciUiQ68fQrG9LaF4DJ793]:extractJson "Extract JSON"':
-          visualData: -0.013408904172596436/1390.7010912455537/280/852//
-        '[hMUq6kbncxOCny_zFBnBZ]:comment "Comment"':
-          data:
-            backgroundColor: rgba(223,7,7,0.05)
-            color: rgba(159,4,4,1)
-            height: 684.2365662431089
-            text: |
-              Build would have to happen here
-          visualData: 1111.8152171722897/1118.0125972194849/441.2289723496983/842//
-        '[i7kT2H3x6xAu97ghQnLuR]:text "Text"':
-          data:
-            text: |-
-              {
-                "data": {
-                  "history": [
-                    {
-                      "original": "{{input}}",
-                      "rewrite": "No rewrite yet",
-                      "fails": "No fails yet",
-                      "updates": "No updates yet"
-                    }
-                  ]
-                }
-              }
-          outgoingConnections:
-            - output->"Extract JSON" ciUiQ68fQrG9LaF4DJ793/input
-            - output->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/input1Default
-          visualData: -424.9448898104006/1110.7488805715502/330/824//
         '[lMF6X1DupFsFWvPRvsKDS]:text "Text"':
           data:
             text: "{{input}}"
           outgoingConnections:
             - output->"Extract JSON" Rc4Puxy1KMK7Cugwwdmd_/input
-            - output->"Graph Output" 6JMB-7JMK_o3mDn4Nyw66/value
-          visualData: 759.32689689925/638.42512300184/330/840//
+          visualData: 681.645023100576/710.8105054051498/330/864//
         '[nQoPwHb3U2PvvKnnx-8Yc]:graphInput "Graph Input"':
           data:
             dataType: string
             id: input
             useDefaultValueInput: false
           outgoingConnections:
-            - data->"Code" oxshKtZF9z_6bYbFPv9OO/input1
+            - data->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/input1Default
           visualData: -1107.295211390256/969.3638671234115/330/826/var(--node-color-3)/var(--node-color-3)
-        '[oxshKtZF9z_6bYbFPv9OO]:code "Code"':
-          data:
-            code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
-              const inputText = inputs.input1.value;
-
-
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
-
-              return {
-                output1: {
-                  type: 'string',
-                  value: escapedText
-                }
-              };
-            inputNames: input1
-            outputNames: output1
-          outgoingConnections:
-            - output1->"Text" i7kT2H3x6xAu97ghQnLuR/input
-          visualData: -702.0337553250351/988.3142655767119/230/827//
         '[pUmp7YYzE2Qb2_bjZOcA4]:subGraph "Subgraph"':
           data:
             graphId: 3soSwiUKQ_X4fGdokyxAH
@@ -818,8 +765,6 @@ data:
           outgoingConnections:
             - Analysis->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/continue
           visualData: 1627.2704294133807/1097.4463750107182/330/846/var(--node-color-1)/var(--node-color-1)
-        '[tWf_cGiOZl68AjQtgJqe_]:extractJson "Extract JSON"':
-          visualData: 1547.591695510024/1471.2992723419281/280/860//
     cGJILKi8TD1YSzAKUAzKV:
       metadata:
         description: ""
@@ -983,7 +928,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: -269.5951067460716/1164.2562144607964/330/781/var(--node-color-3)/var(--node-color-3)
+          visualData: -1013.5716705188604/1245.198109130521/330/787/var(--node-color-3)/var(--node-color-3)
         '[DOH9j6ldq5b44D5MY0YHO]:chat "Chat"':
           data:
             additionalParameters: []
@@ -1292,6 +1237,12 @@ data:
             - output->"Chat" ar6v6LMNTaqxVthRlZG20/prompt
             - output->"Destructure" 8eGhuqG4kOM3xr2nwKYyt/object
           visualData: 1141.8836634176616/645.675489858645/280/327//
+        '[W888kIoF-SH_n2m0tV7Rc]:text "Text"':
+          data:
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}
+          outgoingConnections:
+            - output->"Http Call" cKjknBn_o8XEPm2EFP1C3/url
+          visualData: -1986.1165728777935/720.7698981750353/330/793//
         '[WgkJpgv4h3JS9A4kEUrUx]:code "Code"':
           data:
             code: >-
@@ -1491,10 +1442,11 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: GET
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/
+            url: ""
+            useUrlInput: true
           outgoingConnections:
             - json->"Destructure" 7eyt6KkrPUqx01ZWsuWGh/object
-          visualData: -1493.5441598227849/511.5981188035604/280/467/var(--node-color-4)/var(--node-color-4)
+          visualData: -1480.2231785001838/559.3316352095475/280/790/var(--node-color-4)/var(--node-color-4)
         '[foghClfs0RpllTUuFHt-Q]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Subgraph" QG0B00OmZYN6SmNbPqPFN/input
@@ -1506,7 +1458,8 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Graph Output" DCAvenAK0LxQyA8hPoUmT/value
-          visualData: -1525.0614256149272/1157.0555427129589/330/783/var(--node-color-3)/var(--node-color-3)
+            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
+          visualData: -1981.3050359140127/1185.9176689119279/330/791/var(--node-color-3)/var(--node-color-3)
         '[hEOhNaRzVb931o5QF_P53]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" b0p0ChjrySbYCsRXMJKin/req_body
@@ -1733,9 +1686,9 @@ data:
         '[KFdr9J6ICJGZx5GUCVA2z]:destructure "Destructure"':
           data:
             paths:
-              - $.data.history[0].rewrite
-              - $.data.history[0].fails
-              - $.data.history[0].updates
+              - $.data.rewrite
+              - $.data.fails
+              - $.data.updates
           outgoingConnections:
             - match_0->"Chat" oprEYTNZ_pRARqzGBLP-T/prompt
           visualData: 577.6329094434866/564.9764745587175/280/819//
