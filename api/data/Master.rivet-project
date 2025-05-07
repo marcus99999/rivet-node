@@ -1140,6 +1140,8 @@ data:
         '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
           data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/ye8w2fo87pymtxxfx0vyfzaa?populate=company
+          outgoingConnections:
+            - output->"Http Call" cKjknBn_o8XEPm2EFP1C3/url
           visualData: -1981.4007032399804/951.8475104279039/330/797//
         '[MtDsiI3cCAsx-7hUbKI3x]:extractJson "Extract JSON"':
           outgoingConnections:
@@ -1250,8 +1252,6 @@ data:
         '[W888kIoF-SH_n2m0tV7Rc]:text "Text"':
           data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=company
-          outgoingConnections:
-            - output->"Http Call" cKjknBn_o8XEPm2EFP1C3/url
           visualData: -1986.1165728777935/720.7698981750353/330/793//
         '[WgkJpgv4h3JS9A4kEUrUx]:code "Code"':
           data:
