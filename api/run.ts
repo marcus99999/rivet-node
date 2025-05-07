@@ -6,10 +6,19 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const ALLOWED_ORIGIN = 'https://v0-crisis-comms-control-input-yf.vercel.app';
+// ✅ Allow multiple environments
+const ALLOWED_ORIGINS = [
+  'https://v0-crisis-comms-control-input-yf.vercel.app',
+  'https://rivet-node-git-main-marcus-projects-2b234dbd.vercel.app',
+  'http://localhost:3000'
+];
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  res.setHeader('Access-Control-Allow-Origin', ALLOWED_ORIGIN);
+  const origin = req.headers.origin || '';
+  if (ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
