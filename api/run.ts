@@ -40,7 +40,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(500).json({ error: 'Missing OPEN_API_KEY environment variable.' });
     }
 
-    const project = path.resolve(__dirname, 'data', 'example.rivet-project');
+    const project = path.resolve(__dirname, 'data', 'Master.rivet-project');
     const graph = 'cGJILKi8TD1YSzAKUAzKV'; // Replace if using a different graph ID
 
     const datasetProvider = await NodeDatasetProvider.fromProjectFile(project, {
