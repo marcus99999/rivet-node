@@ -826,14 +826,14 @@ data:
             body: ""
             headers: ""
             paths:
-              - $.data[1].title
-              - $.data[1].description
-              - $.data[1].location
-              - $.data[1].company
-              - $.data[1].date
-              - $.data[1].severity
-              - $.data[1].brand
-              - $.data[1].documentId
+              - $.data.title
+              - $.data.description
+              - $.data.location
+              - $.data.company
+              - $.data.date
+              - $.data.severity
+              - $.data.brand
+              - $.data.documentId
           outgoingConnections:
             - match_0->"Text" CocxXqVO7vwIgKSISUEL9/Crisis
             - match_1->"Text" CocxXqVO7vwIgKSISUEL9/Description
@@ -1131,6 +1131,10 @@ data:
             - match_3->"Text" ZEJe86ipFxX2Pgn0SpYkX/Phone
             - match_3->"Text" lTDwHyIvD8GtM-vUQWnZJ/Phone
           visualData: 44.4321762346097/-397.50808679427195/280/742//
+        '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
+          data:
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/ye8w2fo87pymtxxfx0vyfzaa
+          visualData: -1992.4043990615455/1087.0357733785618/330/796//
         '[MtDsiI3cCAsx-7hUbKI3x]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" Rc0jBdKpTG96pQSBDxbGG/req_body
@@ -1442,6 +1446,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: GET
+            text: ""
             url: ""
             useUrlInput: true
           outgoingConnections:
@@ -1459,7 +1464,7 @@ data:
           outgoingConnections:
             - data->"Graph Output" DCAvenAK0LxQyA8hPoUmT/value
             - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
-          visualData: -1981.3050359140127/1185.9176689119279/330/791/var(--node-color-3)/var(--node-color-3)
+          visualData: -2423.0248253225577/741.0539664115073/330/795/var(--node-color-3)/var(--node-color-3)
         '[hEOhNaRzVb931o5QF_P53]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" b0p0ChjrySbYCsRXMJKin/req_body
