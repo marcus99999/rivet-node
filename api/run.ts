@@ -26,6 +26,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(200).end();
   }
 
+  // ✅ Debug OPEN_API_KEY presence
+  console.log('🔍 OPEN_API_KEY:', process.env.OPEN_API_KEY ? '✅ Present' : '❌ Missing');
+
   if (req.method === 'GET') {
     return res.status(200).json({
       info: 'Send a POST request with a prompt to run the Rivet graph.',
