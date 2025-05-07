@@ -621,7 +621,7 @@ data:
             text: ""
           outgoingConnections:
             - match_2->"Chat" Zou1WVfmrjIXBvaAODJSm/prompt
-          visualData: 111.30582592289832/988.3819104985239/280/29//
+          visualData: 182.81660978947392/849.4081229842354/280/31//
         '[BU8e6sHxaj-sPedekwuzX]:text "Text"':
           data:
             text: >
@@ -629,7 +629,7 @@ data:
               severity of a crisis situation.
 
 
-              YIn the prompt you will receive some text describing ta crisis issue and you should assess its severity as either:
+              In the prompt you will receive some text describing the crisis issue and you should assess its severity as either:
 
 
               - High
@@ -747,7 +747,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/input1Default
-          visualData: -1107.295211390256/969.3638671234115/330/826/var(--node-color-3)/var(--node-color-3)
+          visualData: -155.86381475170742/962.7719636824978/330/869/var(--node-color-3)/var(--node-color-3)
         '[pUmp7YYzE2Qb2_bjZOcA4]:subGraph "Subgraph"':
           data:
             graphId: 3soSwiUKQ_X4fGdokyxAH
@@ -756,7 +756,7 @@ data:
           outgoingConnections:
             - output->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/input1
             - output->"Subgraph" tGjoPWvOpRqQlUEhNXlhw/input
-          visualData: 726.2367257395616/1297.609652967238/330/816/var(--node-color-1)/var(--node-color-1)
+          visualData: 923.5553890601808/1211.5310414515316/330/868/var(--node-color-1)/var(--node-color-1)
         '[tGjoPWvOpRqQlUEhNXlhw]:subGraph "Subgraph"':
           data:
             graphId: hcy2UDhZVh6QP8e0AjKC7
@@ -784,12 +784,12 @@ data:
           outgoingConnections:
             - match_0->"Text" ZEJe86ipFxX2Pgn0SpYkX/Tone
             - match_0->"Text" lTDwHyIvD8GtM-vUQWnZJ/Tone
-          visualData: 788.9012376674186/-912.817285325704/280/775//
+          visualData: 748.5932103983944/-924.7604045165259/280/806//
         '[2uPrdf3woHnGtAJDrw2Lz]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: -730.6698048661066/465.7170142024777/330/800/var(--node-color-3)/var(--node-color-3)
+          visualData: -732.1626947649593/235.8119697791544/330/801/var(--node-color-3)/var(--node-color-3)
         '[72AXK4CYiiIN6rUy5bTNW]:chat "Chat"':
           data:
             additionalParameters: []
@@ -1140,8 +1140,6 @@ data:
         '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
           data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/ye8w2fo87pymtxxfx0vyfzaa?populate=company
-          outgoingConnections:
-            - output->"Http Call" cKjknBn_o8XEPm2EFP1C3/url
           visualData: -1981.4007032399804/951.8475104279039/330/797//
         '[MtDsiI3cCAsx-7hUbKI3x]:extractJson "Extract JSON"':
           outgoingConnections:
@@ -1209,7 +1207,7 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/tone-of-voices
           outgoingConnections:
             - json->"Destructure" 1d_I3CvsuxquLLL25ctDS/object
-          visualData: 457.2391728782959/-1034.0644176572957/280/755/var(--node-color-4)/var(--node-color-4)
+          visualData: 433.3529344966519/-1092.2871237125528/280/805/var(--node-color-4)/var(--node-color-4)
         '[QG0B00OmZYN6SmNbPqPFN]:subGraph "Subgraph"':
           data:
             graphId: 8fhBx64QGpVrIT6XqLMrt
@@ -1252,6 +1250,8 @@ data:
         '[W888kIoF-SH_n2m0tV7Rc]:text "Text"':
           data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=company
+          outgoingConnections:
+            - output->"Http Call" cKjknBn_o8XEPm2EFP1C3/url
           visualData: -1986.1165728777935/720.7698981750353/330/793//
         '[WgkJpgv4h3JS9A4kEUrUx]:code "Code"':
           data:
@@ -1819,7 +1819,7 @@ data:
               You are crisis comms PR professional.
 
 
-              You will be sent a press release and you should create a set of 5 questions and answer pairs. These questions and answers are the kind of queries that the press or public might ask as result of hearing about the details of the press release.
+              You will be sent a press release and you should create a set of 3 questions and answer pairs. These questions and answers are the kind of queries that the press or public might ask as result of hearing about the details of the press release.
 
 
               Output the question and answer pairs as text in this string format (don't convert to JSON):
