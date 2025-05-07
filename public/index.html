@@ -22,6 +22,15 @@
       margin-top: 1em;
       white-space: pre-wrap;
     }
+    .output-section {
+      margin-top: 1em;
+      padding: 1em;
+      background: #f4f4f4;
+      border-radius: 4px;
+    }
+    .output-section h3 {
+      margin: 0 0 0.5em 0;
+    }
   </style>
 </head>
 <body>
@@ -33,8 +42,10 @@
     <button type="submit">Run</button>
   </form>
 
-  <div id="spinner">⏳ Starting graph...</div>
+  <div id="spinner">⏳ Running graph...</div>
   <div id="status"></div>
+  <div id="outputs" class="output-section"></div>
+  <div id="partials" class="output-section"></div>
 
   <script>
     async function runGraph(event) {
@@ -43,9 +54,13 @@
       const prompt = document.getElementById('prompt').value;
       const spinner = document.getElementById('spinner');
       const status = document.getElementById('status');
+      const outputsEl = document.getElementById('outputs');
+      const partialsEl = document.getElementById('partials');
 
       spinner.style.display = 'block';
       status.textContent = '';
+      outputsEl.innerHTML = '';
+      partialsEl.innerHTML = '';
 
       try {
         const res = await fetch('/api/run', {
@@ -56,10 +71,30 @@
 
         const data = await res.json();
         spinner.style.display = 'none';
-        status.textContent = data.message || 'Graph started.';
+
+        if (data.error) {
+          status.textContent = `❌ Error: ${data.error}`;
+          return;
+        }
+
+        status.textContent = `✅ Graph completed with prompt: "${data.prompt}"`;
+
+        // Display outputs
+        if (data.outputs && Object.keys(data.outputs).length > 0) {
+          outputsEl.innerHTML = `<h3>Outputs</h3>` + Object.entries(data.outputs)
+            .map(([key, val]) => `<strong>${key}:</strong><br>${val}<br><br>`)
+            .join('');
+        }
+
+        // Display partial outputs
+        if (data.partialOutputs && Object.keys(data.partialOutputs).length > 0) {
+          partialsEl.innerHTML = `<h3>Partial Outputs</h3>` + Object.entries(data.partialOutputs)
+            .map(([key, val]) => `<strong>${key}:</strong><br>${val}<br><br>`)
+            .join('');
+        }
       } catch (err) {
         spinner.style.display = 'none';
-        status.textContent = '❌ Error starting graph.';
+        status.textContent = '❌ Error running graph.';
         console.error(err);
       }
     }
