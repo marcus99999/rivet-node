@@ -35,7 +35,7 @@ data:
         '[4rTYTD_fZKqZrz-gXdQId]:text "Text"':
           data:
             text: "{{input}}"
-          visualData: 852.0196873576189/1125.88052749138/330/847//
+          visualData: 844.7532343256412/1201.4516390239473/330/850//
         '[6nfmWOfUuvmxKv_aRlj3k]:chat "Chat"':
           data:
             additionalParameters: []
@@ -70,7 +70,7 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Extract JSON" IeW5OiYv4h_tCjn3XT7LJ/input
-            - response->"Text" 3uWCPsym5lA_tSbQR8bCX/newJSON
+            - response->"Graph Output" 4IRH4YJ1BKdchejYhJkUO/value
           visualData: 911.4331694633281/626.7246312924881/230/840//
         '[IeW5OiYv4h_tCjn3XT7LJ]:extractJson "Extract JSON"':
           visualData: 1315.3756166110195/499.3799727751199/280/838//
@@ -81,8 +81,6 @@ data:
             - output->"Extract JSON" tQGduqzWcgHz2MGHb4tU6/input
           visualData: 713.9477148740614/1429.7632496456758/330/849//
         '[RLBF2blfneDpgAJzTpzjf]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Graph Output" 4IRH4YJ1BKdchejYhJkUO/value
           visualData: 1861.054080429073/1129.9133011951312/280/841//
         '[UIQtiQ7nK1T_wUjGMKQKA]:destructure "Destructure"':
           data:
@@ -92,7 +90,6 @@ data:
           outgoingConnections:
             - match_0->"Chat" 6nfmWOfUuvmxKv_aRlj3k/prompt
             - match_0->"Text" 4rTYTD_fZKqZrz-gXdQId/input
-            - match_1->"Text" 3uWCPsym5lA_tSbQR8bCX/originalJSON
             - match_1->"Text" P1r9iwgzkDm2OPRK2ilpS/input
           visualData: 483.6194675083708/889.6990736422448/280/844//
         '[Xmbnoh9LlbLMA2d7kR3iV]:graphInput "Graph Input"':
@@ -712,22 +709,6 @@ data:
             dataType: object
             id: output
           visualData: 1258.7271129531503/520.4678330040314/330/830/var(--node-color-3)/var(--node-color-3)
-        '[FwVPFn9Hw3WJQ4ximLcnO]:text "Text"':
-          data:
-            text: >-
-              {
-                "data": {
-                  "history": [
-                    {
-                      "original": "Date: October 6, 2023\n\nPress Release\n\nHäagen-Dazs is committed to the health and safety of our consumers. Following the report of food poisoning associated with our vanilla ice cream on May 6, 2025, we conducted a thorough investigation into the incident.\n\nWe are pleased to report that our investigation has found no evidence of widespread contamination. The findings suggest that the incident was an isolated case, likely due to improper handling by the consumer. We want to reassure our customers that we maintain stringent safety measures and rigorous quality control processes throughout our production.\n\nWe are grateful for the trust our consumers place in the Häagen-Dazs brand, and we are committed to maintaining that trust. We will continue to uphold the highest standards of quality and safety in all our products.\n\nAs we move forward, we encourage our customers to reach out with any questions or concerns. Thank you for your continued loyalty and support.\n\nSincerely,\nBarnaby Fry\n\nbarnaby.fry@nestle.com  \n7956949123  \n\n\n",
-                      "rewrite": "No rewrite yet",
-                      "fails": "No fails yet",
-                      "updates": "No updates yet"
-                    }
-                  ]
-                }
-              }
-          visualData: 1933.0278242535173/1558.2754194447132/330/859//
         '[Rc4Puxy1KMK7Cugwwdmd_]:extractJson "Extract JSON"':
           visualData: 1175.884810083245/821.7109442543001/280/855//
         '[XsEnSzQbymbnXXFx3rAmw]:text "Text"':
@@ -828,7 +809,6 @@ data:
           outgoingConnections:
             - output->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/input1
             - output->"Subgraph" tGjoPWvOpRqQlUEhNXlhw/input
-            - output->"Text" XsEnSzQbymbnXXFx3rAmw/input
           visualData: 726.2367257395616/1297.609652967238/330/816/var(--node-color-1)/var(--node-color-1)
         '[tGjoPWvOpRqQlUEhNXlhw]:subGraph "Subgraph"':
           data:
@@ -851,9 +831,7 @@ data:
             dataType: string
             id: documentId
             useIdInput: false
-          outgoingConnections:
-            - saved-value->"Graph Output" DCAvenAK0LxQyA8hPoUmT/value
-          visualData: -650.8080025739744/1022.0258718277165/230/768//
+          visualData: -680.5483990497055/921.6520337221239/230/785//
         '[1d_I3CvsuxquLLL25ctDS]:destructure "Destructure"':
           data:
             paths:
@@ -1000,7 +978,7 @@ data:
               It relates to the prodcut {{Product}}.
           outgoingConnections:
             - output->"Chat" DOH9j6ldq5b44D5MY0YHO/prompt
-          visualData: -418.8247388018126/564.2780695714856/330/null//
+          visualData: -556.3740725020693/488.6878951956689/330/784//
         '[DCAvenAK0LxQyA8hPoUmT]:graphOutput "Graph Output"':
           data:
             dataType: string
@@ -1521,6 +1499,14 @@ data:
           outgoingConnections:
             - output->"Subgraph" QG0B00OmZYN6SmNbPqPFN/input
           visualData: 2077.8283189174444/160.61650614665933/280/735//
+        '[gEC9dXtwHK8R4y7GC-ffB]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Graph Output" DCAvenAK0LxQyA8hPoUmT/value
+          visualData: -1525.0614256149272/1157.0555427129589/330/783/var(--node-color-3)/var(--node-color-3)
         '[hEOhNaRzVb931o5QF_P53]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" b0p0ChjrySbYCsRXMJKin/req_body
