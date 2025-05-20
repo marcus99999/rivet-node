@@ -30,7 +30,7 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
     });
 
     const prompt = body.prompt || 'ye8w2fo87pymtxxfx0vyfzaa';
-    const graphId = body.graph || 'GHgi_Qdv5HEfN9Cwup8cY'; // replace with your actual severity-estimator graph ID
+    const graphId = body.graph || 'GHgi_Qdv5HEfN9Cwup8cY'; // Estimate severity
     const openAiKey = process.env.OPEN_AI_KEY;
 
     if (!openAiKey) {
@@ -53,12 +53,18 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
       datasetProvider,
     } as RunGraphOptions);
 
+    // 🔍 Debug output logging
+    console.log("📦 Graph outputs:", result.outputs);
+    console.log("⚠️  Graph errors:", result.errors);
+    console.log("🧠 Context (if any):", result.context);
+
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify({
       message: 'Severity estimated successfully.',
       outputs: result.outputs || {},
       errors: result.errors || [],
+      context: result.context || {},
     }));
   } catch (err: any) {
     console.error('❌ Graph execution failed:', err);
