@@ -1,0 +1,14 @@
+{
+  "name": "rivet-node",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@ironclad/rivet-node": "^1.14.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
