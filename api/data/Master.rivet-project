@@ -607,7 +607,7 @@ data:
         '[7n13-pxkGDE-_z4Rg-PdD]:graphOutput "Graph Output"':
           data:
             dataType: string
-            id: output
+            id: result
           visualData: 573.4147267719093/1375.5338577402636/330/965/var(--node-color-3)/var(--node-color-3)
         '[7nobdyxzRz6Ru3CupykVu]:getGlobal "Get Global"':
           data:

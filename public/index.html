@@ -25,6 +25,12 @@
     button {
       padding: 0.75rem;
     }
+    #spinner {
+      display: none;
+      margin: 1rem 0;
+      font-size: 1rem;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -39,6 +45,8 @@
   </select>
 
   <button id="run">Run Graph</button>
+
+  <div id="spinner">⏳ Running graph...</div>
 
   <h2>Outputs</h2>
   <pre id="output"></pre>
@@ -56,7 +64,6 @@
         const json = await res.json();
 
         dropdown.innerHTML = '';
-
         const sorted = json.graphs.sort((a, b) => a.name.localeCompare(b.name));
         sorted.forEach(g => {
           const option = document.createElement('option');
@@ -76,19 +83,42 @@
     document.getElementById('run').addEventListener('click', async () => {
       const prompt = document.getElementById('prompt').value;
       const graph = document.getElementById('graph').value;
+      const spinner = document.getElementById('spinner');
+      const outputBox = document.getElementById('output');
+      const errorBox = document.getElementById('error');
 
-      const res = await fetch('/api/estimate-severity', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer rivet-xyz-123'
-        },
-        body: JSON.stringify({ prompt, graph })
-      });
+      outputBox.textContent = '';
+      errorBox.textContent = '';
+      spinner.style.display = 'block';
 
-      const json = await res.json();
-      document.getElementById('output').textContent = JSON.stringify(json.outputs || {}, null, 2);
-      document.getElementById('error').textContent = JSON.stringify(json.errors || {}, null, 2);
+      try {
+        const res = await fetch('/api/estimate-severity', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer rivet-xyz-123'
+          },
+          body: JSON.stringify({
+            graph,
+            inputs: {
+              data: {
+                severity: "Unknown",
+                title: "Water Quality Issue",
+                date: "2025-05-13",
+                description: "Reports of a strange odor in bottled water linked to a recent video."
+              }
+            }
+          })
+        });
+
+        const json = await res.json();
+        outputBox.textContent = JSON.stringify(json.outputs || {}, null, 2);
+        errorBox.textContent = JSON.stringify(json.errors || {}, null, 2);
+      } catch (err) {
+        errorBox.textContent = JSON.stringify({ message: 'Failed to run graph', error: err.message }, null, 2);
+      } finally {
+        spinner.style.display = 'none';
+      }
     });
   </script>
 </body>
