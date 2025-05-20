@@ -1400,7 +1400,7 @@ data:
           visualData: 2017.605049893614/-732.2070674590149/280/658//
         '[YRSLFjfsmONldtkw8zePm]:graphOutput "Graph Output"':
           data:
-            dataType: object
+            dataType: string
             id: severity
           visualData: 1384.119078965784/1503.9103410868317/330/858/var(--node-color-3)/var(--node-color-3)
         '[ZEJe86ipFxX2Pgn0SpYkX]:text "Text"':
