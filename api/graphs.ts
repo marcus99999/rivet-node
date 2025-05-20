@@ -23,7 +23,7 @@ export default async function handler(
 
     res.status(200).json({ graphs: result });
   } catch (err) {
-    console.error('Failed to load graphs:', err);
+    console.error('❌ Failed to load graphs from Master.rivet-project:', err);
     res.status(500).json({ error: 'Unable to load graph list' });
   }
 }
