@@ -5,6 +5,12 @@ data:
     id: cGJILKi8TD1YSzAKUAzKV
     name: Master graph
   nodes:
+    '[-V-I8p0COTSS5xt_lwOVJ]:toJson "To JSON"':
+      data:
+        indented: true
+      outgoingConnections:
+        - json->"Graph Output" YRSLFjfsmONldtkw8zePm/value
+      visualData: 937.1753673034285/1502.7524558234577/205/851//
     '[0mouFF980bt242hGgYlXk]:setGlobal "Set Global"':
       data:
         dataType: string
@@ -343,7 +349,7 @@ data:
         useHeadersInput: false
         useUrlInput: true
       outgoingConnections:
-        - json->"Graph Output" YRSLFjfsmONldtkw8zePm/value
+        - json->"Text" ydN6JIVTUGCZdqcePRpuV/input
       visualData: 1035.4456059827394/1053.855497187048/280/810/var(--node-color-4)/var(--node-color-4)
     '[JHrBit8Twr_6qXeZbrGBY]:httpCall "Http Call"':
       data:
@@ -534,9 +540,9 @@ data:
       visualData: 2017.605049893614/-732.2070674590149/280/658//
     '[YRSLFjfsmONldtkw8zePm]:graphOutput "Graph Output"':
       data:
-        dataType: string
+        dataType: any
         id: output
-      visualData: 1439.6975716077347/1448.3318484448807/330/835/var(--node-color-3)/var(--node-color-3)
+      visualData: 1220.8572568300533/1514.3313084571976/330/852/var(--node-color-3)/var(--node-color-3)
     '[ZEJe86ipFxX2Pgn0SpYkX]:text "Text"':
       data:
         text: >-
@@ -881,6 +887,7 @@ data:
         useErrorOutput: false
       outgoingConnections:
         - output->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/req_body
+        - output->"To JSON" -V-I8p0COTSS5xt_lwOVJ/data
       visualData: 618.4909852742002/1244.4674949843022/330/827/var(--node-color-1)/var(--node-color-1)
     '[tmcvLEtdnIE8PFCGXhgrq]:text "Text"':
       data:
@@ -958,7 +965,7 @@ data:
     '[ydN6JIVTUGCZdqcePRpuV]:text "Text"':
       data:
         text: "{{input}}"
-      visualData: 1440.4988474186664/1199.6583493647906/330/836//
+      visualData: 1411.551715834317/1101.2381019780025/330/846//
     '[zxftMeqPv_Rfjt9lpoE6Q]:extractJson "Extract JSON"':
       outgoingConnections:
         - output->"Subgraph" qic03BQQlMsFH93Oh0O67/input
