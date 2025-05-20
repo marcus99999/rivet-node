@@ -5,10 +5,6 @@ data:
     id: cGJILKi8TD1YSzAKUAzKV
     name: Master graph
   nodes:
-    '[-V-I8p0COTSS5xt_lwOVJ]:toJson "To JSON"':
-      data:
-        indented: true
-      visualData: 776.2293156944456/1525.9101610909372/205/853//
     '[0mouFF980bt242hGgYlXk]:setGlobal "Set Global"':
       data:
         dataType: string
@@ -540,7 +536,7 @@ data:
       data:
         dataType: object
         id: severity
-      visualData: 1054.1217789042005/1441.384536864637/330/854/var(--node-color-3)/var(--node-color-3)
+      visualData: 1384.119078965784/1503.9103410868317/330/858/var(--node-color-3)/var(--node-color-3)
     '[ZEJe86ipFxX2Pgn0SpYkX]:text "Text"':
       data:
         text: >-
@@ -729,6 +725,13 @@ data:
       outgoingConnections:
         - output->"Http Call" b0p0ChjrySbYCsRXMJKin/req_body
       visualData: 3498.9672039075263/-650.035573190637/280/732//
+    '[hNGBeQybWmlZQI4E1RTix]:destructure "Destructure"':
+      data:
+        paths:
+          - $.data.severity
+      outgoingConnections:
+        - match_0->"Graph Output" YRSLFjfsmONldtkw8zePm/value
+      visualData: 993.9117452087532/1480.7526358193522/280/859//
     '[hWCHQO_Oagm2P4xeE3Be4]:text "Text"':
       data:
         body: ""
@@ -884,7 +887,7 @@ data:
         useAsGraphPartialOutput: false
         useErrorOutput: false
       outgoingConnections:
-        - output->"Graph Output" YRSLFjfsmONldtkw8zePm/value
+        - output->"Destructure" hNGBeQybWmlZQI4E1RTix/object
         - output->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/req_body
       visualData: 618.4909852742002/1244.4674949843022/330/827/var(--node-color-1)/var(--node-color-1)
     '[tmcvLEtdnIE8PFCGXhgrq]:text "Text"':
@@ -963,7 +966,7 @@ data:
     '[ydN6JIVTUGCZdqcePRpuV]:text "Text"':
       data:
         text: "{{input}}"
-      visualData: 1411.551715834317/1101.2381019780025/330/846//
+      visualData: 1411.551715834317/1101.2381019780025/330/860//
     '[zxftMeqPv_Rfjt9lpoE6Q]:extractJson "Extract JSON"':
       outgoingConnections:
         - output->"Subgraph" qic03BQQlMsFH93Oh0O67/input
