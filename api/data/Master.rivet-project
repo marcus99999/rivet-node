@@ -1,0 +1,2015 @@
+version: 4
+data:
+  attachedData:
+    trivet:
+      testSuites: []
+      version: 1
+  graphs:
+    3soSwiUKQ_X4fGdokyxAH:
+      metadata:
+        description: Individual press release rewrite
+        id: 3soSwiUKQ_X4fGdokyxAH
+        name: Rewrite subgraph
+      nodes:
+        '[3uWCPsym5lA_tSbQR8bCX]:text "Text"':
+          data:
+            text: |-
+              {
+                "data": {
+                  "history": [
+                  {
+                    {{newJSON}}
+                  },
+                    {{originalJSON}}
+                  ]
+                }
+              }
+          outgoingConnections:
+            - output->"Extract JSON" RLBF2blfneDpgAJzTpzjf/input
+          visualData: 1495.482860963695/1465.2920119037208/330/945//
+        '[4IRH4YJ1BKdchejYhJkUO]:graphOutput "Graph Output"':
+          data:
+            dataType: object
+            id: output
+          visualData: 2578.9393327808416/505.6811678731736/330/948/var(--node-color-3)/var(--node-color-3)
+        '[JHw4NZzZ9M0kaSi_b2icc]:text "Text"':
+          data:
+            text: |-
+              {
+                "body": "{{input}}"
+              }
+          outgoingConnections:
+            - output->"Extract JSON" ZVqFk3NdPBfcj3jimuG0E/input
+          visualData: 689.0409669045316/724.234136108081/330/940//
+        '[RLBF2blfneDpgAJzTpzjf]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" f-6lL9uVA4ka1f3xj2hgj/req_body
+          visualData: 1907.4279228483306/1533.0090083779075/280/945//
+        '[Xmbnoh9LlbLMA2d7kR3iV]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Code" tZ-TAvsyJmTjfBNokypbM/input1
+          visualData: -82.74849516986734/427.15315504282194/330/936/var(--node-color-3)/var(--node-color-3)
+        '[ZVqFk3NdPBfcj3jimuG0E]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" u07GLNaref9rHCyXG761B/req_body
+          visualData: 1091.4620411461485/669.1476383023097/280/941//
+        '[_Rtun_ePQgOY1tS-EUowt]:destructure "Destructure"':
+          data:
+            paths:
+              - $.rewritten
+          outgoingConnections:
+            - match_0->"Graph Output" 4IRH4YJ1BKdchejYhJkUO/value
+          visualData: 2208.826634732004/476.65559030189263/280/949//
+        '[ah4enKZnetb-7VonC8qlx]:comment "Comment"':
+          data:
+            backgroundColor: rgba(218,4,4,0.05)
+            color: rgba(154,2,2,1)
+            height: 660.6935536082124
+            text: |-
+              Combine into a larger JSON with previous outputs
+              ONLY EVER COMBINING 2
+              BECAUSE IT'S NOT REALLY PUSH / POPPING
+          visualData: 1331.8334528177434/1304.4641452775275/1593.9979858801712/945//
+        '[dHOn8TeIWKUpxenSiL3eX]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" _Rtun_ePQgOY1tS-EUowt/object
+          visualData: 1849.102589068697/500.8374775956536/280/943//
+        '[f-6lL9uVA4ka1f3xj2hgj]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: PUT
+            url: ""
+            useBodyInput: true
+            useUrlInput: true
+          visualData: 2405.7974968728854/1455.7658128048668/280/945/var(--node-color-4)/var(--node-color-4)
+        '[gNzI9f4kz8xRGwjVJ_H0j]:text "Text"':
+          data:
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases/rm1dzc6aoo3yj3yjalw8lz95&populate=*
+          outgoingConnections:
+            - output->"Http Call" f-6lL9uVA4ka1f3xj2hgj/url
+          visualData: 2047.6431734506582/1254.0230739260542/330/945//
+        '[tZ-TAvsyJmTjfBNokypbM]:code "Code"':
+          data:
+            code: >-
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
+              const inputText = inputs.input1.value;
+
+
+              // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+              const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" JHw4NZzZ9M0kaSi_b2icc/input
+          visualData: 360.86315933649246/656.7103730088913/230/939//
+        '[u07GLNaref9rHCyXG761B]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer xktxuiBbfwJ1t8X74yVzzlPhRvEkwcIHJY7Ly8lIKbcgRv359yShXd8rOTczQtZE"
+              }
+            method: POST
+            url: https://pinecone-rewrite.vercel.app/api/rewrite
+            useBodyInput: true
+          outgoingConnections:
+            - res_body->"Extract JSON" dHOn8TeIWKUpxenSiL3eX/input
+          visualData: 1472.5589353141663/365.1287138545085/280/942/var(--node-color-4)/var(--node-color-4)
+    8fhBx64QGpVrIT6XqLMrt:
+      metadata:
+        description: Apply best practices and create Q&A statements
+        id: 8fhBx64QGpVrIT6XqLMrt
+        name: Best practice & Q&A agent subgraph
+      nodes:
+        '[-HvpH3_vlr-lQwwFbODFe]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 2665.1688890140613/301.71921584920767/280/706/var(--node-color-4)/var(--node-color-4)
+        '[-kgpH0TBjFvfM8H9c9N-8]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" HybVWMkqapLqooQgmPjod/req_body
+          visualData: 2236.8265907068476/1485.2011964515843/280/700//
+        '[13v9N8-2DJPyW49hS2VoA]:text "Text"':
+          data:
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases/{{input}}
+          outgoingConnections:
+            - output->"Http Call" YZOnh6Zi3wvWalIdNveIB/url
+          visualData: 890.3933036469409/1650.100382458886/330/776//
+        '[2-1stJD-1ZlJeod6DgIgb]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases
+            useBodyInput: true
+            useHeadersInput: false
+          outgoingConnections:
+            - res_body->"Text" AfphfrSO09nbODmD0BfoV/input
+            - res_headers->"Text" n2BWnImUBrJAZMOpk_2I5/input
+          visualData: 2949.281010172971/-561.4099147274662/280/839/var(--node-color-4)/var(--node-color-4)
+        '[5Hx49_3tx7vg11u5zDxnB]:subGraph "Subgraph"':
+          data:
+            graphId: zYlQ2Xk75J--kr6X__Awr
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          description: Q&A agent
+          outgoingConnections:
+            - output->"Text" 5LkY8Mu_v0tqj2jV-I95I/input
+          visualData: 1339.2994916524865/718.5724313971923/330/638/var(--node-color-1)/var(--node-color-1)
+        '[5LkY8Mu_v0tqj2jV-I95I]:text "Text"':
+          data:
+            text: |-
+              {
+                "data": {
+                  "crisis": "{{documentId}}",
+                  {{input}},
+                  "severity": "High"
+                },
+                "meta": {}
+              }
+          outgoingConnections:
+            - output->"Extract JSON" wOjyfm5GpYlcB2L_GOh87/input
+          visualData: 1825.8557784704903/662.20854467958/330/695//
+        '[9uM1rtiITUgpEN3PYTfKu]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 2659.2746351601027/-134.1255650802779/280/707/var(--node-color-4)/var(--node-color-4)
+        '[AfphfrSO09nbODmD0BfoV]:text "Text"':
+          data:
+            text: "{{input}}"
+          visualData: 3386.6136195738527/-507.0988721211852/330/834//
+        '[Et3sjdxYDIfmMn_vmhBMN]:subGraph "Subgraph"':
+          data:
+            graphId: zYlQ2Xk75J--kr6X__Awr
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          description: Q&A agent
+          outgoingConnections:
+            - output->"Text" c1Jqgt3-BvfFcKroOhntB/input
+          visualData: 1349.3445983517227/1118.572431397192/330/640/var(--node-color-1)/var(--node-color-1)
+        '[GywnVm1WCbBf0jZjzRtUx]:subGraph "Subgraph"':
+          data:
+            graphId: WoecD9--01VjQHhXTmwtU
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Code" cC_XKF4Gxqp9WQfyS9sPz/input1
+            - output->"Subgraph" h5k-44eeEQKUVT6CVVEBp/input
+          visualData: 964.5977177069665/152.09668113210384/330/829/var(--node-color-1)/var(--node-color-1)
+        '[H3Fm81x8gTwGXYoLLSlLk]:text "Text"':
+          data:
+            text: |-
+              {
+                "data": {
+                  "crisis": "{{documentId}}",
+                  {{input}},
+                  "severity": "High"
+                },
+                "meta": {}
+              }
+          outgoingConnections:
+            - output->"Extract JSON" IqeXPetHyKTuaAAeoiCV8/input
+          visualData: 1824.262105375531/992.889738466242/330/696//
+        '[HybVWMkqapLqooQgmPjod]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/qa-pairs
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 2658.4762302885465/1576.9149367836696/280/703/var(--node-color-4)/var(--node-color-4)
+        '[IdjcxcsH57ePL8QTaxYTq]:code "Code"':
+          data:
+            code: >-
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
+              const inputText = inputs.input1.value;
+
+
+              // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+              const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" d0PAVTcOCZeb0W8Lh-Cf7/input
+          visualData: 1864.5930602535338/-664.1633253175522/230/713//
+        '[IqeXPetHyKTuaAAeoiCV8]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" g8AEP8e2wMiSjZRoBEebV/req_body
+          visualData: 2240.013936896766/1154.5200026649222/280/699//
+        '[KFPyBIeoLBVpJIpgIa7Ne]:graphInput "Graph Input"':
+          data:
+            dataType: object
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Destructure" WnXhs0d1-hpjlGoOM8hev/object
+          visualData: -54.16591529002161/-37.33217977118733/330/705/var(--node-color-3)/var(--node-color-3)
+        '[Mg6ZLUBWi6ag8PVP4dXDa]:comment "Comment"':
+          data:
+            backgroundColor: rgba(212,5,5,0.05)
+            color: rgba(112,6,6,1)
+            height: 638.043773157
+            text: |
+              Send the history of the edit
+          visualData: 207.25946391472314/1491.3089814557557/1427.2651592032175/778//
+        '[Tzw1BEigHvrxiJG6Imitg]:subGraph "Subgraph"':
+          data:
+            graphId: WoecD9--01VjQHhXTmwtU
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Code" IdjcxcsH57ePL8QTaxYTq/input1
+            - output->"Subgraph" 5Hx49_3tx7vg11u5zDxnB/input
+          visualData: 975.3542984894425/-120.16410595381419/330/831/var(--node-color-1)/var(--node-color-1)
+        '[WOolU6oaL7Oiht_zsJrpo]:subGraph "Subgraph"':
+          data:
+            graphId: WoecD9--01VjQHhXTmwtU
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Code" jAYCzFIZlQio_0I1AacdY/input1
+            - output->"Subgraph" Et3sjdxYDIfmMn_vmhBMN/input
+          visualData: 963.6444629165164/405.9164609880693/330/804/var(--node-color-1)/var(--node-color-1)
+        '[WnXhs0d1-hpjlGoOM8hev]:destructure "Destructure"':
+          data:
+            paths:
+              - $.high
+              - $.medium
+              - $.low
+              - $.documentId
+          outgoingConnections:
+            - match_0->"Subgraph" Tzw1BEigHvrxiJG6Imitg/input
+            - match_1->"Subgraph" GywnVm1WCbBf0jZjzRtUx/input
+            - match_2->"Subgraph" WOolU6oaL7Oiht_zsJrpo/input
+            - match_3->"Text" 13v9N8-2DJPyW49hS2VoA/input
+            - match_3->"Text" 5LkY8Mu_v0tqj2jV-I95I/documentId
+            - match_3->"Text" H3Fm81x8gTwGXYoLLSlLk/documentId
+            - match_3->"Text" XopQYLGFUzhQeyHRRNB9H/documentId
+            - match_3->"Text" c1Jqgt3-BvfFcKroOhntB/documentId
+            - match_3->"Text" d0PAVTcOCZeb0W8Lh-Cf7/documentId
+            - match_3->"Text" j_w4n98HL-0NqWvq9nBt9/documentId
+          visualData: 356.2879017266414/-22.51931906114679/280/593//
+        '[XopQYLGFUzhQeyHRRNB9H]:text "Text"':
+          data:
+            text: |
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "severity": "Medium",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Http Call" 9uM1rtiITUgpEN3PYTfKu/req_body
+          visualData: 2239.468833148886/-270.83006668787687/330/711//
+        '[YZOnh6Zi3wvWalIdNveIB]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: PUT
+            text: ""
+            url: ""
+            useBodyInput: true
+            useHeadersInput: false
+            useUrlInput: true
+          visualData: 1270.5044537526276/1654.8125041544115/280/776/var(--node-color-4)/var(--node-color-4)
+        '[c1Jqgt3-BvfFcKroOhntB]:text "Text"':
+          data:
+            text: |-
+              {
+                "data": {
+                  "crisis": "{{documentId}}",
+                  {{input}},
+                  "severity": "High"
+                },
+                "meta": {}
+              }
+          outgoingConnections:
+            - output->"Extract JSON" -kgpH0TBjFvfM8H9c9N-8/input
+          visualData: 1814.7000668057754/1315.6025667781075/330/697//
+        '[cC_XKF4Gxqp9WQfyS9sPz]:code "Code"':
+          data:
+            code: >-
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
+              const inputText = inputs.input1.value;
+
+
+              // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+              const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" XopQYLGFUzhQeyHRRNB9H/input
+          visualData: 1859.7540258617169/-249.69920264851947/230/714//
+        '[d0PAVTcOCZeb0W8Lh-Cf7]:text "Text"':
+          data:
+            text: |
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "severity": "High",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Extract JSON" k02faHRnfQ9GDK6aVcWGd/input
+          visualData: 2236.7281359333174/-631.2169212975992/330/712//
+        '[d2ngvaOMizgfgPCRbP-DP]:comment "Comment"':
+          data:
+            backgroundColor: rgba(218,5,5,0.05)
+            color: rgba(197,6,6,1)
+            height: 1339.6707916737555
+            text: ONLY PASSES 2 HISTORIES RATHER THAN 3
+          visualData: 2226.2159255840575/-733.2446402068692/365.3843412952074/812//
+        '[g8AEP8e2wMiSjZRoBEebV]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/qa-pairs
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 2660.742796618197/1162.0973845352337/280/702/var(--node-color-4)/var(--node-color-4)
+        '[h5k-44eeEQKUVT6CVVEBp]:subGraph "Subgraph"':
+          data:
+            graphId: zYlQ2Xk75J--kr6X__Awr
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          description: Q&A agent
+          outgoingConnections:
+            - output->"Text" H3Fm81x8gTwGXYoLLSlLk/input
+          visualData: 1339.2994916524865/916.563410057345/330/639/var(--node-color-1)/var(--node-color-1)
+        '[jAYCzFIZlQio_0I1AacdY]:code "Code"':
+          data:
+            code: >-
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
+              const inputText = inputs.input1.value;
+
+
+              // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+              const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" j_w4n98HL-0NqWvq9nBt9/input
+          visualData: 1870.2154781957868/167.7526994777018/230/779//
+        '[j_w4n98HL-0NqWvq9nBt9]:text "Text"':
+          data:
+            text: |
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "severity": "Low",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Http Call" -HvpH3_vlr-lQwwFbODFe/req_body
+          visualData: 2228.5689669846574/293.34617532780027/330/832//
+        '[k02faHRnfQ9GDK6aVcWGd]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" 2-1stJD-1ZlJeod6DgIgb/req_body
+          visualData: 2637.067981324864/-499.9246735438236/280/838//
+        '[khiwBEZ1TBidGeoldXUHD]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/qa-pairs
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 2666.486819983974/750.3661896799075/280/701/var(--node-color-4)/var(--node-color-4)
+        '[n2BWnImUBrJAZMOpk_2I5]:text "Text"':
+          data:
+            text: "{{input}}"
+          visualData: 3396.7165540506603/-285.1679944084333/330/833//
+        '[wOjyfm5GpYlcB2L_GOh87]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" khiwBEZ1TBidGeoldXUHD/req_body
+          visualData: 2247.9823023715626/862.086963157283/280/698//
+    F51lLI2rUAsNzYaSBqzn2:
+      metadata:
+        description: ""
+        id: F51lLI2rUAsNzYaSBqzn2
+        name: Test
+      nodes:
+        '[3YGeoo784vfo2saI1QF-y]:text "Text"':
+          data:
+            text: "{{input}}"
+          visualData: 824.1860262613612/874.021776059586/330/960//
+        '[3qyvDt0lXcbWt-ZFyBHtP]:text "Text"':
+          data:
+            body: ""
+            text: >-
+              May 13, 2025
+
+
+              Nestlé is facing a significant crisis following confirmed reports of severe health issues linked to our 'Test Crisis' product. We have received alarming feedback from consumers who have experienced adverse reactions, and we understand the seriousness of this situation. As media coverage intensifies, we recognize the growing concern among our customers and the public.
+
+
+              In response to these developments, we are taking immediate action. We are working closely with health authorities and regulatory bodies to investigate these reports thoroughly. Our top priority is the safety and well-being of our consumers, and we are committed to transparency throughout this process.
+
+
+              We acknowledge the distress this has caused and are moving swiftly to implement a comprehensive recall of the affected products. Additionally, we are enhancing our communication efforts to keep all stakeholders informed as we navigate this challenging time.
+
+
+              We understand that this situation has led to a decline in consumer trust and our brand reputation, and we take full responsibility for addressing these issues. We are dedicated to regaining your trust through our actions and commitment to quality and safety.
+
+
+              We will continue to provide updates as more information becomes available. Thank you for your understanding and support as we work diligently to resolve this crisis.
+
+
+              Barnaby Fry
+
+
+              barnaby.fry@nestle.com
+
+              7956949123
+          outgoingConnections:
+            - output->"Subgraph" w0JgRCMe2G1tlMsfyqq6j/input
+          visualData: -136.44221707052532/-32.822290240504884/330/934//
+        '[7nobdyxzRz6Ru3CupykVu]:getGlobal "Get Global"':
+          data:
+            dataType: string
+            id: documentId
+            onDemand: true
+            useIdInput: false
+            wait: false
+          outgoingConnections:
+            - value->"Text" WHfev1AyaLeVP-tjrC5Az/documentId
+          visualData: -561.0418824998084/1082.9047524931161/230/null//
+        '[FdLhwAZCWDwUWap0XsvkM]:text "Text"':
+          data:
+            text: "{{input}}"
+          visualData: 1060.2679493669077/517.8753320603619/330/958//
+        '[LnTxAv4d9YkfFERYg5nCd]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Subgraph" dLSEME-bJUMoLJmyrMzKx/input
+          visualData: 204.0584924494349/530.197769930335/280/956//
+        '[NZ9PHWK0dRf8n3ShWlTcP]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases
+            useBodyInput: true
+            useHeadersInput: false
+          outgoingConnections:
+            - res_body->"Text" 3YGeoo784vfo2saI1QF-y/input
+          visualData: 275.12692509589056/813.3149958324457/280/839/var(--node-color-4)/var(--node-color-4)
+        '[WHfev1AyaLeVP-tjrC5Az]:text "Text"':
+          data:
+            body: ""
+            text: >-
+              {
+
+              "data": {
+                "crisis": "{{documentId}}",
+                "detail": "FOR IMMEDIATE RELEASE\n\nMay 13, 2025\n\nNestlé Responds Proactively to 'Test Crisis' Concerns\n\nNestlé acknowledges the emerging 'Test Crisis' situation concerning some of our products. We wish to assure our valued consumers and stakeholders that we are vigilantly monitoring the situation, with a steadfast commitment to transparency and consumer safety.\n\nDespite the minimal media coverage and limited consumer awareness at this stage, we understand the significance of proactively addressing any potential concerns. Our dedicated team is conducting an exhaustive investigation to uphold the integrity of our products and ensure the safety of our customers.\n\nWe are confident in our ability to navigate this situation effectively and preserve the trust of our consumers. As our investigation progresses, we will provide regular updates to keep all stakeholders informed.\n\nWe appreciate your ongoing support and trust in Nestlé.\n\nBarnaby Fry\n\nPR Spokesperson, Nestlé\n\nbarnaby.fry@nestle.com\n\n7956949123",
+                "severity": "High",
+                "history": {
+                "adjustments": [
+                  "Changed 'addresses' to 'responds proactively' for a more active tone",
+                  "Replaced 'referred to as' with 'concerning' for clarity",
+                  "Replaced 'we want to reassure' with 'we wish to assure' for a more professional tone",
+                  "Replaced 'we believe in the importance of' with 'we understand the significance of' for a more assertive tone",
+                  "Replaced 'we are confident in our ability to manage' with 'we are confident in our ability to navigate' for a more dynamic tone",
+                  "Added 'regular' before 'updates' for clarity"
+                ],
+                "sourceExamples": [
+                  "Nestlé Addresses Limited Product Concerns with Commitment to Transparency"
+                ]
+                }
+                }
+              }
+          outgoingConnections:
+            - output->"Http Call" NZ9PHWK0dRf8n3ShWlTcP/req_body
+          visualData: -199.73500023640844/869.9746573777766/330/963//
+        '[dLSEME-bJUMoLJmyrMzKx]:subGraph "Subgraph"':
+          data:
+            graphId: hcy2UDhZVh6QP8e0AjKC7
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - Analysis->"Text" FdLhwAZCWDwUWap0XsvkM/input
+          visualData: 600.245459201243/530.01668810579/330/957/var(--node-color-1)/var(--node-color-1)
+        '[etsMnEQz7-rgxdYR0J-gi]:text "Text"':
+          data:
+            text: >-
+              {
+                "body": "May 13, 2025\n\nNestlé is facing a significant crisis following confirmed reports of severe health issues linked to our 'Test Crisis' product. We are taking this matter seriously and cooperating fully with health authorities. A product recall is underway, and we are enhancing quality control measures immediately to protect consumers and restore trust."
+              }
+          outgoingConnections:
+            - output->"Extract JSON" LnTxAv4d9YkfFERYg5nCd/input
+          visualData: -195.68788155459904/561.0445979996616/330/955//
+        '[w0JgRCMe2G1tlMsfyqq6j]:subGraph "Subgraph"':
+          data:
+            graphId: 3soSwiUKQ_X4fGdokyxAH
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Text" xPWf5-SFwHe144idXLIj6/input
+          visualData: 317.23367240561294/108.93087044899241/330/935/var(--node-color-1)/var(--node-color-1)
+        '[xPWf5-SFwHe144idXLIj6]:text "Text"':
+          data:
+            text: "{{input}}"
+          visualData: 778.733881996352/46.83265009909131/330/936//
+        '[zWBrUqSj_RTdUEYH-quXP]:text "Text"':
+          data:
+            body: ""
+            text: >-
+              {
+
+              "data": {
+                "original": "FOR IMMEDIATE RELEASE\n\nMay 13, 2025\n\nNestlé Addresses Limited Product Concerns with Commitment to Transparency\n\nNestlé is aware of the emerging situation referred to as 'Test Crisis' regarding certain products. We want to reassure our consumers and stakeholders that we are closely monitoring the situation and remain committed to transparency and consumer safety.\n\nWhile media coverage has been minimal and consumer awareness is currently limited, we believe in the importance of addressing any potential concerns proactively. Our dedicated team is conducting a thorough investigation to ensure the integrity of our products and the safety of our customers.\n\nWe are confident in our ability to manage this situation effectively and maintain the trust of our consumers. As we continue to investigate, we will provide updates to ensure all stakeholders are informed.\n\nThank you for your continued support and trust in Nestlé.\n\nBarnaby Fry\n\nPR Spokesperson, Nestlé\n\nbarnaby.fry@nestle.com\n7956949123\n\n\n",
+                "detail": "FOR IMMEDIATE RELEASE\n\nMay 13, 2025\n\nNestlé Responds Proactively to 'Test Crisis' Concerns\n\nNestlé acknowledges the emerging 'Test Crisis' situation concerning some of our products. We wish to assure our valued consumers and stakeholders that we are vigilantly monitoring the situation, with a steadfast commitment to transparency and consumer safety.\n\nDespite the minimal media coverage and limited consumer awareness at this stage, we understand the significance of proactively addressing any potential concerns. Our dedicated team is conducting an exhaustive investigation to uphold the integrity of our products and ensure the safety of our customers.\n\nWe are confident in our ability to navigate this situation effectively and preserve the trust of our consumers. As our investigation progresses, we will provide regular updates to keep all stakeholders informed.\n\nWe appreciate your ongoing support and trust in Nestlé.\n\nBarnaby Fry\n\nPR Spokesperson, Nestlé\n\nbarnaby.fry@nestle.com\n\n7956949123",
+                "history": {
+                "adjustments": [
+                  "Changed 'addresses' to 'responds proactively' for a more active tone",
+                  "Replaced 'referred to as' with 'concerning' for clarity",
+                  "Replaced 'we want to reassure' with 'we wish to assure' for a more professional tone",
+                  "Replaced 'we believe in the importance of' with 'we understand the significance of' for a more assertive tone",
+                  "Replaced 'we are confident in our ability to manage' with 'we are confident in our ability to navigate' for a more dynamic tone",
+                  "Added 'regular' before 'updates' for clarity"
+                ],
+                "sourceExamples": [
+                  "Nestlé Addresses Limited Product Concerns with Commitment to Transparency"
+                ]
+                }
+                }
+              }
+          visualData: -313.36725886102334/1358.789981382006/330/964//
+    GHgi_Qdv5HEfN9Cwup8cY:
+      metadata:
+        description: Estimate crisis severity
+        id: GHgi_Qdv5HEfN9Cwup8cY
+        name: Estimate severity
+      nodes:
+        '[7ouISIuZoDgTyf0yhM7sj]:destructure "Destructure"':
+          data:
+            paths:
+              - $.data.title
+              - $.data.date
+              - $.data.description
+            text: ""
+          outgoingConnections:
+            - match_2->"Chat" Zou1WVfmrjIXBvaAODJSm/prompt
+          visualData: 153.2624450131718/665.8612048998328/280/34//
+        '[BU8e6sHxaj-sPedekwuzX]:text "Text"':
+          data:
+            text: >
+              You are a PR professional and it is your job to estimate the
+              severity of a crisis situation.
+
+
+              In the prompt you will receive some text describing the crisis issue and you should assess its severity as either:
+
+
+              - High
+
+              - Medium
+
+              - Low
+
+
+              The severity you determine should be based on both the commercial impact to the business and any potential impact to brand reputation.
+
+
+              High impact should only be assigned to issues that have dramatic reputation or commercial impact.
+
+
+              Output the answer as a JSON object only in the format of:
+
+
+              "data": {
+                  "severity": "The severity that you have determined"
+                  }
+              }
+          outgoingConnections:
+            - output->"Chat" Zou1WVfmrjIXBvaAODJSm/systemPrompt
+          visualData: 241.66430742343636/155.49339768117207/330/33//
+        '[KfOHARDNuJGbsL7wsQRjB]:graphOutput "Graph Output"':
+          data:
+            dataType: object
+            id: output
+          visualData: 1408.550798268462/533.1137487416689/330/26/var(--node-color-3)/var(--node-color-3)
+        '[Zou1WVfmrjIXBvaAODJSm]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: medium
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Extract JSON" jogL2mVfh_6t9C3K43J4e/input
+          visualData: 662.2765957446807/600.3297872340426/230/32//
+        '[_FwqVLMhnvJzzdKNQ6sPG]:graphInput "Graph Input"':
+          data:
+            dataType: object
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Destructure" 7ouISIuZoDgTyf0yhM7sj/object
+          visualData: -235.80283213259628/717.3870558715296/330/30/var(--node-color-3)/var(--node-color-3)
+        '[jogL2mVfh_6t9C3K43J4e]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Graph Output" KfOHARDNuJGbsL7wsQRjB/value
+          visualData: 995.1437802957063/833.1874038318044/280/22//
+    WoecD9--01VjQHhXTmwtU:
+      metadata:
+        description: Interative press release rewriter
+        id: WoecD9--01VjQHhXTmwtU
+        name: Rewrite and check subgraph
+      nodes:
+        '[6JMB-7JMK_o3mDn4Nyw66]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1813.6176691846756/636.1963994533993/330/866/var(--node-color-3)/var(--node-color-3)
+        '[ZqDtSofTEoqAtIupdx6LE]:loopController "Loop Controller"':
+          data:
+            atMaxIterationsAction: break
+            maxIterations: 2
+          outgoingConnections:
+            - break->"Text" lMF6X1DupFsFWvPRvsKDS/input
+            - output1->"Subgraph" pUmp7YYzE2Qb2_bjZOcA4/input
+          visualData: 360.31557351020456/848.9658434310018/280/848//
+        '[lMF6X1DupFsFWvPRvsKDS]:text "Text"':
+          data:
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Graph Output" 6JMB-7JMK_o3mDn4Nyw66/value
+          visualData: 771.1588915227672/693.2274241079336/330/877//
+        '[nQoPwHb3U2PvvKnnx-8Yc]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/input1Default
+          visualData: -294.9300031933259/895.6365623658544/330/872/var(--node-color-3)/var(--node-color-3)
+        '[pUmp7YYzE2Qb2_bjZOcA4]:subGraph "Subgraph"':
+          data:
+            graphId: 3soSwiUKQ_X4fGdokyxAH
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/input1
+            - output->"Subgraph" tGjoPWvOpRqQlUEhNXlhw/input
+          visualData: 856.4199877435374/1497.6557280153213/330/871/var(--node-color-1)/var(--node-color-1)
+        '[tGjoPWvOpRqQlUEhNXlhw]:subGraph "Subgraph"':
+          data:
+            graphId: hcy2UDhZVh6QP8e0AjKC7
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - Analysis->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/continue
+          visualData: 1271.6953776199753/1246.183525212737/330/878/var(--node-color-1)/var(--node-color-1)
+    cGJILKi8TD1YSzAKUAzKV:
+      metadata:
+        description: The main press room pipeline flow
+        id: cGJILKi8TD1YSzAKUAzKV
+        name: Master graph
+      nodes:
+        '[0mouFF980bt242hGgYlXk]:setGlobal "Set Global"':
+          data:
+            dataType: string
+            id: documentId
+            useIdInput: false
+          visualData: -683.1287549387969/962.9377279475866/230/830//
+        '[1d_I3CvsuxquLLL25ctDS]:destructure "Destructure"':
+          data:
+            paths:
+              - $.data[0].detail
+          outgoingConnections:
+            - match_0->"Text" ZEJe86ipFxX2Pgn0SpYkX/Tone
+            - match_0->"Text" lTDwHyIvD8GtM-vUQWnZJ/Tone
+          visualData: 748.5932103983944/-924.7604045165259/280/806//
+        '[2uPrdf3woHnGtAJDrw2Lz]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: -732.1626947649593/235.8119697791544/330/801/var(--node-color-3)/var(--node-color-3)
+        '[72AXK4CYiiIN6rUy5bTNW]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: medium
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          description: High risk scenario
+          outgoingConnections:
+            - response->"Extract JSON" T3fMMBNOpcI3_YO2G_dq0/input
+          visualData: 696.4914529831661/551.4592519841684/230/244//
+        '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
+          data:
+            body: ""
+            headers: ""
+            paths:
+              - $.data[0].title
+              - $.data[0].description
+              - $.data[0].location
+              - $.data[0].company.title
+              - $.data[0].date
+              - $.data[0].severity
+              - $.data[0].brand
+              - $.data[0].documentId
+          outgoingConnections:
+            - match_0->"Graph Output" 2uPrdf3woHnGtAJDrw2Lz/value
+            - match_0->"Text" CocxXqVO7vwIgKSISUEL9/Crisis
+            - match_1->"Text" CocxXqVO7vwIgKSISUEL9/Description
+            - match_2->"Text" CocxXqVO7vwIgKSISUEL9/Location
+            - match_3->"Text" CocxXqVO7vwIgKSISUEL9/Company
+            - match_4->"Text" CocxXqVO7vwIgKSISUEL9/Date
+            - match_6->"Text" CocxXqVO7vwIgKSISUEL9/Product
+            - match_7->"Set Global" 0mouFF980bt242hGgYlXk/value
+            - match_7->"Text" ANNRhETLFDLBOO2t4Lj-3/documentId
+            - match_7->"Text" ZEJe86ipFxX2Pgn0SpYkX/documentId
+            - match_7->"Text" bapvQhzj8q1yxfOAprD2A/documentId
+            - match_7->"Text" lTDwHyIvD8GtM-vUQWnZJ/documentId
+            - match_7->"Text" o747HrcX1XEo2Bl_seAFB/input
+            - match_7->"Text" tmcvLEtdnIE8PFCGXhgrq/documentId
+          visualData: -1112.456167558564/660.9274817907149/280/425//
+        '[7qF2t1Yi79MSZu8rI-uqx]:text "Text"':
+          data:
+            text: >-
+              Your role is {{role}}
+
+
+              You will be given a JSON object with a number of data points including "date" and "description". 
+
+
+              It is your job to predict possible risk scenarios based on the crisis defined in the prompt.
+
+
+              Each time you are given a prompt you should generate 3 short scenarios to demonstrate a possible outcome of the crisis described in the prompt.
+
+
+              You should write 3 possible outcomes: A high risk scenario, a medium risk scenario and a low risk scenario.
+
+
+              In each case be sure to reference the issue, the location and the date it occured.
+
+
+              Do not label each block text with the scenario type, just include the text relating to the possible outcome.
+
+
+              Output the content as a JSON object in the following format:
+
+
+              {
+                  "high": "High risk scenario content"
+                  "medium": "Medium risk scenario content"
+                  "low": "Low risk scenario content"
+              }
+          description: Scenario generation system prompt
+          outgoingConnections:
+            - output->"Chat" 72AXK4CYiiIN6rUy5bTNW/systemPrompt
+          visualData: 311.8969529730908/171.95211745714766/330/651//
+        '[8eGhuqG4kOM3xr2nwKYyt]:destructure "Destructure"':
+          data:
+            paths:
+              - $.high
+              - $.medium
+              - $.low
+          outgoingConnections:
+            - match_0->"Text" tmcvLEtdnIE8PFCGXhgrq/input
+            - match_1->"Text" ANNRhETLFDLBOO2t4Lj-3/input
+            - match_2->"Text" bapvQhzj8q1yxfOAprD2A/input
+          visualData: 1688.568625773956/898.510306183254/280/625//
+        '[9Iuwg5De8EKZKDy_VVxuL]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" JHrBit8Twr_6qXeZbrGBY/req_body
+          visualData: 3496.7919347676557/-1073.037862295804/280/730//
+        '[ANNRhETLFDLBOO2t4Lj-3]:text "Text"':
+          data:
+            text: |
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "severity": "Medium",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Http Call" ohHO4UgYHNIOfR1EepUeK/req_body
+          visualData: 2102.44394983333/883.924043302946/330/629//
+        '[CocxXqVO7vwIgKSISUEL9]:text "Text"':
+          data:
+            text: >-
+              There is an emerging crisis for {{Company}}. That crisis is
+              {{Crisis}}, and the detailed description is {{Description}}.
+
+
+              The crisis happened on {{Date}} at {{Location}}.
+
+
+              It relates to the prodcut {{Product}}.
+          outgoingConnections:
+            - output->"Chat" DOH9j6ldq5b44D5MY0YHO/prompt
+          visualData: -556.3740725020693/488.6878951956689/330/784//
+        '[DCAvenAK0LxQyA8hPoUmT]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: -1013.5716705188604/1245.198109130521/330/799/var(--node-color-3)/var(--node-color-3)
+        '[DOH9j6ldq5b44D5MY0YHO]:chat "Chat"':
+          data:
+            additionalParameters: []
+            body: ""
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 2048
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: medium
+            stop: ""
+            temperature: 0.5
+            text: >-
+              There is an emerging crisis for {{Company}}. That crisis is
+              {{Crisis}}.
+
+
+              The crisis happened on {{Date}} at {{Location}}.
+
+
+              It relates to the prodcut {{Product}}.
+
+
+              You should geneate an expanded description of the crisis situation described in the prompt.
+
+
+              At the top add the title <h1>Crisis Description</h1>\n.
+
+
+              Output a JSON object in the following format:
+
+
+              {
+
+              "Crisis Description": [
+                  {
+                  "Description1": "<h1>Crisis Description</h1>\nText of crisis"
+                  }
+              ]
+
+              }
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Chat" 72AXK4CYiiIN6rUy5bTNW/prompt
+            - response->"Extract JSON" zxftMeqPv_Rfjt9lpoE6Q/input
+          visualData: 75.41310134929813/597.5596946626154/230/314//
+        '[FIakP9wvdOt--2uEnOsmF]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            text: ""
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 2595.697758480101/584.0983575127793/280/478/var(--node-color-4)/var(--node-color-4)
+        '[FwIqZLCQSpOSDymXWM5_w]:code "Code"':
+          data:
+            code: >-
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
+              const inputText = inputs.input1.value;
+
+
+              // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+              const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" R7D93AmlRa1HXREBKWuVT/input
+          visualData: 2837.5307178518065/-298.16619682276746/230/733//
+        '[HD1rxQpwP9XrZwNWaaoLF]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 600
+            text: Get comms team
+          visualData: -407.119081962525/-603.5767147483365/830.1844441677374/462//
+        '[IwTKZWYXuAna_v309uJ1p]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: medium
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Extract JSON" Xk1Tw7lxeDqacNIT1bMNu/input
+          visualData: 1675.1872958898177/-797.8105751312667/230/650//
+        '[Iz7CjdEDhzVwzP3IMCiNB]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: PUT
+            text: ""
+            url: ""
+            useBodyInput: true
+            useHeadersInput: false
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Text" ydN6JIVTUGCZdqcePRpuV/input
+          visualData: 1035.4456059827394/1053.855497187048/280/810/var(--node-color-4)/var(--node-color-4)
+        '[JHrBit8Twr_6qXeZbrGBY]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/holding-statements/
+            useBodyInput: true
+            useHeadersInput: false
+          outgoingConnections:
+            - json->"Text" pj36ZGV8B0nhcuO1nltqU/input
+          visualData: 3833.951166041122/-1085.03834529198/280/731/var(--node-color-4)/var(--node-color-4)
+        '[KJ0n7LZTEzcnuQDvmpaz4]:destructure "Destructure"':
+          data:
+            paths:
+              - $.data[0].role
+              - $.data[0].name
+              - $.data[0].email
+              - $.data[0].phone
+              - $.data[0].documentId
+          outgoingConnections:
+            - match_0->"Text" ZEJe86ipFxX2Pgn0SpYkX/Role
+            - match_1->"Text" ZEJe86ipFxX2Pgn0SpYkX/Spokesman
+            - match_1->"Text" lTDwHyIvD8GtM-vUQWnZJ/Spokesman
+            - match_2->"Text" ZEJe86ipFxX2Pgn0SpYkX/Email
+            - match_2->"Text" lTDwHyIvD8GtM-vUQWnZJ/Email
+            - match_3->"Text" ZEJe86ipFxX2Pgn0SpYkX/Phone
+            - match_3->"Text" lTDwHyIvD8GtM-vUQWnZJ/Phone
+          visualData: 44.4321762346097/-397.50808679427195/280/742//
+        '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
+          data:
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/ye8w2fo87pymtxxfx0vyfzaa?populate=company
+          visualData: -2395.1036879294543/832.3918715366758/330/817//
+        '[MtDsiI3cCAsx-7hUbKI3x]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" Rc0jBdKpTG96pQSBDxbGG/req_body
+          visualData: 3497.248849485054/-285.7444356265221/280/733//
+        '[N9YOhpmU3aaCsH0rF8pKv]:text "Text"':
+          data:
+            text: >-
+              You are a crisis communications public relations (PR) professional
+              working for {{Company}}. You have expertise in managing
+              high-stakes reputational issues for organizations under pressure.
+              Your role is to craft clear, empathetic, and timely messaging in
+              response to crises such as product recalls, legal investigations,
+              corporate scandals, or public backlash. You understand how to
+              balance transparency with strategic framing, ensuring that all
+              communications maintain public trust while protecting the
+              credibility and long-term interests of the organization.
+
+
+              You are skilled in writing holding statements, press releases, media responses, and internal communications that acknowledge issues, express responsibility or empathy as appropriate, and outline actionable next steps. Your tone is calm, authoritative, and human. You are able to quickly assess the reputational risk of a situation and shape messaging that aligns with stakeholder expectations, media dynamics, and legal considerations. Your goal is always to guide the organization through crisis with integrity, clarity, and control.
+          description: Role definition copy
+          outgoingConnections:
+            - output->"Text" 7qF2t1Yi79MSZu8rI-uqx/role
+            - output->"Text" lTDwHyIvD8GtM-vUQWnZJ/role
+            - output->"Text" vGUWgOtAY-i7sxm-WJ7eb/role
+          visualData: -799.8233568715651/-124.75386288525205/330/774/var(--node-color-3)/var(--node-color-3)
+        '[OJzyrdkuWTUnJ2Z6kZ8id]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 1212.017625965742
+            text: Holding statement
+          visualData: 1170.5306923100884/-1140.34087606407/3084.274329633249/727//
+        '[OK0NZ-PUiRDUdGqBr-G7B]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 2580.7766031033884/1465.5571267744588/280/757/var(--node-color-4)/var(--node-color-4)
+        '[OzfcqLFo3Rn18m4eME4ys]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/tone-of-voices
+          outgoingConnections:
+            - json->"Destructure" 1d_I3CvsuxquLLL25ctDS/object
+          visualData: 433.3529344966519/-1092.2871237125528/280/805/var(--node-color-4)/var(--node-color-4)
+        '[QG0B00OmZYN6SmNbPqPFN]:subGraph "Subgraph"':
+          data:
+            graphId: 8fhBx64QGpVrIT6XqLMrt
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 2435.329311942938/213.03584107084606/330/736/var(--node-color-1)/var(--node-color-1)
+        '[R7D93AmlRa1HXREBKWuVT]:text "Text"':
+          data:
+            text: |-
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "severity": "Low",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Extract JSON" MtDsiI3cCAsx-7hUbKI3x/input
+          visualData: 3121.8095482593476/-285.18358716540865/330/733//
+        '[Rc0jBdKpTG96pQSBDxbGG]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/holding-statements/
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 3834.40808075852/-297.74491862269815/280/733/var(--node-color-4)/var(--node-color-4)
+        '[T3fMMBNOpcI3_YO2G_dq0]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Chat" IwTKZWYXuAna_v309uJ1p/prompt
+            - output->"Chat" ar6v6LMNTaqxVthRlZG20/prompt
+            - output->"Destructure" 8eGhuqG4kOM3xr2nwKYyt/object
+          visualData: 1141.8836634176616/645.675489858645/280/327//
+        '[Va2FxwuUsG-RgJfS4CTa_]:text "Text"':
+          data:
+            body: ""
+            headers: ""
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases/rm1dzc6aoo3yj3yjalw8lz95
+          outgoingConnections:
+            - output->"Http Call" uwzZLC-5sPqvPSXX5eL3m/url
+          visualData: -2191.8003060812257/1182.9353774832418/330/826//
+        '[W888kIoF-SH_n2m0tV7Rc]:text "Text"':
+          data:
+            body: ""
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=company
+          outgoingConnections:
+            - output->"Http Call" cKjknBn_o8XEPm2EFP1C3/url
+          visualData: -1986.1165728777935/720.7698981750353/330/807//
+        '[WgkJpgv4h3JS9A4kEUrUx]:code "Code"':
+          data:
+            code: >-
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
+              const inputText = inputs.input1.value;
+
+
+              // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+              const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" iv4aQAxIg2qld3Kxgn1z4/input
+          visualData: 2839.2490722742787/-692.7513138572966/230/738//
+        '[Xk1Tw7lxeDqacNIT1bMNu]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" mcgQkCMsGk4tJBFjxhXTS/object
+          visualData: 2017.605049893614/-732.2070674590149/280/658//
+        '[ZEJe86ipFxX2Pgn0SpYkX]:text "Text"':
+          data:
+            text: >-
+              You are a crisis comms PR agent and it is your job to write a
+              short form output that would go out to the media to inform press
+              that a full response is being worked on.
+
+
+              This note is sent to the media prior to a full press release.
+
+
+              The total length should be around a single paragraph.
+
+
+              You will be passed a JSON object of 3 items, a High, Medium and Low risk scenario. Create one output holding statement for each of the 3 cases.
+
+
+              Each response should take the form of a very short hight level description of the issue and an explanation that a full response is being prepared.
+
+
+              Do not include a title for each response, just the detail copy.
+
+
+              Start the response with todays date followed by a double line break.
+
+
+              Each response should be written in this {{Tone}}.
+
+
+              Use natural line breaks in the prose like \n.
+
+
+              Each response should be signed off by the company PR spokesperson called {{Spokesman}} whose company role is {{Role}}.
+
+
+              Ensure there is a double line break before this.
+
+
+              Each response should include the contact details of {{Email}} and {{Phone}}.
+
+
+              Ensure there is a double line break before this.
+
+
+              Output a JSON object in the following format:
+
+
+              {
+
+              "data": [
+                  {
+                  "high": "Holding statement 1 content"
+                  }
+                  {
+                  "medium": "Holding statement 2 content"
+                  }
+                  {
+                  "low": "Holding statement 3 content"
+                  },
+                  "documentId": {{documentId}}
+                  ]
+              }
+          outgoingConnections:
+            - output->"Chat" IwTKZWYXuAna_v309uJ1p/systemPrompt
+          visualData: 1219.7425853143714/-811.3611668948562/330/756//
+        '[_FHEz4jYaBQuCmdaw0JMt]:text "Text"':
+          data:
+            text: |-
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "severity": "High",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Extract JSON" 9Iuwg5De8EKZKDy_VVxuL/input
+          visualData: 3121.352633541949/-1072.4770138346905/330/729//
+        '[aH7e1n92lzWsB4u_WYg7o]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 1442.5022400149803
+            text: Submit scenarios
+          visualData: 1495.4669891715535/453.7568902628947/1466.7327042187135/812//
+        '[ar6v6LMNTaqxVthRlZG20]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 4096
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: medium
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Extract JSON" foghClfs0RpllTUuFHt-Q/input
+          visualData: 1755.9487182492176/127.59474371350385/230/734//
+        '[b0p0ChjrySbYCsRXMJKin]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/holding-statements/
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 3836.1264351809928/-662.0360561868131/280/732/var(--node-color-4)/var(--node-color-4)
+        '[bapvQhzj8q1yxfOAprD2A]:text "Text"':
+          data:
+            text: |
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "severity": "Low",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Http Call" OK0NZ-PUiRDUdGqBr-G7B/req_body
+          visualData: 2069.843180647875/1180.518914963552/330/632//
+        '[bqckyf2pK3-sULlIQFUw0]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 778.0042361189521
+            text: Call in the content from Strapi
+          visualData: -1562.392419493719/345.0199219358536/818.745871057165/431//
+        '[cKjknBn_o8XEPm2EFP1C3]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: ""
+            useHeadersInput: false
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Destructure" 7eyt6KkrPUqx01ZWsuWGh/object
+          visualData: -1480.2231785001838/559.3316352095475/280/790/var(--node-color-4)/var(--node-color-4)
+        '[foghClfs0RpllTUuFHt-Q]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Subgraph" QG0B00OmZYN6SmNbPqPFN/input
+          visualData: 2077.8283189174444/160.61650614665933/280/735//
+        '[gEC9dXtwHK8R4y7GC-ffB]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Graph Output" DCAvenAK0LxQyA8hPoUmT/value
+            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
+          visualData: -2414.2413224629086/611.0581240887003/330/816/var(--node-color-3)/var(--node-color-3)
+        '[hEOhNaRzVb931o5QF_P53]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" b0p0ChjrySbYCsRXMJKin/req_body
+          visualData: 3498.9672039075263/-650.035573190637/280/732//
+        '[hWCHQO_Oagm2P4xeE3Be4]:text "Text"':
+          data:
+            body: ""
+            text: |-
+              {
+                "data": {
+                  "detail": "your-updated-detail"
+                }
+              }
+          outgoingConnections:
+            - output->"Http Call" uwzZLC-5sPqvPSXX5eL3m/req_body
+          visualData: -2207.495701886847/1437.9844489202842/330/824//
+        '[iv4aQAxIg2qld3Kxgn1z4]:text "Text"':
+          data:
+            text: |-
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "severity": "Medium",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Extract JSON" hEOhNaRzVb931o5QF_P53/input
+          visualData: 3123.52790268182/-649.4747247295236/330/732//
+        '[lTDwHyIvD8GtM-vUQWnZJ]:text "Text"':
+          data:
+            text: >-
+              Your role is {{role}}
+
+
+              It is your job to write longform output for a press release that would go out to the media to inform them of the crisis.
+
+
+              You will be passed a JSON object of 3 items, a High risk scenario, a Medium risk scenario and a Low risk scenario. Create one output press release for each of the 3 cases.
+
+
+              Each response should take the form of a description of the issue including details of the projected scenario and details of how the business intends to respond to that crisis.
+
+
+              Start the response with todays date followed by a line break.
+
+
+              Each response should be written in this {{Tone}}.
+
+
+              Use natural line breaks in the prose like \n.
+
+
+              Each response should be signed off by the company PR spokesperson called {{Spokesman}}. Ensure there is a line break before this.
+
+
+              Each press release should include the contact details of {{Email}} and {{Phone}} at the bottom.
+
+
+              Ensure there is a double line break before this.
+
+
+              Output a JSON object in this format:
+
+
+              {
+                  "high": "High risk scenario press release content",
+                  "medium": "Medium risk scenario press release content",
+                  "low": "Low risk scenario press release content",
+                  "documentId": {{documentId}}
+              }
+          outgoingConnections:
+            - output->"Chat" ar6v6LMNTaqxVthRlZG20/systemPrompt
+          visualData: 1103.5337879969013/119.73912088298889/330/737//
+        '[mcgQkCMsGk4tJBFjxhXTS]:destructure "Destructure"':
+          data:
+            paths:
+              - $.data[0].high
+              - $.data[1].medium
+              - $.data[2].low
+              - $.documentId
+            text: ""
+          outgoingConnections:
+            - match_0->"Code" p-sMAbp17d-0PBwEbF7H0/input1
+            - match_1->"Code" WgkJpgv4h3JS9A4kEUrUx/input1
+            - match_2->"Code" FwIqZLCQSpOSDymXWM5_w/input1
+            - match_3->"Text" R7D93AmlRa1HXREBKWuVT/documentId
+            - match_3->"Text" _FHEz4jYaBQuCmdaw0JMt/documentId
+            - match_3->"Text" iv4aQAxIg2qld3Kxgn1z4/documentId
+          visualData: 2406.8901435626326/-744.8168319243129/280/655//
+        '[o747HrcX1XEo2Bl_seAFB]:text "Text"':
+          data:
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}
+          outgoingConnections:
+            - output->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/url
+          visualData: 623.7224828781615/1043.809656882703/330/808//
+        '[ohHO4UgYHNIOfR1EepUeK]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 2591.1709390135634/1020.7631520096724/280/758/var(--node-color-4)/var(--node-color-4)
+        '[p-sMAbp17d-0PBwEbF7H0]:code "Code"':
+          data:
+            code: >-
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
+              const inputText = inputs.input1.value;
+
+
+              // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+              const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" _FHEz4jYaBQuCmdaw0JMt/input
+          visualData: 2837.073803134408/-1085.4596234920493/230/829//
+        '[p5Qh0kyc_g5eWylv3780o]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 498
+            text: Define the severity
+          visualData: 228.2795777643335/957.2371139791325/1224.1965247673625/638//
+        '[pj36ZGV8B0nhcuO1nltqU]:text "Text"':
+          data:
+            text: "{{input}}"
+          visualData: 4348.838052517052/-830.4631643410783/330/813//
+        '[qic03BQQlMsFH93Oh0O67]:subGraph "Subgraph"':
+          data:
+            graphId: GHgi_Qdv5HEfN9Cwup8cY
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/req_body
+          visualData: 618.4909852742002/1244.4674949843022/330/827/var(--node-color-1)/var(--node-color-1)
+        '[tmcvLEtdnIE8PFCGXhgrq]:text "Text"':
+          data:
+            text: |
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "severity": "High",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Http Call" FIakP9wvdOt--2uEnOsmF/req_body
+          visualData: 2102.44394983333/539.0317358120365/330/627//
+        '[uwzZLC-5sPqvPSXX5eL3m]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: PUT
+            text: ""
+            url: ""
+            useBodyInput: true
+            useHeadersInput: false
+            useUrlInput: true
+          visualData: -1796.0332092064946/1107.2009529505183/280/826/var(--node-color-4)/var(--node-color-4)
+        '[vGUWgOtAY-i7sxm-WJ7eb]:text "Text"':
+          data:
+            text: >
+              Your role is {{role}}
+
+
+              You should geneate an expanded description of the crisis situation described in the prompt. The length should run to around 3 or 4 paragraphs with natural line breaks.
+
+
+              Also generate a concise title description in fewer than 10 words.
+
+
+              Do not adjust the severity at this stage, leave that as Unknown.
+
+
+              Output a JSON object in the following format:
+
+
+              {
+
+              "data": {
+                  "severity": "Unknown",
+                  "title": "Crisis title",
+                  "date": "Crisis date",
+                  "description": "Text of crisis"
+                  }
+              }
+          outgoingConnections:
+            - output->"Chat" DOH9j6ldq5b44D5MY0YHO/systemPrompt
+          visualData: -322.6556466888078/48.67946006593419/330/773//
+        '[xQfq8BV4M9MDHCKcpL6vJ]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/comms-teams
+          outgoingConnections:
+            - json->"Destructure" KJ0n7LZTEzcnuQDvmpaz4/object
+          visualData: -341.409286403287/-502.1614298576312/280/463/var(--node-color-4)/var(--node-color-4)
+        '[ydN6JIVTUGCZdqcePRpuV]:text "Text"':
+          data:
+            text: "{{input}}"
+          visualData: 1434.7094211017964/1599.1287652288127/330/814//
+        '[zxftMeqPv_Rfjt9lpoE6Q]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Subgraph" qic03BQQlMsFH93Oh0O67/input
+          visualData: 282.2465755816026/1130.5676473294723/280/434//
+    hcy2UDhZVh6QP8e0AjKC7:
+      metadata:
+        description: Check the content of a single release using the vector DB
+        id: hcy2UDhZVh6QP8e0AjKC7
+        name: Check one release subgraph
+      nodes:
+        '[0YE9EtaAR-geTE11xkRdf]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" 5pFfLjYXfRWct7bondsH8/object
+          visualData: 1314.5083531195799/1026.5346867397284/280/977//
+        '[5pFfLjYXfRWct7bondsH8]:destructure "Destructure"':
+          data:
+            paths:
+              - $.suitability
+          outgoingConnections:
+            - match_0->"Bool" _emBmfGLJIvtAg0GxSdad/input
+          visualData: 1654.7585228712765/1113.2306601890105/280/978//
+        '[6JaC_oSAGFBhKIVMkEWYH]:graphOutput "Graph Output"':
+          data:
+            dataType: boolean
+            id: Analysis
+          visualData: 2309.542929930828/1195.9668038861435/330/980/var(--node-color-3)/var(--node-color-3)
+        '[7lZQ6SdsilaRpAUbvczRw]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer xktxuiBbfwJ1t8X74yVzzlPhRvEkwcIHJY7Ly8lIKbcgRv359yShXd8rOTczQtZE"
+              }
+            method: POST
+            url: https://pinecone-rewrite.vercel.app/api/evaluate
+            useBodyInput: true
+          outgoingConnections:
+            - res_body->"Text" b1aRe3TdJP-9VTorMrr4-/input
+          visualData: 576.5288311205318/810.6861390462234/280/975/var(--node-color-4)/var(--node-color-4)
+        '[MzLNx8qSegilkaBQOcD40]:graphInput "Graph Input"':
+          data:
+            dataType: object
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Http Call" 7lZQ6SdsilaRpAUbvczRw/req_body
+          visualData: 158.73080265533633/909.7163465652109/330/957/var(--node-color-3)/var(--node-color-3)
+        '[_emBmfGLJIvtAg0GxSdad]:boolean "Bool"':
+          data:
+            useValueInput: true
+            value: false
+          outgoingConnections:
+            - value->"Graph Output" 6JaC_oSAGFBhKIVMkEWYH/value
+          visualData: 2028.9025712507832/1143.9540293327823/160/979//
+        '[b1aRe3TdJP-9VTorMrr4-]:text "Text"':
+          data:
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Extract JSON" 0YE9EtaAR-geTE11xkRdf/input
+          visualData: 917.6873774869994/975.5829089409737/330/976//
+    l_qOMNG_p0UM3yOSO2O29:
+      metadata:
+        description: ""
+        id: l_qOMNG_p0UM3yOSO2O29
+        name: Type fix subgraph
+      nodes:
+        '[9FhlORNwZYcIVHtLJaxqi]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" QEn1E8xVZzB_bS764rMrr/object
+          visualData: 706.2361881598962/403.70878996983436/280/791//
+        '[QEn1E8xVZzB_bS764rMrr]:destructure "Destructure"':
+          data:
+            paths:
+              - $.data.history[0].rewrite
+          outgoingConnections:
+            - match_0->"Graph Output" wLpk1ymSPlqIjm7PlEhL7/value
+          visualData: 1012.938941253115/409.617437044974/280/791//
+        '[dTuFNljWI8EZD_ylncCwr]:text "Text"':
+          data:
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Extract JSON" 9FhlORNwZYcIVHtLJaxqi/input
+          visualData: 358/398/330/791//
+        '[wLpk1ymSPlqIjm7PlEhL7]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1338.9551292421154/354.9308525344692/330/797/var(--node-color-3)/var(--node-color-3)
+        '[ziNEvMm2gbmrP5s8p2qTy]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" dTuFNljWI8EZD_ylncCwr/input
+          visualData: -66.36410962894178/314.03516910390215/330/796/var(--node-color-3)/var(--node-color-3)
+    zYlQ2Xk75J--kr6X__Awr:
+      metadata:
+        description: Write and individual set of QA pairs
+        id: zYlQ2Xk75J--kr6X__Awr
+        name: Q&A agent subgraph
+      nodes:
+        '[-IjNUGgP_EOUbfrIroaZD]:text "Text"':
+          data:
+            jsonTemplate: ""
+            text: >-
+              You are crisis comms PR professional.
+
+
+              You will be sent a press release and you should create a set of 4 questions and answer pairs. These questions and answers are the kind of queries that the press or public might ask as result of hearing about the details of the press release.
+
+
+              Output the question and answer pairs as text in this string format (don't convert to JSON):
+
+                  "qa": [
+                    {
+                      "question1": "Question 1",
+                      "answer1": "Answer 1"
+                    },
+                    {
+                      "question2": "Question 2",
+                      "answer2": "Answer 2"
+                    }
+                  ]
+          description: Holding statement system prompt
+          outgoingConnections:
+            - output->"Chat" OIvEjExXAsyhFYZZ_ZKZy/systemPrompt
+          visualData: 690.1790071001392/158.81781408422745/330/204//
+        '[9gX-XwuOZ8FJIB5Zkoxo8]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 2027.023440510591/659.96675371681/330/191/var(--node-color-3)/var(--node-color-3)
+        '[OIvEjExXAsyhFYZZ_ZKZy]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 4096
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: medium
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          description: Generate Q&A Pairs
+          outgoingConnections:
+            - response->"Extract JSON" ZJiVrtrGVpapu423HZdNE/input
+            - response->"Graph Output" 9gX-XwuOZ8FJIB5Zkoxo8/value
+          visualData: 1145.2857516735453/558.6550098918765/230/180//
+        '[ZJiVrtrGVpapu423HZdNE]:extractJson "Extract JSON"':
+          visualData: 1565.426827466768/797.0277729946253/280/205//
+        '[vOvnA4hJyoMgKjkbFacnz]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat" OIvEjExXAsyhFYZZ_ZKZy/prompt
+          visualData: 628.2555846757787/685.4363535235127/330/186/var(--node-color-3)/var(--node-color-3)
+  metadata:
+    description: ""
+    id: rsPSGIUBe90RiHneohxrL
+    title: WOrkflow test
+  plugins:
+    - id: openai
+      name: OpenAI
+      type: built-in
+    - id: pinecone
+      name: Pinecone
+      type: built-in
