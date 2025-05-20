@@ -1,7 +1,8 @@
 {
-  "name": "rivet-node",
+  "name": "rivet-node-app",
   "version": "1.0.0",
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "build": "tsc"
   },
@@ -9,6 +10,7 @@
     "@ironclad/rivet-node": "^1.14.0"
   },
   "devDependencies": {
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.17"
   }
 }
