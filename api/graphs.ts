@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { parse } from 'yaml';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -13,9 +14,9 @@ export default async function handler(
   try {
     const filePath = path.resolve(__dirname, 'data', 'Master.rivet-project');
     const raw = await fs.readFile(filePath, 'utf-8');
-    const json = JSON.parse(raw);
+    const parsed = parse(raw); // 🔁 YAML parsing instead of JSON
 
-    const graphs = json.data?.graphs || {};
+    const graphs = parsed.data?.graphs || {};
     const result = Object.entries(graphs).map(([id, g]: [string, any]) => ({
       id,
       name: g?.metadata?.name || '(Untitled)',
