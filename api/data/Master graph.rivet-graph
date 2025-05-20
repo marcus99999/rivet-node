@@ -8,9 +8,7 @@ data:
     '[-V-I8p0COTSS5xt_lwOVJ]:toJson "To JSON"':
       data:
         indented: true
-      outgoingConnections:
-        - json->"Graph Output" YRSLFjfsmONldtkw8zePm/value
-      visualData: 937.1753673034285/1502.7524558234577/205/851//
+      visualData: 776.2293156944456/1525.9101610909372/205/853//
     '[0mouFF980bt242hGgYlXk]:setGlobal "Set Global"':
       data:
         dataType: string
@@ -540,9 +538,9 @@ data:
       visualData: 2017.605049893614/-732.2070674590149/280/658//
     '[YRSLFjfsmONldtkw8zePm]:graphOutput "Graph Output"':
       data:
-        dataType: any
-        id: output
-      visualData: 1220.8572568300533/1514.3313084571976/330/852/var(--node-color-3)/var(--node-color-3)
+        dataType: object
+        id: severity
+      visualData: 1054.1217789042005/1441.384536864637/330/854/var(--node-color-3)/var(--node-color-3)
     '[ZEJe86ipFxX2Pgn0SpYkX]:text "Text"':
       data:
         text: >-
@@ -886,8 +884,8 @@ data:
         useAsGraphPartialOutput: false
         useErrorOutput: false
       outgoingConnections:
+        - output->"Graph Output" YRSLFjfsmONldtkw8zePm/value
         - output->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/req_body
-        - output->"To JSON" -V-I8p0COTSS5xt_lwOVJ/data
       visualData: 618.4909852742002/1244.4674949843022/330/827/var(--node-color-1)/var(--node-color-1)
     '[tmcvLEtdnIE8PFCGXhgrq]:text "Text"':
       data:
