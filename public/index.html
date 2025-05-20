@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crisis Comms Centre Graph Execution</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    label, select, input, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    pre {
+      background: #f5f5f5;
+      padding: 1rem;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Crisis Comms Centre Graph Execution</h1>
+
+  <label for="prompt">Crisis ID</label>
+  <input type="text" id="prompt" value="ye8w2fo87pymtxxfx0vyfzaa" />
+
+  <label for="graph">Select Graph</label>
+  <select id="graph">
+    <option value="GHgi_Qdv5HEfN9Cwup8cY">Estimate Severity (GHgi_Qdv5HEfN9Cwup8cY)</option>
+  </select>
+
+  <button id="run">Run Graph</button>
+
+  <h2>Outputs</h2>
+  <pre id="output"></pre>
+
+  <h2>Errors</h2>
+  <pre id="error"></pre>
+
+  <script>
+    document.getElementById('run').addEventListener('click', async () => {
+      const prompt = document.getElementById('prompt').value;
+      const graph = document.getElementById('graph').value;
+
+      const res = await fetch('/api/estimate-severity', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer rivet-xyz-123'
+        },
+        body: JSON.stringify({ prompt, graph })
+      });
+
+      const json = await res.json();
+      document.getElementById('output').textContent = JSON.stringify(json.outputs || {}, null, 2);
+      document.getElementById('error').textContent = JSON.stringify(json.errors || {}, null, 2);
+    });
+  </script>
+</body>
+</html>
