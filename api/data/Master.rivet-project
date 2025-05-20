@@ -729,7 +729,7 @@ data:
             text: ""
           outgoingConnections:
             - match_2->"Chat" Zou1WVfmrjIXBvaAODJSm/prompt
-          visualData: 182.81660978947392/849.4081229842354/280/31//
+          visualData: 153.2624450131718/665.8612048998328/280/34//
         '[BU8e6sHxaj-sPedekwuzX]:text "Text"':
           data:
             text: >
@@ -864,10 +864,10 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - Analysis->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/continue
-          visualData: 1387.5011389967972/1284.4664215356534/330/870/var(--node-color-1)/var(--node-color-1)
+          visualData: 1271.6953776199753/1246.183525212737/330/878/var(--node-color-1)/var(--node-color-1)
     cGJILKi8TD1YSzAKUAzKV:
       metadata:
-        description: ""
+        description: The main press room pipeline flow
         id: cGJILKi8TD1YSzAKUAzKV
         name: Master graph
       nodes:

@@ -55,7 +55,7 @@
   <div id="partials" class="output-section"></div>
 
   <script>
-    const defaultGraphId = 'cGJILKi8TD1YSzAKUAzKV'; // Set your main graph ID here
+    const defaultGraphId = 'cGJILKi8TD1YSzAKUAzKV'; // Master graph ID
 
     async function loadGraphs() {
       const select = document.getElementById('graph');
@@ -64,16 +64,34 @@
         const data = await res.json();
 
         if (data.graphs && Array.isArray(data.graphs)) {
+          const master = data.graphs.find(g => g.id === defaultGraphId);
+          const subgraphs = data.graphs.filter(g => g.id !== defaultGraphId);
+
           select.innerHTML = '';
-          data.graphs.forEach(g => {
+
+          if (master) {
             const opt = document.createElement('option');
-            opt.value = g.id;
-            opt.textContent = `${g.name} (${g.id})`;
-            if (g.id === defaultGraphId) {
-              opt.selected = true;
-            }
+            opt.value = master.id;
+            opt.textContent = `Graph: ${master.name} (${master.id})`;
+            opt.title = master.description || '';
+            opt.selected = true;
             select.appendChild(opt);
-          });
+          }
+
+          if (subgraphs.length > 0) {
+            const divider = document.createElement('option');
+            divider.disabled = true;
+            divider.textContent = '────────── Subgraphs ──────────';
+            select.appendChild(divider);
+
+            subgraphs.forEach(g => {
+              const opt = document.createElement('option');
+              opt.value = g.id;
+              opt.textContent = `  ↳ Graph: ${g.name} (${g.id})`;
+              opt.title = g.description || '';
+              select.appendChild(opt);
+            });
+          }
         } else {
           select.innerHTML = '<option value="">No graphs found</option>';
         }
