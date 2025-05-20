@@ -532,11 +532,6 @@ data:
       outgoingConnections:
         - output->"Destructure" mcgQkCMsGk4tJBFjxhXTS/object
       visualData: 2017.605049893614/-732.2070674590149/280/658//
-    '[YRSLFjfsmONldtkw8zePm]:graphOutput "Graph Output"':
-      data:
-        dataType: string
-        id: severity
-      visualData: 1384.119078965784/1503.9103410868317/330/858/var(--node-color-3)/var(--node-color-3)
     '[ZEJe86ipFxX2Pgn0SpYkX]:text "Text"':
       data:
         text: >-
@@ -880,7 +875,6 @@ data:
         useAsGraphPartialOutput: false
         useErrorOutput: false
       outgoingConnections:
-        - output->"Graph Output" YRSLFjfsmONldtkw8zePm/value
         - output->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/req_body
       visualData: 618.4909852742002/1244.4674949843022/330/827/var(--node-color-1)/var(--node-color-1)
     '[tmcvLEtdnIE8PFCGXhgrq]:text "Text"':

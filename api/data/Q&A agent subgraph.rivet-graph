@@ -1,0 +1,85 @@
+version: 4
+data:
+  metadata:
+    description: Write and individual set of QA pairs
+    id: zYlQ2Xk75J--kr6X__Awr
+    name: Q&A agent subgraph
+  nodes:
+    '[-IjNUGgP_EOUbfrIroaZD]:text "Text"':
+      data:
+        jsonTemplate: ""
+        text: >-
+          You are crisis comms PR professional.
+
+
+          You will be sent a press release and you should create a set of 4 questions and answer pairs. These questions and answers are the kind of queries that the press or public might ask as result of hearing about the details of the press release.
+
+
+          Output the question and answer pairs as text in this string format (don't convert to JSON):
+
+              "qa": [
+                {
+                  "question1": "Question 1",
+                  "answer1": "Answer 1"
+                },
+                {
+                  "question2": "Question 2",
+                  "answer2": "Answer 2"
+                }
+              ]
+      description: Holding statement system prompt
+      outgoingConnections:
+        - output->"Chat" OIvEjExXAsyhFYZZ_ZKZy/systemPrompt
+      visualData: 690.1790071001392/158.81781408422745/330/204//
+    '[9gX-XwuOZ8FJIB5Zkoxo8]:graphOutput "Graph Output"':
+      data:
+        dataType: string
+        id: output
+      visualData: 2027.023440510591/659.96675371681/330/191/var(--node-color-3)/var(--node-color-3)
+    '[OIvEjExXAsyhFYZZ_ZKZy]:chat "Chat"':
+      data:
+        additionalParameters: []
+        cache: false
+        enableFunctionUse: false
+        headers: []
+        maxTokens: 4096
+        modalitiesIncludeAudio: false
+        modalitiesIncludeText: false
+        model: gpt-4o-mini
+        outputUsage: false
+        parallelFunctionCalling: true
+        reasoningEffort: medium
+        stop: ""
+        temperature: 0.5
+        top_p: 1
+        useAdditionalParametersInput: false
+        useAsGraphPartialOutput: true
+        useFrequencyPenaltyInput: false
+        useMaxTokensInput: false
+        useModelInput: false
+        usePredictedOutput: false
+        usePresencePenaltyInput: false
+        useReasoningEffortInput: false
+        useServerTokenCalculation: true
+        useStop: false
+        useStopInput: false
+        useTemperatureInput: false
+        useTopP: false
+        useTopPInput: false
+        useUseTopPInput: false
+        useUserInput: false
+      description: Generate Q&A Pairs
+      outgoingConnections:
+        - response->"Extract JSON" ZJiVrtrGVpapu423HZdNE/input
+        - response->"Graph Output" 9gX-XwuOZ8FJIB5Zkoxo8/value
+      visualData: 1145.2857516735453/558.6550098918765/230/180//
+    '[ZJiVrtrGVpapu423HZdNE]:extractJson "Extract JSON"':
+      visualData: 1565.426827466768/797.0277729946253/280/205//
+    '[vOvnA4hJyoMgKjkbFacnz]:graphInput "Graph Input"':
+      data:
+        dataType: string
+        id: input
+        useDefaultValueInput: false
+      outgoingConnections:
+        - data->"Chat" OIvEjExXAsyhFYZZ_ZKZy/prompt
+      visualData: 628.2555846757787/685.4363535235127/330/186/var(--node-color-3)/var(--node-color-3)
