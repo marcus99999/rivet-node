@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "@gentrace/core": "^2.1.1",
-    "@ironclad/rivet-node": "^1.14.0"
+    "@ironclad/rivet-node": "^1.14.0",
+    "yaml": "^2.8.0"
   },
   "devDependencies": {
     "@vercel/node": "^5.1.15",
