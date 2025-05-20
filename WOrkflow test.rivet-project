@@ -1209,7 +1209,7 @@ data:
             useHeadersInput: false
             useUrlInput: true
           outgoingConnections:
-            - json->"Graph Output" YRSLFjfsmONldtkw8zePm/value
+            - json->"Text" ydN6JIVTUGCZdqcePRpuV/input
           visualData: 1035.4456059827394/1053.855497187048/280/810/var(--node-color-4)/var(--node-color-4)
         '[JHrBit8Twr_6qXeZbrGBY]:httpCall "Http Call"':
           data:
@@ -1398,11 +1398,6 @@ data:
           outgoingConnections:
             - output->"Destructure" mcgQkCMsGk4tJBFjxhXTS/object
           visualData: 2017.605049893614/-732.2070674590149/280/658//
-        '[YRSLFjfsmONldtkw8zePm]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: output
-          visualData: 1439.6975716077347/1448.3318484448807/330/835/var(--node-color-3)/var(--node-color-3)
         '[ZEJe86ipFxX2Pgn0SpYkX]:text "Text"':
           data:
             text: >-
@@ -1824,7 +1819,7 @@ data:
         '[ydN6JIVTUGCZdqcePRpuV]:text "Text"':
           data:
             text: "{{input}}"
-          visualData: 1440.4988474186664/1199.6583493647906/330/836//
+          visualData: 1434.7094211017964/1599.1287652288127/330/814//
         '[zxftMeqPv_Rfjt9lpoE6Q]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Subgraph" qic03BQQlMsFH93Oh0O67/input
