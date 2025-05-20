@@ -51,14 +51,7 @@
 
   <label for="jsonInput">Graph Inputs (JSON)</label>
   <textarea id="jsonInput" rows="10">
-{
-  "data": {
-    "severity": "Unknown",
-    "title": "Water Quality Issue",
-    "date": "2025-05-13",
-    "description": "Reports of a strange odor in bottled water linked to a recent video."
-  }
-}
+{}
   </textarea>
 
   <button id="run">Run Graph</button>
@@ -72,7 +65,7 @@
   <pre id="error">(waiting)</pre>
 
   <script>
-    const masterGraphId = "cGJILKi8TD1YSzAKUAzKV"; // Update if needed
+    const masterGraphId = "cGJILKi8TD1YSzAKUAzKV";
 
     window.addEventListener('DOMContentLoaded', async () => {
       const dropdown = document.getElementById('graph');
@@ -128,7 +121,8 @@
 
         const json = await res.json();
 
-        // Output formatting
+        console.log("Response JSON:", json); // ✅ Added for debug logging
+
         const outputs = json.outputs || {};
         if (Object.keys(outputs).length === 0) {
           outputBox.textContent = "(no outputs returned)";
@@ -138,7 +132,6 @@
             .join('\n\n');
         }
 
-        // Errors
         const errors = json.errors || [];
         errorBox.textContent = errors.length
           ? JSON.stringify(errors, null, 2)
