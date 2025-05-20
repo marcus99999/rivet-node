@@ -563,6 +563,12 @@ data:
         id: F51lLI2rUAsNzYaSBqzn2
         name: Test
       nodes:
+        '[-SqJqJPW2AlcFbgEXfrO3]:text "Text"':
+          data:
+            text: Coming through
+          outgoingConnections:
+            - output->"Graph Output" 7n13-pxkGDE-_z4Rg-PdD/value
+          visualData: 132.1645639034397/1432.3123713446623/330/968//
         '[3YGeoo784vfo2saI1QF-y]:text "Text"':
           data:
             text: "{{input}}"
@@ -718,9 +724,7 @@ data:
                 }
                 }
               }
-          outgoingConnections:
-            - output->"Graph Output" 7n13-pxkGDE-_z4Rg-PdD/value
-          visualData: -97.60890716430848/1349.0565219069663/330/966//
+          visualData: -290.65585341926385/1347.4342786611264/330/967//
     GHgi_Qdv5HEfN9Cwup8cY:
       metadata:
         description: Estimate crisis severity
