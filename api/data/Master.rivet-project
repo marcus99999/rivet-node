@@ -598,6 +598,11 @@ data:
           outgoingConnections:
             - output->"Subgraph" w0JgRCMe2G1tlMsfyqq6j/input
           visualData: -136.44221707052532/-32.822290240504884/330/934//
+        '[7n13-pxkGDE-_z4Rg-PdD]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 573.4147267719093/1375.5338577402636/330/965/var(--node-color-3)/var(--node-color-3)
         '[7nobdyxzRz6Ru3CupykVu]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -713,7 +718,9 @@ data:
                 }
                 }
               }
-          visualData: -313.36725886102334/1358.789981382006/330/964//
+          outgoingConnections:
+            - output->"Graph Output" 7n13-pxkGDE-_z4Rg-PdD/value
+          visualData: -97.60890716430848/1349.0565219069663/330/966//
     GHgi_Qdv5HEfN9Cwup8cY:
       metadata:
         description: Estimate crisis severity

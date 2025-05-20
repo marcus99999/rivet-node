@@ -1,0 +1,165 @@
+version: 4
+data:
+  metadata:
+    description: ""
+    id: F51lLI2rUAsNzYaSBqzn2
+    name: Test
+  nodes:
+    '[3YGeoo784vfo2saI1QF-y]:text "Text"':
+      data:
+        text: "{{input}}"
+      visualData: 824.1860262613612/874.021776059586/330/960//
+    '[3qyvDt0lXcbWt-ZFyBHtP]:text "Text"':
+      data:
+        body: ""
+        text: >-
+          May 13, 2025
+
+
+          Nestlé is facing a significant crisis following confirmed reports of severe health issues linked to our 'Test Crisis' product. We have received alarming feedback from consumers who have experienced adverse reactions, and we understand the seriousness of this situation. As media coverage intensifies, we recognize the growing concern among our customers and the public.
+
+
+          In response to these developments, we are taking immediate action. We are working closely with health authorities and regulatory bodies to investigate these reports thoroughly. Our top priority is the safety and well-being of our consumers, and we are committed to transparency throughout this process.
+
+
+          We acknowledge the distress this has caused and are moving swiftly to implement a comprehensive recall of the affected products. Additionally, we are enhancing our communication efforts to keep all stakeholders informed as we navigate this challenging time.
+
+
+          We understand that this situation has led to a decline in consumer trust and our brand reputation, and we take full responsibility for addressing these issues. We are dedicated to regaining your trust through our actions and commitment to quality and safety.
+
+
+          We will continue to provide updates as more information becomes available. Thank you for your understanding and support as we work diligently to resolve this crisis.
+
+
+          Barnaby Fry
+
+
+          barnaby.fry@nestle.com
+
+          7956949123
+      outgoingConnections:
+        - output->"Subgraph" w0JgRCMe2G1tlMsfyqq6j/input
+      visualData: -136.44221707052532/-32.822290240504884/330/934//
+    '[7n13-pxkGDE-_z4Rg-PdD]:graphOutput "Graph Output"':
+      data:
+        dataType: string
+        id: output
+      visualData: 573.4147267719093/1375.5338577402636/330/965/var(--node-color-3)/var(--node-color-3)
+    '[7nobdyxzRz6Ru3CupykVu]:getGlobal "Get Global"':
+      data:
+        dataType: string
+        id: documentId
+        onDemand: true
+        useIdInput: false
+        wait: false
+      outgoingConnections:
+        - value->"Text" WHfev1AyaLeVP-tjrC5Az/documentId
+      visualData: -561.0418824998084/1082.9047524931161/230/null//
+    '[FdLhwAZCWDwUWap0XsvkM]:text "Text"':
+      data:
+        text: "{{input}}"
+      visualData: 1060.2679493669077/517.8753320603619/330/958//
+    '[LnTxAv4d9YkfFERYg5nCd]:extractJson "Extract JSON"':
+      outgoingConnections:
+        - output->"Subgraph" dLSEME-bJUMoLJmyrMzKx/input
+      visualData: 204.0584924494349/530.197769930335/280/956//
+    '[NZ9PHWK0dRf8n3ShWlTcP]:httpCall "Http Call"':
+      data:
+        body: ""
+        errorOnNon200: true
+        headers: >-
+          {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+          }
+        method: POST
+        url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases
+        useBodyInput: true
+        useHeadersInput: false
+      outgoingConnections:
+        - res_body->"Text" 3YGeoo784vfo2saI1QF-y/input
+      visualData: 275.12692509589056/813.3149958324457/280/839/var(--node-color-4)/var(--node-color-4)
+    '[WHfev1AyaLeVP-tjrC5Az]:text "Text"':
+      data:
+        body: ""
+        text: >-
+          {
+
+          "data": {
+            "crisis": "{{documentId}}",
+            "detail": "FOR IMMEDIATE RELEASE\n\nMay 13, 2025\n\nNestlé Responds Proactively to 'Test Crisis' Concerns\n\nNestlé acknowledges the emerging 'Test Crisis' situation concerning some of our products. We wish to assure our valued consumers and stakeholders that we are vigilantly monitoring the situation, with a steadfast commitment to transparency and consumer safety.\n\nDespite the minimal media coverage and limited consumer awareness at this stage, we understand the significance of proactively addressing any potential concerns. Our dedicated team is conducting an exhaustive investigation to uphold the integrity of our products and ensure the safety of our customers.\n\nWe are confident in our ability to navigate this situation effectively and preserve the trust of our consumers. As our investigation progresses, we will provide regular updates to keep all stakeholders informed.\n\nWe appreciate your ongoing support and trust in Nestlé.\n\nBarnaby Fry\n\nPR Spokesperson, Nestlé\n\nbarnaby.fry@nestle.com\n\n7956949123",
+            "severity": "High",
+            "history": {
+            "adjustments": [
+              "Changed 'addresses' to 'responds proactively' for a more active tone",
+              "Replaced 'referred to as' with 'concerning' for clarity",
+              "Replaced 'we want to reassure' with 'we wish to assure' for a more professional tone",
+              "Replaced 'we believe in the importance of' with 'we understand the significance of' for a more assertive tone",
+              "Replaced 'we are confident in our ability to manage' with 'we are confident in our ability to navigate' for a more dynamic tone",
+              "Added 'regular' before 'updates' for clarity"
+            ],
+            "sourceExamples": [
+              "Nestlé Addresses Limited Product Concerns with Commitment to Transparency"
+            ]
+            }
+            }
+          }
+      outgoingConnections:
+        - output->"Http Call" NZ9PHWK0dRf8n3ShWlTcP/req_body
+      visualData: -199.73500023640844/869.9746573777766/330/963//
+    '[dLSEME-bJUMoLJmyrMzKx]:subGraph "Subgraph"':
+      data:
+        graphId: hcy2UDhZVh6QP8e0AjKC7
+        useAsGraphPartialOutput: false
+        useErrorOutput: false
+      outgoingConnections:
+        - Analysis->"Text" FdLhwAZCWDwUWap0XsvkM/input
+      visualData: 600.245459201243/530.01668810579/330/957/var(--node-color-1)/var(--node-color-1)
+    '[etsMnEQz7-rgxdYR0J-gi]:text "Text"':
+      data:
+        text: >-
+          {
+            "body": "May 13, 2025\n\nNestlé is facing a significant crisis following confirmed reports of severe health issues linked to our 'Test Crisis' product. We are taking this matter seriously and cooperating fully with health authorities. A product recall is underway, and we are enhancing quality control measures immediately to protect consumers and restore trust."
+          }
+      outgoingConnections:
+        - output->"Extract JSON" LnTxAv4d9YkfFERYg5nCd/input
+      visualData: -195.68788155459904/561.0445979996616/330/955//
+    '[w0JgRCMe2G1tlMsfyqq6j]:subGraph "Subgraph"':
+      data:
+        graphId: 3soSwiUKQ_X4fGdokyxAH
+        useAsGraphPartialOutput: false
+        useErrorOutput: false
+      outgoingConnections:
+        - output->"Text" xPWf5-SFwHe144idXLIj6/input
+      visualData: 317.23367240561294/108.93087044899241/330/935/var(--node-color-1)/var(--node-color-1)
+    '[xPWf5-SFwHe144idXLIj6]:text "Text"':
+      data:
+        text: "{{input}}"
+      visualData: 778.733881996352/46.83265009909131/330/936//
+    '[zWBrUqSj_RTdUEYH-quXP]:text "Text"':
+      data:
+        body: ""
+        text: >-
+          {
+
+          "data": {
+            "original": "FOR IMMEDIATE RELEASE\n\nMay 13, 2025\n\nNestlé Addresses Limited Product Concerns with Commitment to Transparency\n\nNestlé is aware of the emerging situation referred to as 'Test Crisis' regarding certain products. We want to reassure our consumers and stakeholders that we are closely monitoring the situation and remain committed to transparency and consumer safety.\n\nWhile media coverage has been minimal and consumer awareness is currently limited, we believe in the importance of addressing any potential concerns proactively. Our dedicated team is conducting a thorough investigation to ensure the integrity of our products and the safety of our customers.\n\nWe are confident in our ability to manage this situation effectively and maintain the trust of our consumers. As we continue to investigate, we will provide updates to ensure all stakeholders are informed.\n\nThank you for your continued support and trust in Nestlé.\n\nBarnaby Fry\n\nPR Spokesperson, Nestlé\n\nbarnaby.fry@nestle.com\n7956949123\n\n\n",
+            "detail": "FOR IMMEDIATE RELEASE\n\nMay 13, 2025\n\nNestlé Responds Proactively to 'Test Crisis' Concerns\n\nNestlé acknowledges the emerging 'Test Crisis' situation concerning some of our products. We wish to assure our valued consumers and stakeholders that we are vigilantly monitoring the situation, with a steadfast commitment to transparency and consumer safety.\n\nDespite the minimal media coverage and limited consumer awareness at this stage, we understand the significance of proactively addressing any potential concerns. Our dedicated team is conducting an exhaustive investigation to uphold the integrity of our products and ensure the safety of our customers.\n\nWe are confident in our ability to navigate this situation effectively and preserve the trust of our consumers. As our investigation progresses, we will provide regular updates to keep all stakeholders informed.\n\nWe appreciate your ongoing support and trust in Nestlé.\n\nBarnaby Fry\n\nPR Spokesperson, Nestlé\n\nbarnaby.fry@nestle.com\n\n7956949123",
+            "history": {
+            "adjustments": [
+              "Changed 'addresses' to 'responds proactively' for a more active tone",
+              "Replaced 'referred to as' with 'concerning' for clarity",
+              "Replaced 'we want to reassure' with 'we wish to assure' for a more professional tone",
+              "Replaced 'we believe in the importance of' with 'we understand the significance of' for a more assertive tone",
+              "Replaced 'we are confident in our ability to manage' with 'we are confident in our ability to navigate' for a more dynamic tone",
+              "Added 'regular' before 'updates' for clarity"
+            ],
+            "sourceExamples": [
+              "Nestlé Addresses Limited Product Concerns with Commitment to Transparency"
+            ]
+            }
+            }
+          }
+      outgoingConnections:
+        - output->"Graph Output" 7n13-pxkGDE-_z4Rg-PdD/value
+      visualData: -97.60890716430848/1349.0565219069663/330/966//
