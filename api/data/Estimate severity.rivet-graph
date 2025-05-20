@@ -38,12 +38,13 @@ data:
           High impact should only be assigned to issues that have dramatic reputation or commercial impact.
 
 
-          Output the answer as a JSON object only in the format of:
+          Output the answer as a only JSON object only in the format of:
 
 
-          "data": {
+          {
+            "data": {
               "severity": "The severity that you have determined"
-              }
+            }
           }
       outgoingConnections:
         - output->"Chat" Zou1WVfmrjIXBvaAODJSm/systemPrompt
