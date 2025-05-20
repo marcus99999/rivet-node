@@ -26,13 +26,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(200).end();
   }
 
-  // ✅ Debug OPEN_AI_KEY presence and list all env vars
   console.log('🔍 OPEN_AI_KEY:', process.env.OPEN_AI_KEY ? '✅ Present' : '❌ Missing');
   console.log('🧪 All ENV Keys:', Object.keys(process.env));
 
   if (req.method === 'GET') {
     return res.status(200).json({
-      info: 'Send a POST request with a prompt to run the Rivet graph.',
+      info: 'Send a POST request with a prompt and optional graph ID to run a Rivet graph.',
     });
   }
 
@@ -61,12 +60,21 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             });
           });
 
-    const inputPrompt =
-      typeof body === 'object' && body.prompt
-        ? body.prompt
-        : 'Please write me a short poem about a dog.';
+    const inputPrompt = typeof body === 'object' && body.prompt
+      ? body.prompt
+      : 'Please write me a short poem about a dog.';
 
-    console.log('📥 Received prompt:', inputPrompt);
+    const graphId = typeof body === 'object' && body.graph
+      ? body.graph
+      : 'cGJILKi8TD1YSzAKUAzKV'; // 👈 Your master graph ID
+
+    const title = typeof body === 'object' && body.title
+      ? body.title
+      : 'Untitled';
+
+    console.log('📥 Received Crisis ID:', inputPrompt);
+    console.log('🧭 Graph to run:', graphId);
+    console.log('📝 Title:', title);
 
     const openAiKey = process.env.OPEN_AI_KEY;
     if (!openAiKey) {
@@ -75,14 +83,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const project = path.resolve(__dirname, 'data', 'Master.rivet-project');
-    const graph = 'cGJILKi8TD1YSzAKUAzKV'; // Replace with your actual graph ID
-
     console.log('📂 Loading project from:', project);
+
     const datasetProvider = await NodeDatasetProvider.fromProjectFile(project, { save: false });
 
-    console.log('🚀 Running graph:', graph);
+    console.log('🚀 Running graph:', graphId);
     const result = await runGraphInFile(project, {
-      graph,
+      graph: graphId,
       remoteDebugger: undefined,
       inputs: { prompt: inputPrompt },
       context: {},
@@ -105,7 +112,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     res.status(200).json({
       message: 'Graph executed successfully.',
+      graph: graphId,
       prompt: inputPrompt,
+      title,
       outputs,
       partialOutputs: partials,
       errors: result.errors || [],

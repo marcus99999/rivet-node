@@ -10,9 +10,10 @@
       margin: 2em auto;
       padding: 1em;
     }
-    label, input, button {
+    label, input, button, select {
       display: block;
       margin-top: 1em;
+      width: 100%;
     }
     #spinner {
       margin-top: 1em;
@@ -34,11 +35,17 @@
   </style>
 </head>
 <body>
-  <h1>Crisis Comms Centre</h1>
+  <h1>Crisis Comms Centre Graph Execution</h1>
 
   <form id="runForm" onsubmit="runGraph(event)">
     <label for="prompt">Crisis ID</label>
     <input type="text" id="prompt" name="prompt" required value="ye8w2fo87pymtxxfx0vyfzaa" />
+
+    <label for="graph">Select Graph:</label>
+    <select id="graph" name="graph">
+      <option value="">Loading...</option>
+    </select>
+
     <button type="submit">Generate</button>
   </form>
 
@@ -48,10 +55,39 @@
   <div id="partials" class="output-section"></div>
 
   <script>
+    const defaultGraphId = 'cGJILKi8TD1YSzAKUAzKV'; // Set your main graph ID here
+
+    async function loadGraphs() {
+      const select = document.getElementById('graph');
+      try {
+        const res = await fetch('/api/graphs');
+        const data = await res.json();
+
+        if (data.graphs && Array.isArray(data.graphs)) {
+          select.innerHTML = '';
+          data.graphs.forEach(g => {
+            const opt = document.createElement('option');
+            opt.value = g.id;
+            opt.textContent = `${g.name} (${g.id})`;
+            if (g.id === defaultGraphId) {
+              opt.selected = true;
+            }
+            select.appendChild(opt);
+          });
+        } else {
+          select.innerHTML = '<option value="">No graphs found</option>';
+        }
+      } catch (err) {
+        console.error('❌ Failed to load graphs:', err);
+        select.innerHTML = '<option value="">Error loading graph list</option>';
+      }
+    }
+
     async function runGraph(event) {
       event.preventDefault();
 
       const prompt = document.getElementById('prompt').value;
+      const graph = document.getElementById('graph').value;
       const spinner = document.getElementById('spinner');
       const status = document.getElementById('status');
       const outputsEl = document.getElementById('outputs');
@@ -63,13 +99,13 @@
       partialsEl.innerHTML = '';
 
       try {
-        const res = await fetch('https://rivet-node.vercel.app/api/run', {
+        const res = await fetch('/api/run', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer rivet-xyz-123' // 🔐 Replace with actual token
+            'Authorization': 'Bearer rivet-xyz-123' // Replace with your actual token
           },
-          body: JSON.stringify({ prompt })
+          body: JSON.stringify({ prompt, graph })
         });
 
         const data = await res.json();
@@ -80,7 +116,7 @@
           return;
         }
 
-        status.textContent = `✅ Graph completed with Crisis ID: "${data.prompt}"`;
+        status.textContent = `✅ Graph completed with Crisis ID: "${data.prompt}" (Graph: ${data.graph || graph})`;
 
         if (data.outputs && Object.keys(data.outputs).length > 0) {
           outputsEl.innerHTML = `<h3>Outputs</h3>` + Object.entries(data.outputs)
@@ -99,6 +135,8 @@
         console.error(err);
       }
     }
+
+    window.onload = loadGraphs;
   </script>
 </body>
 </html>
