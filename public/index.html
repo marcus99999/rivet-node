@@ -11,11 +11,16 @@
       margin: 3rem auto;
       padding: 0 1rem;
     }
-    label, select, input, button {
+    label, select, input, textarea, button {
       display: block;
       width: 100%;
       margin-bottom: 1rem;
       font-size: 1rem;
+    }
+    textarea {
+      font-family: monospace;
+      white-space: pre;
+      padding: 1rem;
     }
     pre {
       background: #f5f5f5;
@@ -44,18 +49,30 @@
     <option>Loading graphs...</option>
   </select>
 
+  <label for="jsonInput">Graph Inputs (JSON)</label>
+  <textarea id="jsonInput" rows="10">
+{
+  "data": {
+    "severity": "Unknown",
+    "title": "Water Quality Issue",
+    "date": "2025-05-13",
+    "description": "Reports of a strange odor in bottled water linked to a recent video."
+  }
+}
+  </textarea>
+
   <button id="run">Run Graph</button>
 
   <div id="spinner">⏳ Running graph...</div>
 
   <h2>Outputs</h2>
-  <pre id="output"></pre>
+  <pre id="output">(waiting)</pre>
 
   <h2>Errors</h2>
-  <pre id="error"></pre>
+  <pre id="error">(waiting)</pre>
 
   <script>
-    const masterGraphId = "cGJILKi8TD1YSzAKUAzKV"; // Update to your actual master graph ID
+    const masterGraphId = "cGJILKi8TD1YSzAKUAzKV"; // Update if needed
 
     window.addEventListener('DOMContentLoaded', async () => {
       const dropdown = document.getElementById('graph');
@@ -81,7 +98,6 @@
     });
 
     document.getElementById('run').addEventListener('click', async () => {
-      const prompt = document.getElementById('prompt').value;
       const graph = document.getElementById('graph').value;
       const spinner = document.getElementById('spinner');
       const outputBox = document.getElementById('output');
@@ -91,6 +107,15 @@
       errorBox.textContent = '';
       spinner.style.display = 'block';
 
+      let inputs;
+      try {
+        inputs = JSON.parse(document.getElementById('jsonInput').value);
+      } catch (parseErr) {
+        errorBox.textContent = "❌ Invalid JSON:\n" + parseErr.message;
+        spinner.style.display = 'none';
+        return;
+      }
+
       try {
         const res = await fetch('/api/estimate-severity', {
           method: 'POST',
@@ -98,22 +123,27 @@
             'Content-Type': 'application/json',
             'Authorization': 'Bearer rivet-xyz-123'
           },
-          body: JSON.stringify({
-            graph,
-            inputs: {
-              data: {
-                severity: "Unknown",
-                title: "Water Quality Issue",
-                date: "2025-05-13",
-                description: "Reports of a strange odor in bottled water linked to a recent video."
-              }
-            }
-          })
+          body: JSON.stringify({ graph, inputs })
         });
 
         const json = await res.json();
-        outputBox.textContent = JSON.stringify(json.outputs || {}, null, 2);
-        errorBox.textContent = JSON.stringify(json.errors || {}, null, 2);
+
+        // Output formatting
+        const outputs = json.outputs || {};
+        if (Object.keys(outputs).length === 0) {
+          outputBox.textContent = "(no outputs returned)";
+        } else {
+          outputBox.textContent = Object.entries(outputs)
+            .map(([key, value]) => `${key}: ${typeof value === 'object' ? JSON.stringify(value, null, 2) : value}`)
+            .join('\n\n');
+        }
+
+        // Errors
+        const errors = json.errors || [];
+        errorBox.textContent = errors.length
+          ? JSON.stringify(errors, null, 2)
+          : "[]";
+
       } catch (err) {
         errorBox.textContent = JSON.stringify({ message: 'Failed to run graph', error: err.message }, null, 2);
       } finally {
