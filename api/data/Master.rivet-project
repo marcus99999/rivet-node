@@ -764,23 +764,11 @@ data:
           outgoingConnections:
             - output->"Chat" Zou1WVfmrjIXBvaAODJSm/systemPrompt
           visualData: 241.66430742343636/155.49339768117207/330/33//
-        '[IPIY0xMyG4f72A64PbTJ3]:destructure "Destructure"':
-          data:
-            paths:
-              - $.data.severity
-          outgoingConnections:
-            - match_0->"Graph Output" Ui7kczAR_FxQgP-8jZxoY/value
-          visualData: 1315.6518431670975/765.8656422285881/280/39//
         '[KfOHARDNuJGbsL7wsQRjB]:graphOutput "Graph Output"':
           data:
             dataType: object
-            id: output
-          visualData: 1426.014547733546/908.5843622409766/330/35/var(--node-color-3)/var(--node-color-3)
-        '[Ui7kczAR_FxQgP-8jZxoY]:graphOutput "Graph Output"':
-          data:
-            dataType: string
             id: severity
-          visualData: 1595.1629987668157/562.9103410904988/330/40/var(--node-color-3)/var(--node-color-3)
+          visualData: 1426.014547733546/908.5843622409766/330/35/var(--node-color-3)/var(--node-color-3)
         '[Zou1WVfmrjIXBvaAODJSm]:chat "Chat"':
           data:
             additionalParameters: []
@@ -826,7 +814,6 @@ data:
           visualData: -235.80283213259628/717.3870558715296/330/30/var(--node-color-3)/var(--node-color-3)
         '[jogL2mVfh_6t9C3K43J4e]:extractJson "Extract JSON"':
           outgoingConnections:
-            - output->"Destructure" IPIY0xMyG4f72A64PbTJ3/object
             - output->"Graph Output" KfOHARDNuJGbsL7wsQRjB/value
           visualData: 995.1437802957063/833.1874038318044/280/22//
     WoecD9--01VjQHhXTmwtU:
