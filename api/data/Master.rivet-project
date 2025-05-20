@@ -1591,13 +1591,6 @@ data:
           outgoingConnections:
             - output->"Http Call" b0p0ChjrySbYCsRXMJKin/req_body
           visualData: 3498.9672039075263/-650.035573190637/280/732//
-        '[hNGBeQybWmlZQI4E1RTix]:destructure "Destructure"':
-          data:
-            paths:
-              - $.data.severity
-          outgoingConnections:
-            - match_0->"Graph Output" YRSLFjfsmONldtkw8zePm/value
-          visualData: 993.9117452087532/1480.7526358193522/280/859//
         '[hWCHQO_Oagm2P4xeE3Be4]:text "Text"':
           data:
             body: ""
@@ -1753,7 +1746,7 @@ data:
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
-            - output->"Destructure" hNGBeQybWmlZQI4E1RTix/object
+            - output->"Graph Output" YRSLFjfsmONldtkw8zePm/value
             - output->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/req_body
           visualData: 618.4909852742002/1244.4674949843022/330/827/var(--node-color-1)/var(--node-color-1)
         '[tmcvLEtdnIE8PFCGXhgrq]:text "Text"':
