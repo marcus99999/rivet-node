@@ -5,6 +5,12 @@ data:
     id: F51lLI2rUAsNzYaSBqzn2
     name: Test
   nodes:
+    '[-SqJqJPW2AlcFbgEXfrO3]:text "Text"':
+      data:
+        text: Coming through
+      outgoingConnections:
+        - output->"Graph Output" 7n13-pxkGDE-_z4Rg-PdD/value
+      visualData: -386.520420698776/2263.706353883954/330/969//
     '[3YGeoo784vfo2saI1QF-y]:text "Text"':
       data:
         text: "{{input}}"
@@ -43,8 +49,8 @@ data:
     '[7n13-pxkGDE-_z4Rg-PdD]:graphOutput "Graph Output"':
       data:
         dataType: string
-        id: output
-      visualData: 573.4147267719093/1375.5338577402636/330/965/var(--node-color-3)/var(--node-color-3)
+        id: result
+      visualData: 54.72974216969362/2206.9278402795553/330/969/var(--node-color-3)/var(--node-color-3)
     '[7nobdyxzRz6Ru3CupykVu]:getGlobal "Get Global"':
       data:
         dataType: string
@@ -160,6 +166,4 @@ data:
             }
             }
           }
-      outgoingConnections:
-        - output->"Graph Output" 7n13-pxkGDE-_z4Rg-PdD/value
-      visualData: -97.60890716430848/1349.0565219069663/330/966//
+      visualData: -290.65585341926385/1347.4342786611264/330/967//
