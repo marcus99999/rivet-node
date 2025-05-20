@@ -22,6 +22,9 @@
       padding: 1rem;
       white-space: pre-wrap;
     }
+    button {
+      padding: 0.75rem;
+    }
   </style>
 </head>
 <body>
@@ -32,7 +35,7 @@
 
   <label for="graph">Select Graph</label>
   <select id="graph">
-    <option value="GHgi_Qdv5HEfN9Cwup8cY">Estimate Severity (GHgi_Qdv5HEfN9Cwup8cY)</option>
+    <option>Loading graphs...</option>
   </select>
 
   <button id="run">Run Graph</button>
@@ -44,6 +47,32 @@
   <pre id="error"></pre>
 
   <script>
+    const masterGraphId = "cGJILKi8TD1YSzAKUAzKV"; // Update to your actual master graph ID
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      const dropdown = document.getElementById('graph');
+      try {
+        const res = await fetch('/api/graphs');
+        const json = await res.json();
+
+        dropdown.innerHTML = '';
+
+        const sorted = json.graphs.sort((a, b) => a.name.localeCompare(b.name));
+        sorted.forEach(g => {
+          const option = document.createElement('option');
+          option.value = g.id;
+          option.textContent = g.id === masterGraphId
+            ? `★ ${g.name || 'Untitled'} (Main) (${g.id})`
+            : `  ${g.name || 'Untitled'} (${g.id})`;
+          if (g.id === masterGraphId) dropdown.prepend(option);
+          else dropdown.append(option);
+        });
+      } catch (err) {
+        dropdown.innerHTML = '<option>Error loading graphs</option>';
+        console.error('Failed to load graphs:', err);
+      }
+    });
+
     document.getElementById('run').addEventListener('click', async () => {
       const prompt = document.getElementById('prompt').value;
       const graph = document.getElementById('graph').value;

@@ -753,12 +753,12 @@ data:
               High impact should only be assigned to issues that have dramatic reputation or commercial impact.
 
 
-              Output the answer as a only JSON object only in the format of:
+              Output only valid JSON like this (no commentary):
 
 
               {
                 "data": {
-                  "severity": "The severity that you have determined"
+                  "severity": "High"
                 }
               }
           outgoingConnections:
@@ -780,7 +780,7 @@ data:
           data:
             dataType: string
             id: severity
-          visualData: 1449.760213720264/567.8115585639781/330/37/var(--node-color-3)/var(--node-color-3)
+          visualData: 1595.1629987668157/562.9103410904988/330/40/var(--node-color-3)/var(--node-color-3)
         '[Zou1WVfmrjIXBvaAODJSm]:chat "Chat"':
           data:
             additionalParameters: []
