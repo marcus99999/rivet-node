@@ -161,7 +161,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases?status=published
             useBodyInput: true
             useHeadersInput: false
           visualData: 2665.1688890140613/301.71921584920767/280/706/var(--node-color-4)/var(--node-color-4)
@@ -185,7 +185,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases?status=published
             useBodyInput: true
             useHeadersInput: false
           outgoingConnections:
@@ -225,7 +225,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases?status=published
             useBodyInput: true
             useHeadersInput: false
           visualData: 2659.2746351601027/-134.1255650802779/280/707/var(--node-color-4)/var(--node-color-4)
@@ -568,7 +568,7 @@ data:
             text: Coming through
           outgoingConnections:
             - output->"Graph Output" 7n13-pxkGDE-_z4Rg-PdD/value
-          visualData: 132.1645639034397/1432.3123713446623/330/968//
+          visualData: -386.520420698776/2263.706353883954/330/969//
         '[3YGeoo784vfo2saI1QF-y]:text "Text"':
           data:
             text: "{{input}}"
@@ -608,7 +608,7 @@ data:
           data:
             dataType: string
             id: result
-          visualData: 573.4147267719093/1375.5338577402636/330/965/var(--node-color-3)/var(--node-color-3)
+          visualData: 54.72974216969362/2206.9278402795553/330/969/var(--node-color-3)/var(--node-color-3)
         '[7nobdyxzRz6Ru3CupykVu]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -740,7 +740,7 @@ data:
             text: ""
           outgoingConnections:
             - match_2->"Chat" Zou1WVfmrjIXBvaAODJSm/prompt
-          visualData: 153.2624450131718/665.8612048998328/280/34//
+          visualData: 258.84919919393974/891.5984034931988/280/36//
         '[BU8e6sHxaj-sPedekwuzX]:text "Text"':
           data:
             text: >
@@ -814,7 +814,7 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Extract JSON" jogL2mVfh_6t9C3K43J4e/input
-          visualData: 662.2765957446807/600.3297872340426/230/32//
+          visualData: 624.9924339996377/570.5249209813746/230/38//
         '[_FwqVLMhnvJzzdKNQ6sPG]:graphInput "Graph Input"':
           data:
             dataType: object

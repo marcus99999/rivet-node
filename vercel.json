@@ -3,5 +3,13 @@
     "api/**/*.ts": {
       "includeFiles": "api/data/Master.rivet-project"
     }
-  }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    }
+  ]
 }
