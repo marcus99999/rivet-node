@@ -110,26 +110,30 @@
       }
 
       try {
-        const res = await fetch('/api/estimate-severity', {
+        const res = await fetch('/api/run', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer rivet-xyz-123'
+            'Content-Type': 'application/json'
           },
           body: JSON.stringify({ graph, inputs })
         });
 
         const json = await res.json();
 
-        console.log("Response JSON:", json); // ✅ Added for debug logging
-
         const outputs = json.outputs || {};
+        console.log("📦 Graph outputs:", outputs);
+
         if (Object.keys(outputs).length === 0) {
           outputBox.textContent = "(no outputs returned)";
         } else {
           outputBox.textContent = Object.entries(outputs)
-            .map(([key, value]) => `${key}: ${typeof value === 'object' ? JSON.stringify(value, null, 2) : value}`)
-            .join('\n\n');
+            .map(([key, value]) => {
+              const pretty = typeof value === 'object'
+                ? JSON.stringify(value, null, 2)
+                : value;
+              return `🟢 ${key}:\n${pretty}`;
+            })
+            .join('\n\n---\n\n');
         }
 
         const errors = json.errors || [];
