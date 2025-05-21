@@ -559,13 +559,15 @@ data:
           visualData: 2247.9823023715626/862.086963157283/280/698//
     F51lLI2rUAsNzYaSBqzn2:
       metadata:
-        description: Test file
+        description: Test file run
         id: F51lLI2rUAsNzYaSBqzn2
         name: Test
       nodes:
         '[-SqJqJPW2AlcFbgEXfrO3]:text "Text"':
           data:
-            text: Coming through
+            text: Coming through + {{input}}
+          outgoingConnections:
+            - output->"Graph Output" 7n13-pxkGDE-_z4Rg-PdD/value
           visualData: -386.520420698776/2263.706353883954/330/969//
         '[3YGeoo784vfo2saI1QF-y]:text "Text"':
           data:
@@ -621,6 +623,14 @@ data:
           data:
             text: "{{input}}"
           visualData: 1060.2679493669077/517.8753320603619/330/958//
+        '[KOb6Y0cJZvAGZt-jVhR96]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" -SqJqJPW2AlcFbgEXfrO3/input
+          visualData: -847.5504016989407/2223.751196422945/330/971/var(--node-color-3)/var(--node-color-3)
         '[LnTxAv4d9YkfFERYg5nCd]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Subgraph" dLSEME-bJUMoLJmyrMzKx/input
@@ -722,8 +732,6 @@ data:
                 }
                 }
               }
-          outgoingConnections:
-            - output->"Graph Output" 7n13-pxkGDE-_z4Rg-PdD/value
           visualData: -433.9117232745789/1793.4809643469937/330/970//
     GHgi_Qdv5HEfN9Cwup8cY:
       metadata:
