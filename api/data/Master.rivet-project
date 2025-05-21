@@ -566,8 +566,6 @@ data:
         '[-SqJqJPW2AlcFbgEXfrO3]:text "Text"':
           data:
             text: Coming through
-          outgoingConnections:
-            - output->"Graph Output" 7n13-pxkGDE-_z4Rg-PdD/value
           visualData: -386.520420698776/2263.706353883954/330/969//
         '[3YGeoo784vfo2saI1QF-y]:text "Text"':
           data:
@@ -724,7 +722,9 @@ data:
                 }
                 }
               }
-          visualData: -290.65585341926385/1347.4342786611264/330/967//
+          outgoingConnections:
+            - output->"Graph Output" 7n13-pxkGDE-_z4Rg-PdD/value
+          visualData: -433.9117232745789/1793.4809643469937/330/970//
     GHgi_Qdv5HEfN9Cwup8cY:
       metadata:
         description: Estimate crisis severity
