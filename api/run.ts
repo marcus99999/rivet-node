@@ -21,16 +21,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(404).json({ error: 'Project file not found.' });
     }
 
-    const debuggerServer = await startDebuggerServer({});
+    const debuggerServer = undefined;
     const datasetProvider = await NodeDatasetProvider.fromProjectFile(projectPath, { save: false });
 
     const result = await runGraphInFile(projectPath, {
-      graph,
-      remoteDebugger: debuggerServer,
-      inputs: inputs || {},
-      openAiKey: process.env.OPENAI_API_KEY,
-      datasetProvider,
-    });
+  graph,
+  remoteDebugger: undefined,
+  inputs: inputs || {},
+  openAiKey: process.env.OPENAI_API_KEY,
+  datasetProvider,
+});
 
     return res.status(200).json({
       message: 'Graph executed successfully.',
