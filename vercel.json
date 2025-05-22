@@ -8,7 +8,9 @@
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
+        { "key": "access-control-allow-origin", "value": "*" },
+        { "key": "access-control-allow-headers", "value": "authorization" },
+        { "key": "access-control-allow-methods", "value": "DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT" },
       ]
     }
   ]
