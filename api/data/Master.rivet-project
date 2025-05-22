@@ -572,7 +572,7 @@ data:
         '[7n13-pxkGDE-_z4Rg-PdD]:graphOutput "Graph Output"':
           data:
             dataType: string
-            id: result
+            id: output
           visualData: 54.72974216969362/2206.9278402795553/330/969/var(--node-color-3)/var(--node-color-3)
         '[KOb6Y0cJZvAGZt-jVhR96]:graphInput "Graph Input"':
           data:
@@ -957,14 +957,14 @@ data:
             body: ""
             headers: ""
             paths:
-              - $.data[0].title
-              - $.data[0].description
-              - $.data[0].location
-              - $.data[0].company.title
-              - $.data[0].date
-              - $.data[0].severity
-              - $.data[0].brand
-              - $.data[0].documentId
+              - $.data.title
+              - $.data.description
+              - $.data.location
+              - $.data.company.title
+              - $.data.date
+              - $.data.severity
+              - $.data.brand
+              - $.data.documentId
           outgoingConnections:
             - match_0->"Graph Output" 2uPrdf3woHnGtAJDrw2Lz/value
             - match_0->"Text" CocxXqVO7vwIgKSISUEL9/Crisis
@@ -1028,10 +1028,6 @@ data:
             - match_1->"Text" ANNRhETLFDLBOO2t4Lj-3/input
             - match_2->"Text" bapvQhzj8q1yxfOAprD2A/input
           visualData: 1688.568625773956/898.510306183254/280/625//
-        '[9Iuwg5De8EKZKDy_VVxuL]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Http Call" JHrBit8Twr_6qXeZbrGBY/req_body
-          visualData: 3496.7919347676557/-1073.037862295804/280/730//
         '[ANNRhETLFDLBOO2t4Lj-3]:text "Text"':
           data:
             text: |
@@ -1059,11 +1055,6 @@ data:
           outgoingConnections:
             - output->"Chat" DOH9j6ldq5b44D5MY0YHO/prompt
           visualData: -556.3740725020693/488.6878951956689/330/784//
-        '[DCAvenAK0LxQyA8hPoUmT]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: output
-          visualData: -1013.5716705188604/1245.198109130521/330/799/var(--node-color-3)/var(--node-color-3)
         '[DOH9j6ldq5b44D5MY0YHO]:chat "Chat"':
           data:
             additionalParameters: []
@@ -1272,12 +1263,8 @@ data:
           visualData: 44.4321762346097/-397.50808679427195/280/742//
         '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
           data:
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/ye8w2fo87pymtxxfx0vyfzaa?populate=company
-          visualData: -2395.1036879294543/832.3918715366758/330/817//
-        '[MtDsiI3cCAsx-7hUbKI3x]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Http Call" Rc0jBdKpTG96pQSBDxbGG/req_body
-          visualData: 3497.248849485054/-285.7444356265221/280/733//
+            text: aqvoxymesg5jovysyqa6lv0m
+          visualData: -2483.8078395008315/800.8894625674016/330/869//
         '[N9YOhpmU3aaCsH0rF8pKv]:text "Text"':
           data:
             text: >-
@@ -1351,7 +1338,7 @@ data:
                 }
               }
           outgoingConnections:
-            - output->"Extract JSON" MtDsiI3cCAsx-7hUbKI3x/input
+            - output->"Http Call" Rc0jBdKpTG96pQSBDxbGG/req_body
           visualData: 3121.8095482593476/-285.18358716540865/330/733//
         '[Rc0jBdKpTG96pQSBDxbGG]:httpCall "Http Call"':
           data:
@@ -1456,7 +1443,7 @@ data:
               Use natural line breaks in the prose like \n.
 
 
-              Each response should be signed off by the company PR spokesperson called {{Spokesman}} whose company role is {{Role}}.
+              Each response should be signed off by the company PR spokesperson called {{Spokesman}} whose company role is {{Role}}. This should form part of the holding statement response.
 
 
               Ensure there is a double line break before this.
@@ -1468,27 +1455,21 @@ data:
               Ensure there is a double line break before this.
 
 
-              Output a JSON object in the following format:
+              Output only a JSON object in the following format:
 
 
               {
 
-              "data": [
-                  {
-                  "high": "Holding statement 1 content"
-                  }
-                  {
-                  "medium": "Holding statement 2 content"
-                  }
-                  {
-                  "low": "Holding statement 3 content"
-                  },
+              "data": {
+                  "high": "Holding statement 1 content",
+                  "medium": "Holding statement 2 content",
+                  "low": "Holding statement 3 content",
                   "documentId": {{documentId}}
-                  ]
+                  }
               }
           outgoingConnections:
             - output->"Chat" IwTKZWYXuAna_v309uJ1p/systemPrompt
-          visualData: 1219.7425853143714/-811.3611668948562/330/756//
+          visualData: 1282.715538596497/-990.2616023554406/330/862//
         '[_FHEz4jYaBQuCmdaw0JMt]:text "Text"':
           data:
             text: |-
@@ -1500,7 +1481,7 @@ data:
                 }
               }
           outgoingConnections:
-            - output->"Extract JSON" 9Iuwg5De8EKZKDy_VVxuL/input
+            - output->"Http Call" JHrBit8Twr_6qXeZbrGBY/req_body
           visualData: 3121.352633541949/-1072.4770138346905/330/729//
         '[aH7e1n92lzWsB4u_WYg7o]:comment "Comment"':
           data:
@@ -1605,13 +1586,9 @@ data:
             id: input
             useDefaultValueInput: false
           outgoingConnections:
-            - data->"Graph Output" DCAvenAK0LxQyA8hPoUmT/value
+            - data->"Graph Output" x_AuztBEc0FjzHI-2nj4P/value
             - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
-          visualData: -2414.2413224629086/611.0581240887003/330/816/var(--node-color-3)/var(--node-color-3)
-        '[hEOhNaRzVb931o5QF_P53]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Http Call" b0p0ChjrySbYCsRXMJKin/req_body
-          visualData: 3498.9672039075263/-650.035573190637/280/732//
+          visualData: -2414.2413224629086/611.0581240887003/330/867/var(--node-color-3)/var(--node-color-3)
         '[hWCHQO_Oagm2P4xeE3Be4]:text "Text"':
           data:
             body: ""
@@ -1635,7 +1612,7 @@ data:
                 }
               }
           outgoingConnections:
-            - output->"Extract JSON" hEOhNaRzVb931o5QF_P53/input
+            - output->"Http Call" b0p0ChjrySbYCsRXMJKin/req_body
           visualData: 3123.52790268182/-649.4747247295236/330/732//
         '[lTDwHyIvD8GtM-vUQWnZJ]:text "Text"':
           data:
@@ -1685,10 +1662,10 @@ data:
         '[mcgQkCMsGk4tJBFjxhXTS]:destructure "Destructure"':
           data:
             paths:
-              - $.data[0].high
-              - $.data[1].medium
-              - $.data[2].low
-              - $.documentId
+              - $.data.high
+              - $.data.medium
+              - $.data.low
+              - $.data.documentId
             text: ""
           outgoingConnections:
             - match_0->"Code" p-sMAbp17d-0PBwEbF7H0/input1
@@ -1842,6 +1819,11 @@ data:
           outgoingConnections:
             - json->"Destructure" KJ0n7LZTEzcnuQDvmpaz4/object
           visualData: -341.409286403287/-502.1614298576312/280/463/var(--node-color-4)/var(--node-color-4)
+        '[x_AuztBEc0FjzHI-2nj4P]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: -1989.1215803096027/779.1086780018734/330/868/var(--node-color-3)/var(--node-color-3)
         '[ydN6JIVTUGCZdqcePRpuV]:text "Text"':
           data:
             text: "{{input}}"
