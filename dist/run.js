@@ -33,7 +33,8 @@ export default async function handler(req, res) {
         const outputRoot = result.outputs;
         console.log('📦 Raw outputs:', JSON.stringify(outputRoot, null, 2));
         let resolvedValues = {};
-        if (outputRoot?.type === 'object') {
+        // Fallback: If graph returned an object with nested values
+        if (outputRoot && typeof outputRoot === 'object' && outputRoot.type === 'object' && 'fields' in outputRoot) {
             const fields = outputRoot.fields;
             console.log('🔑 Output keys:', Object.keys(fields));
             for (const [key, dataValue] of Object.entries(fields)) {
@@ -42,8 +43,13 @@ export default async function handler(req, res) {
                 console.log(`🔹 Output "${key}":`, val);
             }
         }
+        else if ('value' in outputRoot) {
+            // Simple string, number, or single-value output
+            resolvedValues['result'] = outputRoot.value;
+            console.log(`🔹 Single output:`, outputRoot.value);
+        }
         else {
-            console.warn('⚠️ Graph did not return object-style outputs.');
+            console.warn('⚠️ No recognizable outputs found.');
         }
         if (Array.isArray(result.errors) && result.errors.length > 0) {
             console.warn('⚠️ Errors (if any):', JSON.stringify(result.errors, null, 2));
