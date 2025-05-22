@@ -30,16 +30,20 @@ export default async function handler(req, res) {
         });
         const duration = Date.now() - start;
         console.log(`✅ Graph executed in ${duration}ms`);
-        const outputs = result.outputs || {};
-        const outputKeys = Object.keys(outputs);
-        console.log('📦 Raw outputs:', JSON.stringify(outputs, null, 2));
-        console.log('🔑 Output keys:', outputKeys);
-        const resolvedValues = {};
-        for (const key of outputKeys) {
-            const dataValue = outputs[key];
-            const val = dataValue?.value;
-            resolvedValues[key] = val;
-            console.log(`🔹 Output "${key}":`, val);
+        const outputRoot = result.outputs;
+        console.log('📦 Raw outputs:', JSON.stringify(outputRoot, null, 2));
+        let resolvedValues = {};
+        if (outputRoot?.type === 'object') {
+            const fields = outputRoot.fields;
+            console.log('🔑 Output keys:', Object.keys(fields));
+            for (const [key, dataValue] of Object.entries(fields)) {
+                const val = dataValue?.value;
+                resolvedValues[key] = val;
+                console.log(`🔹 Output "${key}":`, val);
+            }
+        }
+        else {
+            console.warn('⚠️ Graph did not return object-style outputs.');
         }
         if (Array.isArray(result.errors) && result.errors.length > 0) {
             console.warn('⚠️ Errors (if any):', JSON.stringify(result.errors, null, 2));
@@ -50,7 +54,7 @@ export default async function handler(req, res) {
         return res.status(200).json({
             message: 'Graph executed successfully.',
             outputs: resolvedValues,
-            rawOutputs: outputs,
+            rawOutputs: outputRoot,
             errors: result.errors || [],
             context: result.context || {}
         });

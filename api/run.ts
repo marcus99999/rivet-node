@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { runGraphInFile, NodeDatasetProvider, type ObjectDataValue } from '@ironclad/rivet-node';
+import { runGraphInFile, NodeDatasetProvider } from '@ironclad/rivet-node';
 import path from 'path';
 import fs from 'fs/promises';
 
@@ -47,8 +47,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     let resolvedValues: Record<string, unknown> = {};
 
-    if (outputRoot?.type === 'object') {
-      const fields = (outputRoot as ObjectDataValue).fields;
+    // Fallback: If graph returned an object with nested values
+    if (outputRoot && typeof outputRoot === 'object' && outputRoot.type === 'object' && 'fields' in outputRoot) {
+      const fields = (outputRoot as any).fields;
       console.log('🔑 Output keys:', Object.keys(fields));
 
       for (const [key, dataValue] of Object.entries(fields)) {
@@ -56,8 +57,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         resolvedValues[key] = val;
         console.log(`🔹 Output "${key}":`, val);
       }
+    } else if ('value' in (outputRoot as any)) {
+      // Simple string, number, or single-value output
+      resolvedValues['result'] = (outputRoot as any).value;
+      console.log(`🔹 Single output:`, (outputRoot as any).value);
     } else {
-      console.warn('⚠️ Graph did not return object-style outputs.');
+      console.warn('⚠️ No recognizable outputs found.');
     }
 
     if (Array.isArray(result.errors) && result.errors.length > 0) {
