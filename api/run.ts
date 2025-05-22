@@ -42,15 +42,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const duration = Date.now() - start;
     console.log(`✅ Graph executed in ${duration}ms`);
 
-    const outputs = result.outputs || {};
-    const outputKeys = Object.keys(outputs);
-    console.log('📦 Raw outputs:', JSON.stringify(outputs, null, 2));
-    console.log('🔑 Output keys:', outputKeys);
+   const outputs = result.outputs || {};
+const outputKeys = Object.keys(outputs);
+console.log('📦 Raw outputs:', JSON.stringify(outputs, null, 2));
+console.log('🔑 Output keys:', outputKeys);
 
-    const resolvedValues: Record<string, unknown> = {};
-    for (const key of outputKeys) {
+const resolvedValues: Record<string, unknown> = {};
+for (const key of outputKeys) {
   const dataValue = outputs[key];
-  const val = (dataValue as any)?.value;  // safely bypasses strict typing here
+  const val = (dataValue as any)?.value;
   resolvedValues[key] = val;
   console.log(`🔹 Output "${key}":`, val);
 }
