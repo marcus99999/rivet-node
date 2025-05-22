@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { runGraphInFile, NodeDatasetProvider, startDebuggerServer } from '@ironclad/rivet-node';
+import { runGraphInFile, NodeDatasetProvider } from '@ironclad/rivet-node';
 import path from 'path';
 import fs from 'fs/promises';
 
@@ -16,21 +16,34 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const projectPath = path.resolve(process.cwd(), 'api/data/Master.rivet-project');
+    console.log('📁 Project path:', projectPath);
+
     const fileExists = await fs.access(projectPath).then(() => true).catch(() => false);
     if (!fileExists) {
+      console.error('❌ Project file not found at path:', projectPath);
       return res.status(404).json({ error: 'Project file not found.' });
     }
 
-    const debuggerServer = undefined;
     const datasetProvider = await NodeDatasetProvider.fromProjectFile(projectPath, { save: false });
 
+    console.log('🚀 Executing graph:', graph);
+    console.log('🧾 Inputs:', JSON.stringify(inputs, null, 2));
+
+    const start = Date.now();
+
     const result = await runGraphInFile(projectPath, {
-  graph,
-  remoteDebugger: undefined,
-  inputs: inputs || {},
-  openAiKey: process.env.OPENAI_API_KEY,
-  datasetProvider,
-});
+      graph,
+      remoteDebugger: undefined,
+      inputs: inputs || {},
+      openAiKey: process.env.OPENAI_API_KEY,
+      datasetProvider,
+    });
+
+    const duration = Date.now() - start;
+    console.log(`✅ Graph executed in ${duration}ms`);
+    console.log('📦 Raw outputs:', JSON.stringify(result.outputs, null, 2));
+    console.log('🧠 Context (if any):', result.context || 'None');
+    console.log('⚠️ Errors (if any):', result.errors?.length ? JSON.stringify(result.errors, null, 2) : 'None');
 
     return res.status(200).json({
       message: 'Graph executed successfully.',
