@@ -49,7 +49,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const resolvedValues: Record<string, unknown> = {};
     for (const key of outputKeys) {
-      const val = outputs[key]?.value;
+      const dataValue = (outputs as Record<string, { value: unknown }>)[key];
+      const val = dataValue?.value;
       resolvedValues[key] = val;
       console.log(`🔹 Output "${key}":`, val);
     }
