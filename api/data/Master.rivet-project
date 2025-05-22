@@ -1264,7 +1264,7 @@ data:
         '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
           data:
             text: aqvoxymesg5jovysyqa6lv0m
-          visualData: -2395.1036879294543/832.3918715366758/330/817//
+          visualData: -2483.8078395008315/800.8894625674016/330/869//
         '[N9YOhpmU3aaCsH0rF8pKv]:text "Text"':
           data:
             text: >-
@@ -1586,6 +1586,7 @@ data:
             id: input
             useDefaultValueInput: false
           outgoingConnections:
+            - data->"Graph Output" x_AuztBEc0FjzHI-2nj4P/value
             - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2414.2413224629086/611.0581240887003/330/867/var(--node-color-3)/var(--node-color-3)
         '[hWCHQO_Oagm2P4xeE3Be4]:text "Text"':
@@ -1818,6 +1819,11 @@ data:
           outgoingConnections:
             - json->"Destructure" KJ0n7LZTEzcnuQDvmpaz4/object
           visualData: -341.409286403287/-502.1614298576312/280/463/var(--node-color-4)/var(--node-color-4)
+        '[x_AuztBEc0FjzHI-2nj4P]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: -1989.1215803096027/779.1086780018734/330/868//
         '[ydN6JIVTUGCZdqcePRpuV]:text "Text"':
           data:
             text: "{{input}}"
