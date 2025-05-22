@@ -62,7 +62,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         resolvedValues[key] = val;
         console.log(`🔹 Output "${key}":`, val);
       }
-    } else if (outputRoot && typeof outputRoot === 'object' && 'value' in outputRoot) {
+    } else if (
+      outputRoot &&
+      typeof outputRoot === 'object' &&
+      'value' in outputRoot
+    ) {
       const val = (outputRoot as any).value;
       resolvedValues['result'] = val;
       console.log(`🔹 Single output:`, val);
