@@ -1360,14 +1360,6 @@ data:
             - output->"Chat" ar6v6LMNTaqxVthRlZG20/prompt
             - output->"Destructure" 8eGhuqG4kOM3xr2nwKYyt/object
           visualData: 1141.8836634176616/645.675489858645/280/327//
-        '[Va2FxwuUsG-RgJfS4CTa_]:text "Text"':
-          data:
-            body: ""
-            headers: ""
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases/rm1dzc6aoo3yj3yjalw8lz95
-          outgoingConnections:
-            - output->"Http Call" uwzZLC-5sPqvPSXX5eL3m/url
-          visualData: -2191.8003060812257/1182.9353774832418/330/826//
         '[W888kIoF-SH_n2m0tV7Rc]:text "Text"':
           data:
             body: ""
@@ -1589,18 +1581,6 @@ data:
             - data->"Graph Output" x_AuztBEc0FjzHI-2nj4P/value
             - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2414.2413224629086/611.0581240887003/330/867/var(--node-color-3)/var(--node-color-3)
-        '[hWCHQO_Oagm2P4xeE3Be4]:text "Text"':
-          data:
-            body: ""
-            text: |-
-              {
-                "data": {
-                  "detail": "your-updated-detail"
-                }
-              }
-          outgoingConnections:
-            - output->"Http Call" uwzZLC-5sPqvPSXX5eL3m/req_body
-          visualData: -2207.495701886847/1437.9844489202842/330/824//
         '[iv4aQAxIg2qld3Kxgn1z4]:text "Text"':
           data:
             text: |-
@@ -1680,7 +1660,7 @@ data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}
           outgoingConnections:
             - output->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/url
-          visualData: 623.7224828781615/1043.809656882703/330/808//
+          visualData: 631.1697559778778/1008.7540319722306/330/877//
         '[ohHO4UgYHNIOfR1EepUeK]:httpCall "Http Call"':
           data:
             body: ""
@@ -1744,8 +1724,8 @@ data:
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
-            - output->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/req_body
-          visualData: 618.4909852742002/1244.4674949843022/330/827/var(--node-color-1)/var(--node-color-1)
+            - severity->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/req_body
+          visualData: 609.1603381223252/1306.4261326159615/330/878/var(--node-color-1)/var(--node-color-1)
         '[tmcvLEtdnIE8PFCGXhgrq]:text "Text"':
           data:
             text: |
@@ -1759,22 +1739,6 @@ data:
           outgoingConnections:
             - output->"Http Call" FIakP9wvdOt--2uEnOsmF/req_body
           visualData: 2102.44394983333/539.0317358120365/330/627//
-        '[uwzZLC-5sPqvPSXX5eL3m]:httpCall "Http Call"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: PUT
-            text: ""
-            url: ""
-            useBodyInput: true
-            useHeadersInput: false
-            useUrlInput: true
-          visualData: -1796.0332092064946/1107.2009529505183/280/826/var(--node-color-4)/var(--node-color-4)
         '[vGUWgOtAY-i7sxm-WJ7eb]:text "Text"':
           data:
             text: >
@@ -1827,7 +1791,7 @@ data:
         '[ydN6JIVTUGCZdqcePRpuV]:text "Text"':
           data:
             text: "{{input}}"
-          visualData: 1411.551715834317/1101.2381019780025/330/860//
+          visualData: 1402.6473035937072/1261.5175223089796/330/870//
         '[zxftMeqPv_Rfjt9lpoE6Q]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Subgraph" qic03BQQlMsFH93Oh0O67/input
