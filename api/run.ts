@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { runGraphInFile, NodeDatasetProvider } from '@ironclad/rivet-node';
+import { runGraphInFile, NodeDatasetProvider, type DataValue } from '@ironclad/rivet-node';
 import path from 'path';
 import fs from 'fs/promises';
 
@@ -42,18 +42,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const duration = Date.now() - start;
     console.log(`✅ Graph executed in ${duration}ms`);
 
-   const outputs = result.outputs || {};
-const outputKeys = Object.keys(outputs);
-console.log('📦 Raw outputs:', JSON.stringify(outputs, null, 2));
-console.log('🔑 Output keys:', outputKeys);
+    const outputs = result.outputs as Record<string, DataValue>;
+    const resolvedValues: Record<string, unknown> = {};
 
-const resolvedValues: Record<string, unknown> = {};
-for (const key of outputKeys) {
-  const dataValue = outputs[key];
-  const val = (dataValue as any)?.value;
-  resolvedValues[key] = val;
-  console.log(`🔹 Output "${key}":`, val);
-}
+    console.log('📦 Raw outputs:', JSON.stringify(outputs, null, 2));
+    console.log('🔑 Output keys:', Object.keys(outputs));
+
+    for (const [key, dataValue] of Object.entries(outputs)) {
+      const val = (dataValue as any)?.value;
+      resolvedValues[key] = val;
+      console.log(`🔹 Output "${key}":`, val);
+    }
 
     if (Array.isArray(result.errors) && result.errors.length > 0) {
       console.warn('⚠️ Errors (if any):', JSON.stringify(result.errors, null, 2));
