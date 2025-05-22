@@ -52,9 +52,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 		//     "documentId": documentId
 		//   }
 		// }
-		const { graph, inputs } = req.body;
+		const { graph, input } = req.body;
 
-		if (!graph || !inputs || !inputs.documentId) {
+		if (!graph || !input || !input.documentId) {
 			console.error("❌ Missing data.");
 			throw new Error("Missing graph and/or documentId.");
 		}
@@ -82,7 +82,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 		// 		? body.prompt
 		// 		: "Please write me a short poem about a dog.";
 
-		console.log("📥 Received prompt/documentId:", inputs.documentId);
+		console.log("📥 Received prompt/documentId:", input.documentId);
 
 		const openAiKey = process.env.OPEN_AI_KEY;
 		if (!openAiKey) {
@@ -99,7 +99,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 		const result = await runGraphInFile(project, {
 			graph,
 			remoteDebugger: undefined,
-			inputs: { prompt: inputs.documentId },
+			inputs: { input: input.documentId },
 			context: {},
 			externalFunctions: {},
 			onUserEvent: {},
@@ -110,7 +110,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 		const outputs = result.outputs || {};
 		const partials = result.partialOutputs || {};
 
-		console.log("✅ Graph execution completed.");
+		console.log("✅ Graph execution complete.");
 		console.log("🟢 Outputs:", outputs);
 		console.log("🟡 Partial Outputs:", partials);
 
@@ -120,7 +120,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
 		res.status(200).json({
 			message: "Graph executed successfully.",
-			prompt: inputs.documentId,
+			prompt: input.documentId,
 			outputs,
 			partialOutputs: partials,
 			errors: result.errors || [],
