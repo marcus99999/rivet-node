@@ -40,18 +40,30 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
     const duration = Date.now() - start;
-console.log(`✅ Graph executed in ${duration}ms`);
-console.log('📦 Raw outputs:', JSON.stringify(result.outputs, null, 2));
-console.log('🧠 Context (if any):', result.context || 'None');
+    console.log(`✅ Graph executed in ${duration}ms`);
 
-if (Array.isArray(result.errors) && result.errors.length > 0) {
-  console.log('⚠️ Errors (if any):', JSON.stringify(result.errors, null, 2));
-} else {
-  console.log('⚠️ Errors (if any): None');
-}
+    const outputs = result.outputs || {};
+    const outputKeys = Object.keys(outputs);
+    console.log('📦 Raw outputs:', JSON.stringify(outputs, null, 2));
+    console.log('🔑 Output keys:', outputKeys);
+
+    const resolvedValues: Record<string, unknown> = {};
+    for (const key of outputKeys) {
+      const val = outputs[key]?.value;
+      resolvedValues[key] = val;
+      console.log(`🔹 Output "${key}":`, val);
+    }
+
+    if (Array.isArray(result.errors) && result.errors.length > 0) {
+      console.warn('⚠️ Errors (if any):', JSON.stringify(result.errors, null, 2));
+    } else {
+      console.log('⚠️ Errors (if any): None');
+    }
+
     return res.status(200).json({
       message: 'Graph executed successfully.',
-      outputs: result.outputs || {},
+      outputs: resolvedValues,
+      rawOutputs: outputs,
       errors: result.errors || [],
       context: result.context || {}
     });
