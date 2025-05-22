@@ -114,7 +114,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 		console.log("🟢 Outputs:", outputs);
 		console.log("🟡 Partial Outputs:", partials);
 
-		if (result.errors?.length) {
+		if (result.errors) {
 			console.warn("⚠️ Node-level errors:", result.errors);
 		}
 

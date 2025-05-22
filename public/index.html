@@ -41,7 +41,7 @@
 <body>
   <h1>Crisis Comms Centre Graph Execution</h1>
 
-  <label for="prompt">Crisis ID</label>
+  <label for="prompt">Crisis Document ID</label>
   <input type="text" id="prompt" value="ye8w2fo87pymtxxfx0vyfzaa" />
 
   <label for="graph">Select Graph</label>
@@ -95,25 +95,31 @@
       const spinner = document.getElementById('spinner');
       const outputBox = document.getElementById('output');
       const errorBox = document.getElementById('error');
+      const documentId = document.getElementById('prompt');
 
       outputBox.textContent = '';
       errorBox.textContent = '';
       spinner.style.display = 'block';
 
-      let inputs;
-      try {
-        inputs = JSON.parse(document.getElementById('jsonInput').value);
-      } catch (parseErr) {
-        errorBox.textContent = "❌ Invalid JSON:\n" + parseErr.message;
-        spinner.style.display = 'none';
-        return;
-      }
+      // let inputs;
+      // try {
+      //   inputs = JSON.parse(document.getElementById('jsonInput').value);
+      // } catch (parseErr) {
+      //   errorBox.textContent = "❌ Invalid JSON:\n" + parseErr.message;
+      //   spinner.style.display = 'none';
+      //   return;
+      // }
 
       try {
+        let inputs = {
+          "documentId": documentId.value
+        };
+
         const res = await fetch('/api/run', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            "Authorization": "Bearer rivet-xyz-123",
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({ graph, inputs })
         });
