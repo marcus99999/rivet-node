@@ -1264,8 +1264,6 @@ data:
         '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
           data:
             text: aqvoxymesg5jovysyqa6lv0m
-          outgoingConnections:
-            - output->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2395.1036879294543/832.3918715366758/330/817//
         '[N9YOhpmU3aaCsH0rF8pKv]:text "Text"':
           data:
@@ -1587,6 +1585,8 @@ data:
             dataType: string
             id: input
             useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2414.2413224629086/611.0581240887003/330/867/var(--node-color-3)/var(--node-color-3)
         '[hWCHQO_Oagm2P4xeE3Be4]:text "Text"':
           data:
