@@ -1795,7 +1795,7 @@ data:
         '[zxftMeqPv_Rfjt9lpoE6Q]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Subgraph" qic03BQQlMsFH93Oh0O67/input
-          visualData: 282.2465755816026/1130.5676473294723/280/434//
+          visualData: 263.69684529188777/1205.9259266314389/280/879//
     hcy2UDhZVh6QP8e0AjKC7:
       metadata:
         description: Check the content of a single release using the vector DB
