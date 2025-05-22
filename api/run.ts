@@ -40,11 +40,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
     const duration = Date.now() - start;
-    console.log(`✅ Graph executed in ${duration}ms`);
-    console.log('📦 Raw outputs:', JSON.stringify(result.outputs, null, 2));
-    console.log('🧠 Context (if any):', result.context || 'None');
-    console.log('⚠️ Errors (if any):', result.errors?.length ? JSON.stringify(result.errors, null, 2) : 'None');
+console.log(`✅ Graph executed in ${duration}ms`);
+console.log('📦 Raw outputs:', JSON.stringify(result.outputs, null, 2));
+console.log('🧠 Context (if any):', result.context || 'None');
 
+if (Array.isArray(result.errors) && result.errors.length > 0) {
+  console.log('⚠️ Errors (if any):', JSON.stringify(result.errors, null, 2));
+} else {
+  console.log('⚠️ Errors (if any): None');
+}
     return res.status(200).json({
       message: 'Graph executed successfully.',
       outputs: result.outputs || {},
