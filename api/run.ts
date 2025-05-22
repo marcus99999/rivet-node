@@ -17,28 +17,56 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: 'Missing graph ID in request body.' });
   }
 
+  // Extract bearer token from Authorization header
+  const authHeader = req.headers.authorization || '';
+  const bearerToken = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+
+  // Default to inputs passed directly
+  let enrichedInputs = inputs || {};
+
+  // If a crisisId is included, fetch crisis details
+  if (enrichedInputs.crisisId) {
+    try {
+      const crisisRes = await fetch(`https://rivet-node.vercel.app/api/crises/${enrichedInputs.crisisId}`, {
+        headers: {
+          Authorization: `Bearer ${bearerToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      const crisisJson = await crisisRes.json();
+      if (crisisJson?.data) {
+        enrichedInputs = {
+          ...enrichedInputs,
+          ...crisisJson.data, // Spread title, description, severity, etc.
+        };
+        console.log('🧠 Loaded crisis data:', JSON.stringify(crisisJson.data, null, 2));
+      }
+    } catch (err) {
+      console.warn('⚠️ Failed to fetch crisis data:', err);
+    }
+  }
+
   try {
     const projectPath = path.resolve(process.cwd(), 'api/data/Master.rivet-project');
-    console.log('📁 Project path:', projectPath);
-
     const fileExists = await fs.access(projectPath).then(() => true).catch(() => false);
+
     if (!fileExists) {
-      console.error('❌ Project file not found at path:', projectPath);
       return res.status(404).json({ error: 'Project file not found.' });
     }
 
     const datasetProvider = await NodeDatasetProvider.fromProjectFile(projectPath, { save: false });
 
     console.log('🚀 Executing graph:', graph);
-    console.log('🧾 Inputs:', JSON.stringify(inputs, null, 2));
+    console.log('🧾 Inputs:', JSON.stringify(enrichedInputs, null, 2));
 
     const start = Date.now();
 
     const result = await runGraphInFile(projectPath, {
       graph,
       remoteDebugger: undefined,
-      inputs: inputs || {},
+      inputs: enrichedInputs,
       openAiKey: process.env.OPENAI_API_KEY,
+      context: bearerToken ? { bearerToken } : {},
       datasetProvider,
     });
 
@@ -58,8 +86,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       typeof (outputRoot as any).fields === 'object'
     ) {
       const fields = (outputRoot as any).fields;
-      console.log('🔑 Output keys:', Object.keys(fields));
-
       for (const [key, dataValue] of Object.entries(fields)) {
         const val = (dataValue as any)?.value;
         resolvedValues[key] = val;
@@ -75,12 +101,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       console.log(`🔹 Single output:`, val);
     } else {
       console.warn('⚠️ No recognizable outputs found.');
-    }
-
-    if (Array.isArray(result.errors) && result.errors.length > 0) {
-      console.warn('⚠️ Errors (if any):', JSON.stringify(result.errors, null, 2));
-    } else {
-      console.log('⚠️ Errors (if any): None');
     }
 
     return res.status(200).json({
