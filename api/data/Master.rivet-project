@@ -572,7 +572,7 @@ data:
         '[7n13-pxkGDE-_z4Rg-PdD]:graphOutput "Graph Output"':
           data:
             dataType: string
-            id: result
+            id: output
           visualData: 54.72974216969362/2206.9278402795553/330/969/var(--node-color-3)/var(--node-color-3)
         '[KOb6Y0cJZvAGZt-jVhR96]:graphInput "Graph Input"':
           data:
@@ -1823,7 +1823,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: -1989.1215803096027/779.1086780018734/330/868//
+          visualData: -1989.1215803096027/779.1086780018734/330/868/var(--node-color-3)/var(--node-color-3)
         '[ydN6JIVTUGCZdqcePRpuV]:text "Text"':
           data:
             text: "{{input}}"
