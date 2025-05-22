@@ -1387,7 +1387,7 @@ data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=company
           outgoingConnections:
             - output->"Http Call" cKjknBn_o8XEPm2EFP1C3/url
-          visualData: -1986.1165728777935/720.7698981750353/330/807//
+          visualData: -1984.1165728777935/551.7698981750353/330/861//
         '[WgkJpgv4h3JS9A4kEUrUx]:code "Code"':
           data:
             code: >-

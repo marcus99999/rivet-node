@@ -110,7 +110,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 		const outputs = result.outputs || {};
 		const partials = result.partialOutputs || {};
 
-		console.log("✅ Graph execution complete.");
+		console.log("✅ Graph execution completed.");
 		console.log("🟢 Outputs:", outputs);
 		console.log("🟡 Partial Outputs:", partials);
 
