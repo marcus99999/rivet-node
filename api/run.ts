@@ -47,8 +47,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     let resolvedValues: Record<string, unknown> = {};
 
-    // Fallback: If graph returned an object with nested values
-    if (outputRoot && typeof outputRoot === 'object' && outputRoot.type === 'object' && 'fields' in outputRoot) {
+    if (
+      outputRoot &&
+      typeof outputRoot === 'object' &&
+      outputRoot.type === 'object' &&
+      'fields' in outputRoot &&
+      typeof (outputRoot as any).fields === 'object'
+    ) {
       const fields = (outputRoot as any).fields;
       console.log('🔑 Output keys:', Object.keys(fields));
 
@@ -57,10 +62,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         resolvedValues[key] = val;
         console.log(`🔹 Output "${key}":`, val);
       }
-    } else if ('value' in (outputRoot as any)) {
-      // Simple string, number, or single-value output
-      resolvedValues['result'] = (outputRoot as any).value;
-      console.log(`🔹 Single output:`, (outputRoot as any).value);
+    } else if (outputRoot && typeof outputRoot === 'object' && 'value' in outputRoot) {
+      const val = (outputRoot as any).value;
+      resolvedValues['result'] = val;
+      console.log(`🔹 Single output:`, val);
     } else {
       console.warn('⚠️ No recognizable outputs found.');
     }
