@@ -49,11 +49,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const resolvedValues: Record<string, unknown> = {};
     for (const key of outputKeys) {
-      const dataValue = (outputs as Record<string, { value: unknown }>)[key];
-      const val = dataValue?.value;
-      resolvedValues[key] = val;
-      console.log(`🔹 Output "${key}":`, val);
-    }
+  const dataValue = outputs[key];
+  const val = (dataValue as any)?.value;  // safely bypasses strict typing here
+  resolvedValues[key] = val;
+  console.log(`🔹 Output "${key}":`, val);
+}
 
     if (Array.isArray(result.errors) && result.errors.length > 0) {
       console.warn('⚠️ Errors (if any):', JSON.stringify(result.errors, null, 2));
