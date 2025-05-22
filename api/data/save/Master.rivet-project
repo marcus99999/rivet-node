@@ -559,7 +559,7 @@ data:
           visualData: 2247.9823023715626/862.086963157283/280/698//
     F51lLI2rUAsNzYaSBqzn2:
       metadata:
-        description: Test file run flow
+        description: Test file run
         id: F51lLI2rUAsNzYaSBqzn2
         name: Test
       nodes:
@@ -2029,9 +2029,9 @@ data:
             - data->"Chat" OIvEjExXAsyhFYZZ_ZKZy/prompt
           visualData: 628.2555846757787/685.4363535235127/330/186/var(--node-color-3)/var(--node-color-3)
   metadata:
-    description: Main press office flow
+    description: ""
     id: rsPSGIUBe90RiHneohxrL
-    title: Crisis Comms Graph
+    title: WOrkflow test
   plugins:
     - id: openai
       name: OpenAI
