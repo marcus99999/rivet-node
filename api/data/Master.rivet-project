@@ -5,6 +5,34 @@ data:
       testSuites: []
       version: 1
   graphs:
+    -eizVpxv9JBIHuJFio6wd:
+      metadata:
+        description: ""
+        id: -eizVpxv9JBIHuJFio6wd
+        name: Severity - Momentum
+      nodes:
+        '[B5X_QFBAQQ49y3tr-rgwR]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1561.5543018953797/553.6879884735656/330/28/var(--node-color-3)/var(--node-color-3)
+        '[jsc7epdtNIuEWBihXp_yO]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          visualData: 606.5453862870756/611.4383528429343/330/21/var(--node-color-3)/var(--node-color-3)
+        '[vVzM1CuokdW7Q7aR72KBu]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                "severity_momentum": {
+                  "score": 5
+              }
+          outgoingConnections:
+            - output->"Graph Output" B5X_QFBAQQ49y3tr-rgwR/value
+          visualData: 1141.3959202951014/664.8747032501306/219.4420707054851/29/var(--node-color-4)/var(--node-color-4)
     3soSwiUKQ_X4fGdokyxAH:
       metadata:
         description: Individual press release rewrite
@@ -42,8 +70,6 @@ data:
             - output->"Extract JSON" ZVqFk3NdPBfcj3jimuG0E/input
           visualData: 689.0409669045316/724.234136108081/330/940//
         '[RLBF2blfneDpgAJzTpzjf]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Http Call" f-6lL9uVA4ka1f3xj2hgj/req_body
           visualData: 1907.4279228483306/1533.0090083779075/280/945//
         '[Xmbnoh9LlbLMA2d7kR3iV]:graphInput "Graph Input"':
           data:
@@ -78,26 +104,10 @@ data:
           outgoingConnections:
             - output->"Destructure" _Rtun_ePQgOY1tS-EUowt/object
           visualData: 1849.102589068697/500.8374775956536/280/943//
-        '[f-6lL9uVA4ka1f3xj2hgj]:httpCall "Http Call"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: PUT
-            url: ""
-            useBodyInput: true
-            useUrlInput: true
-          visualData: 2405.7974968728854/1455.7658128048668/280/945/var(--node-color-4)/var(--node-color-4)
         '[gNzI9f4kz8xRGwjVJ_H0j]:text "Text"':
           data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases/rm1dzc6aoo3yj3yjalw8lz95&populate=*
-          outgoingConnections:
-            - output->"Http Call" f-6lL9uVA4ka1f3xj2hgj/url
-          visualData: 2047.6431734506582/1254.0230739260542/330/945//
+          visualData: 2316.5016798057895/1534.4276511062526/330/950//
         '[tZ-TAvsyJmTjfBNokypbM]:code "Code"':
           data:
             code: >-
@@ -557,37 +567,68 @@ data:
           outgoingConnections:
             - output->"Http Call" khiwBEZ1TBidGeoldXUHD/req_body
           visualData: 2247.9823023715626/862.086963157283/280/698//
-    F51lLI2rUAsNzYaSBqzn2:
+    EfrNMYIRnDPH9b2qi_inj:
       metadata:
-        description: Test file run flow
-        id: F51lLI2rUAsNzYaSBqzn2
-        name: Test
+        description: ""
+        id: EfrNMYIRnDPH9b2qi_inj
+        name: Severity - Scale
       nodes:
-        '[-SqJqJPW2AlcFbgEXfrO3]:text "Text"':
-          data:
-            text: Coming through + {{input}}
-          outgoingConnections:
-            - output->"Graph Output" 7n13-pxkGDE-_z4Rg-PdD/value
-          visualData: -386.520420698776/2263.706353883954/330/969//
-        '[7n13-pxkGDE-_z4Rg-PdD]:graphOutput "Graph Output"':
+        '[P3SYMfFBNNYuWbXxdSp8d]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: 54.72974216969362/2206.9278402795553/330/969/var(--node-color-3)/var(--node-color-3)
-        '[KOb6Y0cJZvAGZt-jVhR96]:graphInput "Graph Input"':
+          visualData: 1735.6554059626744/479.98527538692053/330/28/var(--node-color-3)/var(--node-color-3)
+        '[YyeI0M3H0xamPKBRaf9p-]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                "severity_scale": {
+                  "score": 3
+              }
+          outgoingConnections:
+            - output->"Graph Output" P3SYMfFBNNYuWbXxdSp8d/value
+          visualData: 1315.4970243623961/591.1719901634855/219.4420707054851/29/var(--node-color-4)/var(--node-color-4)
+        '[bgzAE5faFdMAcBxE1TEfN]:graphInput "Graph Input"':
           data:
             dataType: string
             id: input
             useDefaultValueInput: false
-          outgoingConnections:
-            - data->"Text" -SqJqJPW2AlcFbgEXfrO3/input
-          visualData: -847.5504016989407/2223.751196422945/330/971/var(--node-color-3)/var(--node-color-3)
+          visualData: 780.6464903543704/537.7356397562892/330/21/var(--node-color-3)/var(--node-color-3)
     GHgi_Qdv5HEfN9Cwup8cY:
       metadata:
         description: Estimate crisis severity
         id: GHgi_Qdv5HEfN9Cwup8cY
-        name: Estimate severity
+        name: Severity - Master
       nodes:
+        '[-z50Fnu2D56A10PrKG8bh]:subGraph "Subgraph"':
+          data:
+            graphId: EfrNMYIRnDPH9b2qi_inj
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Assemble Prompt" 7TeQ6pCv2o5V2YXCcjDgF/message1
+          visualData: 952.1505568885873/-238.14683473159477/330/80/var(--node-color-1)/var(--node-color-1)
+        '[0YdCXU2DMBAdqkm0XvqRm]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "A boiler explosion or equipment failure in Nestlé India’s Samalkha plant
+              injures several workers, with local media reporting live from the
+              scene. Labour unions allege the incident was preventable, citing
+              ignored complaints about faulty equipment and poor ventilation. A
+              video of the aftermath filmed by a worker goes viral on social
+              media.  Trigger Points: Safety audit records showing irregular
+              checks Previous minor incidents or warning signs that were not
+              addressed Testimonies from whistleblowers or ex-employees Media
+              interest in corporate accountability and labour
+              rights  Media/Social Sentiment: Trending hashtags:
+              #NestleIndiaAccident #FactoryNegligence Coverage in business and
+              mainstream media around ethical labour practices"
+          visualData: 167.3841792730384/581.9143212801082/330/127/var(--node-color-4)/var(--node-color-4)
+        '[7TeQ6pCv2o5V2YXCcjDgF]:assemblePrompt "Assemble Prompt"':
+          outgoingConnections:
+            - prompt->"Chat" _s43ZTL5W4a5ldiyC7j3k/prompt
+          visualData: 1520.034267464906/146.81349945678429/280/101//
         '[7ouISIuZoDgTyf0yhM7sj]:destructure "Destructure"':
           data:
             paths:
@@ -596,48 +637,34 @@ data:
               - $.data.description
             text: ""
           outgoingConnections:
-            - match_2->"Chat" Zou1WVfmrjIXBvaAODJSm/prompt
-          visualData: 258.84919919393974/891.5984034931988/280/36//
-        '[BU8e6sHxaj-sPedekwuzX]:text "Text"':
+            - match_2->"Subgraph" -z50Fnu2D56A10PrKG8bh/input
+            - match_2->"Subgraph" 9LbLUH9DXSm4aUH_vBpcw/input
+            - match_2->"Subgraph" k6jy8_Nk5sKxENwH9aZ6N/input
+            - match_2->"Subgraph" tSneJ2F42M20RGsm8W9u_/input
+            - match_2->"Subgraph" ykrdQorXBm6sTD0CYykhr/input
+          visualData: 200.42723207197824/260.98481720614393/280/126//
+        '[9LbLUH9DXSm4aUH_vBpcw]:subGraph "Subgraph"':
           data:
-            text: >
-              You are a PR professional and it is your job to estimate the
-              severity of a crisis situation.
-
-
-              In the prompt you will receive some text describing the crisis issue and you should assess its severity as either:
-
-
-              - High
-
-              - Medium
-
-              - Low
-
-
-              The severity you determine should be based on both the commercial impact to the business and any potential impact to brand reputation.
-
-
-              High impact should only be assigned to issues that have dramatic reputation or commercial impact.
-
-
-              Output only valid JSON like this (no commentary):
-
-
-              {
-                "data": {
-                  "severity": "High"
-                }
-              }
+            graphId: -eizVpxv9JBIHuJFio6wd
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
           outgoingConnections:
-            - output->"Chat" Zou1WVfmrjIXBvaAODJSm/systemPrompt
-          visualData: 241.66430742343636/155.49339768117207/330/33//
+            - output->"Assemble Prompt" 7TeQ6pCv2o5V2YXCcjDgF/message4
+          visualData: 953.9704357139615/396.44891000481374/330/83/var(--node-color-1)/var(--node-color-1)
         '[KfOHARDNuJGbsL7wsQRjB]:graphOutput "Graph Output"':
           data:
             dataType: object
             id: severity
-          visualData: 1426.014547733546/908.5843622409766/330/35/var(--node-color-3)/var(--node-color-3)
-        '[Zou1WVfmrjIXBvaAODJSm]:chat "Chat"':
+          visualData: 2921.7347660534633/309.1086678418129/330/110/var(--node-color-3)/var(--node-color-3)
+        '[_FwqVLMhnvJzzdKNQ6sPG]:graphInput "Graph Input"':
+          data:
+            dataType: object
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Destructure" 7ouISIuZoDgTyf0yhM7sj/object
+          visualData: -223.69428317817233/320.4417452152306/330/124/var(--node-color-3)/var(--node-color-3)
+        '[_s43ZTL5W4a5ldiyC7j3k]:chat "Chat"':
           data:
             additionalParameters: []
             cache: false
@@ -649,7 +676,7 @@ data:
             model: gpt-4o-mini
             outputUsage: false
             parallelFunctionCalling: true
-            reasoningEffort: medium
+            reasoningEffort: ""
             stop: ""
             temperature: 0.5
             top_p: 1
@@ -670,20 +697,361 @@ data:
             useUseTopPInput: false
             useUserInput: false
           outgoingConnections:
-            - response->"Extract JSON" jogL2mVfh_6t9C3K43J4e/input
-          visualData: 624.9924339996377/570.5249209813746/230/38//
-        '[_FwqVLMhnvJzzdKNQ6sPG]:graphInput "Graph Input"':
+            - response->"Extract JSON" vzD1SMeR-en172gQVjSp2/input
+            - response->"Text" q4J6Cr_USUSIiqH2rVE7p/input
+          visualData: 2030.3673332067467/298.02329671362577/230/109//
+        '[k6jy8_Nk5sKxENwH9aZ6N]:subGraph "Subgraph"':
+          data:
+            graphId: _7ny001Rtlr9P7w3EfY8D
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Assemble Prompt" 7TeQ6pCv2o5V2YXCcjDgF/message3
+          visualData: 960.8436083165452/192.34938732217952/330/82/var(--node-color-1)/var(--node-color-1)
+        '[kvM70I68-pUwFzV4NG5ZU]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You are a data processor reviewing a corporate crisis impact
+              assessment represented as a JSON object.
+
+
+              The object includes the following 5 severity dimensions:
+
+              	•	severity_scale - a single numeric score
+              	•	severity_emotionalintensity - individual scores for customers, employees, investors
+              	•	severity_influence - a single numeric score
+              	•	severity_momentum - a single numeric score
+              	•	severity_boycottrisk - individual scores for customers, employees, investors
+
+              Your task:
+
+
+              1.	Calculate an average score for each of the three stakeholder groups:
+              	•	Customers
+              	•	Employees
+              	•	Investors
+
+              2.	For each group, average the following five values:
+              	•	severity_scale.score
+              	•	severity_influence.score
+              	•	severity_momentum.score
+              	•	severity_emotionalintensity.[group].score
+              	•	severity_boycottrisk.[group].score
+
+              3.	Apply the following weightings to each of the five metrics:
+
+
+              {
+                "severity_scale": 1,
+                "severity_emotionalintensity": 1,
+                "severity_influence": 1,
+                "severity_momentum": 1,
+                "severity_boycottrisk": 1
+              }
+
+
+              4.	Normalize the result and return a rounded average score between 1 and 10 for each stakeholder group.
+
+
+              5.	Calculate a fourth value, overall_average_score, as the mean of the three stakeholder averages.
+
+
+              6.	Based on the overall score, assign a summary severity level using this scale:
+              	•	If overall_average_score < 4: "Low"
+              	•	If 4 ≤ score < 7: "Medium"
+              	•	If score ≥ 7: "High"
+
+              ✅ Output Format:
+
+
+              Return a JSON object with two top-level keys:
+              	1.	"severity" - the final summary string: "High", "Medium", or "Low"
+              	2.	"severity_logic" - an object containing:
+              	•	the original input JSON
+              	•	the added average_score_customers, average_score_employees, and average_score_investors
+
+              The final structure must look like this:
+
+
+              {
+              	"data": {
+              		"severity": "High",
+              		"severity_logic": {
+              			...original data and new average fields...
+              		}
+              	}
+              }
+
+
+              Do not include any explanations, calculations, markdown formatting, or stray characters. Return only the final valid UTF-8 JSON object.
+          outgoingConnections:
+            - output->"Chat" _s43ZTL5W4a5ldiyC7j3k/systemPrompt
+          visualData: 1537.5792614647432/-356.9735268058789/330/131/var(--node-color-4)/var(--node-color-4)
+        '[q4J6Cr_USUSIiqH2rVE7p]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          visualData: 2432.447930457893/218.98181178391317/330/107//
+        '[tSneJ2F42M20RGsm8W9u_]:subGraph "Subgraph"':
+          data:
+            graphId: TIrXJT0lI1gQdU0jtzkhz
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Assemble Prompt" 7TeQ6pCv2o5V2YXCcjDgF/message2
+          visualData: 957.3054363405248/-20.361918248630047/330/81/var(--node-color-1)/var(--node-color-1)
+        '[vzD1SMeR-en172gQVjSp2]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Graph Output" KfOHARDNuJGbsL7wsQRjB/value
+          visualData: 2476.083253749114/562.6404419130982/280/130//
+        '[ykrdQorXBm6sTD0CYykhr]:subGraph "Subgraph"':
+          data:
+            graphId: jOpSxxKf2JqdCjND_3e_G
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Assemble Prompt" 7TeQ6pCv2o5V2YXCcjDgF/message5
+          visualData: 955.6684117296617/595.53577318013/330/84/var(--node-color-1)/var(--node-color-1)
+    KpT800xhGZdwy4QxONPKN:
+      metadata:
+        description: ""
+        id: KpT800xhGZdwy4QxONPKN
+        name: Scenarios - Create
+      nodes:
+        '[FW2wYsaebPYNjjj7d-aSx]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Graph Output" cZ0ftay5oLWMqkrWqtnXp/value
+          visualData: 1345.1177766129117/690.6708116608482/280/905//
+        '[LvY-_lVMY_t8lNzypgQPH]:getGlobal "Get Global"':
+          data:
+            dataType: string
+            id: role
+            onDemand: true
+            useIdInput: false
+            wait: false
+          outgoingConnections:
+            - value->"Text" czMnCg4tMq2UNYX-apRAi/role
+          visualData: 113.80688502631429/352.7344605275644/230/906//
+        '[cZ0ftay5oLWMqkrWqtnXp]:graphOutput "Graph Output"':
           data:
             dataType: object
+            id: output
+          visualData: 1758/528/330/897/var(--node-color-3)/var(--node-color-3)
+        '[czMnCg4tMq2UNYX-apRAi]:text "Text"':
+          data:
+            text: >-
+              Your role is {{role}}
+
+
+              You will be given a JSON object with a number of data points including "date" and "description". 
+
+
+              It is your job to predict possible risk scenarios based on the crisis defined in the prompt and to give details of potential outcomes for each case.
+
+
+              Each time you are given a prompt you should generate a total of 3 short scenarios to demonstrate a possible outcome of the crisis described in the prompt.
+
+
+              You should write 3 possible outcomes: A high risk scenario, a medium risk scenario and a low risk scenario.
+
+
+              In each case be sure to reference the issue, the location and the date it occured.
+
+
+              Do not label each block text with the scenario type, just include the text relating to the possible outcome.
+
+
+              Each of the 3 scenarios should begin with a description of approximately two paragraphs of prose that clearly outlines the potential situation.
+
+
+              After this description, insert two escaped line breaks (\\n\\n) followed by 3–4 concise bullet points that explicitly outline potential outcomes.
+
+
+              ⚠️ For all line breaks or paragraph breaks (including within paragraphs or bullet spacing), use escaped newline characters (\\n) — not actual carriage returns or line breaks in the text.
+
+
+              Output should be delivered as a plain string suitable for use in JSON.
+
+
+              Output the content as a JSON object ONLY in the following format:
+
+
+              {
+                  "high": "High risk scenario content"
+                  "medium": "Medium risk scenario content"
+                  "low": "Low risk scenario content"
+              }
+          description: Scenario generation system prompt
+          outgoingConnections:
+            - output->"Chat" f4QfJvKebW1dU6H8AJ13r/systemPrompt
+          visualData: 521.0936351133283/225.79663544028764/330/904//
+        '[f4QfJvKebW1dU6H8AJ13r]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          description: High risk scenario
+          outgoingConnections:
+            - response->"Extract JSON" FW2wYsaebPYNjjj7d-aSx/input
+          visualData: 943/558/230/901//
+        '[nrW4PhSpsORIwFKPjOwSu]:graphInput "Graph Input"':
+          data:
+            dataType: string
             id: input
             useDefaultValueInput: false
           outgoingConnections:
-            - data->"Destructure" 7ouISIuZoDgTyf0yhM7sj/object
-          visualData: -235.80283213259628/717.3870558715296/330/30/var(--node-color-3)/var(--node-color-3)
-        '[jogL2mVfh_6t9C3K43J4e]:extractJson "Extract JSON"':
+            - data->"Chat" f4QfJvKebW1dU6H8AJ13r/prompt
+          visualData: 201/812/330/899/var(--node-color-3)/var(--node-color-3)
+    TIrXJT0lI1gQdU0jtzkhz:
+      metadata:
+        description: ""
+        id: TIrXJT0lI1gQdU0jtzkhz
+        name: Severity - Emotional intensity
+      nodes:
+        '[4-CXAo2JBQr55vA1pyFpi]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
           outgoingConnections:
-            - output->"Graph Output" KfOHARDNuJGbsL7wsQRjB/value
-          visualData: 995.1437802957063/833.1874038318044/280/22//
+            - response->"Graph Output" eB-AF2eWf52GBDbMiX6Se/value
+          visualData: 827.9186717527157/607.7098605602876/230/20//
+        '[LnDAS8NRLrMyQQ50ndXED]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >
+              You are a public relations professional working in a crisis
+              communications department.
+
+
+              You will be given some text describing a corporate crisis scenario that presents a risk to the company.
+
+
+              Your task is to estimate the emotional intensity of the scenario for each key stakeholder group:
+              	•	Customers
+              	•	Employees
+              	•	Investors
+
+              You must return a score from 1 to 10, where 10 is the most emotionally severe for that group. Consider how upsetting, distressing, or trust-breaking the situation is for each group based on the text.
+
+
+              Use the following emotional severity scale as a guideline:
+
+
+              1. Very Low - Minor annoyance or negligible impact.
+
+              2. Low - Slight concern or frustration, isolated.
+
+              3. Moderate - Awareness of issue, mild reputational unease.
+
+              4. Noticeable - Frustration or criticism becomes visible.
+
+              5. Concerning - Trust begins to erode or ethical issues arise.
+
+              6. Serious - Stakeholders feel misled or personally affected.
+
+              7. Alarming - Escalating concern, calls for accountability.
+
+              8. Critical - Direct harm or significant loss of trust.
+
+              9. Severe - Long-term damage to confidence or wellbeing.
+
+              10. Extreme - Crisis of trust or identity; potential for severed relationships or existential risk.
+
+
+              For each item add some short text to describe the rationale for why you gave the rating. Use language that makes it clear that the rationale is predictive rather than describing actual outcomes so the reader does not misunderstand the rationale as being actual events.
+
+
+              Output as a JSON object ONLY in this format:
+
+
+              {
+                "severity_emotionalintensity": {
+                  "customers": {
+                    "score": 8,
+                    "rationale": "Customers have been directly harmed by the faulty product, with widespread media coverage and safety concerns leading to fear and outrage."
+                  },
+                  "employees": {
+                    "score": 5,
+                    "rationale": "Employees are concerned about the company's image and potential layoffs but are not directly affected by the incident."
+                  },
+                  "investors": {
+                    "score": 7,
+                    "rationale": "Investors fear reputational fallout and regulatory penalties that could affect long-term value, but the business remains operational."
+                  }
+                }
+              }
+          outgoingConnections:
+            - output->"Chat" 4-CXAo2JBQr55vA1pyFpi/systemPrompt
+          visualData: -994.0089025133748/285.12531371706797/1483.8939389042782/16/var(--node-color-4)/var(--node-color-4)
+        '[Zuwhu-2EIC9x2facEXJBs]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat" 4-CXAo2JBQr55vA1pyFpi/prompt
+          visualData: 208.94726938496646/908.239665609297/330/19/var(--node-color-3)/var(--node-color-3)
+        '[eB-AF2eWf52GBDbMiX6Se]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1233.6011102299763/570.2513877874702/330/8/var(--node-color-3)/var(--node-color-3)
     WoecD9--01VjQHhXTmwtU:
       metadata:
         description: Interative press release rewriter
@@ -734,6 +1102,34 @@ data:
           outgoingConnections:
             - Analysis->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/continue
           visualData: 1271.6953776199753/1246.183525212737/330/878/var(--node-color-1)/var(--node-color-1)
+    _7ny001Rtlr9P7w3EfY8D:
+      metadata:
+        description: ""
+        id: _7ny001Rtlr9P7w3EfY8D
+        name: Severity - Influence
+      nodes:
+        '[ADfjKc37hEkSE7ddaDOjI]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          visualData: 618.1697207226142/895.6701837878978/330/30/var(--node-color-3)/var(--node-color-3)
+        '[cQHPUJqbPtRObhSzVS_Ig]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1570.8233485979947/786.1034892942109/330/28/var(--node-color-3)/var(--node-color-3)
+        '[zGNQDDqzOWI06Bw6Ec0NW]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                "severity_influence": {
+                  "score": 8
+              }
+          outgoingConnections:
+            - output->"Graph Output" cQHPUJqbPtRObhSzVS_Ig/value
+          visualData: 1150.6649669977164/897.2902040707759/219.4420707054851/29/var(--node-color-4)/var(--node-color-4)
     aPC7m9RtS6-gmBn2nKrYk:
       metadata:
         description: ""
@@ -891,6 +1287,25 @@ data:
           data:
             text: "{{input}}"
           visualData: 1596.7757644961603/480.6549403395962/330/936//
+    bYUcwJKSmTeEPW_gtQWo-:
+      metadata:
+        description: ""
+        id: bYUcwJKSmTeEPW_gtQWo-
+        name: "Tone of voice subgraph "
+      nodes:
+        '[9s9QzSbL431SomeHHgofJ]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 873/588/330/4/var(--node-color-3)/var(--node-color-3)
+        '[aYPKatqidqry5KGMvmYiG]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Graph Output" 9s9QzSbL431SomeHHgofJ/value
+          visualData: 307/480/330/2/var(--node-color-3)/var(--node-color-3)
     cGJILKi8TD1YSzAKUAzKV:
       metadata:
         description: The main press room pipeline flow
@@ -902,56 +1317,22 @@ data:
             dataType: string
             id: documentId
             useIdInput: false
-          visualData: -683.1287549387969/962.9377279475866/230/830//
+          visualData: -683.1287549387969/962.9377279475866/230/907//
         '[1d_I3CvsuxquLLL25ctDS]:destructure "Destructure"':
           data:
+            body: ""
             paths:
               - $.data[0].detail
           outgoingConnections:
+            - match_0->"Text" N9YOhpmU3aaCsH0rF8pKv/tone
             - match_0->"Text" ZEJe86ipFxX2Pgn0SpYkX/Tone
             - match_0->"Text" lTDwHyIvD8GtM-vUQWnZJ/Tone
-          visualData: 748.5932103983944/-924.7604045165259/280/806//
+          visualData: -1447.6486831543725/-469.47514580839743/280/918//
         '[2uPrdf3woHnGtAJDrw2Lz]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: -732.1626947649593/235.8119697791544/330/801/var(--node-color-3)/var(--node-color-3)
-        '[72AXK4CYiiIN6rUy5bTNW]:chat "Chat"':
-          data:
-            additionalParameters: []
-            cache: false
-            enableFunctionUse: false
-            headers: []
-            maxTokens: 1024
-            modalitiesIncludeAudio: false
-            modalitiesIncludeText: false
-            model: gpt-4o-mini
-            outputUsage: false
-            parallelFunctionCalling: true
-            reasoningEffort: medium
-            stop: ""
-            temperature: 0.5
-            top_p: 1
-            useAdditionalParametersInput: false
-            useAsGraphPartialOutput: true
-            useFrequencyPenaltyInput: false
-            useMaxTokensInput: false
-            useModelInput: false
-            usePredictedOutput: false
-            usePresencePenaltyInput: false
-            useReasoningEffortInput: false
-            useServerTokenCalculation: true
-            useStop: false
-            useStopInput: false
-            useTemperatureInput: false
-            useTopP: false
-            useTopPInput: false
-            useUseTopPInput: false
-            useUserInput: false
-          description: High risk scenario
-          outgoingConnections:
-            - response->"Extract JSON" T3fMMBNOpcI3_YO2G_dq0/input
-          visualData: 696.4914529831661/551.4592519841684/230/244//
+          visualData: -700.3395112827031/266.7150418264481/330/1006/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
             body: ""
@@ -971,76 +1352,14 @@ data:
             - match_1->"Text" CocxXqVO7vwIgKSISUEL9/Description
             - match_2->"Text" CocxXqVO7vwIgKSISUEL9/Location
             - match_3->"Text" CocxXqVO7vwIgKSISUEL9/Company
+            - match_3->"Text" N9YOhpmU3aaCsH0rF8pKv/Company
             - match_4->"Text" CocxXqVO7vwIgKSISUEL9/Date
             - match_6->"Text" CocxXqVO7vwIgKSISUEL9/Product
             - match_7->"Set Global" 0mouFF980bt242hGgYlXk/value
-            - match_7->"Text" ANNRhETLFDLBOO2t4Lj-3/documentId
             - match_7->"Text" ZEJe86ipFxX2Pgn0SpYkX/documentId
-            - match_7->"Text" bapvQhzj8q1yxfOAprD2A/documentId
             - match_7->"Text" lTDwHyIvD8GtM-vUQWnZJ/documentId
             - match_7->"Text" o747HrcX1XEo2Bl_seAFB/input
-            - match_7->"Text" tmcvLEtdnIE8PFCGXhgrq/documentId
           visualData: -1112.456167558564/660.9274817907149/280/425//
-        '[7qF2t1Yi79MSZu8rI-uqx]:text "Text"':
-          data:
-            text: >-
-              Your role is {{role}}
-
-
-              You will be given a JSON object with a number of data points including "date" and "description". 
-
-
-              It is your job to predict possible risk scenarios based on the crisis defined in the prompt.
-
-
-              Each time you are given a prompt you should generate 3 short scenarios to demonstrate a possible outcome of the crisis described in the prompt.
-
-
-              You should write 3 possible outcomes: A high risk scenario, a medium risk scenario and a low risk scenario.
-
-
-              In each case be sure to reference the issue, the location and the date it occured.
-
-
-              Do not label each block text with the scenario type, just include the text relating to the possible outcome.
-
-
-              Output the content as a JSON object in the following format:
-
-
-              {
-                  "high": "High risk scenario content"
-                  "medium": "Medium risk scenario content"
-                  "low": "Low risk scenario content"
-              }
-          description: Scenario generation system prompt
-          outgoingConnections:
-            - output->"Chat" 72AXK4CYiiIN6rUy5bTNW/systemPrompt
-          visualData: 311.8969529730908/171.95211745714766/330/651//
-        '[8eGhuqG4kOM3xr2nwKYyt]:destructure "Destructure"':
-          data:
-            paths:
-              - $.high
-              - $.medium
-              - $.low
-          outgoingConnections:
-            - match_0->"Text" tmcvLEtdnIE8PFCGXhgrq/input
-            - match_1->"Text" ANNRhETLFDLBOO2t4Lj-3/input
-            - match_2->"Text" bapvQhzj8q1yxfOAprD2A/input
-          visualData: 1688.568625773956/898.510306183254/280/625//
-        '[ANNRhETLFDLBOO2t4Lj-3]:text "Text"':
-          data:
-            text: |
-              {
-                "data": {
-                  "detail": "{{input}}",
-                  "severity": "Medium",
-                  "crisis": "{{documentId}}"
-                }
-              }
-          outgoingConnections:
-            - output->"Http Call" ohHO4UgYHNIOfR1EepUeK/req_body
-          visualData: 2102.44394983333/883.924043302946/330/629//
         '[CocxXqVO7vwIgKSISUEL9]:text "Text"':
           data:
             text: >-
@@ -1054,7 +1373,7 @@ data:
               It relates to the prodcut {{Product}}.
           outgoingConnections:
             - output->"Chat" DOH9j6ldq5b44D5MY0YHO/prompt
-          visualData: -556.3740725020693/488.6878951956689/330/784//
+          visualData: -724.3032089267066/485.95734013185364/330/886//
         '[DOH9j6ldq5b44D5MY0YHO]:chat "Chat"':
           data:
             additionalParameters: []
@@ -1068,7 +1387,7 @@ data:
             model: gpt-4o-mini
             outputUsage: false
             parallelFunctionCalling: true
-            reasoningEffort: medium
+            reasoningEffort: ""
             stop: ""
             temperature: 0.5
             text: >-
@@ -1118,24 +1437,9 @@ data:
             useUseTopPInput: false
             useUserInput: false
           outgoingConnections:
-            - response->"Chat" 72AXK4CYiiIN6rUy5bTNW/prompt
             - response->"Extract JSON" zxftMeqPv_Rfjt9lpoE6Q/input
-          visualData: 75.41310134929813/597.5596946626154/230/314//
-        '[FIakP9wvdOt--2uEnOsmF]:httpCall "Http Call"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: POST
-            text: ""
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
-            useBodyInput: true
-            useHeadersInput: false
-          visualData: 2595.697758480101/584.0983575127793/280/478/var(--node-color-4)/var(--node-color-4)
+            - response->"Subgraph" GGEwPqFn8e-aYjpv4Lp3Q/input
+          visualData: 209.54528303704194/327.58531005263103/304.7865093297828/985//
         '[FwIqZLCQSpOSDymXWM5_w]:code "Code"':
           data:
             code: >-
@@ -1168,6 +1472,22 @@ data:
           outgoingConnections:
             - output1->"Text" R7D93AmlRa1HXREBKWuVT/input
           visualData: 2837.5307178518065/-298.16619682276746/230/733//
+        '[GE3dothNsb-QgfptTQIAJ]:subGraph "Subgraph"':
+          data:
+            graphId: oNDvNATb6Cp0mwhFoA39A
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 1172.6019185237997/598.2077809837134/330/1005/var(--node-color-1)/var(--node-color-1)
+        '[GGEwPqFn8e-aYjpv4Lp3Q]:subGraph "Subgraph"':
+          data:
+            graphId: KpT800xhGZdwy4QxONPKN
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Chat" IwTKZWYXuAna_v309uJ1p/prompt
+            - output->"Chat" ar6v6LMNTaqxVthRlZG20/prompt
+            - output->"Subgraph" GE3dothNsb-QgfptTQIAJ/input
+          visualData: 720.8193604943233/551.4017688347425/330/999/var(--node-color-1)/var(--node-color-1)
         '[HD1rxQpwP9XrZwNWaaoLF]:comment "Comment"':
           data:
             backgroundColor: rgba(0,0,0,0.05)
@@ -1187,7 +1507,7 @@ data:
             model: gpt-4o-mini
             outputUsage: false
             parallelFunctionCalling: true
-            reasoningEffort: medium
+            reasoningEffort: ""
             stop: ""
             temperature: 0.5
             top_p: 1
@@ -1225,9 +1545,7 @@ data:
             useBodyInput: true
             useHeadersInput: false
             useUrlInput: true
-          outgoingConnections:
-            - json->"Text" ydN6JIVTUGCZdqcePRpuV/input
-          visualData: 1035.4456059827394/1053.855497187048/280/810/var(--node-color-4)/var(--node-color-4)
+          visualData: 904.2939961958964/1158.2674583765736/280/997/var(--node-color-4)/var(--node-color-4)
         '[JHrBit8Twr_6qXeZbrGBY]:httpCall "Http Call"':
           data:
             body: ""
@@ -1263,8 +1581,8 @@ data:
           visualData: 44.4321762346097/-397.50808679427195/280/742//
         '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
           data:
-            text: aqvoxymesg5jovysyqa6lv0m
-          visualData: -2483.8078395008315/800.8894625674016/330/869//
+            text: dky8i30kisowxhuupwo8iz5l
+          visualData: -2424.803677318482/741.7967919860332/330/1008//
         '[N9YOhpmU3aaCsH0rF8pKv]:text "Text"':
           data:
             text: >-
@@ -1279,13 +1597,19 @@ data:
               credibility and long-term interests of the organization.
 
 
-              You are skilled in writing holding statements, press releases, media responses, and internal communications that acknowledge issues, express responsibility or empathy as appropriate, and outline actionable next steps. Your tone is calm, authoritative, and human. You are able to quickly assess the reputational risk of a situation and shape messaging that aligns with stakeholder expectations, media dynamics, and legal considerations. Your goal is always to guide the organization through crisis with integrity, clarity, and control.
+              You are skilled in writing holding statements, press releases, media responses, and internal communications that acknowledge issues, express responsibility or empathy as appropriate, and outline actionable next steps.
+
+
+              Your tone is {{tone}}.
+
+
+              You are able to quickly assess the reputational risk of a situation and shape messaging that aligns with stakeholder expectations, media dynamics, and legal considerations. Your goal is always to guide the organization through crisis with integrity, clarity, and control.
           description: Role definition copy
           outgoingConnections:
-            - output->"Text" 7qF2t1Yi79MSZu8rI-uqx/role
+            - output->"Set Global" q-7FV8Lss_M2GuC2trzea/value
             - output->"Text" lTDwHyIvD8GtM-vUQWnZJ/role
             - output->"Text" vGUWgOtAY-i7sxm-WJ7eb/role
-          visualData: -799.8233568715651/-124.75386288525205/330/774/var(--node-color-3)/var(--node-color-3)
+          visualData: -1174.9371509996672/-327.22114088744934/330/915/var(--node-color-3)/var(--node-color-3)
         '[OJzyrdkuWTUnJ2Z6kZ8id]:comment "Comment"':
           data:
             backgroundColor: rgba(0,0,0,0.05)
@@ -1293,20 +1617,6 @@ data:
             height: 1212.017625965742
             text: Holding statement
           visualData: 1170.5306923100884/-1140.34087606407/3084.274329633249/727//
-        '[OK0NZ-PUiRDUdGqBr-G7B]:httpCall "Http Call"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
-            useBodyInput: true
-            useHeadersInput: false
-          visualData: 2580.7766031033884/1465.5571267744588/280/757/var(--node-color-4)/var(--node-color-4)
         '[OzfcqLFo3Rn18m4eME4ys]:httpCall "Http Call"':
           data:
             body: ""
@@ -1320,13 +1630,13 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/tone-of-voices
           outgoingConnections:
             - json->"Destructure" 1d_I3CvsuxquLLL25ctDS/object
-          visualData: 433.3529344966519/-1092.2871237125528/280/805/var(--node-color-4)/var(--node-color-4)
+          visualData: -1636.717456853748/-881.121903987407/280/883/var(--node-color-4)/var(--node-color-4)
         '[QG0B00OmZYN6SmNbPqPFN]:subGraph "Subgraph"':
           data:
             graphId: 8fhBx64QGpVrIT6XqLMrt
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 2435.329311942938/213.03584107084606/330/736/var(--node-color-1)/var(--node-color-1)
+          visualData: 2477.7376363623766/210.00667504088617/330/982/var(--node-color-1)/var(--node-color-1)
         '[R7D93AmlRa1HXREBKWuVT]:text "Text"':
           data:
             text: |-
@@ -1354,12 +1664,13 @@ data:
             useBodyInput: true
             useHeadersInput: false
           visualData: 3834.40808075852/-297.74491862269815/280/733/var(--node-color-4)/var(--node-color-4)
-        '[T3fMMBNOpcI3_YO2G_dq0]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Chat" IwTKZWYXuAna_v309uJ1p/prompt
-            - output->"Chat" ar6v6LMNTaqxVthRlZG20/prompt
-            - output->"Destructure" 8eGhuqG4kOM3xr2nwKYyt/object
-          visualData: 1141.8836634176616/645.675489858645/280/327//
+        '[SZ4yIii2XvaHMue86QDO6]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 1043.8609724340745
+            text: Create role
+          visualData: -1755.1826378964747/-940.1360241898007/1308.654927271846/916//
         '[W888kIoF-SH_n2m0tV7Rc]:text "Text"':
           data:
             body: ""
@@ -1403,6 +1714,14 @@ data:
           outgoingConnections:
             - output->"Destructure" mcgQkCMsGk4tJBFjxhXTS/object
           visualData: 2017.605049893614/-732.2070674590149/280/658//
+        '[Yh7uuKhGTKEJl40mOg0FE]:comment "Comment"':
+          data:
+            backgroundColor: rgba(80,98,244,0.05)
+            color: rgba(250,250,250,1)
+            height: 576.7027015866272
+            text: |
+              Expanded description
+          visualData: -240.0097102675435/83.23420835040659/806.588848743939/888//
         '[ZEJe86ipFxX2Pgn0SpYkX]:text "Text"':
           data:
             text: >-
@@ -1414,13 +1733,13 @@ data:
               This note is sent to the media prior to a full press release.
 
 
-              The total length should be around a single paragraph.
+              The total length should be 2 to 3 short paragraphs.
 
 
               You will be passed a JSON object of 3 items, a High, Medium and Low risk scenario. Create one output holding statement for each of the 3 cases.
 
 
-              Each response should take the form of a very short hight level description of the issue and an explanation that a full response is being prepared.
+              Each response should take the form of a short hight level description of the issue and an explanation that a full response is being prepared.
 
 
               Do not include a title for each response, just the detail copy.
@@ -1475,13 +1794,10 @@ data:
           outgoingConnections:
             - output->"Http Call" JHrBit8Twr_6qXeZbrGBY/req_body
           visualData: 3121.352633541949/-1072.4770138346905/330/729//
-        '[aH7e1n92lzWsB4u_WYg7o]:comment "Comment"':
+        '[amanjT5aC-pMQbTIoqiAn]:text "Text"':
           data:
-            backgroundColor: rgba(0,0,0,0.05)
-            color: rgba(255,255,255,1)
-            height: 1442.5022400149803
-            text: Submit scenarios
-          visualData: 1495.4669891715535/453.7568902628947/1466.7327042187135/812//
+            text: aqvoxymesg5jovysyqa6lv0m
+          visualData: -2597.006717900505/1107.2278028822461/330/987//
         '[ar6v6LMNTaqxVthRlZG20]:chat "Chat"':
           data:
             additionalParameters: []
@@ -1494,7 +1810,7 @@ data:
             model: gpt-4o-mini
             outputUsage: false
             parallelFunctionCalling: true
-            reasoningEffort: medium
+            reasoningEffort: ""
             stop: ""
             temperature: 0.5
             top_p: 1
@@ -1516,7 +1832,7 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Extract JSON" foghClfs0RpllTUuFHt-Q/input
-          visualData: 1755.9487182492176/127.59474371350385/230/734//
+          visualData: 1746.8612201593378/-225.30309877682512/230/978//
         '[b0p0ChjrySbYCsRXMJKin]:httpCall "Http Call"':
           data:
             body: ""
@@ -1531,26 +1847,13 @@ data:
             useBodyInput: true
             useHeadersInput: false
           visualData: 3836.1264351809928/-662.0360561868131/280/732/var(--node-color-4)/var(--node-color-4)
-        '[bapvQhzj8q1yxfOAprD2A]:text "Text"':
-          data:
-            text: |
-              {
-                "data": {
-                  "detail": "{{input}}",
-                  "severity": "Low",
-                  "crisis": "{{documentId}}"
-                }
-              }
-          outgoingConnections:
-            - output->"Http Call" OK0NZ-PUiRDUdGqBr-G7B/req_body
-          visualData: 2069.843180647875/1180.518914963552/330/632//
         '[bqckyf2pK3-sULlIQFUw0]:comment "Comment"':
           data:
             backgroundColor: rgba(0,0,0,0.05)
             color: rgba(255,255,255,1)
-            height: 778.0042361189521
+            height: 597.2698296024814
             text: Call in the content from Strapi
-          visualData: -1562.392419493719/345.0199219358536/818.745871057165/431//
+          visualData: -1569.739174387927/456.69059632781625/804.7758411904256/972//
         '[cKjknBn_o8XEPm2EFP1C3]:httpCall "Http Call"':
           data:
             body: ""
@@ -1578,9 +1881,15 @@ data:
             id: input
             useDefaultValueInput: false
           outgoingConnections:
-            - data->"Graph Output" x_AuztBEc0FjzHI-2nj4P/value
             - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
-          visualData: -2414.2413224629086/611.0581240887003/330/867/var(--node-color-3)/var(--node-color-3)
+          visualData: -2471.896571707314/455.1418776579797/330/1007/var(--node-color-3)/var(--node-color-3)
+        '[hMBnQG7H5-eoGm-4FGM03]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 787.8082938575141
+            text: Long form press release
+          visualData: 1201.065090758448/-396.85823022841004/1213.1144607672818/980//
         '[iv4aQAxIg2qld3Kxgn1z4]:text "Text"':
           data:
             text: |-
@@ -1638,7 +1947,7 @@ data:
               }
           outgoingConnections:
             - output->"Chat" ar6v6LMNTaqxVthRlZG20/systemPrompt
-          visualData: 1103.5337879969013/119.73912088298889/330/737//
+          visualData: 1298.474426935451/-263.65929617574136/330/981//
         '[mcgQkCMsGk4tJBFjxhXTS]:destructure "Destructure"':
           data:
             paths:
@@ -1660,21 +1969,7 @@ data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}
           outgoingConnections:
             - output->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/url
-          visualData: 631.1697559778778/1008.7540319722306/330/877//
-        '[ohHO4UgYHNIOfR1EepUeK]:httpCall "Http Call"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
-            useBodyInput: true
-            useHeadersInput: false
-          visualData: 2591.1709390135634/1020.7631520096724/280/758/var(--node-color-4)/var(--node-color-4)
+          visualData: 128.1782826855232/1130.0610003671718/330/994//
         '[p-sMAbp17d-0PBwEbF7H0]:code "Code"':
           data:
             code: >-
@@ -1711,13 +2006,19 @@ data:
           data:
             backgroundColor: rgba(0,0,0,0.05)
             color: rgba(255,255,255,1)
-            height: 498
+            height: 661.2989123849472
             text: Define the severity
-          visualData: 228.2795777643335/957.2371139791325/1224.1965247673625/638//
+          visualData: 43.648670782855476/1017.0829941731288/1232.0641438214789/992//
         '[pj36ZGV8B0nhcuO1nltqU]:text "Text"':
           data:
             text: "{{input}}"
           visualData: 4348.838052517052/-830.4631643410783/330/813//
+        '[q-7FV8Lss_M2GuC2trzea]:setGlobal "Set Global"':
+          data:
+            dataType: string
+            id: role
+            useIdInput: false
+          visualData: -769.3811849653266/-394.08340480588504/230/968//
         '[qic03BQQlMsFH93Oh0O67]:subGraph "Subgraph"':
           data:
             graphId: GHgi_Qdv5HEfN9Cwup8cY
@@ -1725,27 +2026,14 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - severity->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/req_body
-          visualData: 609.1603381223252/1306.4261326159615/330/878/var(--node-color-1)/var(--node-color-1)
-        '[tmcvLEtdnIE8PFCGXhgrq]:text "Text"':
-          data:
-            text: |
-              {
-                "data": {
-                  "detail": "{{input}}",
-                  "severity": "High",
-                  "crisis": "{{documentId}}"
-                }
-              }
-          outgoingConnections:
-            - output->"Http Call" FIakP9wvdOt--2uEnOsmF/req_body
-          visualData: 2102.44394983333/539.0317358120365/330/627//
+          visualData: 486.9219445345881/1287.3263836178776/330/995/var(--node-color-1)/var(--node-color-1)
         '[vGUWgOtAY-i7sxm-WJ7eb]:text "Text"':
           data:
-            text: >
+            text: >-
               Your role is {{role}}
 
 
-              You should geneate an expanded description of the crisis situation described in the prompt. The length should run to around 3 or 4 paragraphs with natural line breaks.
+              You should generate an expanded description of the crisis situation described in the prompt. The output should include natural line breaks.
 
 
               Also generate a concise title description in fewer than 10 words.
@@ -1754,7 +2042,7 @@ data:
               Do not adjust the severity at this stage, leave that as Unknown.
 
 
-              Output a JSON object in the following format:
+              Output a only a JSON object in the following format:
 
 
               {
@@ -1766,9 +2054,12 @@ data:
                   "description": "Text of crisis"
                   }
               }
+
+
+              Return only the final valid UTF-8 JSON object.
           outgoingConnections:
             - output->"Chat" DOH9j6ldq5b44D5MY0YHO/systemPrompt
-          visualData: -322.6556466888078/48.67946006593419/330/773//
+          visualData: -199.33787655900795/156.50428744643352/330/991//
         '[xQfq8BV4M9MDHCKcpL6vJ]:httpCall "Http Call"':
           data:
             body: ""
@@ -1783,19 +2074,10 @@ data:
           outgoingConnections:
             - json->"Destructure" KJ0n7LZTEzcnuQDvmpaz4/object
           visualData: -341.409286403287/-502.1614298576312/280/463/var(--node-color-4)/var(--node-color-4)
-        '[x_AuztBEc0FjzHI-2nj4P]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: output
-          visualData: -1989.1215803096027/779.1086780018734/330/868/var(--node-color-3)/var(--node-color-3)
-        '[ydN6JIVTUGCZdqcePRpuV]:text "Text"':
-          data:
-            text: "{{input}}"
-          visualData: 1402.6473035937072/1261.5175223089796/330/870//
         '[zxftMeqPv_Rfjt9lpoE6Q]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Subgraph" qic03BQQlMsFH93Oh0O67/input
-          visualData: 263.69684529188777/1205.9259266314389/280/879//
+          visualData: 105.86316061727027/1431.5091608870898/280/993//
     hcy2UDhZVh6QP8e0AjKC7:
       metadata:
         description: Check the content of a single release using the vector DB
@@ -1854,6 +2136,128 @@ data:
           outgoingConnections:
             - output->"Extract JSON" 0YE9EtaAR-geTE11xkRdf/input
           visualData: 917.6873774869994/975.5829089409737/330/976//
+    jOpSxxKf2JqdCjND_3e_G:
+      metadata:
+        description: ""
+        id: jOpSxxKf2JqdCjND_3e_G
+        name: Severity - Boycott intent
+      nodes:
+        '[1pt1AoLaGy2XMo3A3rdx2]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You are a public relations professional working in a crisis
+              communications department.
+
+
+              You will be given some text describing a corporate crisis scenario that presents a risk to the company.
+
+
+              Your task is to estimate the likelihood of a boycott or similar withdrawal of support for each key stakeholder group:
+              	•	Customers - e.g., refusal to buy products, brand boycotts, public campaigns
+              	•	Employees - e.g., resignations, internal protest, union action
+              	•	Investors - e.g., divestment, shareholder activism, public criticism
+
+              You must return a score from 1 to 10, where 10 indicates a very high risk of boycott (or equivalent action) for that group.
+
+
+              Use the following scale as a guide:
+
+
+              1. Very Low - No real risk of disengagement or protest.
+
+              2. Low - Discontent may be voiced, but no action expected.
+
+              3. Moderate - Some dissatisfaction; possible isolated actions.
+
+              4. Noticeable - Small group may organize or speak out.
+
+              5. Concerning - Growing appetite for action, pressure starting to build.
+
+              6. Serious - Petitions, warnings, or soft disengagement begin.
+
+              7. High - Visible calls for action; some stakeholders disengaging.
+
+              8. Critical - Active movements form; mainstream traction gained.
+
+              9. Severe - Widespread boycott/disengagement in progress.
+
+              10. Extreme - Sustained, large-scale action with measurable damage to support or loyalty.
+
+
+              For each item add some short text to describe the rationale for why you gave the rating. Use language that makes it clear that the rationale is predictive rather than describing actual outcomes so the reader does not misunderstand the rationale as being actual events.
+
+
+              Output as a JSON object ONLY in this format:
+
+
+              {
+                "severity_boycottrisk": {
+                  "customers": {
+                    "score": 9,
+                    "rationale": "Customers have initiated a trending boycott campaign after revelations of unethical sourcing, with widespread traction on social media and activist involvement."
+                  },
+                  "employees": {
+                    "score": 4,
+                    "rationale": "Some internal frustration is evident, but organized action has not materialized beyond internal Slack discussions and a few HR complaints."
+                  },
+                  "investors": {
+                    "score": 6,
+                    "rationale": "Ethical investment groups are questioning continued support and have begun pressuring the board for accountability and governance changes."
+                  }
+                }
+              }
+          outgoingConnections:
+            - output->"Chat" XJCuxUWihIzR-cbjR6krZ/systemPrompt
+          visualData: 416.72421911436925/-14.619811780539578/1483.8939389042782/22/var(--node-color-4)/var(--node-color-4)
+        '[KQRuERJDGLd1l16j4ab5w]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 2511.610012743351/518.1260740704022/330/20/var(--node-color-3)/var(--node-color-3)
+        '[LHBPa2dRTTy5gniOy23ZA]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat" XJCuxUWihIzR-cbjR6krZ/prompt
+          visualData: 1486.9561718983412/856.114351892229/330/20/var(--node-color-3)/var(--node-color-3)
+        '[XJCuxUWihIzR-cbjR6krZ]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Graph Output" KQRuERJDGLd1l16j4ab5w/value
+          visualData: 2019.815380508604/359.47484734212014/230/21//
     l_qOMNG_p0UM3yOSO2O29:
       metadata:
         description: ""
@@ -1890,6 +2294,137 @@ data:
           outgoingConnections:
             - data->"Text" dTuFNljWI8EZD_ylncCwr/input
           visualData: -66.36410962894178/314.03516910390215/330/796/var(--node-color-3)/var(--node-color-3)
+    oNDvNATb6Cp0mwhFoA39A:
+      metadata:
+        description: ""
+        id: oNDvNATb6Cp0mwhFoA39A
+        name: Scenarios - Submit
+      nodes:
+        '[1CrILRhQbgDe3WTIPQa5o]:text "Text"':
+          data:
+            text: |
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "severity": "High",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Http Call" vGrMCp_P9c7YdmxhhVt0j/req_body
+          visualData: 749.1089222202045/24.40391311731696/330/627//
+        '[1qj6Co0QHa5bSTYQVEa3n]:text "Text"':
+          data:
+            text: |
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "severity": "Low",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Http Call" N-4ftkm3HlWZXOFajTkuX/req_body
+          visualData: 716.5081530347497/665.8910922688326/330/632//
+        '[6MfIA8qVDWK88vrdAM8uu]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 1237.835911400438/506.13532931495286/280/758/var(--node-color-4)/var(--node-color-4)
+        '[AG3KlNFLjYWCmgFLLBti5]:destructure "Destructure"':
+          data:
+            paths:
+              - $.high
+              - $.medium
+              - $.low
+          outgoingConnections:
+            - match_0->"Text" 1CrILRhQbgDe3WTIPQa5o/input
+            - match_1->"Text" OtrcUUB5vFEU7ON7mpZBk/input
+            - match_2->"Text" 1qj6Co0QHa5bSTYQVEa3n/input
+          visualData: 290.4877952850993/136.88424718587225/280/998//
+        '[LFQ7hV1m94UbW-qNJmK-c]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          visualData: 323.81540695367414/963.0715829007078/330/1005//
+        '[N-4ftkm3HlWZXOFajTkuX]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 1227.441575490263/950.9293040797393/280/757/var(--node-color-4)/var(--node-color-4)
+        '[ODTD1f3YIQB7Jjx5qfflt]:getGlobal "Get Global"':
+          data:
+            dataType: string
+            id: documentId
+            onDemand: true
+            useIdInput: false
+            wait: false
+          outgoingConnections:
+            - value->"Text" 1CrILRhQbgDe3WTIPQa5o/documentId
+            - value->"Text" 1qj6Co0QHa5bSTYQVEa3n/documentId
+            - value->"Text" LFQ7hV1m94UbW-qNJmK-c/input
+            - value->"Text" OtrcUUB5vFEU7ON7mpZBk/documentId
+          visualData: -20.88920141676641/818.3483016632435/230/1004//
+        '[OtrcUUB5vFEU7ON7mpZBk]:text "Text"':
+          data:
+            text: |
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "severity": "Medium",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Http Call" 6MfIA8qVDWK88vrdAM8uu/req_body
+          visualData: 749.1089222202045/369.29622060822646/330/629//
+        '[Z00m77150kI2e-9hLYAHl]:graphInput "Graph Input"':
+          data:
+            dataType: object
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Destructure" AG3KlNFLjYWCmgFLLBti5/object
+          visualData: -193.37087806327077/142.90424460028203/330/1000/var(--node-color-3)/var(--node-color-3)
+        '[vGrMCp_P9c7YdmxhhVt0j]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            text: ""
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 1242.3627308669757/69.47053481805983/280/478/var(--node-color-4)/var(--node-color-4)
+    yIEgKYgY6aV30QlUyUzA-:
+      metadata:
+        description: ""
+        id: yIEgKYgY6aV30QlUyUzA-
+        name: Create holding statements (Empty?)
+      nodes: {}
     zYlQ2Xk75J--kr6X__Awr:
       metadata:
         description: Write and individual set of QA pairs
@@ -1921,7 +2456,7 @@ data:
           description: Holding statement system prompt
           outgoingConnections:
             - output->"Chat" OIvEjExXAsyhFYZZ_ZKZy/systemPrompt
-          visualData: 690.1790071001392/158.81781408422745/330/204//
+          visualData: 690.1790071001392/158.81781408422745/330/204/var(--node-color-4)/var(--node-color-4)
         '[9gX-XwuOZ8FJIB5Zkoxo8]:graphOutput "Graph Output"':
           data:
             dataType: string
@@ -1939,7 +2474,7 @@ data:
             model: gpt-4o-mini
             outputUsage: false
             parallelFunctionCalling: true
-            reasoningEffort: medium
+            reasoningEffort: ""
             stop: ""
             temperature: 0.5
             top_p: 1
@@ -1985,3 +2520,7 @@ data:
     - id: pinecone
       name: Pinecone
       type: built-in
+    - id: anthropic
+      name: Anthropic
+      type: built-in
+  references: []
