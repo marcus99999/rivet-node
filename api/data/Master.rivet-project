@@ -21,7 +21,7 @@ data:
             dataType: string
             id: input
             useDefaultValueInput: false
-          visualData: 606.5453862870756/611.4383528429343/330/21/var(--node-color-3)/var(--node-color-3)
+          visualData: 572.9413766470964/446.34039243781876/330/30/var(--node-color-3)/var(--node-color-3)
         '[vVzM1CuokdW7Q7aR72KBu]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -32,12 +32,12 @@ data:
               }
           outgoingConnections:
             - output->"Graph Output" B5X_QFBAQQ49y3tr-rgwR/value
-          visualData: 1141.3959202951014/664.8747032501306/219.4420707054851/29/var(--node-color-4)/var(--node-color-4)
+          visualData: 1094.6425155786085/371.2048798746597/219.4420707054851/31/var(--node-color-2)/var(--node-color-2)
     3soSwiUKQ_X4fGdokyxAH:
       metadata:
         description: Individual press release rewrite
         id: 3soSwiUKQ_X4fGdokyxAH
-        name: Rewrite subgraph
+        name: PR - Rewrite agent
       nodes:
         '[3uWCPsym5lA_tSbQR8bCX]:text "Text"':
           data:
@@ -159,7 +159,7 @@ data:
       metadata:
         description: Apply best practices and create Q&A statements
         id: 8fhBx64QGpVrIT6XqLMrt
-        name: Best practice & Q&A agent subgraph
+        name: PR- Best practice & Q&A
       nodes:
         '[-HvpH3_vlr-lQwwFbODFe]:httpCall "Http Call"':
           data:
@@ -573,11 +573,30 @@ data:
         id: EfrNMYIRnDPH9b2qi_inj
         name: Severity - Scale
       nodes:
+        '[5aaOTYv2BoQKokxrcc8KO]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          visualData: 1395.0912246329167/121.89785106854106/330/47//
         '[P3SYMfFBNNYuWbXxdSp8d]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: 1735.6554059626744/479.98527538692053/330/28/var(--node-color-3)/var(--node-color-3)
+          visualData: 2249.7012827097865/577.8198132194354/330/48/var(--node-color-3)/var(--node-color-3)
+        '[QB5egqbszyjG1nUgB5paM]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/conversations
+          outgoingConnections:
+            - json->"Destructure" e1nMc32NAjbiaSQ1DTP_y/object
+          visualData: 531.1625091966408/-176.58039994591138/280/40/var(--node-color-4)/var(--node-color-4)
         '[YyeI0M3H0xamPKBRaf9p-]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -588,13 +607,25 @@ data:
               }
           outgoingConnections:
             - output->"Graph Output" P3SYMfFBNNYuWbXxdSp8d/value
-          visualData: 1315.4970243623961/591.1719901634855/219.4420707054851/29/var(--node-color-4)/var(--node-color-4)
+          visualData: 1726.733725760086/506.6031523760573/219.4420707054851/49/var(--node-color-2)/var(--node-color-2)
         '[bgzAE5faFdMAcBxE1TEfN]:graphInput "Graph Input"':
           data:
             dataType: string
             id: input
             useDefaultValueInput: false
           visualData: 780.6464903543704/537.7356397562892/330/21/var(--node-color-3)/var(--node-color-3)
+        '[e1nMc32NAjbiaSQ1DTP_y]:destructure "Destructure"':
+          data:
+            paths:
+              - $.data[0].Topics.stories
+          outgoingConnections:
+            - match_0->"Text" 5aaOTYv2BoQKokxrcc8KO/input
+          visualData: 978.8798857183191/67.17683838255807/280/46//
+        '[lztre-AS2RFVS6QlVfs1K]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          visualData: 973.905248201412/-161.6564873951889/330/41//
     GHgi_Qdv5HEfN9Cwup8cY:
       metadata:
         description: Estimate crisis severity
@@ -624,7 +655,7 @@ data:
               rights  Media/Social Sentiment: Trending hashtags:
               #NestleIndiaAccident #FactoryNegligence Coverage in business and
               mainstream media around ethical labour practices"
-          visualData: 167.3841792730384/581.9143212801082/330/127/var(--node-color-4)/var(--node-color-4)
+          visualData: 256.99593242203446/574.9134030653429/330/132/var(--node-color-2)/var(--node-color-2)
         '[7TeQ6pCv2o5V2YXCcjDgF]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
             - prompt->"Chat" _s43ZTL5W4a5ldiyC7j3k/prompt
@@ -650,12 +681,12 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Assemble Prompt" 7TeQ6pCv2o5V2YXCcjDgF/message4
-          visualData: 953.9704357139615/396.44891000481374/330/83/var(--node-color-1)/var(--node-color-1)
+          visualData: 959.9192751761462/396.44891000481374/330/135/var(--node-color-1)/var(--node-color-1)
         '[KfOHARDNuJGbsL7wsQRjB]:graphOutput "Graph Output"':
           data:
             dataType: object
             id: severity
-          visualData: 2921.7347660534633/309.1086678418129/330/110/var(--node-color-3)/var(--node-color-3)
+          visualData: 2921.7347660534633/309.1086678418129/330/137/var(--node-color-3)/var(--node-color-3)
         '[_FwqVLMhnvJzzdKNQ6sPG]:graphInput "Graph Input"':
           data:
             dataType: object
@@ -707,7 +738,7 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Assemble Prompt" 7TeQ6pCv2o5V2YXCcjDgF/message3
-          visualData: 960.8436083165452/192.34938732217952/330/82/var(--node-color-1)/var(--node-color-1)
+          visualData: 953.7050009619236/194.72892310705342/330/134/var(--node-color-1)/var(--node-color-1)
         '[kvM70I68-pUwFzV4NG5ZU]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -787,7 +818,7 @@ data:
               Do not include any explanations, calculations, markdown formatting, or stray characters. Return only the final valid UTF-8 JSON object.
           outgoingConnections:
             - output->"Chat" _s43ZTL5W4a5ldiyC7j3k/systemPrompt
-          visualData: 1537.5792614647432/-356.9735268058789/330/131/var(--node-color-4)/var(--node-color-4)
+          visualData: 1537.5792614647432/-356.9735268058789/330/131/var(--node-color-2)/var(--node-color-2)
         '[q4J6Cr_USUSIiqH2rVE7p]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -800,7 +831,7 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Assemble Prompt" 7TeQ6pCv2o5V2YXCcjDgF/message2
-          visualData: 957.3054363405248/-20.361918248630047/330/81/var(--node-color-1)/var(--node-color-1)
+          visualData: 953.736132663214/-16.792614571319213/330/133/var(--node-color-1)/var(--node-color-1)
         '[vzD1SMeR-en172gQVjSp2]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Graph Output" KfOHARDNuJGbsL7wsQRjB/value
@@ -812,7 +843,7 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Assemble Prompt" 7TeQ6pCv2o5V2YXCcjDgF/message5
-          visualData: 955.6684117296617/595.53577318013/330/84/var(--node-color-1)/var(--node-color-1)
+          visualData: 958.0479475145355/595.53577318013/330/136/var(--node-color-1)/var(--node-color-1)
     KpT800xhGZdwy4QxONPKN:
       metadata:
         description: ""
@@ -1038,7 +1069,7 @@ data:
               }
           outgoingConnections:
             - output->"Chat" 4-CXAo2JBQr55vA1pyFpi/systemPrompt
-          visualData: -994.0089025133748/285.12531371706797/1483.8939389042782/16/var(--node-color-4)/var(--node-color-4)
+          visualData: -994.0089025133748/285.12531371706797/1483.8939389042782/16/var(--node-color-2)/var(--node-color-2)
         '[Zuwhu-2EIC9x2facEXJBs]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -1056,7 +1087,7 @@ data:
       metadata:
         description: Interative press release rewriter
         id: WoecD9--01VjQHhXTmwtU
-        name: Rewrite and check subgraph
+        name: PR - Rewrite supervisor agent
       nodes:
         '[6JMB-7JMK_o3mDn4Nyw66]:graphOutput "Graph Output"':
           data:
@@ -1129,7 +1160,7 @@ data:
               }
           outgoingConnections:
             - output->"Graph Output" cQHPUJqbPtRObhSzVS_Ig/value
-          visualData: 1150.6649669977164/897.2902040707759/219.4420707054851/29/var(--node-color-4)/var(--node-color-4)
+          visualData: 1150.6649669977164/897.2902040707759/219.4420707054851/29/var(--node-color-2)/var(--node-color-2)
     aPC7m9RtS6-gmBn2nKrYk:
       metadata:
         description: ""
@@ -1182,31 +1213,6 @@ data:
           outgoingConnections:
             - value->"Text" -nA7x4qH9EaFXKxjUZQas/documentId
           visualData: 257/1516.727042733621/230/null//
-        '[d9pp9BM64wXZ5zy5Q_fzA]:text "Text"':
-          data:
-            body: ""
-            text: >-
-              {
-
-              "data": {
-                "original": "FOR IMMEDIATE RELEASE\n\nMay 13, 2025\n\nNestlé Addresses Limited Product Concerns with Commitment to Transparency\n\nNestlé is aware of the emerging situation referred to as 'Test Crisis' regarding certain products. We want to reassure our consumers and stakeholders that we are closely monitoring the situation and remain committed to transparency and consumer safety.\n\nWhile media coverage has been minimal and consumer awareness is currently limited, we believe in the importance of addressing any potential concerns proactively. Our dedicated team is conducting a thorough investigation to ensure the integrity of our products and the safety of our customers.\n\nWe are confident in our ability to manage this situation effectively and maintain the trust of our consumers. As we continue to investigate, we will provide updates to ensure all stakeholders are informed.\n\nThank you for your continued support and trust in Nestlé.\n\nBarnaby Fry\n\nPR Spokesperson, Nestlé\n\nbarnaby.fry@nestle.com\n7956949123\n\n\n",
-                "detail": "FOR IMMEDIATE RELEASE\n\nMay 13, 2025\n\nNestlé Responds Proactively to 'Test Crisis' Concerns\n\nNestlé acknowledges the emerging 'Test Crisis' situation concerning some of our products. We wish to assure our valued consumers and stakeholders that we are vigilantly monitoring the situation, with a steadfast commitment to transparency and consumer safety.\n\nDespite the minimal media coverage and limited consumer awareness at this stage, we understand the significance of proactively addressing any potential concerns. Our dedicated team is conducting an exhaustive investigation to uphold the integrity of our products and ensure the safety of our customers.\n\nWe are confident in our ability to navigate this situation effectively and preserve the trust of our consumers. As our investigation progresses, we will provide regular updates to keep all stakeholders informed.\n\nWe appreciate your ongoing support and trust in Nestlé.\n\nBarnaby Fry\n\nPR Spokesperson, Nestlé\n\nbarnaby.fry@nestle.com\n\n7956949123",
-                "history": {
-                "adjustments": [
-                  "Changed 'addresses' to 'responds proactively' for a more active tone",
-                  "Replaced 'referred to as' with 'concerning' for clarity",
-                  "Replaced 'we want to reassure' with 'we wish to assure' for a more professional tone",
-                  "Replaced 'we believe in the importance of' with 'we understand the significance of' for a more assertive tone",
-                  "Replaced 'we are confident in our ability to manage' with 'we are confident in our ability to navigate' for a more dynamic tone",
-                  "Added 'regular' before 'updates' for clarity"
-                ],
-                "sourceExamples": [
-                  "Nestlé Addresses Limited Product Concerns with Commitment to Transparency"
-                ]
-                }
-                }
-              }
-          visualData: 618.5488553521086/1862.651949501242/330/972//
         '[g4lusC14OrD6KykFlh9yz]:text "Text"':
           data:
             text: "{{input}}"
@@ -1310,7 +1316,7 @@ data:
       metadata:
         description: The main press room pipeline flow
         id: cGJILKi8TD1YSzAKUAzKV
-        name: Master graph
+        name: MASTER
       nodes:
         '[0mouFF980bt242hGgYlXk]:setGlobal "Set Global"':
           data:
@@ -1581,7 +1587,9 @@ data:
           visualData: 44.4321762346097/-397.50808679427195/280/742//
         '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
           data:
-            text: dky8i30kisowxhuupwo8iz5l
+            text: sihaot4huf96o6ikq7fq0pl8
+          outgoingConnections:
+            - output->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2424.803677318482/741.7967919860332/330/1008//
         '[N9YOhpmU3aaCsH0rF8pKv]:text "Text"':
           data:
@@ -1797,7 +1805,7 @@ data:
         '[amanjT5aC-pMQbTIoqiAn]:text "Text"':
           data:
             text: aqvoxymesg5jovysyqa6lv0m
-          visualData: -2597.006717900505/1107.2278028822461/330/987//
+          visualData: -2486.493206449407/933.7334730772966/330/1010//
         '[ar6v6LMNTaqxVthRlZG20]:chat "Chat"':
           data:
             additionalParameters: []
@@ -1853,7 +1861,7 @@ data:
             color: rgba(255,255,255,1)
             height: 597.2698296024814
             text: Call in the content from Strapi
-          visualData: -1569.739174387927/456.69059632781625/804.7758411904256/972//
+          visualData: -1569.739174387927/456.69059632781625/804.7758411904256/1009//
         '[cKjknBn_o8XEPm2EFP1C3]:httpCall "Http Call"':
           data:
             body: ""
@@ -1880,8 +1888,6 @@ data:
             dataType: string
             id: input
             useDefaultValueInput: false
-          outgoingConnections:
-            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2471.896571707314/455.1418776579797/330/1007/var(--node-color-3)/var(--node-color-3)
         '[hMBnQG7H5-eoGm-4FGM03]:comment "Comment"':
           data:
@@ -2082,7 +2088,7 @@ data:
       metadata:
         description: Check the content of a single release using the vector DB
         id: hcy2UDhZVh6QP8e0AjKC7
-        name: Check one release subgraph
+        name: PR - Check single release
       nodes:
         '[0YE9EtaAR-geTE11xkRdf]:extractJson "Extract JSON"':
           outgoingConnections:
@@ -2209,7 +2215,7 @@ data:
               }
           outgoingConnections:
             - output->"Chat" XJCuxUWihIzR-cbjR6krZ/systemPrompt
-          visualData: 416.72421911436925/-14.619811780539578/1483.8939389042782/22/var(--node-color-4)/var(--node-color-4)
+          visualData: 416.72421911436925/-14.619811780539578/1483.8939389042782/22/var(--node-color-2)/var(--node-color-2)
         '[KQRuERJDGLd1l16j4ab5w]:graphOutput "Graph Output"':
           data:
             dataType: string
@@ -2419,17 +2425,11 @@ data:
             useBodyInput: true
             useHeadersInput: false
           visualData: 1242.3627308669757/69.47053481805983/280/478/var(--node-color-4)/var(--node-color-4)
-    yIEgKYgY6aV30QlUyUzA-:
-      metadata:
-        description: ""
-        id: yIEgKYgY6aV30QlUyUzA-
-        name: Create holding statements (Empty?)
-      nodes: {}
     zYlQ2Xk75J--kr6X__Awr:
       metadata:
         description: Write and individual set of QA pairs
         id: zYlQ2Xk75J--kr6X__Awr
-        name: Q&A agent subgraph
+        name: PR- Q&A agent subgraph
       nodes:
         '[-IjNUGgP_EOUbfrIroaZD]:text "Text"':
           data:
