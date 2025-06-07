@@ -850,10 +850,6 @@ data:
         id: KpT800xhGZdwy4QxONPKN
         name: Scenarios - Create
       nodes:
-        '[FW2wYsaebPYNjjj7d-aSx]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Graph Output" cZ0ftay5oLWMqkrWqtnXp/value
-          visualData: 1345.1177766129117/690.6708116608482/280/905//
         '[LvY-_lVMY_t8lNzypgQPH]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -890,28 +886,31 @@ data:
               In each case be sure to reference the issue, the location and the date it occured.
 
 
-              Do not label each block text with the scenario type, just include the text relating to the possible outcome.
-
-
               Each of the 3 scenarios should begin with a description of approximately two paragraphs of prose that clearly outlines the potential situation.
 
 
-              After this description, insert two escaped line breaks (\\n\\n) followed by 3–4 concise bullet points that explicitly outline potential outcomes.
+              After this description, insert two escaped line breaks (\n\n) followed by 3-4 concise bullet points that explicitly outline potential outcomes.
 
 
-              ⚠️ For all line breaks or paragraph breaks (including within paragraphs or bullet spacing), use escaped newline characters (\\n) — not actual carriage returns or line breaks in the text.
+              ⚠️ For all line breaks or paragraph breaks (including within paragraphs or bullet spacing), use escaped newline characters (\n) — not actual carriage returns or line breaks in the text.
 
 
-              Output should be delivered as a plain string suitable for use in JSON.
+              Avoid any trailing new line characters at the end of scenario descriptions.
+
+
+              You should also generate a short summary title descriptor for each scenario of fewer than 10 words that describes the scenario outcome at a high level.
 
 
               Output the content as a JSON object ONLY in the following format:
 
 
               {
-                  "high": "High risk scenario content"
-                  "medium": "Medium risk scenario content"
-                  "low": "Low risk scenario content"
+                  "high-title": "High risk summary title",
+                  "high": "High risk scenario body content",
+                  "medium-title": "Medium risk summary tile",
+                  "medium": "Medium risk scenario body content",
+                  "low-title": "Low risk summary title",
+                  "low": "Low risk scenario body content"
               }
           description: Scenario generation system prompt
           outgoingConnections:
@@ -951,7 +950,7 @@ data:
             useUserInput: false
           description: High risk scenario
           outgoingConnections:
-            - response->"Extract JSON" FW2wYsaebPYNjjj7d-aSx/input
+            - response->"Extract JSON" xFOuKLadBzj0d_RNnrzN5/input
           visualData: 943/558/230/901//
         '[nrW4PhSpsORIwFKPjOwSu]:graphInput "Graph Input"':
           data:
@@ -961,6 +960,10 @@ data:
           outgoingConnections:
             - data->"Chat" f4QfJvKebW1dU6H8AJ13r/prompt
           visualData: 201/812/330/899/var(--node-color-3)/var(--node-color-3)
+        '[xFOuKLadBzj0d_RNnrzN5]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Graph Output" cZ0ftay5oLWMqkrWqtnXp/value
+          visualData: 1358.421582439276/731.3571609080569/280/907//
     TIrXJT0lI1gQdU0jtzkhz:
       metadata:
         description: ""
@@ -1803,7 +1806,7 @@ data:
         '[amanjT5aC-pMQbTIoqiAn]:text "Text"':
           data:
             text: aqvoxymesg5jovysyqa6lv0m
-          visualData: -2486.493206449407/933.7334730772966/330/1010//
+          visualData: -2459.56271454713/981.8236371885058/330/1012//
         '[ar6v6LMNTaqxVthRlZG20]:chat "Chat"':
           data:
             additionalParameters: []
@@ -2007,7 +2010,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" _FHEz4jYaBQuCmdaw0JMt/input
-          visualData: 2837.073803134408/-1085.4596234920493/230/829//
+          visualData: 2837.073803134408/-1085.4596234920493/230/1013//
         '[p5Qh0kyc_g5eWylv3780o]:comment "Comment"':
           data:
             backgroundColor: rgba(0,0,0,0.05)
@@ -2273,20 +2276,20 @@ data:
         '[9FhlORNwZYcIVHtLJaxqi]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" QEn1E8xVZzB_bS764rMrr/object
-          visualData: 706.2361881598962/403.70878996983436/280/791//
+          visualData: 667.5496667997363/620.3533095867293/280/799//
         '[QEn1E8xVZzB_bS764rMrr]:destructure "Destructure"':
           data:
             paths:
               - $.data.history[0].rewrite
           outgoingConnections:
             - match_0->"Graph Output" wLpk1ymSPlqIjm7PlEhL7/value
-          visualData: 1012.938941253115/409.617437044974/280/791//
+          visualData: 1016.0338629619278/548.8889139415494/280/798//
         '[dTuFNljWI8EZD_ylncCwr]:text "Text"':
           data:
             text: "{{input}}"
           outgoingConnections:
             - output->"Extract JSON" 9FhlORNwZYcIVHtLJaxqi/input
-          visualData: 358/398/330/791//
+          visualData: 243.48789677392693/673.4480320843379/330/800//
         '[wLpk1ymSPlqIjm7PlEhL7]:graphOutput "Graph Output"':
           data:
             dataType: string
@@ -2311,6 +2314,7 @@ data:
             text: |
               {
                 "data": {
+                  "title": "{{title}}",
                   "detail": "{{input}}",
                   "severity": "High",
                   "crisis": "{{documentId}}"
@@ -2318,12 +2322,13 @@ data:
               }
           outgoingConnections:
             - output->"Http Call" vGrMCp_P9c7YdmxhhVt0j/req_body
-          visualData: 749.1089222202045/24.40391311731696/330/627//
+          visualData: 1139.0392673838164/-44.572934944116184/330/1022//
         '[1qj6Co0QHa5bSTYQVEa3n]:text "Text"':
           data:
             text: |
               {
                 "data": {
+                  "title": "{{title}}",
                   "detail": "{{input}}",
                   "severity": "Low",
                   "crisis": "{{documentId}}"
@@ -2331,7 +2336,7 @@ data:
               }
           outgoingConnections:
             - output->"Http Call" N-4ftkm3HlWZXOFajTkuX/req_body
-          visualData: 716.5081530347497/665.8910922688326/330/632//
+          visualData: 1178.2307278133226/884.0831626672435/330/1026//
         '[6MfIA8qVDWK88vrdAM8uu]:httpCall "Http Call"':
           data:
             body: ""
@@ -2345,18 +2350,88 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
             useBodyInput: true
             useHeadersInput: false
-          visualData: 1237.835911400438/506.13532931495286/280/758/var(--node-color-4)/var(--node-color-4)
+          visualData: 1689.704650741663/465.31229678879856/280/1023/var(--node-color-4)/var(--node-color-4)
         '[AG3KlNFLjYWCmgFLLBti5]:destructure "Destructure"':
           data:
             paths:
               - $.high
               - $.medium
               - $.low
+              - $.high-title
+              - $.medium-title
+              - $.low-title
           outgoingConnections:
-            - match_0->"Text" 1CrILRhQbgDe3WTIPQa5o/input
-            - match_1->"Text" OtrcUUB5vFEU7ON7mpZBk/input
-            - match_2->"Text" 1qj6Co0QHa5bSTYQVEa3n/input
+            - match_0->"Code" NfF1QuChlgvE0W3a1yjsv/input1
+            - match_1->"Code" GDqFcz_Y8Y9alSR8jBnaU/input1
+            - match_2->"Code" CyJZJea-eMnyXOOf7mVY0/input1
+            - match_3->"Text" 1CrILRhQbgDe3WTIPQa5o/title
+            - match_4->"Text" OtrcUUB5vFEU7ON7mpZBk/title
+            - match_5->"Text" 1qj6Co0QHa5bSTYQVEa3n/title
           visualData: 290.4877952850993/136.88424718587225/280/998//
+        '[CyJZJea-eMnyXOOf7mVY0]:code "Code"':
+          data:
+            code: >-
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
+              const inputText = inputs.input1.value;
+
+
+              // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+              const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" 1qj6Co0QHa5bSTYQVEa3n/input
+          visualData: 788.8296094686916/888.550399746584/230/1029//
+        '[GDqFcz_Y8Y9alSR8jBnaU]:code "Code"':
+          data:
+            code: >-
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
+              const inputText = inputs.input1.value;
+
+
+              // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+              const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" OtrcUUB5vFEU7ON7mpZBk/input
+          visualData: 767.7142478172325/392.9353366261563/230/1028//
         '[LFQ7hV1m94UbW-qNJmK-c]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -2375,7 +2450,39 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
             useBodyInput: true
             useHeadersInput: false
-          visualData: 1227.441575490263/950.9293040797393/280/757/var(--node-color-4)/var(--node-color-4)
+          visualData: 1711.6872026970589/904.4755084465291/280/1025/var(--node-color-4)/var(--node-color-4)
+        '[NfF1QuChlgvE0W3a1yjsv]:code "Code"':
+          data:
+            code: >-
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
+              const inputText = inputs.input1.value;
+
+
+              // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+              const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" 1CrILRhQbgDe3WTIPQa5o/input
+          visualData: 721.2604521840224/-211.0719163050949/230/1027//
         '[ODTD1f3YIQB7Jjx5qfflt]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -2394,6 +2501,7 @@ data:
             text: |
               {
                 "data": {
+                  "title": "{{title}}",
                   "detail": "{{input}}",
                   "severity": "Medium",
                   "crisis": "{{documentId}}"
@@ -2401,7 +2509,7 @@ data:
               }
           outgoingConnections:
             - output->"Http Call" 6MfIA8qVDWK88vrdAM8uu/req_body
-          visualData: 749.1089222202045/369.29622060822646/330/629//
+          visualData: 1153.1161751514558/418.5653977949644/330/1024//
         '[Z00m77150kI2e-9hLYAHl]:graphInput "Graph Input"':
           data:
             dataType: object
@@ -2409,7 +2517,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Destructure" AG3KlNFLjYWCmgFLLBti5/object
-          visualData: -193.37087806327077/142.90424460028203/330/1000/var(--node-color-3)/var(--node-color-3)
+          visualData: -256.7169630176482/156.98115236792142/425.72297281994804/1010/var(--node-color-3)/var(--node-color-3)
         '[vGrMCp_P9c7YdmxhhVt0j]:httpCall "Http Call"':
           data:
             body: ""
@@ -2424,7 +2532,7 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
             useBodyInput: true
             useHeadersInput: false
-          visualData: 1242.3627308669757/69.47053481805983/280/478/var(--node-color-4)/var(--node-color-4)
+          visualData: 1698.4545425384927/46.947482389836765/280/1011/var(--node-color-4)/var(--node-color-4)
     zYlQ2Xk75J--kr6X__Awr:
       metadata:
         description: Write and individual set of QA pairs
