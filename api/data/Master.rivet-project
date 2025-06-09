@@ -1382,7 +1382,7 @@ data:
               It relates to the prodcut {{Product}}.
           outgoingConnections:
             - output->"Chat" DOH9j6ldq5b44D5MY0YHO/prompt
-          visualData: -724.3032089267066/485.95734013185364/330/886//
+          visualData: -686.6013397768722/589.6374802938983/330/1014//
         '[DOH9j6ldq5b44D5MY0YHO]:chat "Chat"':
           data:
             additionalParameters: []
@@ -1725,8 +1725,8 @@ data:
           visualData: 2017.605049893614/-732.2070674590149/280/658//
         '[Yh7uuKhGTKEJl40mOg0FE]:comment "Comment"':
           data:
-            backgroundColor: rgba(80,98,244,0.05)
-            color: rgba(250,250,250,1)
+            backgroundColor: rgba(255,0,0,0.05)
+            color: rgba(212,212,212,1)
             height: 576.7027015866272
             text: |
               Expanded description
@@ -2043,6 +2043,9 @@ data:
 
 
               You should generate an expanded description of the crisis situation described in the prompt. The output should include natural line breaks.
+
+
+              Do not confabulate or hallucinate. Do not add details that you are unsure of.
 
 
               Also generate a concise title description in fewer than 10 words.
