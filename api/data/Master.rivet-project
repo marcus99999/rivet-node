@@ -351,7 +351,7 @@ data:
           description: Q&A agent
           outgoingConnections:
             - output->"Text" 5LkY8Mu_v0tqj2jV-I95I/input
-          visualData: 1339.2994916524865/718.5724313971923/330/638/var(--node-color-1)/var(--node-color-1)
+          visualData: 1361.5910494615036/694.2543683328099/330/841/var(--node-color-1)/var(--node-color-1)
         '[5LkY8Mu_v0tqj2jV-I95I]:text "Text"':
           data:
             text: |-
@@ -401,7 +401,7 @@ data:
           outgoingConnections:
             - output->"Code" cC_XKF4Gxqp9WQfyS9sPz/input1
             - output->"Subgraph" h5k-44eeEQKUVT6CVVEBp/input
-          visualData: 964.5977177069665/152.09668113210384/330/829/var(--node-color-1)/var(--node-color-1)
+          visualData: 931.1603809934408/158.17619689819944/330/842/var(--node-color-1)/var(--node-color-1)
         '[H3Fm81x8gTwGXYoLLSlLk]:text "Text"':
           data:
             text: |-
@@ -409,7 +409,7 @@ data:
                 "data": {
                   "crisis": "{{documentId}}",
                   {{input}},
-                  "severity": "High"
+                  "severity": "Medium"
                 },
                 "meta": {}
               }
@@ -555,7 +555,7 @@ data:
                 "data": {
                   "crisis": "{{documentId}}",
                   {{input}},
-                  "severity": "High"
+                  "severity": "Low"
                 },
                 "meta": {}
               }
@@ -927,7 +927,7 @@ data:
           data:
             normalizeLineEndings: true
             text: dky8i30kisowxhuupwo8iz5l
-          visualData: 156.60194087099478/-105.10663689610769/330/1102//
+          visualData: 156.60194087099478/-105.10663689610769/330/1103//
         '[_FwqVLMhnvJzzdKNQ6sPG]:graphInput "Graph Input"':
           data:
             dataType: object
