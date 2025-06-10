@@ -11,28 +11,169 @@ data:
         id: -eizVpxv9JBIHuJFio6wd
         name: Severity - Momentum
       nodes:
+        '[1e1q51RKaxyylTq6uz5Mi]:text "Text"':
+          data:
+            body: ""
+            normalizeLineEndings: true
+            text: https://crisis-comms-git-main-flipsidegroup.vercel.app/api/momentum-summary?id={{input}}
+          outgoingConnections:
+            - output->"Http Call" r3ShAtoIHSLs3s6ceW9hD/url
+          visualData: 229.4430371931836/299.46635032763567/330/1086/var(--node-color-2)/var(--node-color-2)
         '[B5X_QFBAQQ49y3tr-rgwR]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: 1561.5543018953797/553.6879884735656/330/28/var(--node-color-3)/var(--node-color-3)
-        '[jsc7epdtNIuEWBihXp_yO]:graphInput "Graph Input"':
+          visualData: 1714.963911121372/401.7394231449638/330/1087/var(--node-color-3)/var(--node-color-3)
+        '[Yq9CuDZYI_HAjkON-Ij_r]:graphInput "Graph Input"':
           data:
             dataType: string
             id: input
             useDefaultValueInput: false
-          visualData: 572.9413766470964/446.34039243781876/330/30/var(--node-color-3)/var(--node-color-3)
-        '[vVzM1CuokdW7Q7aR72KBu]:text "Text"':
+          outgoingConnections:
+            - data->"Text" 1e1q51RKaxyylTq6uz5Mi/input
+          visualData: -233.5548547124057/308.84770434173805/330/1086/var(--node-color-3)/var(--node-color-3)
+        '[cImvTc5TMiqi-xzymw2Jv]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Graph Output" B5X_QFBAQQ49y3tr-rgwR/value
+          visualData: 1193.8850330380174/186.96597022857463/230/1081//
+        '[r3ShAtoIHSLs3s6ceW9hD]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/conversations
+            useUrlInput: true
+          outgoingConnections:
+            - res_body->"Chat" cImvTc5TMiqi-xzymw2Jv/prompt
+          visualData: 708.8354723089329/316.32839265415123/280/1086/var(--node-color-4)/var(--node-color-4)
+        '[rJTUQ98apWwR-V1wMFecW]:text "Text"':
           data:
             normalizeLineEndings: true
-            text: |-
+            text: >-
+              ou are a media analyst working within a PR crisis response team.
+
+
+              Your role is to assess the momentum of a potential crisis, based on whether it is growing or shrinking in scale over time.
+
+
+              Scale is represented by the volume of media conversation per day, measured in:
+              	•	reach (audience exposed to the story), and
+              	•	numberOfStories (number of distinct media items).
+
+              You will be provided with an object like this:
+
+
+              {
+                "crisisId": "dky8i30kisowxhuupwo8iz5l",
+                "crisisTitle": "Nestlé India Criticised for Prioritising Taste over Health in Kids’ Food",
+                "momentumByDay": [
+                  { "date": "31/05/25", "numberOfStories": 1, "reach": 95000 },
+                  { "date": "30/05/25", "numberOfStories": 1, "reach": 35000 },
+                  ...
+                  { "date": "01/06/25", "numberOfStories": 2, "reach": 1800000 }
+                ]
+              }
+
+
+              The data is an array of days, each with:
+              	•	the reach (number of people exposed that day), and
+              	•	the number of stories that day.
+
+              Your task:
+
+
+              You must produce a momentum score between 1 and 10, where:
+              	•	1 = the story is clearly receding and declining in visibility
+              	•	10 = the story is accelerating rapidly and growing in visibility and volume
+              	•	5 = flat or stable — no clear growth or decline
+              	•	Any value between 1-10 represents degrees of momentum.
+
+              How to reason:
+
+
+              ✅ Look at the recent trend:
+              	•	Is reach growing in the most recent few days?
+              	•	Is the number of stories increasing?
+
+              ✅ Consider the pattern over time:
+              	•	Sudden surges → higher momentum
+              	•	Flattening → stable
+              	•	Declining → low momentum
+
+              ✅ Prioritise the most recent 3-5 days, but take the whole series into account.
+
+
+              ✅ A crisis that has high recent growth, even with past fluctuations, should skew to a higher score.
+
+
+              ✅ A crisis that is clearly fading should be scored low.
+
+
+              Output format:
+
+
+              Produce a JSON object with this exact format:
+
+
               {
                 "severity_momentum": {
-                  "score": 5
+                  "score": [A number from 1 to 10],
+                  "rationale": "[A short sentence explaining why you gave that score, referencing the pattern of stories and reach.]"
+                }
               }
+
+
+              Example rationale styles:
+              	•	“Story volume and reach are growing rapidly in the last few days — high momentum.”
+              	•	“Reach has flattened after initial surge — stable momentum.”
+              	•	“Both story volume and reach are clearly declining — low momentum.”
+              	•	“Momentum is mixed, with inconsistent reach and volume — moderate score.”
+
+              Additional notes:
+
+
+              ❌ Do NOT simply average the values.
+
+              ❌ You are modelling perceived momentum, as a human would interpret it from the chart.
           outgoingConnections:
-            - output->"Graph Output" B5X_QFBAQQ49y3tr-rgwR/value
-          visualData: 1094.6425155786085/371.2048798746597/219.4420707054851/31/var(--node-color-2)/var(--node-color-2)
+            - output->"Chat" cImvTc5TMiqi-xzymw2Jv/systemPrompt
+          visualData: 768.7212588974103/-184.1391797085875/330/1084/var(--node-color-2)/var(--node-color-2)
     3soSwiUKQ_X4fGdokyxAH:
       metadata:
         description: Individual press release rewrite
@@ -68,7 +209,7 @@ data:
               }
           outgoingConnections:
             - output->"Extract JSON" ZVqFk3NdPBfcj3jimuG0E/input
-          visualData: 689.0409669045316/724.234136108081/330/940//
+          visualData: 689.0409669045316/724.234136108081/330/952//
         '[RLBF2blfneDpgAJzTpzjf]:extractJson "Extract JSON"':
           visualData: 1907.4279228483306/1533.0090083779075/280/945//
         '[Xmbnoh9LlbLMA2d7kR3iV]:graphInput "Graph Input"':
@@ -78,7 +219,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Code" tZ-TAvsyJmTjfBNokypbM/input1
-          visualData: -82.74849516986734/427.15315504282194/330/936/var(--node-color-3)/var(--node-color-3)
+          visualData: -13.748138873409161/667.062086165892/330/951/var(--node-color-3)/var(--node-color-3)
         '[ZVqFk3NdPBfcj3jimuG0E]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" u07GLNaref9rHCyXG761B/req_body
@@ -573,16 +714,11 @@ data:
         id: EfrNMYIRnDPH9b2qi_inj
         name: Severity - Scale
       nodes:
-        '[5aaOTYv2BoQKokxrcc8KO]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: "{{input}}"
-          visualData: 1395.0912246329167/121.89785106854106/330/47//
         '[P3SYMfFBNNYuWbXxdSp8d]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: 2249.7012827097865/577.8198132194354/330/48/var(--node-color-3)/var(--node-color-3)
+          visualData: 1875.5338243402894/103.66301122119557/330/1084/var(--node-color-3)/var(--node-color-3)
         '[QB5egqbszyjG1nUgB5paM]:httpCall "Http Call"':
           data:
             body: ""
@@ -593,10 +729,55 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: GET
+            text: ""
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/conversations
+            useUrlInput: true
           outgoingConnections:
+            - json->"Chat" SKYkoImNVIomPCw2QpDoA/prompt
             - json->"Destructure" e1nMc32NAjbiaSQ1DTP_y/object
-          visualData: 531.1625091966408/-176.58039994591138/280/40/var(--node-color-4)/var(--node-color-4)
+          visualData: 156.40648292293952/-159.99827488955293/280/1063/var(--node-color-4)/var(--node-color-4)
+        '[SKYkoImNVIomPCw2QpDoA]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" TML2qP4sSbstAq1bXRm1y/input
+          visualData: 986.5394461457543/-203.99314896184194/230/1070//
+        '[TML2qP4sSbstAq1bXRm1y]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Graph Output" P3SYMfFBNNYuWbXxdSp8d/value
+          visualData: 1379.9068275470765/98.04230236194954/330/1071//
         '[YyeI0M3H0xamPKBRaf9p-]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -605,27 +786,85 @@ data:
                 "severity_scale": {
                   "score": 3
               }
-          outgoingConnections:
-            - output->"Graph Output" P3SYMfFBNNYuWbXxdSp8d/value
-          visualData: 1726.733725760086/506.6031523760573/219.4420707054851/49/var(--node-color-2)/var(--node-color-2)
+          visualData: 1219.3206990355168/460.1732022182536/219.4420707054851/1066/var(--node-color-2)/var(--node-color-2)
         '[bgzAE5faFdMAcBxE1TEfN]:graphInput "Graph Input"':
           data:
             dataType: string
             id: input
             useDefaultValueInput: false
-          visualData: 780.6464903543704/537.7356397562892/330/21/var(--node-color-3)/var(--node-color-3)
+          outgoingConnections:
+            - data->"Text" na8CDrlRN_EKe9VlVLzqK/input
+          visualData: -785.9838440983992/-167.4789632019661/330/1083/var(--node-color-3)/var(--node-color-3)
         '[e1nMc32NAjbiaSQ1DTP_y]:destructure "Destructure"':
           data:
             paths:
               - $.data[0].Topics.stories
-          outgoingConnections:
-            - match_0->"Text" 5aaOTYv2BoQKokxrcc8KO/input
-          visualData: 978.8798857183191/67.17683838255807/280/46//
+          visualData: 640.6045345686065/242.9473639799578/280/1046//
         '[lztre-AS2RFVS6QlVfs1K]:text "Text"':
           data:
             normalizeLineEndings: true
-            text: "{{input}}"
-          visualData: 973.905248201412/-161.6564873951889/330/41//
+            text: >-
+              You are a media analyst working within a PR crisis response team.
+              Your role is to assess the *scale* of a potential crisis based on
+              how widely it has been seen by the public.
+
+
+              You will be provided with a small JSON object gicing you a **reach number**, representing how many people saw or engaged with the story.
+
+
+              The JSON object looks roughly like this:
+
+
+              {
+                "crisisId": "dky8i30kisowxhuupwo8iz5l",
+                "crisisTitle": "Nestlé India Criticised for Prioritising Taste over Health in Kids’ Food",
+                "totalReach": 8935000,
+                "socialReach": 7690000,
+                "newsReach": 1245000
+              }
+
+
+              ### Instructions:
+
+
+              Based on the total number of views in the "totalReach" field, use the following scale to rate the overall **scale of coverage** from 1 to 10:
+
+
+              - 1-2: Fewer than 10,000 total views (very low visibility)
+
+              - 3-4: 10,000 to 100,000 total views (moderate visibility)
+
+              - 5-6: 100,001 to 500,000 total views (regional or niche-wide reach)
+
+              - 7-8: 500,001 to 2,000,000 total views (national or high-profile online visibility)
+
+              - 9: 2,000,001 to 5,000,000 views (very high visibility)
+
+              - 10: More than 5,000,000 views (widespread national or international coverage)
+
+
+              2. Create a short piece of copy for the rationale that details the socialReach, the newReach and the totalReach, with an explanatiin for the overall numeric score rating.
+
+
+              3. Return the following JSON object:
+
+
+              {
+                "severity_scale": {
+                  "score": [RATING],
+                  "rationale": [The rationale copy]
+              }
+          outgoingConnections:
+            - output->"Chat" SKYkoImNVIomPCw2QpDoA/systemPrompt
+          visualData: 404.44022361263563/-601.5204520092515/330/1075/var(--node-color-2)/var(--node-color-2)
+        '[na8CDrlRN_EKe9VlVLzqK]:text "Text"':
+          data:
+            body: ""
+            normalizeLineEndings: true
+            text: https://crisis-comms-git-main-flipsidegroup.vercel.app/api/reach-summary?id={{input}}
+          outgoingConnections:
+            - output->"Http Call" QB5egqbszyjG1nUgB5paM/url
+          visualData: -322.98595219280986/-176.8603172160685/330/1082/var(--node-color-2)/var(--node-color-2)
     GHgi_Qdv5HEfN9Cwup8cY:
       metadata:
         description: Estimate crisis severity
@@ -655,7 +894,7 @@ data:
               rights  Media/Social Sentiment: Trending hashtags:
               #NestleIndiaAccident #FactoryNegligence Coverage in business and
               mainstream media around ethical labour practices"
-          visualData: 256.99593242203446/574.9134030653429/330/132/var(--node-color-2)/var(--node-color-2)
+          visualData: -312.6010907316489/442.3021227302281/330/1094/var(--node-color-2)/var(--node-color-2)
         '[7TeQ6pCv2o5V2YXCcjDgF]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
             - prompt->"Chat" _s43ZTL5W4a5ldiyC7j3k/prompt
@@ -668,9 +907,6 @@ data:
               - $.data.description
             text: ""
           outgoingConnections:
-            - match_2->"Subgraph" -z50Fnu2D56A10PrKG8bh/input
-            - match_2->"Subgraph" 9LbLUH9DXSm4aUH_vBpcw/input
-            - match_2->"Subgraph" k6jy8_Nk5sKxENwH9aZ6N/input
             - match_2->"Subgraph" tSneJ2F42M20RGsm8W9u_/input
             - match_2->"Subgraph" ykrdQorXBm6sTD0CYykhr/input
           visualData: 200.42723207197824/260.98481720614393/280/126//
@@ -681,12 +917,17 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Assemble Prompt" 7TeQ6pCv2o5V2YXCcjDgF/message4
-          visualData: 959.9192751761462/396.44891000481374/330/135/var(--node-color-1)/var(--node-color-1)
+          visualData: 954.9104811826115/162.70519030652952/330/1101/var(--node-color-1)/var(--node-color-1)
         '[KfOHARDNuJGbsL7wsQRjB]:graphOutput "Graph Output"':
           data:
             dataType: object
             id: severity
           visualData: 2921.7347660534633/309.1086678418129/330/137/var(--node-color-3)/var(--node-color-3)
+        '[NTU1OKMCMtEuf30vFKNh4]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: dky8i30kisowxhuupwo8iz5l
+          visualData: 156.60194087099478/-105.10663689610769/330/1102//
         '[_FwqVLMhnvJzzdKNQ6sPG]:graphInput "Graph Input"':
           data:
             dataType: object
@@ -694,7 +935,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Destructure" 7ouISIuZoDgTyf0yhM7sj/object
-          visualData: -223.69428317817233/320.4417452152306/330/124/var(--node-color-3)/var(--node-color-3)
+          visualData: -404.2982173488524/153.73042136537202/330/1093/var(--node-color-3)/var(--node-color-3)
         '[_s43ZTL5W4a5ldiyC7j3k]:chat "Chat"':
           data:
             additionalParameters: []
@@ -738,7 +979,7 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Assemble Prompt" 7TeQ6pCv2o5V2YXCcjDgF/message3
-          visualData: 953.7050009619236/194.72892310705342/330/134/var(--node-color-1)/var(--node-color-1)
+          visualData: 953.7050009619236/-22.318816612781937/330/1098/var(--node-color-1)/var(--node-color-1)
         '[kvM70I68-pUwFzV4NG5ZU]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -749,7 +990,7 @@ data:
 
               The object includes the following 5 severity dimensions:
 
-              	•	severity_scale - a single numeric score
+              	•	severity_scale - a JSON object with a single numeric items for score and a rationale field
               	•	severity_emotionalintensity - individual scores for customers, employees, investors
               	•	severity_influence - a single numeric score
               	•	severity_momentum - a single numeric score
@@ -764,7 +1005,7 @@ data:
               	•	Investors
 
               2.	For each group, average the following five values:
-              	•	severity_scale.score
+              	•	severity_scale.[group].score
               	•	severity_influence.score
               	•	severity_momentum.score
               	•	severity_emotionalintensity.[group].score
@@ -782,7 +1023,7 @@ data:
               }
 
 
-              4.	Normalize the result and return a rounded average score between 1 and 10 for each stakeholder group.
+              4.	Normalize the result and return a rounded average score between 1 and 10 for each stakeholder group. Round the number up or down to the nearest integer.
 
 
               5.	Calculate a fourth value, overall_average_score, as the mean of the three stakeholder averages.
@@ -831,11 +1072,23 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Assemble Prompt" 7TeQ6pCv2o5V2YXCcjDgF/message2
-          visualData: 953.736132663214/-16.792614571319213/330/133/var(--node-color-1)/var(--node-color-1)
+          visualData: 955.4057306610589/395.5980908963679/330/1100/var(--node-color-1)/var(--node-color-1)
         '[vzD1SMeR-en172gQVjSp2]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Graph Output" KfOHARDNuJGbsL7wsQRjB/value
           visualData: 2476.083253749114/562.6404419130982/280/130//
+        '[wlXIDF_D3ab_FCSneCx_n]:getGlobal "Get Global"':
+          data:
+            dataType: string
+            id: documentId
+            onDemand: true
+            useIdInput: false
+            wait: false
+          outgoingConnections:
+            - value->"Subgraph" -z50Fnu2D56A10PrKG8bh/input
+            - value->"Subgraph" 9LbLUH9DXSm4aUH_vBpcw/input
+            - value->"Subgraph" k6jy8_Nk5sKxENwH9aZ6N/input
+          visualData: 348.2199617299237/-382.1792060575412/230/1095//
         '[ykrdQorXBm6sTD0CYykhr]:subGraph "Subgraph"':
           data:
             graphId: jOpSxxKf2JqdCjND_3e_G
@@ -1104,7 +1357,7 @@ data:
           outgoingConnections:
             - break->"Text" lMF6X1DupFsFWvPRvsKDS/input
             - output1->"Subgraph" pUmp7YYzE2Qb2_bjZOcA4/input
-          visualData: 360.31557351020456/848.9658434310018/280/848//
+          visualData: 448.2173767164668/1057.9399416194742/280/883//
         '[lMF6X1DupFsFWvPRvsKDS]:text "Text"':
           data:
             text: "{{input}}"
@@ -1127,7 +1380,7 @@ data:
           outgoingConnections:
             - output->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/input1
             - output->"Subgraph" tGjoPWvOpRqQlUEhNXlhw/input
-          visualData: 856.4199877435374/1497.6557280153213/330/871/var(--node-color-1)/var(--node-color-1)
+          visualData: 831.7143079689475/1545.1666506587633/330/884/var(--node-color-1)/var(--node-color-1)
         '[tGjoPWvOpRqQlUEhNXlhw]:subGraph "Subgraph"':
           data:
             graphId: hcy2UDhZVh6QP8e0AjKC7
@@ -1135,35 +1388,151 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - Analysis->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/continue
-          visualData: 1271.6953776199753/1246.183525212737/330/878/var(--node-color-1)/var(--node-color-1)
+          visualData: 1246.9896978453855/1418.1730651819973/330/882/var(--node-color-1)/var(--node-color-1)
     _7ny001Rtlr9P7w3EfY8D:
       metadata:
         description: ""
         id: _7ny001Rtlr9P7w3EfY8D
         name: Severity - Influence
       nodes:
-        '[ADfjKc37hEkSE7ddaDOjI]:graphInput "Graph Input"':
+        '[-3u4TY3RxoDwOwv2PoGAe]:httpCall "Http Call"':
           data:
-            dataType: string
-            id: input
-            useDefaultValueInput: false
-          visualData: 618.1697207226142/895.6701837878978/330/30/var(--node-color-3)/var(--node-color-3)
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/conversations
+            useUrlInput: true
+          outgoingConnections:
+            - res_body->"Chat" nj_dt62HVgvrZ5wpCrhZA/prompt
+          visualData: 728.5227232646456/685.1154374371388/280/1092/var(--node-color-4)/var(--node-color-4)
+        '[6bZjrNwERO89tYahpSzuN]:text "Text"':
+          data:
+            body: ""
+            normalizeLineEndings: true
+            text: https://crisis-comms-git-main-flipsidegroup.vercel.app/api/influence-summary?id={{input}}
+          outgoingConnections:
+            - output->"Http Call" -3u4TY3RxoDwOwv2PoGAe/url
+          visualData: 249.13028814889606/668.2533951106232/330/1092/var(--node-color-2)/var(--node-color-2)
+        '[CoJckDxjix8NO-JvBpGPl]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You are a media analyst working within a PR crisis response team.
+
+
+              Your role is to assess the influence exposure of a story — meaning how influential are the media and social outlets discussing the story.
+
+
+              You will receive an object that looks like this:
+
+
+              {
+                "crisisId": "dky8i30kisowxhuupwo8iz5l",
+                "crisisTitle": "Nestlé India Criticised for Prioritising Taste over Health in Kids’ Food",
+                "influenceScores": [2,1,10,10,10,5,10,10,10,10,3,10,9,10,10,10,10,10,10,10,2,1,10,10,10,5,10,10,10,10,3,10,9,10,7,10,10,4,10,1]
+              }
+
+
+              Each number in the influenceScores array represents a story, and the number represents the influence of that story’s source — on a scale from 1 (low influence) to 10 (very high influence).
+
+
+              Scoring logic:
+
+
+              You must produce a single severity_influence score between 1 and 10, that represents the overall influence exposure of the story.
+
+
+              It is NOT a simple average. Your scoring should be weighted toward prominence of high influence stories:
+
+
+              ✅ If there is a significant number of 9s or 10s, the overall score should skew high — even if some lower scores exist.
+
+
+              ✅ If there is a broad mix of medium and low scores (1-5), the score should be lower.
+
+
+              ✅ If almost all scores are low (1-5), the overall score should reflect low influence exposure.
+
+
+              ✅ If the story has mostly 10s with just a few lower outliers, the overall score should still be very high.
+
+
+              Output format:
+
+
+              Produce a JSON object with this exact format:
+
+
+              {
+                "severity_influence": {
+                  "score": [A number from 1 to 10],
+                  "rationale": "[A short sentence explaining why you gave that score, referencing the overall pattern of influence scores.]"
+                }
+              }
+
+
+              Examples of rationale phrasing:
+              	•	“The majority of stories were published on very high influence platforms (9s and 10s), indicating broad and strong exposure.”
+              	•	“There is a mix of high and low influence stories, but the large cluster of 10s skews the overall exposure upward.”
+              	•	“Influence is mixed and weighted toward medium-tier platforms, leading to a moderate exposure score.”
+              	•	“Most stories are on low-influence platforms, with only a few high-profile mentions.”
+          outgoingConnections:
+            - output->"Chat" nj_dt62HVgvrZ5wpCrhZA/systemPrompt
+          visualData: 857.4828987343444/255.03966694086816/330/1088/var(--node-color-2)/var(--node-color-2)
         '[cQHPUJqbPtRObhSzVS_Ig]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: 1570.8233485979947/786.1034892942109/330/28/var(--node-color-3)/var(--node-color-3)
-        '[zGNQDDqzOWI06Bw6Ec0NW]:text "Text"':
+          visualData: 1779.6841057456163/744.0308187896541/330/1093/var(--node-color-3)/var(--node-color-3)
+        '[nj_dt62HVgvrZ5wpCrhZA]:chat "Chat"':
           data:
-            normalizeLineEndings: true
-            text: |-
-              {
-                "severity_influence": {
-                  "score": 8
-              }
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
           outgoingConnections:
-            - output->"Graph Output" cQHPUJqbPtRObhSzVS_Ig/value
-          visualData: 1150.6649669977164/897.2902040707759/219.4420707054851/29/var(--node-color-2)/var(--node-color-2)
+            - response->"Graph Output" cQHPUJqbPtRObhSzVS_Ig/value
+          visualData: 1344.3238002870742/621.6729384805782/230/1090//
+        '[zNA61vZ_dE5lnqBcUhUp6]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" 6bZjrNwERO89tYahpSzuN/input
+          visualData: -213.86760375669326/677.6347491247257/330/1092/var(--node-color-3)/var(--node-color-3)
     aPC7m9RtS6-gmBn2nKrYk:
       metadata:
         description: ""
@@ -1879,7 +2248,7 @@ data:
             useUrlInput: true
           outgoingConnections:
             - json->"Destructure" 7eyt6KkrPUqx01ZWsuWGh/object
-          visualData: -1480.2231785001838/559.3316352095475/280/790/var(--node-color-4)/var(--node-color-4)
+          visualData: -1480.2231785001838/559.3316352095475/280/1015/var(--node-color-4)/var(--node-color-4)
         '[foghClfs0RpllTUuFHt-Q]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Subgraph" QG0B00OmZYN6SmNbPqPFN/input
@@ -1942,7 +2311,7 @@ data:
               Each press release should include the contact details of {{Email}} and {{Phone}} at the bottom.
 
 
-              Ensure there is a double line break before this.
+              Ensure there is a double line break before this. Ensure there is no excess spacing at the bottom the file.
 
 
               Output a JSON object in this format:
@@ -2498,7 +2867,7 @@ data:
             - value->"Text" 1qj6Co0QHa5bSTYQVEa3n/documentId
             - value->"Text" LFQ7hV1m94UbW-qNJmK-c/input
             - value->"Text" OtrcUUB5vFEU7ON7mpZBk/documentId
-          visualData: -20.88920141676641/818.3483016632435/230/1004//
+          visualData: -20.88920141676641/818.3483016632435/230/1030//
         '[OtrcUUB5vFEU7ON7mpZBk]:text "Text"':
           data:
             text: |
