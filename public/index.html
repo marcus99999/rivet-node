@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crisis Comms Centre Graph Execution</title>
+  <title>Radius Graph Execution</title>
   <style>
     body {
       font-family: sans-serif;
@@ -39,7 +39,14 @@
   </style>
 </head>
 <body>
-  <h1>CCC - Graph Execution</h1>
+  <h1>Radius - Graph Execution</h1>
+
+  <!-- Debugger section at top -->
+  <h2>Debugger</h2>
+  <button id="startDebugger">Start Remote Debugger</button>
+  <div id="debuggerStatus">(not started)</div>
+
+  <hr />
 
   <label for="prompt">Crisis document ID</label>
   <input type="text" id="prompt" value="dky8i30kisowxhuupwo8iz5l" />
@@ -101,15 +108,6 @@
       errorBox.textContent = '';
       spinner.style.display = 'block';
 
-      // let inputs;
-      // try {
-      //   inputs = JSON.parse(document.getElementById('jsonInput').value);
-      // } catch (parseErr) {
-      //   errorBox.textContent = "❌ Invalid JSON:\n" + parseErr.message;
-      //   spinner.style.display = 'none';
-      //   return;
-      // }
-
       try {
         let inputs = {
           "documentId": documentId.value
@@ -151,6 +149,31 @@
         errorBox.textContent = JSON.stringify({ message: 'Failed to run graph', error: err.message }, null, 2);
       } finally {
         spinner.style.display = 'none';
+      }
+    });
+
+    // 🆕 Start Debugger button → now separate and calls /api/start-debugger
+    document.getElementById('startDebugger').addEventListener('click', async () => {
+      console.log("🚀 Starting Remote Debugger...");
+      const status = document.getElementById('debuggerStatus');
+      try {
+        const res = await fetch('/api/start-debugger', {
+          method: 'POST',
+          headers: {
+            "Authorization": "Bearer rivet-xyz-123",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({})
+        });
+
+        const json = await res.json();
+        console.log("✅ /api/start-debugger response:", json);
+        status.textContent = "Debugger started (check terminal)";
+        alert("Remote Debugger started — check terminal + Rivet Webapp.");
+      } catch (err) {
+        console.error("❌ Failed to start debugger:", err);
+        status.textContent = "(error starting debugger)";
+        alert("Failed to start debugger — check console.");
       }
     });
   </script>
