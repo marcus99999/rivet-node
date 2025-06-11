@@ -1,19 +1,17 @@
 {
-  "name": "rivet-node-app",
+  "name": "rivet-node",
   "version": "1.0.0",
-  "type": "module",
+  "description": "Rivet Node Graph Runner",
   "main": "index.js",
   "scripts": {
     "build": "tsc"
   },
+  "type": "module",
   "dependencies": {
-    "@ironclad/rivet-node": "^1.24.2",
-    "dotenv": "^16.5.0",
-    "yaml": "^2.8.0"
+    "@ironclad/rivet-node": "^0.15.3"
   },
   "devDependencies": {
-    "@types/node": "^20.11.17",
-    "@vercel/node": "^5.1.16",
+    "@types/node": "^18.0.0",
     "typescript": "^5.3.3"
   }
 }
