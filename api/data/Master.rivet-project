@@ -7,7 +7,7 @@ data:
   graphs:
     -eizVpxv9JBIHuJFio6wd:
       metadata:
-        description: Estimate the severity momentum
+        description: ""
         id: -eizVpxv9JBIHuJFio6wd
         name: Severity - Momentum
       nodes:
@@ -101,7 +101,7 @@ data:
 
               {
                 "crisisId": "dky8i30kisowxhuupwo8iz5l",
-                "crisisTitle": "Nestlé India Criticised for Prioritising Taste over Health in Kids' Food",
+                "crisisTitle": "Nestlé India Criticised for Prioritising Taste over Health in Kids’ Food",
                 "momentumByDay": [
                   { "date": "31/05/25", "numberOfStories": 1, "reach": 95000 },
                   { "date": "30/05/25", "numberOfStories": 1, "reach": 35000 },
@@ -856,7 +856,7 @@ data:
               }
           outgoingConnections:
             - output->"Chat" SKYkoImNVIomPCw2QpDoA/systemPrompt
-          visualData: 495.4667382592778/-611.2041237801709/330/1085/var(--node-color-2)/var(--node-color-2)
+          visualData: 404.44022361263563/-601.5204520092515/330/1075/var(--node-color-2)/var(--node-color-2)
         '[na8CDrlRN_EKe9VlVLzqK]:text "Text"':
           data:
             body: ""
@@ -1391,7 +1391,7 @@ data:
           visualData: 1246.9896978453855/1418.1730651819973/330/882/var(--node-color-1)/var(--node-color-1)
     _7ny001Rtlr9P7w3EfY8D:
       metadata:
-        description: Estimate the severity of influence
+        description: ""
         id: _7ny001Rtlr9P7w3EfY8D
         name: Severity - Influence
       nodes:
@@ -1710,7 +1710,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: -700.3395112827031/269.4914416547989/330/1016/var(--node-color-3)/var(--node-color-3)
+          visualData: -700.3395112827031/266.7150418264481/330/1006/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
             body: ""

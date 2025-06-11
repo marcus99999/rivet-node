@@ -2,119 +2,157 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CCC - Graph Execution</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crisis Comms Centre Graph Execution</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    label, select, input, textarea, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    textarea {
+      font-family: monospace;
+      white-space: pre;
+      padding: 1rem;
+    }
+    pre {
+      background: #f5f5f5;
+      padding: 1rem;
+      white-space: pre-wrap;
+    }
+    button {
+      padding: 0.75rem;
+    }
+    #spinner {
+      display: none;
+      margin: 1rem 0;
+      font-size: 1rem;
+      text-align: center;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; padding: 20px;">
+<body>
   <h1>CCC - Graph Execution</h1>
 
-  <button id="start-debugger-btn" style="padding: 6px 12px; margin-bottom: 10px;">Start Debugger (Local Only)</button>
+  <label for="prompt">Crisis document ID</label>
+  <input type="text" id="prompt" value="dky8i30kisowxhuupwo8iz5l" />
 
-  <div>
-    <label for="crisisId">Crisis document ID</label><br />
-    <input type="text" id="crisisId" style="width: 400px;" /><br /><br />
+  <label for="graph">Select graph</label>
+  <select id="graph">
+    <option>Loading the graphs...</option>
+  </select>
 
-    <label for="graphSelect">Select graph</label><br />
-    <select id="graphSelect" style="width: 400px;"></select><br /><br />
+  <label for="jsonInput">Graph inputs (JSON)</label>
+  <textarea id="jsonInput" rows="10">
+{}
+  </textarea>
 
-    <label for="graphInputs">Graph inputs (JSON)</label><br />
-    <textarea id="graphInputs" rows="8" cols="80">{}</textarea><br /><br />
+  <button id="run">Run graph</button>
 
-    <button id="runGraphBtn">Run graph</button>
-  </div>
+  <div id="spinner">⏳ Running graph...</div>
 
   <h2>Outputs</h2>
-  <pre id="outputs">(no outputs yet)</pre>
+  <pre id="output">(waiting)</pre>
 
   <h2>Errors</h2>
-  <pre id="errors">[]</pre>
+  <pre id="error">(waiting)</pre>
 
   <script>
-    async function loadGraphs() {
+    const masterGraphId = "cGJILKi8TD1YSzAKUAzKV";
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      const dropdown = document.getElementById('graph');
       try {
-        const res = await fetch("/api/graphs");
+        const res = await fetch('/api/graphs');
         const json = await res.json();
 
-        const select = document.getElementById("graphSelect");
-        select.innerHTML = "";
-        json.graphs.forEach((graph) => {
-          const option = document.createElement("option");
-          option.value = graph.id;
-          option.textContent = `${graph.name} (${graph.id})`;
-          select.appendChild(option);
+        dropdown.innerHTML = '';
+        const sorted = json.graphs.sort((a, b) => a.name.localeCompare(b.name));
+        sorted.forEach(g => {
+          const option = document.createElement('option');
+          option.value = g.id;
+          option.textContent = g.id === masterGraphId
+            ? `★ ${g.name || 'Untitled'} (Main) (${g.id})`
+            : `  ${g.name || 'Untitled'} (${g.id})`;
+          if (g.id === masterGraphId) dropdown.prepend(option);
+          else dropdown.append(option);
         });
       } catch (err) {
-        console.error("Failed to load graphs:", err);
+        dropdown.innerHTML = '<option>Error loading graphs</option>';
+        console.error('Failed to load graphs:', err);
       }
-    }
+    });
 
-    async function runGraph() {
-      const crisisId = document.getElementById("crisisId").value;
-      const graphId = document.getElementById("graphSelect").value;
-      const inputsRaw = document.getElementById("graphInputs").value;
+    document.getElementById('run').addEventListener('click', async () => {
+      const graph = document.getElementById('graph').value;
+      const spinner = document.getElementById('spinner');
+      const outputBox = document.getElementById('output');
+      const errorBox = document.getElementById('error');
+      const documentId = document.getElementById('prompt');
 
-      let inputs;
+      outputBox.textContent = '';
+      errorBox.textContent = '';
+      spinner.style.display = 'block';
+
+      // let inputs;
+      // try {
+      //   inputs = JSON.parse(document.getElementById('jsonInput').value);
+      // } catch (parseErr) {
+      //   errorBox.textContent = "❌ Invalid JSON:\n" + parseErr.message;
+      //   spinner.style.display = 'none';
+      //   return;
+      // }
+
       try {
-        inputs = JSON.parse(inputsRaw);
-      } catch (err) {
-        alert("Invalid JSON in Graph Inputs");
-        return;
-      }
+        let inputs = {
+          "documentId": documentId.value
+        };
 
-      // Include crisisId in inputs if provided
-      if (crisisId) {
-        inputs.crisisId = crisisId;
-      }
-
-      try {
-        const res = await fetch("/api/run", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            graphId,
-            inputs,
-          }),
+        const res = await fetch('/api/run', {
+          method: 'POST',
+          headers: {
+            "Authorization": "Bearer rivet-xyz-123",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ graph, inputs })
         });
 
         const json = await res.json();
 
-        console.log("📦 Graph outputs:", json.outputs);
+        const outputs = json.outputs || {};
+        console.log("📦 Graph outputs:", outputs);
 
-        document.getElementById("outputs").textContent = JSON.stringify(
-          json.outputs || {},
-          null,
-          2
-        );
-        document.getElementById("errors").textContent = JSON.stringify(
-          json.errors || [],
-          null,
-          2
-        );
+        if (Object.keys(outputs).length === 0) {
+          outputBox.textContent = "(no outputs returned)";
+        } else {
+          outputBox.textContent = Object.entries(outputs)
+            .map(([key, value]) => {
+              const pretty = typeof value === 'object'
+                ? JSON.stringify(value, null, 2)
+                : value;
+              return `🟢 ${key}:\n${pretty}`;
+            })
+            .join('\n\n---\n\n');
+        }
+
+        const errors = json.errors || [];
+        errorBox.textContent = errors.length
+          ? JSON.stringify(errors, null, 2)
+          : "[]";
+
       } catch (err) {
-        console.error("Failed to run graph:", err);
+        errorBox.textContent = JSON.stringify({ message: 'Failed to run graph', error: err.message }, null, 2);
+      } finally {
+        spinner.style.display = 'none';
       }
-    }
-
-    async function startDebugger() {
-      try {
-        await fetch("/api/run", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            graphId: "dummy",
-            inputs: {},
-          }),
-        });
-        console.log("Debugger triggered (check terminal)");
-      } catch (err) {
-        console.error("Failed to trigger debugger:", err);
-      }
-    }
-
-    document.getElementById("runGraphBtn").addEventListener("click", runGraph);
-    document.getElementById("start-debugger-btn").addEventListener("click", startDebugger);
-
-    loadGraphs();
+    });
   </script>
 </body>
 </html>
