@@ -654,7 +654,6 @@ data:
                 "data": {
                   "detail": "{{input}}",
                   "severity": "Low",
-                  "history": "History will go here",
                   "crisis": "{{documentId}}"
                 }
               }
@@ -1942,8 +1941,6 @@ data:
         '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
           data:
             text: sihaot4huf96o6ikq7fq0pl8
-          outgoingConnections:
-            - output->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2424.803677318482/741.7967919860332/330/1008//
         '[N9YOhpmU3aaCsH0rF8pKv]:text "Text"':
           data:
@@ -2242,6 +2239,8 @@ data:
             dataType: string
             id: input
             useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2471.896571707314/455.1418776579797/330/1007/var(--node-color-3)/var(--node-color-3)
         '[hMBnQG7H5-eoGm-4FGM03]:comment "Comment"':
           data:
