@@ -7,7 +7,7 @@ data:
   graphs:
     -eizVpxv9JBIHuJFio6wd:
       metadata:
-        description: Estimate the severity momentum
+        description: ""
         id: -eizVpxv9JBIHuJFio6wd
         name: Severity - Momentum
       nodes:
@@ -101,7 +101,7 @@ data:
 
               {
                 "crisisId": "dky8i30kisowxhuupwo8iz5l",
-                "crisisTitle": "Nestlé India Criticised for Prioritising Taste over Health in Kids' Food",
+                "crisisTitle": "Nestlé India Criticised for Prioritising Taste over Health in Kids’ Food",
                 "momentumByDay": [
                   { "date": "31/05/25", "numberOfStories": 1, "reach": 95000 },
                   { "date": "30/05/25", "numberOfStories": 1, "reach": 35000 },
@@ -180,11 +180,27 @@ data:
         id: 3soSwiUKQ_X4fGdokyxAH
         name: PR - Rewrite agent
       nodes:
+        '[3uWCPsym5lA_tSbQR8bCX]:text "Text"':
+          data:
+            text: |-
+              {
+                "data": {
+                  "history": [
+                  {
+                    {{newJSON}}
+                  },
+                    {{originalJSON}}
+                  ]
+                }
+              }
+          outgoingConnections:
+            - output->"Extract JSON" RLBF2blfneDpgAJzTpzjf/input
+          visualData: 1495.482860963695/1465.2920119037208/330/945//
         '[4IRH4YJ1BKdchejYhJkUO]:graphOutput "Graph Output"':
           data:
             dataType: object
             id: output
-          visualData: 2715.2555137947597/523.1576013364964/330/955/var(--node-color-3)/var(--node-color-3)
+          visualData: 2578.9393327808416/505.6811678731736/330/948/var(--node-color-3)/var(--node-color-3)
         '[JHw4NZzZ9M0kaSi_b2icc]:text "Text"':
           data:
             text: |-
@@ -194,16 +210,8 @@ data:
           outgoingConnections:
             - output->"Extract JSON" ZVqFk3NdPBfcj3jimuG0E/input
           visualData: 689.0409669045316/724.234136108081/330/952//
-        '[R2ngPy7iKXUdHwN58zLwy]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: >-
-              {
-                  "text": "This is a test press release about our new sustainable packaging initiative. We aim to reduce plastic waste by 50% over the next five years."
-                }
-          outgoingConnections:
-            - output->"Http Call" u07GLNaref9rHCyXG761B/req_body
-          visualData: 698.0275511579931/379.54685827356604/330/953//
+        '[RLBF2blfneDpgAJzTpzjf]:extractJson "Extract JSON"':
+          visualData: 1907.4279228483306/1533.0090083779075/280/945//
         '[Xmbnoh9LlbLMA2d7kR3iV]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -213,19 +221,34 @@ data:
             - data->"Code" tZ-TAvsyJmTjfBNokypbM/input1
           visualData: -13.748138873409161/667.062086165892/330/951/var(--node-color-3)/var(--node-color-3)
         '[ZVqFk3NdPBfcj3jimuG0E]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" u07GLNaref9rHCyXG761B/req_body
           visualData: 1091.4620411461485/669.1476383023097/280/941//
         '[_Rtun_ePQgOY1tS-EUowt]:destructure "Destructure"':
           data:
             paths:
               - $.rewritten
-              - $keyChanges
           outgoingConnections:
             - match_0->"Graph Output" 4IRH4YJ1BKdchejYhJkUO/value
-          visualData: 2213.978583469718/524.740445187224/280/954//
+          visualData: 2208.826634732004/476.65559030189263/280/949//
+        '[ah4enKZnetb-7VonC8qlx]:comment "Comment"':
+          data:
+            backgroundColor: rgba(218,4,4,0.05)
+            color: rgba(154,2,2,1)
+            height: 660.6935536082124
+            text: |-
+              Combine into a larger JSON with previous outputs
+              ONLY EVER COMBINING 2
+              BECAUSE IT'S NOT REALLY PUSH / POPPING
+          visualData: 1331.8334528177434/1304.4641452775275/1593.9979858801712/945//
         '[dHOn8TeIWKUpxenSiL3eX]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" _Rtun_ePQgOY1tS-EUowt/object
           visualData: 1849.102589068697/500.8374775956536/280/943//
+        '[gNzI9f4kz8xRGwjVJ_H0j]:text "Text"':
+          data:
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases/rm1dzc6aoo3yj3yjalw8lz95&populate=*
+          visualData: 2316.5016798057895/1534.4276511062526/330/950//
         '[tZ-TAvsyJmTjfBNokypbM]:code "Code"':
           data:
             code: >-
@@ -292,7 +315,7 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases?status=published
             useBodyInput: true
             useHeadersInput: false
-          visualData: 2952.120479601238/433.5247311428392/280/846/var(--node-color-4)/var(--node-color-4)
+          visualData: 2665.1688890140613/301.71921584920767/280/706/var(--node-color-4)/var(--node-color-4)
         '[-kgpH0TBjFvfM8H9c9N-8]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" HybVWMkqapLqooQgmPjod/req_body
@@ -356,7 +379,7 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases?status=published
             useBodyInput: true
             useHeadersInput: false
-          visualData: 2953.0910963354895/-62.730910962894185/280/845/var(--node-color-4)/var(--node-color-4)
+          visualData: 2659.2746351601027/-134.1255650802779/280/707/var(--node-color-4)/var(--node-color-4)
         '[AfphfrSO09nbODmD0BfoV]:text "Text"':
           data:
             text: "{{input}}"
@@ -406,7 +429,7 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/qa-pairs
             useBodyInput: true
             useHeadersInput: false
-          visualData: 2952.2926914639334/1869.3584238414146/280/849/var(--node-color-4)/var(--node-color-4)
+          visualData: 2658.4762302885465/1576.9149367836696/280/703/var(--node-color-4)/var(--node-color-4)
         '[IdjcxcsH57ePL8QTaxYTq]:code "Code"':
           data:
             code: >-
@@ -461,13 +484,13 @@ data:
           visualData: 207.25946391472314/1491.3089814557557/1427.2651592032175/778//
         '[Tzw1BEigHvrxiJG6Imitg]:subGraph "Subgraph"':
           data:
-            graphId: 3soSwiUKQ_X4fGdokyxAH
+            graphId: WoecD9--01VjQHhXTmwtU
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
             - output->"Code" IdjcxcsH57ePL8QTaxYTq/input1
             - output->"Subgraph" 5Hx49_3tx7vg11u5zDxnB/input
-          visualData: 975.3542984894425/-120.16410595381419/330/831/var(--node-color-6)/var(--node-color-6)
+          visualData: 975.3542984894425/-120.16410595381419/330/831/var(--node-color-1)/var(--node-color-1)
         '[WOolU6oaL7Oiht_zsJrpo]:subGraph "Subgraph"':
           data:
             graphId: WoecD9--01VjQHhXTmwtU
@@ -503,13 +526,12 @@ data:
                 "data": {
                   "detail": "{{input}}",
                   "severity": "Medium",
-                  "history": "History will go here",
                   "crisis": "{{documentId}}"
                 }
               }
           outgoingConnections:
             - output->"Http Call" 9uM1rtiITUgpEN3PYTfKu/req_body
-          visualData: 2235.34991079596/-134.9056290413194/330/843//
+          visualData: 2239.468833148886/-270.83006668787687/330/711//
         '[YZOnh6Zi3wvWalIdNveIB]:httpCall "Http Call"':
           data:
             body: ""
@@ -579,13 +601,19 @@ data:
                 "data": {
                   "detail": "{{input}}",
                   "severity": "High",
-                  "history": "History will go here",
                   "crisis": "{{documentId}}"
                 }
               }
           outgoingConnections:
             - output->"Extract JSON" k02faHRnfQ9GDK6aVcWGd/input
           visualData: 2236.7281359333174/-631.2169212975992/330/712//
+        '[d2ngvaOMizgfgPCRbP-DP]:comment "Comment"':
+          data:
+            backgroundColor: rgba(218,5,5,0.05)
+            color: rgba(197,6,6,1)
+            height: 1339.6707916737555
+            text: ONLY PASSES 2 HISTORIES RATHER THAN 3
+          visualData: 2226.2159255840575/-733.2446402068692/365.3843412952074/812//
         '[g8AEP8e2wMiSjZRoBEebV]:httpCall "Http Call"':
           data:
             body: ""
@@ -599,7 +627,7 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/qa-pairs
             useBodyInput: true
             useHeadersInput: false
-          visualData: 2955.932231911226/1410.6056998284348/280/848/var(--node-color-4)/var(--node-color-4)
+          visualData: 2660.742796618197/1162.0973845352337/280/702/var(--node-color-4)/var(--node-color-4)
         '[h5k-44eeEQKUVT6CVVEBp]:subGraph "Subgraph"':
           data:
             graphId: zYlQ2Xk75J--kr6X__Awr
@@ -648,7 +676,6 @@ data:
                 "data": {
                   "detail": "{{input}}",
                   "severity": "Low",
-                  "history": "History will go here",
                   "crisis": "{{documentId}}"
                 }
               }
@@ -658,7 +685,7 @@ data:
         '[k02faHRnfQ9GDK6aVcWGd]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" 2-1stJD-1ZlJeod6DgIgb/req_body
-          visualData: 2624.711214266086/-575.4382500141332/280/844//
+          visualData: 2637.067981324864/-499.9246735438236/280/838//
         '[khiwBEZ1TBidGeoldXUHD]:httpCall "Http Call"':
           data:
             body: ""
@@ -672,7 +699,7 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/qa-pairs
             useBodyInput: true
             useHeadersInput: false
-          visualData: 2953.4384105711506/917.8690320322308/280/847/var(--node-color-4)/var(--node-color-4)
+          visualData: 2666.486819983974/750.3661896799075/280/701/var(--node-color-4)/var(--node-color-4)
         '[n2BWnImUBrJAZMOpk_2I5]:text "Text"':
           data:
             text: "{{input}}"
@@ -681,13 +708,6 @@ data:
           outgoingConnections:
             - output->"Http Call" khiwBEZ1TBidGeoldXUHD/req_body
           visualData: 2247.9823023715626/862.086963157283/280/698//
-        '[yzHcLZiBRrO5Ud4x9lPlA]:comment "Comment"':
-          data:
-            backgroundColor: rgba(0,108,255,0.05)
-            color: rgba(255,255,255,1)
-            height: 1145.0707247038717
-            text: Used to be PR - Rewrite supervisor agent - now just one Rewrite
-          visualData: 762.5977644414509/-501.011773647319/732.9730588231496/850//
     EfrNMYIRnDPH9b2qi_inj:
       metadata:
         description: ""
@@ -836,7 +856,7 @@ data:
               }
           outgoingConnections:
             - output->"Chat" SKYkoImNVIomPCw2QpDoA/systemPrompt
-          visualData: 495.4667382592778/-611.2041237801709/330/1085/var(--node-color-2)/var(--node-color-2)
+          visualData: 404.44022361263563/-601.5204520092515/330/1075/var(--node-color-2)/var(--node-color-2)
         '[na8CDrlRN_EKe9VlVLzqK]:text "Text"':
           data:
             body: ""
@@ -1368,10 +1388,10 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - Analysis->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/continue
-          visualData: 1240.295371560674/1301.6917878280167/330/885/var(--node-color-1)/var(--node-color-1)
+          visualData: 1246.9896978453855/1418.1730651819973/330/882/var(--node-color-1)/var(--node-color-1)
     _7ny001Rtlr9P7w3EfY8D:
       metadata:
-        description: Estimate the severity of influence
+        description: ""
         id: _7ny001Rtlr9P7w3EfY8D
         name: Severity - Influence
       nodes:
@@ -1690,7 +1710,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: -700.3395112827031/269.4914416547989/330/1016/var(--node-color-3)/var(--node-color-3)
+          visualData: -700.3395112827031/266.7150418264481/330/1006/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
             body: ""
@@ -1835,7 +1855,7 @@ data:
             graphId: oNDvNATb6Cp0mwhFoA39A
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 1296.8987895631008/664.2896617894178/330/1017/var(--node-color-1)/var(--node-color-1)
+          visualData: 1172.6019185237997/598.2077809837134/330/1005/var(--node-color-1)/var(--node-color-1)
         '[GGEwPqFn8e-aYjpv4Lp3Q]:subGraph "Subgraph"':
           data:
             graphId: KpT800xhGZdwy4QxONPKN
@@ -1845,7 +1865,7 @@ data:
             - output->"Chat" IwTKZWYXuAna_v309uJ1p/prompt
             - output->"Chat" ar6v6LMNTaqxVthRlZG20/prompt
             - output->"Subgraph" GE3dothNsb-QgfptTQIAJ/input
-          visualData: 793.1947537577138/645.8044557000344/330/1018/var(--node-color-1)/var(--node-color-1)
+          visualData: 720.8193604943233/551.4017688347425/330/999/var(--node-color-1)/var(--node-color-1)
         '[HD1rxQpwP9XrZwNWaaoLF]:comment "Comment"':
           data:
             backgroundColor: rgba(0,0,0,0.05)
