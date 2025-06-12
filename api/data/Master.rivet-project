@@ -184,7 +184,7 @@ data:
           data:
             dataType: object
             id: output
-          visualData: 2715.2555137947597/523.1576013364964/330/955/var(--node-color-3)/var(--node-color-3)
+          visualData: 2682.9749000203783/591.0129322419049/330/968/var(--node-color-3)/var(--node-color-3)
         '[JHw4NZzZ9M0kaSi_b2icc]:text "Text"':
           data:
             text: |-
@@ -193,7 +193,7 @@ data:
               }
           outgoingConnections:
             - output->"Extract JSON" ZVqFk3NdPBfcj3jimuG0E/input
-          visualData: 689.0409669045316/724.234136108081/330/952//
+          visualData: 700.9966848278767/991.858283469113/330/960//
         '[R2ngPy7iKXUdHwN58zLwy]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -201,9 +201,7 @@ data:
               {
                   "text": "This is a test press release about our new sustainable packaging initiative. We aim to reduce plastic waste by 50% over the next five years."
                 }
-          outgoingConnections:
-            - output->"Http Call" u07GLNaref9rHCyXG761B/req_body
-          visualData: 698.0275511579931/379.54685827356604/330/953//
+          visualData: 974.1551998784942/306.14583772761006/330/956//
         '[Xmbnoh9LlbLMA2d7kR3iV]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -213,7 +211,7 @@ data:
             - data->"Code" tZ-TAvsyJmTjfBNokypbM/input1
           visualData: -13.748138873409161/667.062086165892/330/951/var(--node-color-3)/var(--node-color-3)
         '[ZVqFk3NdPBfcj3jimuG0E]:extractJson "Extract JSON"':
-          visualData: 1091.4620411461485/669.1476383023097/280/941//
+          visualData: 1116.2931476023268/920.2177146925562/280/957//
         '[_Rtun_ePQgOY1tS-EUowt]:destructure "Destructure"':
           data:
             paths:
@@ -221,11 +219,20 @@ data:
               - $keyChanges
           outgoingConnections:
             - match_0->"Graph Output" 4IRH4YJ1BKdchejYhJkUO/value
-          visualData: 2213.978583469718/524.740445187224/280/954//
+          visualData: 2282.9538791813243/828.2317463182912/280/965//
         '[dHOn8TeIWKUpxenSiL3eX]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" _Rtun_ePQgOY1tS-EUowt/object
-          visualData: 1849.102589068697/500.8374775956536/280/943//
+          visualData: 1902.8828696302348/918.9791589616107/280/966//
+        '[m7fxbATaOCr54la6o-DRe]:text "Text"':
+          data:
+            text: |-
+              {
+                "text": "{{input}}"
+              }
+          outgoingConnections:
+            - output->"Http Call" u07GLNaref9rHCyXG761B/req_body
+          visualData: 786.7150049404587/654.6083486159396/330/962//
         '[tZ-TAvsyJmTjfBNokypbM]:code "Code"':
           data:
             code: >-
@@ -257,6 +264,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" JHw4NZzZ9M0kaSi_b2icc/input
+            - output1->"Text" m7fxbATaOCr54la6o-DRe/input
           visualData: 360.86315933649246/656.7103730088913/230/939//
         '[u07GLNaref9rHCyXG761B]:httpCall "Http Call"':
           data:
@@ -372,13 +380,13 @@ data:
           visualData: 1349.3445983517227/1118.572431397192/330/640/var(--node-color-1)/var(--node-color-1)
         '[GywnVm1WCbBf0jZjzRtUx]:subGraph "Subgraph"':
           data:
-            graphId: WoecD9--01VjQHhXTmwtU
+            graphId: 3soSwiUKQ_X4fGdokyxAH
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
             - output->"Code" cC_XKF4Gxqp9WQfyS9sPz/input1
             - output->"Subgraph" h5k-44eeEQKUVT6CVVEBp/input
-          visualData: 931.1603809934408/158.17619689819944/330/842/var(--node-color-1)/var(--node-color-1)
+          visualData: 931.1603809934408/158.17619689819944/330/842/var(--node-color-6)/var(--node-color-6)
         '[H3Fm81x8gTwGXYoLLSlLk]:text "Text"':
           data:
             text: |-
@@ -438,7 +446,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" d0PAVTcOCZeb0W8Lh-Cf7/input
-          visualData: 1864.5930602535338/-664.1633253175522/230/713//
+          visualData: 1860.047850057597/-716.3397795931334/230/877//
         '[IqeXPetHyKTuaAAeoiCV8]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" g8AEP8e2wMiSjZRoBEebV/req_body
@@ -470,13 +478,13 @@ data:
           visualData: 975.3542984894425/-120.16410595381419/330/831/var(--node-color-6)/var(--node-color-6)
         '[WOolU6oaL7Oiht_zsJrpo]:subGraph "Subgraph"':
           data:
-            graphId: WoecD9--01VjQHhXTmwtU
+            graphId: 3soSwiUKQ_X4fGdokyxAH
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
             - output->"Code" jAYCzFIZlQio_0I1AacdY/input1
             - output->"Subgraph" Et3sjdxYDIfmMn_vmhBMN/input
-          visualData: 963.6444629165164/405.9164609880693/330/804/var(--node-color-1)/var(--node-color-1)
+          visualData: 963.6444629165164/405.9164609880693/330/804/var(--node-color-6)/var(--node-color-6)
         '[WnXhs0d1-hpjlGoOM8hev]:destructure "Destructure"':
           data:
             paths:
@@ -503,7 +511,6 @@ data:
                 "data": {
                   "detail": "{{input}}",
                   "severity": "Medium",
-                  "history": "History will go here",
                   "crisis": "{{documentId}}"
                 }
               }
@@ -579,13 +586,12 @@ data:
                 "data": {
                   "detail": "{{input}}",
                   "severity": "High",
-                  "history": "History will go here",
                   "crisis": "{{documentId}}"
                 }
               }
           outgoingConnections:
-            - output->"Extract JSON" k02faHRnfQ9GDK6aVcWGd/input
-          visualData: 2236.7281359333174/-631.2169212975992/330/712//
+            - output->"Http Call" 2-1stJD-1ZlJeod6DgIgb/req_body
+          visualData: 2249.7771916829956/-558.2670893877383/330/879//
         '[g8AEP8e2wMiSjZRoBEebV]:httpCall "Http Call"':
           data:
             body: ""
@@ -655,10 +661,6 @@ data:
           outgoingConnections:
             - output->"Http Call" -HvpH3_vlr-lQwwFbODFe/req_body
           visualData: 2228.5689669846574/293.34617532780027/330/832//
-        '[k02faHRnfQ9GDK6aVcWGd]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Http Call" 2-1stJD-1ZlJeod6DgIgb/req_body
-          visualData: 2624.711214266086/-575.4382500141332/280/844//
         '[khiwBEZ1TBidGeoldXUHD]:httpCall "Http Call"':
           data:
             body: ""
@@ -1323,7 +1325,7 @@ data:
       metadata:
         description: Interative press release rewriter
         id: WoecD9--01VjQHhXTmwtU
-        name: PR - Rewrite supervisor agent
+        name: PR - Rewrite supervisor agent (REMOVED)
       nodes:
         '[6JMB-7JMK_o3mDn4Nyw66]:graphOutput "Graph Output"':
           data:
@@ -1940,6 +1942,8 @@ data:
         '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
           data:
             text: sihaot4huf96o6ikq7fq0pl8
+          outgoingConnections:
+            - output->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2424.803677318482/741.7967919860332/330/1008//
         '[N9YOhpmU3aaCsH0rF8pKv]:text "Text"':
           data:
@@ -2238,8 +2242,6 @@ data:
             dataType: string
             id: input
             useDefaultValueInput: false
-          outgoingConnections:
-            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2471.896571707314/455.1418776579797/330/1007/var(--node-color-3)/var(--node-color-3)
         '[hMBnQG7H5-eoGm-4FGM03]:comment "Comment"':
           data:
