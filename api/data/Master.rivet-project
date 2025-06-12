@@ -212,18 +212,10 @@ data:
           visualData: -13.748138873409161/667.062086165892/330/951/var(--node-color-3)/var(--node-color-3)
         '[ZVqFk3NdPBfcj3jimuG0E]:extractJson "Extract JSON"':
           visualData: 1116.2931476023268/920.2177146925562/280/957//
-        '[_Rtun_ePQgOY1tS-EUowt]:destructure "Destructure"':
-          data:
-            paths:
-              - $.rewritten
-              - $keyChanges
-          outgoingConnections:
-            - match_0->"Graph Output" 4IRH4YJ1BKdchejYhJkUO/value
-          visualData: 2282.9538791813243/828.2317463182912/280/965//
         '[dHOn8TeIWKUpxenSiL3eX]:extractJson "Extract JSON"':
           outgoingConnections:
-            - output->"Destructure" _Rtun_ePQgOY1tS-EUowt/object
-          visualData: 1902.8828696302348/918.9791589616107/280/966//
+            - output->"Graph Output" 4IRH4YJ1BKdchejYhJkUO/value
+          visualData: 1970.108220332157/722.6811349119973/280/970//
         '[m7fxbATaOCr54la6o-DRe]:text "Text"':
           data:
             text: |-
@@ -300,17 +292,11 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases?status=published
             useBodyInput: true
             useHeadersInput: false
-          visualData: 2952.120479601238/433.5247311428392/280/846/var(--node-color-4)/var(--node-color-4)
+          visualData: 2933.828779094154/-27.093545262822317/280/1005/var(--node-color-4)/var(--node-color-4)
         '[-kgpH0TBjFvfM8H9c9N-8]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" HybVWMkqapLqooQgmPjod/req_body
           visualData: 2236.8265907068476/1485.2011964515843/280/700//
-        '[13v9N8-2DJPyW49hS2VoA]:text "Text"':
-          data:
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases/{{input}}
-          outgoingConnections:
-            - output->"Http Call" YZOnh6Zi3wvWalIdNveIB/url
-          visualData: 890.3933036469409/1650.100382458886/330/776//
         '[2-1stJD-1ZlJeod6DgIgb]:httpCall "Http Call"':
           data:
             body: ""
@@ -324,10 +310,39 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases?status=published
             useBodyInput: true
             useHeadersInput: false
+          visualData: 2911.034727294523/-1648.9346539668259/280/999/var(--node-color-4)/var(--node-color-4)
+        '[53VGWoy2POv4xS_sCHelY]:code "Code"':
+          data:
+            code: >-
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
+              const inputText = inputs.input1.value;
+
+
+              // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+              const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
           outgoingConnections:
-            - res_body->"Text" AfphfrSO09nbODmD0BfoV/input
-            - res_headers->"Text" n2BWnImUBrJAZMOpk_2I5/input
-          visualData: 2949.281010172971/-561.4099147274662/280/839/var(--node-color-4)/var(--node-color-4)
+            - output1->"Text" givYg0K4zZa7xCEszaC2A/input
+          visualData: 2166.48023379422/-209.52373963403778/230/1002//
         '[5Hx49_3tx7vg11u5zDxnB]:subGraph "Subgraph"':
           data:
             graphId: zYlQ2Xk75J--kr6X__Awr
@@ -351,71 +366,16 @@ data:
           outgoingConnections:
             - output->"Extract JSON" wOjyfm5GpYlcB2L_GOh87/input
           visualData: 1825.8557784704903/662.20854467958/330/695//
-        '[9uM1rtiITUgpEN3PYTfKu]:httpCall "Http Call"':
+        '[6j2SwrDcIwLifrtNqNdL_]:destructure "Destructure"':
           data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases?status=published
-            useBodyInput: true
-            useHeadersInput: false
-          visualData: 2953.0910963354895/-62.730910962894185/280/845/var(--node-color-4)/var(--node-color-4)
-        '[AfphfrSO09nbODmD0BfoV]:text "Text"':
-          data:
-            text: "{{input}}"
-          visualData: 3386.6136195738527/-507.0988721211852/330/834//
-        '[Et3sjdxYDIfmMn_vmhBMN]:subGraph "Subgraph"':
-          data:
-            graphId: zYlQ2Xk75J--kr6X__Awr
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          description: Q&A agent
+            paths:
+              - $.detail
+              - $.history
           outgoingConnections:
-            - output->"Text" c1Jqgt3-BvfFcKroOhntB/input
-          visualData: 1349.3445983517227/1118.572431397192/330/640/var(--node-color-1)/var(--node-color-1)
-        '[GywnVm1WCbBf0jZjzRtUx]:subGraph "Subgraph"':
-          data:
-            graphId: 3soSwiUKQ_X4fGdokyxAH
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          outgoingConnections:
-            - output->"Code" cC_XKF4Gxqp9WQfyS9sPz/input1
-            - output->"Subgraph" h5k-44eeEQKUVT6CVVEBp/input
-          visualData: 931.1603809934408/158.17619689819944/330/842/var(--node-color-6)/var(--node-color-6)
-        '[H3Fm81x8gTwGXYoLLSlLk]:text "Text"':
-          data:
-            text: |-
-              {
-                "data": {
-                  "crisis": "{{documentId}}",
-                  {{input}},
-                  "severity": "Medium"
-                },
-                "meta": {}
-              }
-          outgoingConnections:
-            - output->"Extract JSON" IqeXPetHyKTuaAAeoiCV8/input
-          visualData: 1824.262105375531/992.889738466242/330/696//
-        '[HybVWMkqapLqooQgmPjod]:httpCall "Http Call"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/qa-pairs
-            useBodyInput: true
-            useHeadersInput: false
-          visualData: 2952.2926914639334/1869.3584238414146/280/849/var(--node-color-4)/var(--node-color-4)
-        '[IdjcxcsH57ePL8QTaxYTq]:code "Code"':
+            - match_0->"Text" sy6hucwRj-4x7Bc7byq6Q/input
+            - match_1->"Code" LN8DHo33vCFwL7CJ3ygnV/input1
+          visualData: 1468.7149769838593/-1713.408244781903/280/999//
+        '[8WRU16msc0m6A1wEL3qDe]:code "Code"':
           data:
             code: >-
               // This is a code node, you can write and JS in here and it will
@@ -446,7 +406,88 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" d0PAVTcOCZeb0W8Lh-Cf7/input
-          visualData: 1860.047850057597/-716.3397795931334/230/877//
+          visualData: 2183.460419175793/-1881.6591918126649/230/999//
+        '[9uM1rtiITUgpEN3PYTfKu]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases?status=published
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 2924.822104642723/-927.4294803886846/280/1000/var(--node-color-4)/var(--node-color-4)
+        '[BFvuIXOPmjhMuvzfJ5qmG]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Code" yprS_XnqPy0aumVa4bQ3i/input1
+          visualData: 1775.2256419791752/-812.8139888666074/330/1000//
+        '[Et3sjdxYDIfmMn_vmhBMN]:subGraph "Subgraph"':
+          data:
+            graphId: zYlQ2Xk75J--kr6X__Awr
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          description: Q&A agent
+          outgoingConnections:
+            - output->"Text" c1Jqgt3-BvfFcKroOhntB/input
+          visualData: 1349.3445983517227/1118.572431397192/330/640/var(--node-color-1)/var(--node-color-1)
+        '[GywnVm1WCbBf0jZjzRtUx]:subGraph "Subgraph"':
+          data:
+            graphId: 3soSwiUKQ_X4fGdokyxAH
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Destructure" zS1BJ-fC48CLNOPqpbhn5/object
+            - output->"Subgraph" h5k-44eeEQKUVT6CVVEBp/input
+          visualData: 968.5188769682962/120.81770092334392/330/1008/var(--node-color-1)/var(--node-color-1)
+        '[H3Fm81x8gTwGXYoLLSlLk]:text "Text"':
+          data:
+            text: |-
+              {
+                "data": {
+                  "crisis": "{{documentId}}",
+                  {{input}},
+                  "severity": "Medium"
+                },
+                "meta": {}
+              }
+          outgoingConnections:
+            - output->"Extract JSON" IqeXPetHyKTuaAAeoiCV8/input
+          visualData: 1824.262105375531/992.889738466242/330/696//
+        '[HybVWMkqapLqooQgmPjod]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/qa-pairs
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 2952.2926914639334/1869.3584238414146/280/849/var(--node-color-4)/var(--node-color-4)
+        '[IJqTXxPN2eOR5TSyVcxyg]:text "Text"':
+          data:
+            text: |-
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "history": {{history}},
+                  "severity": "Medium",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Http Call" 9uM1rtiITUgpEN3PYTfKu/req_body
+          visualData: 2505.4292963099206/-914.5979381893195/330/1000//
         '[IqeXPetHyKTuaAAeoiCV8]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" g8AEP8e2wMiSjZRoBEebV/req_body
@@ -459,32 +500,51 @@ data:
           outgoingConnections:
             - data->"Destructure" WnXhs0d1-hpjlGoOM8hev/object
           visualData: -54.16591529002161/-37.33217977118733/330/705/var(--node-color-3)/var(--node-color-3)
-        '[Mg6ZLUBWi6ag8PVP4dXDa]:comment "Comment"':
+        '[LN8DHo33vCFwL7CJ3ygnV]:code "Code"':
           data:
-            backgroundColor: rgba(212,5,5,0.05)
-            color: rgba(112,6,6,1)
-            height: 638.043773157
-            text: |
-              Send the history of the edit
-          visualData: 207.25946391472314/1491.3089814557557/1427.2651592032175/778//
+            code: >-
+              // This is a code node, you can write any JS here.
+
+              // Inputs are accessible via an object `inputs`.
+
+              // You want to stringify an array of objects (match_1.value).
+
+
+              const rawArray = inputs.input1.value;  // This should be an array of objects already.
+
+
+              const historyString = JSON.stringify(rawArray);
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: historyString
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" d0PAVTcOCZeb0W8Lh-Cf7/history
+          visualData: 2182.8016553956577/-1511.3648823370538/230/999//
         '[Tzw1BEigHvrxiJG6Imitg]:subGraph "Subgraph"':
           data:
             graphId: 3soSwiUKQ_X4fGdokyxAH
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
-            - output->"Code" IdjcxcsH57ePL8QTaxYTq/input1
+            - output->"Destructure" 6j2SwrDcIwLifrtNqNdL_/object
             - output->"Subgraph" 5Hx49_3tx7vg11u5zDxnB/input
-          visualData: 975.3542984894425/-120.16410595381419/330/831/var(--node-color-6)/var(--node-color-6)
+          visualData: 975.3542984894425/-120.16410595381419/330/831/var(--node-color-1)/var(--node-color-1)
         '[WOolU6oaL7Oiht_zsJrpo]:subGraph "Subgraph"':
           data:
             graphId: 3soSwiUKQ_X4fGdokyxAH
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
-            - output->"Code" jAYCzFIZlQio_0I1AacdY/input1
+            - output->"Destructure" tZiBIUEeCz0SXW7GrqIVa/object
             - output->"Subgraph" Et3sjdxYDIfmMn_vmhBMN/input
-          visualData: 963.6444629165164/405.9164609880693/330/804/var(--node-color-6)/var(--node-color-6)
+          visualData: 963.6444629165164/405.9164609880693/330/804/var(--node-color-1)/var(--node-color-1)
         '[WnXhs0d1-hpjlGoOM8hev]:destructure "Destructure"':
           data:
             paths:
@@ -496,43 +556,13 @@ data:
             - match_0->"Subgraph" Tzw1BEigHvrxiJG6Imitg/input
             - match_1->"Subgraph" GywnVm1WCbBf0jZjzRtUx/input
             - match_2->"Subgraph" WOolU6oaL7Oiht_zsJrpo/input
-            - match_3->"Text" 13v9N8-2DJPyW49hS2VoA/input
             - match_3->"Text" 5LkY8Mu_v0tqj2jV-I95I/documentId
             - match_3->"Text" H3Fm81x8gTwGXYoLLSlLk/documentId
-            - match_3->"Text" XopQYLGFUzhQeyHRRNB9H/documentId
+            - match_3->"Text" IJqTXxPN2eOR5TSyVcxyg/documentId
             - match_3->"Text" c1Jqgt3-BvfFcKroOhntB/documentId
             - match_3->"Text" d0PAVTcOCZeb0W8Lh-Cf7/documentId
-            - match_3->"Text" j_w4n98HL-0NqWvq9nBt9/documentId
+            - match_3->"Text" givYg0K4zZa7xCEszaC2A/documentId
           visualData: 356.2879017266414/-22.51931906114679/280/593//
-        '[XopQYLGFUzhQeyHRRNB9H]:text "Text"':
-          data:
-            text: |
-              {
-                "data": {
-                  "detail": "{{input}}",
-                  "severity": "Medium",
-                  "crisis": "{{documentId}}"
-                }
-              }
-          outgoingConnections:
-            - output->"Http Call" 9uM1rtiITUgpEN3PYTfKu/req_body
-          visualData: 2235.34991079596/-134.9056290413194/330/843//
-        '[YZOnh6Zi3wvWalIdNveIB]:httpCall "Http Call"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: PUT
-            text: ""
-            url: ""
-            useBodyInput: true
-            useHeadersInput: false
-            useUrlInput: true
-          visualData: 1270.5044537526276/1654.8125041544115/280/776/var(--node-color-4)/var(--node-color-4)
         '[c1Jqgt3-BvfFcKroOhntB]:text "Text"':
           data:
             text: |-
@@ -547,51 +577,20 @@ data:
           outgoingConnections:
             - output->"Extract JSON" -kgpH0TBjFvfM8H9c9N-8/input
           visualData: 1814.7000668057754/1315.6025667781075/330/697//
-        '[cC_XKF4Gxqp9WQfyS9sPz]:code "Code"':
-          data:
-            code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
-              const inputText = inputs.input1.value;
-
-
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
-
-              return {
-                output1: {
-                  type: 'string',
-                  value: escapedText
-                }
-              };
-            inputNames: input1
-            outputNames: output1
-          outgoingConnections:
-            - output1->"Text" XopQYLGFUzhQeyHRRNB9H/input
-          visualData: 1859.7540258617169/-249.69920264851947/230/714//
         '[d0PAVTcOCZeb0W8Lh-Cf7]:text "Text"':
           data:
-            text: |
+            text: |-
               {
                 "data": {
                   "detail": "{{input}}",
+                  "history": {{history}},
                   "severity": "High",
                   "crisis": "{{documentId}}"
                 }
               }
           outgoingConnections:
             - output->"Http Call" 2-1stJD-1ZlJeod6DgIgb/req_body
-          visualData: 2249.7771916829956/-558.2670893877383/330/879//
+          visualData: 2494.1346124505267/-1628.8378762888158/330/999//
         '[g8AEP8e2wMiSjZRoBEebV]:httpCall "Http Call"':
           data:
             body: ""
@@ -606,6 +605,20 @@ data:
             useBodyInput: true
             useHeadersInput: false
           visualData: 2955.932231911226/1410.6056998284348/280/848/var(--node-color-4)/var(--node-color-4)
+        '[givYg0K4zZa7xCEszaC2A]:text "Text"':
+          data:
+            text: |-
+              {
+                "data": {
+                  "detail": "{{input}}",
+                  "history": {{history}},
+                  "severity": "Low",
+                  "crisis": "{{documentId}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Http Call" -HvpH3_vlr-lQwwFbODFe/req_body
+          visualData: 2490.836833202948/2.6024847649008507/330/1004//
         '[h5k-44eeEQKUVT6CVVEBp]:subGraph "Subgraph"':
           data:
             graphId: zYlQ2Xk75J--kr6X__Awr
@@ -615,7 +628,95 @@ data:
           outgoingConnections:
             - output->"Text" H3Fm81x8gTwGXYoLLSlLk/input
           visualData: 1339.2994916524865/916.563410057345/330/639/var(--node-color-1)/var(--node-color-1)
-        '[jAYCzFIZlQio_0I1AacdY]:code "Code"':
+        '[khiwBEZ1TBidGeoldXUHD]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/qa-pairs
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 2953.4384105711506/917.8690320322308/280/847/var(--node-color-4)/var(--node-color-4)
+        '[sy6hucwRj-4x7Bc7byq6Q]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Code" 8WRU16msc0m6A1wEL3qDe/input1
+          visualData: 1780.559776762585/-1714.9595776297851/330/999//
+        '[tZiBIUEeCz0SXW7GrqIVa]:destructure "Destructure"':
+          data:
+            paths:
+              - $.detail
+              - $.history
+          outgoingConnections:
+            - match_0->"Text" zhfkXkn33LhKLQQgwWFkb/input
+            - match_1->"Code" xeFmdBAsiVhzX2DvcnF6l/input1
+          visualData: 1388.9246319793838/64.36572032848596/280/1007//
+        '[tv62jd9FoE96MDsSQyiow]:code "Code"':
+          data:
+            code: >-
+              // This is a code node, you can write any JS here.
+
+              // Inputs are accessible via an object `inputs`.
+
+              // You want to stringify an array of objects (match_1.value).
+
+
+              const rawArray = inputs.input1.value;  // This should be an array of objects already.
+
+
+              const historyString = JSON.stringify(rawArray);
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: historyString
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" IJqTXxPN2eOR5TSyVcxyg/history
+          visualData: 2177.4675206122474/-634.1625215380815/230/1000//
+        '[wOjyfm5GpYlcB2L_GOh87]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" khiwBEZ1TBidGeoldXUHD/req_body
+          visualData: 2247.9823023715626/862.086963157283/280/698//
+        '[xeFmdBAsiVhzX2DvcnF6l]:code "Code"':
+          data:
+            code: >-
+              // This is a code node, you can write any JS here.
+
+              // Inputs are accessible via an object `inputs`.
+
+              // You want to stringify an array of objects (match_1.value).
+
+
+              const rawArray = inputs.input1.value;  // This should be an array of objects already.
+
+
+              const historyString = JSON.stringify(rawArray);
+
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: historyString
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" givYg0K4zZa7xCEszaC2A/history
+          visualData: 2171.1894668266773/241.46585480912967/230/1003//
+        '[yprS_XnqPy0aumVa4bQ3i]:code "Code"':
           data:
             code: >-
               // This is a code node, you can write and JS in here and it will
@@ -645,50 +746,31 @@ data:
             inputNames: input1
             outputNames: output1
           outgoingConnections:
-            - output1->"Text" j_w4n98HL-0NqWvq9nBt9/input
-          visualData: 1870.2154781957868/167.7526994777018/230/779//
-        '[j_w4n98HL-0NqWvq9nBt9]:text "Text"':
-          data:
-            text: |
-              {
-                "data": {
-                  "detail": "{{input}}",
-                  "severity": "Low",
-                  "crisis": "{{documentId}}"
-                }
-              }
-          outgoingConnections:
-            - output->"Http Call" -HvpH3_vlr-lQwwFbODFe/req_body
-          visualData: 2228.5689669846574/293.34617532780027/330/832//
-        '[khiwBEZ1TBidGeoldXUHD]:httpCall "Http Call"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/qa-pairs
-            useBodyInput: true
-            useHeadersInput: false
-          visualData: 2953.4384105711506/917.8690320322308/280/847/var(--node-color-4)/var(--node-color-4)
-        '[n2BWnImUBrJAZMOpk_2I5]:text "Text"':
-          data:
-            text: "{{input}}"
-          visualData: 3396.7165540506603/-285.1679944084333/330/833//
-        '[wOjyfm5GpYlcB2L_GOh87]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Http Call" khiwBEZ1TBidGeoldXUHD/req_body
-          visualData: 2247.9823023715626/862.086963157283/280/698//
+            - output1->"Text" IJqTXxPN2eOR5TSyVcxyg/input
+          visualData: 2176.4634025281025/-1069.3092237206267/230/1000//
         '[yzHcLZiBRrO5Ud4x9lPlA]:comment "Comment"':
           data:
             backgroundColor: rgba(0,108,255,0.05)
             color: rgba(255,255,255,1)
             height: 1145.0707247038717
             text: Used to be PR - Rewrite supervisor agent - now just one Rewrite
-          visualData: 762.5977644414509/-501.011773647319/732.9730588231496/850//
+          visualData: 762.5977644414509/-501.011773647319/732.9730588231496/923//
+        '[zS1BJ-fC48CLNOPqpbhn5]:destructure "Destructure"':
+          data:
+            paths:
+              - $.detail
+              - $.history
+          outgoingConnections:
+            - match_0->"Text" BFvuIXOPmjhMuvzfJ5qmG/input
+            - match_1->"Code" tv62jd9FoE96MDsSQyiow/input1
+          visualData: 1421.8087955934404/-812.9255378830055/280/1001//
+        '[zhfkXkn33LhKLQQgwWFkb]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Code" 53VGWoy2POv4xS_sCHelY/input1
+          visualData: 1751.460762638661/37.157313664175376/330/1006//
     EfrNMYIRnDPH9b2qi_inj:
       metadata:
         description: ""
@@ -1324,7 +1406,7 @@ data:
       metadata:
         description: Interative press release rewriter
         id: WoecD9--01VjQHhXTmwtU
-        name: PR - Rewrite supervisor agent (REMOVED)
+        name: "* PR - Rewrite supervisor agent (REMOVED)"
       nodes:
         '[6JMB-7JMK_o3mDn4Nyw66]:graphOutput "Graph Output"':
           data:
@@ -1518,7 +1600,7 @@ data:
       metadata:
         description: ""
         id: aPC7m9RtS6-gmBn2nKrYk
-        name: Old test
+        name: "* Old test"
       nodes:
         '[-nA7x4qH9EaFXKxjUZQas]:text "Text"':
           data:
@@ -2624,7 +2706,7 @@ data:
       metadata:
         description: ""
         id: l_qOMNG_p0UM3yOSO2O29
-        name: Type fix subgraph
+        name: "* Type fix subgraph"
       nodes:
         '[9FhlORNwZYcIVHtLJaxqi]:extractJson "Extract JSON"':
           outgoingConnections:
