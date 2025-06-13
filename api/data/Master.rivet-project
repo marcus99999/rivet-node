@@ -294,23 +294,13 @@ data:
         '[53VGWoy2POv4xS_sCHelY]:code "Escape chars"':
           data:
             code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
               const inputText = inputs.input1.value;
 
 
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .trim();                    // Trim leading/trailing whitespace
 
               return {
                 output1: {
@@ -457,23 +447,13 @@ data:
         '[I8Hh43o-NCmTGCH8qfDSg]:code "Escape chars"':
           data:
             code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
               const inputText = inputs.input1.value;
 
 
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .trim();                    // Trim leading/trailing whitespace
 
               return {
                 output1: {
@@ -695,23 +675,13 @@ data:
         '[plGH_lirUh_MZiTXWER08]:code "Escape chars"':
           data:
             code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
               const inputText = inputs.input1.value;
 
 
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .trim();                    // Trim leading/trailing whitespace
 
               return {
                 output1: {
@@ -801,23 +771,13 @@ data:
         '[yprS_XnqPy0aumVa4bQ3i]:code "Escape chars"':
           data:
             code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
               const inputText = inputs.input1.value;
 
 
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .trim();                    // Trim leading/trailing whitespace
 
               return {
                 output1: {
@@ -1935,23 +1895,13 @@ data:
         '[8jE-ZpLfAnzdBIVRdCP5R]:code "Esape chars"':
           data:
             code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
               const inputText = inputs.input1.value;
 
 
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .trim();                    // Trim leading/trailing whitespace
 
               return {
                 output1: {
@@ -1967,23 +1917,13 @@ data:
         '[8kQ8t8qRadfNV1_Q0UKef]:code "Esape chars"':
           data:
             code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
               const inputText = inputs.input1.value;
 
 
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .trim();                    // Trim leading/trailing whitespace
 
               return {
                 output1: {
@@ -2335,23 +2275,13 @@ data:
         '[PL7deJDgrL1vwG8Fs8-jA]:code "Esape chars"':
           data:
             code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
               const inputText = inputs.input1.value;
 
 
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .trim();                    // Trim leading/trailing whitespace
 
               return {
                 output1: {
@@ -2373,23 +2303,13 @@ data:
         '[QoK6o3d1jwnrnqPevijYa]:code "Esape chars"':
           data:
             code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
               const inputText = inputs.input1.value;
 
 
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .trim();                    // Trim leading/trailing whitespace
 
               return {
                 output1: {
@@ -2490,23 +2410,13 @@ data:
         '[_Ua5Iaa7bVa0WnfBltgtN]:code "Esape chars"':
           data:
             code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
               const inputText = inputs.input1.value;
 
 
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .trim();                    // Trim leading/trailing whitespace
 
               return {
                 output1: {
@@ -2747,23 +2657,13 @@ data:
         '[qg7650rwZTB-qCMshVSbi]:code "Esape chars"':
           data:
             code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
               const inputText = inputs.input1.value;
 
 
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .trim();                    // Trim leading/trailing whitespace
 
               return {
                 output1: {
