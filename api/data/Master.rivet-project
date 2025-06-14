@@ -86,7 +86,7 @@ data:
           data:
             normalizeLineEndings: true
             text: >-
-              ou are a media analyst working within a PR crisis response team.
+              You are a media analyst working within a PR crisis response team.
 
 
               Your role is to assess the momentum of a potential crisis, based on whether it is growing or shrinking in scale over time.
@@ -192,7 +192,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Code" tZ-TAvsyJmTjfBNokypbM/input1
-          visualData: -13.748138873409161/667.062086165892/330/951/var(--node-color-3)/var(--node-color-3)
+          visualData: 32.40251112707543/745.9648103602689/330/975/var(--node-color-3)/var(--node-color-3)
         '[dHOn8TeIWKUpxenSiL3eX]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Graph Output" 4IRH4YJ1BKdchejYhJkUO/value
@@ -204,7 +204,7 @@ data:
                 "text": "{{input}}"
               }
           outgoingConnections:
-            - output->"Http Call" u07GLNaref9rHCyXG761B/req_body
+            - output->"HTTP - Rewrite endpoint" u07GLNaref9rHCyXG761B/req_body
           visualData: 786.7150049404587/654.6083486159396/330/962//
         '[tZ-TAvsyJmTjfBNokypbM]:code "Code"':
           data:
@@ -237,8 +237,8 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" m7fxbATaOCr54la6o-DRe/input
-          visualData: 360.86315933649246/656.7103730088913/230/939//
-        '[u07GLNaref9rHCyXG761B]:httpCall "Http Call"':
+          visualData: 456.14192062781547/422.97966171611455/230/974//
+        '[u07GLNaref9rHCyXG761B]:httpCall "HTTP - Rewrite endpoint"':
           data:
             body: ""
             errorOnNon200: true
@@ -1164,7 +1164,7 @@ data:
               Do not include any explanations, calculations, markdown formatting, or stray characters. Return only the final valid UTF-8 JSON object.
           outgoingConnections:
             - output->"Chat" _s43ZTL5W4a5ldiyC7j3k/systemPrompt
-          visualData: 1537.5792614647432/-356.9735268058789/330/131/var(--node-color-2)/var(--node-color-2)
+          visualData: 1599.354387385004/-363.6519187972585/330/1104/var(--node-color-2)/var(--node-color-2)
         '[q4J6Cr_USUSIiqH2rVE7p]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -1217,7 +1217,7 @@ data:
             wait: false
           outgoingConnections:
             - value->"Text" czMnCg4tMq2UNYX-apRAi/role
-          visualData: 113.80688502631429/352.7344605275644/230/906//
+          visualData: 174.1841578432909/182.2574549266893/230/908//
         '[cZ0ftay5oLWMqkrWqtnXp]:graphOutput "Graph Output"':
           data:
             dataType: object
@@ -1227,6 +1227,9 @@ data:
           data:
             text: >-
               Your role is {{role}}
+
+
+              ACTION FOR THIS TASK
 
 
               You will be given a JSON object with a number of data points including "date" and "description". 
@@ -1363,13 +1366,24 @@ data:
           outgoingConnections:
             - response->"Graph Output" eB-AF2eWf52GBDbMiX6Se/value
           visualData: 827.9186717527157/607.7098605602876/230/20//
+        '[6ZaWwKsiGgdVdXRtKJb3C]:getGlobal "Get Global"':
+          data:
+            dataType: string
+            id: role
+            onDemand: true
+            useIdInput: false
+            wait: false
+          outgoingConnections:
+            - value->"Text" LnDAS8NRLrMyQQ50ndXED/role
+          visualData: -1382.0226986418043/485.63407977788967/230/22//
         '[LnDAS8NRLrMyQQ50ndXED]:text "Text"':
           data:
             normalizeLineEndings: true
             text: >
-              You are a public relations professional working in a crisis
-              communications department.
+              Your role is {{role}}
 
+
+              ACTION FOR THIS TASK
 
               You will be given some text describing a corporate crisis scenario that presents a risk to the company.
 
@@ -1530,6 +1544,8 @@ data:
             text: >-
               You are a media analyst working within a PR crisis response team.
 
+
+              ACTION FOR THIS TASK
 
               Your role is to assess the influence exposure of a story — meaning how influential are the media and social outlets discussing the story.
 
@@ -1774,7 +1790,7 @@ data:
       metadata:
         description: ""
         id: bYUcwJKSmTeEPW_gtQWo-
-        name: "Tone of voice subgraph "
+        name: "* Tone of voice subgraph "
       nodes:
         '[9s9QzSbL431SomeHHgofJ]:graphOutput "Graph Output"':
           data:
@@ -1815,7 +1831,7 @@ data:
             dataType: string
             id: documentId
             useIdInput: false
-          visualData: -683.1287549387969/962.9377279475866/230/907//
+          visualData: -681.6293251009471/1151.865887516662/230/1079//
         '[0qTTZyxV6eaYUo8yr0N4U]:code "Stringify history"':
           data:
             code: >-
@@ -1847,17 +1863,19 @@ data:
           data:
             body: ""
             paths:
-              - $.data[0].detail
+              - $.data[0].tov
+              - $.data[0].task
+            text: ""
           outgoingConnections:
-            - match_0->"Text" N9YOhpmU3aaCsH0rF8pKv/tone
-            - match_0->"Text" ZEJe86ipFxX2Pgn0SpYkX/Tone
+            - match_0->"TEXT - Define role" N9YOhpmU3aaCsH0rF8pKv/task
             - match_0->"Text" lTDwHyIvD8GtM-vUQWnZJ/Tone
-          visualData: -1447.6486831543725/-469.47514580839743/280/918//
+            - match_1->"TEXT - Define role" N9YOhpmU3aaCsH0rF8pKv/tone
+          visualData: -1578.0990790473056/-289.54356526642096/280/1097//
         '[2uPrdf3woHnGtAJDrw2Lz]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: -700.3395112827031/269.4914416547989/330/1016/var(--node-color-3)/var(--node-color-3)
+          visualData: -685.3452129042051/381.9486794935342/330/1093/var(--node-color-3)/var(--node-color-3)
         '[4PpdHSOarBvynuMBQSfp0]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -1883,8 +1901,8 @@ data:
             - match_0->"Text" CocxXqVO7vwIgKSISUEL9/Crisis
             - match_1->"Text" CocxXqVO7vwIgKSISUEL9/Description
             - match_2->"Text" CocxXqVO7vwIgKSISUEL9/Location
+            - match_3->"TEXT - Define role" N9YOhpmU3aaCsH0rF8pKv/Company
             - match_3->"Text" CocxXqVO7vwIgKSISUEL9/Company
-            - match_3->"Text" N9YOhpmU3aaCsH0rF8pKv/Company
             - match_4->"Text" CocxXqVO7vwIgKSISUEL9/Date
             - match_6->"Text" CocxXqVO7vwIgKSISUEL9/Product
             - match_7->"Set Global" 0mouFF980bt242hGgYlXk/value
@@ -2088,7 +2106,7 @@ data:
             - output->"Chat" IwTKZWYXuAna_v309uJ1p/prompt
             - output->"Chat" ar6v6LMNTaqxVthRlZG20/prompt
             - output->"Subgraph" GE3dothNsb-QgfptTQIAJ/input
-          visualData: 793.1947537577138/645.8044557000344/330/1018/var(--node-color-1)/var(--node-color-1)
+          visualData: 796.1936134334134/507.8569106178524/330/1102/var(--node-color-1)/var(--node-color-1)
         '[HD1rxQpwP9XrZwNWaaoLF]:comment "Comment"':
           data:
             backgroundColor: rgba(0,0,0,0.05)
@@ -2139,7 +2157,7 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Extract JSON" Xk1Tw7lxeDqacNIT1bMNu/input
-          visualData: 1714.6820565556866/-794.2201423434603/230/1026//
+          visualData: 1554.2430639057575/-612.7891319636341/230/1101//
         '[Iz7CjdEDhzVwzP3IMCiNB]:httpCall "Http Call"':
           data:
             body: ""
@@ -2180,7 +2198,7 @@ data:
               - $.data[0].phone
               - $.data[0].documentId
           outgoingConnections:
-            - match_0->"Text" ZEJe86ipFxX2Pgn0SpYkX/Role
+            - match_0->"Text" ZEJe86ipFxX2Pgn0SpYkX/Position
             - match_1->"Text" ZEJe86ipFxX2Pgn0SpYkX/Spokesman
             - match_1->"Text" lTDwHyIvD8GtM-vUQWnZJ/Spokesman
             - match_2->"Text" ZEJe86ipFxX2Pgn0SpYkX/Email
@@ -2222,24 +2240,14 @@ data:
             useBodyInput: true
             useHeadersInput: false
           visualData: 6063.8906990899195/-1678.3677166598752/280/1068/var(--node-color-4)/var(--node-color-4)
-        '[N9YOhpmU3aaCsH0rF8pKv]:text "Text"':
+        '[N9YOhpmU3aaCsH0rF8pKv]:text "TEXT - Define role"':
           data:
-            text: >
+            text: >-
               You are a crisis communications public relations (PR) professional
-              working for {{Company}}. You have expertise in managing
-              high-stakes reputational issues for organizations under pressure.
-              Your role is to craft clear, empathetic, and timely messaging in
-              response to crises such as product recalls, legal investigations,
-              corporate scandals, or public backlash. You understand how to
-              balance transparency with strategic framing, ensuring that all
-              communications maintain public trust while protecting the
-              credibility and long-term interests of the organization.
+              working for {{Company}}.
 
 
-              You are skilled in writing holding statements, press releases, media responses, and internal communications that acknowledge issues, express responsibility or empathy as appropriate, and outline actionable next steps.
-
-
-              You are able to quickly assess the reputational risk of a situation and shape messaging that aligns with stakeholder expectations, media dynamics, and legal considerations. Your goal is always to guide the organization through crisis with integrity, clarity, and control.
+              {{task}}
 
 
               IMPORTANT
@@ -2247,10 +2255,11 @@ data:
               Your writing tone is {{tone}}.
           description: Role definition copy
           outgoingConnections:
-            - output->"Set Global" q-7FV8Lss_M2GuC2trzea/value
+            - output->"Set Global Role" q-7FV8Lss_M2GuC2trzea/value
+            - output->"Text" ZEJe86ipFxX2Pgn0SpYkX/role
             - output->"Text" lTDwHyIvD8GtM-vUQWnZJ/role
             - output->"Text" vGUWgOtAY-i7sxm-WJ7eb/role
-          visualData: -1174.9371509996672/-327.22114088744934/330/915/var(--node-color-3)/var(--node-color-3)
+          visualData: -917.035218889501/-207.26675385946504/330/1099/var(--node-color-3)/var(--node-color-3)
         '[OJzyrdkuWTUnJ2Z6kZ8id]:comment "Comment"':
           data:
             backgroundColor: rgba(0,0,0,0.05)
@@ -2351,15 +2360,18 @@ data:
         '[ZEJe86ipFxX2Pgn0SpYkX]:text "Text"':
           data:
             text: >-
-              You are a crisis comms PR agent and it is your job to write a
-              short form output that would go out to the media to inform press
-              that a full response is being worked on.
+              Your role is {{role}}
+
+
+              ACTION FOR THIS TASK
+
+              Your job to write a short form output that would go out to the media to inform press that a full response is being worked on.
 
 
               This note is sent to the media prior to a full press release.
 
 
-              The total length should be 2 to 3 short paragraphs.
+              The total length should be 2 or 3 short paragraphs.
 
 
               You will be passed a JSON object of 3 items, a High, Medium and Low risk scenario. Create one output holding statement for each of the 3 cases.
@@ -2374,13 +2386,10 @@ data:
               Start the response with todays date followed by a double line break.
 
 
-              Each response should be written in this {{Tone}}.
-
-
               Use natural line breaks in the prose like \n.
 
 
-              Each response should be signed off by the company PR spokesperson called {{Spokesman}} whose company role is {{Role}}. This should form part of the holding statement response.
+              Each response should be signed off by the company PR spokesperson called {{Spokesman}} whose company role is {{Position}}. This should form part of the holding statement response.
 
 
               Ensure there is a double line break before this.
@@ -2406,7 +2415,7 @@ data:
               }
           outgoingConnections:
             - output->"Chat" IwTKZWYXuAna_v309uJ1p/systemPrompt
-          visualData: 1282.715538596497/-990.2616023554406/330/862//
+          visualData: 1113.2799669194692/-1023.2490587881363/330/1100//
         '[_Ua5Iaa7bVa0WnfBltgtN]:code "Esape chars"':
           data:
             code: >-
@@ -2570,6 +2579,8 @@ data:
               Your role is {{role}}
 
 
+              ACTION FOR THIS TASK
+
               It is your job to write longform output for a press release that would go out to the media to inform them of the crisis.
 
 
@@ -2608,7 +2619,7 @@ data:
               }
           outgoingConnections:
             - output->"Chat" ar6v6LMNTaqxVthRlZG20/systemPrompt
-          visualData: 1854.9915090454226/524.4407007477346/330/1028//
+          visualData: 1845.9949300183237/648.8933772892684/330/1104//
         '[mcgQkCMsGk4tJBFjxhXTS]:destructure "Destructure"':
           data:
             paths:
@@ -2641,12 +2652,13 @@ data:
             height: 661.2989123849472
             text: Define the severity
           visualData: 43.648670782855476/1017.0829941731288/1232.0641438214789/1011//
-        '[q-7FV8Lss_M2GuC2trzea]:setGlobal "Set Global"':
+        '[q-7FV8Lss_M2GuC2trzea]:setGlobal "Set Global Role"':
           data:
             dataType: string
             id: role
+            text: ""
             useIdInput: false
-          visualData: -769.3811849653266/-394.08340480588504/230/968//
+          visualData: -812.8646502629709/-797.4300311874822/230/1096//
         '[q-Jg-oegWFhpJfpNaq5YM]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -2723,6 +2735,8 @@ data:
             text: >-
               Your role is {{role}}
 
+
+              ACTION FOR THIS TASK
 
               You should generate an expanded description of the crisis situation described in the prompt. The output should include natural line breaks.
 
@@ -2847,8 +2861,10 @@ data:
           data:
             normalizeLineEndings: true
             text: >-
-              You are a public relations professional working in a crisis
-              communications department.
+              Your role is {{role}}
+
+
+              ACTION FOR THIS TASK
 
 
               You will be given some text describing a corporate crisis scenario that presents a risk to the company.
@@ -2911,6 +2927,16 @@ data:
           outgoingConnections:
             - output->"Chat" XJCuxUWihIzR-cbjR6krZ/systemPrompt
           visualData: 416.72421911436925/-14.619811780539578/1483.8939389042782/22/var(--node-color-2)/var(--node-color-2)
+        '[FMN3myud8AeDshAxs3gFl]:getGlobal "Get Global"':
+          data:
+            dataType: string
+            id: role
+            onDemand: true
+            useIdInput: false
+            wait: false
+          outgoingConnections:
+            - value->"Text" 1pt1AoLaGy2XMo3A3rdx2/role
+          visualData: 30.05573084417361/94.22019567972885/230/25//
         '[KQRuERJDGLd1l16j4ab5w]:graphOutput "Graph Output"':
           data:
             dataType: string
@@ -3235,10 +3261,13 @@ data:
           data:
             jsonTemplate: ""
             text: >-
-              You are crisis comms PR professional.
+              Your role is {{role}}
 
 
-              You will be sent a press release and you should create a set of 4 questions and answer pairs. These questions and answers are the kind of queries that the press or public might ask as result of hearing about the details of the press release.
+              ACTION FOR THIS TASK
+
+
+              You will be sent a press release and you should create a set of 10 questions and answer pairs. These questions and answers are the kind of queries that the press or public might ask as result of hearing about the details of the press release.
 
 
               Output the question and answer pairs as text in this string format (don't convert to JSON):
@@ -3262,6 +3291,16 @@ data:
             dataType: string
             id: output
           visualData: 2027.023440510591/659.96675371681/330/191/var(--node-color-3)/var(--node-color-3)
+        '[KbMK7Q1Ob8Zjbg1LJrWrR]:getGlobal "Get Global"':
+          data:
+            dataType: string
+            id: role
+            onDemand: true
+            useIdInput: false
+            wait: false
+          outgoingConnections:
+            - value->"Text" -IjNUGgP_EOUbfrIroaZD/role
+          visualData: 318.80618502765265/321.90884957146795/230/206//
         '[OIvEjExXAsyhFYZZ_ZKZy]:chat "Chat"':
           data:
             additionalParameters: []
