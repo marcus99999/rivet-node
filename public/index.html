@@ -91,9 +91,9 @@ async function callRun(body){
 }
 
 document.getElementById('runStringBtn').onclick = () => {
-  const graphId = graphSelect.value;
+  const graphId  = document.getElementById('graphSelect').value;
   const txt      = document.getElementById('plainInput').value;
-  const crisisId = crisisId.value.trim();
+  const crisisId = document.getElementById('crisisId').value.trim();
   callRun({
     graph: graphId,
     inputs: { input: txt, crisisId }
@@ -101,14 +101,14 @@ document.getElementById('runStringBtn').onclick = () => {
 };
 
 document.getElementById('runJsonBtn').onclick = () => {
-  const graphId = graphSelect.value;
-  const crisisId= crisisId.value.trim();
-  try{
-    const jsonInputs = JSON.parse(document.getElementById('jsonInput').value||'{}');
-    if(crisisId) jsonInputs.crisisId = crisisId;
+  const graphId  = document.getElementById('graphSelect').value;
+  const crisisId = document.getElementById('crisisId').value.trim();
+  try {
+    const jsonInputs = JSON.parse(document.getElementById('jsonInput').value || '{}');
+    if (crisisId) jsonInputs.crisisId = crisisId;
     callRun({ graph: graphId, inputs: jsonInputs });
-  }catch(e){
-    alert('Invalid JSON: '+e.message);
+  } catch (e) {
+    alert('Invalid JSON: ' + e.message);
   }
 };
 
