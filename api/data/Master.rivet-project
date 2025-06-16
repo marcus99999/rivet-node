@@ -352,7 +352,6 @@ data:
             inputNames: input1
             outputNames: output1
           outgoingConnections:
-            - output1->"Text" givYg0K4zZa7xCEszaC2A/detail
             - output1->"Text" sXaO-y1UPPYzNLtmpQCZw/response
           visualData: 2157.4722107326074/-208.02240245710234/230/1287/var(--node-color-2)/var(--node-color-2)
         '[5Hx49_3tx7vg11u5zDxnB]:subGraph "Subgraph"':
@@ -510,11 +509,10 @@ data:
               };
             inputNames: input1
             outputNames: output1
-          outgoingConnections:
-            - output1->"Text" givYg0K4zZa7xCEszaC2A/original
           visualData: 2445.8984277843056/-214.6669977095463/230/1018/var(--node-color-2)/var(--node-color-2)
         '[IJqTXxPN2eOR5TSyVcxyg]:text "Text"':
           data:
+            body: ""
             text: |-
               {
                 "data": {
@@ -527,7 +525,7 @@ data:
               }
           outgoingConnections:
             - output->"Http Call" 9uM1rtiITUgpEN3PYTfKu/req_body
-          visualData: 2785.3942265565997/-1095.9588678459734/330/1017//
+          visualData: 2785.3942265565997/-1095.9588678459734/330/1311//
         '[IqeXPetHyKTuaAAeoiCV8]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" g8AEP8e2wMiSjZRoBEebV/req_body
@@ -658,7 +656,6 @@ data:
             - match_3->"Text" IJqTXxPN2eOR5TSyVcxyg/documentId
             - match_3->"Text" c1Jqgt3-BvfFcKroOhntB/documentId
             - match_3->"Text" d0PAVTcOCZeb0W8Lh-Cf7/documentId
-            - match_3->"Text" givYg0K4zZa7xCEszaC2A/documentId
           visualData: 356.2879017266414/-22.51931906114679/280/593//
         '[_xun_79EIycJcd_nUsd24]:text "Text"':
           data:
@@ -887,8 +884,6 @@ data:
               };
             inputNames: input1
             outputNames: output1
-          outgoingConnections:
-            - output1->"Text" givYg0K4zZa7xCEszaC2A/history
           visualData: 2171.1894668266773/241.46585480912967/230/1003/var(--node-color-2)/var(--node-color-2)
         '[xvZQq0mGPozaZImbV3X0y]:subGraph "SUB - Persona"':
           data:
@@ -3520,7 +3515,7 @@ data:
               Response Guidelines:
 
 
-              Write 2 to 3 natural, authentic paragraphs in the voice of the stakeholder.
+              Write 2 natural, authentic paragraphs in the voice of the stakeholder.
 
 
               The specific task is to analyse the qualithy of the response. Taking into account the original new story does the response work effectively to reduce the concern of this particular stakeholder:
