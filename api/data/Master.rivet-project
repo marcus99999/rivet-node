@@ -3493,7 +3493,7 @@ data:
               ✅ Task Instructions
 
 
-              Iterate through each item in the data array. For each item, generate a fictional response from the point of view of that stakeholder, using the following structure:
+              Iterate through each item in the data array. For each item, generate a response from the point of view of that stakeholder, using the following structure:
 
 
               Stakeholder Brief (for each item):
@@ -3515,7 +3515,7 @@ data:
               Response Guidelines:
 
 
-              Write 2 natural, authentic paragraphs in the voice of the stakeholder.
+              Write 3 short natural, authentic paragraphs in the voice of the stakeholder.
 
 
               The specific task is to analyse the qualithy of the response. Taking into account the original new story does the response work effectively to reduce the concern of this particular stakeholder:
@@ -3525,7 +3525,8 @@ data:
               	•	Whether the company's response feels credible or insufficient
               	•	If the response addresses the stakeholder's specific concerns
               	•	The emotional or practical reaction to the response from the stakeholder's perspective
-              	•	A concluding sentence stating clearly whether they feel reassured by the content of the response or not
+                •	Be even handed and note where your concerns have been addresses (if they have) and also mention any remaining areas of concern If they remain)
+              	•	Add a concluding sentence stating clearly whether they feel reassured by the content of the response or not
 
               ✅ Output Format (Required)
 
