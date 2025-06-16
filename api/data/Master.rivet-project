@@ -3526,8 +3526,8 @@ data:
               	•	If the response addresses the stakeholder's specific concerns
               	•	The emotional or practical reaction to the response from the stakeholder's perspective
                 •	Be even handed and note where your concerns have been addresses (if they have) and also mention any remaining areas of concern If they remain)
-                • Considering the company response and your interests as the defined stakeholder, evaluate an integer rating from 0 to 10 as to how satisfied you are with the response, place this in the satisfaction item in the output JSON
-                	•	Add a concluding sentence stating clearly whether they feel reassured by the content of the response or not. Do not include details of your numeric rating here.
+                • Considering the company response and your interests as the defined stakeholder, evaluate an integer rating from 0 to 10 as to how satisfied you are with the response, place this in the satisfaction item in the output JSON only
+                	•	Add a concluding sentence stating clearly whether they feel reassured by the content of the response or not. Do not include details of your numeric rating here. Do not rate the reponse out of 10.
 
               ✅ Output Format (Required)
 
