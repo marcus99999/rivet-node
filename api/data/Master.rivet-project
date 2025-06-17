@@ -2090,8 +2090,9 @@ data:
             - match_3->"Text" CocxXqVO7vwIgKSISUEL9/Company
             - match_4->"Text" CocxXqVO7vwIgKSISUEL9/Date
             - match_6->"Text" CocxXqVO7vwIgKSISUEL9/Product
+            - match_7->"Holding statement system prompt"
+              ZEJe86ipFxX2Pgn0SpYkX/documentId
             - match_7->"Set Global" 0mouFF980bt242hGgYlXk/value
-            - match_7->"Text" ZEJe86ipFxX2Pgn0SpYkX/documentId
             - match_7->"Text" lTDwHyIvD8GtM-vUQWnZJ/documentId
             - match_7->"Text" o747HrcX1XEo2Bl_seAFB/input
           visualData: -1112.456167558564/660.9274817907149/280/425//
@@ -2426,12 +2427,16 @@ data:
               - $.data[0].phone
               - $.data[0].documentId
           outgoingConnections:
-            - match_0->"Text" ZEJe86ipFxX2Pgn0SpYkX/Position
-            - match_1->"Text" ZEJe86ipFxX2Pgn0SpYkX/Spokesman
+            - match_0->"Holding statement system prompt"
+              ZEJe86ipFxX2Pgn0SpYkX/Position
+            - match_1->"Holding statement system prompt"
+              ZEJe86ipFxX2Pgn0SpYkX/Spokesman
             - match_1->"Text" lTDwHyIvD8GtM-vUQWnZJ/Spokesman
-            - match_2->"Text" ZEJe86ipFxX2Pgn0SpYkX/Email
+            - match_2->"Holding statement system prompt"
+              ZEJe86ipFxX2Pgn0SpYkX/Email
             - match_2->"Text" lTDwHyIvD8GtM-vUQWnZJ/Email
-            - match_3->"Text" ZEJe86ipFxX2Pgn0SpYkX/Phone
+            - match_3->"Holding statement system prompt"
+              ZEJe86ipFxX2Pgn0SpYkX/Phone
             - match_3->"Text" lTDwHyIvD8GtM-vUQWnZJ/Phone
           visualData: 44.4321762346097/-397.50808679427195/280/742//
         '[KV0JmRNqaqaPAiTAakT-Y]:subGraph "Subgraph"':
@@ -2485,8 +2490,9 @@ data:
               Your writing tone is {{tone}}.
           description: Role definition copy
           outgoingConnections:
+            - output->"Holding statement system prompt"
+              ZEJe86ipFxX2Pgn0SpYkX/role
             - output->"Set Global Role" q-7FV8Lss_M2GuC2trzea/value
-            - output->"Text" ZEJe86ipFxX2Pgn0SpYkX/role
             - output->"Text" lTDwHyIvD8GtM-vUQWnZJ/role
             - output->"Text" vGUWgOtAY-i7sxm-WJ7eb/role
           visualData: -917.035218889501/-207.26675385946504/330/1099/var(--node-color-3)/var(--node-color-3)
@@ -2601,7 +2607,7 @@ data:
             text: |
               Expanded description
           visualData: -240.0097102675435/83.23420835040659/806.588848743939/888//
-        '[ZEJe86ipFxX2Pgn0SpYkX]:text "Text"':
+        '[ZEJe86ipFxX2Pgn0SpYkX]:text "Holding statement system prompt"':
           data:
             text: >-
               Your role is {{role}}
@@ -2621,13 +2627,13 @@ data:
               You will be passed a JSON object of 3 items, a High, Medium and Low risk scenario. Create one output holding statement for each of the 3 cases.
 
 
-              Each response should take the form of a short hight level description of the issue and an explanation that a full response is being prepared.
+              Each response should take the form of a short high level description of the issue and an explanation that a full response is being prepared.
 
 
-              Do not include a title for each response, just the detail copy.
+              Start the response with the healine of one sentence that summarizes the holding statement content. Put the headline in all capitals. Ensure there is a double line break after this. 
 
 
-              Start the response with todays date followed by a double line break.
+              On the next line add today's date (in the format Tuesday 17th June 2025) followed by a line break. Do not prefix it with Date: or similar. Just have the date only.
 
 
               Use natural line breaks in the prose like \n.
@@ -2859,7 +2865,10 @@ data:
               Each response should take the form of a description of the issue including details of the projected scenario and details of how the business intends to respond to that crisis.
 
 
-              Start the response with the date today followed by a line break.
+              Start the response with the healine of one sentence that summarizes the press release content. Put the headline in all capitals. Ensure there is a double line break after this. 
+
+
+              On the next line add today's date (in the format Tuesday 17th June 2025) followed by a line break. Do not prefix it with Date: or similar. Just have the date only.
 
 
               Each response should be written in this {{Tone}}.
