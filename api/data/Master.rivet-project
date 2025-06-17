@@ -2874,6 +2874,9 @@ data:
               Each response should be written in this {{Tone}}.
 
 
+              The response should be a minimum of 5 paragraphs.
+
+
               Use natural line breaks in the prose like \n.
 
 
