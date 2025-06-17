@@ -2865,16 +2865,16 @@ data:
               Each response should take the form of a description of the issue including details of the projected scenario and details of how the business intends to respond to that crisis.
 
 
-              Start the response with the healine of one sentence that summarizes the press release content. Put the headline in all capitals. Ensure there is a double line break after this. 
+              Start the response with the healine of one sentence that summarizes the press release content. Put the headline in all capitals. The press release title needs to be factual and convey the news, but can't come across as commercial. When useful, a subtitle can be included to provide some depth, proof points or compelling data points to the release. Ensure there is a double line break after this.
 
 
               On the next line add today's date (in the format Tuesday 17th June 2025) followed by a line break. Do not prefix it with Date: or similar. Just have the date only.
 
 
+              The full response should be a minimum of 5 paragraphs.
+
+
               Each response should be written in this {{Tone}}.
-
-
-              The response should be a minimum of 5 paragraphs.
 
 
               Use natural line breaks in the prose like \n.
@@ -2887,6 +2887,15 @@ data:
 
 
               Ensure there is a double line break before this. Ensure there is no excess spacing at the bottom the file.
+
+
+              INSTRUCTIONS ON WHAT TO AVOID
+
+              - Ensure all information provided is factually accurate and based on credible sources.
+
+              - Avoid making speculative or unverified claims.
+
+              - Respect privacy and confidentiality in all recommendations.
 
 
               Output a JSON object in this format:
@@ -3418,10 +3427,11 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: GET
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/personas/
+            url: ""
+            useUrlInput: true
           outgoingConnections:
             - res_body->"Extract JSON" W7K_wlTZmm7h6113_lBR7/input
-          visualData: -7.218032393627169/803.9523394537637/280/1247/var(--node-color-4)/var(--node-color-4)
+          visualData: -7.218032393627169/803.9523394537637/280/1272/var(--node-color-4)/var(--node-color-4)
         '[5Y3FictwbAFC76GeVupmD]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -3447,10 +3457,25 @@ data:
             useBodyInput: true
             useHeadersInput: false
           visualData: 1756.1196234837712/393.6715225915185/280/1201/var(--node-color-4)/var(--node-color-4)
+        '[P4uxruW9s0rJ87fOjh3l0]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: trg7ingzxb9yo65r87b40dvs
+          visualData: -936/1304/330/1280//
         '[W7K_wlTZmm7h6113_lBR7]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Chat" 5EiLKmo7w9b4gFBgcGYGH/prompt
           visualData: 350.3683984013931/654.2211004214626/280/1179//
+        '[WTM0eQ7RF2bj0EWgU0cfW]:getGlobal "Get Global"':
+          data:
+            dataType: string
+            id: documentId
+            onDemand: true
+            useIdInput: false
+            wait: false
+          outgoingConnections:
+            - value->"Text" lzjxmw4IEOlvyLbivSIQm/crisis
+          visualData: -806/1101/230/1281//
         '[ior0x9Ow0Q_LH4R2-jRL8]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -3474,6 +3499,13 @@ data:
                 ]
               }
           visualData: -994.6565877302294/453.197973226494/330/1271//
+        '[lzjxmw4IEOlvyLbivSIQm]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/personas?filters%5Bcrises%5D%5BdocumentId%5D%5B$contains%5D={{crisis}}
+          outgoingConnections:
+            - output->"HTTP - Get personas" 5MXvKU7VrRMcqa06Uu95g/url
+          visualData: -425/906/330/1275//
         '[xDt2dHDGaMAshg_hApWi9]:text "Text"':
           data:
             normalizeLineEndings: true
