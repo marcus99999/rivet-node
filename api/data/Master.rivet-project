@@ -3694,7 +3694,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/submit-scenario
             useBodyInput: true
             useHeadersInput: false
           visualData: 1689.704650741663/465.31229678879856/280/1023/var(--node-color-4)/var(--node-color-4)
@@ -3776,7 +3776,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/submit-scenario
             useBodyInput: true
             useHeadersInput: false
           visualData: 1711.6872026970589/904.4755084465291/280/1025/var(--node-color-4)/var(--node-color-4)
@@ -3849,7 +3849,7 @@ data:
               }
             method: POST
             text: ""
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/submit-scenario
             useBodyInput: true
             useHeadersInput: false
           visualData: 1698.4545425384927/46.947482389836765/280/1011/var(--node-color-4)/var(--node-color-4)
