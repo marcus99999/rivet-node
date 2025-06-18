@@ -1363,7 +1363,7 @@ data:
               ACTION FOR THIS TASK
 
 
-              You will be given a JSON object with a number of data points including "date" and "description". 
+              You will be given a JSON object with a number of data points including "title",  "date" and "description". 
 
 
               It is your job to predict possible risk scenarios based on the crisis defined in the prompt and to give details of potential outcomes for each case.
@@ -3703,33 +3703,24 @@ data:
               - $.medium-title
               - $.low-title
           outgoingConnections:
-            - match_0->"Code" NfF1QuChlgvE0W3a1yjsv/input1
-            - match_1->"Code" GDqFcz_Y8Y9alSR8jBnaU/input1
-            - match_2->"Code" CyJZJea-eMnyXOOf7mVY0/input1
+            - match_0->"Escape chars" NfF1QuChlgvE0W3a1yjsv/input1
+            - match_1->"Escape chars" GDqFcz_Y8Y9alSR8jBnaU/input1
+            - match_2->"Escape chars" CyJZJea-eMnyXOOf7mVY0/input1
             - match_3->"Text" 1CrILRhQbgDe3WTIPQa5o/title
             - match_4->"Text" OtrcUUB5vFEU7ON7mpZBk/title
             - match_5->"Text" 1qj6Co0QHa5bSTYQVEa3n/title
           visualData: 290.4877952850993/136.88424718587225/280/998//
-        '[CyJZJea-eMnyXOOf7mVY0]:code "Code"':
+        '[CyJZJea-eMnyXOOf7mVY0]:code "Escape chars"':
           data:
             code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
               const inputText = inputs.input1.value;
 
 
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .replace(/"/g, '\\"')       // Escape double quotes
+                .trim();                    // Trim leading/trailing whitespace
 
               return {
                 output1: {
@@ -3741,27 +3732,18 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" 1qj6Co0QHa5bSTYQVEa3n/input
-          visualData: 788.8296094686916/888.550399746584/230/1029//
-        '[GDqFcz_Y8Y9alSR8jBnaU]:code "Code"':
+          visualData: 788.8296094686916/888.550399746584/230/1029/var(--node-color-2)/var(--node-color-2)
+        '[GDqFcz_Y8Y9alSR8jBnaU]:code "Escape chars"':
           data:
             code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
               const inputText = inputs.input1.value;
 
 
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .replace(/"/g, '\\"')       // Escape double quotes
+                .trim();                    // Trim leading/trailing whitespace
 
               return {
                 output1: {
@@ -3773,7 +3755,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" OtrcUUB5vFEU7ON7mpZBk/input
-          visualData: 767.7142478172325/392.9353366261563/230/1028//
+          visualData: 767.7142478172325/392.9353366261563/230/1028/var(--node-color-2)/var(--node-color-2)
         '[LFQ7hV1m94UbW-qNJmK-c]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -3793,26 +3775,17 @@ data:
             useBodyInput: true
             useHeadersInput: false
           visualData: 1711.6872026970589/904.4755084465291/280/1025/var(--node-color-4)/var(--node-color-4)
-        '[NfF1QuChlgvE0W3a1yjsv]:code "Code"':
+        '[NfF1QuChlgvE0W3a1yjsv]:code "Escape chars"':
           data:
             code: >-
-              // This is a code node, you can write and JS in here and it will
-              be executed.
-
-              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
-
-              // Return an object with named outputs that match the output names specified in the node's config.
-
-              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
-
-
               const inputText = inputs.input1.value;
 
 
-              // Replace real line breaks (\n or \r\n) with the literal string "\n"
-
-              const escapedText = inputText.replace(/\r?\n/g, '\\n');
-
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .replace(/"/g, '\\"')       // Escape double quotes
+                .trim();                    // Trim leading/trailing whitespace
 
               return {
                 output1: {
@@ -3824,7 +3797,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" 1CrILRhQbgDe3WTIPQa5o/input
-          visualData: 721.2604521840224/-211.0719163050949/230/1027//
+          visualData: 721.2604521840224/-211.0719163050949/230/1027/var(--node-color-2)/var(--node-color-2)
         '[ODTD1f3YIQB7Jjx5qfflt]:getGlobal "Get Global"':
           data:
             dataType: string
