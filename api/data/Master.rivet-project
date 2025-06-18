@@ -3396,12 +3396,13 @@ data:
             maxTokens: 2048
             modalitiesIncludeAudio: false
             modalitiesIncludeText: false
-            model: gpt-4o-mini
+            model: gpt-4o
             outputUsage: false
             parallelFunctionCalling: true
             reasoningEffort: ""
             stop: ""
             temperature: 0.5
+            text: ""
             top_p: 1
             useAdditionalParametersInput: false
             useAsGraphPartialOutput: true
@@ -3421,7 +3422,7 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Text" 5Y3FictwbAFC76GeVupmD/input
-          visualData: 793/445/230/41//
+          visualData: 793/445/230/41/var(--node-color-7)/var(--node-color-7)
         '[5MXvKU7VrRMcqa06Uu95g]:httpCall "HTTP - Get personas"':
           data:
             body: ""
@@ -3447,7 +3448,7 @@ data:
         '[DXAvqxOfU-d_soA_drX3j]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" xhBkRsJdMKOgM6bdi3J-f/object
-          visualData: -528.8750209441441/454.5675350943219/280/1253//
+          visualData: -461.7836334947949/-185.0370252561404/280/1294//
         '[LRsfzaFpuaSwSyF2M7Q6n]:httpCall "HTTP - Insert opinion"':
           data:
             body: ""
@@ -3470,7 +3471,7 @@ data:
         '[W7K_wlTZmm7h6113_lBR7]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Chat" 5EiLKmo7w9b4gFBgcGYGH/prompt
-          visualData: 350.3683984013931/654.2211004214626/280/1179//
+          visualData: 368.5079362608488/741.2908821468498/280/1302//
         '[WTM0eQ7RF2bj0EWgU0cfW]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -3488,7 +3489,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Extract JSON" DXAvqxOfU-d_soA_drX3j/input
-          visualData: -1127.2272649164483/640.9516537208519/330/1287/var(--node-color-3)/var(--node-color-3)
+          visualData: -756.9906706879399/229.83570474407378/330/1305/var(--node-color-3)/var(--node-color-3)
         '[kaqyS8z6lnhb9qI8EonOo]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -3515,84 +3516,49 @@ data:
         '[xDt2dHDGaMAshg_hApWi9]:text "Persona system prompt"':
           data:
             normalizeLineEndings: true
-            text: "You have been given a JSON item in the following format:
+            text: >-
+              You have been given a JSON item in the following format:
 
 
               {
-
-              \      \"data\": [
-
-              \        {
-
-              \          \"id\": 3,
-
-              \          \"documentId\":
-              \"bhrp283cg1523zr5h6m09xra\",
-
-              \          \"personality\": \"Customer\",
-
-              \          \"profile\": \"Details of the profile.\",
-
-              \          \"concerns\": \"Concerns of the
-              profile.\"
-
-              \        },
-
-              \        {
-
-              \          \"id\": 1,
-
-              \          \"documentId\":
-              \"ukzezst3nmp9tshcb8nsbtbs\",
-
-              \          \"personality\": \"Employee\",
-
-              \          \"profile\": \"Details of the profile.\",
-
-              \          \"concerns\": \"Concerns of the
-              profile.\"
-
-              \        }
-
-              \        ...
-
-              \      ]
-
+                    "data": [
+                      {
+                        "id": 3,
+                        "documentId": "bhrp283cg1523zr5h6m09xra",
+                        "personality": "Customer",
+                        "profile": "Details of the profile.",
+                        "concerns": "Concerns of the profile."
+                      },
+                      {
+                        "id": 1,
+                        "documentId": "ukzezst3nmp9tshcb8nsbtbs",
+                        "personality": "Employee",
+                        "profile": "Details of the profile.",
+                        "concerns": "Concerns of the profile."
+                      }
+                      ...
+                    ]
               }
 
 
               TASK INSTRUCTIONS
 
 
-              Iterate through each item in the data array. For
-              each item, generate a response from the point of view of that
-              stakeholder, using the following structure:
+              Iterate through each item in the data array. For each item, generate a response from the point of view of that stakeholder, using the following structure:
 
 
               Stakeholder Brief (for each item):
 
+              	•	Use the following values from each individual item in the JSON list:
 
-              \t•\tUse the following values from each individual
-              item in the JSON list:
+              	- "personality" → used as the Role
+              	- "profile" → used as the Perspective
+              	- "concerns" → used as the Concerns
 
+              These values are unique to each item and should be used when generating that item's specific stakeholder response.
 
-              \t- \"personality\" → used as the Role
-
-              \t- \"profile\" → used as the Perspective
-
-              \t- \"concerns\" → used as the Concerns
-
-
-              These values are unique to each item and should be
-              used when generating that item's specific stakeholder response.
-
-
-              \t•\tCrisis Event: {{story}} (a brief summary of the
-              newsworthy incident)
-
-              \t•\tCompany Response: {{response}} (a full press
-              release or holding statement, included elsewhere in this prompt)
-
+              	•	Crisis Event: {{story}} (a brief summary of the newsworthy incident)
+              	•	Company Response: {{response}} (a full press release or holding statement, included elsewhere in this prompt)
 
               These items are common to each item.
 
@@ -3600,44 +3566,20 @@ data:
               Response Guidelines:
 
 
-              Write three short natural, authentic paragraphs in
-              the voice of the stakeholder.
+              Write three short natural, authentic paragraphs in the voice of the stakeholder.
 
 
-              The specific task is to analyse the quality of the
-              response. Taking into account the original news story does the
-              response work effectively to reduce the concern of this particular
-              stakeholder:
+              The specific task is to analyse the quality of the response. Taking into account the original news story does the response work effectively to reduce the concern of this particular stakeholder:
 
 
               In you response, address:
-
-              \t•\tWhether the company's response feels credible
-              or insufficient
-
-              \t•\tIf the response addresses the stakeholder's
-              specific concerns
-
-              \t•\tThe emotional or practical reaction to the
-              response from the stakeholder's perspective
-
-              \  •\tBe even handed and note where your concerns
-              have been addresses (if they have) and also mention any remaining
-              areas of concern If they remain)
-
-              \  • Considering the company response and your
-              interests as the defined stakeholder, evaluate an integer rating
-              from 0 to 10 as to how satisfied you are with the response, place
-              this in the satisfaction item in the output JSON only
-
-              \  •\tAdd a double line return and then a sentence
-              stating clearly whether they feel reassured by the content of the
-              response or not. Do not include details of your numeric rating
-              here. Do not rate the reponse out of 10.
-
-              \  • Finish the statement with two points that you
-              view as positive and two that you view as negative in this format:
-
+              	•	Whether the company's response feels credible or insufficient
+              	•	If the response addresses the stakeholder's specific concerns
+              	•	The emotional or practical reaction to the response from the stakeholder's perspective
+                •	Be even handed and note where your concerns have been addresses (if they have) and also mention any remaining areas of concern If they remain)
+                • Considering the company response and your interests as the defined stakeholder, evaluate an integer rating from 0 to 10 as to how satisfied you are with the response, place this in the satisfaction item in the output JSON only
+                •	Add a double line return and then a sentence stating clearly whether they feel reassured by the content of the response or not. Do not include details of your numeric rating here. Do not rate the reponse out of 10.
+                • Finish the statement with two points that you view as positive and two that you view as negative in this format:
               - First postive point
 
               - Second postive point
@@ -3650,82 +3592,49 @@ data:
               OUTPUT FORMAT (REQUIRED)
 
 
-              After generating a response for each stakeholder,
-              output a JSON array in this format:
+              After generating a response for each stakeholder, output a JSON array in this format:
 
 
-              Note: The field {{type}} and its value {{document}}
-              are global and constant — they must appear unchanged in each item
-              in the array. IMPORTANT Always ensure that the outout has ALL
-              items populated as follows:
+              Note: The field {{type}} and its value {{document}} are global and constant — they must appear unchanged in each item in the array.
+
+
+              IMPORTANT Always ensure that the output has ALL items populated as follows:
 
 
               {
-
-              \  \"data\": [
-
-              \    {
-
-              \      \"title\": \"Temporary loop title\",
-
-              \      \"view\": \"The full stakeholder reaction
-              text here...\",
-
-              \      \"persona\": 3,
-
-              \      \"satisfaction\": 0,
-
-              \      \"{{type}}\": \"{{document}}\"
-
-              \    }
-
-              \    ...
-
-              \  ]
-
+                "data": [
+                  {
+                    "title": "Temporary loop title",
+                    "view": "The full stakeholder reaction text here",
+                    "persona": 3,
+                    "satisfaction": 0,
+                    "{{type}}": "{{document}}"
+                  }
+                  ...
+                ]
               }
 
 
               Rules:
 
+              	•	Use the correct id from each item as the persona field
 
-              \t•\tUse the correct id from each item as the
-              persona field
+              	•	At the end of each generated output object:
 
+              -	If the global {{type}} value is "press_release", then add this field exactly as shown:
 
-              \t•\tAt the end of each generated output object:
+                "press_release": "{{document}}"
 
+              - If the global {{type}} value is "holding_statement", then add this field exactly as shown:
 
-              -\tIf the global {{type}} value is
-              \"press_release\", then add this field exactly as shown:
+                "holding_statement": "{{document}}"
 
-
-              \  \"press_release\": \"{{document}}\"
-
-
-              - If the global {{type}} value is
-              \"holding_statement\", then add this field exactly as shown:
-
-
-              \  \"holding_statement\": \"{{document}}\"
-
-
-              - Do not substitute the actual press release or
-              holding statement text. This is a metadata flag, not content. Only
-              include the literal key-value pair.
-
-              \t
-
-              \t•\tOutput must be a single valid JSON object only
-              — no extra text, markdown, or commentary.
-
-
-
-
-              \  "
+              - Do not substitute the actual press release or holding statement text. This is a metadata flag, not content. Only include the literal key-value pair.
+              	
+              	•	Output must be a single valid JSON object only — no extra text, markdown, or commentary.
           outgoingConnections:
             - output->"Chat" 5EiLKmo7w9b4gFBgcGYGH/systemPrompt
-          visualData: 363/74/330/28/var(--node-color-2)/var(--node-color-2)
+          visualData: 375.23462695344534/63.95338013655169/330/1304/var(--node-color-2)/var(--node-color-2)
         '[xhBkRsJdMKOgM6bdi3J-f]:destructure "Destructure"':
           data:
             paths:
@@ -3739,7 +3648,7 @@ data:
             - match_1->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/story
             - match_2->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/response
             - match_3->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/document
-          visualData: -148.99028252979411/281.1624232670572/280/1291//
+          visualData: -32.465683243127685/-208.68080281553833/280/1295//
     oNDvNATb6Cp0mwhFoA39A:
       metadata:
         description: ""
