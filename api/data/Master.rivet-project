@@ -3510,7 +3510,7 @@ data:
           data:
             normalizeLineEndings: true
             text: >-
-              You have been given a JSON item in the following format.
+              You have been given a JSON item in the following format:
 
 
               {
