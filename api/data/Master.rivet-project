@@ -3559,7 +3559,7 @@ data:
               Response Guidelines:
 
 
-              Write 2 short natural, authentic paragraphs in the voice of the stakeholder.
+              Write three short natural, authentic paragraphs in the voice of the stakeholder.
 
 
               The specific task is to analyse the quality of the response. Taking into account the original news story does the response work effectively to reduce the concern of this particular stakeholder:
@@ -3571,8 +3571,8 @@ data:
               	•	The emotional or practical reaction to the response from the stakeholder's perspective
                 •	Be even handed and note where your concerns have been addresses (if they have) and also mention any remaining areas of concern If they remain)
                 • Considering the company response and your interests as the defined stakeholder, evaluate an integer rating from 0 to 10 as to how satisfied you are with the response, place this in the satisfaction item in the output JSON only
-                	•	Add a sentence stating clearly whether they feel reassured by the content of the response or not. Do not include details of your numeric rating here. Do not rate the reponse out of 10.
-                  • End the response with a short bulleted list of 2 positive points and 2 negative points in this kind of format.
+                •	Add a double line return and then a sentence stating clearly whether they feel reassured by the content of the response or not. Do not include details of your numeric rating here. Do not rate the reponse out of 10.
+                • Add a double line return and then ed the response with a short bulleted list of two positive points and two negative points in this kind of format.
                   ✅ First short positive point
                   ✅ Second short positive point
                   ❎ First short negative point
