@@ -383,7 +383,7 @@ data:
             graphId: o8S-CeePSytOJAterI2wq
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 5325.793413064117/-666.5722483766193/330/1307/var(--node-color-1)/var(--node-color-1)
+          visualData: 5329.113041336889/-409.993708398371/330/1318/var(--node-color-1)/var(--node-color-1)
         '[6j2SwrDcIwLifrtNqNdL_]:destructure "Destructure"':
           data:
             paths:
@@ -762,7 +762,7 @@ data:
               - $.data.documentId
           outgoingConnections:
             - match_0->"Text" _xun_79EIycJcd_nUsd24/document
-          visualData: 4365.54337385178/-674.2563729189229/280/1309//
+          visualData: 4401.397040497633/-570.5368372648497/280/1319//
         '[khiwBEZ1TBidGeoldXUHD]:httpCall "Http Call"':
           data:
             body: ""
@@ -816,7 +816,7 @@ data:
               }
           outgoingConnections:
             - output->"SUB - Persona" 6Z0phS4vNCWYnQ0R2Ac7e/input
-          visualData: 4862.741438130983/-511.0079783072945/330/1307//
+          visualData: 4878.107295264919/-440.58113311008424/330/1317//
         '[sy6hucwRj-4x7Bc7byq6Q]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -2453,10 +2453,10 @@ data:
           outgoingConnections:
             - output->"Destructure" HfflPV-SqxtJY7immzBiY/object
           visualData: 3516.5189972081184/-1669.0014292376593/330/1061/var(--node-color-1)/var(--node-color-1)
-        '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
+        '[Kh8n8tY-O5thO4Vrbai26]:text "CRISIS ID FOR FIRE"':
           data:
             body: ""
-            text: dky8i30kisowxhuupwo8iz5l
+            text: sihaot4huf96o6ikq7fq0pl8
           visualData: -2454.2293769751946/804.3248288959268/330/1319//
         '[Kvidt5PDaXXL-X3MNTQ1I]:subGraph "Subgraph"':
           data:
@@ -3462,10 +3462,10 @@ data:
             useBodyInput: true
             useHeadersInput: false
           visualData: 1756.1196234837712/393.6715225915185/280/1201/var(--node-color-4)/var(--node-color-4)
-        '[P4uxruW9s0rJ87fOjh3l0]:text "Text"':
+        '[P4uxruW9s0rJ87fOjh3l0]:text "THIS IS CRISIS IS FOR FIRE"':
           data:
             normalizeLineEndings: true
-            text: ddubb2mu1h71zbwt4khvdab7
+            text: sihaot4huf96o6ikq7fq0pl8
           visualData: -933.608338506341/1276.9779979265468/330/1289//
         '[W7K_wlTZmm7h6113_lBR7]:extractJson "Extract JSON"':
           outgoingConnections:
@@ -3499,13 +3499,14 @@ data:
                     "type": "press_release",
                     "story": "An investigative report by a prominent Indian media outlet reveals that many of Nestlé India's best-selling products for children — Maggi noodles — are high in sugar, salt, and fat, with little nutritional benefit. The report is based on internal product formulation documents and interviews with former employees who allege that nutrition goals often took a back seat to taste and profit.  A senior pediatrician quoted in the story says Nestlé is hooking a generation onto junk through comfort branding The controversy intensifies when parenting groups and nutritionists begin questioning the company's Good Food, Good Life positioning.  Trigger Points: - The story hits just before exam season, when kids consume more packaged snacks - Critics tie the findings to India's rising childhood obesity and diabetes rates  Media/Social Sentiment: - Trending hashtags: #NestleTargetsKids #NotSoHealthy - Viral posts from parenting influencers and doctors calling for a boycott - News debates on Should Nestlé products be in your child's lunchbox?",
                     "response": "Nestlé India acknowledges the concerns raised following a recent investigative report and is committed to addressing them with transparency and responsibility. We recognize the importance of maintaining trust with our consumers, health experts, and advocacy groups, and are taking decisive steps to address the situation.  The report has led to significant discussions on social media, and we are aware of the impact this has had on our brand perception. We are actively engaging with major retailers to address their concerns and are committed to restoring confidence in our products. We are also aware of the potential legal scrutiny regarding our advertising practices and are taking this matter seriously.  In response, we are implementing the following actions: - Engaging in open dialogue with consumers and stakeholders to reaffirm our commitment to children's health and nutrition. - Conducting a comprehensive review of our advertising practices to ensure compliance with all relevant regulations. - Launching a transparent communication strategy to keep stakeholders informed of our progress and efforts to address these issues.  We deeply value the trust our consumers place in us and are dedicated to restoring that trust through accountability and meaningful action. We appreciate the feedback we have received and are committed to making changes that prioritize the health and safety of our consumers.  Thank you for your understanding and support during this challenging time.",
-                    "document": "h4sjfrrqqmb4885nvdbil6mx"
+                    "document": "lzdwvtfk28rdi32d9ln0v8f7"
                   }
                 ]
               }
           visualData: -1047.8457636122853/219.6281139183359/330/1286//
         '[lzjxmw4IEOlvyLbivSIQm]:text "Text"':
           data:
+            body: ""
             normalizeLineEndings: true
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/personas?filters%5Bcrises%5D%5BdocumentId%5D%5B$contains%5D={{crisis}}
           outgoingConnections:
@@ -3643,7 +3644,7 @@ data:
             - match_1->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/story
             - match_2->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/response
             - match_3->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/document
-          visualData: -142.452352005946/394.9224143820142/280/1252//
+          visualData: -148.99028252979411/281.1624232670572/280/1291//
     oNDvNATb6Cp0mwhFoA39A:
       metadata:
         description: ""
