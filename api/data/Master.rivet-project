@@ -2453,10 +2453,10 @@ data:
           outgoingConnections:
             - output->"Destructure" HfflPV-SqxtJY7immzBiY/object
           visualData: 3516.5189972081184/-1669.0014292376593/330/1061/var(--node-color-1)/var(--node-color-1)
-        '[Kh8n8tY-O5thO4Vrbai26]:text "CRISIS ID FOR FIRE"':
+        '[Kh8n8tY-O5thO4Vrbai26]:text "CRISIS ID FOR LEAD"':
           data:
             body: ""
-            text: sihaot4huf96o6ikq7fq0pl8
+            text: ye8w2fo87pymtxxfx0vyfzaa
           visualData: -2454.2293769751946/804.3248288959268/330/1319//
         '[Kvidt5PDaXXL-X3MNTQ1I]:subGraph "Subgraph"':
           data:
@@ -3462,11 +3462,11 @@ data:
             useBodyInput: true
             useHeadersInput: false
           visualData: 1756.1196234837712/393.6715225915185/280/1201/var(--node-color-4)/var(--node-color-4)
-        '[P4uxruW9s0rJ87fOjh3l0]:text "THIS IS CRISIS IS FOR FIRE"':
+        '[P4uxruW9s0rJ87fOjh3l0]:text "THIS IS CRISIS ID FOR LEAD"':
           data:
             normalizeLineEndings: true
-            text: sihaot4huf96o6ikq7fq0pl8
-          visualData: -933.608338506341/1276.9779979265468/330/1289//
+            text: ye8w2fo87pymtxxfx0vyfzaa
+          visualData: -933.608338506341/1276.9779979265468/330/1292//
         '[W7K_wlTZmm7h6113_lBR7]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Chat" 5EiLKmo7w9b4gFBgcGYGH/prompt
@@ -3499,7 +3499,7 @@ data:
                     "type": "press_release",
                     "story": "An investigative report by a prominent Indian media outlet reveals that many of Nestlé India's best-selling products for children — Maggi noodles — are high in sugar, salt, and fat, with little nutritional benefit. The report is based on internal product formulation documents and interviews with former employees who allege that nutrition goals often took a back seat to taste and profit.  A senior pediatrician quoted in the story says Nestlé is hooking a generation onto junk through comfort branding The controversy intensifies when parenting groups and nutritionists begin questioning the company's Good Food, Good Life positioning.  Trigger Points: - The story hits just before exam season, when kids consume more packaged snacks - Critics tie the findings to India's rising childhood obesity and diabetes rates  Media/Social Sentiment: - Trending hashtags: #NestleTargetsKids #NotSoHealthy - Viral posts from parenting influencers and doctors calling for a boycott - News debates on Should Nestlé products be in your child's lunchbox?",
                     "response": "Nestlé India acknowledges the concerns raised following a recent investigative report and is committed to addressing them with transparency and responsibility. We recognize the importance of maintaining trust with our consumers, health experts, and advocacy groups, and are taking decisive steps to address the situation.  The report has led to significant discussions on social media, and we are aware of the impact this has had on our brand perception. We are actively engaging with major retailers to address their concerns and are committed to restoring confidence in our products. We are also aware of the potential legal scrutiny regarding our advertising practices and are taking this matter seriously.  In response, we are implementing the following actions: - Engaging in open dialogue with consumers and stakeholders to reaffirm our commitment to children's health and nutrition. - Conducting a comprehensive review of our advertising practices to ensure compliance with all relevant regulations. - Launching a transparent communication strategy to keep stakeholders informed of our progress and efforts to address these issues.  We deeply value the trust our consumers place in us and are dedicated to restoring that trust through accountability and meaningful action. We appreciate the feedback we have received and are committed to making changes that prioritize the health and safety of our consumers.  Thank you for your understanding and support during this challenging time.",
-                    "document": "lzdwvtfk28rdi32d9ln0v8f7"
+                    "document": "owwmou3udwx4u0yjrv0t67xs"
                   }
                 ]
               }
