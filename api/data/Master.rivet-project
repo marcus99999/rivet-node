@@ -280,7 +280,7 @@ data:
             graphId: o8S-CeePSytOJAterI2wq
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 5327.203746563802/-1054.2958612609366/330/1307/var(--node-color-1)/var(--node-color-1)
+          visualData: 5324.126069502101/-1178.9417822598523/330/1315/var(--node-color-1)/var(--node-color-1)
         '[-kgpH0TBjFvfM8H9c9N-8]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" HybVWMkqapLqooQgmPjod/req_body
@@ -352,6 +352,7 @@ data:
             inputNames: input1
             outputNames: output1
           outgoingConnections:
+            - output1->"Text" givYg0K4zZa7xCEszaC2A/detail
             - output1->"Text" sXaO-y1UPPYzNLtmpQCZw/response
           visualData: 2157.4722107326074/-208.02240245710234/230/1287/var(--node-color-2)/var(--node-color-2)
         '[5Hx49_3tx7vg11u5zDxnB]:subGraph "Subgraph"':
@@ -509,7 +510,9 @@ data:
               };
             inputNames: input1
             outputNames: output1
-          visualData: 2445.8984277843056/-214.6669977095463/230/1018/var(--node-color-2)/var(--node-color-2)
+          outgoingConnections:
+            - output1->"Text" givYg0K4zZa7xCEszaC2A/original
+          visualData: 2473.59752133962/-299.30311690634096/230/1313/var(--node-color-2)/var(--node-color-2)
         '[IJqTXxPN2eOR5TSyVcxyg]:text "Text"':
           data:
             body: ""
@@ -525,7 +528,7 @@ data:
               }
           outgoingConnections:
             - output->"Http Call" 9uM1rtiITUgpEN3PYTfKu/req_body
-          visualData: 2785.3942265565997/-1095.9588678459734/330/1311//
+          visualData: 2783.855388025749/-962.0799156619528/330/1314//
         '[IqeXPetHyKTuaAAeoiCV8]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" g8AEP8e2wMiSjZRoBEebV/req_body
@@ -656,6 +659,7 @@ data:
             - match_3->"Text" IJqTXxPN2eOR5TSyVcxyg/documentId
             - match_3->"Text" c1Jqgt3-BvfFcKroOhntB/documentId
             - match_3->"Text" d0PAVTcOCZeb0W8Lh-Cf7/documentId
+            - match_3->"Text" givYg0K4zZa7xCEszaC2A/documentId
           visualData: 356.2879017266414/-22.51931906114679/280/593//
         '[_xun_79EIycJcd_nUsd24]:text "Text"':
           data:
@@ -742,7 +746,7 @@ data:
               }
           outgoingConnections:
             - output->"Http Call" -HvpH3_vlr-lQwwFbODFe/req_body
-          visualData: 2798.9743350467775/-205.17023076408125/330/1019//
+          visualData: 2817.4403974169873/-275.9568031832186/330/1312//
         '[h5k-44eeEQKUVT6CVVEBp]:subGraph "Subgraph"':
           data:
             graphId: zYlQ2Xk75J--kr6X__Awr
@@ -884,6 +888,8 @@ data:
               };
             inputNames: input1
             outputNames: output1
+          outgoingConnections:
+            - output1->"Text" givYg0K4zZa7xCEszaC2A/history
           visualData: 2171.1894668266773/241.46585480912967/230/1003/var(--node-color-2)/var(--node-color-2)
         '[xvZQq0mGPozaZImbV3X0y]:subGraph "SUB - Persona"':
           data:
@@ -2041,7 +2047,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: -685.3452129042051/381.9486794935342/330/1093/var(--node-color-3)/var(--node-color-3)
+          visualData: -685.3452129042051/232.01456369971473/330/1325/var(--node-color-3)/var(--node-color-3)
         '[4PpdHSOarBvynuMBQSfp0]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -2060,7 +2066,7 @@ data:
             - value->"Text" -9u1wOd79FRibDuN_PXTo/story
             - value->"Text" slwZi5WuxceneksXs_M6Y/story
             - value->"Text" tEzx1gfv3oT5tzEpObm53/story
-          visualData: 6989.1080619225495/-2432.4020941798826/230/1309//
+          visualData: 6712.606186043038/-2640.7520992440213/230/1327//
         '[5tCwdNa9Fme3QWLBifr_T]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -2101,7 +2107,7 @@ data:
             graphId: o8S-CeePSytOJAterI2wq
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 7955.71290296782/-1395.9099903612746/330/1292/var(--node-color-1)/var(--node-color-1)
+          visualData: 8078.386270435491/-1113.5665255547315/330/1330/var(--node-color-1)/var(--node-color-1)
         '[8jE-ZpLfAnzdBIVRdCP5R]:code "Esape chars"':
           data:
             code: >-
@@ -2194,7 +2200,7 @@ data:
             dataType: string
             id: story
             useIdInput: false
-          visualData: 1598.025172485152/122.53743229366512/230/1285//
+          visualData: 1633.0747060473436/-76.07659122542043/230/1326//
         '[CocxXqVO7vwIgKSISUEL9]:text "Text"':
           data:
             text: >-
@@ -2313,7 +2319,7 @@ data:
             graphId: oNDvNATb6Cp0mwhFoA39A
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 1296.8987895631008/664.2896617894178/330/1017/var(--node-color-1)/var(--node-color-1)
+          visualData: 1302.7403784901328/829.8013480553224/330/1322/var(--node-color-1)/var(--node-color-1)
         '[GGEwPqFn8e-aYjpv4Lp3Q]:subGraph "Subgraph"':
           data:
             graphId: KpT800xhGZdwy4QxONPKN
@@ -2323,7 +2329,7 @@ data:
             - output->"Chat" IwTKZWYXuAna_v309uJ1p/prompt
             - output->"Chat" ar6v6LMNTaqxVthRlZG20/prompt
             - output->"Subgraph" GE3dothNsb-QgfptTQIAJ/input
-          visualData: 796.1936134334134/507.8569106178524/330/1102/var(--node-color-1)/var(--node-color-1)
+          visualData: 831.2431469956049/665.5798116477145/330/1323/var(--node-color-1)/var(--node-color-1)
         '[H2LewNpd8KUIDKEIDZj-K]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" k-klyzvhniFfqH5hvjuOU/object
@@ -2449,8 +2455,9 @@ data:
           visualData: 3516.5189972081184/-1669.0014292376593/330/1061/var(--node-color-1)/var(--node-color-1)
         '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
           data:
-            text: sihaot4huf96o6ikq7fq0pl8
-          visualData: -2506.803677318482/823.7967919860332/330/1315//
+            body: ""
+            text: trg7ingzxb9yo65r87b40dvs
+          visualData: -2454.2293769751946/804.3248288959268/330/1319//
         '[Kvidt5PDaXXL-X3MNTQ1I]:subGraph "Subgraph"':
           data:
             graphId: 3soSwiUKQ_X4fGdokyxAH
@@ -2591,6 +2598,7 @@ data:
         '[W888kIoF-SH_n2m0tV7Rc]:text "Text"':
           data:
             body: ""
+            headers: ""
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=company
           outgoingConnections:
             - output->"HTTP - Get crises" cKjknBn_o8XEPm2EFP1C3/url
@@ -2665,7 +2673,7 @@ data:
               }
           outgoingConnections:
             - output->"Chat" IwTKZWYXuAna_v309uJ1p/systemPrompt
-          visualData: 1113.2799669194692/-1023.2490587881363/330/1100//
+          visualData: 1006.1841699238838/-668.8593305481993/330/1317//
         '[_Ua5Iaa7bVa0WnfBltgtN]:code "Esape chars"':
           data:
             code: >-
@@ -2693,7 +2701,7 @@ data:
         '[amanjT5aC-pMQbTIoqiAn]:text "Text"':
           data:
             text: aqvoxymesg5jovysyqa6lv0m
-          visualData: -2459.56271454713/981.8236371885058/330/1012//
+          visualData: -2461.5099108561403/1186.2792496346233/330/1320//
         '[ancy-mfuttJ79LFtk4zEf]:destructure "Destructure"':
           data:
             paths:
@@ -2767,7 +2775,7 @@ data:
             graphId: o8S-CeePSytOJAterI2wq
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 7954.76360949076/-1611.814783882745/330/1292/var(--node-color-1)/var(--node-color-1)
+          visualData: 8020.968283997122/-1763.696095985575/330/1329/var(--node-color-1)/var(--node-color-1)
         '[dZzpjkTcyMIFqR4NBAMrV]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -3020,7 +3028,7 @@ data:
             graphId: o8S-CeePSytOJAterI2wq
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 7924.700252909559/-1885.3396582519326/330/1292/var(--node-color-1)/var(--node-color-1)
+          visualData: 8025.954460978112/-2085.9008780800286/330/1328/var(--node-color-1)/var(--node-color-1)
         '[rycG3u2QjX1s7Lt8ABerx]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" P1s1Jkq4pQh1VXrNEUFNe/object
@@ -3381,7 +3389,7 @@ data:
                   }
                 ]
               }
-          visualData: -1024.608115372693/136.91285612027514/330/1270//
+          visualData: -1033.8584068304417/-191.47249062980853/330/1285//
         '[5EiLKmo7w9b4gFBgcGYGH]:chat "Chat"':
           data:
             additionalParameters: []
@@ -3461,7 +3469,7 @@ data:
           data:
             normalizeLineEndings: true
             text: h4sjfrrqqmb4885nvdbil6mx
-          visualData: -811.041976691169/1237.6642592311143/330/1284//
+          visualData: -933.608338506341/1276.9779979265468/330/1289//
         '[W7K_wlTZmm7h6113_lBR7]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Chat" 5EiLKmo7w9b4gFBgcGYGH/prompt
@@ -3475,7 +3483,7 @@ data:
             wait: false
           outgoingConnections:
             - value->"Text" lzjxmw4IEOlvyLbivSIQm/crisis
-          visualData: -730/1020/230/1283//
+          visualData: -866.4417990017953/964.498251253507/230/1288//
         '[ior0x9Ow0Q_LH4R2-jRL8]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -3483,7 +3491,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Extract JSON" DXAvqxOfU-d_soA_drX3j/input
-          visualData: -1009.2860488301507/788.9563170448333/330/1264/var(--node-color-3)/var(--node-color-3)
+          visualData: -1127.2272649164483/640.9516537208519/330/1287/var(--node-color-3)/var(--node-color-3)
         '[kaqyS8z6lnhb9qI8EonOo]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -3498,7 +3506,7 @@ data:
                   }
                 ]
               }
-          visualData: -994.6565877302294/453.197973226494/330/1271//
+          visualData: -1047.8457636122853/219.6281139183359/330/1286//
         '[lzjxmw4IEOlvyLbivSIQm]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -3572,6 +3580,15 @@ data:
                 •	Be even handed and note where your concerns have been addresses (if they have) and also mention any remaining areas of concern If they remain)
                 • Considering the company response and your interests as the defined stakeholder, evaluate an integer rating from 0 to 10 as to how satisfied you are with the response, place this in the satisfaction item in the output JSON only
                 •	Add a double line return and then a sentence stating clearly whether they feel reassured by the content of the response or not. Do not include details of your numeric rating here. Do not rate the reponse out of 10.
+                • Finish the statement with two points that you view as positive and two that you view as negative in this format:
+              ✅ First postive point
+
+              ✅ Second postive point
+
+              ❎ First negative point
+
+              ❎ Second negative point
+
 
               OUTPUT FORMAT (REQUIRED)
 
