@@ -3448,7 +3448,7 @@ data:
         '[DXAvqxOfU-d_soA_drX3j]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" xhBkRsJdMKOgM6bdi3J-f/object
-          visualData: -461.7836334947949/-185.0370252561404/280/1294//
+          visualData: -427.72503472522135/-204.64652151741004/280/1307//
         '[LRsfzaFpuaSwSyF2M7Q6n]:httpCall "HTTP - Insert opinion"':
           data:
             body: ""
@@ -3597,10 +3597,8 @@ data:
               ### JSON OUTPUT FORMAT (REQUIRED)
 
 
-              You must return a **single valid JSON object** like this:
+              You must return a **single valid JSON object** in exactly this format:
 
-
-              json
 
               {
                 "data": [
@@ -3609,16 +3607,23 @@ data:
                     "view": "Full stakeholder reaction text here...",
                     "persona": 3,
                     "satisfaction": 0,
-                    "{{type}}": "{{document}}"
+                    "{{type}}": "{{documentid}}"
                   },
                   ...
                 ]
               }
 
 
+              ### IMPORTANT
+
+              - The {{type}} content will only ever by "press_release" or "holding_statement".
+
+              {{documentid}} will be the numeric id containted in the system prompt. Do not accidentally insert the actual press release in that field.
+
+              - Ensure all five items are present in the same order in iterated item in the JSON.
+
 
               FINAL OUTPUT SANITISATION RULES (MUST FOLLOW):
-
 
               - All field values in the JSON output must be clean strings.
 
@@ -3648,7 +3653,7 @@ data:
             - match_0->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/type
             - match_1->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/story
             - match_2->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/response
-            - match_3->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/document
+            - match_3->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/documentid
           visualData: -32.465683243127685/-208.68080281553833/280/1295//
     oNDvNATb6Cp0mwhFoA39A:
       metadata:
