@@ -2450,7 +2450,7 @@ data:
         '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
           data:
             text: sihaot4huf96o6ikq7fq0pl8
-          visualData: -2424.803677318482/741.7967919860332/330/1008//
+          visualData: -2506.803677318482/823.7967919860332/330/1315//
         '[Kvidt5PDaXXL-X3MNTQ1I]:subGraph "Subgraph"':
           data:
             graphId: 3soSwiUKQ_X4fGdokyxAH
@@ -2593,7 +2593,7 @@ data:
             body: ""
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=company
           outgoingConnections:
-            - output->"Http Call" cKjknBn_o8XEPm2EFP1C3/url
+            - output->"HTTP - Get crises" cKjknBn_o8XEPm2EFP1C3/url
           visualData: -1984.1165728777935/551.7698981750353/330/861//
         '[Xk1Tw7lxeDqacNIT1bMNu]:extractJson "Extract JSON"':
           outgoingConnections:
@@ -2745,7 +2745,7 @@ data:
             height: 597.2698296024814
             text: Call in the content from Strapi
           visualData: -1569.739174387927/456.69059632781625/804.7758411904256/1009//
-        '[cKjknBn_o8XEPm2EFP1C3]:httpCall "Http Call"':
+        '[cKjknBn_o8XEPm2EFP1C3]:httpCall "HTTP - Get crises"':
           data:
             body: ""
             errorOnNon200: true
@@ -2793,7 +2793,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
-          visualData: -2471.896571707314/455.1418776579797/330/1007/var(--node-color-3)/var(--node-color-3)
+          visualData: -2432.896571707314/581.1418776579796/330/1316/var(--node-color-3)/var(--node-color-3)
         '[gS957dQIpZe538bFQvRMd]:subGraph "Subgraph"':
           data:
             graphId: 3soSwiUKQ_X4fGdokyxAH
@@ -3461,7 +3461,7 @@ data:
           data:
             normalizeLineEndings: true
             text: trg7ingzxb9yo65r87b40dvs
-          visualData: -936/1304/330/1280//
+          visualData: -936/1304/330/1282//
         '[W7K_wlTZmm7h6113_lBR7]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Chat" 5EiLKmo7w9b4gFBgcGYGH/prompt
@@ -3475,7 +3475,7 @@ data:
             wait: false
           outgoingConnections:
             - value->"Text" lzjxmw4IEOlvyLbivSIQm/crisis
-          visualData: -806/1101/230/1281//
+          visualData: -730/1020/230/1283//
         '[ior0x9Ow0Q_LH4R2-jRL8]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -3506,7 +3506,7 @@ data:
           outgoingConnections:
             - output->"HTTP - Get personas" 5MXvKU7VrRMcqa06Uu95g/url
           visualData: -425/906/330/1275//
-        '[xDt2dHDGaMAshg_hApWi9]:text "Text"':
+        '[xDt2dHDGaMAshg_hApWi9]:text "Persona system prompt"':
           data:
             normalizeLineEndings: true
             text: >-
@@ -3630,10 +3630,10 @@ data:
               - $.data[0].document
             text: ""
           outgoingConnections:
-            - match_0->"Text" xDt2dHDGaMAshg_hApWi9/type
-            - match_1->"Text" xDt2dHDGaMAshg_hApWi9/story
-            - match_2->"Text" xDt2dHDGaMAshg_hApWi9/response
-            - match_3->"Text" xDt2dHDGaMAshg_hApWi9/document
+            - match_0->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/type
+            - match_1->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/story
+            - match_2->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/response
+            - match_3->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/document
           visualData: -142.452352005946/394.9224143820142/280/1252//
     oNDvNATb6Cp0mwhFoA39A:
       metadata:
