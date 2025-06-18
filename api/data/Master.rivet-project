@@ -3668,7 +3668,7 @@ data:
                 }
               }
           outgoingConnections:
-            - output->"Http Call" vGrMCp_P9c7YdmxhhVt0j/req_body
+            - output->"HTTP - Submit scenario" vGrMCp_P9c7YdmxhhVt0j/req_body
           visualData: 1139.0392673838164/-44.572934944116184/330/1022//
         '[1qj6Co0QHa5bSTYQVEa3n]:text "Text"':
           data:
@@ -3682,9 +3682,9 @@ data:
                 }
               }
           outgoingConnections:
-            - output->"Http Call" N-4ftkm3HlWZXOFajTkuX/req_body
+            - output->"HTTP - Submit scenario" N-4ftkm3HlWZXOFajTkuX/req_body
           visualData: 1178.2307278133226/884.0831626672435/330/1026//
-        '[6MfIA8qVDWK88vrdAM8uu]:httpCall "Http Call"':
+        '[6MfIA8qVDWK88vrdAM8uu]:httpCall "HTTP - Submit scenario"':
           data:
             body: ""
             errorOnNon200: true
@@ -3694,7 +3694,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/submit-scenario
+            url: https://crisis-comms.vercel.app/api/submit-scenario
             useBodyInput: true
             useHeadersInput: false
           visualData: 1689.704650741663/465.31229678879856/280/1023/var(--node-color-4)/var(--node-color-4)
@@ -3766,7 +3766,7 @@ data:
             normalizeLineEndings: true
             text: "{{input}}"
           visualData: 323.81540695367414/963.0715829007078/330/1005//
-        '[N-4ftkm3HlWZXOFajTkuX]:httpCall "Http Call"':
+        '[N-4ftkm3HlWZXOFajTkuX]:httpCall "HTTP - Submit scenario"':
           data:
             body: ""
             errorOnNon200: true
@@ -3776,7 +3776,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/submit-scenario
+            url: https://crisis-comms.vercel.app/api/submit-scenario
             useBodyInput: true
             useHeadersInput: false
           visualData: 1711.6872026970589/904.4755084465291/280/1025/var(--node-color-4)/var(--node-color-4)
@@ -3828,7 +3828,7 @@ data:
                 }
               }
           outgoingConnections:
-            - output->"Http Call" 6MfIA8qVDWK88vrdAM8uu/req_body
+            - output->"HTTP - Submit scenario" 6MfIA8qVDWK88vrdAM8uu/req_body
           visualData: 1153.1161751514558/418.5653977949644/330/1024//
         '[Z00m77150kI2e-9hLYAHl]:graphInput "Graph Input"':
           data:
@@ -3838,7 +3838,7 @@ data:
           outgoingConnections:
             - data->"Destructure" AG3KlNFLjYWCmgFLLBti5/object
           visualData: -256.7169630176482/156.98115236792142/425.72297281994804/1010/var(--node-color-3)/var(--node-color-3)
-        '[vGrMCp_P9c7YdmxhhVt0j]:httpCall "Http Call"':
+        '[vGrMCp_P9c7YdmxhhVt0j]:httpCall "HTTP - Submit scenario"':
           data:
             body: ""
             errorOnNon200: true
@@ -3849,7 +3849,7 @@ data:
               }
             method: POST
             text: ""
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/submit-scenario
+            url: https://crisis-comms.vercel.app/api/submit-scenario
             useBodyInput: true
             useHeadersInput: false
           visualData: 1698.4545425384927/46.947482389836765/280/1011/var(--node-color-4)/var(--node-color-4)
