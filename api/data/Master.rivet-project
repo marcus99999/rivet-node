@@ -2456,7 +2456,9 @@ data:
         '[Kh8n8tY-O5thO4Vrbai26]:text "Text"':
           data:
             body: ""
-            text: trg7ingzxb9yo65r87b40dvs
+            text: dky8i30kisowxhuupwo8iz5l
+          outgoingConnections:
+            - output->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2454.2293769751946/804.3248288959268/330/1319//
         '[Kvidt5PDaXXL-X3MNTQ1I]:subGraph "Subgraph"':
           data:
@@ -2752,7 +2754,7 @@ data:
             color: rgba(255,255,255,1)
             height: 597.2698296024814
             text: Call in the content from Strapi
-          visualData: -1569.739174387927/456.69059632781625/804.7758411904256/1009//
+          visualData: -1569.739174387927/456.69059632781625/804.7758411904256/1331//
         '[cKjknBn_o8XEPm2EFP1C3]:httpCall "HTTP - Get crises"':
           data:
             body: ""
@@ -2799,8 +2801,6 @@ data:
             dataType: string
             id: input
             useDefaultValueInput: false
-          outgoingConnections:
-            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2432.896571707314/581.1418776579796/330/1316/var(--node-color-3)/var(--node-color-3)
         '[gS957dQIpZe538bFQvRMd]:subGraph "Subgraph"':
           data:
@@ -2873,10 +2873,7 @@ data:
               Each response should take the form of a description of the issue including details of the projected scenario and details of how the business intends to respond to that crisis.
 
 
-              Start the response with the healine of one sentence that summarizes the press release content. Put the headline in all capitals. The press release title needs to be factual and convey the news, but can't come across as commercial. When useful, a subtitle can be included to provide some depth, proof points or compelling data points to the release. Ensure there is a double line break after this.
-
-
-              On the next line add today's date (in the format Tuesday 17th June 2025) followed by a line break. Do not prefix it with Date: or similar. Just have the date only.
+              Start with today's date (in the format Tuesday 17th June 2025) followed by a line break. Do not prefix it with Date: or similar. Just have the date only.
 
 
               The full response should be a minimum of 5 paragraphs.
@@ -3937,7 +3934,7 @@ data:
         id: zYlQ2Xk75J--kr6X__Awr
         name: PR- Q&A agent subgraph
       nodes:
-        '[-IjNUGgP_EOUbfrIroaZD]:text "Text"':
+        '[-IjNUGgP_EOUbfrIroaZD]:text "QA system prompt"':
           data:
             jsonTemplate: ""
             text: >-
@@ -3979,7 +3976,7 @@ data:
             useIdInput: false
             wait: false
           outgoingConnections:
-            - value->"Text" -IjNUGgP_EOUbfrIroaZD/role
+            - value->"QA system prompt" -IjNUGgP_EOUbfrIroaZD/role
           visualData: 318.80618502765265/321.90884957146795/230/206//
         '[OIvEjExXAsyhFYZZ_ZKZy]:chat "Chat"':
           data:
