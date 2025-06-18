@@ -3660,12 +3660,10 @@ data:
           data:
             text: |
               {
-                "data": {
                   "title": "{{title}}",
                   "detail": "{{input}}",
                   "severity": "High",
                   "crisis": "{{documentId}}"
-                }
               }
           outgoingConnections:
             - output->"HTTP - Submit scenario" vGrMCp_P9c7YdmxhhVt0j/req_body
@@ -3674,12 +3672,10 @@ data:
           data:
             text: |
               {
-                "data": {
                   "title": "{{title}}",
                   "detail": "{{input}}",
                   "severity": "Low",
                   "crisis": "{{documentId}}"
-                }
               }
           outgoingConnections:
             - output->"HTTP - Submit scenario" N-4ftkm3HlWZXOFajTkuX/req_body
@@ -3820,12 +3816,10 @@ data:
           data:
             text: |
               {
-                "data": {
                   "title": "{{title}}",
                   "detail": "{{input}}",
                   "severity": "Medium",
                   "crisis": "{{documentId}}"
-                }
               }
           outgoingConnections:
             - output->"HTTP - Submit scenario" 6MfIA8qVDWK88vrdAM8uu/req_body
