@@ -3561,9 +3561,9 @@ data:
               For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. Then, continue with:
 
 
-              - A double line break  
+              - A line break  
 
-              - A single sentence stating clearly whether the stakeholder feels **reassured** or **not reassured** by the company's response (do **not** include any numeric score here).
+              - A single sentence stating reasons whether the stakeholder feels **reassured** or **not reassured** by the company's response (do **not** include any numeric score here).
 
 
               Finally, assign a numeric **satisfaction rating from 0 to 10**, and include it in the output JSON under `satisfaction`.
