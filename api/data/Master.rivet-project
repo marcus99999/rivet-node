@@ -269,7 +269,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases
+            url: https://crisis-comms.vercel.app/api/submit-pressrelease
             useBodyInput: true
             useHeadersInput: false
           outgoingConnections:
@@ -313,7 +313,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases
+            url: https://crisis-comms.vercel.app/api/submit-pressrelease
             useBodyInput: true
             useHeadersInput: false
           outgoingConnections:
@@ -368,12 +368,9 @@ data:
           data:
             text: |-
               {
-                "data": {
                   "crisis": "{{documentId}}",
                   {{input}},
                   "severity": "High"
-                },
-                "meta": {}
               }
           outgoingConnections:
             - output->"Extract JSON" wOjyfm5GpYlcB2L_GOh87/input
@@ -431,7 +428,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/press-releases
+            url: https://crisis-comms.vercel.app/api/submit-pressrelease
             useBodyInput: true
             useHeadersInput: false
           outgoingConnections:
@@ -466,12 +463,9 @@ data:
           data:
             text: |-
               {
-                "data": {
                   "crisis": "{{documentId}}",
                   {{input}},
                   "severity": "Medium"
-                },
-                "meta": {}
               }
           outgoingConnections:
             - output->"Extract JSON" IqeXPetHyKTuaAAeoiCV8/input
@@ -486,7 +480,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/qa-pairs
+            url: https://crisis-comms.vercel.app/api/submit-qapairs
             useBodyInput: true
             useHeadersInput: false
           visualData: 2952.2926914639334/1869.3584238414146/280/849/var(--node-color-4)/var(--node-color-4)
@@ -518,13 +512,11 @@ data:
             body: ""
             text: |-
               {
-                "data": {
                   "original": "{{original}}",
                   "detail": "{{detail}}",
                   "history": {{history}},
                   "severity": "Medium",
                   "crisis": "{{documentId}}"
-                }
               }
           outgoingConnections:
             - output->"Http Call" 9uM1rtiITUgpEN3PYTfKu/req_body
@@ -571,7 +563,7 @@ data:
         '[ODJurltHNQDJ4V7wfThYc]:destructure "Destructure"':
           data:
             paths:
-              - $.data.documentId
+              - $.documentId
           outgoingConnections:
             - match_0->"Text" Opbyfte5MRFNu5YsoFpzw/document
           visualData: 4431.321364888481/-1088.1595362625771/280/1308//
@@ -595,7 +587,7 @@ data:
         '[P_YHgyPG4JayvP9KbwXcZ]:destructure "Destructure"':
           data:
             paths:
-              - $.data.documentId
+              - $.documentId
           outgoingConnections:
             - match_0->"Text" sXaO-y1UPPYzNLtmpQCZw/document
           visualData: 4448.793300537202/-223.94995130232084/280/1310//
@@ -686,12 +678,9 @@ data:
           data:
             text: |-
               {
-                "data": {
                   "crisis": "{{documentId}}",
                   {{input}},
                   "severity": "Low"
-                },
-                "meta": {}
               }
           outgoingConnections:
             - output->"Extract JSON" -kgpH0TBjFvfM8H9c9N-8/input
@@ -700,13 +689,11 @@ data:
           data:
             text: |-
               {
-                "data": {
                   "original": "{{original}}",
                   "detail": "{{detail}}",
                   "history": {{history}},
                   "severity": "High",
                   "crisis": "{{documentId}}"
-                }
               }
           outgoingConnections:
             - output->"Http Call" 2-1stJD-1ZlJeod6DgIgb/req_body
@@ -728,7 +715,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/qa-pairs
+            url: https://crisis-comms.vercel.app/api/submit-qapairs
             useBodyInput: true
             useHeadersInput: false
           visualData: 2955.932231911226/1410.6056998284348/280/848/var(--node-color-4)/var(--node-color-4)
@@ -736,13 +723,11 @@ data:
           data:
             text: |-
               {
-                "data": {
                   "original": "{{original}}",
                   "detail": "{{detail}}",
                   "history": {{history}},
                   "severity": "Low",
                   "crisis": "{{documentId}}"
-                }
               }
           outgoingConnections:
             - output->"Http Call" -HvpH3_vlr-lQwwFbODFe/req_body
@@ -759,7 +744,7 @@ data:
         '[jtb7T-N-15zAQ1KWlv6GZ]:destructure "Destructure"':
           data:
             paths:
-              - $.data.documentId
+              - $.documentId
           outgoingConnections:
             - match_0->"Text" _xun_79EIycJcd_nUsd24/document
           visualData: 4401.397040497633/-570.5368372648497/280/1319//
@@ -773,7 +758,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/qa-pairs
+            url: https://crisis-comms.vercel.app/api/submit-qapairs
             useBodyInput: true
             useHeadersInput: false
           visualData: 2953.4384105711506/917.8690320322308/280/847/var(--node-color-4)/var(--node-color-4)
@@ -1963,13 +1948,11 @@ data:
           data:
             text: |-
               {
-                "data": {
                   "original": "{{original}}",
                   "detail": "{{detail}}",
                   "history": {{history}},
                   "severity": "High",
                   "crisis": "{{documentId}}"
-                }
               }
           outgoingConnections:
             - output->"HTTP - Create holding statement"
@@ -2157,7 +2140,7 @@ data:
         '[Ax5hkueX-YZVwVDb0c62a]:destructure "Destructure"':
           data:
             paths:
-              - $.data.documentId
+              - $.documentId
           outgoingConnections:
             - match_0->"Text" -9u1wOd79FRibDuN_PXTo/document
           visualData: 7180.508535265784/-1660.6889691170727/280/1311//
@@ -2292,7 +2275,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/holding-statements/
+            url: https://crisis-comms.vercel.app/api/submit-holdingstatement
             useBodyInput: true
             useHeadersInput: false
           outgoingConnections:
@@ -2353,7 +2336,7 @@ data:
         '[HmDdB8p2wc8vu8FcBadjI]:destructure "Destructure"':
           data:
             paths:
-              - $.data.documentId
+              - $.documentId
           outgoingConnections:
             - match_0->"Text" tEzx1gfv3oT5tzEpObm53/document
           visualData: 7243.561482293314/-2166.650422094084/280/1307//
@@ -2412,13 +2395,11 @@ data:
           data:
             text: |-
               {
-                "data": {
                   "original": "{{original}}",
                   "detail": "{{detail}}",
                   "history": {{history}},
                   "severity": "Low",
                   "crisis": "{{documentId}}"
-                }
               }
           outgoingConnections:
             - output->"HTTP - Create holding statement"
@@ -2457,6 +2438,8 @@ data:
           data:
             body: ""
             text: ye8w2fo87pymtxxfx0vyfzaa
+          outgoingConnections:
+            - output->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2454.2293769751946/804.3248288959268/330/1319//
         '[Kvidt5PDaXXL-X3MNTQ1I]:subGraph "Subgraph"':
           data:
@@ -2476,7 +2459,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/holding-statements/
+            url: https://crisis-comms.vercel.app/api/submit-holdingstatement
             useBodyInput: true
             useHeadersInput: false
           outgoingConnections:
@@ -2531,7 +2514,7 @@ data:
         '[P1s1Jkq4pQh1VXrNEUFNe]:destructure "Destructure"':
           data:
             paths:
-              - $.data.documentId
+              - $.documentId
           outgoingConnections:
             - match_0->"Text" slwZi5WuxceneksXs_M6Y/document
           visualData: 7228.182714725624/-1008.629224247004/280/1314//
@@ -2786,7 +2769,8 @@ data:
         '[fYmCn_cOJYBmJFERsTjL7]:text "Text"':
           data:
             normalizeLineEndings: true
-            text: "{{input}}"
+            text: |
+              {{input}}
           outgoingConnections:
             - output->"Extract JSON" NNAmUBvMRaT47tbDU5-WC/input
           visualData: 6513.159109189079/-2177.263930818188/330/1307//
@@ -2799,8 +2783,6 @@ data:
             dataType: string
             id: input
             useDefaultValueInput: false
-          outgoingConnections:
-            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2432.896571707314/581.1418776579796/330/1316/var(--node-color-3)/var(--node-color-3)
         '[gS957dQIpZe538bFQvRMd]:subGraph "Subgraph"':
           data:
@@ -2814,13 +2796,11 @@ data:
           data:
             text: |-
               {
-                "data": {
                   "original": "{{original}}",
                   "detail": "{{detail}}",
                   "history": {{history}},
                   "severity": "Medium",
                   "crisis": "{{documentId}}"
-                }
               }
           outgoingConnections:
             - output->"HTTP - Create holding statement"
@@ -2850,7 +2830,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/holding-statements/
+            url: https://crisis-comms.vercel.app/api/submit-holdingstatement
             useBodyInput: true
             useHeadersInput: false
           outgoingConnections:
