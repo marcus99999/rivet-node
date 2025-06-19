@@ -1994,6 +1994,7 @@ data:
         '[1d_I3CvsuxquLLL25ctDS]:destructure "Destructure"':
           data:
             body: ""
+            headers: ""
             paths:
               - $.data[0].tov
               - $.data[0].task
@@ -3362,7 +3363,7 @@ data:
                     "type": "holding_statement",
                     "story": "An investigative report by a prominent Indian media outlet reveals that many of Nestlé India's best-selling products for children — Maggi noodles — are high in sugar, salt, and fat, with little nutritional benefit. The report is based on internal product formulation documents and interviews with former employees who allege that nutrition goals often took a back seat to taste and profit.  A senior pediatrician quoted in the story says Nestlé is hooking a generation onto junk through comfort branding The controversy intensifies when parenting groups and nutritionists begin questioning the company's Good Food, Good Life positioning.  Trigger Points: - The story hits just before exam season, when kids consume more packaged snacks - Critics tie the findings to India's rising childhood obesity and diabetes rates  Media/Social Sentiment: - Trending hashtags: #NestleTargetsKids #NotSoHealthy - Viral posts from parenting influencers and doctors calling for a boycott - News debates on Should Nestlé products be in your child's lunchbox?",
                     "response": "Nestlé India acknowledges the concerns raised following a recent investigative report and is committed to addressing them with transparency and responsibility. We recognize the importance of maintaining trust with our consumers, health experts, and advocacy groups, and are taking decisive steps to address the situation.  The report has led to significant discussions on social media, and we are aware of the impact this has had on our brand perception. We are actively engaging with major retailers to address their concerns and are committed to restoring confidence in our products. We are also aware of the potential legal scrutiny regarding our advertising practices and are taking this matter seriously.  In response, we are implementing the following actions: - Engaging in open dialogue with consumers and stakeholders to reaffirm our commitment to children's health and nutrition. - Conducting a comprehensive review of our advertising practices to ensure compliance with all relevant regulations. - Launching a transparent communication strategy to keep stakeholders informed of our progress and efforts to address these issues.  We deeply value the trust our consumers place in us and are dedicated to restoring that trust through accountability and meaningful action. We appreciate the feedback we have received and are committed to making changes that prioritize the health and safety of our consumers.  Thank you for your understanding and support during this challenging time.",
-                    "document": "ts3z9a9gay2snfofebrboiut"
+                    "document": "zi4k0l9k50zg7c5ns7ngcwgu"
                   }
                 ]
               }
@@ -3442,7 +3443,7 @@ data:
             url: https://crisis-comms.vercel.app/api/opinion-bulk
             useBodyInput: true
             useHeadersInput: false
-          visualData: 1756.1196234837712/393.6715225915185/280/1201/var(--node-color-4)/var(--node-color-4)
+          visualData: 2295.0764763162742/409.8943041149049/280/1312/var(--node-color-4)/var(--node-color-4)
         '[P4uxruW9s0rJ87fOjh3l0]:text "THIS IS CRISIS ID FOR MAGGI"':
           data:
             normalizeLineEndings: true
@@ -3538,6 +3539,8 @@ data:
 
               - Use the value of `"concerns"` as the **Concerns**
 
+              - Use the value of `"suggestion"` as the **Suggestions** 
+
 
               These are specific to each item and must be used individually per stakeholder.
 
@@ -3562,11 +3565,6 @@ data:
 
               - A single sentence stating clearly whether the stakeholder feels **reassured** or **not reassured** by the company's response (do **not** include any numeric score here).
 
-              - Then add four bullet points using **exactly** this structure:
-                ✅ First positive point  
-                ✅ Second positive point  
-                ❎ First negative point  
-                ❎ Second negative point
 
               Finally, assign a numeric **satisfaction rating from 0 to 10**, and include it in the output JSON under `satisfaction`.
 
@@ -3587,7 +3585,12 @@ data:
                     "view": "Full stakeholder reaction text here...",
                     "persona": 3,
                     "satisfaction": 0,
-                    "{{type}}": "{{documentid}}"
+                    "{{type}}": "{{documentid}}",
+                    "suggestion": [
+                       "Suggestion 1 of fewer than 6 words",
+                       "Suggestion 2 of fewer than 6 words",
+                       "Suggestion 3 of fewer than 6 words"
+                       ]
                   },
                   ...
                 ]
@@ -3600,7 +3603,7 @@ data:
 
               {{documentid}} will be the numeric id containted in the system prompt. Do not accidentally insert the actual press release in that field.
 
-              - Ensure all five items are present in the same order in iterated item in the JSON.
+              - Ensure all six items are present in the same order in iterated item in the JSON.
 
 
               FINAL OUTPUT SANITISATION RULES (MUST FOLLOW):
