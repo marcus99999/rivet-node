@@ -54,10 +54,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const { graph, inputs } = body;
 
-    if (!graph || !inputs || !inputs.documentId) {
-      console.error("❌ Missing graph or inputs.documentId");
-      return res.status(400).json({ error: "Missing graph or inputs.documentId" });
-    }
+    if (!graph || !inputs) {
+  console.error("❌ Missing graph or inputs");
+  return res.status(400).json({ error: "Missing graph or inputs" });
+}
 
     console.log("📂 Graph ID to run:", graph);
     console.log("📥 inputs.documentId:", inputs.documentId);
@@ -76,7 +76,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const result = await runGraphInFile(project, {
       graph,
       remoteDebugger: undefined,
-      inputs: { input: inputs.documentId },
+      inputs: inputs,
       context: {},
       externalFunctions: {},
       onUserEvent: {},
