@@ -12,18 +12,16 @@ const ALLOWED_ORIGINS = [
   "http://localhost:4015",
 ];
 
-
-
-
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  const origin = req.headers.origin || "";
+  console.log("🚀 /api/run triggered");
+  console.log("📦 Headers:", JSON.stringify(req.headers, null, 2));
 
-  // Log origin and check
+  const origin = req.headers.origin || "";
   console.log("🌍 Request origin:", origin);
+
   const isAllowed = ALLOWED_ORIGINS.includes(origin);
   console.log("✅ Is allowed origin:", isAllowed);
 
-  // Set CORS headers early, including before OPTIONS return
   if (isAllowed) {
     res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Vary", "Origin");
@@ -32,13 +30,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-  // Handle preflight
-  if (req.method === "OPTIONS") return res.status(200).end();
+  if (req.method === "OPTIONS") {
+    console.log("🔄 OPTIONS preflight request handled.");
+    return res.status(200).end();
+  }
 
-  // Log incoming request
-  console.log("📡 Incoming request method:", req.method);
-
-  // Validate token
   const token = req.headers.authorization?.replace("Bearer ", "");
   const expectedToken = process.env.AUTH_TOKEN;
 
@@ -63,8 +59,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(400).json({ error: "Missing graph or inputs.documentId" });
     }
 
-    console.log("📥 inputs.documentId:", inputs.documentId);
     console.log("📂 Graph ID to run:", graph);
+    console.log("📥 inputs.documentId:", inputs.documentId);
 
     const openAiKey = process.env.OPEN_AI_KEY;
     if (!openAiKey) {
@@ -88,12 +84,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       datasetProvider,
     } as RunGraphOptions);
 
-    const outputs = result.outputs || {};
-    const partials = result.partialOutputs || {};
-
     console.log("✅ Graph executed successfully.");
-    console.log("🟢 Outputs:", outputs);
-    console.log("🟡 Partial outputs:", partials);
+    console.log("🟢 Outputs:", result.outputs || {});
+    console.log("🟡 Partial outputs:", result.partialOutputs || {});
     if (result.errors) {
       console.warn("⚠️ Graph node-level errors:", result.errors);
     }
@@ -101,8 +94,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(200).json({
       message: "Graph executed successfully.",
       prompt: inputs.documentId,
-      outputs,
-      partialOutputs: partials,
+      outputs: result.outputs || {},
+      partialOutputs: result.partialOutputs || {},
       errors: result.errors || [],
     });
   } catch (err: any) {
