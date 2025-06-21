@@ -16,15 +16,16 @@ const ALLOWED_ORIGINS = [
 export default async function handler(req: VercelRequest, res: VercelResponse) {
 	const origin = req.headers.origin || "";
 	if (ALLOWED_ORIGINS.includes(origin)) {
-		res.setHeader("Access-Control-Allow-Origin", origin);
-	}
+  res.setHeader("Access-Control-Allow-Origin", origin);
+  res.setHeader("Vary", "Origin");
+}
 
-	res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-	res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-	if (req.method === "OPTIONS") {
-		return res.status(200).end();
-	}
+if (req.method === "OPTIONS") {
+  return res.status(200).end();
+}
 
 	// ✅ Debug OPEN_AI_KEY presence and list all env vars
 	console.log("🔍 OPEN_AI_KEY:", process.env.OPEN_AI_KEY ? "✅ Present" : "❌ Missing");
