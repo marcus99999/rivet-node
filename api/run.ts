@@ -12,25 +12,19 @@ const ALLOWED_ORIGINS = [
   "http://localhost:4015",
 ];
 
+
+
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const origin = req.headers.origin || "";
 
-  // Log what origin is coming in
+  // Log origin and check
   console.log("🌍 Request origin:", origin);
-  console.log("✅ Is allowed origin:", ALLOWED_ORIGINS.includes(origin));
+  const isAllowed = ALLOWED_ORIGINS.includes(origin);
+  console.log("✅ Is allowed origin:", isAllowed);
 
-  // TEMP: Allow all origins for debugging
-  res.setHeader("Access-Control-Allow-Origin", "*");
-
-  // ... existing header setup
-  res.setHeader("Vary", "Origin");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-
-  if (req.method === "OPTIONS") return res.status(200).end();
-  
-  
-  if (ALLOWED_ORIGINS.includes(origin)) {
+  // Set CORS headers early, including before OPTIONS return
+  if (isAllowed) {
     res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Vary", "Origin");
   }
@@ -38,10 +32,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
+  // Handle preflight
   if (req.method === "OPTIONS") return res.status(200).end();
 
+  // Log incoming request
   console.log("📡 Incoming request method:", req.method);
 
+  // Validate token
   const token = req.headers.authorization?.replace("Bearer ", "");
   const expectedToken = process.env.AUTH_TOKEN;
 
@@ -66,7 +63,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(400).json({ error: "Missing graph or inputs.documentId" });
     }
 
-    console.log("📥 Inputs.documentId:", inputs.documentId);
+    console.log("📥 inputs.documentId:", inputs.documentId);
     console.log("📂 Graph ID to run:", graph);
 
     const openAiKey = process.env.OPEN_AI_KEY;
