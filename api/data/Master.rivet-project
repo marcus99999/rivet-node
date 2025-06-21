@@ -199,6 +199,7 @@ data:
           visualData: 1732.7750600150482/729.5803546886575/280/972//
         '[m7fxbATaOCr54la6o-DRe]:text "Text"':
           data:
+            body: ""
             text: |-
               {
                 "text": "{{input}}"
@@ -248,6 +249,7 @@ data:
                 "Authorization": "Bearer xktxuiBbfwJ1t8X74yVzzlPhRvEkwcIHJY7Ly8lIKbcgRv359yShXd8rOTczQtZE"
               }
             method: POST
+            text: ""
             url: https://pinecone-rewrite.vercel.app/api/rewrite
             useBodyInput: true
           outgoingConnections:
@@ -281,6 +283,18 @@ data:
             useAsGraphPartialOutput: false
             useErrorOutput: false
           visualData: 5324.126069502101/-1178.9417822598523/330/1315/var(--node-color-1)/var(--node-color-1)
+        '[-V3mX_TdIK2sMIZeBsfAn]:getGlobal "Get Global"':
+          data:
+            dataType: string
+            id: documentId
+            onDemand: true
+            useIdInput: false
+            wait: false
+          outgoingConnections:
+            - value->"Text" Opbyfte5MRFNu5YsoFpzw/crisisid
+            - value->"Text" _xun_79EIycJcd_nUsd24/crisisid
+            - value->"Text" sXaO-y1UPPYzNLtmpQCZw/crisisid
+          visualData: 4485.889297644278/-4.186675875691378/230/1325//
         '[-kgpH0TBjFvfM8H9c9N-8]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" HybVWMkqapLqooQgmPjod/req_body
@@ -577,7 +591,8 @@ data:
                     "type": "press_release",
                     "story": "{{story}}",
                     "response": "{{response}}",
-                    "document": "{{document}}"
+                    "document": "{{document}}",
+                    "crisisid": "{{crisisid}}"
                   }
                 ]
               }
@@ -663,7 +678,8 @@ data:
                     "type": "press_release",
                     "story": "{{story}}",
                     "response": "{{response}}",
-                    "document": "{{document}}"
+                    "document": "{{document}}",
+                    "crisisid": "{{crisisid}}"
                   }
                 ]
               }
@@ -795,7 +811,8 @@ data:
                     "type": "press_release",
                     "story": "{{story}}",
                     "response": "{{response}}",
-                    "document": "{{document}}"
+                    "document": "{{document}}",
+                    "crisisid": "{{crisisid}}"
                   }
                 ]
               }
@@ -1937,7 +1954,8 @@ data:
                     "type": "holding_statement",
                     "story": "{{story}}",
                     "response": "{{response}}",
-                    "document": "{{document}}"
+                    "document": "{{document}}",
+                    "crisisid": "{{crisisid}}"
                   }
                 ]
               }
@@ -2758,6 +2776,18 @@ data:
             useAsGraphPartialOutput: false
             useErrorOutput: false
           visualData: 8020.968283997122/-1763.696095985575/330/1329/var(--node-color-1)/var(--node-color-1)
+        '[cuCCQJ8eyAIOus86mcozC]:getGlobal "Get Global"':
+          data:
+            dataType: string
+            id: documentId
+            onDemand: true
+            useIdInput: false
+            wait: false
+          outgoingConnections:
+            - value->"Text" -9u1wOd79FRibDuN_PXTo/crisisid
+            - value->"Text" slwZi5WuxceneksXs_M6Y/crisisid
+            - value->"Text" tEzx1gfv3oT5tzEpObm53/crisisid
+          visualData: 7082.593894020007/-771.1683207504001/230/1336//
         '[dZzpjkTcyMIFqR4NBAMrV]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -3028,7 +3058,8 @@ data:
                     "type": "holding_statement",
                     "story": "{{story}}",
                     "response": "{{response}}",
-                    "document": "{{document}}"
+                    "document": "{{document}}",
+                    "crisisid": "{{crisisid}}"
                   }
                 ]
               }
@@ -3045,7 +3076,8 @@ data:
                     "type": "holding_statement",
                     "story": "{{story}}",
                     "response": "{{response}}",
-                    "document": "{{document}}"
+                    "document": "{{document}}",
+                    "crisisid": "{{crisisid}}"
                   }
                 ]
               }
@@ -3429,7 +3461,7 @@ data:
         '[DXAvqxOfU-d_soA_drX3j]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" xhBkRsJdMKOgM6bdi3J-f/object
-          visualData: -427.72503472522135/-204.64652151741004/280/1307//
+          visualData: -536.1263617097553/-181.61123953319657/280/1321//
         '[LRsfzaFpuaSwSyF2M7Q6n]:httpCall "HTTP - Insert opinion"':
           data:
             body: ""
@@ -3453,16 +3485,6 @@ data:
           outgoingConnections:
             - output->"Chat" 5EiLKmo7w9b4gFBgcGYGH/prompt
           visualData: 368.5079362608488/741.2908821468498/280/1302//
-        '[WTM0eQ7RF2bj0EWgU0cfW]:getGlobal "Get Global"':
-          data:
-            dataType: string
-            id: documentId
-            onDemand: true
-            useIdInput: false
-            wait: false
-          outgoingConnections:
-            - value->"Text" lzjxmw4IEOlvyLbivSIQm/crisis
-          visualData: -866.4417990017953/964.498251253507/230/1288//
         '[ior0x9Ow0Q_LH4R2-jRL8]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -3493,7 +3515,7 @@ data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/personas?filters%5Bcrises%5D%5BdocumentId%5D%5B$contains%5D={{crisis}}
           outgoingConnections:
             - output->"HTTP - Get personas" 5MXvKU7VrRMcqa06Uu95g/url
-          visualData: -425/906/330/1275//
+          visualData: -435.84013269845343/779.9834573804792/330/1323//
         '[xDt2dHDGaMAshg_hApWi9]:text "Persona system prompt"':
           data:
             normalizeLineEndings: true
@@ -3634,13 +3656,15 @@ data:
               - $.data[0].story
               - $.data[0].response
               - $.data[0].document
+              - $.data[0].crisisid
             text: ""
           outgoingConnections:
             - match_0->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/type
             - match_1->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/story
             - match_2->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/response
             - match_3->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/documentid
-          visualData: -32.465683243127685/-208.68080281553833/280/1295//
+            - match_4->"Text" lzjxmw4IEOlvyLbivSIQm/crisis
+          visualData: -219.45797229144887/5.4118179789163605/280/1322//
     oNDvNATb6Cp0mwhFoA39A:
       metadata:
         description: ""
