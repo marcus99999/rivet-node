@@ -3612,11 +3612,11 @@ data:
                     "{{type}}": "{{documentid}}",
                     "suggestion": [
                        "short1": "Suggestion 1 of fewer than 6 words",
-                       "detail1": "A long sentence with a detailed prompt of the changes this persona would want",
+                       "detail1": "2 sentences with a detailed prompt of the changes this persona would want",
                        "short2": "Suggestion 2 of fewer than 6 words",
-                       "detail2": "A long sentence with a detailed prompt of the changes this persona would want",
+                       "detail2": "2 sentences with a detailed prompt of the changes this persona would want",
                        "short3": "Suggestion 3 of fewer than 6 words",
-                       "detail3": "A long sentence with a detailed prompt of the changes this persona would want"
+                       "detail3": "2 sentences with a detailed prompt of the changes this persona would want"
                        ]
                   },
                   ...
