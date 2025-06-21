@@ -14,6 +14,22 @@ const ALLOWED_ORIGINS = [
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const origin = req.headers.origin || "";
+
+  // Log what origin is coming in
+  console.log("🌍 Request origin:", origin);
+  console.log("✅ Is allowed origin:", ALLOWED_ORIGINS.includes(origin));
+
+  // TEMP: Allow all origins for debugging
+  res.setHeader("Access-Control-Allow-Origin", "*");
+
+  // ... existing header setup
+  res.setHeader("Vary", "Origin");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+  if (req.method === "OPTIONS") return res.status(200).end();
+  
+  
   if (ALLOWED_ORIGINS.includes(origin)) {
     res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Vary", "Origin");
