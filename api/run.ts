@@ -11,6 +11,7 @@ const ALLOWED_ORIGINS = [
 	"https://v0-crisis-comms-control-input-yf.vercel.app",
 	"https://rivet-node-git-main-marcus-projects-2b234dbd.vercel.app",
 	"http://localhost:3000",
+	"http://localhost:4015",
 ];
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
