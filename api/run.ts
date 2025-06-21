@@ -8,8 +8,7 @@ const __dirname = path.dirname(__filename);
 
 // ✅ Allow multiple environments
 const ALLOWED_ORIGINS = [
-	"https://v0-crisis-comms-control-input-yf.vercel.app",
-	"https://rivet-node-git-main-marcus-projects-2b234dbd.vercel.app",
+	"https://crisis-comms.vercel.app",
 	"http://localhost:3000",
 	"http://localhost:4015",
 ];
@@ -39,6 +38,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
 	const token = req.headers.authorization?.replace("Bearer ", "");
 	const expectedToken = process.env.AUTH_TOKEN;
+	
+	console.log("🔐 Received token:", token);
+console.log("🎯 Expected token:", expectedToken);
+
+if (!expectedToken || token !== expectedToken) {
+  console.warn("🚫 Forbidden request: missing or invalid token.");
+  return res.status(403).json({ error: "Forbidden: Invalid or missing token." });
+}
+
+console.log("✅ Bearer token matched.");
 
 	if (!expectedToken || token !== expectedToken) {
 		console.warn("🚫 Forbidden request: missing or invalid token.");
