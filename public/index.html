@@ -105,9 +105,7 @@
 
   
       try {
-        let inputs = {
-          "stringGraph": stringGraph.value
-        };
+        let inputs = stringGraph.value;
 
         const res = await fetch('/api/run', {
           method: 'POST',
