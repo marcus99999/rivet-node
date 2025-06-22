@@ -3600,7 +3600,7 @@ data:
                     "view": "Stakeholder reaction with paragraph spacing as plain text. Use normal punctuation. Do NOT include raw line breaks or tabs. Use only safe embedded line breaks within strings if needed. End with one sentence saying if stakeholder is reassured or not reassured.",
                     "persona": 3,
                     "satisfaction": 7,
-                    "press_release": "1234abc",
+                    "{{type}}": "{{document}}",
                     "suggestion": {
                       "short1": "Short suggestion 1",
                       "detail1": "Detailed explanation of suggestion 1.",
@@ -3629,8 +3629,6 @@ data:
 
 
               ADDITIONAL NOTES
-              	•	Replace "press_release" with "holding_statement" if applicable based on what you see in the {{type}} field
-              	•	Replace the sample 1234abc with the value in {{document}}
               	•	Ensure each response is tailored per item — no generic repetition.
               	•	Do not skip or omit any fields.
               	•	This task will fail if formatting is not followed exactly.
