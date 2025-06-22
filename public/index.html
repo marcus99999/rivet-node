@@ -93,60 +93,61 @@
     });
 
     document.getElementById('run').addEventListener('click', async () => {
-  const graph = document.getElementById('graph').value;
-  const spinner = document.getElementById('spinner');
-  const outputBox = document.getElementById('output');
-  const errorBox = document.getElementById('error');
-  const stringGraph = document.getElementById('string_graph_input');
+      const graph = document.getElementById('graph').value;
+      const spinner = document.getElementById('spinner');
+      const outputBox = document.getElementById('output');
+      const errorBox = document.getElementById('error');
+      const stringGraph = document.getElementById('string_graph_input');
 
-  outputBox.textContent = '';
-  errorBox.textContent = '';
-  spinner.style.display = 'block';
+      outputBox.textContent = '';
+      errorBox.textContent = '';
+      spinner.style.display = 'block';
 
-  const inputs = stringGraph.value;
+  
+      try {
+        let inputs = {
+          "stringGraph": stringGraph.value
+        };
+        
 
-  try {
-    const res = await fetch('/api/run', {
-      method: 'POST',
-      headers: {
-        "Authorization": "Bearer rivet-xyz-123",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ graph, inputs })
+        const res = await fetch('/api/run', {
+          method: 'POST',
+          headers: {
+            "Authorization": "Bearer rivet-xyz-123",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ graph, inputs })
+        });
+
+        const json = await res.json();
+
+        const outputs = json.outputs || {};
+        console.log("📦 Graph outputs:", outputs);
+
+        if (Object.keys(outputs).length === 0) {
+          outputBox.textContent = "(no outputs returned)";
+        } else {
+          outputBox.textContent = Object.entries(outputs)
+            .map(([key, value]) => {
+              const pretty = typeof value === 'object'
+                ? JSON.stringify(value, null, 2)
+                : value;
+              return `🟢 ${key}:\n${pretty}`;
+            })
+            .join('\n\n---\n\n');
+        }
+
+        const errors = json.errors || [];
+        errorBox.textContent = errors.length
+          ? JSON.stringify(errors, null, 2)
+          : "[]";
+
+      } catch (err) {
+        errorBox.textContent = JSON.stringify({ message: 'Failed to run graph', error: err.message }, null, 2);
+      } finally {
+        spinner.style.display = 'none';
+      }
     });
-
-    const json = await res.json();
-
-    const outputs = json.outputs || {};
-    console.log("📦 Graph outputs:", outputs);
-
-    if (Object.keys(outputs).length === 0) {
-      outputBox.textContent = "(no outputs returned)";
-    } else {
-      outputBox.textContent = Object.entries(outputs)
-        .map(([key, value]) => {
-          const pretty = typeof value === 'object'
-            ? JSON.stringify(value, null, 2)
-            : value;
-          return `🟢 ${key}:\n${pretty}`;
-        })
-        .join('\n\n---\n\n');
-    }
-
-    const errors = json.errors || [];
-    errorBox.textContent = errors.length
-      ? JSON.stringify(errors, null, 2)
-      : "[]";
-
-  } catch (err) {
-    errorBox.textContent = JSON.stringify({
-      message: 'Failed to run graph',
-      error: err.message
-    }, null, 2);
-  } finally {
-    spinner.style.display = 'none';
-  }
-});
   </script>
 </body>
 </html>
