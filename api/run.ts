@@ -76,7 +76,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const result = await runGraphInFile(project, {
       graph,
       remoteDebugger: undefined,
-      inputs: { input: inputs.stringGraph },
+      inputs: { input: inputs },
       context: {},
       externalFunctions: {},
       onUserEvent: {},
@@ -93,7 +93,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     res.status(200).json({
       message: "Graph executed successfully.",
-      prompt: inputs.stringGraph,
+      prompt: inputs,
       outputs: result.outputs || {},
       partialOutputs: result.partialOutputs || {},
       errors: result.errors || [],
