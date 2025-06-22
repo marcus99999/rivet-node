@@ -1,153 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Radius Graph Execution</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 720px;
-      margin: 3rem auto;
-      padding: 0 1rem;
+import { fileURLToPath } from "url";
+import path from "path";
+import { runGraphInFile, NodeDatasetProvider, RunGraphOptions } from "@ironclad/rivet-node";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const ALLOWED_ORIGINS = [
+  "https://crisis-comms.vercel.app",
+  "http://localhost:3000",
+  "http://localhost:4015",
+];
+
+const logs: string[] = [];
+const log = (msg: string) => {
+  logs.push(msg);
+  console.log(msg);
+};
+const error = (msg: string) => {
+  logs.push(`❌ ${msg}`);
+  console.error(msg);
+};
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  log("🚀 /api/run triggered");
+  log("📦 Headers:\n" + JSON.stringify(req.headers, null, 2));
+
+  const origin = req.headers.origin || "";
+  log(`🌍 Request origin: ${origin}`);
+  const isAllowed = ALLOWED_ORIGINS.includes(origin);
+  log(`✅ Is allowed origin: ${isAllowed}`);
+
+  if (isAllowed) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+    res.setHeader("Vary", "Origin");
+  }
+
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+  if (req.method === "OPTIONS") {
+    log("🔄 OPTIONS preflight request handled.");
+    return res.status(200).end();
+  }
+
+  const token = req.headers.authorization?.replace("Bearer ", "");
+  const expectedToken = process.env.AUTH_TOKEN;
+
+  log(`🔐 Received token: ${token}`);
+  log(`🎯 Expected token: ${expectedToken}`);
+
+  if (!expectedToken || token !== expectedToken) {
+    error("🚫 Forbidden request: invalid or missing token.");
+    return res.status(403).json({ error: "Forbidden: Invalid or missing token." });
+  }
+
+  try {
+    const { graph, inputs } = req.body;
+
+    if (!graph || !inputs) {
+      error("❌ Missing graph or input string");
+      return res.status(400).json({ error: "Missing graph or input string" });
     }
-    label, select, input, textarea, button {
-      display: block;
-      width: 100%;
-      margin-bottom: 1rem;
-      font-size: 1rem;
+
+    log(`📂 Graph ID to run: ${graph}`);
+    log(`📥 Raw inputs: ${typeof inputs === "string" ? inputs : JSON.stringify(inputs)}`);
+
+    let parsedInputs;
+    try {
+      parsedInputs = typeof inputs === "string" ? JSON.parse(inputs) : inputs;
+    } catch (e) {
+      error("❌ Invalid JSON in inputs.");
+      return res.status(400).json({ error: "Invalid JSON in inputs", details: (e as Error).message });
     }
-    textarea {
-      font-family: monospace;
-      white-space: pre;
-      padding: 1rem;
+
+    const openAiKey = process.env.OPEN_AI_KEY;
+    if (!openAiKey) {
+      error("❌ Missing OPEN_AI_KEY env variable.");
+      return res.status(500).json({ error: "Missing OPEN_AI_KEY" });
     }
-    pre {
-      background: #f5f5f5;
-      padding: 1rem;
-      white-space: pre-wrap;
+
+    const project = path.resolve(__dirname, "data", "Master.rivet-project");
+    log(`📁 Loading project file from: ${project}`);
+
+    const datasetProvider = await NodeDatasetProvider.fromProjectFile(project, { save: false });
+
+    const result = await runGraphInFile(project, {
+      graph,
+      remoteDebugger: undefined,
+      inputs: { input: parsedInputs },
+      context: {},
+      externalFunctions: {},
+      onUserEvent: {},
+      openAiKey,
+      datasetProvider,
+    } as RunGraphOptions);
+
+    log("✅ Graph executed successfully.");
+    log("🟢 Outputs:\n" + JSON.stringify(result.outputs || {}, null, 2));
+    if (result.errors) {
+      error("⚠️ Graph node-level errors:\n" + JSON.stringify(result.errors, null, 2));
     }
-    button {
-      padding: 0.75rem;
-    }
-    #spinner {
-      display: none;
-      margin: 1rem 0;
-      font-size: 1rem;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <h1>Radius Graph Execution</h1>
 
-
-
-  <label for="graph">Select graph</label>
-  <select id="graph">
-    <option>Loading the graphs...</option>
-  </select>
-  
-  
-  
-  <label for="string_graph_input">String Graph Input</label>
-  <input type="text" id="string_graph_input" value="dky8i30kisowxhuupwo8iz5l" />
-
-
-
-
-  <button id="run">Run graph</button>
-
-  <div id="spinner">⏳ Running graph...</div>
-
-  <h2>Outputs</h2>
-  <pre id="output">(waiting)</pre>
-
-  <h2>Errors</h2>
-  <pre id="error">(waiting)</pre>
-
-  <script>
-    const masterGraphId = "cGJILKi8TD1YSzAKUAzKV";
-
-    window.addEventListener('DOMContentLoaded', async () => {
-      const dropdown = document.getElementById('graph');
-      try {
-        const res = await fetch('/api/graphs');
-        const json = await res.json();
-
-        dropdown.innerHTML = '';
-        const sorted = json.graphs.sort((a, b) => a.name.localeCompare(b.name));
-        sorted.forEach(g => {
-          const option = document.createElement('option');
-          option.value = g.id;
-          option.textContent = g.id === masterGraphId
-            ? `★ ${g.name || 'Untitled'} (Main) (${g.id})`
-            : `  ${g.name || 'Untitled'} (${g.id})`;
-          if (g.id === masterGraphId) dropdown.prepend(option);
-          else dropdown.append(option);
-        });
-      } catch (err) {
-        dropdown.innerHTML = '<option>Error loading graphs</option>';
-        console.error('Failed to load graphs:', err);
-      }
+    res.status(200).json({
+      message: "Graph executed successfully.",
+      prompt: parsedInputs,
+      outputs: result.outputs || {},
+      partialOutputs: result.partialOutputs || {},
+      errors: result.errors || [],
+      logs,
     });
-
-    document.getElementById('run').addEventListener('click', async () => {
-      const graph = document.getElementById('graph').value;
-      const spinner = document.getElementById('spinner');
-      const outputBox = document.getElementById('output');
-      const errorBox = document.getElementById('error');
-      const stringGraph = document.getElementById('string_graph_input');
-
-      outputBox.textContent = '';
-      errorBox.textContent = '';
-      spinner.style.display = 'block';
-
-  
-      try {
-        let inputs = {
-          "stringGraph": stringGraph.value
-        };
-        // let inputs = stringGraph.value;
-
-        const res = await fetch('/api/run', {
-          method: 'POST',
-          headers: {
-            "Authorization": "Bearer rivet-xyz-123",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ graph, inputs })
-        });
-
-        const json = await res.json();
-
-        const outputs = json.outputs || {};
-        console.log("📦 Graph outputs:", outputs);
-
-        if (Object.keys(outputs).length === 0) {
-          outputBox.textContent = "(no outputs returned)";
-        } else {
-          outputBox.textContent = Object.entries(outputs)
-            .map(([key, value]) => {
-              const pretty = typeof value === 'object'
-                ? JSON.stringify(value, null, 2)
-                : value;
-              return `🟢 ${key}:\n${pretty}`;
-            })
-            .join('\n\n---\n\n');
-        }
-
-        const errors = json.errors || [];
-        errorBox.textContent = errors.length
-          ? JSON.stringify(errors, null, 2)
-          : "[]";
-
-      } catch (err) {
-        errorBox.textContent = JSON.stringify({ message: 'Failed to run graph', error: err.message }, null, 2);
-      } finally {
-        spinner.style.display = 'none';
-      }
+  } catch (err: any) {
+    error(`❌ Exception during graph execution: ${err.message}`);
+    res.status(500).json({
+      error: err.message || "Unknown error occurred.",
+      stack: err.stack || "",
+      logs,
     });
-  </script>
-</body>
-</html>
+  }
+}
