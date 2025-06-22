@@ -12,14 +12,6 @@ const ALLOWED_ORIGINS = [
   "http://localhost:4015",
 ];
 
-// Logs to UI
-const logs: string[] = [];
-const log = (message: string, ...optionalParams: any[]) => {
-  const fullMessage = [message, ...optionalParams].join(" ");
-  console.log(fullMessage);
-  logs.push(fullMessage);
-};
-
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   console.log("🚀 /api/run triggered");
   console.log("📦 Headers:", JSON.stringify(req.headers, null, 2));
@@ -62,13 +54,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const { graph, inputs } = body;
 
-if (!graph || !inputs || inputs.input == null) {
-  console.error("❌ Missing graph or inputs.input");
-  return res.status(400).json({ error: "Missing graph or inputs.input" });
-}
+    if (!graph || !inputs || !inputs.documentId) {
+      console.error("❌ Missing graph or inputs.documentId");
+      return res.status(400).json({ error: "Missing graph or inputs.documentId" });
+    }
 
-console.log("📂 Graph ID to run:", graph);
-console.log("📥 inputs.input:", JSON.stringify(inputs.input));
+    console.log("📂 Graph ID to run:", graph);
+    console.log("📥 inputs.documentId:", inputs.documentId);
 
     const openAiKey = process.env.OPEN_AI_KEY;
     if (!openAiKey) {
@@ -84,7 +76,7 @@ console.log("📥 inputs.input:", JSON.stringify(inputs.input));
     const result = await runGraphInFile(project, {
       graph,
       remoteDebugger: undefined,
-      inputs: { input: inputs.input },
+      inputs: { input: inputs.documentId },
       context: {},
       externalFunctions: {},
       onUserEvent: {},
@@ -101,18 +93,16 @@ console.log("📥 inputs.input:", JSON.stringify(inputs.input));
 
     res.status(200).json({
       message: "Graph executed successfully.",
-      rawInput: inputs.input,
+      prompt: inputs.documentId,
       outputs: result.outputs || {},
       partialOutputs: result.partialOutputs || {},
       errors: result.errors || [],
-      logs,
     });
   } catch (err: any) {
     console.error("❌ Exception during graph execution:", err);
     res.status(500).json({
       error: err.message || "Unknown error occurred.",
       stack: err.stack || "",
-      logs,
     });
   }
 }
