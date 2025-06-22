@@ -41,16 +41,13 @@
 <body>
   <h1>Radius Graph Execution</h1>
 
-  <label for="prompt">Crisis document ID</label>
-  <input type="text" id="prompt" value="dky8i30kisowxhuupwo8iz5l" />
-
   <label for="graph">Select graph</label>
   <select id="graph">
-    <option>Loading the graphs...</option>
+    <option>Loading graphs...</option>
   </select>
 
-  <label for="jsonInput">Graph inputs (JSON)</label>
-  <textarea id="jsonInput" rows="10">
+  <label for="input">Graph input (ID or JSON)</label>
+  <textarea id="input" rows="10">
 {}
   </textarea>
 
@@ -99,7 +96,7 @@
       const outputBox = document.getElementById('output');
       const errorBox = document.getElementById('error');
       const logsBox = document.getElementById('logs');
-      const documentId = document.getElementById('prompt');
+      const inputBox = document.getElementById('input');
 
       outputBox.textContent = '';
       errorBox.textContent = '';
@@ -107,9 +104,14 @@
       spinner.style.display = 'block';
 
       try {
-        let inputs = {
-          "documentId": documentId.value
-        };
+        let rawInput = inputBox.value.trim();
+        let parsedInput;
+
+        try {
+          parsedInput = JSON.parse(rawInput);
+        } catch (e) {
+          parsedInput = rawInput; // send as string if not valid JSON
+        }
 
         const res = await fetch('/api/run', {
           method: 'POST',
@@ -117,7 +119,7 @@
             "Authorization": "Bearer rivet-xyz-123",
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ graph, inputs })
+          body: JSON.stringify({ graph, inputs: { input: parsedInput } })
         });
 
         const json = await res.json();

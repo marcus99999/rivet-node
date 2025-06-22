@@ -101,7 +101,7 @@ console.log("📥 inputs.input:", JSON.stringify(inputs.input));
 
     res.status(200).json({
       message: "Graph executed successfully.",
-      prompt: inputs.documentId,
+      rawInput: inputs.input,
       outputs: result.outputs || {},
       partialOutputs: result.partialOutputs || {},
       errors: result.errors || [],
