@@ -49,15 +49,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   console.log("✅ Bearer token matched. Proceeding...");
 
   try {
-    const { graph, inputs } = req.body;
-console.log("📨 Full request body:", JSON.stringify({ graph, inputs }, null, 2));
+    const body = req.body;
+    console.log("📨 Full request body:", JSON.stringify(body, null, 2));
+
+    const { graph, inputs } = body;
+
     if (!graph || !inputs) {
       console.error("❌ Missing graph or input string");
       return res.status(400).json({ error: "Missing graph or input string" });
     }
 
+    let parsedInputs;
+    try {
+      parsedInputs = typeof inputs === "string" ? JSON.parse(inputs) : inputs;
+    } catch (e: unknown) {
+      const err = e as Error;
+      console.error("❌ Invalid JSON in inputs:", err.message);
+      return res.status(400).json({ error: "Invalid JSON in inputs", details: err.message });
+    }
+
     console.log("📂 Graph ID to run:", graph);
-    console.log("📥 inputs.stringGraph:", inputs.stringGraph);
+    console.log("📥 Parsed inputs:", JSON.stringify(parsedInputs, null, 2));
 
     const openAiKey = process.env.OPEN_AI_KEY;
     if (!openAiKey) {
@@ -73,7 +85,7 @@ console.log("📨 Full request body:", JSON.stringify({ graph, inputs }, null, 2
     const result = await runGraphInFile(project, {
       graph,
       remoteDebugger: undefined,
-      inputs: { input: inputs.stringGraph },
+      inputs: { input: parsedInputs },
       context: {},
       externalFunctions: {},
       onUserEvent: {},
@@ -90,7 +102,7 @@ console.log("📨 Full request body:", JSON.stringify({ graph, inputs }, null, 2
 
     res.status(200).json({
       message: "Graph executed successfully.",
-      prompt: inputs.stringGraph,
+      inputs: parsedInputs,
       outputs: result.outputs || {},
       partialOutputs: result.partialOutputs || {},
       errors: result.errors || [],
