@@ -54,7 +54,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const { graph, inputs } = body;
 
-    if (!graph || !inputs.documentId) {
+    if (!graph || !inputs || !inputs.documentId) {
       console.error("❌ Missing graph or inputs.documentId");
       return res.status(400).json({ error: "Missing graph or inputs.documentId" });
     }
