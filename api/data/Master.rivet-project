@@ -3401,119 +3401,7 @@ data:
                 ]
               }
           visualData: -1159.119124940294/228.3742573195854/330/1332//
-        '[5EiLKmo7w9b4gFBgcGYGH]:chat "Chat"':
-          data:
-            additionalParameters: []
-            cache: false
-            enableFunctionUse: false
-            headers: []
-            maxTokens: 2048
-            modalitiesIncludeAudio: false
-            modalitiesIncludeText: false
-            model: gpt-4o-mini
-            outputUsage: false
-            parallelFunctionCalling: true
-            reasoningEffort: ""
-            stop: ""
-            temperature: 0.5
-            text: ""
-            top_p: 1
-            useAdditionalParametersInput: false
-            useAsGraphPartialOutput: true
-            useFrequencyPenaltyInput: false
-            useMaxTokensInput: false
-            useModelInput: false
-            usePredictedOutput: false
-            usePresencePenaltyInput: false
-            useReasoningEffortInput: false
-            useServerTokenCalculation: true
-            useStop: false
-            useStopInput: false
-            useTemperatureInput: false
-            useTopP: false
-            useTopPInput: false
-            useUseTopPInput: false
-            useUserInput: false
-          outgoingConnections:
-            - response->"Text" 5Y3FictwbAFC76GeVupmD/input
-          visualData: 793/445/230/41//
-        '[5MXvKU7VrRMcqa06Uu95g]:httpCall "HTTP - Get personas"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: GET
-            url: ""
-            useUrlInput: true
-          outgoingConnections:
-            - res_body->"Extract JSON" W7K_wlTZmm7h6113_lBR7/input
-          visualData: -7.218032393627169/803.9523394537637/280/1272/var(--node-color-4)/var(--node-color-4)
-        '[5Y3FictwbAFC76GeVupmD]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: "{{input}}"
-          outgoingConnections:
-            - output->"HTTP - Insert opinion" LRsfzaFpuaSwSyF2M7Q6n/req_body
-          visualData: 1145.2383975767154/324.26280353681756/330/1335//
-        '[DXAvqxOfU-d_soA_drX3j]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Destructure" xhBkRsJdMKOgM6bdi3J-f/object
-          visualData: -536.1263617097553/-181.61123953319657/280/1321//
-        '[LRsfzaFpuaSwSyF2M7Q6n]:httpCall "HTTP - Insert opinion"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: POST
-            url: https://crisis-comms.vercel.app/api/opinion-bulk
-            useBodyInput: true
-            useHeadersInput: false
-          visualData: 1633.4363392386726/322.73213036815497/280/1313/var(--node-color-4)/var(--node-color-4)
-        '[W7K_wlTZmm7h6113_lBR7]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Chat" 5EiLKmo7w9b4gFBgcGYGH/prompt
-          visualData: 368.5079362608488/741.2908821468498/280/1302//
-        '[ior0x9Ow0Q_LH4R2-jRL8]:graphInput "Graph Input"':
-          data:
-            dataType: string
-            id: input
-            useDefaultValueInput: false
-          outgoingConnections:
-            - data->"Extract JSON" DXAvqxOfU-d_soA_drX3j/input
-          visualData: -969.7972984024057/-280.9183203090005/330/1314/var(--node-color-3)/var(--node-color-3)
-        '[kaqyS8z6lnhb9qI8EonOo]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: >-
-              {
-                "data": [
-                  {
-                    "type": "press_release",
-                    "story": "An investigative report by a prominent Indian media outlet reveals that many of Nestlé India's best-selling products for children — Maggi noodles — are high in sugar, salt, and fat, with little nutritional benefit. The report is based on internal product formulation documents and interviews with former employees who allege that nutrition goals often took a back seat to taste and profit.  A senior pediatrician quoted in the story says Nestlé is hooking a generation onto junk through comfort branding The controversy intensifies when parenting groups and nutritionists begin questioning the company's Good Food, Good Life positioning.  Trigger Points: - The story hits just before exam season, when kids consume more packaged snacks - Critics tie the findings to India's rising childhood obesity and diabetes rates  Media/Social Sentiment: - Trending hashtags: #NestleTargetsKids #NotSoHealthy - Viral posts from parenting influencers and doctors calling for a boycott - News debates on Should Nestlé products be in your child's lunchbox?",
-                    "response": "We are going to throw every single employee off a bridge..",
-                    "document": "u1ytd7tfb7gmzr3u670dica2",
-                    "crisisid": "dky8i30kisowxhuupwo8iz5l"
-                  }
-                ]
-              }
-          visualData: -996.618514260457/-88.93008047055837/330/1333//
-        '[lzjxmw4IEOlvyLbivSIQm]:text "Text"':
-          data:
-            body: ""
-            normalizeLineEndings: true
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/personas?filters%5Bcrises%5D%5BdocumentId%5D%5B$contains%5D={{crisis}}
-          outgoingConnections:
-            - output->"HTTP - Get personas" 5MXvKU7VrRMcqa06Uu95g/url
-          visualData: -435.84013269845343/779.9834573804792/330/1323//
-        '[xDt2dHDGaMAshg_hApWi9]:text "Persona system prompt"':
+        '[3CQbBHA_dmGv7keqg7pQC]:text "Persona system prompt"':
           data:
             normalizeLineEndings: true
             text: >-
@@ -3633,9 +3521,288 @@ data:
               	•	Ensure "{{type}}": "{{document}}" ONLY use the data passed into the prompt. These data points are common for each iteration.
               	•	Do not skip or omit any fields.
               	•	This task will fail if formatting is not followed exactly.
+          visualData: -1092.3940106365435/957.8525450477922/330/1341/var(--node-color-2)/var(--node-color-2)
+        '[5EiLKmo7w9b4gFBgcGYGH]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 2048
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            text: ""
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" 5Y3FictwbAFC76GeVupmD/input
+          visualData: 793/445/230/41//
+        '[5MXvKU7VrRMcqa06Uu95g]:httpCall "HTTP - Get personas"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            url: ""
+            useUrlInput: true
+          outgoingConnections:
+            - res_body->"Extract JSON" W7K_wlTZmm7h6113_lBR7/input
+          visualData: -7.218032393627169/803.9523394537637/280/1272/var(--node-color-4)/var(--node-color-4)
+        '[5Y3FictwbAFC76GeVupmD]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"HTTP - Insert opinion" LRsfzaFpuaSwSyF2M7Q6n/req_body
+          visualData: 1145.2383975767154/324.26280353681756/330/1335//
+        '[DXAvqxOfU-d_soA_drX3j]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" xhBkRsJdMKOgM6bdi3J-f/object
+          visualData: -536.1263617097553/-181.61123953319657/280/1321//
+        '[LRsfzaFpuaSwSyF2M7Q6n]:httpCall "HTTP - Insert opinion"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://crisis-comms.vercel.app/api/opinion-bulk
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 1633.4363392386726/322.73213036815497/280/1313/var(--node-color-4)/var(--node-color-4)
+        '[W7K_wlTZmm7h6113_lBR7]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Chat" 5EiLKmo7w9b4gFBgcGYGH/prompt
+          visualData: 368.5079362608488/741.2908821468498/280/1302//
+        '[ior0x9Ow0Q_LH4R2-jRL8]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Extract JSON" DXAvqxOfU-d_soA_drX3j/input
+          visualData: -969.7972984024057/-280.9183203090005/330/1314/var(--node-color-3)/var(--node-color-3)
+        '[kaqyS8z6lnhb9qI8EonOo]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                "data": [
+                  {
+                    "type": "press_release",
+                    "story": "An investigative report by a prominent Indian media outlet reveals that many of Nestlé India's best-selling products for children — Maggi noodles — are high in sugar, salt, and fat, with little nutritional benefit. The report is based on internal product formulation documents and interviews with former employees who allege that nutrition goals often took a back seat to taste and profit.  A senior pediatrician quoted in the story says Nestlé is hooking a generation onto junk through comfort branding The controversy intensifies when parenting groups and nutritionists begin questioning the company's Good Food, Good Life positioning.  Trigger Points: - The story hits just before exam season, when kids consume more packaged snacks - Critics tie the findings to India's rising childhood obesity and diabetes rates  Media/Social Sentiment: - Trending hashtags: #NestleTargetsKids #NotSoHealthy - Viral posts from parenting influencers and doctors calling for a boycott - News debates on Should Nestlé products be in your child's lunchbox?",
+                    "response": "We are going to throw every single employee off a bridge..",
+                    "document": "i9fo3gjn30esw5ubo4nyuzjs",
+                    "crisisid": "dky8i30kisowxhuupwo8iz5l"
+                  }
+                ]
+              }
+          visualData: -996.618514260457/-88.93008047055837/330/1333//
+        '[lzjxmw4IEOlvyLbivSIQm]:text "Text"':
+          data:
+            body: ""
+            normalizeLineEndings: true
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/personas?filters%5Bcrises%5D%5BdocumentId%5D%5B$contains%5D={{crisis}}
+          outgoingConnections:
+            - output->"HTTP - Get personas" 5MXvKU7VrRMcqa06Uu95g/url
+          visualData: -435.84013269845343/779.9834573804792/330/1323//
+        '[xDt2dHDGaMAshg_hApWi9]:text "Persona system prompt"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You have been given a JSON item in the following format:
+
+
+
+              {
+                "data": [
+              {
+                "id": 3,
+                "documentId": "bhrp283cg1523zr5h6m09xra",
+                "personality": "Customer",
+                "profile": "Details of the profile.",
+                "concerns": "Concerns of the profile."
+              },
+
+              {
+                "id": 1,
+                "documentId": "ukzezst3nmp9tshcb8nsbtbs",
+                "personality": "Employee",
+                "profile": "Details of the profile.",
+                "concerns": "Concerns of the profile."
+              }
+
+              ...
+                ]
+              }
+
+
+
+              ---
+
+
+
+              ### TASK INSTRUCTIONS
+
+
+
+              Iterate over **every item** in the `data` array. For **each and every item**, generate a complete response using this exact structure:
+
+
+
+              **Stakeholder Brief (for each item):**
+
+
+              - Use the value of `"personality"` as the **Role**
+
+
+              - Use the value of `"profile"` as the **Perspective**
+
+
+              - Use the value of `"concerns"` as the **Concerns**
+
+
+              - Use the value of `"suggestion"` as the **Suggestions** 
+
+
+
+              These are specific to each item and must be used individually per stakeholder.
+
+
+
+              Also use the two **global inputs** for every item:
+
+
+              - **Crisis Event:** `{{story}}` — a brief summary of the incident
+
+
+              - **Company Response:** `{{response}}` — the full corporate statement or press release
+
+
+
+              ---
+
+
+
+              ### RESPONSE FORMAT (PER STAKEHOLDER):
+
+
+
+              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the **Company Response:** to the sitatuion having become aware of the **Crisis Event:**. The stakeholder feedback should consider whether the **Company Response:** has mitigated their concerns. The feedback should reference the **Company Response:** and detail reaonable concerns that remain and acknowledge where other concerns have been alleviated (if they have). Then, continue with:
+
+
+
+              - A line break  
+
+
+              - Add a single sentence stating reasons whether the stakeholder feels **reassured** or **not reassured** by the company's response (do **not** include any numeric score here).
+
+
+
+              Finally, assign a numeric **satisfaction rating from 0 to 10**, and include it in the output JSON under `satisfaction`.
+
+
+
+              ---
+
+
+
+              ### JSON OUTPUT FORMAT (REQUIRED)
+
+
+
+              You must return a **single valid JSON object** in exactly this format:
+
+
+
+              {
+                "data": [
+              {
+                "title": "Temporary loop title",
+                "view": "Full stakeholder reaction text here...",
+                "persona": 3,
+                "satisfaction": 0,
+                "{{type}}": "{{documentid}}",
+                "suggestion": [
+               "short1": "Suggestion 1 of fewer than 7 words",
+               "detail1": "2 sentences with a detailed prompt of the changes this persona would want",
+               "short2": "Suggestion 2 of fewer than 7 words",
+               "detail2": "2 sentences with a detailed prompt of the changes this persona would want",
+               "short3": "Suggestion 3 of fewer than 7 words",
+               "detail3": "2 sentences with a detailed prompt of the changes this persona would want"
+               ]
+              },
+
+              ...
+                ]
+              }
+
+
+
+              ### IMPORTANT
+
+
+              - The {{type}} content will only ever by "press_release" or "holding_statement".
+
+
+              {{documentid}} will be the numeric id containted in the system prompt. Do not accidentally insert the actual press release in that field.
+
+
+              - Ensure all six items are present in the same order in iterated item in the JSON.
+
+
+
+              FINAL OUTPUT SANITISATION RULES (MUST FOLLOW):
+
+
+              - All field values in the JSON output must be clean strings.
+
+
+              - Do NOT include any unescaped control characters such as:
+                • raw line breaks (newline characters)
+                • tab characters
+                • carriage returns
+              - Use natural paragraph formatting using standard spaces and punctuation only.
+
+
+              - All newline breaks must be safely embedded within strings (if needed) and never inserted as raw line breaks in the JSON structure.
+
+
+              - Output must be valid JSON that can be parsed without error using standard JSON.parse().
+
+
+              - Do not include any markdown or fencing characters such as ``` or ```json, only return the JSON itself
           outgoingConnections:
             - output->"Chat" 5EiLKmo7w9b4gFBgcGYGH/systemPrompt
-          visualData: 292.0027330781328/45.457403719815574/330/1337/var(--node-color-2)/var(--node-color-2)
+          visualData: 379.0027330781328/-211.54259628018443/330/1340/var(--node-color-2)/var(--node-color-2)
         '[xhBkRsJdMKOgM6bdi3J-f]:destructure "Destructure"':
           data:
             paths:
@@ -3649,7 +3816,7 @@ data:
             - match_0->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/type
             - match_1->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/story
             - match_2->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/response
-            - match_3->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/document
+            - match_3->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/documentid
             - match_4->"Text" lzjxmw4IEOlvyLbivSIQm/crisis
           visualData: -339.68181900023365/171.8756057295414/280/1336//
     oNDvNATb6Cp0mwhFoA39A:
