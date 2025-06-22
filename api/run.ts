@@ -76,7 +76,7 @@ if (!graph || !inputs) {
     const result = await runGraphInFile(project, {
       graph,
       remoteDebugger: undefined,
-      inputs: { input: inputs },
+      inputs,
       context: {},
       externalFunctions: {},
       onUserEvent: {},
