@@ -12,6 +12,22 @@ const ALLOWED_ORIGINS = [
   "http://localhost:4015",
 ];
 
+// Logs to UI
+const logs: string[] = [];
+
+const log = (message: string, ...optionalParams: any[]) => {
+  const fullMessage = [message, ...optionalParams].join(" ");
+  console.log(fullMessage);
+  logs.push(fullMessage);
+};
+
+
+const response = await fetch("/api/run", { ... });
+const result = await response.json();
+
+setLogs(result.logs || []);
+
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   console.log("🚀 /api/run triggered");
   console.log("📦 Headers:", JSON.stringify(req.headers, null, 2));
@@ -97,12 +113,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       outputs: result.outputs || {},
       partialOutputs: result.partialOutputs || {},
       errors: result.errors || [],
+      logs,
     });
   } catch (err: any) {
     console.error("❌ Exception during graph execution:", err);
     res.status(500).json({
-      error: err.message || "Unknown error occurred.",
-      stack: err.stack || "",
-    });
+  error: err.message || "Unknown error occurred.",
+  stack: err.stack || "",
+  logs,
+});
   }
 }
