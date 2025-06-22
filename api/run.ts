@@ -54,9 +54,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const { graph, inputs } = body;
 
-    if (!graph || !inputs || !inputs.stringGraph) {
-      console.error("❌ Missing graph, string or JSON object");
-      return res.status(400).json({ error: "Missing graph, string or JSON object" });
+    if (!graph || !inputs) {
+      console.error("❌ Missing graph or input string");
+      return res.status(400).json({ error: "Missing graph or input string" });
     }
 
     console.log("📂 Graph ID to run:", graph);
