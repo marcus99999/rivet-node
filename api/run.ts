@@ -62,13 +62,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const { graph, inputs } = body;
 
-    if (!graph || !inputs || !inputs.documentId) {
-      console.error("❌ Missing graph or inputs.documentId");
-      return res.status(400).json({ error: "Missing graph or inputs.documentId" });
-    }
+if (!graph || !inputs || inputs.input == null) {
+  console.error("❌ Missing graph or inputs.input");
+  return res.status(400).json({ error: "Missing graph or inputs.input" });
+}
 
-    console.log("📂 Graph ID to run:", graph);
-    console.log("📥 inputs.documentId:", inputs.documentId);
+console.log("📂 Graph ID to run:", graph);
+console.log("📥 inputs.input:", JSON.stringify(inputs.input));
 
     const openAiKey = process.env.OPEN_AI_KEY;
     if (!openAiKey) {
@@ -84,7 +84,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const result = await runGraphInFile(project, {
       graph,
       remoteDebugger: undefined,
-      inputs: { input: inputs.documentId },
+      inputs: { input: inputs.input },
       context: {},
       externalFunctions: {},
       onUserEvent: {},
