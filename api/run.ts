@@ -14,12 +14,12 @@ const ALLOWED_ORIGINS = [
 
 // Logs to UI
 const logs: string[] = [];
-
 const log = (message: string, ...optionalParams: any[]) => {
   const fullMessage = [message, ...optionalParams].join(" ");
   console.log(fullMessage);
   logs.push(fullMessage);
 };
+
 
 
 const response = await fetch("/api/run", { ... });
