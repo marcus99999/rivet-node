@@ -20,14 +20,6 @@ const log = (message: string, ...optionalParams: any[]) => {
   logs.push(fullMessage);
 };
 
-
-
-const response = await fetch("/api/run", { ... });
-const result = await response.json();
-
-setLogs(result.logs || []);
-
-
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   console.log("🚀 /api/run triggered");
   console.log("📦 Headers:", JSON.stringify(req.headers, null, 2));
@@ -118,9 +110,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   } catch (err: any) {
     console.error("❌ Exception during graph execution:", err);
     res.status(500).json({
-  error: err.message || "Unknown error occurred.",
-  stack: err.stack || "",
-  logs,
-});
+      error: err.message || "Unknown error occurred.",
+      stack: err.stack || "",
+      logs,
+    });
   }
 }
