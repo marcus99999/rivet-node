@@ -53,22 +53,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     console.log("📨 Full request body:", JSON.stringify(body, null, 2));
 
     const { graph, inputs } = body;
+
     if (!graph || !inputs) {
       console.error("❌ Missing graph or input string");
       return res.status(400).json({ error: "Missing graph or input string" });
     }
 
-    let parsedInputs;
-    try {
-      parsedInputs = typeof inputs === "string" ? JSON.parse(inputs) : inputs;
-    } catch (e: unknown) {
-      const message = e instanceof Error ? e.message : "Unknown error";
-      console.error("❌ Invalid JSON in inputs:", e);
-      return res.status(400).json({ error: "Invalid JSON in inputs", details: message });
-    }
-
     console.log("📂 Graph ID to run:", graph);
-    console.log("📥 Parsed input:", parsedInputs);
+    console.log("📥 inputs.stringGraph:", inputs.stringGraph);
 
     const openAiKey = process.env.OPEN_AI_KEY;
     if (!openAiKey) {
@@ -84,7 +76,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const result = await runGraphInFile(project, {
       graph,
       remoteDebugger: undefined,
-      inputs: { input: parsedInputs },
+      inputs: { input: inputs.stringGraph },
       context: {},
       externalFunctions: {},
       onUserEvent: {},
@@ -101,7 +93,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     res.status(200).json({
       message: "Graph executed successfully.",
-      prompt: parsedInputs,
+      prompt: inputs.stringGraph,
       outputs: result.outputs || {},
       partialOutputs: result.partialOutputs || {},
       errors: result.errors || [],
