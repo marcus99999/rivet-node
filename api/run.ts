@@ -49,11 +49,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   console.log("✅ Bearer token matched. Proceeding...");
 
   try {
-    const body = req.body;
-    console.log("📨 Full request body:", JSON.stringify(body, null, 2));
-
-    const { graph, inputs } = body;
-
+    const { graph, inputs } = req.body;
+console.log("📨 Full request body:", JSON.stringify({ graph, inputs }, null, 2));
     if (!graph || !inputs) {
       console.error("❌ Missing graph or input string");
       return res.status(400).json({ error: "Missing graph or input string" });
