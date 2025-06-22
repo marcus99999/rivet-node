@@ -3577,12 +3577,12 @@ data:
               ### RESPONSE FORMAT (PER STAKEHOLDER):
 
 
-              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the sitatuion having become aware of the **Crisis Event:** and paying careful attention to the **Company Response:**. The stakeholder feedback should consider whether the response has mitigated their concerns. The stakeholder feedback reference the content of the response and should be balanced and detail reaonable concerns that remain and acknowledge where other concerns have been alleviated (if they have). Then, continue with:
+              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the **Company Response:** to the sitatuion having become aware of the **Crisis Event:**. The stakeholder feedback should consider whether the **Company Response:** has mitigated their concerns. The feedback should reference the **Company Response:** and detail reaonable concerns that remain and acknowledge where other concerns have been alleviated (if they have). Then, continue with:
 
 
               - A line break  
 
-              - A single sentence stating reasons whether the stakeholder feels **reassured** or **not reassured** by the company's response (do **not** include any numeric score here).
+              - Add a single sentence stating reasons whether the stakeholder feels **reassured** or **not reassured** by the company's response (do **not** include any numeric score here).
 
 
               Finally, assign a numeric **satisfaction rating from 0 to 10**, and include it in the output JSON under `satisfaction`.
@@ -3606,11 +3606,11 @@ data:
                     "satisfaction": 0,
                     "{{type}}": "{{documentid}}",
                     "suggestion": [
-                       "short1": "Suggestion 1 of fewer than 6 words",
+                       "short1": "Suggestion 1 of fewer than 7 words",
                        "detail1": "2 sentences with a detailed prompt of the changes this persona would want",
-                       "short2": "Suggestion 2 of fewer than 6 words",
+                       "short2": "Suggestion 2 of fewer than 7 words",
                        "detail2": "2 sentences with a detailed prompt of the changes this persona would want",
-                       "short3": "Suggestion 3 of fewer than 6 words",
+                       "short3": "Suggestion 3 of fewer than 7 words",
                        "detail3": "2 sentences with a detailed prompt of the changes this persona would want"
                        ]
                   },
