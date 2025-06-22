@@ -107,9 +107,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (result.partialOutputs) {
       log("🟡 Partial Outputs:\n" + JSON.stringify(result.partialOutputs, null, 2));
     }
-    if (result.errors?.length) {
-      error("Graph node-level errors:\n" + JSON.stringify(result.errors, null, 2));
-    }
+    if (Array.isArray(result.errors) && result.errors.length > 0) {
+  error("Graph node-level errors:\n" + JSON.stringify(result.errors, null, 2));
+}
 
     return res.status(200).json({
       message: "Graph executed successfully.",
