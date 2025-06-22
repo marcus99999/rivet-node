@@ -60,12 +60,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     let parsedInputs;
     try {
-      parsedInputs = typeof inputs === 'string' ? JSON.parse(inputs) : inputs;
+      parsedInputs = typeof inputs === "string" ? JSON.parse(inputs) : inputs;
     } catch (e: unknown) {
-  const message = e instanceof Error ? e.message : "Unknown error";
-  console.error("❌ Invalid JSON in inputs:", e);
-  return res.status(400).json({ error: "Invalid JSON in inputs", details: message });
-});
+      const message = e instanceof Error ? e.message : "Unknown error";
+      console.error("❌ Invalid JSON in inputs:", e);
+      return res.status(400).json({ error: "Invalid JSON in inputs", details: message });
     }
 
     console.log("📂 Graph ID to run:", graph);
