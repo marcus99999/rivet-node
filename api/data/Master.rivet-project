@@ -3499,7 +3499,7 @@ data:
                     "type": "press_release",
                     "story": "An investigative report by a prominent Indian media outlet reveals that many of Nestlé India's best-selling products for children — Maggi noodles — are high in sugar, salt, and fat, with little nutritional benefit. The report is based on internal product formulation documents and interviews with former employees who allege that nutrition goals often took a back seat to taste and profit.  A senior pediatrician quoted in the story says Nestlé is hooking a generation onto junk through comfort branding The controversy intensifies when parenting groups and nutritionists begin questioning the company's Good Food, Good Life positioning.  Trigger Points: - The story hits just before exam season, when kids consume more packaged snacks - Critics tie the findings to India's rising childhood obesity and diabetes rates  Media/Social Sentiment: - Trending hashtags: #NestleTargetsKids #NotSoHealthy - Viral posts from parenting influencers and doctors calling for a boycott - News debates on Should Nestlé products be in your child's lunchbox?",
                     "response": "We are going to throw every single employee off a bridge..",
-                    "document": "nwc1d2z59nvzhbywa3slima4",
+                    "document": "sd1grabm4n7lgpiyo11oul87",
                     "crisisid": "dky8i30kisowxhuupwo8iz5l"
                   }
                 ]
@@ -3541,108 +3541,98 @@ data:
               }
 
 
-              ---
+              TASK INSTRUCTIONS
 
 
-              ### TASK INSTRUCTIONS
+              Loop through every item in the data array. For each item, generate a complete response following this structure:
 
 
-              Iterate over **every item** in the `data` array. For **each and every item**, generate a complete response using this exact structure:
+              ⸻
 
 
-              **Stakeholder Brief (for each item):**
+              STAKEHOLDER BRIEF (PER ITEM)
 
-              - Use the value of `"personality"` as the **Role**
+              Use the values from the JSON item:
+              	•	"personality" → used as Role
+              	•	"profile" → used as Perspective
+              	•	"concerns" → used as Concerns
+              	•	"suggestion" → will be generated based on stakeholder needs
 
-              - Use the value of `"profile"` as the **Perspective**
+              You will also use two shared global variables for every item:
+              	•	{{story}} → the Crisis Event
+              	•	{{response}} → the Company Response
 
-              - Use the value of `"concerns"` as the **Concerns**
-
-              - Use the value of `"suggestion"` as the **Suggestions** 
-
-
-              These are specific to each item and must be used individually per stakeholder.
-
-
-              Also use the two **global inputs** for every item:
-
-              - **Crisis Event:** `{{story}}` — a brief summary of the incident
-
-              - **Company Response:** `{{response}}` — the full corporate statement or press release
+              ⸻
 
 
-              ---
+              RESPONSE REQUIREMENTS
 
 
-              ### RESPONSE FORMAT (PER STAKEHOLDER):
+              Step 1: Write the stakeholder reaction in three short, natural-sounding paragraphs, using the stakeholder’s point of view. Focus on:
+              	•	How the Crisis Event and Company Response are interpreted by this stakeholder
+              	•	Whether the response addresses or overlooks their concerns
+              	•	What issues feel resolved, and which remain troubling
+
+              Step 2: After the paragraphs, insert:
+              	•	A line break, followed by one sentence stating whether they feel reassured or not reassured.
+
+              Step 3: Generate a satisfaction score from 0 to 10, where 10 is fully reassured.
 
 
-              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the **Company Response:** to the sitatuion having become aware of the **Crisis Event:**. The stakeholder feedback should consider whether the **Company Response:** has mitigated their concerns. The feedback should reference the **Company Response:** and detail reaonable concerns that remain and acknowledge where other concerns have been alleviated (if they have). Then, continue with:
+              Step 4: Generate three suggestions specific to the stakeholder:
+              	•	Each suggestion should include:
+              	•	A short field (max 7 words)
+              	•	A detail field (2 full sentences explaining the request)
+
+              ⸻
 
 
-              - A line break  
-
-              - Add a single sentence stating reasons whether the stakeholder feels **reassured** or **not reassured** by the company's response (do **not** include any numeric score here).
+              FINAL OUTPUT STRUCTURE
 
 
-              Finally, assign a numeric **satisfaction rating from 0 to 10**, and include it in the output JSON under `satisfaction`.
-
-
-              ---
-
-
-              ### JSON OUTPUT FORMAT (REQUIRED)
-
-
-              You must return a **single valid JSON object** in exactly this format:
+              You must return a single valid JSON object, exactly in this format:
 
 
               {
                 "data": [
                   {
                     "title": "Temporary loop title",
-                    "view": "Full stakeholder reaction text here...",
+                    "view": "Stakeholder reaction with paragraph spacing as plain text. Use normal punctuation. Do NOT include raw line breaks or tabs. Use only safe embedded line breaks within strings if needed. End with one sentence saying if stakeholder is reassured or not reassured.",
                     "persona": 3,
-                    "satisfaction": 0,
-                    "{{type}}": "{{documentid}}",
-                    "suggestion": [
-                       "short1": "Suggestion 1 of fewer than 7 words",
-                       "detail1": "2 sentences with a detailed prompt of the changes this persona would want",
-                       "short2": "Suggestion 2 of fewer than 7 words",
-                       "detail2": "2 sentences with a detailed prompt of the changes this persona would want",
-                       "short3": "Suggestion 3 of fewer than 7 words",
-                       "detail3": "2 sentences with a detailed prompt of the changes this persona would want"
-                       ]
-                  },
-                  ...
+                    "satisfaction": 7,
+                    "press_release": "bhrp283cg1523zr5h6m09xra",
+                    "suggestion": {
+                      "short1": "Short suggestion 1",
+                      "detail1": "Detailed explanation of suggestion 1.",
+                      "short2": "Short suggestion 2",
+                      "detail2": "Detailed explanation of suggestion 2.",
+                      "short3": "Short suggestion 3",
+                      "detail3": "Detailed explanation of suggestion 3."
+                    }
+                  }
                 ]
               }
 
 
-              ### IMPORTANT
+              SANITIZATION & VALIDATION RULES
+              	•	Output must be valid JSON. It must pass JSON.parse() with no errors.
+              	•	Do NOT include any raw line breaks (\n), tab (\t) or carriage return characters.
+              	•	Do NOT wrap the JSON in markdown code blocks (like ```json).
+              	•	All text must be returned as clean strings, properly escaped if needed.
+              	•	The JSON must contain exactly 6 keys per item, in this order:
+              	1.	title
+              	2.	view
+              	3.	persona
+              	4.	satisfaction
+              	5.	press_release or holding_statement
+              	6.	suggestion (with six nested fields)
 
-              - The {{type}} content will only ever by "press_release" or "holding_statement".
 
-              {{documentid}} will be the numeric id containted in the system prompt. Do not accidentally insert the actual press release in that field.
-
-              - Ensure all six items are present in the same order in iterated item in the JSON.
-
-
-              FINAL OUTPUT SANITISATION RULES (MUST FOLLOW):
-
-              - All field values in the JSON output must be clean strings.
-
-              - Do NOT include any unescaped control characters such as:
-                • raw line breaks (newline characters)
-                • tab characters
-                • carriage returns
-              - Use natural paragraph formatting using standard spaces and punctuation only.
-
-              - All newline breaks must be safely embedded within strings (if needed) and never inserted as raw line breaks in the JSON structure.
-
-              - Output must be valid JSON that can be parsed without error using standard JSON.parse().
-
-              - Do not include any markdown or fencing characters such as ``` or ```json, only return the JSON itself
+              ADDITIONAL NOTES
+              	•	Replace "press_release" with "holding_statement" if applicable.
+              	•	Ensure each response is tailored per item — no generic repetition.
+              	•	Do not skip or omit any fields.
+              	•	This task will fail if formatting is not followed exactly.
           outgoingConnections:
             - output->"Chat" 5EiLKmo7w9b4gFBgcGYGH/systemPrompt
           visualData: 375.23462695344534/63.95338013655169/330/1304/var(--node-color-2)/var(--node-color-2)
@@ -3656,10 +3646,8 @@ data:
               - $.data[0].crisisid
             text: ""
           outgoingConnections:
-            - match_0->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/type
             - match_1->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/story
             - match_2->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/response
-            - match_3->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/documentid
             - match_4->"Text" lzjxmw4IEOlvyLbivSIQm/crisis
           visualData: -219.45797229144887/5.4118179789163605/280/1322//
     oNDvNATb6Cp0mwhFoA39A:
