@@ -87,7 +87,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
 
     console.log("✅ Graph executed successfully.");
-    console.log("🟢 Outputs:", result.outputs || {});
+    console.log("🟢 Outputs:", result || {});
     console.log("🟡 Partial outputs:", result.partialOutputs || {});
     if (result.errors) {
       console.warn("⚠️ Graph node-level errors:", result.errors);
@@ -96,7 +96,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(200).json({
       message: "Graph executed successfully.",
       prompt: inputs.stringGraph,
-      outputs: result.outputs || {},
+      outputs: result || {},
       partialOutputs: result.partialOutputs || {},
       errors: result.errors || [],
     });

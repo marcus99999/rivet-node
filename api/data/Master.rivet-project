@@ -2049,7 +2049,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: -685.3452129042051/232.01456369971473/330/1332/var(--node-color-3)/var(--node-color-3)
+          visualData: -725.2068287920176/230.59093456086427/330/1408/var(--node-color-3)/var(--node-color-3)
         '[4PpdHSOarBvynuMBQSfp0]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -2351,6 +2351,11 @@ data:
             height: 600
             text: Get comms team
           visualData: -407.119081962525/-603.5767147483365/830.1844441677374/462//
+        '[HbEBVBhKv4loBn8rJlH_i]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: -2001.9509503444124/844.301128060878/330/1409/var(--node-color-3)/var(--node-color-3)
         '[HfflPV-SqxtJY7immzBiY]:destructure "Destructure"':
           data:
             paths:
@@ -2372,6 +2377,7 @@ data:
             paths:
               - $.stringGraph
           outgoingConnections:
+            - match_0->"Graph Output" HbEBVBhKv4loBn8rJlH_i/value
             - match_0->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2348.834911211784/631.3620115093885/280/1407//
         '[IwTKZWYXuAna_v309uJ1p]:chat "Chat"':
