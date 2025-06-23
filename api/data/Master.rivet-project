@@ -2082,8 +2082,8 @@ data:
             id: input
             useDefaultValueInput: false
           outgoingConnections:
-            - data->"Extract JSON" _fWNpPILgQjD1RKVooiTF/input
-          visualData: -3052.3430145999687/630.1810921881969/330/1385/var(--node-color-3)/var(--node-color-3)
+            - data->"Destructure" IDkgtWT3Z6vtyCK3iZ3Gw/object
+          visualData: -2717.7901669701137/671.4663372148599/330/1396/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
             body: ""
@@ -2419,7 +2419,7 @@ data:
                     "stringGraph": "ye8w2fo87pymtxxfx0vyfzaa"
                   }
                 }
-          visualData: -3030.1479039473015/963.6090394944067/330/1388//
+          visualData: -3262.1994535799245/1111.6664699348532/330/1392//
         '[Iz7CjdEDhzVwzP3IMCiNB]:httpCall "Http Call"':
           data:
             body: ""
@@ -2720,13 +2720,11 @@ data:
             - output1->"Text" go-76mD_mFK_Pu79briiA/detail
           visualData: 4719.128107348857/-1913.1859334898859/230/1280/var(--node-color-2)/var(--node-color-2)
         '[_fWNpPILgQjD1RKVooiTF]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Destructure" IDkgtWT3Z6vtyCK3iZ3Gw/object
-          visualData: -2608.7351291850678/668.5158391077546/280/1386//
+          visualData: -3250.791870806619/1428.7337992538933/280/1395//
         '[amanjT5aC-pMQbTIoqiAn]:text "Text"':
           data:
             text: aqvoxymesg5jovysyqa6lv0m
-          visualData: -2461.5099108561403/1186.2792496346233/330/1320//
+          visualData: -2521.302334687859/1340.0311966304716/330/1391//
         '[ancy-mfuttJ79LFtk4zEf]:destructure "Destructure"':
           data:
             paths:
@@ -3149,11 +3147,21 @@ data:
           outgoingConnections:
             - output->"Destructure" Ax5hkueX-YZVwVDb0c62a/object
           visualData: 6833.15734065875/-1670.3376134117125/280/1311//
+        '[vjSKp1e8vKyiv69JKrBsT]:object "Object"':
+          data:
+            jsonTemplate: |-
+              {
+                  "graph": "cGJILKi8TD1YSzAKUAzKV",
+                  "inputs": {
+                    "stringGraph": "ye8w2fo87pymtxxfx0vyfzaa"
+                  }
+                }
+          visualData: -2971.442393901567/814.4049161450187/230/1394//
         '[w72oTf1tc7rAiyFebway5]:text "CRISIS ID FOR LEAD"':
           data:
             body: ""
             text: ye8w2fo87pymtxxfx0vyfzaa
-          visualData: -2411.968931441691/961.24482961284/330/1361//
+          visualData: -2894.5792095119923/1358.4373593521148/330/1390//
         '[xQfq8BV4M9MDHCKcpL6vJ]:httpCall "Http Call"':
           data:
             body: ""
