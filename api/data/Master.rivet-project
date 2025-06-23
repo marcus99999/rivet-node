@@ -2084,7 +2084,7 @@ data:
         '[6vVFzcVSOS2Y2_VHDhdnL]:graphInput "Graph Input"':
           data:
             dataType: string
-            id: prompt
+            id: stringGraph
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Destructure" IDkgtWT3Z6vtyCK3iZ3Gw/object
