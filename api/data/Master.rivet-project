@@ -2083,8 +2083,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Destructure" IDkgtWT3Z6vtyCK3iZ3Gw/object
-            - data->"Text" vkM_pF8_qrhHxNptFGrjT/input
-          visualData: -2744.839120608272/658.6536749652059/330/1399/var(--node-color-3)/var(--node-color-3)
+          visualData: -2744.839120608272/658.6536749652059/330/1403/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
             body: ""
@@ -2372,7 +2371,9 @@ data:
           data:
             paths:
               - $.stringGraph
-          visualData: -2327.4804741290277/430.63030293147546/280/1403//
+          outgoingConnections:
+            - match_0->"Text" W888kIoF-SH_n2m0tV7Rc/input
+          visualData: -2348.834911211784/631.3620115093885/280/1407//
         '[IwTKZWYXuAna_v309uJ1p]:chat "Chat"':
           data:
             additionalParameters: []
@@ -3045,12 +3046,6 @@ data:
           outgoingConnections:
             - output1->"Text" go-76mD_mFK_Pu79briiA/history
           visualData: 4724.379632909313/-1519.6579050831895/230/1061/var(--node-color-2)/var(--node-color-2)
-        '[rouRxxj-iS36naox91RS8]:graphInput "Graph Input"':
-          data:
-            dataType: string
-            id: input
-            useDefaultValueInput: false
-          visualData: -2110.8662686816133/1252.4870820059612/330/1397/var(--node-color-3)/var(--node-color-3)
         '[rwFAT6zA-ucJxZtYuGctM]:subGraph "SUB - Persona"':
           data:
             graphId: o8S-CeePSytOJAterI2wq
@@ -3153,13 +3148,6 @@ data:
                     "stringGraph": "ye8w2fo87pymtxxfx0vyfzaa"
               }
           visualData: -2585.6388972730956/1032.2201743891371/230/1401//
-        '[vkM_pF8_qrhHxNptFGrjT]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: "{{input}}"
-          outgoingConnections:
-            - output->"Text" W888kIoF-SH_n2m0tV7Rc/input
-          visualData: -2295.218552947604/803.0158830342151/330/1404//
         '[w72oTf1tc7rAiyFebway5]:text "CRISIS ID FOR LEAD"':
           data:
             body: ""
