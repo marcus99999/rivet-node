@@ -2083,7 +2083,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Destructure" IDkgtWT3Z6vtyCK3iZ3Gw/object
-          visualData: -2717.7901669701137/671.4663372148599/330/1396/var(--node-color-3)/var(--node-color-3)
+          visualData: -2744.839120608272/658.6536749652059/330/1399/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
             body: ""
@@ -2370,7 +2370,7 @@ data:
         '[IDkgtWT3Z6vtyCK3iZ3Gw]:destructure "Destructure"':
           data:
             paths:
-              - $.inputs.stringGraph
+              - $.stringGraph
           outgoingConnections:
             - match_0->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2246.3336132145523/789.384845921788/280/1387//
@@ -3051,7 +3051,7 @@ data:
             dataType: string
             id: input
             useDefaultValueInput: false
-          visualData: -2485.280732199281/412.54589008419754/330/1363/var(--node-color-3)/var(--node-color-3)
+          visualData: -2110.8662686816133/1252.4870820059612/330/1397/var(--node-color-3)/var(--node-color-3)
         '[rwFAT6zA-ucJxZtYuGctM]:subGraph "SUB - Persona"':
           data:
             graphId: o8S-CeePSytOJAterI2wq
@@ -3151,12 +3151,9 @@ data:
           data:
             jsonTemplate: |-
               {
-                  "graph": "cGJILKi8TD1YSzAKUAzKV",
-                  "inputs": {
                     "stringGraph": "ye8w2fo87pymtxxfx0vyfzaa"
-                  }
-                }
-          visualData: -2971.442393901567/814.4049161450187/230/1394//
+              }
+          visualData: -2594.1806721061985/898.3990353371951/230/1400//
         '[w72oTf1tc7rAiyFebway5]:text "CRISIS ID FOR LEAD"':
           data:
             body: ""
