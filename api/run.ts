@@ -41,6 +41,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   console.log("🔐 Received token:", token);
   console.log("🎯 Expected token:", expectedToken);
 
+
   if (!expectedToken || token !== expectedToken) {
     console.warn("🚫 Forbidden request: invalid or missing token.");
     return res.status(403).json({ error: "Forbidden: Invalid or missing token." });
@@ -76,14 +77,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const result = await runGraphInFile(project, {
       graph,
       remoteDebugger: undefined,
-      inputs.stringGraph,
+      inputs,
       context: {},
       externalFunctions: {},
       onUserEvent: {},
       openAiKey,
       datasetProvider,
     } as RunGraphOptions);
-
 
 
     console.log("✅ Graph executed successfully.");
