@@ -2089,6 +2089,7 @@ data:
           outgoingConnections:
             - data->"Destructure" IDkgtWT3Z6vtyCK3iZ3Gw/object
             - data->"Graph Output" HbEBVBhKv4loBn8rJlH_i/value
+            - data->"Graph Output" nT_8sfzahbwZNsPj2AWK0/value
           visualData: -2744.839120608272/658.6536749652059/330/1403/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
@@ -2361,7 +2362,7 @@ data:
           data:
             dataType: any
             id: output
-          visualData: -2001.9509503444124/844.301128060878/330/1409/var(--node-color-3)/var(--node-color-3)
+          visualData: -2249.1646500994634/882.5864355450673/330/1412/var(--node-color-3)/var(--node-color-3)
         '[HfflPV-SqxtJY7immzBiY]:destructure "Destructure"':
           data:
             paths:
@@ -2971,6 +2972,11 @@ data:
             - match_3->"Text" KCt3dmUgSCv1CL6Nnco0u/documentId
             - match_3->"Text" go-76mD_mFK_Pu79briiA/documentId
           visualData: 2406.8901435626326/-744.8168319243129/280/655//
+        '[nT_8sfzahbwZNsPj2AWK0]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: -2031.9689089878525/773.1254515867473/330/1413/var(--node-color-3)/var(--node-color-3)
         '[o747HrcX1XEo2Bl_seAFB]:text "Text"':
           data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}
