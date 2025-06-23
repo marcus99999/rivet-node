@@ -1976,6 +1976,11 @@ data:
             - output->"HTTP - Create holding statement"
               EdSuIRskNWWxNKlLBgMQh/req_body
           visualData: 5692.102555564887/-2285.0955660182663/330/1071//
+        '[-UJ6nzllIQ7-qOW01tgMF]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: -1677.7125302517336/1199.2982535103035/330/null/var(--node-color-3)/var(--node-color-3)
         '[0mouFF980bt242hGgYlXk]:setGlobal "Set Global"':
           data:
             dataType: string
@@ -2049,7 +2054,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: -725.2068287920176/230.59093456086427/330/1408/var(--node-color-3)/var(--node-color-3)
+          visualData: -854.5334114263007/188.1254895167713/330/1410/var(--node-color-3)/var(--node-color-3)
         '[4PpdHSOarBvynuMBQSfp0]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -3025,6 +3030,13 @@ data:
           outgoingConnections:
             - severity->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/req_body
           visualData: 477.70326114222934/1379.513217541465/330/1334/var(--node-color-1)/var(--node-color-1)
+        '[rIIYK4hlzBgiFkIigDrEB]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: Come on man
+          outgoingConnections:
+            - output->"Graph Output" -UJ6nzllIQ7-qOW01tgMF/value
+          visualData: -2096.5762381866507/1189.6470160002823/330/1411//
         '[rZDXS2m5Sw_t7IdGh4W45]:code "Stringify history"':
           data:
             code: >-
