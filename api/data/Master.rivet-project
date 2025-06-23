@@ -2457,8 +2457,6 @@ data:
           data:
             body: ""
             text: ye8w2fo87pymtxxfx0vyfzaa
-          outgoingConnections:
-            - output->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2454.2293769751946/804.3248288959268/330/1319//
         '[Kvidt5PDaXXL-X3MNTQ1I]:subGraph "Subgraph"':
           data:
@@ -2814,6 +2812,8 @@ data:
             dataType: string
             id: input
             useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2432.896571707314/581.1418776579796/330/1316/var(--node-color-3)/var(--node-color-3)
         '[gS957dQIpZe538bFQvRMd]:subGraph "Subgraph"':
           data:
