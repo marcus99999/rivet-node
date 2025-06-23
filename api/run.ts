@@ -76,13 +76,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const result = await runGraphInFile(project, {
       graph,
       remoteDebugger: undefined,
-      inputs,
+      inputs.stringGraph,
       context: {},
       externalFunctions: {},
       onUserEvent: {},
       openAiKey,
       datasetProvider,
     } as RunGraphOptions);
+
+
 
     console.log("✅ Graph executed successfully.");
     console.log("🟢 Outputs:", result.outputs || {});

@@ -2076,6 +2076,14 @@ data:
           outgoingConnections:
             - output->"Extract JSON" vVX3Yn-222AziZr5PX_5i/input
           visualData: 6450.106162161549/-1671.3024778411764/330/1311//
+        '[6vVFzcVSOS2Y2_VHDhdnL]:graphInput "Graph Input"':
+          data:
+            dataType: object
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Extract JSON" _fWNpPILgQjD1RKVooiTF/input
+          visualData: -3052.3430145999687/630.1810921881969/330/1385/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
             body: ""
@@ -2359,6 +2367,13 @@ data:
           outgoingConnections:
             - match_0->"Text" tEzx1gfv3oT5tzEpObm53/document
           visualData: 7243.561482293314/-2166.650422094084/280/1307//
+        '[IDkgtWT3Z6vtyCK3iZ3Gw]:destructure "Destructure"':
+          data:
+            paths:
+              - $.inputs.stringGraph
+          outgoingConnections:
+            - match_0->"Text" W888kIoF-SH_n2m0tV7Rc/input
+          visualData: -2246.3336132145523/789.384845921788/280/1387//
         '[IwTKZWYXuAna_v309uJ1p]:chat "Chat"':
           data:
             additionalParameters: []
@@ -2394,6 +2409,17 @@ data:
           outgoingConnections:
             - response->"Extract JSON" Xk1Tw7lxeDqacNIT1bMNu/input
           visualData: 1554.2430639057575/-612.7891319636341/230/1101//
+        '[IwTxoUoRUTA7V8rgTczxx]:text "CRISIS ID FOR LEAD"':
+          data:
+            body: ""
+            text: |-
+              {
+                  "graph": "cGJILKi8TD1YSzAKUAzKV",
+                  "inputs": {
+                    "stringGraph": "ye8w2fo87pymtxxfx0vyfzaa"
+                  }
+                }
+          visualData: -3030.1479039473015/963.6090394944067/330/1388//
         '[Iz7CjdEDhzVwzP3IMCiNB]:httpCall "Http Call"':
           data:
             body: ""
@@ -2693,6 +2719,10 @@ data:
             - output1->"Text" -9u1wOd79FRibDuN_PXTo/response
             - output1->"Text" go-76mD_mFK_Pu79briiA/detail
           visualData: 4719.128107348857/-1913.1859334898859/230/1280/var(--node-color-2)/var(--node-color-2)
+        '[_fWNpPILgQjD1RKVooiTF]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" IDkgtWT3Z6vtyCK3iZ3Gw/object
+          visualData: -2608.7351291850678/668.5158391077546/280/1386//
         '[amanjT5aC-pMQbTIoqiAn]:text "Text"':
           data:
             text: aqvoxymesg5jovysyqa6lv0m
@@ -3023,9 +3053,7 @@ data:
             dataType: string
             id: input
             useDefaultValueInput: false
-          outgoingConnections:
-            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
-          visualData: -2462.851380883451/571.5965754358855/330/1350/var(--node-color-3)/var(--node-color-3)
+          visualData: -2485.280732199281/412.54589008419754/330/1363/var(--node-color-3)/var(--node-color-3)
         '[rwFAT6zA-ucJxZtYuGctM]:subGraph "SUB - Persona"':
           data:
             graphId: o8S-CeePSytOJAterI2wq
@@ -3125,7 +3153,7 @@ data:
           data:
             body: ""
             text: ye8w2fo87pymtxxfx0vyfzaa
-          visualData: -2497.79470280656/980.2887870579319/330/1346//
+          visualData: -2411.968931441691/961.24482961284/330/1361//
         '[xQfq8BV4M9MDHCKcpL6vJ]:httpCall "Http Call"':
           data:
             body: ""
