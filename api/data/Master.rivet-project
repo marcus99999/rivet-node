@@ -3856,9 +3856,6 @@ data:
               - Use the value of `"concerns"` as the **Concerns**
 
 
-              - Use the value of `"suggestion"` as the **Suggestions** 
-
-
 
               These are specific to each item and must be used individually per stakeholder.
 
@@ -3870,7 +3867,7 @@ data:
               - **Crisis Event:** `{{story}}` — a brief summary of the incident
 
 
-              - **Company Response:** `{{response}}` — the full corporate statement or press release
+              - **Company Response:** `{{response}}` — the full corporate statement in response to the crisis indcident
 
 
 
@@ -3882,7 +3879,7 @@ data:
 
 
 
-              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the **Company Response:** to the sitatuion having become aware of the **Crisis Event:**. The stakeholder feedback should consider whether the **Company Response:** has mitigated their concerns. The feedback should focus mostly on the **Company Response:** and detail reaonable concerns that remain and acknowledge where other concerns have been alleviated (if they have). Then, continue with:
+              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the **Company Response:** to the situation having become aware of the **Crisis Event:**. The stakeholder feedback should detail their specofc reaction to the details of the **Company Response:**. They should coment on if it has mitigated their concerns. The feedback should focus mostly on the **Company Response:** and detail their concerns that remain and acknowledge where other concerns have been alleviated (if they have). Then, continue with:
 
 
 
@@ -3982,7 +3979,7 @@ data:
             - match_2->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/response
             - match_3->"Persona system prompt" xDt2dHDGaMAshg_hApWi9/documentid
             - match_4->"Text" lzjxmw4IEOlvyLbivSIQm/crisis
-          visualData: -339.68181900023365/171.8756057295414/280/1336//
+          visualData: -300.68181900023365/10.875605729541405/280/1348//
     oNDvNATb6Cp0mwhFoA39A:
       metadata:
         description: ""
