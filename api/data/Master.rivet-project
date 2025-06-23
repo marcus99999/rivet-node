@@ -3610,6 +3610,173 @@ data:
           outgoingConnections:
             - data->"Extract JSON" DXAvqxOfU-d_soA_drX3j/input
           visualData: -969.7972984024057/-280.9183203090005/330/1314/var(--node-color-3)/var(--node-color-3)
+        '[itnEbOw2hlOWbqrXmWxEO]:text "Persona system prompt"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You have been given a JSON item in the following format:
+
+
+
+              {
+                "data": [
+              {
+                "id": 3,
+                "documentId": "bhrp283cg1523zr5h6m09xra",
+                "personality": "Customer",
+                "profile": "Details of the profile.",
+                "concerns": "Concerns of the profile."
+              },
+
+              {
+                "id": 1,
+                "documentId": "ukzezst3nmp9tshcb8nsbtbs",
+                "personality": "Employee",
+                "profile": "Details of the profile.",
+                "concerns": "Concerns of the profile."
+              }
+
+              ...
+                ]
+              }
+
+
+
+              ---
+
+
+
+              ### TASK INSTRUCTIONS
+
+
+
+              Iterate over **every item** in the `data` array. For **each and every item**, generate a complete response using this exact structure:
+
+
+
+              **Stakeholder Brief (for each item):**
+
+
+              - Use the value of `"personality"` as the **Role**
+
+
+              - Use the value of `"profile"` as the **Perspective**
+
+
+              - Use the value of `"concerns"` as the **Concerns**
+
+
+              - Use the value of `"suggestion"` as the **Suggestions** 
+
+
+
+              These are specific to each item and must be used individually per stakeholder.
+
+
+
+              Also use the two **global inputs** for every item:
+
+
+              - **Crisis Event:** `{{story}}` — a brief summary of the incident
+
+
+              - **Company Response:** `{{response}}` — the full corporate statement or press release
+
+
+
+              ---
+
+
+
+              ### RESPONSE FORMAT (PER STAKEHOLDER):
+
+
+
+              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the **Company Response:** to the sitatuion having become aware of the **Crisis Event:**. The stakeholder feedback should consider whether the **Company Response:** has mitigated their concerns. The feedback should focus mostly on the **Company Response:** and detail reaonable concerns that remain and acknowledge where other concerns have been alleviated (if they have). Then, continue with:
+
+
+
+              - A line break  
+
+
+              - Add a single sentence stating reasons whether the stakeholder feels **reassured** or **not reassured** by the company's response (do **not** include any numeric score here).
+
+
+
+              Finally, assign a numeric **satisfaction rating from 0 to 10**, and include it in the output JSON under `satisfaction`.
+
+
+
+              ---
+
+
+
+              ### JSON OUTPUT FORMAT (REQUIRED)
+
+
+
+              You must return a **single valid JSON object** in exactly this format:
+
+
+
+              {
+                "data": [
+              {
+                "title": "Temporary loop title",
+                "view": "Full stakeholder reaction text here...",
+                "persona": 3,
+                "satisfaction": 0,
+                "{{type}}": "{{documentid}}",
+                "suggestion": [
+               "short1": "Suggestion 1 of fewer than 7 words",
+               "detail1": "2 sentences with a detailed prompt of the changes this persona would want",
+               "short2": "Suggestion 2 of fewer than 7 words",
+               "detail2": "2 sentences with a detailed prompt of the changes this persona would want",
+               "short3": "Suggestion 3 of fewer than 7 words",
+               "detail3": "2 sentences with a detailed prompt of the changes this persona would want"
+               ]
+              },
+
+              ...
+                ]
+              }
+
+
+
+              ### IMPORTANT
+
+
+              - The {{type}} content will only ever by "press_release" or "holding_statement".
+
+
+              {{documentid}} will be the numeric id containted in the system prompt. Do not accidentally insert the actual press release in that field.
+
+
+              - Ensure all six items are present in the same order in iterated item in the JSON.
+
+
+
+              FINAL OUTPUT SANITISATION RULES (MUST FOLLOW):
+
+
+              - All field values in the JSON output must be clean strings.
+
+
+              - Do NOT include any unescaped control characters such as:
+                • raw line breaks (newline characters)
+                • tab characters
+                • carriage returns
+              - Use natural paragraph formatting using standard spaces and punctuation only.
+
+
+              - All newline breaks must be safely embedded within strings (if needed) and never inserted as raw line breaks in the JSON structure.
+
+
+              - Output must be valid JSON that can be parsed without error using standard JSON.parse().
+
+
+              - Do not include any markdown or fencing characters such as ``` or ```json, only return the JSON itself
+          visualData: 863.9974358204222/-85.43299102570165/330/1344/var(--node-color-2)/var(--node-color-2)
         '[kaqyS8z6lnhb9qI8EonOo]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -3643,8 +3810,7 @@ data:
 
 
               {
-                "data": [
-              {
+                "data": {
                 "id": 3,
                 "documentId": "bhrp283cg1523zr5h6m09xra",
                 "personality": "Customer",
@@ -3661,7 +3827,7 @@ data:
               }
 
               ...
-                ]
+
               }
 
 
