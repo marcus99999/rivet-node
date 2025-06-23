@@ -2087,9 +2087,9 @@ data:
             id: stringGraph
             useDefaultValueInput: false
           outgoingConnections:
-            - data->"Destructure" IDkgtWT3Z6vtyCK3iZ3Gw/object
             - data->"Graph Output" HbEBVBhKv4loBn8rJlH_i/value
             - data->"Graph Output" nT_8sfzahbwZNsPj2AWK0/value
+            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2744.839120608272/658.6536749652059/330/1403/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
@@ -2379,13 +2379,6 @@ data:
           outgoingConnections:
             - match_0->"Text" tEzx1gfv3oT5tzEpObm53/document
           visualData: 7243.561482293314/-2166.650422094084/280/1307//
-        '[IDkgtWT3Z6vtyCK3iZ3Gw]:destructure "Destructure"':
-          data:
-            paths:
-              - $.stringGraph
-          outgoingConnections:
-            - match_0->"Text" W888kIoF-SH_n2m0tV7Rc/input
-          visualData: -2348.834911211784/631.3620115093885/280/1407//
         '[IwTKZWYXuAna_v309uJ1p]:chat "Chat"':
           data:
             additionalParameters: []
@@ -2635,7 +2628,7 @@ data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=company
           outgoingConnections:
             - output->"HTTP - Get crises" cKjknBn_o8XEPm2EFP1C3/url
-          visualData: -1984.1165728777935/551.7698981750353/330/861//
+          visualData: -2054.0747816947087/589.3084492475264/330/1417//
         '[Xk1Tw7lxeDqacNIT1bMNu]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" mcgQkCMsGk4tJBFjxhXTS/object
