@@ -2083,7 +2083,7 @@ data:
           visualData: 6450.106162161549/-1671.3024778411764/330/1311//
         '[6vVFzcVSOS2Y2_VHDhdnL]:graphInput "Graph Input"':
           data:
-            dataType: any
+            dataType: string
             id: input
             useDefaultValueInput: false
           outgoingConnections:
