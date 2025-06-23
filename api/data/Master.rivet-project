@@ -2088,6 +2088,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Destructure" IDkgtWT3Z6vtyCK3iZ3Gw/object
+            - data->"Graph Output" HbEBVBhKv4loBn8rJlH_i/value
           visualData: -2744.839120608272/658.6536749652059/330/1403/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
@@ -2358,7 +2359,7 @@ data:
           visualData: -407.119081962525/-603.5767147483365/830.1844441677374/462//
         '[HbEBVBhKv4loBn8rJlH_i]:graphOutput "Graph Output"':
           data:
-            dataType: string
+            dataType: any
             id: output
           visualData: -2001.9509503444124/844.301128060878/330/1409/var(--node-color-3)/var(--node-color-3)
         '[HfflPV-SqxtJY7immzBiY]:destructure "Destructure"':
@@ -2382,7 +2383,6 @@ data:
             paths:
               - $.stringGraph
           outgoingConnections:
-            - match_0->"Graph Output" HbEBVBhKv4loBn8rJlH_i/value
             - match_0->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2348.834911211784/631.3620115093885/280/1407//
         '[IwTKZWYXuAna_v309uJ1p]:chat "Chat"':
