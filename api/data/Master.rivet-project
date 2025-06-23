@@ -1979,7 +1979,7 @@ data:
         '[-UJ6nzllIQ7-qOW01tgMF]:graphOutput "Graph Output"':
           data:
             dataType: string
-            id: output
+            id: response
           visualData: -1677.7125302517336/1199.2982535103035/330/null/var(--node-color-3)/var(--node-color-3)
         '[0mouFF980bt242hGgYlXk]:setGlobal "Set Global"':
           data:
@@ -2053,7 +2053,7 @@ data:
         '[2uPrdf3woHnGtAJDrw2Lz]:graphOutput "Graph Output"':
           data:
             dataType: string
-            id: output
+            id: response
           visualData: -854.5334114263007/188.1254895167713/330/1410/var(--node-color-3)/var(--node-color-3)
         '[4PpdHSOarBvynuMBQSfp0]:text "Text"':
           data:
@@ -2361,8 +2361,8 @@ data:
         '[HbEBVBhKv4loBn8rJlH_i]:graphOutput "Graph Output"':
           data:
             dataType: any
-            id: output
-          visualData: -2249.1646500994634/882.5864355450673/330/1412/var(--node-color-3)/var(--node-color-3)
+            id: response
+          visualData: -2245.752054547419/952.5446443619825/330/1414/var(--node-color-3)/var(--node-color-3)
         '[HfflPV-SqxtJY7immzBiY]:destructure "Destructure"':
           data:
             paths:
@@ -2975,7 +2975,7 @@ data:
         '[nT_8sfzahbwZNsPj2AWK0]:graphOutput "Graph Output"':
           data:
             dataType: string
-            id: output
+            id: response
           visualData: -2031.9689089878525/773.1254515867473/330/1413/var(--node-color-3)/var(--node-color-3)
         '[o747HrcX1XEo2Bl_seAFB]:text "Text"':
           data:
