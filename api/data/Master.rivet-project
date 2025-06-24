@@ -277,12 +277,6 @@ data:
           outgoingConnections:
             - json->"Text" eejM-ua-wKdVtsje_wqZj/input
           visualData: 3227.8799951394085/-160.91326034928537/280/1020/var(--node-color-4)/var(--node-color-4)
-        '[-M78XdDOh2qovXomWJf7_]:subGraph "SUB - Persona"':
-          data:
-            graphId: o8S-CeePSytOJAterI2wq
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 5324.126069502101/-1178.9417822598523/330/1315/var(--node-color-1)/var(--node-color-1)
         '[-V3mX_TdIK2sMIZeBsfAn]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -389,12 +383,12 @@ data:
           outgoingConnections:
             - output->"Extract JSON" wOjyfm5GpYlcB2L_GOh87/input
           visualData: 1825.8557784704903/662.20854467958/330/695//
-        '[6Z0phS4vNCWYnQ0R2Ac7e]:subGraph "SUB - Persona"':
+        '[5yprqq763NjbIsevY0tq0]:subGraph "Subgraph"':
           data:
             graphId: o8S-CeePSytOJAterI2wq
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 5329.113041336889/-409.993708398371/330/1318/var(--node-color-1)/var(--node-color-1)
+          visualData: 5357.038234573845/-392.5443456974041/330/1326/var(--node-color-1)/var(--node-color-1)
         '[6j2SwrDcIwLifrtNqNdL_]:destructure "Destructure"':
           data:
             paths:
@@ -597,8 +591,8 @@ data:
                 ]
               }
           outgoingConnections:
-            - output->"SUB - Persona" -M78XdDOh2qovXomWJf7_/input
-          visualData: 4878.772862378495/-1224.5763614075652/330/1307//
+            - output->"Subgraph" t6dBzDAyWltO2egFWtLEw/stringGraph
+          visualData: 4865.487366608328/-1340.349967404741/330/1332//
         '[P_YHgyPG4JayvP9KbwXcZ]:destructure "Destructure"':
           data:
             paths:
@@ -684,7 +678,7 @@ data:
                 ]
               }
           outgoingConnections:
-            - output->"SUB - Persona" xvZQq0mGPozaZImbV3X0y/input
+            - output->"Subgraph" z0SC0f-hMiNR98zXEb2DV/stringGraph
           visualData: 4874.024106128468/-846.6673512324677/330/1307//
         '[aBKTE28_bqxqAkBVmwxdh]:extractJson "Extract JSON"':
           outgoingConnections:
@@ -817,7 +811,7 @@ data:
                 ]
               }
           outgoingConnections:
-            - output->"SUB - Persona" 6Z0phS4vNCWYnQ0R2Ac7e/input
+            - output->"Subgraph" 5yprqq763NjbIsevY0tq0/stringGraph
           visualData: 4878.107295264919/-440.58113311008424/330/1317//
         '[sy6hucwRj-4x7Bc7byq6Q]:text "Text"':
           data:
@@ -826,6 +820,12 @@ data:
           outgoingConnections:
             - output->"Escape chars" 8WRU16msc0m6A1wEL3qDe/input1
           visualData: 1780.559776762585/-1714.9595776297851/330/999//
+        '[t6dBzDAyWltO2egFWtLEw]:subGraph "Subgraph"':
+          data:
+            graphId: o8S-CeePSytOJAterI2wq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 5368.425802376846/-1068.2067020087904/330/1334/var(--node-color-1)/var(--node-color-1)
         '[tZiBIUEeCz0SXW7GrqIVa]:destructure "Destructure"':
           data:
             paths:
@@ -893,12 +893,6 @@ data:
           outgoingConnections:
             - output1->"Text" givYg0K4zZa7xCEszaC2A/history
           visualData: 2171.1894668266773/241.46585480912967/230/1003/var(--node-color-2)/var(--node-color-2)
-        '[xvZQq0mGPozaZImbV3X0y]:subGraph "SUB - Persona"':
-          data:
-            graphId: o8S-CeePSytOJAterI2wq
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 5325.304244063791/-905.7371525088987/330/1307/var(--node-color-1)/var(--node-color-1)
         '[yprS_XnqPy0aumVa4bQ3i]:code "Escape chars"':
           data:
             code: >-
@@ -930,6 +924,12 @@ data:
             height: 1145.0707247038717
             text: Used to be PR - Rewrite supervisor agent - now just one Rewrite
           visualData: 762.5977644414509/-501.011773647319/732.9730588231496/923//
+        '[z0SC0f-hMiNR98zXEb2DV]:subGraph "Subgraph"':
+          data:
+            graphId: o8S-CeePSytOJAterI2wq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 5383.609226114181/-677.9511042199107/330/1333/var(--node-color-1)/var(--node-color-1)
         '[zS1BJ-fC48CLNOPqpbhn5]:destructure "Destructure"':
           data:
             paths:
@@ -1960,7 +1960,7 @@ data:
                 ]
               }
           outgoingConnections:
-            - output->"SUB - Persona" crRYJXaigDtn5gFGsXhLO/input
+            - output->"Subgraph" 4xeoHOPZa751TcUptrNTl/stringGraph
           visualData: 7551.914969770921/-1713.4235310925676/330/1312//
         '[-TdYHZM2LJuz23yM_SbNx]:text "Text"':
           data:
@@ -2062,6 +2062,12 @@ data:
           outgoingConnections:
             - output->"Subgraph" gS957dQIpZe538bFQvRMd/input
           visualData: 3119.561038751958/-2253.4746919201866/330/1060//
+        '[4xeoHOPZa751TcUptrNTl]:subGraph "Subgraph"':
+          data:
+            graphId: o8S-CeePSytOJAterI2wq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 8133.259660262225/-1574.518694269388/330/1432/var(--node-color-1)/var(--node-color-1)
         '[5Vt_w52al8pELwha4UnRD]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -2119,12 +2125,6 @@ data:
             - match_7->"Text" lTDwHyIvD8GtM-vUQWnZJ/documentId
             - match_7->"Text" o747HrcX1XEo2Bl_seAFB/input
           visualData: -1112.456167558564/660.9274817907149/280/425//
-        '[8CLGVNhjMOvxwx8MYaYi0]:subGraph "SUB - Persona"':
-          data:
-            graphId: o8S-CeePSytOJAterI2wq
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 8078.386270435491/-1113.5665255547315/330/1330/var(--node-color-1)/var(--node-color-1)
         '[8jE-ZpLfAnzdBIVRdCP5R]:code "Esape chars"':
           data:
             code: >-
@@ -2171,6 +2171,12 @@ data:
           outgoingConnections:
             - output1->"Text" go-76mD_mFK_Pu79briiA/original
           visualData: 5110.966695523628/-1923.3834630157526/230/1076/var(--node-color-2)/var(--node-color-2)
+        '[AFc-0rv400chnesKtxyHc]:subGraph "Subgraph"':
+          data:
+            graphId: o8S-CeePSytOJAterI2wq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 8097.125884600714/-1107.5591318744723/330/1431/var(--node-color-1)/var(--node-color-1)
         '[Ax5hkueX-YZVwVDb0c62a]:destructure "Destructure"':
           data:
             paths:
@@ -2346,7 +2352,7 @@ data:
             - output->"Chat" IwTKZWYXuAna_v309uJ1p/prompt
             - output->"Chat" ar6v6LMNTaqxVthRlZG20/prompt
             - output->"Subgraph" GE3dothNsb-QgfptTQIAJ/input
-          visualData: 831.2431469956049/665.5798116477145/330/1323/var(--node-color-1)/var(--node-color-1)
+          visualData: 833.933772604162/722.0829494274126/330/1438/var(--node-color-1)/var(--node-color-1)
         '[H2LewNpd8KUIDKEIDZj-K]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" k-klyzvhniFfqH5hvjuOU/object
@@ -2441,6 +2447,11 @@ data:
             useHeadersInput: false
             useUrlInput: true
           visualData: 904.2939961958964/1158.2674583765736/280/997/var(--node-color-4)/var(--node-color-4)
+        '[JNCqGPjRdw12CRqJj6tCY]:text "CRISIS ID FOR SKITTLES"':
+          data:
+            body: ""
+            text: nvsvrsajrztv8ih5yjpq7uj5
+          visualData: -2522.9475290235323/270.0114090729431/330/1437//
         '[KCt3dmUgSCv1CL6Nnco0u]:text "Text"':
           data:
             text: |-
@@ -2649,7 +2660,28 @@ data:
 
               ACTION FOR THIS TASK
 
-              Your job to write a short form output that would go out to the media to inform press that a full response is being worked on.
+
+              You will be passed a JSON object in this format:
+
+
+              {
+                "output": {
+                  "type": "object",
+                  "value": {
+                    "high-title": "Severe Backlash and Boycotts Emerge",
+                    "high": "In the wake of the backlash...",
+                    "medium-title": "Moderate Criticism but Stable Sales",
+                    "medium": "While the backlash against...",
+                    "low": "The backlash against Skittles..."
+                  }
+                }
+              }
+
+
+              You will see a High risk scenario, a Medium risk scenario and a Low risk scenario. For each there is a short title (high-title,medium-title,low-title) and a longer description (high/medium/low).
+
+
+              Your job is to write a short form output that would go out to the media to inform press that a full response is being worked on.
 
 
               This note is sent to the media prior to a full press release.
@@ -2658,7 +2690,7 @@ data:
               The total length should be 2 or 3 short paragraphs.
 
 
-              You will be passed a JSON object of 3 items, a High, Medium and Low risk scenario. Create one output holding statement for each of the 3 cases.
+              Create one output holding statement for each of the 3 cases.
 
 
               Each response should take the form of a short high level description of the issue and an explanation that a full response is being prepared.
@@ -2697,6 +2729,9 @@ data:
                   "documentId": {{documentId}}
                   }
               }
+
+
+              Do not include any loose items, markdown or other commentary.
           outgoingConnections:
             - output->"Chat" IwTKZWYXuAna_v309uJ1p/systemPrompt
           visualData: 1006.1841699238838/-668.8593305481993/330/1317//
@@ -2729,7 +2764,7 @@ data:
         '[amanjT5aC-pMQbTIoqiAn]:text "Text"':
           data:
             text: aqvoxymesg5jovysyqa6lv0m
-          visualData: -2521.302334687859/1340.0311966304716/330/1391//
+          visualData: -2728.1378331959686/1217.8689675214282/330/1424//
         '[ancy-mfuttJ79LFtk4zEf]:destructure "Destructure"':
           data:
             paths:
@@ -2798,12 +2833,6 @@ data:
           outgoingConnections:
             - json->"Destructure" 7eyt6KkrPUqx01ZWsuWGh/object
           visualData: -1480.2231785001838/559.3316352095475/280/1015/var(--node-color-4)/var(--node-color-4)
-        '[crRYJXaigDtn5gFGsXhLO]:subGraph "SUB - Persona"':
-          data:
-            graphId: o8S-CeePSytOJAterI2wq
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 8020.968283997122/-1763.696095985575/330/1329/var(--node-color-1)/var(--node-color-1)
         '[cuCCQJ8eyAIOus86mcozC]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -2862,7 +2891,8 @@ data:
             backgroundColor: rgba(0,0,0,0.05)
             color: rgba(255,255,255,1)
             height: 792.3856491817096
-            text: Long form press release
+            text: Long form press release - NOTE TITLE IS PASSED BUT NOT USED - COULD BE
+              ADDED
           visualData: 1780.9199859891603/380.47046833164717/1498.4394066305986/1027//
         '[k-klyzvhniFfqH5hvjuOU]:destructure "Destructure"':
           data:
@@ -2898,7 +2928,24 @@ data:
               It is your job to write longform output for a press release that would go out to the media to inform them of the crisis.
 
 
-              You will be passed a JSON object of 3 items, a High risk scenario, a Medium risk scenario and a Low risk scenario. Create one output press release for each of the 3 cases.
+              You will be passed a JSON object in this format:
+
+
+              {
+                "output": {
+                  "type": "object",
+                  "value": {
+                    "high-title": "Severe Backlash and Boycotts Emerge",
+                    "high": "In the wake of the backlash...",
+                    "medium-title": "Moderate Criticism but Stable Sales",
+                    "medium": "While the backlash against...",
+                    "low": "The backlash against Skittles..."
+                  }
+                }
+              }
+
+
+              You will see a High risk scenario, a Medium risk scenario and a Low risk scenario. For each there is a short title (high-title,medium-title,low-title) and a longer description (high/medium/low). Create one output press release for each of the 3 cases.
 
 
               Each response should take the form of a description of the issue including details of the projected scenario and details of how the business intends to respond to that crisis.
@@ -3063,12 +3110,6 @@ data:
           outgoingConnections:
             - output1->"Text" go-76mD_mFK_Pu79briiA/history
           visualData: 4724.379632909313/-1519.6579050831895/230/1061/var(--node-color-2)/var(--node-color-2)
-        '[rwFAT6zA-ucJxZtYuGctM]:subGraph "SUB - Persona"':
-          data:
-            graphId: o8S-CeePSytOJAterI2wq
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 8025.954460978112/-2085.9008780800286/330/1328/var(--node-color-1)/var(--node-color-1)
         '[rycG3u2QjX1s7Lt8ABerx]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" P1s1Jkq4pQh1VXrNEUFNe/object
@@ -3096,8 +3137,14 @@ data:
                 ]
               }
           outgoingConnections:
-            - output->"SUB - Persona" 8CLGVNhjMOvxwx8MYaYi0/input
+            - output->"Subgraph" AFc-0rv400chnesKtxyHc/stringGraph
           visualData: 7620.308261321361/-1128.5816450798495/330/1313//
+        '[t0FLzQxrcLw-tdaC5wIMc]:subGraph "Subgraph"':
+          data:
+            graphId: o8S-CeePSytOJAterI2wq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 8102.684927010178/-1959.4823811247206/330/1434/var(--node-color-1)/var(--node-color-1)
         '[tEzx1gfv3oT5tzEpObm53]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -3114,7 +3161,7 @@ data:
                 ]
               }
           outgoingConnections:
-            - output->"SUB - Persona" rwFAT6zA-ucJxZtYuGctM/input
+            - output->"Subgraph" t0FLzQxrcLw-tdaC5wIMc/stringGraph
           visualData: 7585.137755566229/-2220.1286539857097/330/1308//
         '[vGUWgOtAY-i7sxm-WJ7eb]:text "Text"':
           data:
@@ -3164,12 +3211,12 @@ data:
               {
                     "stringGraph": "ye8w2fo87pymtxxfx0vyfzaa"
               }
-          visualData: -2585.6388972730956/1032.2201743891371/230/1401//
+          visualData: -2636.592211933434/858.2097979076034/230/1419//
         '[w72oTf1tc7rAiyFebway5]:text "CRISIS ID FOR LEAD"':
           data:
             body: ""
             text: ye8w2fo87pymtxxfx0vyfzaa
-          visualData: -2894.5792095119923/1358.4373593521148/330/1390//
+          visualData: -2508.6935741274724/449.1666093081311/330/1436//
         '[xQfq8BV4M9MDHCKcpL6vJ]:httpCall "Http Call"':
           data:
             body: ""
@@ -3444,7 +3491,7 @@ data:
                   }
                 ]
               }
-          visualData: -1159.119124940294/228.3742573195854/330/1332//
+          visualData: -1240.0945176897071/424.22171885304977/330/1352//
         '[3CQbBHA_dmGv7keqg7pQC]:text "Persona system prompt"':
           data:
             normalizeLineEndings: true
@@ -3627,7 +3674,7 @@ data:
         '[DXAvqxOfU-d_soA_drX3j]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" xhBkRsJdMKOgM6bdi3J-f/object
-          visualData: -536.1263617097553/-181.61123953319657/280/1321//
+          visualData: -611.6723226588717/-268.56036439916073/280/1351//
         '[LRsfzaFpuaSwSyF2M7Q6n]:httpCall "HTTP - Insert opinion"':
           data:
             body: ""
@@ -3653,7 +3700,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Extract JSON" DXAvqxOfU-d_soA_drX3j/input
-          visualData: -969.7972984024057/-280.9183203090005/330/1314/var(--node-color-3)/var(--node-color-3)
+          visualData: -1071.0003781644295/-303.72464814269597/330/1349/var(--node-color-3)/var(--node-color-3)
         '[itnEbOw2hlOWbqrXmWxEO]:text "Persona system prompt"':
           data:
             normalizeLineEndings: true
@@ -3831,12 +3878,12 @@ data:
                     "type": "press_release",
                     "story": "An investigative report by a prominent Indian media outlet reveals that many of Nestlé India's best-selling products for children — Maggi noodles — are high in sugar, salt, and fat, with little nutritional benefit. The report is based on internal product formulation documents and interviews with former employees who allege that nutrition goals often took a back seat to taste and profit.  A senior pediatrician quoted in the story says Nestlé is hooking a generation onto junk through comfort branding The controversy intensifies when parenting groups and nutritionists begin questioning the company's Good Food, Good Life positioning.  Trigger Points: - The story hits just before exam season, when kids consume more packaged snacks - Critics tie the findings to India's rising childhood obesity and diabetes rates  Media/Social Sentiment: - Trending hashtags: #NestleTargetsKids #NotSoHealthy - Viral posts from parenting influencers and doctors calling for a boycott - News debates on Should Nestlé products be in your child's lunchbox?",
                     "response": "We are going to throw every single employee off a bridge..",
-                    "document": "ga77modf3q406ejo7aumt5ue",
-                    "crisisid": "dky8i30kisowxhuupwo8iz5l"
+                    "document": "atk2z96cnvaefi4j5l4tv83m",
+                    "crisisid": "nvsvrsajrztv8ih5yjpq7uj5"
                   }
                 ]
               }
-          visualData: -996.618514260457/-88.93008047055837/330/1333//
+          visualData: -1640.0933338342934/297.23113889077194/330/1357//
         '[lzjxmw4IEOlvyLbivSIQm]:text "Text"':
           data:
             body: ""
@@ -4007,7 +4054,7 @@ data:
               - Do not include any markdown or fencing characters such as ``` or ```json, only return the JSON itself
           outgoingConnections:
             - output->"Chat" 5EiLKmo7w9b4gFBgcGYGH/systemPrompt
-          visualData: 379.0027330781328/-211.54259628018443/330/1340/var(--node-color-2)/var(--node-color-2)
+          visualData: 345.10605704349473/121.77471806042323/330/1356/var(--node-color-2)/var(--node-color-2)
         '[xhBkRsJdMKOgM6bdi3J-f]:destructure "Destructure"':
           data:
             paths:
