@@ -1976,11 +1976,6 @@ data:
             - output->"HTTP - Create holding statement"
               EdSuIRskNWWxNKlLBgMQh/req_body
           visualData: 5692.102555564887/-2285.0955660182663/330/1071//
-        '[-UJ6nzllIQ7-qOW01tgMF]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: response
-          visualData: -1677.7125302517336/1199.2982535103035/330/null/var(--node-color-3)/var(--node-color-3)
         '[0mouFF980bt242hGgYlXk]:setGlobal "Set Global"':
           data:
             dataType: string
@@ -3015,7 +3010,7 @@ data:
         '[nT_8sfzahbwZNsPj2AWK0]:graphOutput "Graph Output"':
           data:
             dataType: string
-            id: response
+            id: output
           visualData: -2031.9689089878525/773.1254515867473/330/1413/var(--node-color-3)/var(--node-color-3)
         '[o747HrcX1XEo2Bl_seAFB]:text "Text"':
           data:
@@ -3076,13 +3071,6 @@ data:
           outgoingConnections:
             - severity->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/req_body
           visualData: 477.70326114222934/1379.513217541465/330/1334/var(--node-color-1)/var(--node-color-1)
-        '[rIIYK4hlzBgiFkIigDrEB]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: Come on man
-          outgoingConnections:
-            - output->"Graph Output" -UJ6nzllIQ7-qOW01tgMF/value
-          visualData: -2096.5762381866507/1189.6470160002823/330/1411//
         '[rZDXS2m5Sw_t7IdGh4W45]:code "Stringify history"':
           data:
             code: >-
@@ -3486,12 +3474,12 @@ data:
                     "type": "holding_statement",
                     "story": "An investigative report by a prominent Indian media outlet reveals that many of Nestlé India's best-selling products for children — Maggi noodles — are high in sugar, salt, and fat, with little nutritional benefit. The report is based on internal product formulation documents and interviews with former employees who allege that nutrition goals often took a back seat to taste and profit.  A senior pediatrician quoted in the story says Nestlé is hooking a generation onto junk through comfort branding The controversy intensifies when parenting groups and nutritionists begin questioning the company's Good Food, Good Life positioning.  Trigger Points: - The story hits just before exam season, when kids consume more packaged snacks - Critics tie the findings to India's rising childhood obesity and diabetes rates  Media/Social Sentiment: - Trending hashtags: #NestleTargetsKids #NotSoHealthy - Viral posts from parenting influencers and doctors calling for a boycott - News debates on Should Nestlé products be in your child's lunchbox?",
                     "response": "Nestlé India acknowledges the concerns raised following a recent investigative report and is committed to addressing them with transparency and responsibility. We recognize the importance of maintaining trust with our consumers, health experts, and advocacy groups, and are taking decisive steps to address the situation.  The report has led to significant discussions on social media, and we are aware of the impact this has had on our brand perception. We are actively engaging with major retailers to address their concerns and are committed to restoring confidence in our products. We are also aware of the potential legal scrutiny regarding our advertising practices and are taking this matter seriously.  In response, we are implementing the following actions: - Engaging in open dialogue with consumers and stakeholders to reaffirm our commitment to children's health and nutrition. - Conducting a comprehensive review of our advertising practices to ensure compliance with all relevant regulations. - Launching a transparent communication strategy to keep stakeholders informed of our progress and efforts to address these issues.  We deeply value the trust our consumers place in us and are dedicated to restoring that trust through accountability and meaningful action. We appreciate the feedback we have received and are committed to making changes that prioritize the health and safety of our consumers.  Thank you for your understanding and support during this challenging time.",
-                    "document": "glj9756jv8kmcf2ydd550dwu",
-                    "crisisid": "dky8i30kisowxhuupwo8iz5l"
+                    "document": "dve74eedznwlkogkbmhfzluz",
+                    "crisisid": "nvsvrsajrztv8ih5yjpq7uj5"
                   }
                 ]
               }
-          visualData: -1240.0945176897071/424.22171885304977/330/1352//
+          visualData: -1240.0945176897071/424.22171885304977/330/1358//
         '[3CQbBHA_dmGv7keqg7pQC]:text "Persona system prompt"':
           data:
             normalizeLineEndings: true
@@ -3674,7 +3662,7 @@ data:
         '[DXAvqxOfU-d_soA_drX3j]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" xhBkRsJdMKOgM6bdi3J-f/object
-          visualData: -611.6723226588717/-268.56036439916073/280/1351//
+          visualData: -712.620130282685/-16.1908453396276/280/1359//
         '[LRsfzaFpuaSwSyF2M7Q6n]:httpCall "HTTP - Insert opinion"':
           data:
             body: ""
@@ -3700,7 +3688,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Extract JSON" DXAvqxOfU-d_soA_drX3j/input
-          visualData: -1071.0003781644295/-303.72464814269597/330/1349/var(--node-color-3)/var(--node-color-3)
+          visualData: -1171.9481857882429/-60.81898604789532/330/1360/var(--node-color-3)/var(--node-color-3)
         '[itnEbOw2hlOWbqrXmWxEO]:text "Persona system prompt"':
           data:
             normalizeLineEndings: true
@@ -3947,6 +3935,9 @@ data:
               - Use the value of `"concerns"` as the **Concerns**
 
 
+              - Use the value of `"id"` as the **Persona**
+
+
 
               These are specific to each item and must be used individually per stakeholder.
 
@@ -4002,7 +3993,7 @@ data:
                   {
                     "title": "Temporary loop title",
                     "view": "Full stakeholder reaction text here...",
-                    "persona": 3,
+                    "persona": Numeric persona id from that iteration,
                     "satisfaction": 0,
                     "{{type}}": "{{documentid}}",
                     "suggestion": {
