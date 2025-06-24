@@ -2451,7 +2451,7 @@ data:
           data:
             body: ""
             text: nvsvrsajrztv8ih5yjpq7uj5
-          visualData: -2522.9475290235323/270.0114090729431/330/1437//
+          visualData: -2667.9343038653465/307.95187351753/330/1441//
         '[KCt3dmUgSCv1CL6Nnco0u]:text "Text"':
           data:
             text: |-
@@ -3216,7 +3216,7 @@ data:
           data:
             body: ""
             text: ye8w2fo87pymtxxfx0vyfzaa
-          visualData: -2508.6935741274724/449.1666093081311/330/1436//
+          visualData: -2632.00008357238/483.042023990798/330/1440//
         '[xQfq8BV4M9MDHCKcpL6vJ]:httpCall "Http Call"':
           data:
             body: ""
@@ -4026,6 +4026,16 @@ data:
 
 
               {{documentid}} will be the numeric id containted in the system prompt. Do not accidentally insert the actual press release in that field.
+
+
+              Ensure the data associated with "press_release" or "holding_statement" is always the numeric id from {{documentid}}. It should NEVER be "holding_statement": "holding_statement" OR "press_release": "press_release". It would always be either:
+
+
+              "holding_statement": "{{documentid}}"
+
+              OR
+
+              "press_release": "{{documentid}}"
 
 
               - Ensure all six items are present in the same order in iterated item in the JSON.
