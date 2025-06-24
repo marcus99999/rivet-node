@@ -3649,7 +3649,7 @@ data:
         '[ior0x9Ow0Q_LH4R2-jRL8]:graphInput "Graph Input"':
           data:
             dataType: string
-            id: input
+            id: stringGraph
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Extract JSON" DXAvqxOfU-d_soA_drX3j/input
