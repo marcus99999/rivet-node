@@ -276,7 +276,7 @@ data:
             useHeadersInput: false
           outgoingConnections:
             - json->"Text" eejM-ua-wKdVtsje_wqZj/input
-          visualData: 3227.8799951394085/-160.91326034928537/280/1020/var(--node-color-4)/var(--node-color-4)
+          visualData: 3301.8991858589143/-398.1542562451373/280/1341/var(--node-color-4)/var(--node-color-4)
         '[-V3mX_TdIK2sMIZeBsfAn]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -326,7 +326,13 @@ data:
             useHeadersInput: false
           outgoingConnections:
             - json->"Text" 1Mc8h-DueAoO7z5XmdUn_/input
-          visualData: 3217.6415951835093/-1632.4640370967563/280/1011/var(--node-color-4)/var(--node-color-4)
+          visualData: 3301.150425738849/-1641.9536769325905/280/1339/var(--node-color-4)/var(--node-color-4)
+        '[2wdsSZIqnLyd5XyYGMSrD]:subGraph "Subgraph"':
+          data:
+            graphId: lzDkeo10TytZALkz8u7nq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 3455.552731192165/-2101.6149217748793/330/1344/var(--node-color-1)/var(--node-color-1)
         '[4y5XJhHvehu2FhbfFSOcu]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -441,7 +447,7 @@ data:
             useHeadersInput: false
           outgoingConnections:
             - json->"Text" 0kMVxtP41NRcyej4vkbMO/input
-          visualData: 3241.763535110662/-967.9275520595879/280/1016/var(--node-color-4)/var(--node-color-4)
+          visualData: 3291.109662256999/-964.1316961252543/280/1340/var(--node-color-4)/var(--node-color-4)
         '[BFvuIXOPmjhMuvzfJ5qmG]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -528,6 +534,7 @@ data:
               }
           outgoingConnections:
             - output->"Http Call" 9uM1rtiITUgpEN3PYTfKu/req_body
+            - output->"Subgraph" 2wdsSZIqnLyd5XyYGMSrD/prompt
           visualData: 2783.855388025749/-962.0799156619528/330/1314//
         '[IqeXPetHyKTuaAAeoiCV8]:extractJson "Extract JSON"':
           outgoingConnections:
@@ -662,6 +669,12 @@ data:
             - match_3->"Text" d0PAVTcOCZeb0W8Lh-Cf7/documentId
             - match_3->"Text" givYg0K4zZa7xCEszaC2A/documentId
           visualData: 356.2879017266414/-22.51931906114679/280/593//
+        '[ZIXdJYxZtpGJqMwyF2iCn]:subGraph "Subgraph"':
+          data:
+            graphId: lzDkeo10TytZALkz8u7nq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 3383.222572549564/-2373.9450804174803/330/1343/var(--node-color-1)/var(--node-color-1)
         '[_xun_79EIycJcd_nUsd24]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -707,6 +720,7 @@ data:
               }
           outgoingConnections:
             - output->"Http Call" 2-1stJD-1ZlJeod6DgIgb/req_body
+            - output->"Subgraph" ZIXdJYxZtpGJqMwyF2iCn/prompt
           visualData: 2781.73692241251/-1621.2360531180145/330/1012//
         '[eejM-ua-wKdVtsje_wqZj]:text "Text"':
           data:
@@ -741,6 +755,7 @@ data:
               }
           outgoingConnections:
             - output->"Http Call" -HvpH3_vlr-lQwwFbODFe/req_body
+            - output->"Subgraph" hen_J_f1nA5aWJRW5PB7B/prompt
           visualData: 2817.4403974169873/-275.9568031832186/330/1312//
         '[h5k-44eeEQKUVT6CVVEBp]:subGraph "Subgraph"':
           data:
@@ -751,6 +766,12 @@ data:
           outgoingConnections:
             - output->"Text" H3Fm81x8gTwGXYoLLSlLk/input
           visualData: 1339.2994916524865/916.563410057345/330/639/var(--node-color-1)/var(--node-color-1)
+        '[hen_J_f1nA5aWJRW5PB7B]:subGraph "Subgraph"':
+          data:
+            graphId: lzDkeo10TytZALkz8u7nq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 3461.842310204565/-1848.1535001694788/330/1345/var(--node-color-1)/var(--node-color-1)
         '[jtb7T-N-15zAQ1KWlv6GZ]:destructure "Destructure"':
           data:
             paths:
@@ -2415,17 +2436,6 @@ data:
           outgoingConnections:
             - response->"Extract JSON" Xk1Tw7lxeDqacNIT1bMNu/input
           visualData: 1554.2430639057575/-612.7891319636341/230/1101//
-        '[IwTxoUoRUTA7V8rgTczxx]:text "CRISIS ID FOR LEAD"':
-          data:
-            body: ""
-            text: |-
-              {
-                  "graph": "cGJILKi8TD1YSzAKUAzKV",
-                  "inputs": {
-                    "stringGraph": "ye8w2fo87pymtxxfx0vyfzaa"
-                  }
-                }
-          visualData: -3262.1994535799245/1111.6664699348532/330/1392//
         '[Iz7CjdEDhzVwzP3IMCiNB]:httpCall "Http Call"':
           data:
             body: ""
@@ -2446,7 +2456,7 @@ data:
           data:
             body: ""
             text: nvsvrsajrztv8ih5yjpq7uj5
-          visualData: -2667.9343038653465/307.95187351753/330/1441//
+          visualData: -2514.0686458458745/511.05454210323296/330/1444//
         '[KCt3dmUgSCv1CL6Nnco0u]:text "Text"':
           data:
             text: |-
@@ -2729,7 +2739,7 @@ data:
               Do not include any loose items, markdown or other commentary.
           outgoingConnections:
             - output->"Chat" IwTKZWYXuAna_v309uJ1p/systemPrompt
-          visualData: 1006.1841699238838/-668.8593305481993/330/1317//
+          visualData: 1006.1841699238838/-668.8593305481993/330/1442//
         '[_Ua5Iaa7bVa0WnfBltgtN]:code "Esape chars"':
           data:
             code: >-
@@ -2754,12 +2764,6 @@ data:
             - output1->"Text" -9u1wOd79FRibDuN_PXTo/response
             - output1->"Text" go-76mD_mFK_Pu79briiA/detail
           visualData: 4719.128107348857/-1913.1859334898859/230/1280/var(--node-color-2)/var(--node-color-2)
-        '[_fWNpPILgQjD1RKVooiTF]:extractJson "Extract JSON"':
-          visualData: -3250.791870806619/1428.7337992538933/280/1395//
-        '[amanjT5aC-pMQbTIoqiAn]:text "Text"':
-          data:
-            text: aqvoxymesg5jovysyqa6lv0m
-          visualData: -2728.1378331959686/1217.8689675214282/330/1424//
         '[ancy-mfuttJ79LFtk4zEf]:destructure "Destructure"':
           data:
             paths:
@@ -3204,7 +3208,7 @@ data:
           data:
             body: ""
             text: ye8w2fo87pymtxxfx0vyfzaa
-          visualData: -2632.00008357238/483.042023990798/330/1440//
+          visualData: -2636.1031677862325/68.63051839168679/330/1443//
         '[xQfq8BV4M9MDHCKcpL6vJ]:httpCall "Http Call"':
           data:
             body: ""
@@ -3458,6 +3462,192 @@ data:
           outgoingConnections:
             - data->"Text" dTuFNljWI8EZD_ylncCwr/input
           visualData: -66.36410962894178/314.03516910390215/330/796/var(--node-color-3)/var(--node-color-3)
+    lzDkeo10TytZALkz8u7nq:
+      metadata:
+        description: Apply best practices and create Q&A statements
+        id: lzDkeo10TytZALkz8u7nq
+        name: Social - Create
+      nodes:
+        '[-5I-RN6bReLecixHeJKdi]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" pZGp7vxOVzPJMD4TO_McL/object
+          visualData: -277.4104805500912/286.77185234671265/280/1520//
+        '[C4HUjfsmisDc3KLHsZMEr]:text "Holding statement system prompt"':
+          data:
+            text: >-
+              Your role is {{role}}
+
+
+              ACTION FOR THIS TASK
+
+
+              You will be passed a JSON object in this format:
+
+
+              {
+                  "original": "Text detail...",
+                  "detail": "Text detail...",
+                  "history": Object,
+                  "severity": "Severity rating",
+                  "crisis": "documentId"
+              }
+
+
+              You will take the dext item in the "detail" item and your job is to interpret that and write three short outputs that would be suitable for use on social media.
+
+
+              The text should be in the format of a "tweet".
+
+
+              The tweet would be posted on corporate social channels.
+
+
+              The total length of each item should be less than 600 characters in total.
+
+
+              The content should be a concise explanation of how the company is responding the crisis.
+
+
+              Use natural line breaks in the post like \n.
+
+
+              Output only a JSON object in the following format:
+
+
+              {
+                  "post1": "Post detail 1...",
+                  "post2": "Post detail 2...",
+                  "post3": "Post detail 3..."
+              }
+
+
+              Do not include any loose items, markdown or other commentary.
+          outgoingConnections:
+            - output->"Chat" sx7lFFatNdx8NY1vtmcql/systemPrompt
+          visualData: 212.2500228371216/-110.16224342232326/330/1504/var(--node-color-2)/var(--node-color-2)
+        '[Gse8mes9Za5OrZ9Oxo77r]:subGraph "Subgraph"':
+          data:
+            graphId: o8S-CeePSytOJAterI2wq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 5368.425802376846/-1068.2067020087904/330/1334/var(--node-color-1)/var(--node-color-1)
+        '[O8CCTzK8Ohlz-vw7SFD1K]:text "Text"':
+          data:
+            text: |-
+              {
+                  "message": {{detail}},
+                  "severity": "{{severity}}",
+                  "crisis": "{{crisis}}"
+              }
+          outgoingConnections:
+            - output->"Http Call" m_Zx9uX6-mE-V3wBxI_bs/req_body
+          visualData: 1324.5820842811145/238.17385486970645/330/1528//
+        '[RUwJaSc8vgcCEkXdeEoC7]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: prompt
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Extract JSON" -5I-RN6bReLecixHeJKdi/input
+          visualData: -768.389026335828/334.2266694368697/330/1526/var(--node-color-3)/var(--node-color-3)
+        '[YWvBJVczgxv5E3wQIkpgq]:subGraph "Subgraph"':
+          data:
+            graphId: o8S-CeePSytOJAterI2wq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 5383.609226114181/-677.9511042199107/330/1333/var(--node-color-1)/var(--node-color-1)
+        '[YdZYIRlbV_jehKfDKsbt9]:getGlobal "Get Global"':
+          data:
+            dataType: string
+            id: role
+            onDemand: true
+            useIdInput: false
+            wait: false
+          outgoingConnections:
+            - value->"Holding statement system prompt" C4HUjfsmisDc3KLHsZMEr/role
+          visualData: -153.7752703925228/-19.06261488516772/230/1525//
+        '[ZyOC1b7xt8K2iRkm6ljj_]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                "data": [
+                  {
+                  "original": "Text detail...",
+                  "detail": "In response to the Skittles Pride Collaboration, we acknowledge the concerns raised by some groups and the subsequent calls for boycotts on social media. We are committed to addressing these concerns with urgency and transparency. Our focus remains on fostering an inclusive environment that respects diverse perspectives.  We are actively engaging in open dialogue with our customers, employees, and community members to better understand their viewpoints. Our priority is to ensure that our actions and communications align with the values of our brand and the communities we serve.  To address the situation, we are implementing a comprehensive communication plan that includes direct outreach to our stakeholders. We reaffirm our commitment to diversity and inclusion, recognizing the importance of these values to our brand identity.  We are taking this matter seriously and are dedicated to maintaining transparency throughout the process. Regular updates will be provided as we navigate this situation, with the aim of rebuilding trust and demonstrating our dedication to being a responsible corporate citizen.  We appreciate the continued support of our loyal customers and stakeholders during this time. Together, we will work towards a resolution that reflects our values and commitment to inclusivity.",
+                  "history": "history",
+                  "severity": "High",
+                  "crisis": "nvsvrsajrztv8ih5yjpq7uj5"
+                  }
+                ]
+              }
+          visualData: -653.1964482658587/-259.82591887622243/330/1519//
+        '[iDRIIpXOrmW7y5ItpJUKP]:subGraph "Subgraph"':
+          data:
+            graphId: o8S-CeePSytOJAterI2wq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 5357.038234573845/-392.5443456974041/330/1326/var(--node-color-1)/var(--node-color-1)
+        '[m_Zx9uX6-mE-V3wBxI_bs]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://crisis-comms.vercel.app/api/submit-social
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 1795.3852683551274/76.6821163810233/280/1529/var(--node-color-4)/var(--node-color-4)
+        '[pZGp7vxOVzPJMD4TO_McL]:destructure "Destructure"':
+          data:
+            paths:
+              - $.detail
+              - $.severity
+              - $.crisis
+            text: ""
+          outgoingConnections:
+            - match_0->"Chat" sx7lFFatNdx8NY1vtmcql/prompt
+            - match_1->"Text" O8CCTzK8Ohlz-vw7SFD1K/severity
+            - match_2->"Text" O8CCTzK8Ohlz-vw7SFD1K/crisis
+          visualData: 78.10867887211202/561.4943710252628/280/1521//
+        '[sx7lFFatNdx8NY1vtmcql]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" O8CCTzK8Ohlz-vw7SFD1K/detail
+          visualData: 771.862026708221/143.61529321689667/230/1508//
     o8S-CeePSytOJAterI2wq:
       metadata:
         description: ""
@@ -4268,61 +4458,7 @@ data:
             url: https://crisis-comms.vercel.app/api/submit-scenario
             useBodyInput: true
             useHeadersInput: false
-          visualData: 1698.4545425384927/46.947482389836765/280/1011/var(--node-color-4)/var(--node-color-4)
-    woA8EqvL5ygBotd8wOw92:
-      metadata:
-        description: ""
-        id: woA8EqvL5ygBotd8wOw92
-        name: "* Retrun test"
-      nodes:
-        '[4ZZqgBDSsJdr9zflfKcAs]:text "Text"':
-          data:
-            text: >-
-              {
-                "data": {
-                  "original": "Date: June 6, 2025\n\nWe acknowledge the operational delays resulting from the incident at our Nestlé bottling factory. While we are implementing effective communication and contingency plans to support our employees and maintain product supply, we are also conducting a thorough investigation. A comprehensive response will be issued shortly to provide clarity and address any concerns.\n\nLisa McCooey\nComms Director\n\nlisa.mccooey@nestle.com\n7956876432\n\n",
-                  "detail": "Date: June 6, 2025\n\nWe acknowledge the operational delays resulting from the incident at our Nestlé bottling factory. Our priority is to ensure the safety and well-being of our employees and customers. We are actively implementing effective communication and contingency plans to support our employees and maintain product supply. Concurrently, we are conducting a thorough investigation to understand the root cause of the incident. We are committed to transparency and will provide a comprehensive response shortly to address any concerns and outline our next steps.\n\nLisa McCooey\nComms Director\n\nlisa.mccooey@nestle.com\n7956876432",
-                  "history": [{"change":"Added emphasis on safety and well-being of employees and customers.","source":"Statement on contamination/safety of drinking water","rationale":"Emphasizing safety and well-being aligns with best practices in crisis communication, ensuring stakeholders that their health and safety are prioritized."},{"change":"Included commitment to transparency and a comprehensive response.","source":"Statement on death of two children from contaminated Buitoni Fraîch’Up pizza","rationale":"Commitment to transparency and providing a comprehensive response is crucial in maintaining trust and demonstrating accountability."},{"change":"Clarified the purpose of the investigation to understand the root cause.","source":"Statement on death of two children from contaminated Buitoni Fraîch’Up pizza","rationale":"Clarifying the purpose of the investigation helps stakeholders understand the company's proactive approach to resolving the issue."}],
-                  "severity": "Medium",
-                  "crisis": "sihaot4huf96o6ikq7fq0pl8"
-                }
-              }
-          outgoingConnections:
-            - output->"HTTP - Create holding statement"
-              LYnyrol2qbVUWF8ydxoas/req_body
-          visualData: 442/638.4032566950518/330/1071//
-        '[AZlSwDR0pBaPEOLdO2IS0]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Destructure" IG1pNfpgQHaQrQN43Z93v/object
-          visualData: 1630.0940133344184/810.6154503850117/280/1305//
-        '[IG1pNfpgQHaQrQN43Z93v]:destructure "Destructure"':
-          data:
-            paths:
-              - $.data.documentId
-          visualData: 1977.4452079414525/820.2640946796515/280/1306//
-        '[LYnyrol2qbVUWF8ydxoas]:httpCall "HTTP - Create holding statement"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: POST
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/holding-statements/
-            useBodyInput: true
-            useHeadersInput: false
-          outgoingConnections:
-            - json->"Text" eYslTmJfi6TVVSJbrOGHs/input
-          visualData: 841.2452694538515/623/280/1294/var(--node-color-4)/var(--node-color-4)
-        '[eYslTmJfi6TVVSJbrOGHs]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: "{{input}}"
-          outgoingConnections:
-            - output->"Extract JSON" AZlSwDR0pBaPEOLdO2IS0/input
-          visualData: 1247.042834837217/809.6505859555477/330/1303//
+          visualData: 1694.11451907446/1.3772360174935017/280/1032/var(--node-color-4)/var(--node-color-4)
     zYlQ2Xk75J--kr6X__Awr:
       metadata:
         description: Write and individual set of QA pairs
