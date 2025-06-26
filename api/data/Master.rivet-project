@@ -3669,7 +3669,7 @@ data:
                   }
                 ]
               }
-          visualData: -1240.0945176897071/424.22171885304977/330/1358//
+          visualData: -1498.7732747257287/665.5500714537284/330/1361//
         '[3CQbBHA_dmGv7keqg7pQC]:text "Persona system prompt"':
           data:
             normalizeLineEndings: true
@@ -4061,7 +4061,7 @@ data:
                   }
                 ]
               }
-          visualData: -1640.0933338342934/297.23113889077194/330/1357//
+          visualData: -1212.6424609272092/174.20099834924952/330/1362//
         '[lzjxmw4IEOlvyLbivSIQm]:text "Text"':
           data:
             body: ""
@@ -4084,7 +4084,8 @@ data:
                 "documentId": "bhrp283cg1523zr5h6m09xra",
                 "personality": "Customer",
                 "profile": "Details of the profile.",
-                "concerns": "Concerns of the profile."
+                "concerns": "Concerns of the profile.",
+                "warmth": "Adversary"
               },
 
               {
@@ -4092,7 +4093,8 @@ data:
                 "documentId": "ukzezst3nmp9tshcb8nsbtbs",
                 "personality": "Employee",
                 "profile": "Details of the profile.",
-                "concerns": "Concerns of the profile."
+                "concerns": "Concerns of the profile.",
+                "warmth": "Neutral"
               }
 
               ...
@@ -4128,9 +4130,12 @@ data:
               - Use the value of `"id"` as the **Persona**
 
 
+              - Use "warmth" to determine the tone of voice:
+              	•	"Adversary" = critical, sceptical, and distrustful tone
+              	•	"Neutral" = balanced, analytical, and fair tone
+              	•	"Supporter" = positive, constructive, and trusting tone
 
               These are specific to each item and must be used individually per stakeholder.
-
 
 
               Also use the two **global inputs** for every item:
@@ -4142,16 +4147,21 @@ data:
               - **Company Response:** `{{response}}` — the full corporate statement in response to the crisis indcident
 
 
-
               ---
-
 
 
               ### RESPONSE FORMAT (PER STAKEHOLDER):
 
 
+              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the **Company Response:** to the situation having become aware of the **Crisis Event:**. The stakeholder feedback should detail their specific reaction to the details of the **Company Response:**. They should comment on if it has mitigated their concerns. The feedback should focus mostly on the **Company Response:** and detail their concerns that remain and acknowledge where other concerns have been alleviated (if they have).
 
-              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the **Company Response:** to the situation having become aware of the **Crisis Event:**. The stakeholder feedback should detail their specofc reaction to the details of the **Company Response:**. They should coment on if it has mitigated their concerns. The feedback should focus mostly on the **Company Response:** and detail their concerns that remain and acknowledge where other concerns have been alleviated (if they have). Then, continue with:
+
+              The response must:
+              	•	Focus on the effectiveness of the company's message
+              	•	Clearly state which concerns were addressed, and which were not
+              	•	Reflect the stakeholder's tone of voice, based on "warmth"
+
+              Then, continue with:
 
 
 
