@@ -2120,7 +2120,7 @@ data:
             paths:
               - $.data.title
               - $.data.description
-              - $.data.location
+              - $.data.region.region
               - $.data.company.title
               - $.data.date
               - $.data.severity
@@ -2641,7 +2641,7 @@ data:
           data:
             body: ""
             headers: ""
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=company
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=company&populate=region
           outgoingConnections:
             - output->"HTTP - Get crises" cKjknBn_o8XEPm2EFP1C3/url
           visualData: -2054.0747816947087/589.3084492475264/330/1417//
