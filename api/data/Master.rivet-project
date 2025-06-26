@@ -2069,8 +2069,8 @@ data:
         '[2uPrdf3woHnGtAJDrw2Lz]:graphOutput "Graph Output"':
           data:
             dataType: string
-            id: response
-          visualData: -854.5334114263007/188.1254895167713/330/1410/var(--node-color-3)/var(--node-color-3)
+            id: Title
+          visualData: -687.699845665739/267.9672674164687/330/1445/var(--node-color-3)/var(--node-color-3)
         '[4PpdHSOarBvynuMBQSfp0]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -2109,7 +2109,6 @@ data:
             id: stringGraph
             useDefaultValueInput: false
           outgoingConnections:
-            - data->"Graph Output" HbEBVBhKv4loBn8rJlH_i/value
             - data->"Graph Output" nT_8sfzahbwZNsPj2AWK0/value
             - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2744.839120608272/658.6536749652059/330/1403/var(--node-color-3)/var(--node-color-3)
@@ -2380,11 +2379,6 @@ data:
             height: 600
             text: Get comms team
           visualData: -407.119081962525/-603.5767147483365/830.1844441677374/462//
-        '[HbEBVBhKv4loBn8rJlH_i]:graphOutput "Graph Output"':
-          data:
-            dataType: any
-            id: response
-          visualData: -2245.752054547419/952.5446443619825/330/1414/var(--node-color-3)/var(--node-color-3)
         '[HfflPV-SqxtJY7immzBiY]:destructure "Destructure"':
           data:
             paths:
@@ -3014,7 +3008,7 @@ data:
         '[nT_8sfzahbwZNsPj2AWK0]:graphOutput "Graph Output"':
           data:
             dataType: string
-            id: output
+            id: ID consumed
           visualData: -2031.9689089878525/773.1254515867473/330/1413/var(--node-color-3)/var(--node-color-3)
         '[o747HrcX1XEo2Bl_seAFB]:text "Text"':
           data:
@@ -3670,127 +3664,11 @@ data:
                 ]
               }
           visualData: -1498.7732747257287/665.5500714537284/330/1361//
-        '[3CQbBHA_dmGv7keqg7pQC]:text "Persona system prompt"':
+        '[3jzPS5iSz008yygaMwqM8]:graphOutput "Graph Output"':
           data:
-            normalizeLineEndings: true
-            text: >-
-              You have been given a JSON item in the following format:
-
-
-              {
-                "data": [
-                  {
-                    "id": 3,
-                    "documentId": "bhrp283cg1523zr5h6m09xra",
-                    "personality": "Customer",
-                    "profile": "Details of the profile.",
-                    "concerns": "Concerns of the profile."
-                  },
-                  {
-                    "id": 1,
-                    "documentId": "ukzezst3nmp9tshcb8nsbtbs",
-                    "personality": "Employee",
-                    "profile": "Details of the profile.",
-                    "concerns": "Concerns of the profile."
-                  }
-                  ...
-                ]
-              }
-
-
-              TASK INSTRUCTIONS
-
-
-              Loop through every item in the data array. For each item, generate a complete response following this structure:
-
-
-              ⸻
-
-
-              STAKEHOLDER BRIEF (PER ITEM)
-
-              Use the values from the JSON item:
-              	•	"personality" → used as Role
-              	•	"profile" → used as Perspective
-              	•	"concerns" → used as Concerns
-              	•	"suggestion" → will be generated based on stakeholder needs
-
-              You will also use two shared global variables for every item:
-              	•	{{story}} → the Crisis Event
-              	•	{{response}} → the Company Response
-
-              ⸻
-
-
-              RESPONSE REQUIREMENTS
-
-
-              Step 1: Write the stakeholder reaction in three short, natural-sounding paragraphs, using the stakeholder's point of view. Focus on:
-              	•	How the Crisis Event and Company Response are interpreted by this stakeholder
-              	•	Whether the response addresses or overlooks their concerns
-              	•	What issues feel resolved, and which remain troubling
-
-              Step 2: After the paragraphs, insert:
-              	•	A line break, followed by one sentence stating whether they feel reassured or not reassured.
-
-              Step 3: Generate a satisfaction score from 0 to 10, where 10 is fully reassured.
-
-
-              Step 4: Generate three suggestions specific to the stakeholder:
-              	•	Each suggestion should include:
-              	•	A short field (max 7 words)
-              	•	A detail field (2 full sentences explaining the request)
-
-              ⸻
-
-
-              FINAL OUTPUT STRUCTURE
-
-
-              You must return a single valid JSON object, exactly in this format:
-
-
-              {
-                "data": [
-                  {
-                    "title": "Temporary loop title",
-                    "view": "Stakeholder reaction with paragraph spacing as plain text. Use normal punctuation. Do NOT include raw line breaks or tabs. Use only safe embedded line breaks within strings if needed. End with one sentence saying if stakeholder is reassured or not reassured.",
-                    "persona": 3,
-                    "satisfaction": 7,
-                    "{{type}}": "{{document}}",
-                    "suggestion": {
-                      "short1": "Short suggestion 1",
-                      "detail1": "Detailed explanation of suggestion 1.",
-                      "short2": "Short suggestion 2",
-                      "detail2": "Detailed explanation of suggestion 2.",
-                      "short3": "Short suggestion 3",
-                      "detail3": "Detailed explanation of suggestion 3."
-                    }
-                  }
-                ]
-              }
-
-
-              SANITIZATION & VALIDATION RULES
-              	•	Output must be valid JSON. It must pass JSON.parse() with no errors.
-              	•	Do NOT include any raw line breaks (\n), tab (\t) or carriage return characters.
-              	•	Do NOT wrap the JSON in markdown code blocks (like ```json).
-              	•	All text must be returned as clean strings, properly escaped if needed.
-              	•	The JSON must contain exactly 6 keys per item, in this order:
-              	1.	title
-              	2.	view
-              	3.	persona
-              	4.	satisfaction
-              	5.	press_release or holding_statement
-              	6.	suggestion (with six nested fields)
-
-
-              ADDITIONAL NOTES
-              	•	Ensure each response is tailored per item — no generic repetition.
-              	•	Ensure "{{type}}": "{{document}}" ONLY use the data passed into the prompt. These data points are common for each iteration.
-              	•	Do not skip or omit any fields.
-              	•	This task will fail if formatting is not followed exactly.
-          visualData: -1092.3940106365435/957.8525450477922/330/1342/var(--node-color-2)/var(--node-color-2)
+            dataType: string
+            id: Persona dump
+          visualData: 1766.490960852549/43.255648136783776/330/1363/var(--node-color-3)/var(--node-color-3)
         '[5EiLKmo7w9b4gFBgcGYGH]:chat "Chat"':
           data:
             additionalParameters: []
@@ -3847,6 +3725,7 @@ data:
             normalizeLineEndings: true
             text: "{{input}}"
           outgoingConnections:
+            - output->"Graph Output" 3jzPS5iSz008yygaMwqM8/value
             - output->"HTTP - Insert opinion" LRsfzaFpuaSwSyF2M7Q6n/req_body
           visualData: 1145.2383975767154/324.26280353681756/330/1335//
         '[DXAvqxOfU-d_soA_drX3j]:extractJson "Extract JSON"':
@@ -3879,173 +3758,6 @@ data:
           outgoingConnections:
             - data->"Extract JSON" DXAvqxOfU-d_soA_drX3j/input
           visualData: -1171.9481857882429/-60.81898604789532/330/1360/var(--node-color-3)/var(--node-color-3)
-        '[itnEbOw2hlOWbqrXmWxEO]:text "Persona system prompt"':
-          data:
-            normalizeLineEndings: true
-            text: >-
-              You have been given a JSON item in the following format:
-
-
-
-              {
-                "data": [
-              {
-                "id": 3,
-                "documentId": "bhrp283cg1523zr5h6m09xra",
-                "personality": "Customer",
-                "profile": "Details of the profile.",
-                "concerns": "Concerns of the profile."
-              },
-
-              {
-                "id": 1,
-                "documentId": "ukzezst3nmp9tshcb8nsbtbs",
-                "personality": "Employee",
-                "profile": "Details of the profile.",
-                "concerns": "Concerns of the profile."
-              }
-
-              ...
-                ]
-              }
-
-
-
-              ---
-
-
-
-              ### TASK INSTRUCTIONS
-
-
-
-              Iterate over **every item** in the `data` array. For **each and every item**, generate a complete response using this exact structure:
-
-
-
-              **Stakeholder Brief (for each item):**
-
-
-              - Use the value of `"personality"` as the **Role**
-
-
-              - Use the value of `"profile"` as the **Perspective**
-
-
-              - Use the value of `"concerns"` as the **Concerns**
-
-
-              - Use the value of `"suggestion"` as the **Suggestions** 
-
-
-
-              These are specific to each item and must be used individually per stakeholder.
-
-
-
-              Also use the two **global inputs** for every item:
-
-
-              - **Crisis Event:** `{{story}}` — a brief summary of the incident
-
-
-              - **Company Response:** `{{response}}` — the full corporate statement or press release
-
-
-
-              ---
-
-
-
-              ### RESPONSE FORMAT (PER STAKEHOLDER):
-
-
-
-              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the **Company Response:** to the sitatuion having become aware of the **Crisis Event:**. The stakeholder feedback should consider whether the **Company Response:** has mitigated their concerns. The feedback should focus mostly on the **Company Response:** and detail reaonable concerns that remain and acknowledge where other concerns have been alleviated (if they have). Then, continue with:
-
-
-
-              - A line break  
-
-
-              - Add a single sentence stating reasons whether the stakeholder feels **reassured** or **not reassured** by the company's response (do **not** include any numeric score here).
-
-
-
-              Finally, assign a numeric **satisfaction rating from 0 to 10**, and include it in the output JSON under `satisfaction`.
-
-
-
-              ---
-
-
-
-              ### JSON OUTPUT FORMAT (REQUIRED)
-
-
-
-              You must return a **single valid JSON object** in exactly this format:
-
-
-
-              {
-                "data": [
-              {
-                "title": "Temporary loop title",
-                "view": "Full stakeholder reaction text here...",
-                "persona": 3,
-                "satisfaction": 0,
-                "{{type}}": "{{documentid}}",
-                "suggestion": [
-               "short1": "Suggestion 1 of fewer than 7 words",
-               "detail1": "2 sentences with a detailed prompt of the changes this persona would want",
-               "short2": "Suggestion 2 of fewer than 7 words",
-               "detail2": "2 sentences with a detailed prompt of the changes this persona would want",
-               "short3": "Suggestion 3 of fewer than 7 words",
-               "detail3": "2 sentences with a detailed prompt of the changes this persona would want"
-               ]
-              },
-
-              ...
-                ]
-              }
-
-
-
-              ### IMPORTANT
-
-
-              - The {{type}} content will only ever by "press_release" or "holding_statement".
-
-
-              {{documentid}} will be the numeric id containted in the system prompt. Do not accidentally insert the actual press release in that field.
-
-
-              - Ensure all six items are present in the same order in iterated item in the JSON.
-
-
-
-              FINAL OUTPUT SANITISATION RULES (MUST FOLLOW):
-
-
-              - All field values in the JSON output must be clean strings.
-
-
-              - Do NOT include any unescaped control characters such as:
-                • raw line breaks (newline characters)
-                • tab characters
-                • carriage returns
-              - Use natural paragraph formatting using standard spaces and punctuation only.
-
-
-              - All newline breaks must be safely embedded within strings (if needed) and never inserted as raw line breaks in the JSON structure.
-
-
-              - Output must be valid JSON that can be parsed without error using standard JSON.parse().
-
-
-              - Do not include any markdown or fencing characters such as ``` or ```json, only return the JSON itself
-          visualData: 967.9974358204222/-486.43299102570165/330/1346/var(--node-color-2)/var(--node-color-2)
         '[kaqyS8z6lnhb9qI8EonOo]:text "Text"':
           data:
             normalizeLineEndings: true
