@@ -1149,11 +1149,15 @@ data:
               - $.data.title
               - $.data.date
               - $.data.description
+              - $.data.crisis
             text: ""
           outgoingConnections:
             - match_2->"Subgraph" tSneJ2F42M20RGsm8W9u_/input
             - match_2->"Subgraph" ykrdQorXBm6sTD0CYykhr/input
-          visualData: 200.42723207197824/260.98481720614393/280/126//
+            - match_3->"Subgraph" -z50Fnu2D56A10PrKG8bh/input
+            - match_3->"Subgraph" 9LbLUH9DXSm4aUH_vBpcw/input
+            - match_3->"Subgraph" k6jy8_Nk5sKxENwH9aZ6N/input
+          visualData: 200.42723207197824/260.98481720614393/280/1105//
         '[9LbLUH9DXSm4aUH_vBpcw]:subGraph "Subgraph"':
           data:
             graphId: -eizVpxv9JBIHuJFio6wd
@@ -1167,11 +1171,6 @@ data:
             dataType: object
             id: severity
           visualData: 2921.7347660534633/309.1086678418129/330/137/var(--node-color-3)/var(--node-color-3)
-        '[NTU1OKMCMtEuf30vFKNh4]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: dky8i30kisowxhuupwo8iz5l
-          visualData: 156.60194087099478/-105.10663689610769/330/1103//
         '[_FwqVLMhnvJzzdKNQ6sPG]:graphInput "Graph Input"':
           data:
             dataType: object
@@ -1328,11 +1327,7 @@ data:
             onDemand: true
             useIdInput: false
             wait: false
-          outgoingConnections:
-            - value->"Subgraph" -z50Fnu2D56A10PrKG8bh/input
-            - value->"Subgraph" 9LbLUH9DXSm4aUH_vBpcw/input
-            - value->"Subgraph" k6jy8_Nk5sKxENwH9aZ6N/input
-          visualData: 348.2199617299237/-382.1792060575412/230/1095/var(--node-color-3)/var(--node-color-3)
+          visualData: 182.21996172992368/-148.1792060575412/230/1106/var(--node-color-3)/var(--node-color-3)
         '[ykrdQorXBm6sTD0CYykhr]:subGraph "Subgraph"':
           data:
             graphId: jOpSxxKf2JqdCjND_3e_G
@@ -1947,7 +1942,6 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Graph Output" nT_8sfzahbwZNsPj2AWK0/value
-            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2744.839120608272/658.6536749652059/330/1403/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
@@ -1974,6 +1968,7 @@ data:
             - match_7->"Holding statement system prompt"
               ZEJe86ipFxX2Pgn0SpYkX/documentId
             - match_7->"Set Global" 0mouFF980bt242hGgYlXk/value
+            - match_7->"Text" CocxXqVO7vwIgKSISUEL9/documentId
             - match_7->"Text" lTDwHyIvD8GtM-vUQWnZJ/documentId
             - match_7->"Text" o747HrcX1XEo2Bl_seAFB/input
           visualData: -1112.456167558564/660.9274817907149/280/425//
@@ -2092,9 +2087,12 @@ data:
 
 
               It relates to the prodcut {{Product}}.
+
+
+              The documentId is {{documentId}}
           outgoingConnections:
             - output->"Chat" DOH9j6ldq5b44D5MY0YHO/prompt
-          visualData: -686.6013397768722/589.6374802938983/330/1014//
+          visualData: -616.6863254955473/704.4978608989321/330/1450//
         '[DOH9j6ldq5b44D5MY0YHO]:chat "Chat"':
           data:
             additionalParameters: []
@@ -2292,6 +2290,8 @@ data:
           data:
             body: ""
             text: nvsvrsajrztv8ih5yjpq7uj5
+          outgoingConnections:
+            - output->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2274.3600254527605/146.4976819220388/330/1448//
         '[KCt3dmUgSCv1CL6Nnco0u]:text "Text"':
           data:
@@ -3025,7 +3025,8 @@ data:
                   "severity": "Unknown",
                   "title": "Crisis title",
                   "date": "Crisis date",
-                  "description": "Text of crisis"
+                  "description": "Text of crisis",
+                  "crisis": the numeric documentId from the prompt
                   }
               }
 
