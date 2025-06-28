@@ -1942,6 +1942,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Graph Output" nT_8sfzahbwZNsPj2AWK0/value
+            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2744.839120608272/658.6536749652059/330/1403/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
@@ -2290,8 +2291,6 @@ data:
           data:
             body: ""
             text: nvsvrsajrztv8ih5yjpq7uj5
-          outgoingConnections:
-            - output->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2274.3600254527605/146.4976819220388/330/1448//
         '[KCt3dmUgSCv1CL6Nnco0u]:text "Text"':
           data:
