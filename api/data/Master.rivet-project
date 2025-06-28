@@ -15,7 +15,7 @@ data:
           data:
             body: ""
             normalizeLineEndings: true
-            text: https://crisis-comms-git-main-flipsidegroup.vercel.app/api/momentum-summary?id={{input}}
+            text: https://crisis-comms.vercel.app/api/momentum-summary?id={{input}}
           outgoingConnections:
             - output->"Http Call" r3ShAtoIHSLs3s6ceW9hD/url
           visualData: 229.4430371931836/299.46635032763567/330/1086/var(--node-color-2)/var(--node-color-2)
@@ -1121,7 +1121,7 @@ data:
           data:
             body: ""
             normalizeLineEndings: true
-            text: https://crisis-comms-git-main-flipsidegroup.vercel.app/api/reach-summary?id={{input}}
+            text: https://crisis-comms.vercel.app/api/reach-summary?id={{input}}
           outgoingConnections:
             - output->"Http Call" QB5egqbszyjG1nUgB5paM/url
           visualData: -322.98595219280986/-176.8603172160685/330/1082/var(--node-color-2)/var(--node-color-2)
@@ -1157,6 +1157,7 @@ data:
             - match_3->"Subgraph" -z50Fnu2D56A10PrKG8bh/input
             - match_3->"Subgraph" 9LbLUH9DXSm4aUH_vBpcw/input
             - match_3->"Subgraph" k6jy8_Nk5sKxENwH9aZ6N/input
+            - match_3->"Text" YW0DtNVN_8ZoHkfKNGC52/input
           visualData: 200.42723207197824/260.98481720614393/280/1105//
         '[9LbLUH9DXSm4aUH_vBpcw]:subGraph "Subgraph"':
           data:
@@ -1170,14 +1171,34 @@ data:
           data:
             dataType: object
             id: severity
-          visualData: 2921.7347660534633/309.1086678418129/330/137/var(--node-color-3)/var(--node-color-3)
+          visualData: 3118.7347660534633/134.10866784181292/330/1455/var(--node-color-3)/var(--node-color-3)
+        '[YF20gMQ92bGqsY4vwMMbt]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: PUT
+            text: ""
+            url: ""
+            useBodyInput: true
+            useHeadersInput: false
+            useUrlInput: true
+          visualData: 3546/516/280/1457/var(--node-color-4)/var(--node-color-4)
+        '[YW0DtNVN_8ZoHkfKNGC52]:text "Text"':
+          data:
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}
+          outgoingConnections:
+            - output->"Http Call" YF20gMQ92bGqsY4vwMMbt/url
+          visualData: 2883/424/330/1459//
         '[_FwqVLMhnvJzzdKNQ6sPG]:graphInput "Graph Input"':
           data:
             dataType: object
             id: input
             useDefaultValueInput: false
-          outgoingConnections:
-            - data->"Destructure" 7ouISIuZoDgTyf0yhM7sj/object
           visualData: -404.2982173488524/153.73042136537202/330/1093/var(--node-color-3)/var(--node-color-3)
         '[_s43ZTL5W4a5ldiyC7j3k]:chat "Chat"':
           data:
@@ -1215,6 +1236,10 @@ data:
             - response->"Extract JSON" vzD1SMeR-en172gQVjSp2/input
             - response->"Text" q4J6Cr_USUSIiqH2rVE7p/input
           visualData: 2030.3673332067467/298.02329671362577/230/109//
+        '[ez9cYYrN1iMIypvzWQBmg]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" 7ouISIuZoDgTyf0yhM7sj/object
+          visualData: -207/576/280/1109//
         '[k6jy8_Nk5sKxENwH9aZ6N]:subGraph "Subgraph"':
           data:
             graphId: _7ny001Rtlr9P7w3EfY8D
@@ -1308,6 +1333,22 @@ data:
             normalizeLineEndings: true
             text: "{{input}}"
           visualData: 2432.447930457893/218.98181178391317/330/107//
+        '[tD42EuwVRmnv2Rog5xSJv]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                "data": {
+                  "severity": "Unknown",
+                  "title": "Child Labor Allegations in Cocoa Supply Chain",
+                  "date": "2025-06-26",
+                  "description": "Candy company Mars uses cocoa harvested by kids as young as 5 in Ghana: CBS News investigation\n\nIn the blistering heat, CBS News found children in Ghana as young as 5 years old using machetes nearly as big as themselves to harvest the cocoa beans that end up in some of America's most-loved chocolates. Our team traveled across Ghana's remote cocoa belt to visit small subsistence farms that supply the U.S. chocolate giant Mars, which produces candies including M&Ms and Snickers.\n\nWe found children working at each one of the farms — despite the company's vow to have systems in place to eradicate child labor in its supply chain by 2025.\n\nMars has also boasted about rescuing thousands of children, who are listed as beneficiaries of what it calls a robust monitoring system meant to keep children off cocoa plantations and in schools.\n\nCBS News exclusively obtained copies of these lists from a whistleblower and was able to confirm that some of the listed children were still working in the fields.\n\nMunira, 15, is one of those children. She has worked in the cocoa fields since she was 5 years old. Education is a luxury, with her school an hour-long walk away and transportation options expensive. Last year, her family harvested only one bag of decent-quality cocoa. A 140-pound bag of the product fetches only about $115.",
+                  "crisis": "ka782ffnc2ipmaqxb51an0m7"
+                }
+              }
+          outgoingConnections:
+            - output->"Extract JSON" ez9cYYrN1iMIypvzWQBmg/input
+          visualData: -569/423/330/1108//
         '[tSneJ2F42M20RGsm8W9u_]:subGraph "Subgraph"':
           data:
             graphId: TIrXJT0lI1gQdU0jtzkhz
@@ -1319,6 +1360,7 @@ data:
         '[vzD1SMeR-en172gQVjSp2]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Graph Output" KfOHARDNuJGbsL7wsQRjB/value
+            - output->"Http Call" YF20gMQ92bGqsY4vwMMbt/req_body
           visualData: 2476.083253749114/562.6404419130982/280/130//
         '[wlXIDF_D3ab_FCSneCx_n]:getGlobal "Get Global"':
           data:
@@ -1668,7 +1710,7 @@ data:
           data:
             body: ""
             normalizeLineEndings: true
-            text: https://crisis-comms-git-main-flipsidegroup.vercel.app/api/influence-summary?id={{input}}
+            text: https://crisis-comms.vercel.app/api/influence-summary?id={{input}}
           outgoingConnections:
             - output->"Http Call" -3u4TY3RxoDwOwv2PoGAe/url
           visualData: 249.13028814889606/668.2533951106232/330/1092/var(--node-color-2)/var(--node-color-2)
@@ -1971,7 +2013,6 @@ data:
             - match_7->"Set Global" 0mouFF980bt242hGgYlXk/value
             - match_7->"Text" CocxXqVO7vwIgKSISUEL9/documentId
             - match_7->"Text" lTDwHyIvD8GtM-vUQWnZJ/documentId
-            - match_7->"Text" o747HrcX1XEo2Bl_seAFB/input
           visualData: -1112.456167558564/660.9274817907149/280/425//
         '[8jE-ZpLfAnzdBIVRdCP5R]:code "Esape chars"':
           data:
@@ -2271,22 +2312,6 @@ data:
           outgoingConnections:
             - response->"Extract JSON" Xk1Tw7lxeDqacNIT1bMNu/input
           visualData: 1554.2430639057575/-612.7891319636341/230/1101//
-        '[Iz7CjdEDhzVwzP3IMCiNB]:httpCall "Http Call"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: PUT
-            text: ""
-            url: ""
-            useBodyInput: true
-            useHeadersInput: false
-            useUrlInput: true
-          visualData: 904.2939961958964/1158.2674583765736/280/997/var(--node-color-4)/var(--node-color-4)
         '[JNCqGPjRdw12CRqJj6tCY]:text "CRISIS ID FOR SKITTLES"':
           data:
             body: ""
@@ -2856,19 +2881,13 @@ data:
             dataType: string
             id: ID consumed
           visualData: -2031.9689089878525/773.1254515867473/330/1413/var(--node-color-3)/var(--node-color-3)
-        '[o747HrcX1XEo2Bl_seAFB]:text "Text"':
-          data:
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}
-          outgoingConnections:
-            - output->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/url
-          visualData: 180.48985505627164/1080.5999414372866/330/1333//
         '[p5Qh0kyc_g5eWylv3780o]:comment "Comment"':
           data:
             backgroundColor: rgba(0,0,0,0.05)
             color: rgba(255,255,255,1)
-            height: 661.2989123849472
+            height: 307.66693623311176
             text: Define the severity
-          visualData: 43.648670782855476/1017.0829941731288/1232.0641438214789/1011//
+          visualData: 39.90322358921307/1164.4039171230634/818.5333872466224/1453//
         '[q-7FV8Lss_M2GuC2trzea]:setGlobal "Set Global Role"':
           data:
             dataType: string
@@ -2912,9 +2931,7 @@ data:
             graphId: GHgi_Qdv5HEfN9Cwup8cY
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          outgoingConnections:
-            - severity->"Http Call" Iz7CjdEDhzVwzP3IMCiNB/req_body
-          visualData: 477.70326114222934/1379.513217541465/330/1334/var(--node-color-1)/var(--node-color-1)
+          visualData: 435.25485961428205/1269.6467665279545/330/1452/var(--node-color-1)/var(--node-color-1)
         '[rZDXS2m5Sw_t7IdGh4W45]:code "Stringify history"':
           data:
             code: >-
@@ -3074,7 +3091,7 @@ data:
         '[zxftMeqPv_Rfjt9lpoE6Q]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Subgraph" qic03BQQlMsFH93Oh0O67/input
-          visualData: 105.86316061727027/1431.5091608870898/280/993//
+          visualData: 72.15413587448862/1252.976177990135/280/1451//
     hcy2UDhZVh6QP8e0AjKC7:
       metadata:
         description: Check the content of a single release using the vector DB
