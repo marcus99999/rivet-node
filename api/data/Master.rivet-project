@@ -1199,6 +1199,8 @@ data:
             dataType: object
             id: input
             useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Destructure" 7ouISIuZoDgTyf0yhM7sj/object
           visualData: -404.2982173488524/153.73042136537202/330/1093/var(--node-color-3)/var(--node-color-3)
         '[_s43ZTL5W4a5ldiyC7j3k]:chat "Chat"':
           data:
@@ -1237,8 +1239,6 @@ data:
             - response->"Text" q4J6Cr_USUSIiqH2rVE7p/input
           visualData: 2030.3673332067467/298.02329671362577/230/109//
         '[ez9cYYrN1iMIypvzWQBmg]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Destructure" 7ouISIuZoDgTyf0yhM7sj/object
           visualData: -207/576/280/1109//
         '[k6jy8_Nk5sKxENwH9aZ6N]:subGraph "Subgraph"':
           data:
@@ -1343,7 +1343,7 @@ data:
                   "title": "Child Labor Allegations in Cocoa Supply Chain",
                   "date": "2025-06-26",
                   "description": "Candy company Mars uses cocoa harvested by kids as young as 5 in Ghana: CBS News investigation\n\nIn the blistering heat, CBS News found children in Ghana as young as 5 years old using machetes nearly as big as themselves to harvest the cocoa beans that end up in some of America's most-loved chocolates. Our team traveled across Ghana's remote cocoa belt to visit small subsistence farms that supply the U.S. chocolate giant Mars, which produces candies including M&Ms and Snickers.\n\nWe found children working at each one of the farms — despite the company's vow to have systems in place to eradicate child labor in its supply chain by 2025.\n\nMars has also boasted about rescuing thousands of children, who are listed as beneficiaries of what it calls a robust monitoring system meant to keep children off cocoa plantations and in schools.\n\nCBS News exclusively obtained copies of these lists from a whistleblower and was able to confirm that some of the listed children were still working in the fields.\n\nMunira, 15, is one of those children. She has worked in the cocoa fields since she was 5 years old. Education is a luxury, with her school an hour-long walk away and transportation options expensive. Last year, her family harvested only one bag of decent-quality cocoa. A 140-pound bag of the product fetches only about $115.",
-                  "crisis": "ka782ffnc2ipmaqxb51an0m7"
+                  "crisis": "msaj64ic64x0x8tz284rbh9u"
                 }
               }
           outgoingConnections:
