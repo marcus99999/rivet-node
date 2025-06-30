@@ -1239,7 +1239,7 @@ data:
             - response->"Text" q4J6Cr_USUSIiqH2rVE7p/input
           visualData: 2030.3673332067467/298.02329671362577/230/109//
         '[ez9cYYrN1iMIypvzWQBmg]:extractJson "Extract JSON"':
-          visualData: -207/576/280/1109//
+          visualData: -129/436/280/1460//
         '[k6jy8_Nk5sKxENwH9aZ6N]:subGraph "Subgraph"':
           data:
             graphId: _7ny001Rtlr9P7w3EfY8D
@@ -1362,14 +1362,6 @@ data:
             - output->"Graph Output" KfOHARDNuJGbsL7wsQRjB/value
             - output->"Http Call" YF20gMQ92bGqsY4vwMMbt/req_body
           visualData: 2476.083253749114/562.6404419130982/280/130//
-        '[wlXIDF_D3ab_FCSneCx_n]:getGlobal "Get Global"':
-          data:
-            dataType: string
-            id: documentId
-            onDemand: true
-            useIdInput: false
-            wait: false
-          visualData: 182.21996172992368/-148.1792060575412/230/1106/var(--node-color-3)/var(--node-color-3)
         '[ykrdQorXBm6sTD0CYykhr]:subGraph "Subgraph"':
           data:
             graphId: jOpSxxKf2JqdCjND_3e_G
@@ -1903,7 +1895,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" KCt3dmUgSCv1CL6Nnco0u/history
-          visualData: 4718.572968352804/-889.6348007020681/230/1063/var(--node-color-2)/var(--node-color-2)
+          visualData: 4719.8214507506855/-767.2835257097495/230/1462/var(--node-color-2)/var(--node-color-2)
         '[1d_I3CvsuxquLLL25ctDS]:destructure "Destructure"':
           data:
             body: ""
@@ -1916,7 +1908,7 @@ data:
             - match_0->"TEXT - Define role" N9YOhpmU3aaCsH0rF8pKv/task
             - match_0->"Text" lTDwHyIvD8GtM-vUQWnZJ/Tone
             - match_1->"TEXT - Define role" N9YOhpmU3aaCsH0rF8pKv/tone
-          visualData: -1578.0990790473056/-289.54356526642096/280/1097//
+          visualData: -1710.4382132226706/-644.1125662645687/280/1458//
         '[1mRKcxaiTgLwLLKdmgtGm]:code "Esape chars"':
           data:
             code: >-
@@ -1957,7 +1949,7 @@ data:
             graphId: o8S-CeePSytOJAterI2wq
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 8133.259660262225/-1574.518694269388/330/1432/var(--node-color-1)/var(--node-color-1)
+          visualData: 8039.623480421165/-1518.336986364752/330/1464/var(--node-color-1)/var(--node-color-1)
         '[5Vt_w52al8pELwha4UnRD]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -2065,7 +2057,7 @@ data:
             graphId: o8S-CeePSytOJAterI2wq
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 8097.125884600714/-1107.5591318744723/330/1431/var(--node-color-1)/var(--node-color-1)
+          visualData: 8033.453282308793/-962.7351737202993/330/1463/var(--node-color-1)/var(--node-color-1)
         '[Ax5hkueX-YZVwVDb0c62a]:destructure "Destructure"':
           data:
             paths:
@@ -2117,7 +2109,7 @@ data:
             dataType: string
             id: story
             useIdInput: false
-          visualData: 1633.0747060473436/-76.07659122542043/230/1326//
+          visualData: 1631.826223649463/144.90479319948153/230/1460//
         '[CocxXqVO7vwIgKSISUEL9]:text "Text"':
           data:
             text: >-
@@ -2404,7 +2396,7 @@ data:
             - output->"Set Global Role" q-7FV8Lss_M2GuC2trzea/value
             - output->"Text" lTDwHyIvD8GtM-vUQWnZJ/role
             - output->"Text" vGUWgOtAY-i7sxm-WJ7eb/role
-          visualData: -917.035218889501/-207.26675385946504/330/1099/var(--node-color-3)/var(--node-color-3)
+          visualData: -1300.3193150389072/-493.1692229741687/330/1459/var(--node-color-3)/var(--node-color-3)
         '[NNAmUBvMRaT47tbDU5-WC]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" HmDdB8p2wc8vu8FcBadjI/object
@@ -2429,7 +2421,7 @@ data:
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/tone-of-voices
           outgoingConnections:
             - json->"Destructure" 1d_I3CvsuxquLLL25ctDS/object
-          visualData: -1636.717456853748/-881.121903987407/280/883/var(--node-color-4)/var(--node-color-4)
+          visualData: -2068.6923665205054/-868.637080008599/280/1457/var(--node-color-4)/var(--node-color-4)
         '[P1s1Jkq4pQh1VXrNEUFNe]:destructure "Destructure"':
           data:
             paths:
@@ -2494,9 +2486,9 @@ data:
           data:
             backgroundColor: rgba(0,0,0,0.05)
             color: rgba(255,255,255,1)
-            height: 1043.8609724340745
+            height: 766.352083691654
             text: Create role
-          visualData: -1755.1826378964747/-940.1360241898007/1308.654927271846/916//
+          visualData: -2120.9879804755496/-937.639059394039/1643.2363415809273/1456//
         '[W888kIoF-SH_n2m0tV7Rc]:text "Text"':
           data:
             body: ""
@@ -2668,13 +2660,6 @@ data:
           outgoingConnections:
             - response->"Extract JSON" foghClfs0RpllTUuFHt-Q/input
           visualData: 2235.16007930099/627.4246883271637/230/1029//
-        '[bqckyf2pK3-sULlIQFUw0]:comment "Comment"':
-          data:
-            backgroundColor: rgba(0,0,0,0.05)
-            color: rgba(255,255,255,1)
-            height: 597.2698296024814
-            text: Call in the content from Strapi
-          visualData: -1569.739174387927/456.69059632781625/804.7758411904256/1331//
         '[cKjknBn_o8XEPm2EFP1C3]:httpCall "HTTP - Get crises"':
           data:
             body: ""
@@ -2894,7 +2879,7 @@ data:
             id: role
             text: ""
             useIdInput: false
-          visualData: -812.8646502629709/-797.4300311874822/230/1096//
+          visualData: -784.1495551117125/-802.4239607790054/230/1455//
         '[q-Jg-oegWFhpJfpNaq5YM]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -2925,7 +2910,7 @@ data:
           outgoingConnections:
             - output1->"Text" KCt3dmUgSCv1CL6Nnco0u/detail
             - output1->"Text" slwZi5WuxceneksXs_M6Y/response
-          visualData: 4741.448697711939/-1335.5818041861803/230/1282/var(--node-color-2)/var(--node-color-2)
+          visualData: 4722.721461743727/-1148.3094445040601/230/1461/var(--node-color-2)/var(--node-color-2)
         '[qic03BQQlMsFH93Oh0O67]:subGraph "Subgraph"':
           data:
             graphId: GHgi_Qdv5HEfN9Cwup8cY
@@ -2993,7 +2978,7 @@ data:
             graphId: o8S-CeePSytOJAterI2wq
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 8102.684927010178/-1959.4823811247206/330/1434/var(--node-color-1)/var(--node-color-1)
+          visualData: 8012.794194362761/-1969.470240307767/330/1465/var(--node-color-1)/var(--node-color-1)
         '[tEzx1gfv3oT5tzEpObm53]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -3284,40 +3269,6 @@ data:
           outgoingConnections:
             - response->"Graph Output" KQRuERJDGLd1l16j4ab5w/value
           visualData: 2019.815380508604/359.47484734212014/230/21//
-    l_qOMNG_p0UM3yOSO2O29:
-      metadata:
-        description: ""
-        id: l_qOMNG_p0UM3yOSO2O29
-        name: "* Type fix subgraph"
-      nodes:
-        '[9FhlORNwZYcIVHtLJaxqi]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Destructure" QEn1E8xVZzB_bS764rMrr/object
-          visualData: 721.71079670396/386.68672057136405/280/802//
-        '[QEn1E8xVZzB_bS764rMrr]:destructure "Destructure"':
-          data:
-            paths:
-              - $.data.history[0].rewrite
-          outgoingConnections:
-            - match_0->"Graph Output" wLpk1ymSPlqIjm7PlEhL7/value
-          visualData: 1054.7203843220875/389.500445937691/280/803//
-        '[dTuFNljWI8EZD_ylncCwr]:text "Text"':
-          data:
-            text: "{{input}}"
-          outgoingConnections:
-            - output->"Extract JSON" 9FhlORNwZYcIVHtLJaxqi/input
-          visualData: 328.59824376627853/374.78808718390417/330/801//
-        '[wLpk1ymSPlqIjm7PlEhL7]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: output
-          visualData: 1383.8314940199007/382.7851479137843/330/804/var(--node-color-3)/var(--node-color-3)
-        '[ziNEvMm2gbmrP5s8p2qTy]:graphInput "Graph Input"':
-          data:
-            dataType: string
-            id: input
-            useDefaultValueInput: false
-          visualData: -66.36410962894178/314.03516910390215/330/796/var(--node-color-3)/var(--node-color-3)
     lzDkeo10TytZALkz8u7nq:
       metadata:
         description: Apply best practices and create Q&A statements
@@ -3525,7 +3476,7 @@ data:
                   }
                 ]
               }
-          visualData: -1498.7732747257287/665.5500714537284/330/1361//
+          visualData: -1150.457473814161/488.7927993493507/330/1366//
         '[3jzPS5iSz008yygaMwqM8]:graphOutput "Graph Output"':
           data:
             dataType: string
