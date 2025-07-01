@@ -1936,7 +1936,7 @@ data:
           data:
             dataType: string
             id: Title
-          visualData: -780.6169598493935/-103.70118931814955/330/1466/var(--node-color-3)/var(--node-color-3)
+          visualData: -687.699845665739/267.9672674164687/330/1445/var(--node-color-3)/var(--node-color-3)
         '[4PpdHSOarBvynuMBQSfp0]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -1994,7 +1994,6 @@ data:
           outgoingConnections:
             - match_0->"Graph Output" 2uPrdf3woHnGtAJDrw2Lz/value
             - match_0->"Text" CocxXqVO7vwIgKSISUEL9/Crisis
-            - match_0->"Text" zNdE05qaH8cEWgJgCkWGh/title
             - match_1->"Text" CocxXqVO7vwIgKSISUEL9/Description
             - match_2->"Text" CocxXqVO7vwIgKSISUEL9/Location
             - match_3->"TEXT - Define role" N9YOhpmU3aaCsH0rF8pKv/Company
@@ -2006,7 +2005,6 @@ data:
             - match_7->"Set Global" 0mouFF980bt242hGgYlXk/value
             - match_7->"Text" CocxXqVO7vwIgKSISUEL9/documentId
             - match_7->"Text" lTDwHyIvD8GtM-vUQWnZJ/documentId
-            - match_7->"Text" zNdE05qaH8cEWgJgCkWGh/documentId
           visualData: -1112.456167558564/660.9274817907149/280/425//
         '[8jE-ZpLfAnzdBIVRdCP5R]:code "Esape chars"':
           data:
@@ -2678,23 +2676,7 @@ data:
             useUrlInput: true
           outgoingConnections:
             - json->"Destructure" 7eyt6KkrPUqx01ZWsuWGh/object
-          visualData: -1480.2231785001838/559.3316352095475/280/1467/var(--node-color-4)/var(--node-color-4)
-        '[cXG44O2UPJrrr6iCMJbj6]:httpCall "HTTP - Update timeline"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: POST
-            text: ""
-            url: https://crisis-comms.vercel.app/api/submit-timeline
-            useBodyInput: true
-            useHeadersInput: false
-            useUrlInput: false
-          visualData: -614.9646321683156/156.40764428194126/280/1468/var(--node-color-4)/var(--node-color-4)
+          visualData: -1480.2231785001838/559.3316352095475/280/1015/var(--node-color-4)/var(--node-color-4)
         '[cuCCQJ8eyAIOus86mcozC]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -3091,21 +3073,6 @@ data:
           outgoingConnections:
             - output->"Esape chars" PL7deJDgrL1vwG8Fs8-jA/input1
           visualData: 4310.265296250302/-2276.140111095079/330/1060//
-        '[zNdE05qaH8cEWgJgCkWGh]:text "Text"':
-          data:
-            body: ""
-            normalizeLineEndings: true
-            text: >-
-              {
-                  "title": "{{title}} generate",
-                  "description": "Generated for set of documents for {{title}}.",
-                  "type": "generated",
-                  "date": "2025-07-01T12:00:00.000Z",
-                  "documentId": "{{documentId}}"
-                }
-          outgoingConnections:
-            - output->"HTTP - Update timeline" cXG44O2UPJrrr6iCMJbj6/req_body
-          visualData: -1031.4324118129102/307.3979548303799/330/1471//
         '[zxftMeqPv_Rfjt9lpoE6Q]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Subgraph" qic03BQQlMsFH93Oh0O67/input
