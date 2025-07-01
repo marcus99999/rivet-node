@@ -2310,7 +2310,7 @@ data:
           data:
             body: ""
             text: nvsvrsajrztv8ih5yjpq7uj5
-          visualData: -2274.3600254527605/146.4976819220388/330/1448//
+          visualData: -2345.7070952723525/236.0963277419914/330/1473//
         '[KCt3dmUgSCv1CL6Nnco0u]:text "Text"':
           data:
             text: |-
@@ -2694,7 +2694,7 @@ data:
             useBodyInput: true
             useHeadersInput: false
             useUrlInput: false
-          visualData: -614.9646321683156/156.40764428194126/280/1468/var(--node-color-4)/var(--node-color-4)
+          visualData: -596.7130561679548/108.28985300826301/280/1474/var(--node-color-4)/var(--node-color-4)
         '[cuCCQJ8eyAIOus86mcozC]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -2761,6 +2761,34 @@ data:
             text: Long form press release - NOTE TITLE IS PASSED BUT NOT USED - COULD BE
               ADDED
           visualData: 1780.9199859891603/380.47046833164717/1498.4394066305986/1027//
+        '[jEdzh4HfFDqUIiBp6Hug9]:code "Code"':
+          data:
+            allowConsole: false
+            allowFetch: false
+            allowProcess: false
+            allowRequire: false
+            allowRivet: false
+            code: >
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: new Date().toISOString()
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" zNdE05qaH8cEWgJgCkWGh/date
+          visualData: -1383.1900583653169/161.3853468274943/230/1476/var(--node-color-2)/var(--node-color-2)
         '[k-klyzvhniFfqH5hvjuOU]:destructure "Destructure"':
           data:
             paths:
@@ -3097,15 +3125,15 @@ data:
             normalizeLineEndings: true
             text: >-
               {
-                  "title": "{{title}} generate",
-                  "description": "Generated for set of documents for {{title}}.",
+                  "title": "{{title}} generated",
+                  "description": "Generated a full set of media documents for {{title}}.",
                   "type": "generated",
-                  "date": "2025-07-01T12:00:00.000Z",
+                  "date": "{{date}}",
                   "documentId": "{{documentId}}"
                 }
           outgoingConnections:
             - output->"HTTP - Update timeline" cXG44O2UPJrrr6iCMJbj6/req_body
-          visualData: -1031.4324118129102/307.3979548303799/330/1471//
+          visualData: -1019.8177725399535/207.84390391932146/330/1477//
         '[zxftMeqPv_Rfjt9lpoE6Q]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Subgraph" qic03BQQlMsFH93Oh0O67/input
