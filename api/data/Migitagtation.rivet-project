@@ -15,7 +15,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: 1475.8882482185616/228.67275913150934/330/1479/var(--node-color-3)/var(--node-color-3)
+          visualData: 1782.428327185126/583.7480158459636/330/1513/var(--node-color-3)/var(--node-color-3)
         '[10rBbon9nkoufyU-W4Y0j]:chat "Chat"':
           data:
             additionalParameters: []
@@ -49,19 +49,59 @@ data:
             useUseTopPInput: false
             useUserInput: false
           outgoingConnections:
-            - response->"Graph Output" 0x-taRL5fr6bEum-KnR8X/value
-          visualData: 972.345486057297/328.0592968636204/230/1487//
+            - response->"Esape chars" uitmtAkYGhJmqyrN4UQkg/input1
+          visualData: 261.8464244300052/597.1877292982007/230/1509//
+        '[1Klu1ioSJYBa7Ds7pNtw3]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}
+          outgoingConnections:
+            - output->"HTTP - Insert mitigation" S27i38-SRwo7cYFIC6gIT/url
+          visualData: 670.3599182675596/-233.70233125433393/330/1503//
+        '[4tF5xIYFpbYYK0W-GlImf]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                  "data": {
+                    "mitigation": "{{input}}"
+                  }
+                }
+          outgoingConnections:
+            - output->"HTTP - Insert mitigation" S27i38-SRwo7cYFIC6gIT/req_body
+          visualData: 1264.9746564237823/902.1366173314054/330/1516//
         '[Ien0KJN8utqEBDR75lWrH]:extractJson "Extract JSON"':
           visualData: -239.56982769106952/210.5598670257706/280/1477//
+        '[K1y0V3VkVifPkiR3EFoNc]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=company&populate=region
+          outgoingConnections:
+            - output->"HTTP - Get crises" z3tle3otOUDFmZM9f5q1f/url
+          visualData: -1413.463087154476/-26.088969090514873/330/1501//
         '[L0HmLm555BzfO9JbpHh7f]:text "Text"':
           data:
             body: ""
+            headers: ""
             normalizeLineEndings: true
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/personas?filters%5Bcrises%5D%5BdocumentId%5D%5B$contains%5D={{crisis}}
           outgoingConnections:
-            - output->"HTTP - Get crises" z3tle3otOUDFmZM9f5q1f/url
             - output->"HTTP - Get personas" hBVsNUSqGH2TuiHEshWmD/url
-          visualData: -1378.8266707063406/123.76669631315488/330/1485//
+          visualData: -1380.3645474631096/609.7357514521684/330/1493//
+        '[S27i38-SRwo7cYFIC6gIT]:httpCall "HTTP - Insert mitigation"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: PUT
+            url: ""
+            useBodyInput: true
+            useUrlInput: true
+          visualData: 1831.4049440905596/-15.65364551920418/280/1512/var(--node-color-4)/var(--node-color-4)
         '[hBVsNUSqGH2TuiHEshWmD]:httpCall "HTTP - Get personas"':
           data:
             body: ""
@@ -72,6 +112,7 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: GET
+            text: ""
             url: ""
             useUrlInput: true
           outgoingConnections:
@@ -84,8 +125,10 @@ data:
             id: input
             useDefaultValueInput: false
           outgoingConnections:
+            - data->"Text" 1Klu1ioSJYBa7Ds7pNtw3/input
+            - data->"Text" K1y0V3VkVifPkiR3EFoNc/input
             - data->"Text" L0HmLm555BzfO9JbpHh7f/crisis
-          visualData: -1883.8528981652494/47.720652752125716/330/1490/var(--node-color-3)/var(--node-color-3)
+          visualData: -1909.3795778860335/153.23092893136715/330/1517/var(--node-color-3)/var(--node-color-3)
         '[kLyZEPhtIWW_D7psS9NTj]:destructure "Destructure"':
           data:
             body: ""
@@ -103,11 +146,35 @@ data:
             - match_1->"Chat" 10rBbon9nkoufyU-W4Y0j/prompt
             - match_2->"Text" zeDLoPsS3HB_upu6l9ABK/regions
           visualData: -531.437197343131/-276.32087753918233/280/1488//
+        '[uitmtAkYGhJmqyrN4UQkg]:code "Esape chars"':
+          data:
+            code: >-
+              const inputText = inputs.input1.value;
+
+
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .replace(/"/g, '\\"')       // Escape double quotes
+                .trim();                    // Trim leading/trailing whitespace
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Graph Output" 0x-taRL5fr6bEum-KnR8X/value
+            - output1->"Text" 4tF5xIYFpbYYK0W-GlImf/input
+          visualData: 828.7810304778061/631.4158120207074/230/1515/var(--node-color-2)/var(--node-color-2)
         '[vdi2_MRTHUwp48VCqA1_t]:text "Text"':
           data:
             normalizeLineEndings: true
             text: dky8i30kisowxhuupwo8iz5l
-          visualData: -1792.3842570835102/284.0649984851223/330/1484//
+          visualData: -1938.4825489765678/391.7163714589544/330/1504//
         '[z3tle3otOUDFmZM9f5q1f]:httpCall "HTTP - Get crises"':
           data:
             body: ""
@@ -169,7 +236,7 @@ data:
               {{stakeholders}}
           outgoingConnections:
             - output->"Chat" 10rBbon9nkoufyU-W4Y0j/systemPrompt
-          visualData: 330.0376307019129/64.93044021767611/330/1482//
+          visualData: 154.7196804302435/-8.887644107237335/330/1505//
   metadata:
     description: ""
     id: TuuPLaxaloDBZ0w1TcHo3
