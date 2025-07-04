@@ -16,40 +16,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   console.log("🚀 /api/run triggered");
   console.log("📦 Headers:", JSON.stringify(req.headers, null, 2));
 
-const origin = req.headers.origin || "";
+  const origin = req.headers.origin || "";
   console.log("🌍 Request origin:", origin);
 
-const isAllowed = ALLOWED_ORIGINS.includes(origin);
+  const isAllowed = ALLOWED_ORIGINS.includes(origin);
   console.log("✅ Is allowed origin:", isAllowed);
 
-
-
-
-
-
-if (req.method === "OPTIONS") {
   if (isAllowed) {
     res.setHeader("Access-Control-Allow-Origin", origin);
+    res.setHeader("Vary", "Origin");
   }
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.setHeader("Vary", "Origin");
-
-  console.log(isAllowed ? "🔄 OPTIONS preflight accepted." : "🚫 OPTIONS preflight blocked.");
-  return res.status(isAllowed ? 200 : 403).end();
-}
-
-if (isAllowed) {
-  res.setHeader("Access-Control-Allow-Origin", origin);
-  res.setHeader("Vary", "Origin");
-} else {
-  console.warn("🚫 Origin not allowed:", origin);
-  return res.status(403).json({ error: "Forbidden: origin not allowed" });
-}
-
-
-
-
 
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
@@ -64,7 +40,6 @@ if (isAllowed) {
 
   console.log("🔐 Received token:", token);
   console.log("🎯 Expected token:", expectedToken);
-
 
   if (!expectedToken || token !== expectedToken) {
     console.warn("🚫 Forbidden request: invalid or missing token.");
@@ -98,9 +73,17 @@ if (isAllowed) {
 
     const datasetProvider = await NodeDatasetProvider.fromProjectFile(project, { save: false });
 
+    // 🔍 NEW: Accumulate outputs from all nodes (including subgraphs)
+    const allNodeOutputs: Record<string, any> = {};
+
     const result = await runGraphInFile(project, {
       graph,
-      remoteDebugger: undefined,
+      remoteDebugger: {
+        onNodeExecuted: (info) => {
+          allNodeOutputs[info.nodeId] = info.output;
+          console.log(`📌 Node executed: ${info.nodeId}`, info.output);
+        },
+      },
       inputs,
       context: {},
       externalFunctions: {},
@@ -109,7 +92,6 @@ if (isAllowed) {
       datasetProvider,
     } as RunGraphOptions);
 
-
     console.log("✅ Graph executed successfully.");
     console.log("🟢 Outputs:", result || {});
     console.log("🟡 Partial outputs:", result.partialOutputs || {});
@@ -117,11 +99,13 @@ if (isAllowed) {
       console.warn("⚠️ Graph node-level errors:", result.errors);
     }
 
+    // ✅ Add allNodeOutputs to the response
     res.status(200).json({
       message: "Graph executed successfully.",
       prompt: inputs.stringGraph,
-      outputs: result || {},
+      outputs: result.outputs || {},
       partialOutputs: result.partialOutputs || {},
+      nodeOutputs: allNodeOutputs, // ✅ new line
       errors: result.errors || [],
     });
   } catch (err: any) {
