@@ -1497,7 +1497,7 @@ data:
       metadata:
         description: ""
         id: SZiVEz7iWEzO58OzSARGq
-        name: Mitigation - SOLO
+        name: Mitigation
       nodes:
         '[-9y7bKgt9t-UZOHqbplYb]:httpCall "HTTP - Get crises"':
           data:
@@ -2207,6 +2207,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Graph Output" nT_8sfzahbwZNsPj2AWK0/value
+            - data->"Mitigation" ykAfnK8lI7luub7SggyJ0/stringGraph
             - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
           visualData: -2744.839120608272/658.6536749652059/330/1403/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
@@ -2656,6 +2657,11 @@ data:
           outgoingConnections:
             - json->"Destructure" 1d_I3CvsuxquLLL25ctDS/object
           visualData: -2068.6923665205054/-868.637080008599/280/1457/var(--node-color-4)/var(--node-color-4)
+        '[P-ksQNwNI_x344C2ks26n]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: Mitigations
+          visualData: 297.9220805717546/1632.863430707764/330/null/var(--node-color-3)/var(--node-color-3)
         '[P1s1Jkq4pQh1VXrNEUFNe]:destructure "Destructure"':
           data:
             paths:
@@ -3351,6 +3357,14 @@ data:
           outgoingConnections:
             - json->"Destructure" KJ0n7LZTEzcnuQDvmpaz4/object
           visualData: -341.409286403287/-502.1614298576312/280/463/var(--node-color-4)/var(--node-color-4)
+        '[ykAfnK8lI7luub7SggyJ0]:subGraph "Mitigation"':
+          data:
+            graphId: SZiVEz7iWEzO58OzSARGq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - Mitigation->"Graph Output" P-ksQNwNI_x344C2ks26n/value
+          visualData: -268.64521031658035/1591.9200913271618/330/1486/var(--node-color-1)/var(--node-color-1)
         '[zKdgkKa2zUZ5TKLX_tXgg]:text "Text"':
           data:
             normalizeLineEndings: true
