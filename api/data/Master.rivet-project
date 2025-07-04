@@ -1597,7 +1597,7 @@ data:
               Do not reiterate the description of the crisis or add a title. Do not add any additional editorial context at the end of the recommendations.
 
 
-              Add a line break above each item recommendation and add a double line break before the main Short / Medium / Long term sections. Add a dash at the start of each specific suggestion.
+              Add a line break above each item recommendation and add a double line break before the main Short / Medium / Long term sections.
 
 
               The crisis description will be provided in the prompt.
