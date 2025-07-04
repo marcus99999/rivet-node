@@ -1932,11 +1932,11 @@ data:
           outgoingConnections:
             - output1->"Set Global" CUV14RQmCdM2ueUbiTCjn/value
           visualData: 1307.5463351034061/134.84206297793511/230/1286/var(--node-color-2)/var(--node-color-2)
-        '[2uPrdf3woHnGtAJDrw2Lz]:graphOutput "Graph Output"':
+        '[2uPrdf3woHnGtAJDrw2Lz]:graphOutput "Graph Output - Document title"':
           data:
             dataType: string
             id: Title
-          visualData: -780.6169598493935/-103.70118931814955/330/1466/var(--node-color-3)/var(--node-color-3)
+          visualData: -938.057092823623/-22.731978074260127/330/1479/var(--node-color-3)/var(--node-color-3)
         '[4PpdHSOarBvynuMBQSfp0]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -1992,7 +1992,8 @@ data:
               - $.data.brand
               - $.data.documentId
           outgoingConnections:
-            - match_0->"Graph Output" 2uPrdf3woHnGtAJDrw2Lz/value
+            - match_0->"Graph Output - Document title"
+              2uPrdf3woHnGtAJDrw2Lz/value
             - match_0->"Text" CocxXqVO7vwIgKSISUEL9/Crisis
             - match_0->"Text" zNdE05qaH8cEWgJgCkWGh/title
             - match_1->"Text" CocxXqVO7vwIgKSISUEL9/Description
@@ -2491,6 +2492,11 @@ data:
             height: 766.352083691654
             text: Create role
           visualData: -2120.9879804755496/-937.639059394039/1643.2363415809273/1456//
+        '[TkiAWaAbj2CrKNN4Ou7wZ]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: Severity
+          visualData: 951.5222363238577/1274.4549571901343/330/1481/var(--node-color-3)/var(--node-color-3)
         '[W888kIoF-SH_n2m0tV7Rc]:text "Text"':
           data:
             body: ""
@@ -2962,7 +2968,9 @@ data:
             graphId: GHgi_Qdv5HEfN9Cwup8cY
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 435.25485961428205/1269.6467665279545/330/1452/var(--node-color-1)/var(--node-color-1)
+          outgoingConnections:
+            - severity->"Graph Output" TkiAWaAbj2CrKNN4Ou7wZ/value
+          visualData: 435.25485961428205/1269.6467665279545/330/1480/var(--node-color-1)/var(--node-color-1)
         '[rZDXS2m5Sw_t7IdGh4W45]:code "Stringify history"':
           data:
             code: >-
