@@ -1,0 +1,178 @@
+version: 4
+data:
+  attachedData:
+    trivet:
+      testSuites: []
+      version: 1
+  graphs:
+    809b_gdXYTUY38viAEkQ5:
+      metadata:
+        description: ""
+        id: 809b_gdXYTUY38viAEkQ5
+        name: MASTER
+      nodes:
+        '[0x-taRL5fr6bEum-KnR8X]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1475.8882482185616/228.67275913150934/330/1479/var(--node-color-3)/var(--node-color-3)
+        '[10rBbon9nkoufyU-W4Y0j]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4-turbo
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Graph Output" 0x-taRL5fr6bEum-KnR8X/value
+          visualData: 972.345486057297/328.0592968636204/230/1487//
+        '[Ien0KJN8utqEBDR75lWrH]:extractJson "Extract JSON"':
+          visualData: -239.56982769106952/210.5598670257706/280/1477//
+        '[L0HmLm555BzfO9JbpHh7f]:text "Text"':
+          data:
+            body: ""
+            normalizeLineEndings: true
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/personas?filters%5Bcrises%5D%5BdocumentId%5D%5B$contains%5D={{crisis}}
+          outgoingConnections:
+            - output->"HTTP - Get crises" z3tle3otOUDFmZM9f5q1f/url
+            - output->"HTTP - Get personas" hBVsNUSqGH2TuiHEshWmD/url
+          visualData: -1378.8266707063406/123.76669631315488/330/1485//
+        '[hBVsNUSqGH2TuiHEshWmD]:httpCall "HTTP - Get personas"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            url: ""
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Text" zeDLoPsS3HB_upu6l9ABK/stakeholders
+            - res_body->"Extract JSON" Ien0KJN8utqEBDR75lWrH/input
+          visualData: -702.285533426842/341.0753628222343/280/1486/var(--node-color-4)/var(--node-color-4)
+        '[j11vuh75O3DDbk9Q33J2_]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" L0HmLm555BzfO9JbpHh7f/crisis
+          visualData: -1883.8528981652494/47.720652752125716/330/1490/var(--node-color-3)/var(--node-color-3)
+        '[kLyZEPhtIWW_D7psS9NTj]:destructure "Destructure"':
+          data:
+            body: ""
+            headers: ""
+            paths:
+              - $.data.title
+              - $.data.description
+              - $.data.region.region
+              - $.data.company.title
+              - $.data.date
+              - $.data.severity
+              - $.data.brand
+              - $.data.documentId
+          outgoingConnections:
+            - match_1->"Chat" 10rBbon9nkoufyU-W4Y0j/prompt
+            - match_2->"Text" zeDLoPsS3HB_upu6l9ABK/regions
+          visualData: -531.437197343131/-276.32087753918233/280/1488//
+        '[vdi2_MRTHUwp48VCqA1_t]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: dky8i30kisowxhuupwo8iz5l
+          visualData: -1792.3842570835102/284.0649984851223/330/1484//
+        '[z3tle3otOUDFmZM9f5q1f]:httpCall "HTTP - Get crises"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: ""
+            useHeadersInput: false
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Destructure" kLyZEPhtIWW_D7psS9NTj/object
+          visualData: -933.6910945552964/-260.96119676806495/280/1489/var(--node-color-4)/var(--node-color-4)
+        '[zeDLoPsS3HB_upu6l9ABK]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You are a senior crisis communications strategist advising a major
+              FMCG (fast-moving consumer goods) company. A PR crisis has
+              emerged. Your task is to propose a comprehensive set of mitigation
+              strategies to resolve the situation, minimize reputational harm,
+              and address stakeholder concerns.
+
+
+              Please ensure the strategies are:
+              	•	Specific, actionable, and realistic
+              	•	Categorized into:
+              	•	Short-Term (0-48 hours)
+              	•	Medium-Term (2-4 weeks)
+              	•	Long-Term (1+ months)
+              	•	Tailored to the FMCG sector, especially food and beverage
+              	•	Clearly indicate which stakeholder(s) each action addresses (e.g., regulators, consumers, media, internal staff)
+              	•	Aligned with the regional context (e.g., cultural, regulatory)
+              	•	Legally appropriate, assuming potential liability, regulatory scrutiny, and public backlash
+
+              Please avoid generic responses. Focus on strategies that would be expected from a high-level corporate reputation advisor during a real-world crisis.
+
+
+              Do not reiterate the description of the crisis.
+
+
+              ⸻
+
+
+              Crisis description will be provided in the user prompt.
+
+
+              Regions:
+
+              {{regions}}
+
+
+              Primary Stakeholders Involved (in JSON format):
+
+              {{stakeholders}}
+          outgoingConnections:
+            - output->"Chat" 10rBbon9nkoufyU-W4Y0j/systemPrompt
+          visualData: 330.0376307019129/64.93044021767611/330/1482//
+  metadata:
+    description: ""
+    id: TuuPLaxaloDBZ0w1TcHo3
+    title: Migitagtation strategies
+  plugins: []
+  references: []
