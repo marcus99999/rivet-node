@@ -16,11 +16,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   console.log("🚀 /api/run triggered");
   console.log("📦 Headers:", JSON.stringify(req.headers, null, 2));
 
-  const origin = req.headers.origin || "";
+const origin = req.headers.origin || "";
   console.log("🌍 Request origin:", origin);
 
-  const isAllowed = ALLOWED_ORIGINS.includes(origin);
+const isAllowed = ALLOWED_ORIGINS.includes(origin);
   console.log("✅ Is allowed origin:", isAllowed);
+
 
 
 
@@ -29,22 +30,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 if (req.method === "OPTIONS") {
   if (isAllowed) {
     res.setHeader("Access-Control-Allow-Origin", origin);
-    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    res.setHeader("Vary", "Origin");
-    console.log("🔄 OPTIONS preflight request handled.");
-    return res.status(200).end();
-  } else {
-    console.warn("🚫 OPTIONS preflight denied for origin:", origin);
-    return res.status(403).end();
   }
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.setHeader("Vary", "Origin");
+
+  console.log(isAllowed ? "🔄 OPTIONS preflight accepted." : "🚫 OPTIONS preflight blocked.");
+  return res.status(isAllowed ? 200 : 403).end();
 }
 
-// For all other requests:
 if (isAllowed) {
   res.setHeader("Access-Control-Allow-Origin", origin);
   res.setHeader("Vary", "Origin");
+} else {
+  console.warn("🚫 Origin not allowed:", origin);
+  return res.status(403).json({ error: "Forbidden: origin not allowed" });
 }
+
 
 
 
