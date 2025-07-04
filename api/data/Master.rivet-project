@@ -1547,7 +1547,7 @@ data:
         '[HxY7Vco1zpsd8-UCSkyLy]:graphOutput "Graph Output"':
           data:
             dataType: string
-            id: output
+            id: Mitigation
           visualData: 3575.376671052552/852.1333340959568/330/1518/var(--node-color-3)/var(--node-color-3)
         '[Lt8vpUsRKyAho1XDe4oi3]:text "Text"':
           data:
