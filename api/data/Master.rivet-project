@@ -1594,16 +1594,16 @@ data:
               Please avoid generic responses. Focus on strategies that would be expected from a high-level corporate reputation advisor during a real-world crisis.
 
 
-              Do not reiterate the description of the crisis or add a title. Do not add any additional context at the end of the recommendations.
+              Do not reiterate the description of the crisis or add a title. Do not add any additional editorial context at the end of the recommendations.
 
 
-              ⸻
+              Add a line break above each item recommendation and add a double line break before the main Short / Medium / Long term sections.
 
 
-              Crisis description will be provided in the user prompt.
+              The crisis description will be provided in the prompt.
 
 
-              Regions:
+              Geographic Regions:
 
               {{regions}}
 
