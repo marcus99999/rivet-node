@@ -1569,7 +1569,7 @@ data:
             - data->"Text" 2qTXQQ-mueH3dYlY6HDiL/input
             - data->"Text" 9FDqQSeUUwDtGPcR4rZhL/input
             - data->"Text" Lt8vpUsRKyAho1XDe4oi3/crisis
-          visualData: -116.43123401860737/421.61624718136045/330/1519/var(--node-color-3)/var(--node-color-3)
+          visualData: -232.57762674817556/371.83922172583124/330/1520/var(--node-color-3)/var(--node-color-3)
         '[dT8AezNdPD0yf66YE3Akm]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -1582,20 +1582,19 @@ data:
 
 
               Please ensure the strategies are:
+
               	•	Specific, actionable, and realistic
               	•	Categorized into:
               	•	Short-Term (0-48 hours)
               	•	Medium-Term (2-4 weeks)
               	•	Long-Term (1+ months)
               	•	Tailored to the FMCG sector, especially food and beverage
-              	•	Clearly indicate which stakeholder(s) each action addresses (e.g., regulators, consumers, media, internal staff)
-              	•	Aligned with the regional context (e.g., cultural, regulatory)
               	•	Legally appropriate, assuming potential liability, regulatory scrutiny, and public backlash
 
               Please avoid generic responses. Focus on strategies that would be expected from a high-level corporate reputation advisor during a real-world crisis.
 
 
-              Do not reiterate the description of the crisis.
+              Do not reiterate the description of the crisis or add a title. Do not add any additional context at the end of the recommendations.
 
 
               ⸻
@@ -1661,7 +1660,7 @@ data:
                 }
           outgoingConnections:
             - output->"HTTP - Insert mitigation" -SR7aCK96w8jYJskz2M82/req_body
-          visualData: 3057.9230002912086/1170.5219355813986/330/1518//
+          visualData: 3044.9230002912086/1055.5219355813986/330/1525//
         '[j5DK8R0YfI46-D5F9M3YU]:code "Esape chars"':
           data:
             code: >-
@@ -1685,7 +1684,7 @@ data:
           outgoingConnections:
             - output1->"Graph Output" HxY7Vco1zpsd8-UCSkyLy/value
             - output1->"Text" j0zDABDt5pu8dftQxZ3nM/input
-          visualData: 2621.7293743452324/899.8011302707007/230/1518/var(--node-color-2)/var(--node-color-2)
+          visualData: 2554.7293743452324/775.8011302707007/230/1524/var(--node-color-2)/var(--node-color-2)
         '[pDTq9inWYMOHOVRtxKqIf]:httpCall "HTTP - Get personas"':
           data:
             body: ""
@@ -2999,7 +2998,7 @@ data:
             text: Long form press release - NOTE TITLE IS PASSED BUT NOT USED - COULD BE
               ADDED
           visualData: 1780.9199859891603/380.47046833164717/1498.4394066305986/1027//
-        '[jEdzh4HfFDqUIiBp6Hug9]:code "Code"':
+        '[jEdzh4HfFDqUIiBp6Hug9]:code "Code - Todays date"':
           data:
             allowConsole: false
             allowFetch: false
@@ -3026,7 +3025,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" zNdE05qaH8cEWgJgCkWGh/date
-          visualData: -1383.1900583653169/161.3853468274943/230/1476/var(--node-color-2)/var(--node-color-2)
+          visualData: -1785.1900583653169/78.38534682749429/230/1483/var(--node-color-2)/var(--node-color-2)
         '[k-klyzvhniFfqH5hvjuOU]:destructure "Destructure"':
           data:
             paths:
