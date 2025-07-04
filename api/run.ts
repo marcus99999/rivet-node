@@ -2,7 +2,6 @@ import { fileURLToPath } from "url";
 import path from "path";
 import { runGraphInFile, NodeDatasetProvider, RunGraphOptions } from "@ironclad/rivet-node";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { NodeExecutionInfo } from "@ironclad/rivet-node";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -80,10 +79,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const result = await runGraphInFile(project, {
       graph,
       remoteDebugger: {
-        onNodeExecuted: (info: NodeExecutionInfo) => {
-          allNodeOutputs[info.nodeId] = info.output;
-          console.log(`📌 Node executed: ${info.nodeId}`, info.output);
-        },
+        onNodeExecuted: (info: { nodeId: string; output: any }) => {
+  allNodeOutputs[info.nodeId] = info.output;
+  console.log(`📌 Node executed: ${info.nodeId}`, info.output);
+},
       },
       inputs,
       context: {},
