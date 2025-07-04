@@ -1493,6 +1493,238 @@ data:
           outgoingConnections:
             - output->"Graph Output" cZ0ftay5oLWMqkrWqtnXp/value
           visualData: 1358.421582439276/731.3571609080569/280/907//
+    SZiVEz7iWEzO58OzSARGq:
+      metadata:
+        description: ""
+        id: SZiVEz7iWEzO58OzSARGq
+        name: Mitigation - SOLO
+      nodes:
+        '[-9y7bKgt9t-UZOHqbplYb]:httpCall "HTTP - Get crises"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: ""
+            useHeadersInput: false
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Destructure" u7Rn-6O_j8eqFduEmxdI9/object
+          visualData: 859.2572493121296/7.424121481928296/280/1518/var(--node-color-4)/var(--node-color-4)
+        '[-SR7aCK96w8jYJskz2M82]:httpCall "HTTP - Insert mitigation"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: PUT
+            url: ""
+            useBodyInput: true
+            useUrlInput: true
+          visualData: 3624.3532879579857/252.73167273078911/280/1518/var(--node-color-4)/var(--node-color-4)
+        '[2qTXQQ-mueH3dYlY6HDiL]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}
+          outgoingConnections:
+            - output->"HTTP - Insert mitigation" -SR7aCK96w8jYJskz2M82/url
+          visualData: 2463.308262134986/34.68298699565935/330/1518//
+        '[9FDqQSeUUwDtGPcR4rZhL]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=company&populate=region
+          outgoingConnections:
+            - output->"HTTP - Get crises" -9y7bKgt9t-UZOHqbplYb/url
+          visualData: 379.4852567129502/242.2963491594785/330/1518//
+        '[HxY7Vco1zpsd8-UCSkyLy]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 3575.376671052552/852.1333340959568/330/1518/var(--node-color-3)/var(--node-color-3)
+        '[Lt8vpUsRKyAho1XDe4oi3]:text "Text"':
+          data:
+            body: ""
+            headers: ""
+            normalizeLineEndings: true
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/personas?filters%5Bcrises%5D%5BdocumentId%5D%5B$contains%5D={{crisis}}
+          outgoingConnections:
+            - output->"HTTP - Get personas" pDTq9inWYMOHOVRtxKqIf/url
+          visualData: 412.58379640431656/878.1210697021618/330/1518//
+        '[RgRRIeOl8kbmWyNY6FMnr]:extractJson "Extract JSON"':
+          visualData: 1553.3785161763567/478.94518527576383/280/1518//
+        '[_ckdvCzJS4lQbYUtcxiys]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" 2qTXQQ-mueH3dYlY6HDiL/input
+            - data->"Text" 9FDqQSeUUwDtGPcR4rZhL/input
+            - data->"Text" Lt8vpUsRKyAho1XDe4oi3/crisis
+          visualData: -116.43123401860737/421.61624718136045/330/1518/var(--node-color-3)/var(--node-color-3)
+        '[dT8AezNdPD0yf66YE3Akm]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You are a senior crisis communications strategist advising a major
+              FMCG (fast-moving consumer goods) company. A PR crisis has
+              emerged. Your task is to propose a comprehensive set of mitigation
+              strategies to resolve the situation, minimize reputational harm,
+              and address stakeholder concerns.
+
+
+              Please ensure the strategies are:
+              	•	Specific, actionable, and realistic
+              	•	Categorized into:
+              	•	Short-Term (0-48 hours)
+              	•	Medium-Term (2-4 weeks)
+              	•	Long-Term (1+ months)
+              	•	Tailored to the FMCG sector, especially food and beverage
+              	•	Clearly indicate which stakeholder(s) each action addresses (e.g., regulators, consumers, media, internal staff)
+              	•	Aligned with the regional context (e.g., cultural, regulatory)
+              	•	Legally appropriate, assuming potential liability, regulatory scrutiny, and public backlash
+
+              Please avoid generic responses. Focus on strategies that would be expected from a high-level corporate reputation advisor during a real-world crisis.
+
+
+              Do not reiterate the description of the crisis.
+
+
+              ⸻
+
+
+              Crisis description will be provided in the user prompt.
+
+
+              Regions:
+
+              {{regions}}
+
+
+              Primary Stakeholders Involved (in JSON format):
+
+              {{stakeholders}}
+          outgoingConnections:
+            - output->"Chat" hbB1Ycbh1OcW9kmOClMaI/systemPrompt
+          visualData: 1947.66802429767/259.49767414275584/330/1518//
+        '[hbB1Ycbh1OcW9kmOClMaI]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4-turbo
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Esape chars" j5DK8R0YfI46-D5F9M3YU/input1
+          visualData: 2054.7947682974313/865.5730475481939/230/1518//
+        '[j0zDABDt5pu8dftQxZ3nM]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                  "data": {
+                    "mitigation": "{{input}}"
+                  }
+                }
+          outgoingConnections:
+            - output->"HTTP - Insert mitigation" -SR7aCK96w8jYJskz2M82/req_body
+          visualData: 3057.9230002912086/1170.5219355813986/330/1518//
+        '[j5DK8R0YfI46-D5F9M3YU]:code "Esape chars"':
+          data:
+            code: >-
+              const inputText = inputs.input1.value;
+
+
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .replace(/"/g, '\\"')       // Escape double quotes
+                .trim();                    // Trim leading/trailing whitespace
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Graph Output" HxY7Vco1zpsd8-UCSkyLy/value
+            - output1->"Text" j0zDABDt5pu8dftQxZ3nM/input
+          visualData: 2621.7293743452324/899.8011302707007/230/1518/var(--node-color-2)/var(--node-color-2)
+        '[pDTq9inWYMOHOVRtxKqIf]:httpCall "HTTP - Get personas"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: ""
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Text" dT8AezNdPD0yf66YE3Akm/stakeholders
+            - res_body->"Extract JSON" RgRRIeOl8kbmWyNY6FMnr/input
+          visualData: 1090.662810440584/609.4606810722275/280/1518/var(--node-color-4)/var(--node-color-4)
+        '[tm2ajeiD5cZc1OxCFTapr]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: dky8i30kisowxhuupwo8iz5l
+          visualData: -145.53420510914168/660.1016897089478/330/1518//
+        '[u7Rn-6O_j8eqFduEmxdI9]:destructure "Destructure"':
+          data:
+            body: ""
+            headers: ""
+            paths:
+              - $.data.title
+              - $.data.description
+              - $.data.region.region
+              - $.data.company.title
+              - $.data.date
+              - $.data.severity
+              - $.data.brand
+              - $.data.documentId
+          outgoingConnections:
+            - match_1->"Chat" hbB1Ycbh1OcW9kmOClMaI/prompt
+            - match_2->"Text" dT8AezNdPD0yf66YE3Akm/regions
+          visualData: 1261.5111465242953/-7.9355592891890865/280/1518//
     TIrXJT0lI1gQdU0jtzkhz:
       metadata:
         description: ""
@@ -1931,7 +2163,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Set Global" CUV14RQmCdM2ueUbiTCjn/value
-          visualData: 1307.5463351034061/134.84206297793511/230/1286/var(--node-color-2)/var(--node-color-2)
+          visualData: 1307.5463351034061/134.84206297793511/230/1482/var(--node-color-2)/var(--node-color-2)
         '[2uPrdf3woHnGtAJDrw2Lz]:graphOutput "Graph Output - Document title"':
           data:
             dataType: string
