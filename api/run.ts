@@ -41,6 +41,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   console.log("🔐 Received token:", token);
   console.log("🎯 Expected token:", expectedToken);
 
+
   if (!expectedToken || token !== expectedToken) {
     console.warn("🚫 Forbidden request: invalid or missing token.");
     return res.status(403).json({ error: "Forbidden: Invalid or missing token." });
@@ -73,17 +74,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const datasetProvider = await NodeDatasetProvider.fromProjectFile(project, { save: false });
 
-    // 🔍 NEW: Accumulate outputs from all nodes (including subgraphs)
-    const allNodeOutputs: Record<string, any> = {};
-
     const result = await runGraphInFile(project, {
       graph,
-      remoteDebugger: {
-        onNodeExecuted: (info: { nodeId: string; output: any }) => {
-  allNodeOutputs[info.nodeId] = info.output;
-  console.log(`📌 Node executed: ${info.nodeId}`, info.output);
-},
-      },
+      remoteDebugger: undefined,
       inputs,
       context: {},
       externalFunctions: {},
@@ -92,6 +85,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       datasetProvider,
     } as RunGraphOptions);
 
+
     console.log("✅ Graph executed successfully.");
     console.log("🟢 Outputs:", result || {});
     console.log("🟡 Partial outputs:", result.partialOutputs || {});
@@ -99,13 +93,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       console.warn("⚠️ Graph node-level errors:", result.errors);
     }
 
-    // ✅ Add allNodeOutputs to the response
     res.status(200).json({
       message: "Graph executed successfully.",
       prompt: inputs.stringGraph,
-      outputs: result.outputs || {},
+      outputs: result || {},
       partialOutputs: result.partialOutputs || {},
-      nodeOutputs: allNodeOutputs, // ✅ new line
       errors: result.errors || [],
     });
   } catch (err: any) {
