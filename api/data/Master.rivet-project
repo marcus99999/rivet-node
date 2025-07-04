@@ -1563,13 +1563,13 @@ data:
         '[_ckdvCzJS4lQbYUtcxiys]:graphInput "Graph Input"':
           data:
             dataType: string
-            id: input
+            id: stringGraph
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Text" 2qTXQQ-mueH3dYlY6HDiL/input
             - data->"Text" 9FDqQSeUUwDtGPcR4rZhL/input
             - data->"Text" Lt8vpUsRKyAho1XDe4oi3/crisis
-          visualData: -116.43123401860737/421.61624718136045/330/1518/var(--node-color-3)/var(--node-color-3)
+          visualData: -116.43123401860737/421.61624718136045/330/1519/var(--node-color-3)/var(--node-color-3)
         '[dT8AezNdPD0yf66YE3Akm]:text "Text"':
           data:
             normalizeLineEndings: true
