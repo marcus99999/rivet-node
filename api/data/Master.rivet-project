@@ -1583,8 +1583,8 @@ data:
 
               Requirements:
               	•	Propose mitigation strategies categorized by priority:
-              	•	Immediate (0–48 hours)
-              	•	Medium (2–4 weeks)
+              	•	Immediate (0-48 hours)
+              	•	Medium (2-4 weeks)
               	•	Long (1+ months)
               	•	Tailor your recommendations to the FMCG sector, with emphasis on food and beverage.
               	•	Ensure all suggestions are legally appropriate, considering potential regulatory scrutiny, liability, and public backlash.
@@ -1614,7 +1614,7 @@ data:
                         "id": 1,
                         "title": "Mitigation strategy title",
                         "description": "Detailed explanation of the action.",
-                        "owner": "Unassigned",
+                        "owner": "",
                         "priority": "Immediate"
                       }
                       // Additional cards
