@@ -1614,7 +1614,7 @@ data:
                         "id": 1,
                         "title": "Mitigation strategy title",
                         "description": "Detailed explanation of the action.",
-                        "owner": "",
+                        "owner": null,
                         "priority": "Immediate"
                       }
                       // Additional cards
