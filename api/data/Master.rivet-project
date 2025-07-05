@@ -1590,6 +1590,7 @@ data:
               	•	Ensure all suggestions are legally appropriate, considering potential regulatory scrutiny, liability, and public backlash.
               	•	Avoid generic actions; recommendations should reflect the caliber of a high-level corporate reputation advisor managing a real-world crisis.
               	•	Do not repeat or summarize the crisis description or add any editorial framing.
+              	•	Do not fill out the owner field. Leave that as null.
 
               Input Variables:
               	•	Geographic Regions:
