@@ -1602,6 +1602,9 @@ data:
               Output Instructions:
 
 
+              All mitigation item should ONLY appear in the "Possible Mitigations" item.
+
+
               Generate the output strictly in the following JSON structure, suitable for use in a drag-and-drop mitigation planning interface:
 
 
