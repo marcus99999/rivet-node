@@ -1574,7 +1574,7 @@ data:
           data:
             normalizeLineEndings: true
             text: >-
-              ou are a senior crisis communications strategist advising a major
+              You are a senior crisis communications strategist advising a major
               FMCG (fast-moving consumer goods) company facing a significant PR
               crisis. Your task is to generate a comprehensive set of specific,
               actionable, and realistic mitigation strategies that minimize
@@ -1591,6 +1591,8 @@ data:
               	•	Avoid generic actions; recommendations should reflect the caliber of a high-level corporate reputation advisor managing a real-world crisis.
               	•	Do not repeat or summarize the crisis description or add any editorial framing.
               	•	Do not fill out the owner field. Leave that as null.
+              	•	Create a minimum of 3 mitigations per time period.
+              	•	Take any regional legal and cultural restrcitons into account.
 
               Input Variables:
               	•	Geographic Regions:
