@@ -469,7 +469,7 @@ data:
             useHeadersInput: false
           outgoingConnections:
             - json->"Text" eejM-ua-wKdVtsje_wqZj/input
-          visualData: 3301.8991858589143/-398.1542562451373/280/1341/var(--node-color-4)/var(--node-color-4)
+          visualData: 4327.703994121275/-399.9328420120052/280/1570/var(--node-color-4)/var(--node-color-4)
         '[-V3mX_TdIK2sMIZeBsfAn]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -481,7 +481,7 @@ data:
             - value->"Text" Opbyfte5MRFNu5YsoFpzw/crisisid
             - value->"Text" _xun_79EIycJcd_nUsd24/crisisid
             - value->"Text" sXaO-y1UPPYzNLtmpQCZw/crisisid
-          visualData: 4485.889297644278/-4.186675875691378/230/1325//
+          visualData: 5511.694105906639/-5.965261642559355/230/1570//
         '[-kgpH0TBjFvfM8H9c9N-8]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" HybVWMkqapLqooQgmPjod/req_body
@@ -492,18 +492,18 @@ data:
             text: "{{input}}"
           outgoingConnections:
             - output->"Extract JSON" 98fnq5MNPxGvhhtMfS2cT/input
-          visualData: 3635.1410007475447/-684.8698816430267/330/1309//
+          visualData: 4660.945809009906/-686.6484674098947/330/1570//
         '[1GjN7fYCeUUGDt0rqodHa]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" ODJurltHNQDJ4V7wfThYc/object
-          visualData: 4046.129294515346/-1109.1604432870472/280/1305//
+          visualData: 5071.934102777707/-1110.9390290539152/280/1570//
         '[1Mc8h-DueAoO7z5XmdUn_]:text "Text"':
           data:
             normalizeLineEndings: true
             text: "{{input}}"
           outgoingConnections:
             - output->"Extract JSON" 1GjN7fYCeUUGDt0rqodHa/input
-          visualData: 3663.0781160181446/-1110.1253077165113/330/1303//
+          visualData: 4688.882924280506/-1111.9038934833793/330/1570//
         '[2-1stJD-1ZlJeod6DgIgb]:httpCall "Http Call"':
           data:
             body: ""
@@ -519,7 +519,7 @@ data:
             useHeadersInput: false
           outgoingConnections:
             - json->"Text" 1Mc8h-DueAoO7z5XmdUn_/input
-          visualData: 3299.9220734708456/-1438.047200443984/280/1551/var(--node-color-4)/var(--node-color-4)
+          visualData: 4325.726881733207/-1439.825786210852/280/1570/var(--node-color-4)/var(--node-color-4)
         '[2wdsSZIqnLyd5XyYGMSrD]:subGraph "Subgraph"':
           data:
             graphId: lzDkeo10TytZALkz8u7nq
@@ -527,7 +527,7 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Http Call" 9MsqhREMEpYz6DTD7mSPl/req_body
-          visualData: 3546.751626871966/-2148.78676436788/330/1548/var(--node-color-1)/var(--node-color-1)
+          visualData: 4572.556435134327/-2150.5653501347483/330/1570/var(--node-color-1)/var(--node-color-1)
         '[4y5XJhHvehu2FhbfFSOcu]:getGlobal "Get Global"':
           data:
             dataType: string
@@ -539,7 +539,7 @@ data:
             - value->"Text" Opbyfte5MRFNu5YsoFpzw/story
             - value->"Text" _xun_79EIycJcd_nUsd24/story
             - value->"Text" sXaO-y1UPPYzNLtmpQCZw/story
-          visualData: 4147.336736073394/-1567.122188001525/230/1295//
+          visualData: 5173.141544335755/-1568.900773768393/230/1570//
         '[53VGWoy2POv4xS_sCHelY]:code "Escape chars"':
           data:
             code: >-
@@ -589,7 +589,7 @@ data:
             graphId: o8S-CeePSytOJAterI2wq
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 5357.038234573845/-392.5443456974041/330/1326/var(--node-color-1)/var(--node-color-1)
+          visualData: 6382.843042836206/-394.322931464272/330/1570/var(--node-color-1)/var(--node-color-1)
         '[6j2SwrDcIwLifrtNqNdL_]:destructure "Destructure"':
           data:
             paths:
@@ -626,7 +626,7 @@ data:
         '[98fnq5MNPxGvhhtMfS2cT]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" jtb7T-N-15zAQ1KWlv6GZ/object
-          visualData: 4018.1921792447456/-683.9050172135627/280/1309//
+          visualData: 5043.996987507107/-685.6836029804307/280/1570//
         '[9MsqhREMEpYz6DTD7mSPl]:httpCall "Http Call"':
           data:
             body: ""
@@ -640,7 +640,7 @@ data:
             url: https://crisis-comms.vercel.app/api/submit-social
             useBodyInput: true
             useHeadersInput: false
-          visualData: 3974.4429997151697/-2452.564818072482/280/1546/var(--node-color-4)/var(--node-color-4)
+          visualData: 5000.247807977531/-2454.3434038393502/280/1570/var(--node-color-4)/var(--node-color-4)
         '[9uM1rtiITUgpEN3PYTfKu]:httpCall "Http Call"':
           data:
             body: ""
@@ -656,7 +656,30 @@ data:
             useHeadersInput: false
           outgoingConnections:
             - json->"Text" 0kMVxtP41NRcyej4vkbMO/input
-          visualData: 3291.109662256999/-964.1316961252543/280/1340/var(--node-color-4)/var(--node-color-4)
+          visualData: 4316.91447051936/-965.9102818921223/280/1570/var(--node-color-4)/var(--node-color-4)
+        '[BEL1Tnw5MgkmBkHJWWrBa]:code "Escape chars"':
+          data:
+            code: >-
+              const inputText = inputs.input1.value;
+
+
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .replace(/"/g, '\\"')       // Escape double quotes
+                .trim();                    // Trim leading/trailing whitespace
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" d0PAVTcOCZeb0W8Lh-Cf7/role
+          visualData: 3450.1122880453127/-1329.4442673135602/230/1570/var(--node-color-2)/var(--node-color-2)
         '[BFvuIXOPmjhMuvzfJ5qmG]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -745,7 +768,7 @@ data:
           outgoingConnections:
             - output->"Http Call" 9uM1rtiITUgpEN3PYTfKu/req_body
             - output->"Subgraph" 2wdsSZIqnLyd5XyYGMSrD/prompt
-          visualData: 2783.855388025749/-962.0799156619528/330/1314//
+          visualData: 3809.6601962881105/-963.8585014288208/330/1570//
         '[IqeXPetHyKTuaAAeoiCV8]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" g8AEP8e2wMiSjZRoBEebV/req_body
@@ -785,13 +808,20 @@ data:
           outgoingConnections:
             - output1->"Text" d0PAVTcOCZeb0W8Lh-Cf7/history
           visualData: 2182.8016553956577/-1511.3648823370538/230/999/var(--node-color-2)/var(--node-color-2)
+        '[N_IuBLNn-i5aG-TJgFF58]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Escape chars" Pq4w2GacVvITRKocdYza7/input1
+          visualData: 3063.698948213145/-634.963750952992/330/1572//
         '[ODJurltHNQDJ4V7wfThYc]:destructure "Destructure"':
           data:
             paths:
               - $.documentId
           outgoingConnections:
             - match_0->"Text" Opbyfte5MRFNu5YsoFpzw/document
-          visualData: 4431.321364888481/-1088.1595362625771/280/1308//
+          visualData: 5457.126173150842/-1089.9381220294451/280/1570//
         '[Opbyfte5MRFNu5YsoFpzw]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -809,14 +839,37 @@ data:
               }
           outgoingConnections:
             - output->"Subgraph" t6dBzDAyWltO2egFWtLEw/stringGraph
-          visualData: 4865.487366608328/-1340.349967404741/330/1332//
+          visualData: 5891.2921748706885/-1342.128553171609/330/1570//
         '[P_YHgyPG4JayvP9KbwXcZ]:destructure "Destructure"':
           data:
             paths:
               - $.documentId
           outgoingConnections:
             - match_0->"Text" sXaO-y1UPPYzNLtmpQCZw/document
-          visualData: 4448.793300537202/-223.94995130232084/280/1310//
+          visualData: 5474.598108799564/-225.72853706918883/280/1570//
+        '[Pq4w2GacVvITRKocdYza7]:code "Escape chars"':
+          data:
+            code: >-
+              const inputText = inputs.input1.value;
+
+
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .replace(/"/g, '\\"')       // Escape double quotes
+                .trim();                    // Trim leading/trailing whitespace
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" IJqTXxPN2eOR5TSyVcxyg/role
+          visualData: 3459.444071449959/-851.968016442457/230/1570/var(--node-color-2)/var(--node-color-2)
         '[RuT_InG_fJifeLuf0p-ja]:code "Escape chars"':
           data:
             code: >-
@@ -857,9 +910,9 @@ data:
             useIdInput: false
             wait: false
           outgoingConnections:
-            - value->"Text" IJqTXxPN2eOR5TSyVcxyg/role
-            - value->"Text" d0PAVTcOCZeb0W8Lh-Cf7/role
-            - value->"Text" givYg0K4zZa7xCEszaC2A/role
+            - value->"Text" N_IuBLNn-i5aG-TJgFF58/input
+            - value->"Text" cpJ_k3pLpcOKZI4ST9Ic8/input
+            - value->"Text" qlQJYz4qkRN9ipLZl95sC/input
           visualData: 2464.944036739152/-1491.8316239283713/230/1537//
         '[WOolU6oaL7Oiht_zsJrpo]:subGraph "Subgraph"':
           data:
@@ -898,7 +951,7 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Http Call" bj6qKHb8naMgdzzEfrscJ/req_body
-          visualData: 3554.6136006374663/-2388.0966331953805/330/1550/var(--node-color-1)/var(--node-color-1)
+          visualData: 4580.418408899828/-2389.8752189622487/330/1570/var(--node-color-1)/var(--node-color-1)
         '[_xun_79EIycJcd_nUsd24]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -916,11 +969,11 @@ data:
               }
           outgoingConnections:
             - output->"Subgraph" z0SC0f-hMiNR98zXEb2DV/stringGraph
-          visualData: 4874.024106128468/-846.6673512324677/330/1307//
+          visualData: 5899.82891439083/-848.4459369993357/330/1570//
         '[aBKTE28_bqxqAkBVmwxdh]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" P_YHgyPG4JayvP9KbwXcZ/object
-          visualData: 4101.4421059301685/-233.59859559696062/280/1310//
+          visualData: 5127.24691419253/-235.3771813638286/280/1570//
         '[bj6qKHb8naMgdzzEfrscJ]:httpCall "Http Call"':
           data:
             body: ""
@@ -934,7 +987,7 @@ data:
             url: https://crisis-comms.vercel.app/api/submit-social
             useBodyInput: true
             useHeadersInput: false
-          visualData: 3968.15342070277/-2881.828585668787/280/1545/var(--node-color-4)/var(--node-color-4)
+          visualData: 5002.913113953245/-2850.2167824126627/280/1570/var(--node-color-4)/var(--node-color-4)
         '[c1Jqgt3-BvfFcKroOhntB]:text "Text"':
           data:
             text: |-
@@ -946,6 +999,36 @@ data:
           outgoingConnections:
             - output->"Extract JSON" -kgpH0TBjFvfM8H9c9N-8/input
           visualData: 1814.7000668057754/1315.6025667781075/330/697//
+        '[cC4p0gQ0N80K8qeWzkC4w]:code "Escape chars"':
+          data:
+            code: >-
+              const inputText = inputs.input1.value;
+
+
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .replace(/"/g, '\\"')       // Escape double quotes
+                .trim();                    // Trim leading/trailing whitespace
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" givYg0K4zZa7xCEszaC2A/role
+          visualData: 3459.4440714499597/-405.59771025351074/230/1570/var(--node-color-2)/var(--node-color-2)
+        '[cpJ_k3pLpcOKZI4ST9Ic8]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Escape chars" cC4p0gQ0N80K8qeWzkC4w/input1
+          visualData: 3039.7624594127656/-189.5074067888774/330/1573//
         '[d0PAVTcOCZeb0W8Lh-Cf7]:text "Text"':
           data:
             text: |-
@@ -960,14 +1043,14 @@ data:
           outgoingConnections:
             - output->"Http Call" 2-1stJD-1ZlJeod6DgIgb/req_body
             - output->"Subgraph" ZIXdJYxZtpGJqMwyF2iCn/prompt
-          visualData: 2845.0735693022725/-1521.3954769246222/330/1552//
+          visualData: 3870.878377564634/-1523.1740626914902/330/1570//
         '[eejM-ua-wKdVtsje_wqZj]:text "Text"':
           data:
             normalizeLineEndings: true
             text: "{{input}}"
           outgoingConnections:
             - output->"Extract JSON" aBKTE28_bqxqAkBVmwxdh/input
-          visualData: 3718.3909274329676/-234.56346002642462/330/1310//
+          visualData: 4744.195735695329/-236.3420457932926/330/1570//
         '[g8AEP8e2wMiSjZRoBEebV]:httpCall "Http Call"':
           data:
             body: ""
@@ -996,7 +1079,7 @@ data:
           outgoingConnections:
             - output->"Http Call" -HvpH3_vlr-lQwwFbODFe/req_body
             - output->"Subgraph" hen_J_f1nA5aWJRW5PB7B/prompt
-          visualData: 2817.4403974169873/-275.9568031832186/330/1312//
+          visualData: 3843.2452056793486/-277.73538895008653/330/1570//
         '[h5k-44eeEQKUVT6CVVEBp]:subGraph "Subgraph"':
           data:
             graphId: zYlQ2Xk75J--kr6X__Awr
@@ -1013,14 +1096,14 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Http Call" u4yi6KXb3H37woKSn8Csn/req_body
-          visualData: 3545.179232118866/-1917.3388693058796/330/1347/var(--node-color-1)/var(--node-color-1)
+          visualData: 4570.984040381227/-1919.1174550727476/330/1570/var(--node-color-1)/var(--node-color-1)
         '[jtb7T-N-15zAQ1KWlv6GZ]:destructure "Destructure"':
           data:
             paths:
               - $.documentId
           outgoingConnections:
             - match_0->"Text" _xun_79EIycJcd_nUsd24/document
-          visualData: 4401.397040497633/-570.5368372648497/280/1319//
+          visualData: 5427.201848759994/-572.3154230317177/280/1570//
         '[khiwBEZ1TBidGeoldXUHD]:httpCall "Http Call"':
           data:
             body: ""
@@ -1058,6 +1141,13 @@ data:
           outgoingConnections:
             - output1->"Text" IJqTXxPN2eOR5TSyVcxyg/original
           visualData: 2461.856207528469/-1207.0793160880717/230/1285/var(--node-color-2)/var(--node-color-2)
+        '[qlQJYz4qkRN9ipLZl95sC]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Escape chars" BEL1Tnw5MgkmBkHJWWrBa/input1
+          visualData: 3006.2283935755627/-1158.862270497228/330/1571//
         '[r_OUNHMUHxIBSOwGbZRWT]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -1068,7 +1158,7 @@ data:
                   "sub-entity": "",
                   "role": "{{role}}"
               }
-          visualData: 2852.1152297146286/-1892.5421670698136/330/1553//
+          visualData: 3877.92003797699/-1894.3207528366815/330/1570//
         '[sXaO-y1UPPYzNLtmpQCZw]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -1086,7 +1176,7 @@ data:
               }
           outgoingConnections:
             - output->"Subgraph" 5yprqq763NjbIsevY0tq0/stringGraph
-          visualData: 4878.107295264919/-440.58113311008424/330/1317//
+          visualData: 5903.91210352728/-442.3597188769522/330/1570//
         '[sy6hucwRj-4x7Bc7byq6Q]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -1099,7 +1189,7 @@ data:
             graphId: o8S-CeePSytOJAterI2wq
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 5368.425802376846/-1068.2067020087904/330/1334/var(--node-color-1)/var(--node-color-1)
+          visualData: 6394.230610639208/-1069.9852877756584/330/1570/var(--node-color-1)/var(--node-color-1)
         '[tZiBIUEeCz0SXW7GrqIVa]:destructure "Destructure"':
           data:
             paths:
@@ -1149,7 +1239,7 @@ data:
             url: https://crisis-comms.vercel.app/api/submit-social
             useBodyInput: true
             useHeadersInput: false
-          visualData: 3977.58778922137/-2002.8599186858767/280/1544/var(--node-color-4)/var(--node-color-4)
+          visualData: 5003.392597483731/-2004.6385044527447/280/1570/var(--node-color-4)/var(--node-color-4)
         '[wOjyfm5GpYlcB2L_GOh87]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" khiwBEZ1TBidGeoldXUHD/req_body
@@ -1204,13 +1294,13 @@ data:
           outgoingConnections:
             - output1->"Text" IJqTXxPN2eOR5TSyVcxyg/detail
             - output1->"Text" _xun_79EIycJcd_nUsd24/response
-          visualData: 2180.967414058909/-1072.3118980744975/230/1283/var(--node-color-2)/var(--node-color-2)
+          visualData: 2187.1886029953403/-1056.7589257334193/230/1557/var(--node-color-2)/var(--node-color-2)
         '[z0SC0f-hMiNR98zXEb2DV]:subGraph "Subgraph"':
           data:
             graphId: o8S-CeePSytOJAterI2wq
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 5383.609226114181/-677.9511042199107/330/1333/var(--node-color-1)/var(--node-color-1)
+          visualData: 6409.414034376543/-679.7296899867787/330/1570/var(--node-color-1)/var(--node-color-1)
         '[zS1BJ-fC48CLNOPqpbhn5]:destructure "Destructure"':
           data:
             paths:
@@ -2815,8 +2905,6 @@ data:
           outgoingConnections:
             - data->"Graph Output" nT_8sfzahbwZNsPj2AWK0/value
             - data->"Mitigation" ykAfnK8lI7luub7SggyJ0/stringGraph
-            - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
-            - data->"Text" yUsMVzssmowpwlFaD33G8/entity
           visualData: -2744.839120608272/658.6536749652059/330/1494/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
@@ -3349,7 +3437,7 @@ data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=company&populate=region
           outgoingConnections:
             - output->"HTTP - Get crises" cKjknBn_o8XEPm2EFP1C3/url
-          visualData: -2054.0747816947087/589.3084492475264/330/1491//
+          visualData: -2049.5349796843857/557.529835175264/330/1763//
         '[Xk1Tw7lxeDqacNIT1bMNu]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" mcgQkCMsGk4tJBFjxhXTS/object
@@ -3569,7 +3657,7 @@ data:
           data:
             body: ""
             text: y2wlt0x5xdcjtvgwokzcbk1k
-          visualData: -2850.248397308188/364.39078170291646/330/1760//
+          visualData: -3290.6091923095382/578.8964266906875/330/1762//
         '[f-alM-DrASwCvKMXDfB9-]:destructure "Destructure"':
           data:
             body: ""
@@ -3597,6 +3685,14 @@ data:
           outgoingConnections:
             - output->"Subgraph" QG0B00OmZYN6SmNbPqPFN/input
           visualData: 2707.9982531179526/813.3114725619207/280/1490//
+        '[g-YyMF0aaFQaPragGhYKP]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: xim3nf27socidx5sx640b02d
+          outgoingConnections:
+            - output->"Text" W888kIoF-SH_n2m0tV7Rc/input
+            - output->"Text" yUsMVzssmowpwlFaD33G8/entity
+          visualData: -2762.373883618522/921.9415854387348/330/1761//
         '[gS957dQIpZe538bFQvRMd]:subGraph "Subgraph"':
           data:
             graphId: 3soSwiUKQ_X4fGdokyxAH
