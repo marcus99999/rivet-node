@@ -1227,6 +1227,388 @@ data:
           outgoingConnections:
             - output->"Escape chars" 53VGWoy2POv4xS_sCHelY/input1
           visualData: 1751.460762638661/37.157313664175376/330/1006//
+    9ZVrhoqkurv60BE8lhccY:
+      metadata:
+        description: Apply best practices and create Q&A statements
+        id: 9ZVrhoqkurv60BE8lhccY
+        name: Universal - PR Best practice & Q&A (TEMP BACKUP)
+      nodes:
+        '[0SU-b3qVvFyn7ZMsKkjm7]:destructure "Destructure"':
+          data:
+            paths:
+              - $.documentId
+          outgoingConnections:
+            - match_0->"Text" RY1KePoORGlKv2G4r1enC/document
+          visualData: 2567.4900999183196/667.0076925160092/280/2019//
+        '[37TGuKd7MiQ6wR3Vrm5LH]:array "Array"':
+          data:
+            flatten: true
+            flattenDeep: false
+          outgoingConnections:
+            - length->"Text" t88NWj8EzIHuvUfXKylX1/input
+            - output->"Loop Controller" smUhUczEiRoBDajZSjbYE/input1
+          visualData: 936.39099009132/2272.1309254970056/230/1877//
+        '[3Wxb0lNet0cgJG107NuqB]:destructure "Destructure"':
+          data:
+            paths:
+              - $.scenario-slot
+              - $.detail
+          outgoingConnections:
+            - match_0->"Text" 87dXnfwdAbkfbOPHvmRtM/slot
+            - match_1->"Text" 87dXnfwdAbkfbOPHvmRtM/detail
+          visualData: 831.8058784939885/2608.2497974679845/280/1926//
+        '[87dXnfwdAbkfbOPHvmRtM]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                  "role": "{{role}}",
+                  "scenario": "{{scenario
+                  }}",
+                  "slot": "{{slot}}",
+                  "detail": "{{detail}}"
+              }
+          visualData: 1523.1281544975654/2953.54290468411/330/1931//
+        '[Anx0ouQCTK7mPIx1pTnkb]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                  "entity": "lmfu2zzm92t31sfw047ifs7g",
+                  "scenario": "nkpmla34bdxmfm9rl9tecci0",
+                  "role": "You are a consumer PR strategist focused on driving awareness, engagement, and brand love for products and experiences in everyday culture. Your role is to create campaign ideas and messaging that resonate with specific audience segments—amplifying stories through earned media, influencer partnerships, stunts, social moments, and brand activations. You translate marketing goals into culturally relevant narratives, identifying the creative hooks, emotional levers, and formats that make campaigns talkable and shareable. Whether launching a new product, reigniting relevance, or responding to trends, your job is to ensure the brand is seen, heard, and positively talked about in the right places, by the right people.",
+                  "slot": "slot1"
+              }
+          outgoingConnections:
+            - output->"Destructure" TxDEpa16tEV9JWmDvc_-w/object
+            - output->"Subgraph" jfYCng_n5mSCZSxeRyX6f/input
+          visualData: -32.058565102942644/660.3603009433358/330/1984//
+        '[AvUrAEgT7Kr9HEWDAHpSS]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                "output": {
+                  "type": "object",
+                  "value": {
+                    "entity": "lmfu2zzm92t31sfw047ifs7g",
+                    "scenarios": [
+                      {
+                        "title": "Summer Scoop Fest",
+                        "idea_summary": "Host a series of pop-up ice cream festivals in popular parks and outdoor spaces across the UK, where families and friends can come together to sample the new summer flavours. Each festival will feature fun activities like ice cream-making workshops, live music, and photo booths to capture joyful moments. Local influencers will be invited to share their experiences on social media, creating a buzz around the events and encouraging user-generated content. The pop-ups will also offer exclusive discounts for attendees who share their favourite moments online, driving engagement and footfall.",
+                        "target_audience": [
+                          "Gen-Z",
+                          "Gen-X"
+                        ],
+                        "estimated_budget_bracket": "£40,000 - £50,000",
+                        "objective_alignment": {
+                          "objectives": [
+                            "Drive sales",
+                            "Grow fame"
+                          ],
+                          "explanation": "This activation builds media and influencer buzz while generating user-generated content, ultimately driving both in-store and online sales."
+                        }
+                      },
+                      {
+                        "title": "Flavour Passport Challenge",
+                        "idea_summary": "Launch a digital campaign encouraging consumers to explore the new flavours as if they were on a summer travel adventure. Participants will receive a 'flavour passport' that they can stamp by trying different ice cream flavours at participating retailers. Users can share their stamped passports on social media for a chance to win summer-themed prizes, including holiday getaways and Häagen-Dazs goodies. Influencers will kick off the challenge by sharing their own flavour passport experiences, driving excitement and engagement across platforms.",
+                        "target_audience": [
+                          "Gen-Z"
+                        ],
+                        "estimated_budget_bracket": "£25,000 - £35,000",
+                        "objective_alignment": {
+                          "objectives": [
+                            "Drive sales",
+                            "Grow fame"
+                          ],
+                          "explanation": "This campaign leverages user-generated content and social media conversation while driving footfall to stores through the flavour passport initiative."
+                        }
+                      },
+                      {
+                        "title": "Sundae Funday Influencer Series",
+                        "idea_summary": "Partner with popular lifestyle influencers to create a series of 'Sundae Funday' videos showcasing the new ice cream flavours. Each influencer will host a fun summer-themed gathering where they create unique ice cream sundaes using the new products, sharing tips for hosting the perfect summer get-together. The videos will be shared across social media platforms, encouraging followers to recreate the sundaes at home and share their own creations with a dedicated hashtag. This will create a ripple effect of engagement and conversation around the new flavours.",
+                        "target_audience": [
+                          "Gen-X",
+                          "Gen-Z"
+                        ],
+                        "estimated_budget_bracket": "£30,000 - £40,000",
+                        "objective_alignment": {
+                          "objectives": [
+                            "Drive sales",
+                            "Grow fame"
+                          ],
+                          "explanation": "This influencer partnership generates buzz and user-generated content, driving awareness and encouraging trial of the new flavours."
+                        }
+                      },
+                      {
+                        "title": "Summer Memories PR Mailer",
+                        "idea_summary": "Create limited-edition PR mailers that encapsulate the essence of summer, featuring samples of the new ice cream flavours and a beautifully designed booklet with summer recipes and activities. Send these mailers to key media outlets and influencers, inviting them to share their summer memories associated with Häagen-Dazs. Encourage recipients to create content around their experiences, amplifying the brand's presence as a staple of summer indulgence. This tactile approach will foster deeper connections with the brand and spark conversations.",
+                        "target_audience": [
+                          "Gen-X",
+                          "Gen-Z"
+                        ],
+                        "estimated_budget_bracket": "£15,000 - £25,000",
+                        "objective_alignment": {
+                          "objectives": [
+                            "Drive sales",
+                            "Grow fame"
+                          ],
+                          "explanation": "By engaging media and influencers with a memorable experience, this activation generates buzz and encourages social sharing, driving awareness and trial."
+                        }
+                      }
+                    ]
+                  }
+                },
+                "noMatch": {
+                  "type": "control-flow-excluded"
+                }
+              }
+          visualData: -2320.5110511426196/1721.370658239235/330/1922//
+        '[AwK5pFHIRbWDf3P-D3yqz]:destructure "Destructure"':
+          data:
+            body: ""
+            headers: ""
+            paths:
+              - $.data[1].tov
+              - $.data[1].task
+              - $.data[1].company.title
+            text: ""
+          outgoingConnections:
+            - match_0->"TEXT - Define role" H_uM4mKEX_b7JApIVo8jQ/task
+            - match_1->"TEXT - Define role" H_uM4mKEX_b7JApIVo8jQ/tone
+            - match_2->"TEXT - Define role" H_uM4mKEX_b7JApIVo8jQ/company
+          visualData: 168.9048467264439/3396.063727495476/280/1911/var(--node-color-5)/var(--node-color-5)
+        '[Epmf4be4eZDmYij3n4ENR]:array "Array"':
+          data:
+            flatten: true
+            flattenDeep: false
+          outgoingConnections:
+            - output->"Loop Controller" smUhUczEiRoBDajZSjbYE/input1Default
+          visualData: -965.1840333518365/885.2807314532354/230/2013//
+        '[FVG9aIJytT2DW7IpqZ2-U]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" xcUT_zD5pQSr6rwfBdb3X/object
+          visualData: -1798.9938879090514/1134.9844741161892/280/1875//
+        '[H_uM4mKEX_b7JApIVo8jQ]:text "TEXT - Define role"':
+          data:
+            text: >-
+              You are a crisis communications public relations (PR) professional
+              working for {{company}}.
+
+
+              {{task}}
+
+
+              IMPORTANT
+
+              Your writing tone is {{tone}}.
+          description: Role definition copy
+          outgoingConnections:
+            - output->"Escape chars" KfYUMHgDsNxLzglV_FQTV/input1
+          visualData: 645.0650270107583/3388.186782537264/330/1963//
+        '[KfYUMHgDsNxLzglV_FQTV]:code "Escape chars"':
+          data:
+            code: >-
+              const inputText = inputs.input1.value;
+
+
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .replace(/"/g, '\\"')       // Escape double quotes
+                .trim();                    // Trim leading/trailing whitespace
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" 87dXnfwdAbkfbOPHvmRtM/role
+          visualData: 1141.4091809566394/3340.4958271006035/230/1964/var(--node-color-2)/var(--node-color-2)
+        '[QRfPSjgH4o5DoBgcLkI8k]:subGraph "Subgraph"':
+          data:
+            graphId: o8S-CeePSytOJAterI2wq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 3468.070302742567/894.2757626846733/330/2021/var(--node-color-1)/var(--node-color-1)
+        '[RY1KePoORGlKv2G4r1enC]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                "data": [
+                  {
+                    "type": "press_release",
+                    "story": "{{story}}",
+                    "response": "{{response}}",
+                    "document": "{{document}}",
+                    "scenario": "{{scenario}}"
+                  }
+                ]
+              }
+          visualData: 2960.9398968242435/788.7664073502675/330/2020//
+        '[SARzzqj29T4F3xOCc_jZO]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" 0SU-b3qVvFyn7ZMsKkjm7/object
+          visualData: 2097.3207062121955/650.4909792015513/280/2017//
+        '[T9G3LSSOUWKMIBdzOpwCe]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Extract JSON" SARzzqj29T4F3xOCc_jZO/input
+          visualData: 1578.896416342246/865.7463618290265/330/2016//
+        '[TKNb2S4gBnyYpkkaiZXyI]:httpCall "Http - Get role & tones"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/tones?populate=*
+          outgoingConnections:
+            - json->"Destructure" AwK5pFHIRbWDf3P-D3yqz/object
+          visualData: -194.8300692785512/3153.3890931947226/280/1910/var(--node-color-4)/var(--node-color-4)
+        '[TxDEpa16tEV9JWmDvc_-w]:destructure "Destructure"':
+          data:
+            paths:
+              - $.scenario
+          outgoingConnections:
+            - match_0->"Text" RY1KePoORGlKv2G4r1enC/scenario
+          visualData: 503.5728466526167/584.3139087035363/280/2015//
+        '[VQ83Gc044E_PV0X-EeIgo]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                "entity": "lmfu2zzm92t31sfw047ifs7g",
+                "scenario": "r3k9sdx12uue7dr7le5wg8qv",
+                "scenarios": [
+                  { "scenario-slot": "high", "detail": "Our client is launching a new range of ice cream flavours in time for the summer season and is seeking a vibrant PR campaign to drive awareness, engagement, and trial. The campaign should celebrate the joy of summer and position the new flavours as must-have treats for the warmer months. This is a timely opportunity to associate the brand with fun, indulgence, and shared moments — key themes that resonate during summer." },
+                  { "scenario-slot": "medium", "detail": "Our client is launching a new range of ice cream flavours in time for the summer season and is seeking a vibrant PR campaign to drive awareness, engagement, and trial. The campaign should celebrate the joy of summer and position the new flavours as must-have treats for the warmer months. This is a timely opportunity to associate the brand with fun, indulgence, and shared moments — key themes that resonate during summer." },
+                  { "scenario-slot": "low", "detail": "Our client is launching a new range of ice cream flavours in time for the summer season and is seeking a vibrant PR campaign to drive awareness, engagement, and trial. The campaign should celebrate the joy of summer and position the new flavours as must-have treats for the warmer months. This is a timely opportunity to associate the brand with fun, indulgence, and shared moments — key themes that resonate during summer." }
+                ]
+              }
+          outgoingConnections:
+            - output->"Extract JSON" FVG9aIJytT2DW7IpqZ2-U/input
+          visualData: -2315.8858604719885/1274.3119144302639/330/1923//
+        '[WQgRnJqtRw3qkBnlsSUux]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          visualData: 1019.3632533755992/1029.6276684714048/330/2011//
+        '[cIATe9-e090MypkJHSY_g]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          visualData: 638.0739349947057/1521.1280242704495/330/1877//
+        '[cb19U4S3RFxCt9Gp2YIOq]:getGlobal "Get Global"':
+          data:
+            dataType: string
+            id: story
+            onDemand: true
+            useIdInput: false
+            wait: false
+          outgoingConnections:
+            - value->"Text" RY1KePoORGlKv2G4r1enC/story
+          visualData: 1984.4488407635477/1063.6536578821765/230/2018//
+        '[jfYCng_n5mSCZSxeRyX6f]:subGraph "Subgraph"':
+          data:
+            graphId: zaszbOz1wpYtXytDJCEhg
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"HTTP - Submit press release"
+              zHSqoeBl4HX3oWZcgHxEF/req_body
+            - output->"Text" WQgRnJqtRw3qkBnlsSUux/input
+          visualData: 517.2961774675665/754.2485469444972/330/2009/var(--node-color-1)/var(--node-color-1)
+        '[lN7nQSGZXWp6d415zD10K]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              original,
+                      detail,
+                      history,
+                      severity,
+                      crisis
+          visualData: 594.3663930471048/240.2245000577194/330/2032//
+        '[mXU_IztKpnJPRZloX6NAr]:code "Eval"':
+          data:
+            code: |-
+              const num = inputs.input1.value;
+
+              return {
+                output1: {
+                  type: 'boolean',
+                  value: num > 0
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Loop Controller" smUhUczEiRoBDajZSjbYE/continue
+          visualData: 877.327731300493/1755.8960268954265/230/1880/var(--node-color-2)/var(--node-color-2)
+        '[py1eZ8nq7LagmxudVLcQl]:graphInput "Graph Input"':
+          data:
+            dataType: object
+            id: input
+            useDefaultValueInput: false
+          visualData: -24.897007987873785/464.96137627070357/330/1982/var(--node-color-3)/var(--node-color-3)
+        '[smUhUczEiRoBDajZSjbYE]:loopController "Loop Controller"':
+          data:
+            maxIterations: 10
+          outgoingConnections:
+            - iteration->"Text" cIATe9-e090MypkJHSY_g/input
+            - output1->"Pop" wap1IkHC5xeJ76AjurPNp/array
+          visualData: -421.96737595902545/1258.0339903423533/280/2012//
+        '[t88NWj8EzIHuvUfXKylX1]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Eval" mXU_IztKpnJPRZloX6NAr/input1
+          visualData: 1426.7093597475678/2360.6514816534336/330/1879//
+        '[wap1IkHC5xeJ76AjurPNp]:pop "Pop"':
+          data:
+            fromFront: true
+          outgoingConnections:
+            - lastItem->"Destructure" 3Wxb0lNet0cgJG107NuqB/object
+            - restOfArray->"Array" 37TGuKd7MiQ6wR3Vrm5LH/input1
+          visualData: 439.14738434978636/2251.210798420946/230/1877//
+        '[xcUT_zD5pQSr6rwfBdb3X]:destructure "Destructure"':
+          data:
+            paths:
+              - $.entity
+              - $.scenario
+              - $.scenarios
+            text: ""
+          outgoingConnections:
+            - match_1->"Text" 87dXnfwdAbkfbOPHvmRtM/scenario
+            - match_2->"Array" Epmf4be4eZDmYij3n4ENR/input1
+          visualData: -1366.8344392225247/1156.6589435979774/280/2014//
+        '[zHSqoeBl4HX3oWZcgHxEF]:httpCall "HTTP - Submit press release"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: http://localhost:4015/api/submit-entity-pressrelease
+            useBodyInput: true
+            useHeadersInput: false
+          outgoingConnections:
+            - json->"Text" T9G3LSSOUWKMIBdzOpwCe/input
+          visualData: 1073.7441070785833/510.79244722874927/280/2022/var(--node-color-5)/var(--node-color-5)
     EfrNMYIRnDPH9b2qi_inj:
       metadata:
         description: ""
@@ -1642,7 +2024,7 @@ data:
               - $.scenario
           outgoingConnections:
             - match_0->"Text" C0QNTN8bcNS9fxutN7Kpq/input
-            - match_0->"Text" WWZ_Br-DoPfrp5Mv77_V1/entity
+            - match_1->"Text" WWZ_Br-DoPfrp5Mv77_V1/scenario
           visualData: 602.3647326512285/493.7380822247168/280/2078//
         '[C0QNTN8bcNS9fxutN7Kpq]:text "Text"':
           data:
@@ -1698,7 +2080,7 @@ data:
           outgoingConnections:
             - match_0->"Escape chars" eTaFikaSKR_tXB6Cuak6w/input1
           visualData: 1729.9370826875308/1048.9969784471757/280/2066//
-        '[TG8jDJl5_dlO5g6ZyRowt]:httpCall "HTTP - Submit holding statement"':
+        '[TG8jDJl5_dlO5g6ZyRowt]:httpCall "HTTP - Submit press release"':
           data:
             body: ""
             errorOnNon200: true
@@ -1708,12 +2090,12 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://crisis-comms.vercel.app/api/submit-entity-holdingstatement
+            url: http://localhost:4015/api/submit-entity-pressrelease
             useBodyInput: true
             useHeadersInput: false
           outgoingConnections:
             - json->"Destructure" jUqha9pAWWAy45jVSHF5e/object
-          visualData: 1209.2768326401124/668.0615533048633/280/2054/var(--node-color-4)/var(--node-color-4)
+          visualData: 1209.2768326401124/668.0615533048633/280/2054/var(--node-color-5)/var(--node-color-5)
         '[Uzi8-tpk-yiTMIZU_glEY]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -1738,12 +2120,10 @@ data:
                     "story": "{{story}}",
                     "response": "{{response}}",
                     "document": "{{document}}",
-                    "crisis": "{{entity}}"
+                    "scenario": "{{scenario}}"
                   }
                 ]
               }
-          outgoingConnections:
-            - output->"Subgraph" vhOxQ8Pd9KDEo9NCGbsQX/stringGraph
           visualData: 3355.2885691657734/1060.5064776340726/330/2070//
         '[eTaFikaSKR_tXB6Cuak6w]:code "Escape chars"':
           data:
@@ -1777,12 +2157,12 @@ data:
           visualData: 1908.392287170366/650.14101620553/280/2041//
         '[oD8NNqTG5FgUeJmUhtJda]:subGraph "Subgraph"':
           data:
-            graphId: igOxpBJfjUy_hFWfY9tSi
+            graphId: zaszbOz1wpYtXytDJCEhg
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
             - output->"Extract JSON" VF4ca2rN_S4znHxplZ1Hq/input
-            - output->"HTTP - Submit holding statement"
+            - output->"HTTP - Submit press release"
               TG8jDJl5_dlO5g6ZyRowt/req_body
           visualData: 514.7389562305565/1049.6075998191504/330/2052/var(--node-color-1)/var(--node-color-1)
         '[uLmm__QEitLErk6lytdsX]:destructure "Destructure"':
@@ -2531,7 +2911,7 @@ data:
           data:
             body: ""
             normalizeLineEndings: true
-            text: https://crisis-comms.vercel.app/api/reach-summary?id={{input}}
+            text: https://crisis-comms.vercel.app/api/reach-summary?id={{input}}&type=opportunity
           outgoingConnections:
             - output->"Http Call" kXdWFK7wQqfGpSPkLdrob/url
           visualData: 1200.1415057387123/2057.0151495127143/330/1610/var(--node-color-5)/var(--node-color-5)
@@ -2747,6 +3127,21 @@ data:
           outgoingConnections:
             - output1->"Text" KCt3dmUgSCv1CL6Nnco0u/history
           visualData: 4719.8214507506855/-767.2835257097495/230/1462/var(--node-color-2)/var(--node-color-2)
+        '[1d_I3CvsuxquLLL25ctDS]:destructure "Destructure"':
+          data:
+            body: ""
+            headers: ""
+            paths:
+              - $.data[0].tov
+              - $.data[0].task
+              - $.data[0].company.title
+            text: ""
+          outgoingConnections:
+            - match_0->"TEXT - Define role" N9YOhpmU3aaCsH0rF8pKv/task
+            - match_0->"Text" lTDwHyIvD8GtM-vUQWnZJ/Tone
+            - match_1->"TEXT - Define role" N9YOhpmU3aaCsH0rF8pKv/tone
+            - match_2->"TEXT - Define role" N9YOhpmU3aaCsH0rF8pKv/Company
+          visualData: -1710.4382132226706/-644.1125662645687/280/1458/var(--node-color-5)/var(--node-color-5)
         '[1mRKcxaiTgLwLLKdmgtGm]:code "Esape chars"':
           data:
             code: >-
@@ -2816,7 +3211,6 @@ data:
             - data->"Graph Output" nT_8sfzahbwZNsPj2AWK0/value
             - data->"Mitigation" ykAfnK8lI7luub7SggyJ0/stringGraph
             - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
-            - data->"Text" yUsMVzssmowpwlFaD33G8/entity
           visualData: -2744.839120608272/658.6536749652059/330/1494/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
@@ -2945,7 +3339,7 @@ data:
           data:
             body: ""
             text: trg7ingzxb9yo65r87b40dvs
-          visualData: -3140.75845776152/62.73760711031275/330/1751//
+          visualData: -2839.4378941386544/-280.47056849600006/330/1492//
         '[CUV14RQmCdM2ueUbiTCjn]:setGlobal "Set Global"':
           data:
             dataType: string
@@ -3150,7 +3544,7 @@ data:
           data:
             body: ""
             text: nvsvrsajrztv8ih5yjpq7uj5
-          visualData: -3182.637652289986/398.4094655377173/330/1759//
+          visualData: -2600.50330195183/456.9197068642051/330/1493//
         '[KCt3dmUgSCv1CL6Nnco0u]:text "Text"':
           data:
             text: |-
@@ -3222,7 +3616,7 @@ data:
           data:
             text: >-
               You are a crisis communications public relations (PR) professional
-              working for {{company}}.
+              working for {{Company}}.
 
 
               {{task}}
@@ -3250,7 +3644,7 @@ data:
             height: 2352.3414340712166
             text: Holding statement
           visualData: 1158.2735741915471/-2668.394934842209/5276.089509143422/1065//
-        '[OzfcqLFo3Rn18m4eME4ys]:httpCall "HTTP - Get tone"':
+        '[OzfcqLFo3Rn18m4eME4ys]:httpCall "Http Call"':
           data:
             body: ""
             errorOnNon200: true
@@ -3260,10 +3654,9 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: GET
-            url: ""
-            useUrlInput: true
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/tones?populate=*
           outgoingConnections:
-            - json->"Destructure" f-alM-DrASwCvKMXDfB9-/object
+            - json->"Destructure" 1d_I3CvsuxquLLL25ctDS/object
           visualData: -2068.6923665205054/-868.637080008599/280/1496/var(--node-color-4)/var(--node-color-4)
         '[P-ksQNwNI_x344C2ks26n]:graphOutput "Graph Output"':
           data:
@@ -3334,9 +3727,9 @@ data:
           data:
             backgroundColor: rgba(0,0,0,0.05)
             color: rgba(255,255,255,1)
-            height: 779.5121328978863
+            height: 766.352083691654
             text: Create role
-          visualData: -2574.9956458445304/-925.4781397859413/2124.031931164753/1749//
+          visualData: -2120.9879804755496/-937.639059394039/1643.2363415809273/1499//
         '[TkiAWaAbj2CrKNN4Ou7wZ]:graphOutput "Graph Output"':
           data:
             dataType: string
@@ -3569,22 +3962,7 @@ data:
           data:
             body: ""
             text: y2wlt0x5xdcjtvgwokzcbk1k
-          visualData: -2850.248397308188/364.39078170291646/330/1760//
-        '[f-alM-DrASwCvKMXDfB9-]:destructure "Destructure"':
-          data:
-            body: ""
-            headers: ""
-            paths:
-              - $.data.tone.tov
-              - $.data.tone.task
-              - $.data.tone.company.title
-            text: ""
-          outgoingConnections:
-            - match_0->"TEXT - Define role" N9YOhpmU3aaCsH0rF8pKv/tone
-            - match_0->"Text" lTDwHyIvD8GtM-vUQWnZJ/Tone
-            - match_1->"TEXT - Define role" N9YOhpmU3aaCsH0rF8pKv/task
-            - match_2->"TEXT - Define role" N9YOhpmU3aaCsH0rF8pKv/company
-          visualData: -1704.175388428409/-468.2302651643399/280/1757//
+          visualData: -2699.2999804649417/269.05493948612934/330/1449//
         '[fYmCn_cOJYBmJFERsTjL7]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -3754,7 +4132,7 @@ data:
               }
           outgoingConnections:
             - output->"Chat" ar6v6LMNTaqxVthRlZG20/systemPrompt
-          visualData: 1879.6542919201315/619.0784835401694/330/1756//
+          visualData: 1875.1144899098083/568.0057109240335/330/1488//
         '[mcgQkCMsGk4tJBFjxhXTS]:destructure "Destructure"':
           data:
             paths:
@@ -3792,7 +4170,7 @@ data:
             id: role
             text: ""
             useIdInput: false
-          visualData: -784.1495551117125/-802.4239607790054/230/1455/var(--node-color-5)/var(--node-color-5)
+          visualData: -784.1495551117125/-802.4239607790054/230/1455//
         '[q-Jg-oegWFhpJfpNaq5YM]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -3955,11 +4333,18 @@ data:
           outgoingConnections:
             - output->"Destructure" Ax5hkueX-YZVwVDb0c62a/object
           visualData: 6833.15734065875/-1670.3376134117125/280/1311//
+        '[vjSKp1e8vKyiv69JKrBsT]:object "Object"':
+          data:
+            jsonTemplate: |-
+              {
+                    "stringGraph": "ye8w2fo87pymtxxfx0vyfzaa"
+              }
+          visualData: -2636.592211933434/858.2097979076034/230/1419//
         '[w72oTf1tc7rAiyFebway5]:text "CRISIS ID FOR LEAD"':
           data:
             body: ""
             text: ye8w2fo87pymtxxfx0vyfzaa
-          visualData: -3157.045448470819/213.90418272202905/330/1758//
+          visualData: -2636.1031677862325/68.63051839168679/330/1443//
         '[xQfq8BV4M9MDHCKcpL6vJ]:httpCall "Http Call"':
           data:
             body: ""
@@ -3974,13 +4359,6 @@ data:
           outgoingConnections:
             - json->"Destructure" KJ0n7LZTEzcnuQDvmpaz4/object
           visualData: -341.409286403287/-502.1614298576312/280/463/var(--node-color-4)/var(--node-color-4)
-        '[yUsMVzssmowpwlFaD33G8]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{entity}}?populate[tone][populate]=*
-          outgoingConnections:
-            - output->"HTTP - Get tone" OzfcqLFo3Rn18m4eME4ys/url
-          visualData: -2495.226881707759/-608.3256382489834/330/1750//
         '[ykAfnK8lI7luub7SggyJ0]:subGraph "Mitigation"':
           data:
             graphId: SZiVEz7iWEzO58OzSARGq
@@ -4278,10 +4656,10 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://crisis-comms.vercel.app/api/submit-entity-qapairs
+            url: http://localhost:4015/api/submit-qapair
             useBodyInput: true
             useHeadersInput: false
-          visualData: 2547.8983081972506/315.72265551527613/280/1904/var(--node-color-4)/var(--node-color-4)
+          visualData: 2547.8983081972506/315.72265551527613/280/1904/var(--node-color-5)/var(--node-color-5)
         '[Bak54OLENwKSSAYciRPua]:chat "Chat"':
           data:
             additionalParameters: []
@@ -4445,11 +4823,9 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: GET
-            url: ""
-            useUrlInput: true
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/comms-teams
           outgoingConnections:
             - json->"Destructure" wflh-J4z7bJTEx4HIp1oQ/object
-            - json->"Text" qt9iJpilcUIO9XLzyUqoM/input
           visualData: -1762/1287/280/1952/var(--node-color-4)/var(--node-color-4)
         '[11zxxo-ogfPEq6C6LTuHV]:chat "Chat"':
           data:
@@ -4490,13 +4866,11 @@ data:
         '[2-jD_3vVzeOvd7Zb41uLy]:destructure "Destructure"':
           data:
             paths:
-              - $.entity
+              - $.value
               - $.role
           outgoingConnections:
-            - match_0->"Text" KHbYuk5Hj6oqv0PV5af2E/entity
-            - match_0->"Text" oy2b1n0LbyWkCiovxNB0o/entity
             - match_1->"Text" MMaHv-RW6uCe9QnHfp8yk/role
-          visualData: -1700.0098012137755/494.7406100354071/280/2040//
+          visualData: -1399.2947433524105/583.0356695776802/280/1961//
         '[2BFSOHoAnpQC_IFnegQEU]:httpCall "HTTP - Collect entity"':
           data:
             body: ""
@@ -4513,21 +4887,6 @@ data:
           outgoingConnections:
             - json->"Destructure" Cj3jU_DQp8sh-E6Ul_yO4/object
           visualData: -708.0671800295399/1608/280/1959/var(--node-color-4)/var(--node-color-4)
-        '[B3WPsDKY5pvqViR_8uO4I]:httpCall "Http - Get role & tones"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: GET
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/tones?populate=*
-            useUrlInput: true
-          outgoingConnections:
-            - json->"Destructure" juBujzKq7DABtNOQ4RrRC/object
-          visualData: -2513.632400776933/885.824515420267/280/2053/var(--node-color-4)/var(--node-color-4)
         '[C4mCiC0IG6fWWhj0IhHEu]:destructure "Destructure"':
           data:
             paths:
@@ -4542,6 +4901,20 @@ data:
           outgoingConnections:
             - match_0->"Text" MMaHv-RW6uCe9QnHfp8yk/audience
           visualData: -256.6922485971745/1957.3875840834758/280/1959//
+        '[FnfKn-IJAsuVXYlsz8cqQ]:httpCall "Http -Tone"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/tones?populate=*
+          outgoingConnections:
+            - json->"Destructure" nAygB7KtMTh3DsAB1yxvm/object
+          visualData: -1766/792/280/1951/var(--node-color-4)/var(--node-color-4)
         '[IiRoeet7sfkl3CN3KAC7q]:code "Stringify history"':
           data:
             code: >-
@@ -4569,23 +4942,11 @@ data:
           outgoingConnections:
             - output1->"Text" QkJh31BWLfTQ94pPzdiuR/history
           visualData: 2469.5944630433105/876.9987853215694/230/2015/var(--node-color-2)/var(--node-color-2)
-        '[KHbYuk5Hj6oqv0PV5af2E]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{entity}}?populate[tone][populate]=*
-          outgoingConnections:
-            - output->"Http - Get role & tones" B3WPsDKY5pvqViR_8uO4I/url
-          visualData: -2966.7513689550324/943.4012854272489/330/2054//
         '[L1fLTP7ZzyiDju3mRT6Wj]:graphOutput "Graph Output"':
           data:
             dataType: object
             id: output
           visualData: 3371.115062316022/553.7961925111833/330/2029/var(--node-color-3)/var(--node-color-3)
-        '[LolGNi_uGejU-LDnSzgxr]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: "{{input}}"
-          visualData: -1934.083063873665/1681.7596898448155/330/2038//
         '[MMaHv-RW6uCe9QnHfp8yk]:text "Text"':
           data:
             text: >-
@@ -4699,10 +5060,6 @@ data:
             - match_0->"Escape chars" cnqBIAJQZvyisYmfLjWnO/input1
             - match_1->"Stringify history" IiRoeet7sfkl3CN3KAC7q/input1
           visualData: 2029.3796657898831/784.8226835774988/280/2003//
-        '[W-O2-h56YtUa1x_mY9EeE]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Destructure" 2-jD_3vVzeOvd7Zb41uLy/object
-          visualData: -2101.7157131495746/604.3040357202656/280/2041//
         '[XrcMwFyrnUN3KsDRQcb_R]:httpCall "HTTP - Collect scenario"':
           data:
             body: ""
@@ -4741,7 +5098,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" QkJh31BWLfTQ94pPzdiuR/original
-          visualData: 2481.1427053019493/329.56637959799366/230/2045/var(--node-color-2)/var(--node-color-2)
+          visualData: 2483.701982390131/462.64878818344874/230/2033/var(--node-color-2)/var(--node-color-2)
         '[aZ-NZL_X5w0gpbh_IXa1p]:text "Text"':
           data:
             body: ""
@@ -4778,7 +5135,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" QkJh31BWLfTQ94pPzdiuR/detail
-          visualData: 2476.7759952550578/-142.61581972228174/230/2044/var(--node-color-2)/var(--node-color-2)
+          visualData: 2467.8185254464215/4.542612848173434/230/2034/var(--node-color-2)/var(--node-color-2)
         '[d-KZHyexz-w9IHaliNh-Z]:httpCall "HTTP - Rewrite endpoint"':
           data:
             body: ""
@@ -4797,14 +5154,24 @@ data:
           visualData: 1258.6831222377018/497.5937335663832/280/971/var(--node-color-4)/var(--node-color-4)
         '[dYu45nP8THeQgsm-ZeOw8]:code "Escape chars"':
           data:
-            code: |-
+            code: >-
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
               const inputText = inputs.input1.value;
 
-              // Escape double quotes (") as \" and real line breaks as \n
-              const escapedText = inputText
-                .replace(/\\/g, '\\\\')         // escape backslashes first
-                .replace(/"/g, '\\"')           // escape double quotes
-                .replace(/\r?\n/g, '\\n');      // escape newlines
+
+              // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+              const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
 
               return {
                 output1: {
@@ -4823,7 +5190,7 @@ data:
             id: input
             useDefaultValueInput: false
           outgoingConnections:
-            - data->"Extract JSON" W-O2-h56YtUa1x_mY9EeE/input
+            - data->"Destructure" 2-jD_3vVzeOvd7Zb41uLy/object
             - data->"Extract JSON" b4W6rGzyFjtLgbAzMXVCm/input
           visualData: -2581.1274405675367/475.50177755273836/330/1965/var(--node-color-3)/var(--node-color-3)
         '[g-B3iNt1kQOtuzJB418DQ]:extractJson "Extract JSON"':
@@ -4838,32 +5205,18 @@ data:
           outgoingConnections:
             - output->"HTTP - Collect entity" 2BFSOHoAnpQC_IFnegQEU/url
           visualData: -1257.7881329969282/1637.266003461967/330/1959//
-        '[juBujzKq7DABtNOQ4RrRC]:destructure "Destructure"':
+        '[nAygB7KtMTh3DsAB1yxvm]:destructure "Destructure"':
           data:
             body: ""
             headers: ""
             paths:
-              - $.data.tone.tov
-              - $.data.tone.task
-              - $.data.tone.company.title
+              - $.data[1].tov
+              - $.data[1].company.title
             text: ""
           outgoingConnections:
             - match_0->"Text" MMaHv-RW6uCe9QnHfp8yk/tone
-            - match_2->"Text" MMaHv-RW6uCe9QnHfp8yk/company
-          visualData: -2079.4161015234354/973.7527830343993/280/2052//
-        '[oy2b1n0LbyWkCiovxNB0o]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises?filters[documentId][$eq]={{entity}}&populate=comms_lead
-          outgoingConnections:
-            - output->"Http - Comms team" 0Gqx9hfDyw82xF2okkoxe/url
-            - output->"Text" LolGNi_uGejU-LDnSzgxr/input
-          visualData: -2573.9023359191224/1656.1669189629974/330/2046//
-        '[qt9iJpilcUIO9XLzyUqoM]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: "{{input}}"
-          visualData: -1321.1362012541167/1520.5252332893604/330/2037//
+            - match_1->"Text" MMaHv-RW6uCe9QnHfp8yk/company
+          visualData: -1311.2782639718146/878.5691083208405/280/1951/var(--node-color-5)/var(--node-color-5)
         '[qy_6hOk26iUTHDdSsv-t3]:text "Text"':
           data:
             body: ""
@@ -4875,14 +5228,14 @@ data:
         '[wflh-J4z7bJTEx4HIp1oQ]:destructure "Destructure"':
           data:
             paths:
-              - $.data[0].comms_lead.name
-              - $.data[0].comms_lead.email
-              - $.data[0].comms_lead.phone
+              - $.data[0].name
+              - $.data[0].email
+              - $.data[0].phone
           outgoingConnections:
             - match_0->"Text" MMaHv-RW6uCe9QnHfp8yk/spokesman
             - match_1->"Text" MMaHv-RW6uCe9QnHfp8yk/email
             - match_2->"Text" MMaHv-RW6uCe9QnHfp8yk/phone
-          visualData: -1319.2345613471034/1210.9510544029044/280/2042//
+          visualData: -1305.1585373621033/1273.6533430633592/280/1953/var(--node-color-5)/var(--node-color-5)
     jOpSxxKf2JqdCjND_3e_G:
       metadata:
         description: ""
@@ -5223,12 +5576,12 @@ data:
                     "type": "press_release",
                     "story": "An investigative report by a prominent Indian media outlet reveals that many of Nestlé India's best-selling products for children — Maggi noodles — are high in sugar, salt, and fat, with little nutritional benefit. The report is based on internal product formulation documents and interviews with former employees who allege that nutrition goals often took a back seat to taste and profit.  A senior pediatrician quoted in the story says Nestlé is hooking a generation onto junk through comfort branding The controversy intensifies when parenting groups and nutritionists begin questioning the company's Good Food, Good Life positioning.  Trigger Points: - The story hits just before exam season, when kids consume more packaged snacks - Critics tie the findings to India's rising childhood obesity and diabetes rates  Media/Social Sentiment: - Trending hashtags: #NestleTargetsKids #NotSoHealthy - Viral posts from parenting influencers and doctors calling for a boycott - News debates on Should Nestlé products be in your child's lunchbox?",
                     "response": "We are going to throw every single employee off a bridge..",
-                    "document": "ms3wx92f7uug638zzzfpi9mo",
-                    "crisis": "lmfu2zzm92t31sfw047ifs7g"
+                    "document": "atk2z96cnvaefi4j5l4tv83m",
+                    "scenario": "nvsvrsajrztv8ih5yjpq7uj5"
                   }
                 ]
               }
-          visualData: -1206.7468607004275/182.55539960719315/330/2062//
+          visualData: -1206.7468607004275/182.55539960719315/330/2053//
         '[EEA5kzJ_j7O5PXtPxdqXN]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -5236,7 +5589,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Extract JSON" eOQgNgWIUk4qri1SRH_7p/input
-          visualData: -1213.9225284118118/-60.726229703504885/330/2061/var(--node-color-3)/var(--node-color-3)
+          visualData: -1171.9481857882429/-60.81898604789532/330/1360/var(--node-color-3)/var(--node-color-3)
         '[G9P-ke1FCCp1a431O7XUH]:chat "Chat"':
           data:
             additionalParameters: []
@@ -5287,7 +5640,7 @@ data:
             useUrlInput: true
           outgoingConnections:
             - res_body->"Extract JSON" zlYY8j7cxw56sGSOWAWFD/input
-          visualData: -40.18206799360684/845.7067845470713/280/2055/var(--node-color-4)/var(--node-color-4)
+          visualData: -7.218032393627169/803.9523394537637/280/1272/var(--node-color-4)/var(--node-color-4)
         '[NnTag_JamoNPM25H3-E5w]:destructure "Destructure"':
           data:
             paths:
@@ -5295,7 +5648,7 @@ data:
               - $.data[0].story
               - $.data[0].response
               - $.data[0].document
-              - $.data[0].crisis
+              - $.data[0].crisisid
             text: ""
           outgoingConnections:
             - match_0->"Persona system prompt" O9IToozo87EkSxBqBWWuo/type
@@ -5304,7 +5657,7 @@ data:
             - match_3->"Persona system prompt" O9IToozo87EkSxBqBWWuo/documentid
             - match_4->"Persona system prompt" O9IToozo87EkSxBqBWWuo/crisis
             - match_4->"Text" UBditugLjbWTHGQfX_Hzb/crisis
-          visualData: -313.8674332402255/64.71686387617487/280/2056//
+          visualData: -300.68181900023365/10.875605729541405/280/1348//
         '[O9IToozo87EkSxBqBWWuo]:text "Persona system prompt"':
           data:
             normalizeLineEndings: true
@@ -5378,7 +5731,7 @@ data:
               - **Crisis Event:** `{{story}}` — a brief summary of the incident
 
 
-              - **Campaign:** `{{response}}` — the full announcement of the campaign
+              - **Company Response:** `{{response}}` — the full corporate statement in response to the crisis indcident
 
 
               ---
@@ -5387,21 +5740,22 @@ data:
               ### RESPONSE FORMAT (PER STAKEHOLDER):
 
 
-              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the **Campaign:**. The stakeholder feedback should detail their specific reaction to the details of the **Campaign:**. They should comment on if it has motivated them to engage with the brand.
+              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the **Company Response:** to the situation having become aware of the **Crisis Event:**. The stakeholder feedback should detail their specific reaction to the details of the **Company Response:**. They should comment on if it has mitigated their concerns. The feedback should focus mostly on the **Company Response:** and detail their concerns that remain and acknowledge where other concerns have been alleviated (if they have).
 
 
               The response must:
               	•	Focus on the effectiveness of the company's message
-              	•	Clearly state which elements have interested them, and which have not
+              	•	Clearly state which concerns were addressed, and which were not
               	•	Reflect the stakeholder's tone of voice, based on "warmth"
 
               Then, continue with:
 
 
+
               - A line break  
 
 
-              - Add a single sentence stating reasons whether the stakeholder feels **engaged** or **not engaged** by the company's campaign (do **not** include any numeric score here).
+              - Add a single sentence stating reasons whether the stakeholder feels **reassured** or **not reassured** by the company's response (do **not** include any numeric score here).
 
 
 
@@ -5491,7 +5845,7 @@ data:
               - Do not include any markdown or fencing characters such as ``` or ```json, only return the JSON itself
           outgoingConnections:
             - output->"Chat" G9P-ke1FCCp1a431O7XUH/systemPrompt
-          visualData: 353.89646653682263/72.32866466045371/330/2058/var(--node-color-5)/var(--node-color-5)
+          visualData: 345.10605704349473/121.77471806042323/330/1356/var(--node-color-2)/var(--node-color-2)
         '[Q76tUdJrdfqwd8aDKDxgE]:httpCall "HTTP - Insert opinion"':
           data:
             body: ""
@@ -5505,7 +5859,7 @@ data:
             url: https://crisis-comms.vercel.app/api/opinion-bulk
             useBodyInput: true
             useHeadersInput: false
-          visualData: 1632.3375380520067/447.9954656480777/280/2059/var(--node-color-4)/var(--node-color-4)
+          visualData: 1633.4363392386726/322.73213036815497/280/1313/var(--node-color-4)/var(--node-color-4)
         '[UBditugLjbWTHGQfX_Hzb]:text "Text"':
           data:
             body: ""
@@ -5513,7 +5867,7 @@ data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/personas?filters%5Bcrises%5D%5BdocumentId%5D%5B$contains%5D={{crisis}}
           outgoingConnections:
             - output->"HTTP - Get personas" J6yyJ2AT-F5gJXFMNzfkW/url
-          visualData: -473.07507441682793/900.6037020603044/330/2060//
+          visualData: -464.28466492350003/1052.238265820211/330/1367//
         '[eOQgNgWIUk4qri1SRH_7p]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" NnTag_JamoNPM25H3-E5w/object
@@ -6283,6 +6637,20 @@ data:
           outgoingConnections:
             - output->"Destructure" lSwYH6WvGyFNq07duM1Vv/object
           visualData: 588.7884424808426/-219.40432160699288/280/1791//
+        '[6uXhBxR3Eolq-5WjebW0m]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/tones?populate=*
+          outgoingConnections:
+            - json->"Destructure" syxVrrS4NZ_9z_WTa_4nk/object
+          visualData: 1379.035124698888/1791.1962688364263/280/1843/var(--node-color-4)/var(--node-color-4)
         '[87zRfCwVwP6x7p5jxVshZ]:graphInput "Graph Input"':
           data:
             dataType: object
@@ -6304,7 +6672,7 @@ data:
             graphId: r8FT7A0IWUaeF6tg4M7H0
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 2879.3736716373132/1802.4450952030757/330/2080/var(--node-color-1)/var(--node-color-1)
+          visualData: 3019.2442959136333/1813.2043739935618/330/1957/var(--node-color-1)/var(--node-color-1)
         '[CJI7qTOh51YQBKKmYS4wi]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -6335,14 +6703,13 @@ data:
             - match_0->"Text" 3R28XcWIai3Hj8V49Ac14/entity
             - match_0->"Text" MN5jMjBKbfIzYkykInBtX/input
             - match_0->"Text" lvCjgHrCOrRnQjYHSHUyR/entity
-            - match_0->"Text" pugEetb1EcQ3O7Pr26KXT/entity
             - match_1->"Array" O5zbc8y6KM7cMRl3PTSGj/input1
           visualData: -218.94350493899847/475.88456497117215/280/1758//
         '[JuzPr4Vd_mhivVnDXeATM]:text "Text"':
           data:
             normalizeLineEndings: true
             text: "{{input}}"
-          visualData: 3317.2780827154465/2352.4931237976934/330/2077//
+          visualData: 3311.8984433202036/2105.0297116165116/330/1951//
         '[MN5jMjBKbfIzYkykInBtX]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -6387,7 +6754,7 @@ data:
               }
             method: POST
             text: ""
-            url: https://crisis-comms.vercel.app/api/submit-entity-scenario
+            url: http://localhost:4015/api/submit-create-scenario
             useBodyInput: true
             useHeadersInput: false
           isSplitRun: true
@@ -6441,21 +6808,6 @@ data:
           outgoingConnections:
             - output1->"Loop Controller" j-rJJSkf-HG0hDggKktRT/continue
           visualData: 2050.4382166910646/202.83371258980196/230/1765/var(--node-color-2)/var(--node-color-2)
-        '[YThn72y2AA6KJjbN2lhJR]:httpCall "Http - Get role & tones"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: GET
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/tones?populate=*
-            useUrlInput: true
-          outgoingConnections:
-            - json->"Destructure" cqXatyK3h3nELXxXr0J1D/object
-          visualData: 1289.5077033092239/2205.9180498463065/280/2085/var(--node-color-4)/var(--node-color-4)
         '[cNIZedJe9c6gA0LK8XZVg]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -6466,25 +6818,13 @@ data:
           outgoingConnections:
             - output->"Extract JSON" 3_p39awSQBwb7ubVKexHz/input
           visualData: 183.5589575257596/-217.72819341244028/330/1790//
-        '[cqXatyK3h3nELXxXr0J1D]:destructure "Destructure"':
-          data:
-            body: ""
-            headers: ""
-            paths:
-              - $.data.tone.tov
-              - $.data.tone.task
-              - $.data.tone.company.title
-            text: ""
-          outgoingConnections:
-            - match_1->"Text" lvCjgHrCOrRnQjYHSHUyR/role
-          visualData: 1703.249785857267/2400.0563166199845/280/2085//
         '[d6z39QXJflEms3PSllohD]:subGraph "Subgraph"':
           data:
             graphId: hoenAxCMNvoeN7fveNmvO
             useAsGraphPartialOutput: false
             useErrorOutput: false
           description: Q&A agent
-          visualData: 2870.9994223499616/2082.316947110565/330/2079/var(--node-color-1)/var(--node-color-1)
+          visualData: 2848.1359549201784/1483.8320643897719/330/1953/var(--node-color-1)/var(--node-color-1)
         '[haPCi94mBpa_hzTXRDWpz]:subGraph "Subgraph"':
           data:
             graphId: tfM8ynLGCK90qQnqxKhO8
@@ -6492,7 +6832,7 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Text" JuzPr4Vd_mhivVnDXeATM/input
-          visualData: 2862.391223815195/2363.8741219530534/330/2076/var(--node-color-1)/var(--node-color-1)
+          visualData: 2819.3541086532505/2086.8226930980345/330/1952/var(--node-color-1)/var(--node-color-1)
         '[j-rJJSkf-HG0hDggKktRT]:loopController "Loop Controller"':
           data:
             maxIterations: 10
@@ -6536,43 +6876,25 @@ data:
             - output->"Subgraph" BdY7MGvxfkjmw_Ct57jfA/input
             - output->"Subgraph" d6z39QXJflEms3PSllohD/input
             - output->"Subgraph" haPCi94mBpa_hzTXRDWpz/prompt
-            - output->"Subgraph" m4XOmn_dPEooBQjofGuF5/input
           visualData: 2357.586338729317/1693.2398633637204/330/1950//
-        '[m4XOmn_dPEooBQjofGuF5]:subGraph "Subgraph"':
+        '[syxVrrS4NZ_9z_WTa_4nk]:destructure "Destructure"':
           data:
-            graphId: InjRSbXpuhFO-7TgZ2VyH
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 2882.063491334935/1523.6571890264413/330/2082/var(--node-color-1)/var(--node-color-1)
-        '[pugEetb1EcQ3O7Pr26KXT]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{entity}}?populate[tone][populate]=*
+            body: ""
+            headers: ""
+            paths:
+              - $.data[1].tov
+              - $.data[1].task
+              - $.data[1].company.title
+            text: ""
           outgoingConnections:
-            - output->"Http - Get role & tones" YThn72y2AA6KJjbN2lhJR/url
-          visualData: 845.8699802354287/2320.4838358224283/330/2086//
+            - match_1->"Text" lvCjgHrCOrRnQjYHSHUyR/role
+          visualData: 1833.7568607270734/1877.7653771572668/280/1842/var(--node-color-5)/var(--node-color-5)
     r8FT7A0IWUaeF6tg4M7H0:
       metadata:
         description: Apply best practices and create Q&A statements
         id: r8FT7A0IWUaeF6tg4M7H0
         name: Universal - PR write & message test
       nodes:
-        '[20SbTGgZgiTicJQkcTarU]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: >-
-              {
-                "data": [
-                  {
-                    "type": "press_release",
-                    "story": "An investigative report by a prominent Indian media outlet reveals that many of Nestlé India's best-selling products for children — Maggi noodles — are high in sugar, salt, and fat, with little nutritional benefit. The report is based on internal product formulation documents and interviews with former employees who allege that nutrition goals often took a back seat to taste and profit.  A senior pediatrician quoted in the story says Nestlé is hooking a generation onto junk through comfort branding The controversy intensifies when parenting groups and nutritionists begin questioning the company's Good Food, Good Life positioning.  Trigger Points: - The story hits just before exam season, when kids consume more packaged snacks - Critics tie the findings to India's rising childhood obesity and diabetes rates  Media/Social Sentiment: - Trending hashtags: #NestleTargetsKids #NotSoHealthy - Viral posts from parenting influencers and doctors calling for a boycott - News debates on Should Nestlé products be in your child's lunchbox?",
-                    "response": "We are going to throw every single employee off a bridge..",
-                    "document": "ms3wx92f7uug638zzzfpi9mo",
-                    "crisis": "lmfu2zzm92t31sfw047ifs7g"
-                  }
-                ]
-              }
-          visualData: 3361.1213530867512/1589.4635332779608/330/2082//
         '[2rpU8hIJ5jtPLi2zfYJQc]:code "Escape chars"':
           data:
             code: >-
@@ -6636,7 +6958,7 @@ data:
                   "role": "You are a consumer PR strategist focused on driving awareness, engagement, and brand love for products and experiences in everyday culture. Your role is to create campaign ideas and messaging that resonate with specific audience segments—amplifying stories through earned media, influencer partnerships, stunts, social moments, and brand activations. You translate marketing goals into culturally relevant narratives, identifying the creative hooks, emotional levers, and formats that make campaigns talkable and shareable. Whether launching a new product, reigniting relevance, or responding to trends, your job is to ensure the brand is seen, heard, and positively talked about in the right places, by the right people.",
                   "slot": "slot1"
               }
-          visualData: -305.66552902895654/984.7336104009426/330/2084//
+          visualData: -281.3719272773617/819.7928406137986/330/2072//
         '[X0MW0cuRR7clgcN95yQuB]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -6648,12 +6970,10 @@ data:
                     "story": "{{story}}",
                     "response": "{{response}}",
                     "document": "{{document}}",
-                    "crisis": "{{entity}}"
+                    "scenario": "{{scenario}}"
                   }
                 ]
               }
-          outgoingConnections:
-            - output->"Subgraph" jSDi74ZVhWgd6yRH0aCiJ/stringGraph
           visualData: 3355.2885691657734/1060.5064776340726/330/2070//
         '[XlVN-__d2NohHA6gyIvGb]:destructure "Destructure"':
           data:
@@ -6670,7 +6990,7 @@ data:
           outgoingConnections:
             - data->"Extract JSON" HhsPJOhE2oj3yvI2_XT2I/input
             - data->"Subgraph" ryZAUoBAoVESF7BR4ccXi/input
-          visualData: -444.2812908575113/553.1855089475481/330/2085/var(--node-color-3)/var(--node-color-3)
+          visualData: -285.73357416289224/558.299951421568/330/2073/var(--node-color-3)/var(--node-color-3)
         '[YouHQb-luGGBwS1lWMi69]:destructure "Destructure"':
           data:
             paths:
@@ -6678,7 +6998,7 @@ data:
               - $.scenario
           outgoingConnections:
             - match_0->"Text" TpuSWAUHjEYMCbNvaf_MN/input
-            - match_0->"Text" X0MW0cuRR7clgcN95yQuB/entity
+            - match_1->"Text" X0MW0cuRR7clgcN95yQuB/scenario
           visualData: 602.3647326512285/493.7380822247168/280/2078//
         '[hYbPg10rdNlV8o-kU6Jar]:httpCall "HTTP - Collect entity"':
           data:
@@ -6701,7 +7021,7 @@ data:
             graphId: lVKdxXB5CQuDxfEkNhk_k
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 3863.22849397689/1276.7121197630045/330/2083/var(--node-color-1)/var(--node-color-1)
+          visualData: 3863.22849397689/1276.7121197630045/330/2071/var(--node-color-1)/var(--node-color-1)
         '[qJmL-HFLxo29_--V-ozd_]:code "Escape chars"':
           data:
             code: >-
@@ -6745,12 +7065,12 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://crisis-comms.vercel.app/api/submit-entity-pressrelease
+            url: http://localhost:4015/api/submit-entity-pressrelease
             useBodyInput: true
             useHeadersInput: false
           outgoingConnections:
             - json->"Destructure" RmH5byobrHQ19TrL7TIOy/object
-          visualData: 1209.2768326401124/668.0615533048633/280/2054/var(--node-color-4)/var(--node-color-4)
+          visualData: 1209.2768326401124/668.0615533048633/280/2054/var(--node-color-5)/var(--node-color-5)
     tF54ClWl2MYfhx6TaV778:
       metadata:
         description: ""
@@ -6969,9 +7289,6 @@ data:
               Use natural line breaks in the post like \n.
 
 
-              Escape any quotes in the post text.
-
-
               Output only a JSON object in the following format:
 
 
@@ -7083,6 +7400,12 @@ data:
                   "role": "You are a consumer PR strategist focused on driving awareness, engagement, and brand love for products and experiences in everyday culture. Your role is to create campaign ideas and messaging that resonate with specific audience segments—amplifying stories through earned media, influencer partnerships, stunts, social moments, and brand activations. You translate marketing goals into culturally relevant narratives, identifying the creative hooks, emotional levers, and formats that make campaigns talkable and shareable. Whether launching a new product, reigniting relevance, or responding to trends, your job is to ensure the brand is seen, heard, and positively talked about in the right places, by the right people."
               }
           visualData: -1906.3122291988273/1083.2889567354744/330/1632//
+        '[ntuy-zPVdgNJLWiWepCEb]:subGraph "Subgraph"':
+          data:
+            graphId: o8S-CeePSytOJAterI2wq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 2471.8332924147153/97.34458929736957/330/1640/var(--node-color-1)/var(--node-color-1)
         '[pejEXiGfmosneojtlBVYw]:httpCall "Http - Submit socials"':
           data:
             body: ""
@@ -7093,10 +7416,10 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: POST
-            url: https://crisis-comms.vercel.app/api/submit-socials
+            url: http://localhost:4015/api/submit-socials
             useBodyInput: true
             useHeadersInput: false
-          visualData: 1970.3782104587824/-163.34488486624403/280/1622/var(--node-color-4)/var(--node-color-4)
+          visualData: 1970.3782104587824/-163.34488486624403/280/1622/var(--node-color-5)/var(--node-color-5)
         '[rTe_UZWjzj7ta4JxVHYLz]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" DkhvpWmWXJeYEA_ncU8Mq/object
@@ -7149,8 +7472,7 @@ data:
             normalizeLineEndings: true
             text: lmfu2zzm92t31sfw047ifs7g
           outgoingConnections:
-            - output->"Text" cfuHYfdAGorC5ycWjcNZM/entity
-            - output->"Text" kwgdpRGTmmqRB7AeZZW63/entity
+            - output->"Text" cfuHYfdAGorC5ycWjcNZM/input
             - output->"Text" p9xDr18o0132Dk-8admW8/entity
           visualData: -968.5234068993825/1390.4174886172955/330/1695//
         '[DzFZKmvNx3S8ym4Oajz3_]:httpCall "Http - Get role & tones"':
@@ -7164,7 +7486,6 @@ data:
               }
             method: GET
             url: https://devoted-cats-3d3ab24394.strapiapp.com/api/tones?populate=*
-            useUrlInput: true
           outgoingConnections:
             - json->"Destructure" nnJMyKWZMotLh5M3xMi9R/object
           visualData: -640.1499482560421/-484.4784081296878/280/1716/var(--node-color-4)/var(--node-color-4)
@@ -7252,7 +7573,7 @@ data:
           data:
             body: ""
             headers: ""
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{entity}}?populate=*
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=*
           outgoingConnections:
             - output->"HTTP - Collect entity" pEgwDlD6uWTVTvNqoN-0a/url
           visualData: -516.7475703210638/1001.1437152063309/330/1636//
@@ -7261,28 +7582,21 @@ data:
             dataType: string
             id: stringGraph
             useDefaultValueInput: false
-          visualData: -1260.6162514618704/1118.8051749304432/330/1740/var(--node-color-3)/var(--node-color-3)
-        '[kwgdpRGTmmqRB7AeZZW63]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{entity}}?populate[tone][populate]=*
-          outgoingConnections:
-            - output->"Http - Get role & tones" DzFZKmvNx3S8ym4Oajz3_/url
-          visualData: -962.745784936868/116.94474311593294/330/1746//
+          visualData: -955.3171620012912/1097.2351305663806/330/1683/var(--node-color-3)/var(--node-color-3)
         '[nnJMyKWZMotLh5M3xMi9R]:destructure "Destructure"':
           data:
             body: ""
             headers: ""
             paths:
-              - $.data.tone.tov
-              - $.data.tone.task
-              - $.data.tone.company.title
+              - $.data[1].tov
+              - $.data[1].task
+              - $.data[1].company.title
             text: ""
           outgoingConnections:
             - match_0->"TEXT - Define role" Jr2PCqGzJ-Hz2q9WwqMjc/task
             - match_1->"TEXT - Define role" Jr2PCqGzJ-Hz2q9WwqMjc/tone
             - match_2->"TEXT - Define role" Jr2PCqGzJ-Hz2q9WwqMjc/Company
-          visualData: -226.4078657079989/-290.3401413560096/280/1747//
+          visualData: -226.4078657079989/-290.3401413560096/280/1717/var(--node-color-5)/var(--node-color-5)
         '[p9xDr18o0132Dk-8admW8]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -7752,6 +8066,18 @@ data:
           outgoingConnections:
             - match_0->"Chat" pzjgWZzv5TcFAF9oJSyhH/prompt
           visualData: -243.03101192134955/2169.159645604944/280/1959//
+        '[9ObThnYHkh3nrYCm3r8xj]:destructure "Destructure"':
+          data:
+            body: ""
+            headers: ""
+            paths:
+              - $.data[1].tov
+              - $.data[1].company.title
+            text: ""
+          outgoingConnections:
+            - match_0->"Text" DCkLMZMAAdCmwqT3QIG4j/tone
+            - match_1->"Text" DCkLMZMAAdCmwqT3QIG4j/company
+          visualData: -1311.2782639718146/878.5691083208405/280/1951/var(--node-color-5)/var(--node-color-5)
         '[9d4nMU8fAT1U7QvxHO_4c]:text "Text"':
           data:
             body: ""
@@ -7838,18 +8164,11 @@ data:
           outgoingConnections:
             - match_0->"Escape chars" Na6k5BSbaIVorGvJio7-n/input1
             - match_1->"Stringify history" gLb1AwLMIFxatfEr8EMdu/input1
-          visualData: 1991.4649252843178/982.2952903773177/280/2046//
+          visualData: 2029.3796657898831/784.8226835774988/280/2003//
         '[JjHcH6HTBgqzOs5UbyLVt]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" Nw-rx49Hjlyt8u9_eaC1V/object
           visualData: -2028/1861.1050222033653/280/1959//
-        '[N36ylt-91l9jELeE62AvB]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises?filters[documentId][$eq]={{entity}}&populate=comms_lead
-          outgoingConnections:
-            - output->"Http - Comms team" QNnid_9HWwtDmqymSJZvl/url
-          visualData: -2294.984332861937/1497.8049143184087/330/2044//
         '[Na6k5BSbaIVorGvJio7-n]:code "Escape chars"':
           data:
             code: >-
@@ -7898,21 +8217,30 @@ data:
                 "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
               }
             method: GET
-            url: ""
-            useUrlInput: true
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/comms-teams
           outgoingConnections:
             - json->"Destructure" f9OeSWeCRflnuY_kJ3MYH/object
           visualData: -1762/1287/280/1952/var(--node-color-4)/var(--node-color-4)
         '[T5FxTZT8Z4VgbPUfFIPrh]:code "Escape chars"':
           data:
-            code: |-
+            code: >-
+              // This is a code node, you can write and JS in here and it will
+              be executed.
+
+              // Inputs are accessible via an object `inputs` and data is typed (i.e. inputs.foo.type, inputs.foo.value)
+
+              // Return an object with named outputs that match the output names specified in the node's config.
+
+              // Output values must by typed as well (e.g. { bar: { type: 'string', value: 'bar' } }
+
+
               const inputText = inputs.input1.value;
 
-              // Escape double quotes (") as \" and real line breaks as \n
-              const escapedText = inputText
-                .replace(/\\/g, '\\\\')         // escape backslashes first
-                .replace(/"/g, '\\"')           // escape double quotes
-                .replace(/\r?\n/g, '\\n');      // escape newlines
+
+              // Replace real line breaks (\n or \r\n) with the literal string "\n"
+
+              const escapedText = inputText.replace(/\r?\n/g, '\\n');
+
 
               return {
                 output1: {
@@ -7931,8 +8259,8 @@ data:
             id: input
             useDefaultValueInput: false
           outgoingConnections:
+            - data->"Destructure" eC5bJfpW0c4PZQy5AY4hm/object
             - data->"Extract JSON" JjHcH6HTBgqzOs5UbyLVt/input
-            - data->"Extract JSON" tgGyQrEVOlCkU5sM7ikYN/input
           visualData: -2581.1274405675367/475.50177755273836/330/1965/var(--node-color-3)/var(--node-color-3)
         '[aUiVVQQHQZHsiedIgU-ZG]:code "Escape chars"':
           data:
@@ -7964,40 +8292,22 @@ data:
         '[eC5bJfpW0c4PZQy5AY4hm]:destructure "Destructure"':
           data:
             paths:
-              - $.entity
+              - $.value
               - $.role
           outgoingConnections:
-            - match_0->"Text" N36ylt-91l9jELeE62AvB/entity
-            - match_0->"Text" pv-2xdZoPscSIpgPzphJg/entity
             - match_1->"Text" DCkLMZMAAdCmwqT3QIG4j/role
           visualData: -1399.2947433524105/583.0356695776802/280/1961//
         '[f9OeSWeCRflnuY_kJ3MYH]:destructure "Destructure"':
           data:
-            body: ""
             paths:
-              - $.data[0].comms_lead.name
-              - $.data[0].comms_lead.email
-              - $.data[0].comms_lead.phone
+              - $.data[0].name
+              - $.data[0].email
+              - $.data[0].phone
           outgoingConnections:
             - match_0->"Text" DCkLMZMAAdCmwqT3QIG4j/spokesman
             - match_1->"Text" DCkLMZMAAdCmwqT3QIG4j/email
             - match_2->"Text" DCkLMZMAAdCmwqT3QIG4j/phone
-          visualData: -1305.1585373621033/1273.6533430633592/280/1953//
-        '[fguSJ27faV2eOOHKzWom3]:httpCall "Http - Get role & tones"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: GET
-            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/tones?populate=*
-            useUrlInput: true
-          outgoingConnections:
-            - json->"Destructure" xNy1OAaZi7vHnT3rVvBNk/object
-          visualData: -2570.627219060988/663.7041561729782/280/2049/var(--node-color-4)/var(--node-color-4)
+          visualData: -1305.1585373621033/1273.6533430633592/280/1953/var(--node-color-5)/var(--node-color-5)
         '[gLb1AwLMIFxatfEr8EMdu]:code "Stringify history"':
           data:
             code: >-
@@ -8024,7 +8334,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" gh47sLZATqrnDj0k_BNTQ/history
-          visualData: 2490.8366856939106/970.1377615588162/230/2045/var(--node-color-2)/var(--node-color-2)
+          visualData: 2469.5944630433105/876.9987853215694/230/2015/var(--node-color-2)/var(--node-color-2)
         '[gh47sLZATqrnDj0k_BNTQ]:text "Text"':
           data:
             text: |-
@@ -8037,6 +8347,20 @@ data:
           outgoingConnections:
             - output->"Graph Output" QCJYyWOYp2Hq7T66p4GXY/value
           visualData: 2962.1028422179384/532.8116716163622/330/2030//
+        '[ixsMmga_axmbswDEsvIv5]:httpCall "Http -Tone"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            url: https://devoted-cats-3d3ab24394.strapiapp.com/api/tones?populate=*
+          outgoingConnections:
+            - json->"Destructure" 9ObThnYHkh3nrYCm3r8xj/object
+          visualData: -1766/792/280/1951/var(--node-color-4)/var(--node-color-4)
         '[lGJKU86LObG8xyTTW8OIz]:httpCall "HTTP - Rewrite endpoint"':
           data:
             body: ""
@@ -8053,13 +8377,6 @@ data:
           outgoingConnections:
             - res_body->"Extract JSON" d-48R5Wdi2cfys5IbMleZ/input
           visualData: 1258.6831222377018/497.5937335663832/280/971/var(--node-color-4)/var(--node-color-4)
-        '[pv-2xdZoPscSIpgPzphJg]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{entity}}?populate[tone][populate]=*
-          outgoingConnections:
-            - output->"Http - Get role & tones" fguSJ27faV2eOOHKzWom3/url
-          visualData: -2893.223055741814/1265.1273074185988/330/2049//
         '[pzjgWZzv5TcFAF9oJSyhH]:chat "Chat"':
           data:
             additionalParameters: []
@@ -8124,10 +8441,6 @@ data:
           outgoingConnections:
             - output1->"Text" DCkLMZMAAdCmwqT3QIG4j/date
           visualData: -1187.1632517732355/217.8528951745352/230/1963/var(--node-color-2)/var(--node-color-2)
-        '[tgGyQrEVOlCkU5sM7ikYN]:extractJson "Extract JSON"':
-          outgoingConnections:
-            - output->"Destructure" eC5bJfpW0c4PZQy5AY4hm/object
-          visualData: -1917.5263765320417/510.858569628985/280/null//
         '[uG4OUp24y0Kl2ERFj47_s]:text "Text"':
           data:
             body: ""
@@ -8136,19 +8449,6 @@ data:
           outgoingConnections:
             - output->"HTTP - Collect entity" -8Zq50BoP2ucC1rRHAlPb/url
           visualData: -1257.7881329969282/1637.266003461967/330/1959//
-        '[xNy1OAaZi7vHnT3rVvBNk]:destructure "Destructure"':
-          data:
-            body: ""
-            headers: ""
-            paths:
-              - $.data.tone.tov
-              - $.data.tone.task
-              - $.data.tone.company.title
-            text: ""
-          outgoingConnections:
-            - match_0->"Text" DCkLMZMAAdCmwqT3QIG4j/tone
-            - match_2->"Text" DCkLMZMAAdCmwqT3QIG4j/company
-          visualData: -2156.885136512945/857.8424229466564/280/2049//
         '[yupIqKdeUBOs_eDusPQHK]:text "Text"':
           data:
             body: ""
@@ -8158,7 +8458,7 @@ data:
               }
           outgoingConnections:
             - output->"HTTP - Rewrite endpoint" lGJKU86LObG8xyTTW8OIz/req_body
-          visualData: 799.2358929561277/517.0540117410894/330/2047//
+          visualData: 800.6374366211857/784.7488517671501/330/2017//
   metadata:
     description: Main press office flow
     id: rsPSGIUBe90RiHneohxrL
