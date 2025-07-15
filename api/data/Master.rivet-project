@@ -3996,10 +3996,8 @@ data:
               ## 📤 OUTPUT FORMAT
 
 
-              Respond with a single JSON object like below:
+              Respond with a single JSON object like below with no additionally commentary:
 
-
-              ```json
 
               {
                 "high": "High risk scenario press release content",
