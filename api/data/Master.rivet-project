@@ -1903,13 +1903,115 @@ data:
             wait: false
           outgoingConnections:
             - value->"Text" czMnCg4tMq2UNYX-apRAi/role
-          visualData: 174.1841578432909/182.2574549266893/230/908//
+          visualData: 174.1841578432909/182.2574549266893/230/908/var(--node-color-5)/var(--node-color-5)
+        '[NBBoEpRdNhXaj_342LBYq]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{entity}}?populate[tone][populate]=*
+          outgoingConnections:
+            - output->"HTTP - Get tone" a-18mwhrkh4qEPOJw9uJG/url
+          visualData: -779.1975027897024/-159.7514616186138/330/1767//
+        '[a-18mwhrkh4qEPOJw9uJG]:httpCall "HTTP - Get tone"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            url: ""
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Destructure" m49JehlgwqAk-XHvKBinJ/object
+          visualData: -350.9279049945599/-420.0629033782294/280/1767/var(--node-color-4)/var(--node-color-4)
         '[cZ0ftay5oLWMqkrWqtnXp]:graphOutput "Graph Output"':
           data:
             dataType: object
             id: output
           visualData: 1758/528/330/897/var(--node-color-3)/var(--node-color-3)
         '[czMnCg4tMq2UNYX-apRAi]:text "Text"':
+          data:
+            text: >-
+              Your role is {{role}}
+
+
+              ACTION FOR THIS TASK
+
+
+              You will be given a JSON object with a number of data points including "title",  "date" and "description". 
+
+
+              It is your job to predict possible risk scenarios based on the crisis defined in the prompt and to give details of potential outcomes for each case.
+
+
+              Each time you are given a prompt you should generate a total of 3 short scenarios to demonstrate a possible outcome of the crisis described in the prompt.
+
+
+              You should write 3 possible outcomes: A high risk scenario, a medium risk scenario and a low risk scenario.
+
+
+              In each case be sure to reference the issue, the location and the date it occured.
+
+
+              Each of your 3 scenarios should begin with a description of approximately two paragraphs of prose that clearly outlines the potential situation.
+
+
+              After this description, insert two escaped line breaks (\n\n) followed by 3-4 concise bullet points that explicitly outline potential outcomes.
+
+
+              GUIDE ON SCALE OF SCENARIOS
+
+
+              To give an idea of the scale of each scenario, please use the following guide. Keep in mind these are not explicit descriptors but are designed to give a magnitude description of each scale gradation:
+
+
+              1. Example Parameters of a High-Risk Scenario: 
+
+
+              Definition: The crisis is having a direct and significant impact on the organisation's operations or reputation.  A severe crisis may be characterised by significant negative discussion of the organisation in traditional or social media.  Any crisis with a significant legal element would be a severe crisis.  Any crisis involving injury or death is a severe crisis. Any crisis that involves criticism by government or official regulators is a severe crisis.   
+
+
+              2. Example Parameters of a Medium-Risk Scenario: 
+
+
+              Definition: The crisis is having a crisis that affects operations or reputation, but the impact has either not been felt yet or is not causing high levels of damage or disruption.  Moderate crises may involve damage to property or products, but would not include injury or death.  Moderate crisis may include public criticism, but not at high levels.  
+
+
+              3. Example Parameters of a Low-Risk Scenario: 
+
+
+              Definition: Minor incidents have limited or no impact on reputation or operations.  They are either not yet known publicly, or are not being discussed in any significant volume.  The incident is not likely to escalate or get worse.  A minor incident would not cause harm to operations or reputation if it were to become public.  
+
+
+              ⚠️ FORMAT GUIDANCE
+
+              For all line breaks or paragraph breaks (including within paragraphs or bullet spacing), use escaped newline characters (\n) — not actual carriage returns or line breaks in the text.
+
+
+              Avoid any trailing new line characters at the end of scenario descriptions.
+
+
+              You should also generate a short summary title descriptor for each scenario of fewer than 10 words that describes the scenario outcome at a high level.
+
+
+              Output the content as a JSON object ONLY in the following format:
+
+
+              {
+                  "high-title": "High risk summary title",
+                  "high": "High risk scenario body content",
+                  "medium-title": "Medium risk summary tile",
+                  "medium": "Medium risk scenario body content",
+                  "low-title": "Low risk summary title",
+                  "low": "Low risk scenario body content"
+              }
+          description: Scenario generation system prompt
+          outgoingConnections:
+            - output->"Chat" f4QfJvKebW1dU6H8AJ13r/systemPrompt
+          visualData: 522.4147762859524/225.79663544028764/330/1768//
+        '[ddFSw_LIPxK0zXCSh9Zqo]:text "Text"':
           data:
             text: >-
               Your role is {{role}}
@@ -1960,9 +2062,7 @@ data:
                   "low": "Low risk scenario body content"
               }
           description: Scenario generation system prompt
-          outgoingConnections:
-            - output->"Chat" f4QfJvKebW1dU6H8AJ13r/systemPrompt
-          visualData: 521.0936351133283/225.79663544028764/330/904//
+          visualData: 893.3672217522919/111.03584801662197/330/1770/var(--node-color-6)/var(--node-color-6)
         '[f4QfJvKebW1dU6H8AJ13r]:chat "Chat"':
           data:
             additionalParameters: []
@@ -1999,6 +2099,20 @@ data:
           outgoingConnections:
             - response->"Extract JSON" xFOuKLadBzj0d_RNnrzN5/input
           visualData: 943/558/230/901//
+        '[m49JehlgwqAk-XHvKBinJ]:destructure "Destructure"':
+          data:
+            body: ""
+            headers: ""
+            paths:
+              - $.data.tone.tov
+              - $.data.tone.task
+              - $.data.tone.company.title
+            text: ""
+          outgoingConnections:
+            - match_0->"TEXT - Define role" riku0ppgEMw8SVaaQdp6w/tone
+            - match_1->"TEXT - Define role" riku0ppgEMw8SVaaQdp6w/task
+            - match_2->"TEXT - Define role" riku0ppgEMw8SVaaQdp6w/company
+          visualData: 13.589073097536527/-19.65608853397032/280/1767//
         '[nrW4PhSpsORIwFKPjOwSu]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -2007,6 +2121,21 @@ data:
           outgoingConnections:
             - data->"Chat" f4QfJvKebW1dU6H8AJ13r/prompt
           visualData: 23/755/330/909/var(--node-color-3)/var(--node-color-3)
+        '[riku0ppgEMw8SVaaQdp6w]:text "TEXT - Define role"':
+          data:
+            text: >-
+              You are a crisis communications public relations (PR) professional
+              working for {{company}}.
+
+
+              {{task}}
+
+
+              IMPORTANT
+
+              Your writing tone is {{tone}}.
+          description: Role definition copy
+          visualData: 446.740355555172/-92.99582654332448/330/1767/var(--node-color-3)/var(--node-color-3)
         '[xFOuKLadBzj0d_RNnrzN5]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Graph Output" cZ0ftay5oLWMqkrWqtnXp/value
@@ -3171,7 +3300,7 @@ data:
             - output->"Chat" IwTKZWYXuAna_v309uJ1p/prompt
             - output->"Chat" ar6v6LMNTaqxVthRlZG20/prompt
             - output->"Subgraph" GE3dothNsb-QgfptTQIAJ/input
-          visualData: 833.933772604162/722.0829494274126/330/1500/var(--node-color-1)/var(--node-color-1)
+          visualData: 797.4970378384913/708.2022885642999/330/1767/var(--node-color-1)/var(--node-color-1)
         '[H2LewNpd8KUIDKEIDZj-K]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" k-klyzvhniFfqH5hvjuOU/object
@@ -3482,6 +3611,9 @@ data:
               Your job is to write a short form output that would go out to the media to inform press that a full response is being worked on.
 
 
+              It should emphasize the organization's commitment to gathering more information and taking appropriate action. It should maintain the organization's credibility and reflect its values.  
+
+
               This note is sent to the media prior to a full press release.
 
 
@@ -3785,6 +3917,12 @@ data:
               It is your job to write longform output for a press release that would go out to the media to inform them of the crisis.
 
 
+              The press release is intended to serve as an official statement from the organization, offering clarity during a high-stakes situation. The press release should include a quote from a senior leader that demonstrates leadership, shares the company's position on the matter and offers reassurance (You can associated placeholder name with this quote to be replaced later).  
+
+
+              It will include a short headline of 15 words maximum that summarises the issue.  It will then include up to three bullets that include key information about the issue; these will be up to 15 words long each.  The press release will lead with simple information, and then expand into more detailed paragraphs later.  
+
+
               You will be passed a JSON object in this format:
 
 
@@ -4076,7 +4214,7 @@ data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{entity}}?populate[tone][populate]=*
           outgoingConnections:
             - output->"HTTP - Get tone" OzfcqLFo3Rn18m4eME4ys/url
-          visualData: -2495.226881707759/-608.3256382489834/330/1750//
+          visualData: -2496.961964315648/-608.3256382489834/330/1766//
         '[ykAfnK8lI7luub7SggyJ0]:subGraph "Mitigation"':
           data:
             graphId: SZiVEz7iWEzO58OzSARGq
@@ -7218,6 +7356,127 @@ data:
           outgoingConnections:
             - json->"Destructure" RYlxuyZDcgnw5aH-eeLkN/object
           visualData: -38.39720804272676/1138.5277908698276/280/1636/var(--node-color-4)/var(--node-color-4)
+    xPttJD3BZOWoLRi0zmVYb:
+      metadata:
+        description: ""
+        id: xPttJD3BZOWoLRi0zmVYb
+        name: Universal - Send entity for logging
+      nodes:
+        '[8KLNeX5GledWD96aUpmgF]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: ""
+            method: GET
+            url: ""
+            useHeadersInput: true
+            useUrlInput: true
+          outgoingConnections:
+            - res_body->"Text" _EZfuaA4jaifMmgm1n1Nm/input
+          visualData: 1410.269879915463/1131.645564072039/280/13/var(--node-color-4)/var(--node-color-4)
+        '[J1n_2dIXplgtNb_Ay9HuM]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: ""
+            method: PUT
+            url: ""
+            useHeadersInput: true
+            useUrlInput: true
+          outgoingConnections:
+            - res_body->"Text" ydDOFchh9bRtxJq3deaHi/input
+          visualData: 1421.8064996725761/388.084383998229/280/17/var(--node-color-4)/var(--node-color-4)
+        '[MuIXDYDqu4sCJloLasIlx]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+
+              class CrisisStateAPIResponse(BaseModel):
+                  "run_id": str
+                  "client_name:": "Nestlé",
+                  "crisis_name": "Test crisis name"
+                  "crisis_description:" "Test crisis description"
+                  "crisis_date:" str
+                  media_monitoring_runs: List[MediaMonitoringStateAPIResponse]
+
+                  "crisis_id:" Optional[str] = None
+
+
+
+              class MediaMonitoringStateAPIResponse(BaseModel):
+                  media_monitoring_id: str
+
+                  state: Optional[str] = None
+                  updated_at: Optional[str] = None
+                  project_name: Optional[str] = None
+                  target_entity: Optional[str] = None
+                  project_description: Optional[str] = None
+                  output_presigned_url: Optional[str] = None 
+              }
+          outgoingConnections:
+            - output->"Http Call" J1n_2dIXplgtNb_Ay9HuM/headers
+          visualData: 581.3193096533855/602.939442369076/330/16//
+        '[UyvjNNSgyLzsU2DwWadl7]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |
+              https://api-staging.webershandwick.ai/trigger_crisis_dag
+          outgoingConnections:
+            - output->"Http Call" 8KLNeX5GledWD96aUpmgF/url
+          visualData: 983.1205751437453/1013.81298907301/330/15//
+        '[_EZfuaA4jaifMmgm1n1Nm]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          visualData: 1789.0939428381143/1087.2845977275895/330/null//
+        '[nCFF0-rquxEa4MaLU7sTu]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: https://api-staging.webershandwick.ai/crisis_run/{run_id}/state
+          outgoingConnections:
+            - output->"Http Call" J1n_2dIXplgtNb_Ay9HuM/url
+          visualData: 979.6297471477407/388.95477778817263/330/18//
+        '[x4Gm8c3uvKyOcTiRWJui9]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+
+              input:
+
+              class CrisisDagInputs(BaseModel):
+                  "user_id": str
+                  "user_first_name:" "Marcus",
+                  "user_last_name:" "Surname",
+
+                  "client_name": "Nestlé"
+                  "crisis_name": str
+                  "crisis_description": str
+                  "crisis_date": str
+                  crisis_id: Optional[str] = None # you can pass existing id here 
+
+              output:
+
+              class CrisisDagTriggerAPIResponse(BaseModel):
+                  "run_id": Optional[str] = None # use this to get run state
+                  "execution_date": Optional[str] = None
+                  "user_id": Optional[str] = None
+
+                  "client_name": Optional[str] = None
+                  "crisis_name": Optional[str] = None
+                  "crisis_description": Optional[str] = None
+                  "crisis_date": Optional[str] = None
+                  "crisis_id": Optional[str] = None 
+              }
+          outgoingConnections:
+            - output->"Http Call" 8KLNeX5GledWD96aUpmgF/headers
+          visualData: 547.7682182257356/1147.873822053937/330/14//
+        '[ydDOFchh9bRtxJq3deaHi]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          visualData: 1803.9172662890705/514.11609095727/330/19//
     xn3BtFDybu36RzvAFfDkH:
       metadata:
         description: ""
@@ -7737,6 +7996,27 @@ data:
               You will be sent a press release and you should create a set of 10 questions and answer pairs. These questions and answers are the kind of queries that the press or public might ask as result of hearing about the details of the press release.
 
 
+              THE Q&A SHOULD
+
+
+              Cover a wide range of potential questions, including those that might arise during a press conference, internal meeting, or customer interaction. 
+
+
+              Be solution-oriented, balancing transparency with strategic framing to maintain trust and credibility. 
+
+
+              Use clear, accessible language that resonate.
+
+
+              Address sensitive or challenging topics tactfully to avoid escalation or misinterpretation. 
+
+
+              Include culturally sensitive answers for global applicability. 
+
+
+              OUTPUT INSTRUCTION
+
+
               Output the question and answer pairs as text in this string format (don't convert to JSON):
 
                   "qa": [
@@ -7752,7 +8032,7 @@ data:
           description: Holding statement system prompt
           outgoingConnections:
             - output->"Chat" OIvEjExXAsyhFYZZ_ZKZy/systemPrompt
-          visualData: 690.1790071001392/158.81781408422745/330/204/var(--node-color-4)/var(--node-color-4)
+          visualData: 690.1790071001392/158.81781408422745/330/204//
         '[9gX-XwuOZ8FJIB5Zkoxo8]:graphOutput "Graph Output"':
           data:
             dataType: string
