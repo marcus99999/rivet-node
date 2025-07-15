@@ -3292,7 +3292,7 @@ data:
             graphId: oNDvNATb6Cp0mwhFoA39A
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 1302.7403784901328/829.8013480553224/330/1322/var(--node-color-1)/var(--node-color-1)
+          visualData: 1213.040222792338/870.0117626784718/330/1770/var(--node-color-1)/var(--node-color-1)
         '[GGEwPqFn8e-aYjpv4Lp3Q]:subGraph "Subgraph"':
           data:
             graphId: KpT800xhGZdwy4QxONPKN
@@ -3913,21 +3913,10 @@ data:
         '[lTDwHyIvD8GtM-vUQWnZJ]:text "Text"':
           data:
             text: >-
-              Your role is {{role}}
+              Your role is: {{role}}
 
 
-              ACTION FOR THIS TASK
-
-              It is your job to write longform output for a press release that would go out to the media to inform them of the crisis.
-
-
-              The press release is intended to serve as an official statement from the organization, offering clarity during a high-stakes situation. The press release should include a quote from a senior leader that demonstrates leadership, shares the company's position on the matter and offers reassurance (You can associated placeholder name with this quote to be replaced later).  
-
-
-              It will include a short headline of 15 words maximum that summarises the issue.  It will then include up to three bullets that include key information about the issue; these will be up to 15 words long each.  The press release will lead with simple information, and then expand into more detailed paragraphs later.  
-
-
-              You will be passed a JSON object in this format:
+              You will be passed a JSON object in the following format:
 
 
               {
@@ -3945,54 +3934,82 @@ data:
               }
 
 
-              You will see a High risk scenario, a Medium risk scenario and a Low risk scenario. For each there is a short title (high-title,medium-title,low-title) and a longer description (high/medium/low). Create one output press release for each of the 3 cases.
+              This object contains three scenarios: High, Medium, and Low risk.  
+
+              Each scenario includes:
+
+              - A **short title**: `"high-title"`, `"medium-title"`, `"low-title"`
+
+              - A **longer description**: `"high"`, `"medium"`, `"low"`
 
 
-              Each response should take the form of a description of the issue including details of the projected scenario and details of how the business intends to respond to that crisis.
+              ---
 
 
-              Start with today's date (in the format Tuesday 17th June 2025) followed by a line break. Do not prefix it with Date: or similar. Just have the date only.
+              ## ✍️ PRESS RELEASE INSTRUCTIONS
 
 
-              The full response should be a minimum of 5 paragraphs.
+              For **each** scenario, write a full press release suitable for media distribution during a crisis. Follow this structure:
 
 
-              Each response should be written in this {{Tone}}.
+              1. **Date only** (e.g., “Tuesday 17th June 2025”)  
+
+              2. **Summary paragraph** (max 20 words)  
+
+              3. **Three bullet points** (each max 15 words)  
+
+              4. **Body paragraphs** with escalating detail  
+
+              5. **Include a quote** from the company's spokesperson {{Spokesman}}, demonstrating leadership and reassurance  
+
+              6. **Sign off** with {{Spokesman}}'s name  
+
+              7. **Add contact details** at the end:  
+                 {{Email}}  
+                 {{Phone}}  
+
+              Use `\n` for single line breaks and **double line breaks** between key sections (e.g., between bullets and body copy).
 
 
-              Use natural line breaks in the prose like \n.
+              The final press release must be:
+
+              - At least **5 full paragraphs**
+
+              - Written in the tone: **{{Tone}}**
 
 
-              Each response should be signed off by the company PR spokesperson called {{Spokesman}}. Ensure there is a line break before this.
+              ---
 
 
-              Each press release should include the contact details of {{Email}} and {{Phone}} at the bottom.
+              ## 🚫 AVOID
+
+              - Speculation or unverified claims  
+
+              - Breach of privacy or confidentiality  
+
+              - Inaccurate or misleading statements  
 
 
-              Ensure there is a double line break before this. Ensure there is no excess spacing at the bottom the file.
+              ---
 
 
-              INSTRUCTIONS ON WHAT TO AVOID
-
-              - Ensure all information provided is factually accurate and based on credible sources.
-
-              - Avoid making speculative or unverified claims.
-
-              - Respect privacy and confidentiality in all recommendations.
+              ## 📤 OUTPUT FORMAT
 
 
-              Output a JSON object in this format:
+              Respond with a single JSON object like below:
 
+
+              ```json
 
               {
-                  "high": "High risk scenario press release content",
-                  "medium": "Medium risk scenario press release content",
-                  "low": "Low risk scenario press release content",
-                  "documentId": {{documentId}}
+                "high": "High risk scenario press release content",
+                "medium": "Medium risk scenario press release content",
+                "low": "Low risk scenario press release content",
+                "documentId": "{{documentId}}"
               }
           outgoingConnections:
             - output->"Chat" ar6v6LMNTaqxVthRlZG20/systemPrompt
-          visualData: 1879.6542919201315/619.0784835401694/330/1756//
+          visualData: 1884.2939551458796/622.1715923573347/330/1771//
         '[mcgQkCMsGk4tJBFjxhXTS]:destructure "Destructure"':
           data:
             paths:
