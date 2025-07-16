@@ -3036,7 +3036,7 @@ data:
             - data->"Mitigation" ykAfnK8lI7luub7SggyJ0/stringGraph
             - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
             - data->"Text" yUsMVzssmowpwlFaD33G8/entity
-          visualData: -2831.5911427849865/658.6536749652059/330/1773/var(--node-color-3)/var(--node-color-3)
+          visualData: -2965.3355639550264/633.288353708819/330/1775/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
             body: ""
@@ -3671,7 +3671,7 @@ data:
           data:
             body: ""
             text: eg2mhbnnt16dyaomt4dvtti2
-          visualData: -3290.6091923095382/778.8964266906875/330/1762//
+          visualData: -3482.0020708804573/688.9648331453159/330/1777//
         '[_Ua5Iaa7bVa0WnfBltgtN]:code "Esape chars"':
           data:
             code: >-
@@ -3796,7 +3796,7 @@ data:
           data:
             body: ""
             text: y2wlt0x5xdcjtvgwokzcbk1k
-          visualData: -3290.6091923095382/578.8964266906875/330/1762//
+          visualData: -3482.0020708804573/535.0835990660192/330/1776//
         '[f-alM-DrASwCvKMXDfB9-]:destructure "Destructure"':
           data:
             body: ""
@@ -3828,7 +3828,7 @@ data:
           data:
             normalizeLineEndings: true
             text: xim3nf27socidx5sx640b02d
-          visualData: -3079.129146848188/1014.6504429693689/330/1768//
+          visualData: -3489.586163542448/850.9288239508719/330/1778//
         '[gS957dQIpZe538bFQvRMd]:subGraph "Subgraph"':
           data:
             graphId: 3soSwiUKQ_X4fGdokyxAH
@@ -7533,6 +7533,7 @@ data:
               - $.data.activationbudget
               - $.data.audiences
               - $.data.objectives
+              - $.data.region
             text: ""
           outgoingConnections:
             - match_0->"Text" _dwOEBY9Fr1JkBZLC2jja/title
@@ -7540,6 +7541,7 @@ data:
             - match_2->"Text" p9xDr18o0132Dk-8admW8/budget
             - match_3->"Text" p9xDr18o0132Dk-8admW8/audiences
             - match_4->"Text" p9xDr18o0132Dk-8admW8/objectives
+            - match_5->"Text" p9xDr18o0132Dk-8admW8/region
           visualData: 345.35560254479213/767.4448056769078/280/1722//
         '[3HpxUqsRrSf2lA10Zwfcm]:text "Summer Campaign"':
           data:
@@ -7694,7 +7696,7 @@ data:
               You will be provided with:
               	•	A high-level description of the opportunity the client wishes to capitalise on (in the user prompt).
               	•	A JSON object of strategic objectives in {{objectives}} — focus on the title and detail field of each objective.
-              	•	A JSON object of key audience segments in {{audiences}}, each including a title, description, and age_range.
+              	•	A JSON object of key audience segments in {{audiences}}, each including a title, description, and age_range and set of demographic indicators in the form of interests, values, motivation and pains.
               	•	A maximum campaign budget in GBP, provided in {{budget}}.
 
               ⸻
@@ -7706,11 +7708,11 @@ data:
               Develop a creative, insight-led list of potential PR campaign activations that:
               	•	Capitalise on the opportunity,
               	•	Support the client's strategic objectives, and
-              	•	Are feasible within the UK PR landscape and the given budget.
+              	•	Are feasible within the {{region}} PR landscape and the given budget.
 
               All ideas must be:
               	•	Culturally relevant and tailored to the specified audience segments.
-              	•	Budget-appropriate, based on realistic UK PR execution costs.
+              	•	Budget-appropriate, based on realistic {{region}} PR execution costs.
               	•	Tactically diverse, using channels such as stunts, partnerships, influencer marketing, pop-ups, content creation, and earned media.
 
               ⸻
