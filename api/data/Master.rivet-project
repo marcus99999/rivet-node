@@ -1361,9 +1361,6 @@ data:
           data:
             body: ""
             text: ql7u4ceuyiqhb868mjb8x065
-          outgoingConnections:
-            - output->"Text" fwK8F3gNLgyFNfE0rDqTf/documentId
-            - output->"Text" zAImHvMv-JWeSRSfaBamu/documentId
           visualData: 179.53036710300438/620.3731412017144/330/2070//
         '[R_94EasDYDveLSCh4a0Iq]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
@@ -1450,6 +1447,9 @@ data:
             dataType: string
             id: stringGraph
             useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" fwK8F3gNLgyFNfE0rDqTf/documentId
+            - data->"Text" zAImHvMv-JWeSRSfaBamu/documentId
           visualData: 79.70650156738905/808.7596060808414/330/2069/var(--node-color-3)/var(--node-color-3)
         '[hqtNpLYtJCqH93aleO9cw]:text "Text"':
           data:
@@ -1520,6 +1520,209 @@ data:
           outgoingConnections:
             - output->"HTTP - Persona" 5d9jLCLYo4gOOu2uC0wmT/url
           visualData: 585.8135110596385/899.4690043580789/330/2092//
+    DNuVsvKxoi4vxLSxp8Yh1:
+      metadata:
+        description: ""
+        id: DNuVsvKxoi4vxLSxp8Yh1
+        name: Universal - Audience synthesis
+      nodes:
+        '[CV-KiTN-8QqFTiuwWk6eB]:text "Text"':
+          data:
+            body: ""
+            normalizeLineEndings: true
+            text: https://crisis-comms.vercel.app/api/submit-audience/
+          outgoingConnections:
+            - output->"HTTP - Create audience" yqWdfmlZYTBD9JjISeFTP/url
+          visualData: 2964.217260850778/925.5151361667379/330/2108//
+        '[D1cfsyq-01e6-5tyezfZ4]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You will be given the name and profile of an audience segment for
+              a PR campaign.
+
+
+              You will create some synthetic data that defines their persona such that this can be used for message testing.
+
+
+              The required output format is below.
+
+
+              You should generate a list of demographic markers relationf to interests, values, mpotivations and pains.
+
+
+              Ensure that the documentId field is identical to the incoming value of {{documentId}}
+
+              You should return the JSON only with no commentary or markdown.
+
+
+              {
+                documentId": "{{documentId}}",
+                "interests": [
+                  "Environmental and social justice",
+                  "Grassroots campaigns",
+                  "Protests and public advocacy",
+                  "Ethical supply chains",
+                  "Sustainable innovation",
+                  "Whistleblower journalism",
+                  "Community organising",
+                  "Boycott movements",
+                  "Human rights issues",
+                  "Corporate accountability"
+                ],
+                "values": [
+                  "Transparency",
+                  "Equity and fairness",
+                  "Sustainability",
+                  "Democratic participation",
+                  "Power redistribution",
+                  "Ethical leadership",
+                  "Long-term impact",
+                  "Systemic change",
+                  "Truth-telling",
+                  "Intersectionality"
+                ],
+                "motivations": [
+                  "Driving systemic change",
+                  "Exposing unethical practices",
+                  "Mobilising public opinion",
+                  "Defending vulnerable communities",
+                  "Holding power to account",
+                  "Pushing for legislative reform",
+                  "Raising awareness",
+                  "Protecting the environment",
+                  "Reclaiming narratives",
+                  "Demanding corporate responsibility"
+                ],
+                "pains": [
+                  "Greenwashing or performative activism",
+                  "Corporate opacity",
+                  "Lack of accountability",
+                  "Tokenistic engagement",
+                  "Slow or cosmetic policy change",
+                  "Being misrepresented in media",
+                  "Insufficient legal protection",
+                  "Public fatigue or apathy",
+                  "Censorship or platform bans",
+                  "Institutional resistance"
+                ]
+              }
+          outgoingConnections:
+            - output->"Chat" wuqQmOhu0oA_RqnW72TUn/systemPrompt
+          visualData: 2068.551296641065/714.1325485468967/330/2091//
+        '[Do3lbMoAUl27se_apN85n]:destructure "Destructure"':
+          data:
+            paths:
+              - $.data.name
+              - $.data.description
+          outgoingConnections:
+            - match_0->"Assemble Prompt" j53CDQ9xjNCdv_D0SP59l/message1
+            - match_1->"Assemble Prompt" j53CDQ9xjNCdv_D0SP59l/message2
+          visualData: 1405.9481854481012/715.4875651342031/280/null//
+        '[OXPQJnnYKTFPVRTDC5tD-]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          visualData: 1443.5149114406513/281.3656073676411/330/2073//
+        '[Tpu9QCLYBGA3FRO4GEX8f]:httpCall "HTTP - Persona"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: ""
+            useHeadersInput: false
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Destructure" Do3lbMoAUl27se_apN85n/object
+            - res_body->"Text" OXPQJnnYKTFPVRTDC5tD-/input
+          visualData: 1000.9672944749254/470.439545164433/280/2079/var(--node-color-4)/var(--node-color-4)
+        '[he2RerKfI40nodEu0_m3O]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: stringGraph
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" D1cfsyq-01e6-5tyezfZ4/documentId
+            - data->"Text" rRCOD9_jE01nmIAu_Whyz/documentId
+          visualData: 79.70650156738905/808.7596060808414/330/2069/var(--node-color-3)/var(--node-color-3)
+        '[j53CDQ9xjNCdv_D0SP59l]:assemblePrompt "Assemble Prompt"':
+          outgoingConnections:
+            - prompt->"Chat" wuqQmOhu0oA_RqnW72TUn/prompt
+          visualData: 1660.6913038617563/1369.9605768033273/280/2087//
+        '[lOxfnRuGspjt73esT8FdB]:text "CRISIS ID GEN-ALPHA"':
+          data:
+            body: ""
+            text: ql7u4ceuyiqhb868mjb8x065
+          visualData: 179.53036710300438/620.3731412017144/330/2070//
+        '[rRCOD9_jE01nmIAu_Whyz]:text "Text"':
+          data:
+            body: ""
+            headers: ""
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/audiences/{{documentId}}
+          outgoingConnections:
+            - output->"HTTP - Persona" Tpu9QCLYBGA3FRO4GEX8f/url
+          visualData: 585.8135110596385/899.4690043580789/330/2092//
+        '[wuqQmOhu0oA_RqnW72TUn]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Extract JSON" xSV1y9qkkwE1NbRU-CkVp/input
+          visualData: 2544.162118785708/1121.9925413262058/230/2090//
+        '[xSV1y9qkkwE1NbRU-CkVp]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"HTTP - Create audience" yqWdfmlZYTBD9JjISeFTP/req_body
+          visualData: 2935.735420963605/1205.93564043605/280/2109//
+        '[yqWdfmlZYTBD9JjISeFTP]:httpCall "HTTP - Create audience"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            text: ""
+            url: ""
+            useBodyInput: true
+            useHeadersInput: false
+            useUrlInput: true
+          visualData: 3469.6384479161675/903.8348707698312/280/2096/var(--node-color-4)/var(--node-color-4)
     EfrNMYIRnDPH9b2qi_inj:
       metadata:
         description: ""
