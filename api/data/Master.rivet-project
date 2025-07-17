@@ -2942,56 +2942,6 @@ data:
             dataType: string
             id: output
           visualData: 1233.6011102299763/570.2513877874702/330/8/var(--node-color-3)/var(--node-color-3)
-    WoecD9--01VjQHhXTmwtU:
-      metadata:
-        description: Interative press release rewriter
-        id: WoecD9--01VjQHhXTmwtU
-        name: (OLD) PR - Rewrite supervisor agent
-      nodes:
-        '[6JMB-7JMK_o3mDn4Nyw66]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: output
-          visualData: 1813.6176691846756/636.1963994533993/330/866/var(--node-color-3)/var(--node-color-3)
-        '[ZqDtSofTEoqAtIupdx6LE]:loopController "Loop Controller"':
-          data:
-            atMaxIterationsAction: break
-            maxIterations: 2
-          outgoingConnections:
-            - break->"Text" lMF6X1DupFsFWvPRvsKDS/input
-            - output1->"Subgraph" pUmp7YYzE2Qb2_bjZOcA4/input
-          visualData: 448.2173767164668/1057.9399416194742/280/883//
-        '[lMF6X1DupFsFWvPRvsKDS]:text "Text"':
-          data:
-            text: "{{input}}"
-          outgoingConnections:
-            - output->"Graph Output" 6JMB-7JMK_o3mDn4Nyw66/value
-          visualData: 771.1588915227672/693.2274241079336/330/877//
-        '[nQoPwHb3U2PvvKnnx-8Yc]:graphInput "Graph Input"':
-          data:
-            dataType: string
-            id: input
-            useDefaultValueInput: false
-          outgoingConnections:
-            - data->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/input1Default
-          visualData: -385.7726013864726/989.9731066433529/330/887/var(--node-color-3)/var(--node-color-3)
-        '[pUmp7YYzE2Qb2_bjZOcA4]:subGraph "Subgraph"':
-          data:
-            graphId: 3soSwiUKQ_X4fGdokyxAH
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          outgoingConnections:
-            - output->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/input1
-            - output->"Subgraph" tGjoPWvOpRqQlUEhNXlhw/input
-          visualData: 943.5205826682051/1767.6145513624945/330/886/var(--node-color-1)/var(--node-color-1)
-        '[tGjoPWvOpRqQlUEhNXlhw]:subGraph "Subgraph"':
-          data:
-            graphId: hcy2UDhZVh6QP8e0AjKC7
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          outgoingConnections:
-            - Analysis->"Loop Controller" ZqDtSofTEoqAtIupdx6LE/continue
-          visualData: 1240.295371560674/1301.6917878280167/330/885/var(--node-color-1)/var(--node-color-1)
     _7ny001Rtlr9P7w3EfY8D:
       metadata:
         description: Estimate the severity of influence
@@ -4867,7 +4817,7 @@ data:
       metadata:
         description: Check the content of a single release using the vector DB
         id: hcy2UDhZVh6QP8e0AjKC7
-        name: (OLD) PR - Check single release
+        name: (HOLD) PR - Score single release
       nodes:
         '[0YE9EtaAR-geTE11xkRdf]:extractJson "Extract JSON"':
           outgoingConnections:
