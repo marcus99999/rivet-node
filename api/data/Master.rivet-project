@@ -519,7 +519,7 @@ data:
             useHeadersInput: false
           outgoingConnections:
             - json->"Text" 1Mc8h-DueAoO7z5XmdUn_/input
-          visualData: 4325.726881733207/-1439.825786210852/280/1570/var(--node-color-4)/var(--node-color-4)
+          visualData: 4325.726881733207/-1439.825786210852/280/1574/var(--node-color-4)/var(--node-color-4)
         '[2wdsSZIqnLyd5XyYGMSrD]:subGraph "Subgraph"':
           data:
             graphId: lzDkeo10TytZALkz8u7nq
@@ -1317,6 +1317,209 @@ data:
           outgoingConnections:
             - output->"Escape chars" 53VGWoy2POv4xS_sCHelY/input1
           visualData: 1751.460762638661/37.157313664175376/330/1006//
+    BCFHJ9h-RbyROga-bUGnp:
+      metadata:
+        description: ""
+        id: BCFHJ9h-RbyROga-bUGnp
+        name: Universal - Persona synthesis
+      nodes:
+        '[5d9jLCLYo4gOOu2uC0wmT]:httpCall "HTTP - Persona"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: ""
+            useHeadersInput: false
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Destructure" uBgUKe7NIJg4TftZeFaM0/object
+            - res_body->"Text" hqtNpLYtJCqH93aleO9cw/input
+          visualData: 1000.9672944749254/470.439545164433/280/2079/var(--node-color-4)/var(--node-color-4)
+        '[AJVeux02nTwU8EHVBMuMR]:httpCall "HTTP - Create persona"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            text: ""
+            url: ""
+            useBodyInput: true
+            useHeadersInput: false
+            useUrlInput: true
+          visualData: 3469.6384479161675/903.8348707698312/280/2096/var(--node-color-4)/var(--node-color-4)
+        '[Em3NlDWw4Rs1GpIkrIqmo]:text "CRISIS ID GEN-ALPHA"':
+          data:
+            body: ""
+            text: ql7u4ceuyiqhb868mjb8x065
+          outgoingConnections:
+            - output->"Text" fwK8F3gNLgyFNfE0rDqTf/documentId
+            - output->"Text" zAImHvMv-JWeSRSfaBamu/documentId
+          visualData: 179.53036710300438/620.3731412017144/330/2070//
+        '[R_94EasDYDveLSCh4a0Iq]:assemblePrompt "Assemble Prompt"':
+          outgoingConnections:
+            - prompt->"Chat" y3i_pcQ-UsgVt5gqDbf0O/prompt
+          visualData: 1660.6913038617563/1369.9605768033273/280/2087//
+        '[fwK8F3gNLgyFNfE0rDqTf]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You will be given the name and profile of an audience segment for
+              a PR campaign.
+
+
+              You will create some synthetic data that defines their persona such that this can be used for message testing.
+
+
+              The required output format is below.
+
+
+              You should generate a list of demographic markers relationf to interests, values, mpotivations and pains.
+
+
+              Ensure that the documentId field is identical to the incoming value of {{documentId}}
+
+              You should return the JSON only with no commentary or markdown.
+
+
+              {
+                documentId": "{{documentId}}",
+                "interests": [
+                  "Environmental and social justice",
+                  "Grassroots campaigns",
+                  "Protests and public advocacy",
+                  "Ethical supply chains",
+                  "Sustainable innovation",
+                  "Whistleblower journalism",
+                  "Community organising",
+                  "Boycott movements",
+                  "Human rights issues",
+                  "Corporate accountability"
+                ],
+                "values": [
+                  "Transparency",
+                  "Equity and fairness",
+                  "Sustainability",
+                  "Democratic participation",
+                  "Power redistribution",
+                  "Ethical leadership",
+                  "Long-term impact",
+                  "Systemic change",
+                  "Truth-telling",
+                  "Intersectionality"
+                ],
+                "motivations": [
+                  "Driving systemic change",
+                  "Exposing unethical practices",
+                  "Mobilising public opinion",
+                  "Defending vulnerable communities",
+                  "Holding power to account",
+                  "Pushing for legislative reform",
+                  "Raising awareness",
+                  "Protecting the environment",
+                  "Reclaiming narratives",
+                  "Demanding corporate responsibility"
+                ],
+                "pains": [
+                  "Greenwashing or performative activism",
+                  "Corporate opacity",
+                  "Lack of accountability",
+                  "Tokenistic engagement",
+                  "Slow or cosmetic policy change",
+                  "Being misrepresented in media",
+                  "Insufficient legal protection",
+                  "Public fatigue or apathy",
+                  "Censorship or platform bans",
+                  "Institutional resistance"
+                ]
+              }
+          outgoingConnections:
+            - output->"Chat" y3i_pcQ-UsgVt5gqDbf0O/systemPrompt
+          visualData: 2068.551296641065/714.1325485468967/330/2091//
+        '[gjV8NF9JQ0J7aYOWLLwJx]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: stringGraph
+            useDefaultValueInput: false
+          visualData: 79.70650156738905/808.7596060808414/330/2069/var(--node-color-3)/var(--node-color-3)
+        '[hqtNpLYtJCqH93aleO9cw]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          visualData: 1443.5149114406513/281.3656073676411/330/2073//
+        '[qS4_YaWt0Eu-2rSVeDHsR]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"HTTP - Create persona" AJVeux02nTwU8EHVBMuMR/req_body
+          visualData: 2935.735420963605/1205.93564043605/280/2109//
+        '[sw2liNALjhGKu-7fPStHO]:text "Text"':
+          data:
+            body: ""
+            normalizeLineEndings: true
+            text: https://crisis-comms.vercel.app/api/submit-persona/
+          outgoingConnections:
+            - output->"HTTP - Create persona" AJVeux02nTwU8EHVBMuMR/url
+          visualData: 2964.217260850778/925.5151361667379/330/2108//
+        '[uBgUKe7NIJg4TftZeFaM0]:destructure "Destructure"':
+          data:
+            paths:
+              - $.data.personality
+              - $.data.profile
+          outgoingConnections:
+            - match_0->"Assemble Prompt" R_94EasDYDveLSCh4a0Iq/message1
+            - match_1->"Assemble Prompt" R_94EasDYDveLSCh4a0Iq/message2
+          visualData: 1405.9481854481012/715.4875651342031/280/null//
+        '[y3i_pcQ-UsgVt5gqDbf0O]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Extract JSON" qS4_YaWt0Eu-2rSVeDHsR/input
+          visualData: 2544.162118785708/1121.9925413262058/230/2090//
+        '[zAImHvMv-JWeSRSfaBamu]:text "Text"':
+          data:
+            body: ""
+            headers: ""
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/personas/{{documentId}}
+          outgoingConnections:
+            - output->"HTTP - Persona" 5d9jLCLYo4gOOu2uC0wmT/url
+          visualData: 585.8135110596385/899.4690043580789/330/2092//
     EfrNMYIRnDPH9b2qi_inj:
       metadata:
         description: ""
@@ -3555,7 +3758,7 @@ data:
             color: rgba(255,255,255,1)
             height: 779.5121328978863
             text: Create role
-          visualData: -2574.9956458445304/-925.4781397859413/2124.031931164753/1749//
+          visualData: -2574.9956458445304/-925.4781397859413/2124.031931164753/1779//
         '[TkiAWaAbj2CrKNN4Ou7wZ]:graphOutput "Graph Output"':
           data:
             dataType: string
@@ -5069,7 +5272,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" aZ-NZL_X5w0gpbh_IXa1p/input
-          visualData: 456.14192062781547/422.97966171611455/230/974/var(--node-color-2)/var(--node-color-2)
+          visualData: 456.14192062781547/422.97966171611455/230/2055/var(--node-color-2)/var(--node-color-2)
         '[eIyE6LnDAwhJ2RJ3F9TWr]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -6142,21 +6345,28 @@ data:
                 "documentId": "bhrp283cg1523zr5h6m09xra",
                 "personality": "Customer",
                 "profile": "Details of the profile.",
-                "concerns": "Concerns of the profile.",
                 "warmth": "Adversary"
-              },
-
-              {
-                "id": 1,
-                "documentId": "ukzezst3nmp9tshcb8nsbtbs",
-                "personality": "Employee",
-                "profile": "Details of the profile.",
-                "concerns": "Concerns of the profile.",
-                "warmth": "Neutral"
-              }
-
-              ...
-
+                "interests": {
+                      "interests": [
+                        "Interests of persona"...
+                      ]
+                    },
+                    "values": {
+                      "values": [
+                        "Values of persona"...
+                      ]
+                    },
+                    "motivations": {
+                      "motivation": [
+                        "Motivations of persona"...
+                      ]
+                    },
+                    "pains": {
+                      "pains": [
+                        "Pains of persona"...
+                      ]
+                    }
+                }...
               }
 
 
@@ -6182,7 +6392,16 @@ data:
               - Use the value of `"profile"` as the **Perspective**
 
 
-              - Use the value of `"concerns"` as the **Concerns**
+              - Use the value of `"interests"` as the **Interests**
+
+
+              - Use the value of `"values"` as the **Values**
+
+
+              - Use the value of `"motivations"` as the **Motivations**
+
+
+              - Use the value of `"pains"` as the **Pains**
 
 
               - Use the value of `"id"` as the **Persona**
@@ -6199,10 +6418,10 @@ data:
               Also use the two **global inputs** for every item:
 
 
-              - **Crisis Event:** `{{story}}` — a brief summary of the incident
+              - **Crisis Event:** `{{story}}` — a brief summary of the sitaution
 
 
-              - **Company Response:** `{{response}}` — the full corporate statement in response to the crisis indcident
+              - **Campaign:** `{{response}}` — the full announcement of the campaign
 
 
               ---
@@ -6211,22 +6430,21 @@ data:
               ### RESPONSE FORMAT (PER STAKEHOLDER):
 
 
-              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the **Company Response:** to the situation having become aware of the **Crisis Event:**. The stakeholder feedback should detail their specific reaction to the details of the **Company Response:**. They should comment on if it has mitigated their concerns. The feedback should focus mostly on the **Company Response:** and detail their concerns that remain and acknowledge where other concerns have been alleviated (if they have).
+              For each item, write a stakeholder reaction in **three short, natural-sounding paragraphs** from the stakeholder's point of view. The analysis should consider how the stakeholder interprets the **Campaign:**. The stakeholder feedback should detail their specific reaction to the details of the **Campaign:**. They should comment on if it has motivated them to engage with the brand.
 
 
               The response must:
               	•	Focus on the effectiveness of the company's message
-              	•	Clearly state which concerns were addressed, and which were not
+              	•	Clearly state which elements have interested them, and which have not
               	•	Reflect the stakeholder's tone of voice, based on "warmth"
 
               Then, continue with:
 
 
-
               - A line break  
 
 
-              - Add a single sentence stating reasons whether the stakeholder feels **reassured** or **not reassured** by the company's response (do **not** include any numeric score here).
+              - Add a single sentence stating reasons whether the stakeholder feels **engaged** or **not engaged** by the company's campaign (do **not** include any numeric score here).
 
 
 
@@ -7397,6 +7615,20 @@ data:
         id: xPttJD3BZOWoLRi0zmVYb
         name: Universal - Send entity for logging
       nodes:
+        '[84IxOTxJtYLE7-fgOXUjA]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://crisis-comms.vercel.app/api/submit-conversation
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 2527.44349137452/444.26938475045466/280/2062/var(--node-color-4)/var(--node-color-4)
         '[8KLNeX5GledWD96aUpmgF]:httpCall "Http Call"':
           data:
             body: ""
@@ -7409,96 +7641,17 @@ data:
           outgoingConnections:
             - res_body->"Text" _EZfuaA4jaifMmgm1n1Nm/input
           visualData: 1410.269879915463/1131.645564072039/280/13/var(--node-color-4)/var(--node-color-4)
-        '[J1n_2dIXplgtNb_Ay9HuM]:httpCall "Http Call"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: ""
-            method: PUT
-            url: ""
-            useHeadersInput: true
-            useUrlInput: true
-          outgoingConnections:
-            - res_body->"Text" ydDOFchh9bRtxJq3deaHi/input
-          visualData: 1421.8064996725761/388.084383998229/280/17/var(--node-color-4)/var(--node-color-4)
-        '[MuIXDYDqu4sCJloLasIlx]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: |-
-              {
-
-              class CrisisStateAPIResponse(BaseModel):
-                  "run_id": str
-                  "client_name:": "Nestlé",
-                  "crisis_name": "Test crisis name"
-                  "crisis_description:" "Test crisis description"
-                  "crisis_date:" str
-                  "media_monitoring_runs:" List[MediaMonitoringStateAPIResponse]
-
-                  "crisis_id": "{{entity}}
-
-
-
-              class MediaMonitoringStateAPIResponse(BaseModel):
-                  media_monitoring_id: str
-
-                  state: Optional[str] = None
-                  updated_at: Optional[str] = None
-                  project_name: Optional[str] = None
-                  target_entity: Optional[str] = None
-                  project_description: Optional[str] = None
-                  output_presigned_url: Optional[str] = None 
-              }
-          outgoingConnections:
-            - output->"Http Call" J1n_2dIXplgtNb_Ay9HuM/headers
-          visualData: 581.3193096533855/602.939442369076/330/16//
-        '[UyvjNNSgyLzsU2DwWadl7]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: |
-              https://api-staging.webershandwick.ai/trigger_crisis_dag
-          outgoingConnections:
-            - output->"Http Call" 8KLNeX5GledWD96aUpmgF/url
-          visualData: 983.1205751437453/1013.81298907301/330/15//
-        '[_EZfuaA4jaifMmgm1n1Nm]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: "{{input}}"
-          visualData: 1789.0939428381143/1087.2845977275895/330/null//
-        '[mjqwupVwAnvSp1YrET4hg]:text "CRISIS ID FOR SKITTLES"':
+        '[9WHIs09kfEbMTUw1cpg4I]:text "CRISIS ID FOR SKITTLES"':
           data:
             body: ""
             text: nvsvrsajrztv8ih5yjpq7uj5
           outgoingConnections:
-            - output->"Text" MuIXDYDqu4sCJloLasIlx/entity
-            - output->"Text" x4Gm8c3uvKyOcTiRWJui9/entity
-          visualData: 131.35227023947476/873.5816846429663/330/1776//
-        '[nCFF0-rquxEa4MaLU7sTu]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: https://api-staging.webershandwick.ai/crisis_run/{run_id}/state
-          outgoingConnections:
-            - output->"Http Call" J1n_2dIXplgtNb_Ay9HuM/url
-          visualData: 979.6297471477407/388.95477778817263/330/18//
-        '[x4Gm8c3uvKyOcTiRWJui9]:text "Text"':
+            - output->"Text" YWXJ3tR9E4TyogRVvruye/entity
+          visualData: -1506.0490087407354/254.81324929201486/330/1797//
+        '[A8ZxVbPSPzDfpTIyjScfa]:text "Text"':
           data:
             normalizeLineEndings: true
             text: |-
-              {
-              input:
-              class CrisisDagInputs(BaseModel):
-                  "user_id": str
-                  "user_first_name:" "Marcus",
-                  "user_last_name:" "Surname",
-
-                  "client_name": "Nestlé"
-                  "crisis_name": str
-                  "crisis_description": "Example crisis description"
-                  "crisis_date": str
-                  "crisis_id": "{{entity}}"
-                  
-                  Optional[str] = None # you can pass existing id here 
-
               output:
               class CrisisDagTriggerAPIResponse(BaseModel):
                   "run_id": Optional[str] = None # use this to get run state
@@ -7510,15 +7663,170 @@ data:
                   "crisis_description": Optional[str] = None
                   "crisis_date": Optional[str] = None
                   "crisis_id": Optional[str] = None 
+          visualData: 2381.844820759401/849.8058180430716/330/2061//
+        '[IMXj21FrA28pHB1H_53AQ]:destructure "Destructure"':
+          data:
+            body: ""
+            headers: ""
+            paths:
+              - $.data.title
+              - $.data.description
+              - $.data.region.region
+              - $.data.company.title
+              - $.data.date
+              - $.data.severity
+              - $.data.brand
+              - $.data.documentId
+          outgoingConnections:
+            - match_0->"Text" x4Gm8c3uvKyOcTiRWJui9/title
+            - match_1->"Escape chars" pzmXbpF1_l5GioQG8UKj3/input1
+            - match_3->"Text" x4Gm8c3uvKyOcTiRWJui9/company
+            - match_4->"Text" x4Gm8c3uvKyOcTiRWJui9/date
+            - match_7->"Text" x4Gm8c3uvKyOcTiRWJui9/entity
+          visualData: -64.59558162891369/477.09266985735803/280/1795//
+        '[J1n_2dIXplgtNb_Ay9HuM]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: ""
+            method: POST
+            url: ""
+            useHeadersInput: true
+            useUrlInput: true
+          outgoingConnections:
+            - res_body->"Text" ydDOFchh9bRtxJq3deaHi/input
+          visualData: 1421.8064996725761/388.084383998229/280/17/var(--node-color-4)/var(--node-color-4)
+        '[MuIXDYDqu4sCJloLasIlx]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+
+
+              class CrisisStateAPIResponse(BaseModel):
+                  crisis_id": "{{entity}}
+                  "client_name:": "Nestlé",
+                  "crisis_name": "Test crisis name"
+                  "crisis_description:" "Test crisis description"
+                  "crisis_date:" str
+                  "media_monitoring_runs:" List[MediaMonitoringStateAPIResponse] << This will show me the URLs for 1st and 3rd party
+
+
+              THESE ARE ALL IN SAME MODEL NESTED xxxxx
+
+              class MediaMonitoringStateAPIResponse(BaseModel):
+                  media_monitoring_id: str
+                  state: Optional[str] = None
+                  updated_at: Optional[str] = None
+                  project_name: Optional[str] = None
+                  target_entity: Optional[str] = None
+                  project_description: Optional[str] = None
+                  output_presigned_url: Optional[str] = None << this is the JSON OUTPUT xxxxx
+                  recall this with the ids from output above
+
+              }
+          visualData: 1799.4010403533625/1256.8531641761072/330/1785//
+        '[NZW9_pEob7ey_cnPbGMai]:httpCall "HTTP - Get crises"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: ""
+            useHeadersInput: false
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Destructure" IMXj21FrA28pHB1H_53AQ/object
+          visualData: -432.36259257053314/375.49682327619064/280/1795/var(--node-color-4)/var(--node-color-4)
+        '[UyvjNNSgyLzsU2DwWadl7]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: https://api-staging.webershandwick.ai/trigger_crisis_dag
+          outgoingConnections:
+            - output->"Http Call" J1n_2dIXplgtNb_Ay9HuM/url
+          visualData: 926.8364492776369/306.37835689245264/330/1798//
+        '[YWXJ3tR9E4TyogRVvruye]:text "Text"':
+          data:
+            body: ""
+            headers: ""
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{entity}}?populate=company&populate=region
+          outgoingConnections:
+            - output->"HTTP - Get crises" NZW9_pEob7ey_cnPbGMai/url
+          visualData: -1001.6743937547353/373.69502324190717/330/1795//
+        '[_EZfuaA4jaifMmgm1n1Nm]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          visualData: 1789.0939428381143/1087.2845977275895/330/null//
+        '[hdrJonqNO89lvtO-Nu6nm]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: stringGraph
+            useDefaultValueInput: false
+          visualData: -1501.789347345021/457.8938591496826/330/1796/var(--node-color-3)/var(--node-color-3)
+        '[mjqwupVwAnvSp1YrET4hg]:text "CRISIS ID FOR SKITTLES"':
+          data:
+            body: ""
+            text: nvsvrsajrztv8ih5yjpq7uj5
+          visualData: 527.137525939429/1073.0494167618392/330/1786//
+        '[nCFF0-rquxEa4MaLU7sTu]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: https://api-staging.webershandwick.ai/crisis_run/{run_id}/state
+          outgoingConnections:
+            - output->"Http Call" 8KLNeX5GledWD96aUpmgF/url
+          visualData: 932.655367558868/1010.7760511102614/330/1790//
+        '[pzmXbpF1_l5GioQG8UKj3]:code "Escape chars"':
+          data:
+            code: >-
+              const inputText = inputs.input1.value;
+
+
+              const cleanedText = inputText
+                .replace(/\\/g, '\\\\')         // escape backslashes
+                .replace(/"/g, '\\"')           // escape double quotes
+                .replace(/\r?\n/g, ' ')         // replace newlines with a space
+                .replace(/[\u0000-\u001F\u007F-\u009F]/g, '') // strip control chars
+                .replace(/[^\x20-\x7E]/g, '');  // remove non-ASCII characters
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: cleanedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
+          outgoingConnections:
+            - output1->"Text" x4Gm8c3uvKyOcTiRWJui9/description
+          visualData: 413.71399812194164/708.6102604993613/230/2056/var(--node-color-2)/var(--node-color-2)
+        '[x4Gm8c3uvKyOcTiRWJui9]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                  "user_id": "radius@webershandwick.com",
+                  "user_first_name": "Radius",
+                  "user_last_name": "Tool",
+                  "client_name": "{{company}}",
+                  "crisis_name": "{{title}}",
+                  "crisis_description": "{{description}}",
+                  "crisis_date": "{{date}}",
+                  "crisis_id": "{{entity}}"
               }
           outgoingConnections:
-            - output->"Http Call" 8KLNeX5GledWD96aUpmgF/headers
-          visualData: 547.7682182257356/1147.873822053937/330/14//
+            - output->"Http Call" J1n_2dIXplgtNb_Ay9HuM/headers
+          visualData: 903.7878412899831/555.5277763408847/330/1792//
         '[ydDOFchh9bRtxJq3deaHi]:text "Text"':
           data:
             normalizeLineEndings: true
             text: "{{input}}"
-          visualData: 1803.9172662890705/514.11609095727/330/19//
+          visualData: 1956.536715306364/566.9842661070513/330/2063//
     xn3BtFDybu36RzvAFfDkH:
       metadata:
         description: ""
@@ -7542,7 +7850,7 @@ data:
             - match_3->"Text" p9xDr18o0132Dk-8admW8/audiences
             - match_4->"Text" p9xDr18o0132Dk-8admW8/objectives
             - match_5->"Text" p9xDr18o0132Dk-8admW8/region
-          visualData: 345.35560254479213/767.4448056769078/280/1722//
+          visualData: 317.7566675597393/970.9869511916725/280/1749//
         '[3HpxUqsRrSf2lA10Zwfcm]:text "Summer Campaign"':
           data:
             normalizeLineEndings: true
@@ -7566,7 +7874,7 @@ data:
             useUrlInput: true
           outgoingConnections:
             - json->"Destructure" nnJMyKWZMotLh5M3xMi9R/object
-          visualData: -640.1499482560421/-484.4784081296878/280/1716/var(--node-color-4)/var(--node-color-4)
+          visualData: -588.401945159068/184.79576525784358/280/1753/var(--node-color-4)/var(--node-color-4)
         '[Eh7I69zVYkDq8Wql2YKAA]:chat "Chat"':
           data:
             additionalParameters: []
@@ -7624,7 +7932,7 @@ data:
           description: Role definition copy
           outgoingConnections:
             - output->"Text" p9xDr18o0132Dk-8admW8/role
-          visualData: 199.984575539783/-303.4413278591418/330/1718/var(--node-color-3)/var(--node-color-3)
+          visualData: 252.88253426113428/307.1851086851523/330/1751/var(--node-color-3)/var(--node-color-3)
         '[VRr-YVV_4aFKPANNkcrCw]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Graph Output" WmsUwRKzWHMuLoaOGo_gg/value
@@ -7667,7 +7975,7 @@ data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{entity}}?populate[tone][populate]=*
           outgoingConnections:
             - output->"Http - Get role & tones" DzFZKmvNx3S8ym4Oajz3_/url
-          visualData: -962.745784936868/116.94474311593294/330/1746//
+          visualData: -1053.5922792626668/274.48866365560946/330/1754//
         '[nnJMyKWZMotLh5M3xMi9R]:destructure "Destructure"':
           data:
             body: ""
@@ -7681,7 +7989,7 @@ data:
             - match_0->"TEXT - Define role" Jr2PCqGzJ-Hz2q9WwqMjc/task
             - match_1->"TEXT - Define role" Jr2PCqGzJ-Hz2q9WwqMjc/tone
             - match_2->"TEXT - Define role" Jr2PCqGzJ-Hz2q9WwqMjc/Company
-          visualData: -226.4078657079989/-290.3401413560096/280/1747//
+          visualData: -165.4602176160072/366.2845201633725/280/1752//
         '[p9xDr18o0132Dk-8admW8]:text "Text"':
           data:
             normalizeLineEndings: true
