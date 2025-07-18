@@ -1380,7 +1380,7 @@ data:
               The required output format is below.
 
 
-              You should generate a list of demographic markers relationf to interests, values, mpotivations and pains.
+              You should generate a list of demographic markers relationf to interests, values, mpotivations, pains and apirations.
 
 
               Ensure that the documentId field is identical to the incoming value of {{documentId}}
@@ -1392,51 +1392,23 @@ data:
                 documentId": "{{documentId}}",
                 "interests": [
                   "Environmental and social justice",
-                  "Grassroots campaigns",
-                  "Protests and public advocacy",
-                  "Ethical supply chains",
-                  "Sustainable innovation",
-                  "Whistleblower journalism",
-                  "Community organising",
-                  "Boycott movements",
-                  "Human rights issues",
-                  "Corporate accountability"
+                  "Grassroots campaigns"...
                 ],
                 "values": [
                   "Transparency",
-                  "Equity and fairness",
-                  "Sustainability",
-                  "Democratic participation",
-                  "Power redistribution",
-                  "Ethical leadership",
-                  "Long-term impact",
-                  "Systemic change",
-                  "Truth-telling",
-                  "Intersectionality"
+                  "Equity and fairness"...
                 ],
                 "motivations": [
                   "Driving systemic change",
-                  "Exposing unethical practices",
-                  "Mobilising public opinion",
-                  "Defending vulnerable communities",
-                  "Holding power to account",
-                  "Pushing for legislative reform",
-                  "Raising awareness",
-                  "Protecting the environment",
-                  "Reclaiming narratives",
-                  "Demanding corporate responsibility"
+                  "Exposing unethical practices"...
                 ],
                 "pains": [
                   "Greenwashing or performative activism",
-                  "Corporate opacity",
-                  "Lack of accountability",
-                  "Tokenistic engagement",
-                  "Slow or cosmetic policy change",
-                  "Being misrepresented in media",
-                  "Insufficient legal protection",
-                  "Public fatigue or apathy",
-                  "Censorship or platform bans",
-                  "Institutional resistance"
+                  "Corporate opacity"...
+                ],,
+                "aspirations": [
+                  "Protecting the environment",
+                  "Reclaiming narratives"...
                 ]
               }
           outgoingConnections:
@@ -2186,7 +2158,7 @@ data:
             useUrlInput: true
           outgoingConnections:
             - json->"Destructure" uLmm__QEitLErk6lytdsX/object
-          visualData: 2050.952130792442/1510.1896749306513/280/2058/var(--node-color-4)/var(--node-color-4)
+          visualData: 2050.952130792442/1510.1896749306513/280/2081/var(--node-color-4)/var(--node-color-4)
         '[ODCnEZmry4bCdcuVFCBko]:destructure "Destructure"':
           data:
             paths:
@@ -2546,6 +2518,270 @@ data:
           outgoingConnections:
             - output->"Graph Output" cZ0ftay5oLWMqkrWqtnXp/value
           visualData: 1358.421582439276/731.3571609080569/280/907//
+    Pmb40Vuncyj6FTbT1jVUu:
+      metadata:
+        description: Apply best practices and create Q&A statements
+        id: Pmb40Vuncyj6FTbT1jVUu
+        name: Create - Audience logic
+      nodes:
+        '[4l-WkcVDjGaW6WAqhaoe7]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Extract JSON" YF6Y-pigfyxEzGqFLgSqS/input
+          visualData: 798.141335726776/1393.311569591137/230/1642//
+        '[7dv_96Wf0lHFJGNnxMyyE]:text "Text"':
+          data:
+            body: ""
+            headers: ""
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=audiences
+          outgoingConnections:
+            - output->"HTTP - Collect scenario" HynXzCIWo9Xs3ra5kjzSu/url
+          visualData: -688.7090920856772/1222.266849327184/330/2062//
+        '[HynXzCIWo9Xs3ra5kjzSu]:httpCall "HTTP - Collect scenario"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: ""
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Destructure" a8bTW3TGRUOUl1gh4S0Wm/object
+          visualData: -273.10727711572247/1107.3096057059918/280/2064/var(--node-color-4)/var(--node-color-4)
+        '[I1P2-uMvRtGGgqsxD1KSn]:text "Text"':
+          data:
+            body: ""
+            headers: ""
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/{{input}}
+          outgoingConnections:
+            - output->"HTTP - Collect scenario" laWOUCCc9xn52yNKO-lF3/url
+          visualData: -709.8924129781661/1690.1851301713461/330/2059//
+        '[S5W6IxO7-9bOyPcAaR6DC]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                  "entity": "lmfu2zzm92t31sfw047ifs7g",
+                  "scenario": "d0aschlipjnlak88ch21350x",
+                  "role": "You are a consumer PR strategist focused on driving awareness, engagement, and brand love for products and experiences in everyday culture. Your role is to create campaign ideas and messaging that resonate with specific audience segments—amplifying stories through earned media, influencer partnerships, stunts, social moments, and brand activations. You translate marketing goals into culturally relevant narratives, identifying the creative hooks, emotional levers, and formats that make campaigns talkable and shareable. Whether launching a new product, reigniting relevance, or responding to trends, your job is to ensure the brand is seen, heard, and positively talked about in the right places, by the right people."
+              }
+          outgoingConnections:
+            - output->"Extract JSON" mf7u10MFLWtfFgE5iIZZ9/input
+          visualData: -1906.3122291988273/1083.2889567354744/330/1632//
+        '[Sv6uoLHbQ7sYjkRRaudtc]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: prompt
+            useDefaultValueInput: false
+          visualData: -1950.319971290697/861.8574471939748/330/2077/var(--node-color-3)/var(--node-color-3)
+        '[TTHBYjWTMvpWhrsjv5jzQ]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              🎯 Your Task:
+
+
+              Evaluate a proposed PR campaign (provided in the incoming prompt) and assess how well it aligns with each of the audiences. Analyze the campaign and produce a score from 1 to 10 in each of the following five dimensions.
+
+
+              Do this individually for each audience type:
+              	•	Interests: How closely the campaign content, format, and channel align with the audience's stated interests.
+              	•	Values: How well the tone, message, and purpose of the campaign reflect the audience's underlying personal or societal values.
+              	•	Motivations: How effectively the campaign speaks to what drives this audience to act, support, or engage.
+              	•	Pains: How successfully the campaign addresses or alleviates the audience's stated concerns or frustrations.
+              	•	Aspirations: How well the campaign connects to the audience's long-term personal, social, or professional ambitions (e.g., status, legacy, lifestyle evolution).
+
+              ⸻
+
+
+              📊 Scoring Definitions (1-10):
+              	•	Interests:
+              	•	10 = Campaign strongly and directly reflects 8-10 of the audience's interests.
+              	•	5 = Campaign partially reflects 4-5 interests but misses tone or relevance.
+              	•	1 = Campaign aligns with 1 or none of the listed interests.
+              	•	Values:
+              	•	10 = Campaign message and brand stance clearly uphold 8-10 of the audience's core values.
+              	•	5 = Message appears neutral or aligned with about 4-5 values.
+              	•	1 = Message contradicts or ignores audience values.
+              	•	Motivations:
+              	•	10 = Campaign directly activates the audience's key motivations (e.g., empowerment, belonging, change).
+              	•	5 = Campaign acknowledges some motivational drivers but lacks clarity or call-to-action.
+              	•	1 = Campaign is passive, generic, or demotivating.
+              	•	Pains:
+              	•	10 = Campaign actively alleviates or responds constructively to 8-10 listed pains (concerns, frustrations).
+              	•	5 = Campaign avoids exacerbating pains but doesn't offer meaningful relief.
+              	•	1 = Campaign ignores or worsens pain points.
+              	•	Aspirations:
+              	•	10 = Campaign clearly supports and reflects the audience's key aspirations.
+              	•	5 = Campaign loosely touches on long-term goals but lacks specificity or relevance.
+              	•	1 = Campaign is disconnected from the audience's aspirations or contradicts them.
+
+              ⸻
+
+
+              Be objective and specific in each rationale — reference how specific elements of the campaign align (or not) with the persona traits and long-term goals.
+
+
+              ⸻
+
+
+              🔄 Output Format:
+
+
+              Create only a single "audience_logic" array with the data for each audience type nested within it.
+
+
+              Return a pure JSON response only (no commentary or markdown), using the following structure:
+
+
+              {
+                "data": {
+                  "audience_logic": [
+                    {
+                      "audience_name": "Gen-X",
+                      "documentid": "audience document id",
+                      "interests": "9",
+                      "interests_rationale": "The campaign aligns well with Gen-X interests...",
+                      "values": "8",
+                      "values_rationale": "The campaign promotes stability and reliability...",
+                      "motivations": "9",
+                      "motivations_rationale": "The campaign effectively addresses motivations...",
+                      "pains": "7",
+                      "pains_rationale": "While the campaign does alleviate some pains...",
+                      "aspirations": "8",
+                      "aspirations_rationale": "The campaign supports Gen-X aspirations for family legacy and work-life balance..."
+                    },
+                    {
+                      "audience_name": "Gen-Z",
+                      "documentid": "audience document id",
+                      "interests": "10",
+                      "interests_rationale": "The campaign aligns perfectly with Gen-Z interests...",
+                      "values": "9",
+                      "values_rationale": "The campaign's focus on community engagement...",
+                      "motivations": "10",
+                      "motivations_rationale": "The campaign directly activates key motivations...",
+                      "pains": "8",
+                      "pains_rationale": "The campaign addresses pains related to social media...",
+                      "aspirations": "9",
+                      "aspirations_rationale": "The campaign reflects Gen-Z aspirations for self-expression, individuality, and social change..."
+                    }
+                  ]
+                }
+              }
+          outgoingConnections:
+            - output->"Chat" 4l-WkcVDjGaW6WAqhaoe7/systemPrompt
+          visualData: 407.3350417932939/1116.718515080162/330/2067//
+        '[YF6Y-pigfyxEzGqFLgSqS]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Graph Output" d96qQaUTxxzzSS0MPTm8M/value
+            - output->"Http - Submit audience logic"
+              nObY7VZsbOaAG-H92ik75/req_body
+          visualData: 1218.8742913043995/1711.8453655150647/280/2076//
+        '[a8bTW3TGRUOUl1gh4S0Wm]:destructure "Destructure"':
+          data:
+            paths:
+              - $.data.audiences
+          visualData: 51.8316434885092/1436.298233559548/280/2070//
+        '[d96qQaUTxxzzSS0MPTm8M]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1870.3516421490651/1812.5061562038163/330/2071/var(--node-color-3)/var(--node-color-3)
+        '[laWOUCCc9xn52yNKO-lF3]:httpCall "HTTP - Collect scenario"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: ""
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Destructure" pTy6zAzg8zoLnDV-wLyY5/object
+          visualData: -283.0311306719618/1623.4880548110016/280/2069/var(--node-color-4)/var(--node-color-4)
+        '[mf7u10MFLWtfFgE5iIZZ9]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" zmEU3HVWR0ekXWtHqCQvr/object
+          visualData: -1452.1742350575068/1011.2499700635408/280/1629//
+        '[nObY7VZsbOaAG-H92ik75]:httpCall "Http - Submit audience logic"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: PUT
+            url: ""
+            useBodyInput: true
+            useHeadersInput: false
+            useUrlInput: true
+          visualData: 1652.1664481524983/1325.1930259182577/280/2072/var(--node-color-4)/var(--node-color-4)
+        '[pTy6zAzg8zoLnDV-wLyY5]:destructure "Destructure"':
+          data:
+            paths:
+              - $.data.detail
+          outgoingConnections:
+            - match_0->"Chat" 4l-WkcVDjGaW6WAqhaoe7/prompt
+          visualData: 251.65709013346589/1709.0826348567768/280/2060//
+        '[zJVGaL8-B3OfNXUgSq5TQ]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/{{scenario}}
+          outgoingConnections:
+            - output->"Http - Submit audience logic" nObY7VZsbOaAG-H92ik75/url
+          visualData: 1164.0888118878322/1306.6009036677904/330/2075//
+        '[zmEU3HVWR0ekXWtHqCQvr]:destructure "Destructure"':
+          data:
+            paths:
+              - $.entity
+              - $.scenario
+              - $.role
+            text: ""
+          outgoingConnections:
+            - match_0->"Text" 7dv_96Wf0lHFJGNnxMyyE/input
+            - match_1->"Text" I1P2-uMvRtGGgqsxD1KSn/input
+            - match_1->"Text" zJVGaL8-B3OfNXUgSq5TQ/scenario
+          visualData: -1088.6372329701594/1135.0737595007686/280/1630//
     SZiVEz7iWEzO58OzSARGq:
       metadata:
         description: ""
@@ -5327,7 +5563,7 @@ data:
             useUrlInput: true
           outgoingConnections:
             - json->"Destructure" C4mCiC0IG6fWWhj0IhHEu/object
-          visualData: -710.5749084315471/2061.0128097299216/280/1959/var(--node-color-4)/var(--node-color-4)
+          visualData: -707.8245296286573/2061.0128097299216/280/2057/var(--node-color-4)/var(--node-color-4)
         '[YUn8Qrg3uocmMSt1c5vV2]:code "Escape chars"':
           data:
             code: >-
@@ -6923,6 +7159,12 @@ data:
           outgoingConnections:
             - output->"Destructure" lSwYH6WvGyFNq07duM1Vv/object
           visualData: 588.7884424808426/-219.40432160699288/280/1791//
+        '[6tEwET7SnaXtcCmA9hd5v]:subGraph "Subgraph"':
+          data:
+            graphId: Pmb40Vuncyj6FTbT1jVUu
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 2852.5949229732655/2723.064010634411/330/2089/var(--node-color-1)/var(--node-color-1)
         '[87zRfCwVwP6x7p5jxVshZ]:graphInput "Graph Input"':
           data:
             dataType: object
@@ -6978,11 +7220,6 @@ data:
             - match_0->"Text" pugEetb1EcQ3O7Pr26KXT/entity
             - match_1->"Array" O5zbc8y6KM7cMRl3PTSGj/input1
           visualData: -218.94350493899847/475.88456497117215/280/1758//
-        '[JuzPr4Vd_mhivVnDXeATM]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: "{{input}}"
-          visualData: 3317.2780827154465/2352.4931237976934/330/2077//
         '[MN5jMjBKbfIzYkykInBtX]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -7130,9 +7367,7 @@ data:
             graphId: tfM8ynLGCK90qQnqxKhO8
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          outgoingConnections:
-            - output->"Text" JuzPr4Vd_mhivVnDXeATM/input
-          visualData: 2862.391223815195/2363.8741219530534/330/2076/var(--node-color-1)/var(--node-color-1)
+          visualData: 2862.391223815195/2363.8741219530534/330/2087/var(--node-color-1)/var(--node-color-1)
         '[j-rJJSkf-HG0hDggKktRT]:loopController "Loop Controller"':
           data:
             maxIterations: 10
@@ -7173,6 +7408,7 @@ data:
                   "slot": "slot{{iteration}}"
               }
           outgoingConnections:
+            - output->"Subgraph" 6tEwET7SnaXtcCmA9hd5v/prompt
             - output->"Subgraph" BdY7MGvxfkjmw_Ct57jfA/input
             - output->"Subgraph" d6z39QXJflEms3PSllohD/input
             - output->"Subgraph" haPCi94mBpa_hzTXRDWpz/prompt
@@ -7926,14 +8162,16 @@ data:
           data:
             body: ""
             text: nvsvrsajrztv8ih5yjpq7uj5
-          visualData: 527.137525939429/1073.0494167618392/330/1786//
+          outgoingConnections:
+            - output->"Text" nCFF0-rquxEa4MaLU7sTu/run_id
+          visualData: 415.1198382505751/1302.3562127366692/330/2068//
         '[nCFF0-rquxEa4MaLU7sTu]:text "Text"':
           data:
             normalizeLineEndings: true
-            text: https://api-staging.webershandwick.ai/crisis_run/{run_id}/state
+            text: https://api-staging.webershandwick.ai/crisis_run/{{run_id}}/state
           outgoingConnections:
             - output->"Http Call" 8KLNeX5GledWD96aUpmgF/url
-          visualData: 932.655367558868/1010.7760511102614/330/1790//
+          visualData: 895.7554233790103/1348.1469693261035/330/2066//
         '[pzmXbpF1_l5GioQG8UKj3]:code "Escape chars"':
           data:
             code: >-
@@ -7957,7 +8195,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" x4Gm8c3uvKyOcTiRWJui9/description
-          visualData: 413.71399812194164/708.6102604993613/230/2056/var(--node-color-2)/var(--node-color-2)
+          visualData: 428.2104047640286/587.367586765543/230/2064/var(--node-color-2)/var(--node-color-2)
         '[x4Gm8c3uvKyOcTiRWJui9]:text "Text"':
           data:
             normalizeLineEndings: true
