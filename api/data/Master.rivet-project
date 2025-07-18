@@ -1361,11 +1361,16 @@ data:
           data:
             body: ""
             text: ql7u4ceuyiqhb868mjb8x065
-          visualData: 179.53036710300438/620.3731412017144/330/2070//
+          visualData: 177.79907251318835/424.736852552502/330/2111//
         '[R_94EasDYDveLSCh4a0Iq]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
             - prompt->"Chat" y3i_pcQ-UsgVt5gqDbf0O/prompt
           visualData: 1660.6913038617563/1369.9605768033273/280/2087//
+        '[_ddV8qJ6Q8_lTANxEz9kg]:text "Consumer"':
+          data:
+            body: ""
+            text: bhrp283cg1523zr5h6m09xra
+          visualData: 162.217421204844/629.9307363219501/330/2112//
         '[fwK8F3gNLgyFNfE0rDqTf]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -1381,6 +1386,9 @@ data:
 
 
               You should generate a list of demographic markers relationf to interests, values, mpotivations, pains and apirations.
+
+
+              Each item should have around 10 markers.
 
 
               Ensure that the documentId field is identical to the incoming value of {{documentId}}
@@ -1405,7 +1413,7 @@ data:
                 "pains": [
                   "Greenwashing or performative activism",
                   "Corporate opacity"...
-                ],,
+                ],
                 "aspirations": [
                   "Protecting the environment",
                   "Reclaiming narratives"...
@@ -1523,6 +1531,9 @@ data:
               You should generate a list of demographic markers relationf to interests, values, mpotivations, pains and apirations.
 
 
+              Each item should have around 10 markers.
+
+
               Ensure that the documentId field is identical to the incoming value of {{documentId}}
 
               You should return the JSON only with no commentary or markdown.
@@ -1545,7 +1556,7 @@ data:
                 "pains": [
                   "Greenwashing or performative activism",
                   "Corporate opacity"...
-                ],,
+                ],
                 "aspirations": [
                   "Protecting the environment",
                   "Reclaiming narratives"...
@@ -1586,6 +1597,11 @@ data:
             - json->"Destructure" Do3lbMoAUl27se_apN85n/object
             - res_body->"Text" OXPQJnnYKTFPVRTDC5tD-/input
           visualData: 1000.9672944749254/470.439545164433/280/2079/var(--node-color-4)/var(--node-color-4)
+        '[dUdpfrjsJRN7cKhYbGoBF]:text "CRISIS ID GEN-X"':
+          data:
+            body: ""
+            text: yfm1291tonb6yqqd0ud5see8
+          visualData: 188.53036710300438/645.3731412017144/330/2111//
         '[he2RerKfI40nodEu0_m3O]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -1603,7 +1619,7 @@ data:
           data:
             body: ""
             text: ql7u4ceuyiqhb868mjb8x065
-          visualData: 179.53036710300438/620.3731412017144/330/2070//
+          visualData: 188.53036710300438/445.37314120171436/330/2111//
         '[rRCOD9_jE01nmIAu_Whyz]:text "Text"':
           data:
             body: ""
