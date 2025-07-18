@@ -1520,7 +1520,7 @@ data:
               The required output format is below.
 
 
-              You should generate a list of demographic markers relationf to interests, values, mpotivations and pains.
+              You should generate a list of demographic markers relationf to interests, values, mpotivations, pains and apirations.
 
 
               Ensure that the documentId field is identical to the incoming value of {{documentId}}
@@ -1532,51 +1532,23 @@ data:
                 documentId": "{{documentId}}",
                 "interests": [
                   "Environmental and social justice",
-                  "Grassroots campaigns",
-                  "Protests and public advocacy",
-                  "Ethical supply chains",
-                  "Sustainable innovation",
-                  "Whistleblower journalism",
-                  "Community organising",
-                  "Boycott movements",
-                  "Human rights issues",
-                  "Corporate accountability"
+                  "Grassroots campaigns"...
                 ],
                 "values": [
                   "Transparency",
-                  "Equity and fairness",
-                  "Sustainability",
-                  "Democratic participation",
-                  "Power redistribution",
-                  "Ethical leadership",
-                  "Long-term impact",
-                  "Systemic change",
-                  "Truth-telling",
-                  "Intersectionality"
+                  "Equity and fairness"...
                 ],
                 "motivations": [
                   "Driving systemic change",
-                  "Exposing unethical practices",
-                  "Mobilising public opinion",
-                  "Defending vulnerable communities",
-                  "Holding power to account",
-                  "Pushing for legislative reform",
-                  "Raising awareness",
-                  "Protecting the environment",
-                  "Reclaiming narratives",
-                  "Demanding corporate responsibility"
+                  "Exposing unethical practices"...
                 ],
                 "pains": [
                   "Greenwashing or performative activism",
-                  "Corporate opacity",
-                  "Lack of accountability",
-                  "Tokenistic engagement",
-                  "Slow or cosmetic policy change",
-                  "Being misrepresented in media",
-                  "Insufficient legal protection",
-                  "Public fatigue or apathy",
-                  "Censorship or platform bans",
-                  "Institutional resistance"
+                  "Corporate opacity"...
+                ],,
+                "aspirations": [
+                  "Protecting the environment",
+                  "Reclaiming narratives"...
                 ]
               }
           outgoingConnections:
