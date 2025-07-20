@@ -1323,6 +1323,10 @@ data:
         id: BCFHJ9h-RbyROga-bUGnp
         name: Universal - Persona synthesis
       nodes:
+        '[0hN1ArR-7inX6GUoiPznE]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"HTTP - Create persona" AJVeux02nTwU8EHVBMuMR/req_body
+          visualData: 3795.0778546526267/1313.3180995876935/280/2167//
         '[5d9jLCLYo4gOOu2uC0wmT]:httpCall "HTTP - Persona"':
           data:
             body: ""
@@ -1356,7 +1360,7 @@ data:
             useBodyInput: true
             useHeadersInput: false
             useUrlInput: true
-          visualData: 3469.6384479161675/903.8348707698312/280/2096/var(--node-color-4)/var(--node-color-4)
+          visualData: 4222.406574327355/883.7431947980024/280/2168/var(--node-color-4)/var(--node-color-4)
         '[Em3NlDWw4Rs1GpIkrIqmo]:text "CRISIS ID GEN-ALPHA"':
           data:
             body: ""
@@ -1366,6 +1370,13 @@ data:
           outgoingConnections:
             - prompt->"Chat" y3i_pcQ-UsgVt5gqDbf0O/prompt
           visualData: 1660.6913038617563/1369.9605768033273/280/2087//
+        '[XdgZsHvi4aYjDuUrCVCiz]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Extract JSON" 0hN1ArR-7inX6GUoiPznE/input
+          visualData: 3298.14373561606/1333.4097755595224/330/2166//
         '[_ddV8qJ6Q8_lTANxEz9kg]:text "Consumer"':
           data:
             body: ""
@@ -1385,7 +1396,7 @@ data:
               The required output format is below.
 
 
-              You should generate a list of demographic markers relationf to interests, values, mpotivations, pains and apirations.
+              You should generate a list of demographic markers relating to interests, values, motivations, pains and aspirations.
 
 
               Each item should have around 10 markers.
@@ -1438,7 +1449,7 @@ data:
           visualData: 1443.5149114406513/281.3656073676411/330/2073//
         '[qS4_YaWt0Eu-2rSVeDHsR]:extractJson "Extract JSON"':
           outgoingConnections:
-            - output->"HTTP - Create persona" AJVeux02nTwU8EHVBMuMR/req_body
+            - output->"Text" XdgZsHvi4aYjDuUrCVCiz/input
           visualData: 2935.735420963605/1205.93564043605/280/2109//
         '[sw2liNALjhGKu-7fPStHO]:text "Text"':
           data:
@@ -1506,14 +1517,30 @@ data:
         id: DNuVsvKxoi4vxLSxp8Yh1
         name: Universal - Audience synthesis
       nodes:
+        '[6t9raieiOxa8jUQsdXHYS]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            text: ""
+            url: ""
+            useBodyInput: true
+            useHeadersInput: false
+            useUrlInput: true
+          visualData: 4646.69669603039/874.1872028744311/280/2162/var(--node-color-4)/var(--node-color-4)
         '[CV-KiTN-8QqFTiuwWk6eB]:text "Text"':
           data:
             body: ""
             normalizeLineEndings: true
-            text: https://crisis-comms.vercel.app/api/submit-audience/
+            text: https://crisis-comms.vercel.app/api/submit-audience
           outgoingConnections:
-            - output->"HTTP - Create audience" yqWdfmlZYTBD9JjISeFTP/url
-          visualData: 2964.217260850778/925.5151361667379/330/2108//
+            - output->"Http Call" 6t9raieiOxa8jUQsdXHYS/url
+          visualData: 2983.046480197149/416.8371138614928/330/2156//
         '[D1cfsyq-01e6-5tyezfZ4]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -1528,7 +1555,7 @@ data:
               The required output format is below.
 
 
-              You should generate a list of demographic markers relationf to interests, values, mpotivations, pains and apirations.
+              You should generate a list of demographic markers relating to interests, values, motivations, pains and aspirations.
 
 
               Each item should have around 10 markers.
@@ -1536,7 +1563,7 @@ data:
 
               Ensure that the documentId field is identical to the incoming value of {{documentId}}
 
-              You should return the JSON only with no commentary or markdown.
+              You should return a JSON object only with no commentary or markdown, format as follows:
 
 
               {
@@ -1601,7 +1628,7 @@ data:
           data:
             body: ""
             text: yfm1291tonb6yqqd0ud5see8
-          visualData: 188.53036710300438/645.3731412017144/330/2111//
+          visualData: 172.57185114020137/626.9594689369417/330/2133//
         '[he2RerKfI40nodEu0_m3O]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -1610,7 +1637,7 @@ data:
           outgoingConnections:
             - data->"Text" D1cfsyq-01e6-5tyezfZ4/documentId
             - data->"Text" rRCOD9_jE01nmIAu_Whyz/documentId
-          visualData: 79.70650156738905/808.7596060808414/330/2069/var(--node-color-3)/var(--node-color-3)
+          visualData: -88.16703933463931/852.9368536866384/330/2165/var(--node-color-3)/var(--node-color-3)
         '[j53CDQ9xjNCdv_D0SP59l]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
             - prompt->"Chat" wuqQmOhu0oA_RqnW72TUn/prompt
@@ -1628,6 +1655,17 @@ data:
           outgoingConnections:
             - output->"HTTP - Persona" Tpu9QCLYBGA3FRO4GEX8f/url
           visualData: 585.8135110596385/899.4690043580789/330/2092//
+        '[v9m-Z848gPSvQWTHmfGSd]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" 6t9raieiOxa8jUQsdXHYS/req_body
+          visualData: 3798.1752308776345/1320.4283878181132/280/2164//
+        '[vW24_vrJCalCkYHRqK3Uc]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Extract JSON" v9m-Z848gPSvQWTHmfGSd/input
+          visualData: 3348.659865019776/1177.6379113678022/330/2163//
         '[wuqQmOhu0oA_RqnW72TUn]:chat "Chat"':
           data:
             additionalParameters: []
@@ -1665,24 +1703,8 @@ data:
           visualData: 2544.162118785708/1121.9925413262058/230/2090//
         '[xSV1y9qkkwE1NbRU-CkVp]:extractJson "Extract JSON"':
           outgoingConnections:
-            - output->"HTTP - Create audience" yqWdfmlZYTBD9JjISeFTP/req_body
-          visualData: 2935.735420963605/1205.93564043605/280/2109//
-        '[yqWdfmlZYTBD9JjISeFTP]:httpCall "HTTP - Create audience"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: >-
-              {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
-              }
-            method: POST
-            text: ""
-            url: ""
-            useBodyInput: true
-            useHeadersInput: false
-            useUrlInput: true
-          visualData: 3469.6384479161675/903.8348707698312/280/2096/var(--node-color-4)/var(--node-color-4)
+            - output->"Text" vW24_vrJCalCkYHRqK3Uc/input
+          visualData: 2953.491055235292/1056.3217538311603/280/2140//
     EfrNMYIRnDPH9b2qi_inj:
       metadata:
         description: ""
@@ -2553,7 +2575,7 @@ data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=audiences
           outgoingConnections:
             - output->"HTTP - Collect scenario" HynXzCIWo9Xs3ra5kjzSu/url
-          visualData: -688.7090920856772/1222.266849327184/330/2062//
+          visualData: -695.4684302459806/1311.4901130431888/330/2078//
         '[HynXzCIWo9Xs3ra5kjzSu]:httpCall "HTTP - Collect scenario"':
           data:
             body: ""
@@ -2587,61 +2609,82 @@ data:
                   "scenario": "d0aschlipjnlak88ch21350x",
                   "role": "You are a consumer PR strategist focused on driving awareness, engagement, and brand love for products and experiences in everyday culture. Your role is to create campaign ideas and messaging that resonate with specific audience segments—amplifying stories through earned media, influencer partnerships, stunts, social moments, and brand activations. You translate marketing goals into culturally relevant narratives, identifying the creative hooks, emotional levers, and formats that make campaigns talkable and shareable. Whether launching a new product, reigniting relevance, or responding to trends, your job is to ensure the brand is seen, heard, and positively talked about in the right places, by the right people."
               }
-          outgoingConnections:
-            - output->"Extract JSON" mf7u10MFLWtfFgE5iIZZ9/input
-          visualData: -1906.3122291988273/1083.2889567354744/330/1632//
+          visualData: -1972.5537431698006/1206.3089112529963/330/2079//
         '[Sv6uoLHbQ7sYjkRRaudtc]:graphInput "Graph Input"':
           data:
             dataType: string
             id: prompt
             useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Extract JSON" mf7u10MFLWtfFgE5iIZZ9/input
           visualData: -1950.319971290697/861.8574471939748/330/2077/var(--node-color-3)/var(--node-color-3)
         '[TTHBYjWTMvpWhrsjv5jzQ]:text "Text"':
           data:
             normalizeLineEndings: true
             text: >-
-              🎯 Your Task:
+              🎯 Your Task
 
 
-              Evaluate a proposed PR campaign (provided in the incoming prompt) and assess how well it aligns with each of the audiences. Analyze the campaign and produce a score from 1 to 10 in each of the following five dimensions.
+              Evaluate the effectiveness of a proposed PR campaign (provided in the incoming prompt) in aligning with a set of target audiences.
 
 
-              Do this individually for each audience type:
-              	•	Interests: How closely the campaign content, format, and channel align with the audience's stated interests.
-              	•	Values: How well the tone, message, and purpose of the campaign reflect the audience's underlying personal or societal values.
-              	•	Motivations: How effectively the campaign speaks to what drives this audience to act, support, or engage.
-              	•	Pains: How successfully the campaign addresses or alleviates the audience's stated concerns or frustrations.
-              	•	Aspirations: How well the campaign connects to the audience's long-term personal, social, or professional ambitions (e.g., status, legacy, lifestyle evolution).
+              Each audience is described in {{audiences}}, which includes demographic and psychographic markers such as interests, values, motivations, pains, and aspirations. These markers are provided to offer insight into audience psychology but should not be treated as exhaustive or prescriptive checklists.
+
+
+              Instead, use your general understanding of each audience profile alongside the provided markers to assess how well the campaign is likely to resonate. Apply informed judgment based on typical traits, behaviors, and expectations for that audience type.
+
 
               ⸻
 
 
-              📊 Scoring Definitions (1-10):
-              	•	Interests:
-              	•	10 = Campaign strongly and directly reflects 8-10 of the audience's interests.
-              	•	5 = Campaign partially reflects 4-5 interests but misses tone or relevance.
-              	•	1 = Campaign aligns with 1 or none of the listed interests.
-              	•	Values:
-              	•	10 = Campaign message and brand stance clearly uphold 8-10 of the audience's core values.
-              	•	5 = Message appears neutral or aligned with about 4-5 values.
-              	•	1 = Message contradicts or ignores audience values.
-              	•	Motivations:
-              	•	10 = Campaign directly activates the audience's key motivations (e.g., empowerment, belonging, change).
-              	•	5 = Campaign acknowledges some motivational drivers but lacks clarity or call-to-action.
-              	•	1 = Campaign is passive, generic, or demotivating.
-              	•	Pains:
-              	•	10 = Campaign actively alleviates or responds constructively to 8-10 listed pains (concerns, frustrations).
-              	•	5 = Campaign avoids exacerbating pains but doesn't offer meaningful relief.
-              	•	1 = Campaign ignores or worsens pain points.
-              	•	Aspirations:
-              	•	10 = Campaign clearly supports and reflects the audience's key aspirations.
-              	•	5 = Campaign loosely touches on long-term goals but lacks specificity or relevance.
-              	•	1 = Campaign is disconnected from the audience's aspirations or contradicts them.
+              ✅ For Each Audience:
+
+
+              Provide a score (1 to 10) in each of the following five dimensions:
+              	•	Interests: How well the campaign aligns with this audience's likely preferences in content, format, and channel.
+              	•	Values: How strongly the campaign message and tone reflect the audience's underlying personal or societal values.
+              	•	Motivations: How clearly the campaign speaks to what drives this audience to act, support, or engage.
+              	•	Pains: How effectively the campaign addresses or mitigates frustrations, concerns, or barriers to engagement.
+              	•	Aspirations: How well the campaign connects to long-term ambitions (e.g. identity, lifestyle, reputation, growth).
+
+              Avoid scoring solely on whether specific keywords from the marker list appear in the campaign. Instead, focus on broader resonance and strategic alignment with what the audience likely cares about.
+
 
               ⸻
 
 
-              Be objective and specific in each rationale — reference how specific elements of the campaign align (or not) with the persona traits and long-term goals.
+              📊 Scoring Scale (1-10)
+
+
+              Interests
+              	•	10 = Campaign strongly reflects the audience's core content and experience preferences.
+              	•	5 = Campaign partially aligns, but may miss tone, medium, or relevance.
+              	•	1 = Campaign shows little or no awareness of the audience's content expectations.
+
+              Values
+              	•	10 = Message clearly upholds values that matter to the audience.
+              	•	5 = Neutral tone, touches on some values, but lacks conviction.
+              	•	1 = Tone or content contradicts or ignores audience values.
+
+              Motivations
+              	•	10 = Campaign clearly activates key drivers (e.g., empowerment, identity, purpose).
+              	•	5 = Some motivational appeal, but lacks focus or energy.
+              	•	1 = Passive or uninspiring for this audience.
+
+              Pains
+              	•	10 = Campaign meaningfully addresses known frustrations or objections.
+              	•	5 = Doesn't worsen pain points, but offers little relief or relevance.
+              	•	1 = Tone-deaf or exacerbates concerns.
+
+              Aspirations
+              	•	10 = Strong alignment with lifestyle, professional, or emotional aspirations.
+              	•	5 = Loosely related to future goals, but lacks personal resonance.
+              	•	1 = Detached from what the audience seeks to become or achieve.
+
+              ⸻
+
+
+              Add a rationale for each audience dimension type. Be objective and specific in each rationale — use the demographic markers passed to you in the audience detail but do not use these exclusively and refer more generally to knoweldge of this audience type. Note if the campaign aligns (or not) with the broader persona traits. The rationale should be one to two pargraphs for each rationale.
 
 
               ⸻
@@ -2703,6 +2746,8 @@ data:
           data:
             paths:
               - $.data.audiences
+          outgoingConnections:
+            - match_0->"Text" TTHBYjWTMvpWhrsjv5jzQ/audiences
           visualData: 51.8316434885092/1436.298233559548/280/2070//
         '[d96qQaUTxxzzSS0MPTm8M]:graphOutput "Graph Output"':
           data:
@@ -8699,7 +8744,7 @@ data:
             useBodyInput: true
             useHeadersInput: false
             useUrlInput: true
-          visualData: 4299.010146127738/893.6664641225204/280/1610/var(--node-color-4)/var(--node-color-4)
+          visualData: 4299.010146127738/893.6664641225204/280/1665/var(--node-color-4)/var(--node-color-4)
         '[z9DUHvENMx7M2RU1N1JyR]:subGraph "Subgraph"':
           data:
             graphId: ktYNmtYq1GrJd_zgCoTcg
