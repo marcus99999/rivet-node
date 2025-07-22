@@ -1547,6 +1547,109 @@ data:
               a PR campaign.
 
 
+              OBJECTIVE
+
+              You will create some synthetic data that defines their persona such that this can be used for audience testing.
+
+
+              SCOPE
+
+              If necessary, pull on sources, surveys, and datasets published January 2023 - July 2025 (e.g., NielsenIQ, Circana, MRI-Simmons, Pew, Mintel, Kantar, U.S. Census ACS 2024 update, proprietary social-listening panels). 
+
+
+              Use robust multivariate techniques to identify 10-12 demographic markers relating to interests, values, motivations, pains and aspirations. Also add in details related to demography and media consumption as indicated in the required output format is below.
+
+
+              Ensure that the documentId field is identical to the incoming value of {{documentId}}
+
+              You should return a JSON object only with no commentary or markdown, format as follows:
+
+
+              {
+                documentId": "{{documentId}}",
+                "interests": [
+                  "Environmental and social justice",
+                  "Grassroots campaigns"...
+                ],
+                "values": [
+                  "Transparency",
+                  "Equity and fairness"...
+                ],
+                "motivations": [
+                  "Driving systemic change",
+                  "Exposing unethical practices"...
+                ],
+                "pains": [
+                  "Greenwashing or performative activism",
+                  "Corporate opacity"...
+                ],
+                "aspirations": [
+                  "Protecting the environment",
+                  "Reclaiming narratives"...
+                ]
+                "demographics": {
+                  "age_range": "30-55",
+                  "gender": "Female",
+                  "marital_status": "Mostly married or cohabiting",
+                  "location": "United Kingdom (urban and suburban areas)",
+                  "employment_status": "Mix of part-time workers, full-time homemakers, and remote/flexible workers",
+                  "income_level": "Lower-middle to upper-middle class",
+                  "education": "Secondary to post-secondary (college-level); some with vocational or professional training",
+                  "household_role": "Primary decision-maker for household purchases and routines"
+                },
+                "demographics": {
+                  "age_range": "30-55",
+                  "gender": "Female",
+                  "marital_status": "Mostly married or cohabiting",
+                  "employment_status": "Mix of part-time workers, full-time homemakers, and remote/flexible workers",
+                  "income_level": "Lower-middle to upper-middle class",
+                  "education": "Secondary to post-secondary (college-level); some with vocational or professional training",
+                  "household_role": "Primary decision-maker for household purchases and routines"
+                },
+                "media": {
+                  "preferred_channels": [
+                    "Facebook (groups, marketplace)",
+                    "Instagram (for home, food, and parenting content)",
+                    "YouTube (recipes, cleaning routines)",
+                    "Television (BBC One, ITV, Channel 4)",
+                    "Streaming (Netflix, Amazon Prime for drama/reality content)"
+                  ],
+                  "influencers": [
+                    "Mrs Hinch (cleaning & home)",
+                    "The Batch Lady (meal prep)",
+                    "Laura Clery (relatable parenting)",
+                    "Nadiya Hussain (food & family)",
+                    "British Mum influencers on TikTok (e.g., @mummatotwins)"
+                  ],
+                  "trusted_sources": [
+                    "Mumsnet",
+                    "NHS website",
+                    "BBC Good Food",
+                    "MoneySavingExpert",
+                    "Which? consumer reports"
+                  ]
+                }
+              }
+          outgoingConnections:
+            - output->"Chat" wuqQmOhu0oA_RqnW72TUn/systemPrompt
+          visualData: 2068.551296641065/714.1325485468967/330/2091//
+        '[Do3lbMoAUl27se_apN85n]:destructure "Destructure"':
+          data:
+            paths:
+              - $.data.name
+              - $.data.description
+          outgoingConnections:
+            - match_0->"Assemble Prompt" j53CDQ9xjNCdv_D0SP59l/message1
+            - match_1->"Assemble Prompt" j53CDQ9xjNCdv_D0SP59l/message2
+          visualData: 1405.9481854481012/715.4875651342031/280/null//
+        '[M37pjfl2Xx6jP3aNv71ML]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You will be given the name and profile of an audience segment for
+              a PR campaign.
+
+
               You will create some synthetic data that defines their persona such that this can be used for message testing.
 
 
@@ -1641,18 +1744,7 @@ data:
 
 
               }
-          outgoingConnections:
-            - output->"Chat" wuqQmOhu0oA_RqnW72TUn/systemPrompt
-          visualData: 2068.551296641065/714.1325485468967/330/2091//
-        '[Do3lbMoAUl27se_apN85n]:destructure "Destructure"':
-          data:
-            paths:
-              - $.data.name
-              - $.data.description
-          outgoingConnections:
-            - match_0->"Assemble Prompt" j53CDQ9xjNCdv_D0SP59l/message1
-            - match_1->"Assemble Prompt" j53CDQ9xjNCdv_D0SP59l/message2
-          visualData: 1405.9481854481012/715.4875651342031/280/null//
+          visualData: 2586.4997853304103/585.5415718515059/330/2171//
         '[OXPQJnnYKTFPVRTDC5tD-]:text "Text"':
           data:
             normalizeLineEndings: true
