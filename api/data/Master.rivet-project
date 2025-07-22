@@ -1532,15 +1532,13 @@ data:
             useBodyInput: true
             useHeadersInput: false
             useUrlInput: true
-          visualData: 4646.69669603039/874.1872028744311/280/2162/var(--node-color-4)/var(--node-color-4)
+          visualData: 4253.165347816232/897.3361057105581/280/2166/var(--node-color-4)/var(--node-color-4)
         '[CV-KiTN-8QqFTiuwWk6eB]:text "Text"':
           data:
             body: ""
             normalizeLineEndings: true
-            text: https://crisis-comms.vercel.app/api/submit-audience
-          outgoingConnections:
-            - output->"Http Call" 6t9raieiOxa8jUQsdXHYS/url
-          visualData: 2983.046480197149/416.8371138614928/330/2156//
+            text: http://localhost:4015/api/submit-audience
+          visualData: 3759.4250676241763/910.0868127543519/330/2168//
         '[D1cfsyq-01e6-5tyezfZ4]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -1588,6 +1586,60 @@ data:
                   "Protecting the environment",
                   "Reclaiming narratives"...
                 ]
+                "demographics": {
+                  "age_range": "30-55",
+                  "gender": "Female",
+                  "marital_status": "Mostly married or cohabiting",
+                  "location": "United Kingdom (urban and suburban areas)",
+                  "employment_status": "Mix of part-time workers, full-time homemakers, and remote/flexible workers",
+                  "income_level": "Lower-middle to upper-middle class",
+                  "education": "Secondary to post-secondary (college-level); some with vocational or professional training",
+                  "household_role": "Primary decision-maker for household purchases and routines"
+                },
+                "demographics": {
+                  "age_range": "30-55",
+                  "gender": "Female",
+                  "marital_status": "Mostly married or cohabiting",
+                  "employment_status": "Mix of part-time workers, full-time homemakers, and remote/flexible workers",
+                  "income_level": "Lower-middle to upper-middle class",
+                  "education": "Secondary to post-secondary (college-level); some with vocational or professional training",
+                  "household_role": "Primary decision-maker for household purchases and routines"
+                },
+                "media": {
+                  "preferred_channels": [
+                    "Facebook (groups, marketplace)",
+                    "Instagram (for home, food, and parenting content)",
+                    "YouTube (recipes, cleaning routines)",
+                    "Television (BBC One, ITV, Channel 4)",
+                    "Streaming (Netflix, Amazon Prime for drama/reality content)"
+                  ],
+                  "influencers": [
+                    "Mrs Hinch (cleaning & home)",
+                    "The Batch Lady (meal prep)",
+                    "Laura Clery (relatable parenting)",
+                    "Nadiya Hussain (food & family)",
+                    "British Mum influencers on TikTok (e.g., @mummatotwins)"
+                  ],
+                  "trusted_sources": [
+                    "Mumsnet",
+                    "NHS website",
+                    "BBC Good Food",
+                    "MoneySavingExpert",
+                    "Which? consumer reports"
+                  ]
+                }
+              }
+
+
+
+
+
+
+
+
+
+
+
               }
           outgoingConnections:
             - output->"Chat" wuqQmOhu0oA_RqnW72TUn/systemPrompt
@@ -1629,6 +1681,14 @@ data:
             body: ""
             text: yfm1291tonb6yqqd0ud5see8
           visualData: 172.57185114020137/626.9594689369417/330/2133//
+        '[fMKgHA8_JY3O2k2mhq3zz]:text "Text"':
+          data:
+            body: ""
+            normalizeLineEndings: true
+            text: https://crisis-comms.vercel.app/api/submit-audience
+          outgoingConnections:
+            - output->"Http Call" 6t9raieiOxa8jUQsdXHYS/url
+          visualData: 3762.766670777011/648.9455776631931/330/2170//
         '[he2RerKfI40nodEu0_m3O]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -1675,7 +1735,7 @@ data:
             maxTokens: 1024
             modalitiesIncludeAudio: false
             modalitiesIncludeText: false
-            model: gpt-4o-mini
+            model: gpt-4o
             outputUsage: false
             parallelFunctionCalling: true
             reasoningEffort: ""
@@ -2539,7 +2599,8 @@ data:
             additionalParameters: []
             cache: false
             enableFunctionUse: false
-            maxTokens: 1024
+            headers: []
+            maxTokens: 2048
             modalitiesIncludeAudio: false
             modalitiesIncludeText: false
             model: gpt-4o-mini
@@ -2567,7 +2628,7 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Extract JSON" YF6Y-pigfyxEzGqFLgSqS/input
-          visualData: 798.141335726776/1393.311569591137/230/1642//
+          visualData: 839.1206641955097/1453.414584678613/230/2081//
         '[7dv_96Wf0lHFJGNnxMyyE]:text "Text"':
           data:
             body: ""
@@ -2753,7 +2814,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: 1870.3516421490651/1812.5061562038163/330/2071/var(--node-color-3)/var(--node-color-3)
+          visualData: 2185.3368004192034/1942.2854488816415/330/2080/var(--node-color-3)/var(--node-color-3)
         '[laWOUCCc9xn52yNKO-lF3]:httpCall "HTTP - Collect scenario"':
           data:
             body: ""
@@ -6585,6 +6646,7 @@ data:
             additionalParameters: []
             cache: false
             enableFunctionUse: false
+            headers: []
             maxTokens: 1024
             modalitiesIncludeAudio: false
             modalitiesIncludeText: false
@@ -8050,7 +8112,7 @@ data:
             url: https://crisis-comms.vercel.app/api/submit-conversation
             useBodyInput: true
             useHeadersInput: false
-          visualData: 2527.44349137452/444.26938475045466/280/2062/var(--node-color-4)/var(--node-color-4)
+          visualData: 2710.896596175662/977.2750270780978/280/2074/var(--node-color-4)/var(--node-color-4)
         '[8KLNeX5GledWD96aUpmgF]:httpCall "Http Call"':
           data:
             body: ""
@@ -8058,11 +8120,12 @@ data:
             headers: ""
             method: GET
             url: ""
-            useHeadersInput: true
+            useHeadersInput: false
             useUrlInput: true
           outgoingConnections:
+            - json->"Destructure" SO2cX9cFHckmLozDt8nPB/object
             - res_body->"Text" _EZfuaA4jaifMmgm1n1Nm/input
-          visualData: 1410.269879915463/1131.645564072039/280/13/var(--node-color-4)/var(--node-color-4)
+          visualData: 1355.7297676772855/1168.8320042344326/280/2069/var(--node-color-4)/var(--node-color-4)
         '[9WHIs09kfEbMTUw1cpg4I]:text "CRISIS ID FOR SKITTLES"':
           data:
             body: ""
@@ -8085,7 +8148,7 @@ data:
                   "crisis_description": Optional[str] = None
                   "crisis_date": Optional[str] = None
                   "crisis_id": Optional[str] = None 
-          visualData: 2381.844820759401/849.8058180430716/330/2061//
+          visualData: 2564.05837755513/476.70186841372134/330/2075//
         '[IMXj21FrA28pHB1H_53AQ]:destructure "Destructure"':
           data:
             body: ""
@@ -8110,7 +8173,10 @@ data:
           data:
             body: ""
             errorOnNon200: true
-            headers: ""
+            headers: |-
+              {
+                "Content-Type": "application/json"
+              }
             method: POST
             url: ""
             useHeadersInput: true
@@ -8118,6 +8184,14 @@ data:
           outgoingConnections:
             - res_body->"Text" ydDOFchh9bRtxJq3deaHi/input
           visualData: 1421.8064996725761/388.084383998229/280/17/var(--node-color-4)/var(--node-color-4)
+        '[KohyIS_wcnu9BH8rW20Py]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: ""
+            method: GET
+            url: ""
+          visualData: 2437.501846216133/1554.2029234709576/280/2088/var(--node-color-4)/var(--node-color-4)
         '[MuIXDYDqu4sCJloLasIlx]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -8147,7 +8221,7 @@ data:
                   recall this with the ids from output above
 
               }
-          visualData: 1799.4010403533625/1256.8531641761072/330/1785//
+          visualData: 1793.3681372015374/1560.2026010489913/330/2087//
         '[NZW9_pEob7ey_cnPbGMai]:httpCall "HTTP - Get crises"':
           data:
             body: ""
@@ -8165,6 +8239,14 @@ data:
           outgoingConnections:
             - json->"Destructure" IMXj21FrA28pHB1H_53AQ/object
           visualData: -432.36259257053314/375.49682327619064/280/1795/var(--node-color-4)/var(--node-color-4)
+        '[SO2cX9cFHckmLozDt8nPB]:destructure "Destructure"':
+          data:
+            paths:
+              - $.run_id
+              - $.client_name
+              - $.crisis_name
+              - $.media_monitoring_runs[0].output_presigned_url
+          visualData: 1794.4932639007952/1290.464376096609/280/2086/var(--node-color-5)/var(--node-color-5)
         '[UyvjNNSgyLzsU2DwWadl7]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -8275,15 +8357,15 @@ data:
             - match_4->"Text" p9xDr18o0132Dk-8admW8/objectives
             - match_5->"Text" p9xDr18o0132Dk-8admW8/region
           visualData: 317.7566675597393/970.9869511916725/280/1749//
-        '[3HpxUqsRrSf2lA10Zwfcm]:text "Summer Campaign"':
+        '[3HpxUqsRrSf2lA10Zwfcm]:text "Nescafe campaign"':
           data:
             normalizeLineEndings: true
-            text: lmfu2zzm92t31sfw047ifs7g
+            text: toknf4gs5nwpr79of5acgzra
           outgoingConnections:
             - output->"Text" cfuHYfdAGorC5ycWjcNZM/entity
             - output->"Text" kwgdpRGTmmqRB7AeZZW63/entity
             - output->"Text" p9xDr18o0132Dk-8admW8/entity
-          visualData: -968.5234068993825/1390.4174886172955/330/1695//
+          visualData: -968.5234068993825/1390.4174886172955/330/1755//
         '[DzFZKmvNx3S8ym4Oajz3_]:httpCall "Http - Get role & tones"':
           data:
             body: ""
@@ -8379,6 +8461,11 @@ data:
           outgoingConnections:
             - output->"Chat" Eh7I69zVYkDq8Wql2YKAA/prompt
           visualData: 784.88374027114/930.6118529745636/330/1554//
+        '[bIH_r28ERY65yjS_X8ENH]:text "Summer Campaign"':
+          data:
+            normalizeLineEndings: true
+            text: lmfu2zzm92t31sfw047ifs7g
+          visualData: -968.5234068993825/1590.4174886172955/330/1755//
         '[cfuHYfdAGorC5ycWjcNZM]:text "Text"':
           data:
             body: ""
