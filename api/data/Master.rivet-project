@@ -1557,7 +1557,7 @@ data:
               If necessary, pull on sources, surveys, and datasets published January 2023 - July 2025 (e.g., NielsenIQ, Circana, MRI-Simmons, Pew, Mintel, Kantar, U.S. Census ACS 2024 update, proprietary social-listening panels). 
 
 
-              Use robust multivariate techniques to identify 10-12 demographic markers relating to interests, values, motivations, pains and aspirations. Also add in details related to demography and media consumption as indicated in the required output format is below.
+              Use robust multivariate techniques to identify at least ten demographic markers relating to interests, values, motivations, pains and aspirations. Also add in details related to demography and media consumption as indicated in the required output format is below.
 
 
               Ensure that the documentId field is identical to the incoming value of {{documentId}}
@@ -1589,7 +1589,7 @@ data:
                 ]
                 "demographics": {
                   "age_range": "30-55",
-                  "gender": "Female",
+                  "gender": "Both",
                   "marital_status": "Mostly married or cohabiting",
                   "location": "United Kingdom (urban and suburban areas)",
                   "employment_status": "Mix of part-time workers, full-time homemakers, and remote/flexible workers",
