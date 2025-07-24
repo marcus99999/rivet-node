@@ -262,7 +262,7 @@ data:
       metadata:
         description: ""
         id: 8dIVb-m7djUWLo0j9GXBb
-        name: Create - Culturescore - Cultural salience
+        name: Create - Culturechreography- Cultural role
       nodes:
         '[-hgmxrbb1GwclDfoCmIZl]:graphInput "Graph Input"':
           data:
@@ -1365,7 +1365,7 @@ data:
           data:
             body: ""
             text: ql7u4ceuyiqhb868mjb8x065
-          visualData: 177.79907251318835/424.736852552502/330/2111//
+          visualData: 88.05625317235285/491.70910579193145/330/2172//
         '[R_94EasDYDveLSCh4a0Iq]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
             - prompt->"Chat" y3i_pcQ-UsgVt5gqDbf0O/prompt
@@ -1381,7 +1381,7 @@ data:
           data:
             body: ""
             text: bhrp283cg1523zr5h6m09xra
-          visualData: 162.217421204844/629.9307363219501/330/2112//
+          visualData: 79.17182718795144/651.3618573585676/330/2169//
         '[fwK8F3gNLgyFNfE0rDqTf]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -1517,6 +1517,160 @@ data:
         id: DNuVsvKxoi4vxLSxp8Yh1
         name: Universal - Audience synthesis
       nodes:
+        '[02vGhzT4Q8SkW9z38U22A]:text "London housewife"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                  "type": "audience",
+                  "documentId": "s82folqi3ofui5j3iooa7tuq"
+              }
+          visualData: -1067.74457877533/1141.351020117959/330/2251//
+        '[4hCjcZiFewzqSxCcWCUKG]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                "documentId": "xajkz3xlan151esqaasfuum7",
+                "interests": [
+                  "Technology and gadgets",
+                  "Business news and trends",
+                  "Sports and fitness",
+                  "Travel and leisure",
+                  "Streaming movies and TV shows",
+                  "Networking and professional development",
+                  "Personal finance and investment",
+                  "Dining and gastronomy",
+                  "Automotive and cars",
+                  "Digital innovation and apps"
+                ],
+                "values": [
+                  "Efficiency",
+                  "Reliability",
+                  "Professionalism",
+                  "Work-life balance",
+                  "Achievement and success",
+                  "Continuous learning",
+                  "Brand credibility",
+                  "Innovation",
+                  "Convenience",
+                  "Quality"
+                ],
+                "motivations": [
+                  "Career progression",
+                  "Financial independence",
+                  "Building professional networks",
+                  "Maintaining a healthy lifestyle",
+                  "Experiencing new cultures",
+                  "Staying informed about current events",
+                  "Achieving work-life balance",
+                  "Enhancing personal and professional skills",
+                  "Status and recognition",
+                  "Contributing to team success"
+                ],
+                "pains": [
+                  "Workplace stress and deadlines",
+                  "Lack of time for personal interests",
+                  "Balancing work and personal life",
+                  "Office politics and bureaucracy",
+                  "Commuting challenges",
+                  "Technology overload",
+                  "Economic uncertainty",
+                  "Pressure to maintain professional image",
+                  "Limited career advancement opportunities",
+                  "Health concerns due to sedentary lifestyle"
+                ],
+                "aspirations": [
+                  "Achieving senior leadership roles",
+                  "Financial security and wealth accumulation",
+                  "Building a strong professional reputation",
+                  "Leading a balanced and fulfilling life",
+                  "Traveling to new destinations",
+                  "Owning a modern and comfortable home",
+                  "Developing expertise in a chosen field",
+                  "Contributing to impactful projects",
+                  "Being a mentor or role model",
+                  "Maintaining strong personal relationships"
+                ],
+                "demographics": {
+                  "age_range": "30-45",
+                  "gender": "Male",
+                  "marital_status": "Married or in a long-term relationship",
+                  "location": "Urban or commuter-belt areas",
+                  "employment_status": "Full-time employed in corporate or administrative roles",
+                  "income_level": "Middle to upper-middle class",
+                  "education": "Bachelor's degree or higher",
+                  "household_role": "Primary or equal contributor to household income"
+                },
+                "media": {
+                  "preferred_channels": [
+                    "LinkedIn (professional networking)",
+                    "Twitter (news and trends)",
+                    "YouTube (tech reviews, fitness)",
+                    "Streaming services (Netflix, Amazon Prime)",
+                    "Podcasts (business, technology, self-improvement)"
+                  ],
+                  "influencers": [
+                    "Gary Vaynerchuk (entrepreneurship)",
+                    "Tim Ferriss (productivity and lifestyle)",
+                    "Marques Brownlee (technology reviews)",
+                    "Joe Rogan (podcast host)",
+                    "Casey Neistat (digital creator)"
+                  ],
+                  "trusted_sources": [
+                    "The Financial Times",
+                    "BBC News",
+                    "TechCrunch",
+                    "Harvard Business Review",
+                    "The Economist"
+                  ]
+                },
+                "subaudiences": [
+                  {
+                    "name": "Young Urban Achievers",
+                    "description": "Men aged 30-35, early in their careers, prioritizing rapid career growth and urban lifestyle experiences."
+                  },
+                  {
+                    "name": "Mid-Career Family Men",
+                    "description": "Men aged 36-45, balancing career advancement with family responsibilities and seeking stability."
+                  },
+                  {
+                    "name": "Tech-Savvy Professionals",
+                    "description": "Men aged 30-40, deeply interested in technology and innovation, often working in IT or related fields."
+                  },
+                  {
+                    "name": "Financially Focused Executives",
+                    "description": "Men aged 40-45, in higher income brackets, focused on investment and wealth accumulation."
+                  },
+                  {
+                    "name": "Health-Conscious Commuters",
+                    "description": "Men aged 30-40, prioritizing fitness and wellness despite busy work schedules, often commuting to work."
+                  },
+                  {
+                    "name": "Remote Work Enthusiasts",
+                    "description": "Men aged 30-45, embracing flexible work arrangements, valuing work-life balance and autonomy."
+                  },
+                  {
+                    "name": "Corporate Ladder Climbers",
+                    "description": "Men aged 35-45, highly ambitious, aiming for leadership roles within their organizations."
+                  },
+                  {
+                    "name": "Brand-Conscious Consumers",
+                    "description": "Men aged 30-40, attentive to brand reputation and quality in purchasing decisions, especially in tech and fashion."
+                  },
+                  {
+                    "name": "Culturally Curious Travelers",
+                    "description": "Men aged 30-45, passionate about travel and experiencing diverse cultures, often planning frequent trips."
+                  },
+                  {
+                    "name": "Eco-Conscious Professionals",
+                    "description": "Men aged 30-45, integrating sustainability into their lifestyle choices, both personally and professionally."
+                  }
+                ]
+              }
+          outgoingConnections:
+            - output->"Extract JSON" v9m-Z848gPSvQWTHmfGSd/input
+          visualData: 3014.2878767532156/1603.5446433784268/330/2284//
         '[6t9raieiOxa8jUQsdXHYS]:httpCall "Http Call"':
           data:
             body: ""
@@ -1532,13 +1686,9 @@ data:
             useBodyInput: true
             useHeadersInput: false
             useUrlInput: true
-          visualData: 4253.165347816232/897.3361057105581/280/2166/var(--node-color-4)/var(--node-color-4)
-        '[CV-KiTN-8QqFTiuwWk6eB]:text "Text"':
-          data:
-            body: ""
-            normalizeLineEndings: true
-            text: http://localhost:4015/api/submit-audience
-          visualData: 3759.4250676241763/910.0868127543519/330/2168//
+          outgoingConnections:
+            - json->"Graph Output" yJpaa0XekkIua2wi32G8B/value
+          visualData: 4253.165347816232/895.9928904726007/280/2223/var(--node-color-4)/var(--node-color-4)
         '[D1cfsyq-01e6-5tyezfZ4]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -1630,43 +1780,97 @@ data:
                   ]
                 }
               }
-          visualData: 2392.16529741511/534.7725518012969/330/2186//
+          visualData: 2444.978190994795/350.6045126516264/330/2259/var(--node-color-5)/var(--node-color-5)
         '[Do3lbMoAUl27se_apN85n]:destructure "Destructure"':
           data:
             paths:
               - $.data.name
               - $.data.description
+              - $.data.crossaudience.crossaudience_dimensions
           outgoingConnections:
             - match_0->"Assemble Prompt" j53CDQ9xjNCdv_D0SP59l/message1
             - match_1->"Assemble Prompt" j53CDQ9xjNCdv_D0SP59l/message2
-          visualData: 1405.9481854481012/715.4875651342031/280/null//
-        '[M37pjfl2Xx6jP3aNv71ML]:text "Text"':
+            - match_2->"Text" M37pjfl2Xx6jP3aNv71ML/crossaudience
+          visualData: 1461.469432544693/726.3209792018308/280/2249//
+        '[F8feG6Io_O0ZtmnC5yCxi]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 4096
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" L6EQfYdhl8VMWobKdug17/input
+          visualData: 5812.05995207547/1424.601769787924/230/2272//
+        '[KxXR8UsW1kmQC-UPX0nXQ]:text "Text"':
           data:
             normalizeLineEndings: true
             text: >-
-              You will be given the name and profile of an audience segment for
-              a PR campaign.
+              You will be given a JSON object with the names and descriptions of
+              various audiences for a PR campaign. The format is as follows:
 
 
-              You will create some synthetic data that defines their persona such that this can be used for message testing.
+              {
+                  "dy3ug69rl08hq23n6kpolj60": {
+                    "name": "Young Urban Achievers",
+                    "description": "Men aged 30-35, early in their careers, prioritizing rapid career growth and urban lifestyle experiences."
+                  },
+                  "llzciefpsudvbeds3o5lgbtn": {
+                    "name": "Mid-Career Family Men",
+                    "description": "Men aged 36-45, balancing career advancement with family responsibilities and seeking stability."
+                  }...
+              }
 
 
-              The required output format is below.
+              You will create some synthetic data that defines the persona of each audience such that this can be used for message testing.
 
 
-              You should generate a list of demographic markers relating to interests, values, motivations, pains and aspirations. Also add in details related to demography and media consumption as indicated in the required output format is below.
+              You should generate a list of demographic markers relating to interests, values, motivations, pains and aspirations for EACH audience member defined. Also add in details related to demography and media consumption as indicated in the required output format is below.
 
 
               Each item should have around 10 markers.
 
 
-              Ensure that the documentId field is identical to the incoming value of {{documentId}}
+              Return the results as an array of 10 objects. Each object must contain:
+              	•	name: a clear and concise title for the sub-audience
+              	•	description: a three sentance explanation of what defines this segment and how it differs from others in the broader group
 
-              You should return a JSON object only with no commentary or markdown, format as follows:
+              Return your output as a valid JSON object only, with no commentary or markdown. Use the following structure exactly:
+
+
+              Ensure that the documentId field is identical to the long id from the inital JSON key for each audience description.
+
+
+              You should return a JSON object only. It must have no commentary or markdown. Double check that there is no repetition of the closing ] bracket in the crossaudience item. Full format as follows:
 
 
               {
-                documentId": "{{documentId}}",
+                "long audience id": {
                 "interests": [
                   "Environmental and social justice",
                   "Grassroots campaigns"...
@@ -1729,27 +1933,158 @@ data:
                     "Which? consumer reports"
                   ]
                 }
+                }
               }
+          outgoingConnections:
+            - output->"Chat" F8feG6Io_O0ZtmnC5yCxi/systemPrompt
+          visualData: 5234.957941598719/1230.053400656992/330/2273//
+        '[L6EQfYdhl8VMWobKdug17]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Extract JSON" jAiCSurP8jKQRnlxK_GU1/input
+          visualData: 6185.186577266496/1439.5867748156766/330/2252//
+        '[M37pjfl2Xx6jP3aNv71ML]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You will be given the name and profile of an audience segment for
+              a PR campaign.
 
 
+              You will create some synthetic data that defines their persona such that this can be used for message testing.
 
 
+              The required output format is below.
 
 
+              You should generate a list of demographic markers relating to interests, values, motivations, pains and aspirations. Also add in details related to demography and media consumption as indicated in the required output format is below.
 
 
+              Each item should have around 10 markers.
 
 
+              Also generate a list of 10 distinct cross-audience segments that could logically exist within the broader audience type provided in the prompt. These segments should be directly informed by the dimension values supplied in the  JSON, which is formatted as follows:
 
+
+              In addition to generating demographic markers, you must also generate a list of 10 distinct cross-audience segments. These are subgroups within the main audience that are meaningfully differentiated by specific dimensions.
+
+
+              These dimensions should be:
+
+
+              {{crossaudience}}
+
+
+              This contains the only dimension categories you are allowed to use to segment the audience. You must use these categories as the basis for defining your 10 cross-audience segments.
+
+
+              Return the results as an array of 10 objects. Each object must contain:
+              	•	name: a clear and concise title for the sub-audience
+              	•	description: a three sentance explanation of what defines this segment and how it differs from others in the broader group
+
+              Return your output as a valid JSON object only, with no commentary or markdown. Use the following structure exactly:
+
+
+              The documentId field MUST be identical to the incoming value of {{documentId}}
+
+
+              You should return a JSON object only with no commentary or markdown. Double check that there is no repetition of the closing ] bracket in the crossaudience item. Full format as follows:
+
+
+              {
+                "documentId": "{{documentId}}"
+                "interests": [
+                  "Environmental and social justice",
+                  "Grassroots campaigns"...
+                ],
+                "values": [
+                  "Transparency",
+                  "Equity and fairness"...
+                ],
+                "motivations": [
+                  "Driving systemic change",
+                  "Exposing unethical practices"...
+                ],
+                "pains": [
+                  "Greenwashing or performative activism",
+                  "Corporate opacity"...
+                ],
+                "aspirations": [
+                  "Protecting the environment",
+                  "Reclaiming narratives"...
+                ]
+                "demographics": {
+                  "age_range": "30-55",
+                  "gender": "Female",
+                  "marital_status": "Mostly married or cohabiting",
+                  "location": "United Kingdom (urban and suburban areas)",
+                  "employment_status": "Mix of part-time workers, full-time homemakers, and remote/flexible workers",
+                  "income_level": "Lower-middle to upper-middle class",
+                  "education": "Secondary to post-secondary (college-level); some with vocational or professional training",
+                  "household_role": "Primary decision-maker for household purchases and routines"
+                },
+                "demographics": {
+                  "age_range": "30-55",
+                  "gender": "Female",
+                  "marital_status": "Mostly married or cohabiting",
+                  "employment_status": "Mix of part-time workers, full-time homemakers, and remote/flexible workers",
+                  "income_level": "Lower-middle to upper-middle class",
+                  "education": "Secondary to post-secondary (college-level); some with vocational or professional training",
+                  "household_role": "Primary decision-maker for household purchases and routines"
+                },
+                "media": {
+                  "preferred_channels": [
+                    "Facebook (groups, marketplace)",
+                    "Instagram (for home, food, and parenting content)",
+                    "YouTube (recipes, cleaning routines)",
+                    "Television (BBC One, ITV, Channel 4)",
+                    "Streaming (Netflix, Amazon Prime for drama/reality content)"
+                  ],
+                  "influencers": [
+                    "Mrs Hinch (cleaning & home)",
+                    "The Batch Lady (meal prep)",
+                    "Laura Clery (relatable parenting)",
+                    "Nadiya Hussain (food & family)",
+                    "British Mum influencers on TikTok (e.g., @mummatotwins)"
+                  ],
+                  "trusted_sources": [
+                    "Mumsnet",
+                    "NHS website",
+                    "BBC Good Food",
+                    "MoneySavingExpert",
+                    "Which? consumer reports"
+                  ]
+                },
+                "subaudiences": [
+                  {
+                    "name": "Older Gen X Professionals",
+                    "description": "Men aged 50-58 approaching retirement, focused on financial security and work-life balance."
+                  },
+                  {
+                    "name": "Younger Urban Commuters",
+                    "description": "Office workers in their 20s living in cities, driven by career growth and social status."
+                  }...
+                ]
               }
           outgoingConnections:
             - output->"Chat" wuqQmOhu0oA_RqnW72TUn/systemPrompt
-          visualData: 2021.7348158397187/1040.8112921552267/330/2183//
+          visualData: 1999.9870114504279/1006.2476271727073/330/2285//
         '[OXPQJnnYKTFPVRTDC5tD-]:text "Text"':
           data:
             normalizeLineEndings: true
             text: "{{input}}"
           visualData: 1443.5149114406513/281.3656073676411/330/2073//
+        '[Q4VdHPG5LEpAzaa0Fr0FH]:text "GEN-Z"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                  "type": "audience",
+                  "documentId": "a203jbgqd3fpb6vpf4s775iv"
+              }
+          visualData: -1040.6559670303425/568.2279190325124/330/2245//
         '[Tpu9QCLYBGA3FRO4GEX8f]:httpCall "HTTP - Persona"':
           data:
             body: ""
@@ -1768,37 +2103,85 @@ data:
             - json->"Destructure" Do3lbMoAUl27se_apN85n/object
             - res_body->"Text" OXPQJnnYKTFPVRTDC5tD-/input
           visualData: 1000.9672944749254/470.439545164433/280/2079/var(--node-color-4)/var(--node-color-4)
-        '[dUdpfrjsJRN7cKhYbGoBF]:text "CRISIS ID GEN-X"':
+        '[_X_x26CUWe4hBhuuPKAJD]:text "Text"':
           data:
             body: ""
-            text: yfm1291tonb6yqqd0ud5see8
-          visualData: 172.57185114020137/626.9594689369417/330/2133//
+            headers: ""
+            normalizeLineEndings: true
+            text: http://localhost:4015/api/submit-sub-audiences
+          outgoingConnections:
+            - output->"Http Call" gZ9lF7WlWis5jxN7IzTLD/url
+          visualData: 6509.307002715581/1954.8358302026331/330/2287/var(--node-color-5)/var(--node-color-5)
+        '[dUdpfrjsJRN7cKhYbGoBF]:text "Text"':
+          data:
+            body: ""
+            text: xajkz3xlan151esqaasfuum7
+          outgoingConnections:
+            - output->"Text" M37pjfl2Xx6jP3aNv71ML/documentId
+            - output->"Text" rRCOD9_jE01nmIAu_Whyz/documentId
+          visualData: -32.94531324117807/718.2069833266024/330/2276//
         '[fMKgHA8_JY3O2k2mhq3zz]:text "Text"':
           data:
             body: ""
+            headers: ""
             normalizeLineEndings: true
             text: https://crisis-comms.vercel.app/api/submit-audience
           outgoingConnections:
             - output->"Http Call" 6t9raieiOxa8jUQsdXHYS/url
-          visualData: 3762.766670777011/648.9455776631931/330/2170//
+          visualData: 3704.215436204386/890.6570844886444/330/2281//
+        '[gZ9lF7WlWis5jxN7IzTLD]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            text: ""
+            url: ""
+            useBodyInput: true
+            useHeadersInput: false
+            useUrlInput: true
+          visualData: 6995.119647874085/1666.8564009469405/280/2268/var(--node-color-4)/var(--node-color-4)
         '[he2RerKfI40nodEu0_m3O]:graphInput "Graph Input"':
           data:
             dataType: string
             id: stringGraph
             useDefaultValueInput: false
-          outgoingConnections:
-            - data->"Text" M37pjfl2Xx6jP3aNv71ML/documentId
-            - data->"Text" rRCOD9_jE01nmIAu_Whyz/documentId
-          visualData: -88.16703933463931/852.9368536866384/330/2165/var(--node-color-3)/var(--node-color-3)
+          visualData: -1055.1935043683316/371.45234801951324/330/2244/var(--node-color-3)/var(--node-color-3)
+        '[iHg0Y_-cFwH1UXx5ObxQn]:text "Male office worker"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                  "type": "audience",
+                  "documentId": "xajkz3xlan151esqaasfuum7"
+              }
+          visualData: -1132.745063181096/877.7047124706464/330/2254//
         '[j53CDQ9xjNCdv_D0SP59l]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
             - prompt->"Chat" wuqQmOhu0oA_RqnW72TUn/prompt
           visualData: 2042.9641913741634/1446.7993481626052/280/2182//
+        '[jAiCSurP8jKQRnlxK_GU1]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Http Call" gZ9lF7WlWis5jxN7IzTLD/req_body
+          visualData: 6599.493347404565/1579.6688977490808/280/2253//
+        '[kt3r9EHoP1Pks029WMsgL]:text "CRISIS ID GEN-X"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                  "type": "audience",
+                  "documentId": "yfm1291tonb6yqqd0ud5see8"
+              }
+          visualData: -1020.348392229459/1761.1458152385314/330/2255//
         '[lOxfnRuGspjt73esT8FdB]:text "CRISIS ID GEN-ALPHA"':
           data:
             body: ""
             text: ql7u4ceuyiqhb868mjb8x065
-          visualData: 188.53036710300438/445.37314120171436/330/2111//
+          visualData: 371.11578357789733/111.30945328098426/330/2230//
         '[rRCOD9_jE01nmIAu_Whyz]:text "Text"':
           data:
             body: ""
@@ -1806,25 +2189,32 @@ data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/audiences/{{documentId}}
           outgoingConnections:
             - output->"HTTP - Persona" Tpu9QCLYBGA3FRO4GEX8f/url
-          visualData: 590.6159342695934/813.0253865788914/330/2185//
+          visualData: 466.0633840861483/561.6297209941424/330/2277//
         '[v9m-Z848gPSvQWTHmfGSd]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Http Call" 6t9raieiOxa8jUQsdXHYS/req_body
-          visualData: 3798.1752308776345/1320.4283878181132/280/2164//
+          visualData: 3478.589515882618/1453.1377101465523/280/2253//
         '[vW24_vrJCalCkYHRqK3Uc]:text "Text"':
           data:
             normalizeLineEndings: true
             text: "{{input}}"
-          outgoingConnections:
-            - output->"Extract JSON" v9m-Z848gPSvQWTHmfGSd/input
-          visualData: 3348.659865019776/1177.6379113678022/330/2163//
+          visualData: 2986.21443298105/1302.5463912642153/330/2283//
+        '[vgtdZ9MNXBTl_nDDWa5YX]:text "LONDON DOG OWNER"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                  "type": "audience",
+                  "documentId": "qx1t0e6i1k1g44uwg7letb0y"
+              }
+          visualData: -1039.3068668478074/1460.9367351129754/330/2256//
         '[wuqQmOhu0oA_RqnW72TUn]:chat "Chat"':
           data:
             additionalParameters: []
             cache: false
             enableFunctionUse: false
             headers: []
-            maxTokens: 1024
+            maxTokens: 2048
             modalitiesIncludeAudio: false
             modalitiesIncludeText: false
             model: gpt-4o
@@ -1851,12 +2241,15 @@ data:
             useUseTopPInput: false
             useUserInput: false
           outgoingConnections:
-            - response->"Extract JSON" xSV1y9qkkwE1NbRU-CkVp/input
-          visualData: 2508.624187032042/1328.496739354265/230/2184//
-        '[xSV1y9qkkwE1NbRU-CkVp]:extractJson "Extract JSON"':
+            - response->"Text" vW24_vrJCalCkYHRqK3Uc/input
+          visualData: 2508.624187032042/1328.496739354265/230/2260//
+        '[yJpaa0XekkIua2wi32G8B]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
           outgoingConnections:
-            - output->"Text" vW24_vrJCalCkYHRqK3Uc/input
-          visualData: 2953.491055235292/1056.3217538311603/280/2140//
+            - valueOutput->"Chat" F8feG6Io_O0ZtmnC5yCxi/prompt
+          visualData: 4918.308220245881/796.2334685846763/330/2278/var(--node-color-3)/var(--node-color-3)
     EfrNMYIRnDPH9b2qi_inj:
       metadata:
         description: ""
@@ -2122,7 +2515,7 @@ data:
           outgoingConnections:
             - response->"Extract JSON" vzD1SMeR-en172gQVjSp2/input
             - response->"Text" q4J6Cr_USUSIiqH2rVE7p/input
-          visualData: 2030.3673332067467/298.02329671362577/230/109//
+          visualData: 2154.5586102804555/223.19009129741653/230/1471//
         '[ez9cYYrN1iMIypvzWQBmg]:extractJson "Extract JSON"':
           visualData: 122.28820819838799/673.5815786602941/280/1466//
         '[k6jy8_Nk5sKxENwH9aZ6N]:subGraph "Subgraph"':
@@ -2212,12 +2605,12 @@ data:
               Do not include any explanations, calculations, markdown formatting, or stray characters. Return only the final valid UTF-8 JSON object.
           outgoingConnections:
             - output->"Chat" _s43ZTL5W4a5ldiyC7j3k/systemPrompt
-          visualData: 1852.927033839741/-224.3011851599706/330/1463/var(--node-color-2)/var(--node-color-2)
+          visualData: 1645.9415720502261/-241.8153396190834/330/1474/var(--node-color-2)/var(--node-color-2)
         '[q4J6Cr_USUSIiqH2rVE7p]:text "Text"':
           data:
             normalizeLineEndings: true
             text: "{{input}}"
-          visualData: 2432.447930457893/218.98181178391317/330/107//
+          visualData: 2507.2811358741023/203.0598531847197/330/1473//
         '[tD42EuwVRmnv2Rog5xSJv]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -2246,7 +2639,7 @@ data:
           outgoingConnections:
             - output->"Graph Output" KfOHARDNuJGbsL7wsQRjB/value
             - output->"Http Call" YF20gMQ92bGqsY4vwMMbt/req_body
-          visualData: 2476.083253749114/562.6404419130982/280/130//
+          visualData: 2498.373995787985/369.9847428628574/280/1472//
         '[ykrdQorXBm6sTD0CYykhr]:subGraph "Subgraph"':
           data:
             graphId: jOpSxxKf2JqdCjND_3e_G
@@ -2443,14 +2836,14 @@ data:
             wait: false
           outgoingConnections:
             - value->"Text" czMnCg4tMq2UNYX-apRAi/role
-          visualData: 174.1841578432909/182.2574549266893/230/908/var(--node-color-5)/var(--node-color-5)
+          visualData: 171.54187549804288/408.1725954453947/230/1771/var(--node-color-5)/var(--node-color-5)
         '[NBBoEpRdNhXaj_342LBYq]:text "Text"':
           data:
             normalizeLineEndings: true
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{entity}}?populate[tone][populate]=*
           outgoingConnections:
             - output->"HTTP - Get tone" a-18mwhrkh4qEPOJw9uJG/url
-          visualData: -779.1975027897024/-159.7514616186138/330/1767//
+          visualData: -1347.2882070180258/8.033467304635224/330/1772//
         '[a-18mwhrkh4qEPOJw9uJG]:httpCall "HTTP - Get tone"':
           data:
             body: ""
@@ -2465,7 +2858,7 @@ data:
             useUrlInput: true
           outgoingConnections:
             - json->"Destructure" m49JehlgwqAk-XHvKBinJ/object
-          visualData: -350.9279049945599/-420.0629033782294/280/1767/var(--node-color-4)/var(--node-color-4)
+          visualData: -919.0186092228835/-252.27797445498038/280/1772/var(--node-color-4)/var(--node-color-4)
         '[cZ0ftay5oLWMqkrWqtnXp]:graphOutput "Graph Output"':
           data:
             dataType: object
@@ -2652,7 +3045,7 @@ data:
             - match_0->"TEXT - Define role" riku0ppgEMw8SVaaQdp6w/tone
             - match_1->"TEXT - Define role" riku0ppgEMw8SVaaQdp6w/task
             - match_2->"TEXT - Define role" riku0ppgEMw8SVaaQdp6w/company
-          visualData: 13.589073097536527/-19.65608853397032/280/1767//
+          visualData: -554.501631130787/148.1288403892787/280/1772//
         '[nrW4PhSpsORIwFKPjOwSu]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -2675,7 +3068,7 @@ data:
 
               Your writing tone is {{tone}}.
           description: Role definition copy
-          visualData: 446.740355555172/-92.99582654332448/330/1767/var(--node-color-3)/var(--node-color-3)
+          visualData: -121.35034867315147/74.78910237992454/330/1772/var(--node-color-3)/var(--node-color-3)
         '[xFOuKLadBzj0d_RNnrzN5]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Graph Output" cZ0ftay5oLWMqkrWqtnXp/value
@@ -2762,7 +3155,7 @@ data:
                   "scenario": "d0aschlipjnlak88ch21350x",
                   "role": "You are a consumer PR strategist focused on driving awareness, engagement, and brand love for products and experiences in everyday culture. Your role is to create campaign ideas and messaging that resonate with specific audience segments—amplifying stories through earned media, influencer partnerships, stunts, social moments, and brand activations. You translate marketing goals into culturally relevant narratives, identifying the creative hooks, emotional levers, and formats that make campaigns talkable and shareable. Whether launching a new product, reigniting relevance, or responding to trends, your job is to ensure the brand is seen, heard, and positively talked about in the right places, by the right people."
               }
-          visualData: -1972.5537431698006/1206.3089112529963/330/2079//
+          visualData: -1949.8889756549268/1038.5896316429294/330/2082//
         '[Sv6uoLHbQ7sYjkRRaudtc]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -3517,7 +3910,7 @@ data:
       metadata:
         description: ""
         id: a1C0PHzycmkfS-hZRJ7lb
-        name: Create - Culturescore - Scale
+        name: Create - Culturechreography - Scale
       nodes:
         '[5ez1uAcstnK1rPJdUQCYT]:graphOutput "Graph Output"':
           data:
@@ -3814,7 +4207,7 @@ data:
             - data->"Mitigation" ykAfnK8lI7luub7SggyJ0/stringGraph
             - data->"Text" W888kIoF-SH_n2m0tV7Rc/input
             - data->"Text" yUsMVzssmowpwlFaD33G8/entity
-          visualData: -2965.3355639550264/633.288353708819/330/1775/var(--node-color-3)/var(--node-color-3)
+          visualData: -2965.3355639550264/633.288353708819/330/1780/var(--node-color-3)/var(--node-color-3)
         '[7eyt6KkrPUqx01ZWsuWGh]:destructure "Destructure"':
           data:
             body: ""
@@ -5050,7 +5443,7 @@ data:
       metadata:
         description: ""
         id: haJzmqbpZveXTdmqgMZ0D
-        name: Create - Culturescore - Backlash avoidance
+        name: Create - Culturechreography - Backlash avoidance
       nodes:
         '[Ce1L3almcnjC_w3IYn9C2]:extractJson "Extract JSON"':
           outgoingConnections:
@@ -5098,12 +5491,12 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Graph Output" RcZbaNYQTiYE7aWHTNIFJ/value
-          visualData: 1973.5488283169557/1180.9194722245677/230/1604//
+          visualData: 2178.5959898713613/1344.4211304574924/230/1612//
         '[RcZbaNYQTiYE7aWHTNIFJ]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: 2401.8671349238216/1160.3784582760197/330/1603/var(--node-color-3)/var(--node-color-3)
+          visualData: 2509.0813370437722/1362.7452647774267/330/1613/var(--node-color-3)/var(--node-color-3)
         '[Ut2VGZsDX9zkIt3fN8vza]:httpCall "HTTP - Collect entity"':
           data:
             body: ""
@@ -5204,7 +5597,7 @@ data:
               }
           outgoingConnections:
             - output->"Chat" Ma__SElHvD8xZ7DI5nz2t/systemPrompt
-          visualData: 1579.5267647762216/806.203034133126/330/1605//
+          visualData: 1759.110553327139/1164.0304337084613/330/1611//
         '[se2nlKAu5xchTC-RSlhww]:destructure "Destructure"':
           data:
             paths:
@@ -6048,11 +6441,254 @@ data:
           outgoingConnections:
             - response->"Graph Output" KQRuERJDGLd1l16j4ab5w/value
           visualData: 2019.815380508604/359.47484734212014/230/21//
+    kc6Y6LJAYOr-WVULLxXTN:
+      metadata:
+        description: ""
+        id: kc6Y6LJAYOr-WVULLxXTN
+        name: Create - Pitch Partner Provoke
+      nodes:
+        '[DjQPp5YtFbBWpoUfiWKKw]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 2048
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" qXj9892zDDe0pr984wnR4/input
+          visualData: 1182.8136516124682/831.2122085672381/230/2108//
+        '[Kjq2AB54xgjsoo1FNSRD1]:httpCall "HTTP - Collect scenario"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: ""
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Destructure" tlLQe-NeEuE_Ovqh5Z9_r/object
+          visualData: 24.987604553310632/852.8635268492012/280/2106/var(--node-color-4)/var(--node-color-4)
+        '[RAZqFmwDk_tFjYQj16wZr]:httpCall "HTTP - Submit PPP"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: https://crisis-comms.vercel.app/api/submit-ppp
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 1995.5468399669583/616.716869805627/280/2098/var(--node-color-4)/var(--node-color-4)
+        '[U61-AsNgqh-LZgPoMxC3A]:destructure "Destructure"':
+          data:
+            paths:
+              - $.entity
+              - $.scenario
+            text: ""
+          outgoingConnections:
+            - match_0->"Text" q0_Tb67cm1WiAbnSAuBLc/input
+            - match_1->"Text" f0Tbc7eGJdjnCqhce9ZLs/input
+            - match_1->"Text" zugjaDlX9I_pq2RJfkF3q/documentid
+          visualData: -787.9000169747403/676.2065318341938/280/1603//
+        '[YV0jEm_QxST5xEkDjOvFR]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" U61-AsNgqh-LZgPoMxC3A/object
+          visualData: -1153.257797539595/710.1380923629858/280/2100//
+        '[_FDOuinErJGHJtrPPWu5O]:destructure "Destructure"':
+          data:
+            paths:
+              - $.data.audiences
+              - $.data.region
+          outgoingConnections:
+            - match_0->"Text" zugjaDlX9I_pq2RJfkF3q/audiences
+            - match_1->"Text" zugjaDlX9I_pq2RJfkF3q/region
+          visualData: 432.26143870685183/470.9840761921997/280/2104//
+        '[f0Tbc7eGJdjnCqhce9ZLs]:text "Text"':
+          data:
+            body: ""
+            headers: ""
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/{{input}}
+          outgoingConnections:
+            - output->"HTTP - Collect scenario" Kjq2AB54xgjsoo1FNSRD1/url
+          visualData: -437.24209459209214/842.2501586322078/330/1603//
+        '[hrUL8xIpJgBLUdgr-cdfi]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                  "entity": "toknf4gs5nwpr79of5acgzra",
+                  "scenario": "lknxaukhb6fxojp1s7pihydf"
+              }
+          visualData: -1682.4652640806496/954.4164264400948/330/2097//
+        '[q0_Tb67cm1WiAbnSAuBLc]:text "Text"':
+          data:
+            body: ""
+            headers: ""
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{input}}?populate=*
+          outgoingConnections:
+            - output->"HTTP - Collect entity / audience"
+              qZX5f8IheKCbAYFDhzUJb/url
+          visualData: -418.6142178931615/513.4073655108007/330/2102//
+        '[qB3i9z-_Mdkz9QoXk9xJV]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1989.0733660378628/1004.0463932298251/330/2099/var(--node-color-3)/var(--node-color-3)
+        '[qXj9892zDDe0pr984wnR4]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Graph Output" qB3i9z-_Mdkz9QoXk9xJV/value
+            - output->"HTTP - Submit PPP" RAZqFmwDk_tFjYQj16wZr/req_body
+          visualData: 1547.7982265378712/871.3401776833729/330/2083//
+        '[qZX5f8IheKCbAYFDhzUJb]:httpCall "HTTP - Collect entity / audience"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: ""
+            useUrlInput: true
+          outgoingConnections:
+            - json->"Destructure" _FDOuinErJGHJtrPPWu5O/object
+          visualData: 29.640830953477575/320.0159813887623/280/2105/var(--node-color-4)/var(--node-color-4)
+        '[tlLQe-NeEuE_Ovqh5Z9_r]:destructure "Destructure"':
+          data:
+            paths:
+              - $.data.detail
+          outgoingConnections:
+            - match_0->"Chat" DjQPp5YtFbBWpoUfiWKKw/prompt
+          visualData: 426.71784945103957/939.4321162939063/280/2107//
+        '[wUYmmqDg6XjJtlD-5fkWt]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Extract JSON" YV0jEm_QxST5xEkDjOvFR/input
+          visualData: -1600.37003321027/726.8653719718808/330/2101/var(--node-color-3)/var(--node-color-3)
+        '[zugjaDlX9I_pq2RJfkF3q]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              🎯 Your Task
+
+
+              You will be provided with a PR campaign in the user prompt.
+
+
+              Your objective is to generate a list of five entries each for the following three categories: Pitch, Partner, and Provoke, as defined below.
+
+
+              Selections must be aligned with the specified target audiences and relevant to the given geographic region.
+              	•	Audiences:
+              {{audiences}}
+              	•	Region:
+              {{region}}
+
+
+              ⸻
+
+
+              🧩 Category Definitions
+              	•	Pitch
+              A list of media outlets (across traditional, digital, and social media) that should be contacted to promote the campaign.
+              	•	Partner
+              A list of brands, organizations, communities, or cultural entities that could be partnered with to amplify the campaign through cultural alignment or strategic collaboration.
+              	•	Provoke
+              A list of individuals, influencers, or media figures that could be prompted or engaged to spark conversation and cultural relevance around the campaign.
+
+
+              ⸻
+
+
+              🧠 Selection Guidance
+
+
+              Each item must:
+              	•	Be appropriate for both the specified audiences and region.
+              	•	Be accompanied by a clear rationale explaining why the entity is suitable — referencing the campaign context, target audience characteristics, and regional considerations. This explanation should be two paragraphs.
+
+              ⸻
+
+
+              🔄 Output Format
+
+              The documentId should be identical to {{documentid}}.
+
+              Return only a pure JSON object using the following structure (no extra commentary or markdown):
+
+
+              {
+                "data": {
+                  "documentId": "{{documentid}}",
+                  "pitch": [
+                    {
+                      "entity": "Name of media outlet",
+                      "rationale": "Why this outlet fits the campaign, audiences, and region"
+                    }
+                  ],
+                  "partner": [
+                    {
+                      "entity": "Name of brand/org/community",
+                      "rationale": "Why this partner is strategically relevant"
+                    }
+                  ],
+                  "provoke": [
+                    {
+                      "entity": "Name of influencer/figure/outlet",
+                      "rationale": "Why this figure would drive cultural conversation"
+                    }
+                  ]
+                }
+              }
+          outgoingConnections:
+            - output->"Chat" DjQPp5YtFbBWpoUfiWKKw/systemPrompt
+          visualData: 756.4763796876762/355.3187864793135/330/2103//
     ktYNmtYq1GrJd_zgCoTcg:
       metadata:
         description: ""
         id: ktYNmtYq1GrJd_zgCoTcg
-        name: Create - Culturescore - Emotional intensity
+        name: Create - Culturechreography - Community truth
       nodes:
         '[1DV4oWkZDupVE5YA3i5Yn]:destructure "Destructure"':
           data:
@@ -6666,7 +7302,7 @@ data:
               }
           outgoingConnections:
             - output->"Graph Output" -yT9Evb7OVW9H-Tpexhab/value
-            - output->"Http Call" m_Zx9uX6-mE-V3wBxI_bs/req_body
+            - output->"HTTP - Submit social" m_Zx9uX6-mE-V3wBxI_bs/req_body
           visualData: 1324.5820842811145/238.17385486970645/330/1528//
         '[RUwJaSc8vgcCEkXdeEoC7]:graphInput "Graph Input"':
           data:
@@ -6705,7 +7341,7 @@ data:
             useAsGraphPartialOutput: false
             useErrorOutput: false
           visualData: 5357.038234573845/-392.5443456974041/330/1326/var(--node-color-1)/var(--node-color-1)
-        '[m_Zx9uX6-mE-V3wBxI_bs]:httpCall "Http Call"':
+        '[m_Zx9uX6-mE-V3wBxI_bs]:httpCall "HTTP - Submit social"':
           data:
             body: ""
             errorOnNon200: true
@@ -7351,7 +7987,7 @@ data:
             graphId: Pmb40Vuncyj6FTbT1jVUu
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 2852.5949229732655/2723.064010634411/330/2089/var(--node-color-1)/var(--node-color-1)
+          visualData: 2870.9629870518834/2197.737377985932/330/2095/var(--node-color-1)/var(--node-color-1)
         '[87zRfCwVwP6x7p5jxVshZ]:graphInput "Graph Input"':
           data:
             dataType: object
@@ -7548,13 +8184,13 @@ data:
             useAsGraphPartialOutput: false
             useErrorOutput: false
           description: Q&A agent
-          visualData: 2870.9994223499616/2082.316947110565/330/2079/var(--node-color-1)/var(--node-color-1)
+          visualData: 2873.448497560444/1936.596972086861/330/2093/var(--node-color-1)/var(--node-color-1)
         '[haPCi94mBpa_hzTXRDWpz]:subGraph "Subgraph"':
           data:
             graphId: tfM8ynLGCK90qQnqxKhO8
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 2862.391223815195/2363.8741219530534/330/2087/var(--node-color-1)/var(--node-color-1)
+          visualData: 2870.962987051884/2069.985096695163/330/2094/var(--node-color-1)/var(--node-color-1)
         '[j-rJJSkf-HG0hDggKktRT]:loopController "Loop Controller"':
           data:
             maxIterations: 10
@@ -7576,6 +8212,12 @@ data:
             - length->"Text" B3-ryhc3hExmtEsGrJ-Re/input
             - output->"Loop Controller" j-rJJSkf-HG0hDggKktRT/input1
           visualData: 2260.9149909840435/662.1371293625716/230/1805//
+        '[lO6KLfDeKT5rBVOWvGST-]:subGraph "Subgraph"':
+          data:
+            graphId: kc6Y6LJAYOr-WVULLxXTN
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          visualData: 2870.4920344738616/2385.3334881433448/330/2097/var(--node-color-1)/var(--node-color-1)
         '[lSwYH6WvGyFNq07duM1Vv]:destructure "Destructure"':
           data:
             paths:
@@ -7599,6 +8241,7 @@ data:
             - output->"Subgraph" BdY7MGvxfkjmw_Ct57jfA/input
             - output->"Subgraph" d6z39QXJflEms3PSllohD/input
             - output->"Subgraph" haPCi94mBpa_hzTXRDWpz/prompt
+            - output->"Subgraph" lO6KLfDeKT5rBVOWvGST-/input
             - output->"Subgraph" m4XOmn_dPEooBQjofGuF5/input
           visualData: 2357.586338729317/1693.2398633637204/330/1950//
         '[m4XOmn_dPEooBQjofGuF5]:subGraph "Subgraph"':
@@ -7606,7 +8249,7 @@ data:
             graphId: InjRSbXpuhFO-7TgZ2VyH
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 2882.063491334935/1523.6571890264413/330/2082/var(--node-color-1)/var(--node-color-1)
+          visualData: 2878.3898785192114/1669.3771640501452/330/2096/var(--node-color-1)/var(--node-color-1)
         '[pugEetb1EcQ3O7Pr26KXT]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -7699,7 +8342,7 @@ data:
                   "role": "You are a consumer PR strategist focused on driving awareness, engagement, and brand love for products and experiences in everyday culture. Your role is to create campaign ideas and messaging that resonate with specific audience segments—amplifying stories through earned media, influencer partnerships, stunts, social moments, and brand activations. You translate marketing goals into culturally relevant narratives, identifying the creative hooks, emotional levers, and formats that make campaigns talkable and shareable. Whether launching a new product, reigniting relevance, or responding to trends, your job is to ensure the brand is seen, heard, and positively talked about in the right places, by the right people.",
                   "slot": "slot1"
               }
-          visualData: -305.66552902895654/984.7336104009426/330/2084//
+          visualData: -289.65781850673125/732.1675110502765/330/2087//
         '[X0MW0cuRR7clgcN95yQuB]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -7733,7 +8376,7 @@ data:
           outgoingConnections:
             - data->"Extract JSON" HhsPJOhE2oj3yvI2_XT2I/input
             - data->"Subgraph" ryZAUoBAoVESF7BR4ccXi/input
-          visualData: -444.2812908575113/553.1855089475481/330/2085/var(--node-color-3)/var(--node-color-3)
+          visualData: -291.31872364513606/554.9641434500176/330/2086/var(--node-color-3)/var(--node-color-3)
         '[YouHQb-luGGBwS1lWMi69]:destructure "Destructure"':
           data:
             paths:
@@ -7818,7 +8461,7 @@ data:
       metadata:
         description: ""
         id: tF54ClWl2MYfhx6TaV778
-        name: Create - Culturescore - Commercial impact
+        name: Create - Culturechreography - Impact
       nodes:
         '[1Oc4-P7LidZoAITOaNGEP]:graphInput "Graph Input"':
           data:
@@ -7842,7 +8485,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: 1974.4111063175262/1120.2086305435098/330/1604/var(--node-color-3)/var(--node-color-3)
+          visualData: 2489.2752083625664/1320.1781701770744/330/1610/var(--node-color-3)/var(--node-color-3)
         '[NJtP7eOexHiWBNugXMW--]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -7898,7 +8541,7 @@ data:
               }
           outgoingConnections:
             - output->"Chat" _ajQpifCCleYMtv8kINWm/systemPrompt
-          visualData: 1200.9498898879203/960.416274134833/330/1607//
+          visualData: 1703.1722394273902/1230.490077662923/330/1608//
         '[RKx7ZNBM4yWpuT1iuke9x]:httpCall "HTTP - Collect scenario"':
           data:
             body: ""
@@ -7955,7 +8598,7 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Graph Output" 599b46FppI55XgLCd-ghS/value
-          visualData: 1656.1196810871727/1199.2709483883548/230/1606//
+          visualData: 2121.566023337711/1313.0467209384865/230/1609//
         '[aN-bOrHxMtE6c1hQShm_e]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" 4sYWpszM8EGxkYKCnqss3/object
@@ -8159,7 +8802,7 @@ data:
             url: https://crisis-comms.vercel.app/api/submit-socials
             useBodyInput: true
             useHeadersInput: false
-          visualData: 1970.3782104587824/-163.34488486624403/280/1622/var(--node-color-4)/var(--node-color-4)
+          visualData: 1771.3082992419486/20.111699980642072/280/1639/var(--node-color-4)/var(--node-color-4)
         '[rTe_UZWjzj7ta4JxVHYLz]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" DkhvpWmWXJeYEA_ncU8Mq/object
@@ -8168,7 +8811,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: 1982.476294768714/517.3503142175965/330/1547/var(--node-color-3)/var(--node-color-3)
+          visualData: 1769.0941677127614/415.86369281293616/330/1638/var(--node-color-3)/var(--node-color-3)
         '[y2LQ8bDkpiOO54yJJsxND]:httpCall "HTTP - Collect scenario"':
           data:
             body: ""
@@ -8440,6 +9083,9 @@ data:
               - $.data.audiences
               - $.data.objectives
               - $.data.region
+              - $.data.brand.title
+              - $.data.brand.description
+              - $.data.brand.purpose
             text: ""
           outgoingConnections:
             - match_0->"Text" _dwOEBY9Fr1JkBZLC2jja/title
@@ -8448,16 +9094,23 @@ data:
             - match_3->"Text" p9xDr18o0132Dk-8admW8/audiences
             - match_4->"Text" p9xDr18o0132Dk-8admW8/objectives
             - match_5->"Text" p9xDr18o0132Dk-8admW8/region
-          visualData: 317.7566675597393/970.9869511916725/280/1749//
-        '[3HpxUqsRrSf2lA10Zwfcm]:text "Nescafe campaign"':
+            - match_6->"Text" _dwOEBY9Fr1JkBZLC2jja/brand
+            - match_7->"Text" _dwOEBY9Fr1JkBZLC2jja/about
+            - match_8->"Text" _dwOEBY9Fr1JkBZLC2jja/purpose
+          visualData: 77.7566675597393/1185.9869511916725/280/1763//
+        '[3HpxUqsRrSf2lA10Zwfcm]:text "Haagen"':
           data:
             normalizeLineEndings: true
             text: toknf4gs5nwpr79of5acgzra
-          outgoingConnections:
-            - output->"Text" cfuHYfdAGorC5ycWjcNZM/entity
-            - output->"Text" kwgdpRGTmmqRB7AeZZW63/entity
-            - output->"Text" p9xDr18o0132Dk-8admW8/entity
-          visualData: -968.5234068993825/1390.4174886172955/330/1755//
+          visualData: -1562.7041190552554/1267.4757771742125/330/1769//
+        '[6nETP-9JeI5FsUtlkd8vq]:text "Nescafe campaign"':
+          data:
+            normalizeLineEndings: true
+            text: |
+              
+
+              lmfu2zzm92t31sfw047ifs7g
+          visualData: -1560.5234068993825/1414.4174886172955/330/1770//
         '[DzFZKmvNx3S8ym4Oajz3_]:httpCall "Http - Get role & tones"':
           data:
             body: ""
@@ -8513,12 +9166,12 @@ data:
             graphId: omDWTL29bPavJp3tqmx4V
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 2090.81311867681/983.1687977688551/330/1719/var(--node-color-1)/var(--node-color-1)
+          visualData: 1961.105730533834/958.4453152928234/330/1764/var(--node-color-1)/var(--node-color-1)
         '[Jr2PCqGzJ-Hz2q9WwqMjc]:text "TEXT - Define role"':
           data:
             text: >-
-              You are a crisis communications public relations (PR) professional
-              working for {{Company}}.
+              You are a public relations (PR) professional working for
+              {{Company}}.
 
 
               {{task}}
@@ -8540,7 +9193,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: 2019.7527872703774/540.2134700410577/330/1706/var(--node-color-3)/var(--node-color-3)
+          visualData: 1960.7527872703774/778.2134700410577/330/1765/var(--node-color-3)/var(--node-color-3)
         '[_dwOEBY9Fr1JkBZLC2jja]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -8548,16 +9201,30 @@ data:
               Title of campaign
               {{title}}
 
+              Brand
+              {{brand}}
+
+              Description of brand
+              {{about}}
+
+              Purpose of brand
+              {{purpose}}
+
               High level description of what the campaign seeks to achieve
               {{description}}
           outgoingConnections:
             - output->"Chat" Eh7I69zVYkDq8Wql2YKAA/prompt
           visualData: 784.88374027114/930.6118529745636/330/1554//
-        '[bIH_r28ERY65yjS_X8ENH]:text "Summer Campaign"':
+        '[_ePb-144Z4_snQ6j4z4Nr]:graphInput "Graph Input"':
           data:
-            normalizeLineEndings: true
-            text: lmfu2zzm92t31sfw047ifs7g
-          visualData: -968.5234068993825/1590.4174886172955/330/1755//
+            dataType: string
+            id: stringGraph
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" cfuHYfdAGorC5ycWjcNZM/entity
+            - data->"Text" kwgdpRGTmmqRB7AeZZW63/entity
+            - data->"Text" p9xDr18o0132Dk-8admW8/entity
+          visualData: -1553/1090/330/1781/var(--node-color-3)/var(--node-color-3)
         '[cfuHYfdAGorC5ycWjcNZM]:text "Text"':
           data:
             body: ""
@@ -8565,13 +9232,7 @@ data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/crises/{{entity}}?populate=*
           outgoingConnections:
             - output->"HTTP - Collect entity" pEgwDlD6uWTVTvNqoN-0a/url
-          visualData: -516.7475703210638/1001.1437152063309/330/1636//
-        '[kg_aK7lJL_S5U1IlxwkEA]:graphInput "Graph Input"':
-          data:
-            dataType: string
-            id: stringGraph
-            useDefaultValueInput: false
-          visualData: -1260.6162514618704/1118.8051749304432/330/1740/var(--node-color-3)/var(--node-color-3)
+          visualData: -757.7475703210638/1293.1437152063309/330/1761//
         '[kwgdpRGTmmqRB7AeZZW63]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -8606,8 +9267,9 @@ data:
 
               You will be provided with:
               	•	A high-level description of the opportunity the client wishes to capitalise on (in the user prompt).
+              	•	The user prompt will also include details of the brand for who the campaing is for.
               	•	A JSON object of strategic objectives in {{objectives}} — focus on the title and detail field of each objective.
-              	•	A JSON object of key audience segments in {{audiences}}, each including a title, description, and age_range and set of demographic indicators in the form of interests, values, motivation and pains.
+              	•	A JSON object of key audience segments in {{audiences}}, each including a title, description, and age_range and set of demographic indicators in the form of interests, values, motivation, pains, aspirations as well as media consumption and some demographic markers.
               	•	A maximum campaign budget in GBP, provided in {{budget}}.
 
               ⸻
@@ -8620,6 +9282,7 @@ data:
               	•	Capitalise on the opportunity,
               	•	Support the client's strategic objectives, and
               	•	Are feasible within the {{region}} PR landscape and the given budget.
+              	•	Pay careful attention to the "Purpose of the brand" in the user prompt. All ideas created must, on some level, link back to this purpose.
 
               All ideas must be:
               	•	Culturally relevant and tailored to the specified audience segments.
@@ -8691,12 +9354,12 @@ data:
             useUrlInput: true
           outgoingConnections:
             - json->"Destructure" 13tPl5gnbCZBkXQpxOfaX/object
-          visualData: -44.91664728486059/1007.7576465524064/280/1720/var(--node-color-4)/var(--node-color-4)
+          visualData: -335.9166472848606/1215.7576465524064/280/1762/var(--node-color-4)/var(--node-color-4)
     ywZp1_oH_7T_1ARvht2gZ:
       metadata:
         description: ""
         id: ywZp1_oH_7T_1ARvht2gZ
-        name: Create - Culturescore - Master
+        name: Create - Culturechreography - Master
       nodes:
         '[--RbyIW4y-ftm0c4uNJWf]:graphInput "Graph Input"':
           data:
@@ -8784,12 +9447,12 @@ data:
               Do not include any explanations, calculations, markdown formatting, or stray characters. Return only the final valid UTF-8 JSON object.
           outgoingConnections:
             - output->"Chat" g1QXBpEWjfqfCs-mfRvbR/systemPrompt
-          visualData: 2523.382007491288/-93.01834511061689/330/1594//
+          visualData: 2633.7404210695718/214.68687863118652/330/1666//
         '[CpkuCeMWzdgdKMkwEedgs]:graphOutput "Graph Output"':
           data:
             dataType: string
             id: output
-          visualData: 3996.6364474663173/542.0097537068584/330/1606/var(--node-color-3)/var(--node-color-3)
+          visualData: 3791.4996316384486/455.0213571216228/330/1668/var(--node-color-3)/var(--node-color-3)
         '[DsJd93FOKY3Xze1F-AtSo]:subGraph "Subgraph"':
           data:
             graphId: tF54ClWl2MYfhx6TaV778
@@ -8814,22 +9477,6 @@ data:
           outgoingConnections:
             - output->"Assemble Prompt" oMfevLEdLmgeZG-EouAQe/message5
           visualData: 1762.9543516908345/1099.867575804444/330/1595/var(--node-color-1)/var(--node-color-1)
-        '[TydHwviNyCnKo4N3MIpJH]:text "Text"':
-          data:
-            normalizeLineEndings: true
-            text: >-
-              {
-                "data": {
-                  "logic": {
-                    "rules": [
-                      { "if": "audience == 'Gen-Z'", "then": "activate campaign A" },
-                      { "if": "budget < 25000", "then": "switch to low-cost mode" }
-                    ],
-                    "version": 1
-                  }
-                }
-              }
-          visualData: 3568.1266803357053/516.2495819245707/330/1643//
         '[WAGlFCiIfRip438mLqaCA]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -8840,12 +9487,12 @@ data:
             text: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/{{input}}
           outgoingConnections:
             - output->"Http Call" yXxIX8VrGQhD3Hdl5wRuK/url
-          visualData: 3546.2212365661776/1246.9856384212042/330/1644//
+          visualData: 3213.8476615539344/1028.8654798194195/330/1670//
         '[bgueI8BUPBh_XB-OmQGxH]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Graph Output" CpkuCeMWzdgdKMkwEedgs/value
             - output->"Http Call" yXxIX8VrGQhD3Hdl5wRuK/req_body
-          visualData: 3540.663579111792/983.4056779493894/280/1645//
+          visualData: 3392.6534714891523/551.0603635779947/280/1667//
         '[g1QXBpEWjfqfCs-mfRvbR]:chat "Chat"':
           data:
             additionalParameters: []
@@ -8923,7 +9570,7 @@ data:
             useBodyInput: true
             useHeadersInput: false
             useUrlInput: true
-          visualData: 4299.010146127738/893.6664641225204/280/1665/var(--node-color-4)/var(--node-color-4)
+          visualData: 3803.046452164156/663.8612970242116/280/1669/var(--node-color-4)/var(--node-color-4)
         '[z9DUHvENMx7M2RU1N1JyR]:subGraph "Subgraph"':
           data:
             graphId: ktYNmtYq1GrJd_zgCoTcg
