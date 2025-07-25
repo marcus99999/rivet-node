@@ -78,9 +78,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       const datasetProvider = await NodeDatasetProvider.fromProjectFile(projectPath, { save: false });
       
-      const graphs = datasetProvider.project.graphs;
-const graphList = Object.values(graphs).map(g => `${g.metadata.label || "(Unnamed)"} (${g.id})`);
-console.log(`📊 Graphs in ${file}:`, graphList);
+      
 
       try {
         result = await runGraphInFile(projectPath, {
