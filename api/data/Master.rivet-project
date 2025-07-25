@@ -6511,7 +6511,7 @@ data:
             url: https://crisis-comms.vercel.app/api/submit-ppp
             useBodyInput: true
             useHeadersInput: false
-          visualData: 1995.5468399669583/616.716869805627/280/2098/var(--node-color-4)/var(--node-color-4)
+          visualData: 1995.5468399669583/616.716869805627/280/2109/var(--node-color-4)/var(--node-color-4)
         '[U61-AsNgqh-LZgPoMxC3A]:destructure "Destructure"':
           data:
             paths:
@@ -8027,6 +8027,7 @@ data:
           outgoingConnections:
             - lastItem->"Text" 3R28XcWIai3Hj8V49Ac14/scenario
             - lastItem->"Text" OZg6MCQ7lIYKgoa8LUPJT/input
+            - lastItem->"Text" hM8hZAPjivZgdIGgdQ9e_/input
             - lastItem->"Text" lvCjgHrCOrRnQjYHSHUyR/scenario
             - restOfArray->"Array" k_RmW3CL49ptSGFM3O3pL/input1
           visualData: 1763.6713852425098/641.2170022865121/230/1849//
@@ -8063,7 +8064,7 @@ data:
                   "role": "You are a consumer PR strategist focused on driving awareness, engagement, and brand love for products and experiences in everyday culture. Your role is to create campaign ideas and messaging that resonate with specific audience segments—amplifying stories through earned media, influencer partnerships, stunts, social moments, and brand activations. You translate marketing goals into culturally relevant narratives, identifying the creative hooks, emotional levers, and formats that make campaigns talkable and shareable. Whether launching a new product, reigniting relevance, or responding to trends, your job is to ensure the brand is seen, heard, and positively talked about in the right places, by the right people.",
                   "slot": "slot1"
               }
-          visualData: 2344.099551810627/2227.436607427279/330/2074//
+          visualData: 2239.3001356104746/2264.9437669094386/330/2099//
         '[OZg6MCQ7lIYKgoa8LUPJT]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -8185,6 +8186,26 @@ data:
             useErrorOutput: false
           description: Q&A agent
           visualData: 2873.448497560444/1936.596972086861/330/2093/var(--node-color-1)/var(--node-color-1)
+        '[gpikHsDNWbyZ7skcyVtm4]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: https://rivet-node.vercel.app/api/run
+          outgoingConnections:
+            - output->"Http Call" occOCXrgpoZGb0O13vIS5/url
+          visualData: 2314.3564730918783/2571.16271858555/330/2106//
+        '[hM8hZAPjivZgdIGgdQ9e_]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+                "graph": "ttkuxPI9lGPqK3QAEbmFu",
+                "inputs": {
+                  "stringGraph": "{{input}}"
+                }
+              }
+          outgoingConnections:
+            - output->"Http Call" occOCXrgpoZGb0O13vIS5/headers
+          visualData: 2324.0643753488343/2775.380296943738/330/2108//
         '[haPCi94mBpa_hzTXRDWpz]:subGraph "Subgraph"':
           data:
             graphId: tfM8ynLGCK90qQnqxKhO8
@@ -8217,7 +8238,7 @@ data:
             graphId: kc6Y6LJAYOr-WVULLxXTN
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 2870.4920344738616/2385.3334881433448/330/2097/var(--node-color-1)/var(--node-color-1)
+          visualData: 2873.849186167564/2331.6190610441117/330/2098/var(--node-color-1)/var(--node-color-1)
         '[lSwYH6WvGyFNq07duM1Vv]:destructure "Destructure"':
           data:
             paths:
@@ -8250,6 +8271,20 @@ data:
             useAsGraphPartialOutput: false
             useErrorOutput: false
           visualData: 2878.3898785192114/1669.3771640501452/330/2096/var(--node-color-1)/var(--node-color-1)
+        '[occOCXrgpoZGb0O13vIS5]:httpCall "Http Call"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: |-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer rivet-xyz-123"
+              }
+            method: POST
+            url: ""
+            useHeadersInput: true
+            useUrlInput: true
+          visualData: 2871.4481065768996/2571.1627185855486/280/2105/var(--node-color-2)/var(--node-color-2)
         '[pugEetb1EcQ3O7Pr26KXT]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -9166,7 +9201,7 @@ data:
             graphId: omDWTL29bPavJp3tqmx4V
             useAsGraphPartialOutput: false
             useErrorOutput: false
-          visualData: 1961.105730533834/958.4453152928234/330/1764/var(--node-color-1)/var(--node-color-1)
+          visualData: 1959.5940643615268/1009.8419651512711/330/1782/var(--node-color-1)/var(--node-color-1)
         '[Jr2PCqGzJ-Hz2q9WwqMjc]:text "TEXT - Define role"':
           data:
             text: >-
@@ -9218,6 +9253,7 @@ data:
         '[_ePb-144Z4_snQ6j4z4Nr]:graphInput "Graph Input"':
           data:
             dataType: string
+            defaultValue: i3usvmjaoyfzhmdtem5ovyvy
             id: stringGraph
             useDefaultValueInput: false
           outgoingConnections:
@@ -9934,7 +9970,7 @@ data:
             outputNames: output1
           outgoingConnections:
             - output1->"Text" gh47sLZATqrnDj0k_BNTQ/original
-          visualData: 2483.701982390131/462.64878818344874/230/2033/var(--node-color-2)/var(--node-color-2)
+          visualData: 2483.701982390131/462.64878818344874/230/2050/var(--node-color-2)/var(--node-color-2)
         '[d-48R5Wdi2cfys5IbMleZ]:extractJson "Extract JSON"':
           outgoingConnections:
             - output->"Destructure" JBKG2Tm8jrQoSvINlrLrQ/object

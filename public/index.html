@@ -87,8 +87,8 @@ Object.entries(graphsByFile).forEach(([fileName, graphList]) => {
     const option = document.createElement('option');
     option.value = g.id;
     option.textContent = g.id === masterGraphId
-      ? `★ ${g.name || 'Untitled'} (Main)`
-      : `${g.name || 'Untitled'}`;
+  ? `★ ${g.name || 'Untitled'} (Main) (${g.id})`
+  : `${g.name || 'Untitled'} (${g.id})`;
     optgroup.appendChild(option);
   });
 

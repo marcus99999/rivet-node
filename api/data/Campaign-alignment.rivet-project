@@ -29,52 +29,136 @@ data:
             text: >-
               {
                 "title": "Body Image",
-                "description": "This theme addresses perceptions, influences, and impacts of body image, including discrimination and strategies to promote self-acceptance and wellbeing.",
+                "description": "This theme addresses how individuals perceive, feel about, and are treated in relation to their bodies. It explores psychological impacts, cultural influences, discrimination, and positive strategies for self-acceptance and wellbeing.",
                 "sections": {
                   "Manifestations": {
-                    "description": "How body image issues manifest psychologically and behaviorally, shaping self-perception and daily life.",
+                    "description": "How body image issues appear in a person’s mindset, emotions, and behaviors — shaping daily life and self-worth.",
                     "items": [
-                      { "label": "Perceptions about the body (e.g. how one sees themselves)", "tag": "red" },
-                      { "label": "Feelings about the body (e.g. how one feels about themselves)", "tag": "red" },
-                      { "label": "Behaviours (e.g. isolation or disordered eating)", "tag": "red" }
+                      {
+                        "label": "Perceptions about the body",
+                        "tag": "amber",
+                        "description": "How individuals visually interpret their body shape, size, or features, often influenced by comparison and idealized standards."
+                      },
+                      {
+                        "label": "Feelings about the body",
+                        "tag": "amber",
+                        "description": "Emotional responses toward one’s own body, including shame, pride, anxiety, or acceptance."
+                      },
+                      {
+                        "label": "Behaviors",
+                        "tag": "red",
+                        "description": "Actions such as body checking, avoidance, excessive exercise, or disordered eating tied to body image concerns."
+                      }
                     ]
                   },
                   "Influences": {
-                    "description": "Factors that shape how individuals view and evaluate their bodies across different contexts.",
+                    "description": "Cultural, interpersonal, and social factors that shape how people think and feel about their bodies.",
                     "items": [
-                      { "label": "Age and body image", "tag": "red" },
-                      { "label": "Sex and body image", "tag": "red" },
-                      { "label": "Gender expression and body image", "tag": "red" },
-                      { "label": "Social media", "tag": "red" },
-                      { "label": "Social feedback", "tag": "red" },
-                      { "label": "Cultural attitudes", "tag": "red" }
+                      {
+                        "label": "Age and body image",
+                        "tag": "green",
+                        "description": "How expectations and concerns around body image change across life stages, such as adolescence or aging."
+                      },
+                      {
+                        "label": "Sex and body image",
+                        "tag": "amber",
+                        "description": "Differences in how body image is experienced or judged based on biological sex."
+                      },
+                      {
+                        "label": "Gender expression and body image",
+                        "tag": "amber",
+                        "description": "How a person’s presentation of gender influences or conflicts with societal body ideals."
+                      },
+                      {
+                        "label": "Social media",
+                        "tag": "red",
+                        "description": "The role of curated, idealized bodies online in shaping unrealistic expectations or body dissatisfaction."
+                      },
+                      {
+                        "label": "Social feedback",
+                        "tag": "amber",
+                        "description": "How compliments, criticisms, or teasing about appearance influence body confidence or shame."
+                      },
+                      {
+                        "label": "Cultural attitudes",
+                        "tag": "green",
+                        "description": "Wider cultural norms about beauty, thinness, and fitness that shape internalized body ideals."
+                      }
                     ]
                   },
                   "Systemic Discrimination": {
-                    "description": "Ways in which body image biases are reinforced or enabled by systems, structures, and institutions.",
+                    "description": "How institutions and norms reinforce body-based bias and exclusion in everyday life.",
                     "items": [
-                      { "label": "Stereotyping", "tag": "red" },
-                      { "label": "Social stigma and isolation", "tag": "red" },
-                      { "label": "Accessibility (e.g. healthcare, physical spaces)", "tag": "red" },
-                      { "label": "Economic disparities", "tag": "red" }
+                      {
+                        "label": "Stereotyping",
+                        "tag": "red",
+                        "description": "Generalizations about people based on size, shape, or appearance, often tied to laziness or poor health."
+                      },
+                      {
+                        "label": "Social stigma and isolation",
+                        "tag": "red",
+                        "description": "The exclusion or shaming of individuals based on appearance, which may lead to marginalization or loneliness."
+                      },
+                      {
+                        "label": "Accessibility",
+                        "tag": "amber",
+                        "description": "Barriers in physical spaces, medical care, or fashion that exclude people with diverse body types."
+                      },
+                      {
+                        "label": "Economic disparities",
+                        "tag": "amber",
+                        "description": "The financial burden of conforming to body standards (e.g., gym memberships, clothing, procedures)."
+                      }
                     ]
                   },
                   "Effects on Individuals": {
-                    "description": "The emotional, mental, and physical outcomes for individuals affected by negative body image.",
+                    "description": "The mental, physical, and emotional consequences of negative or positive body image.",
                     "items": [
-                      { "label": "Self-acceptance", "tag": "red" },
-                      { "label": "Balanced lifestyles", "tag": "red" },
-                      { "label": "Mental health and wellbeing", "tag": "red" },
-                      { "label": "Physical health and wellbeing", "tag": "red" }
+                      {
+                        "label": "Self-acceptance",
+                        "tag": "green",
+                        "description": "An individual’s ability to embrace their body as it is, regardless of societal ideals."
+                      },
+                      {
+                        "label": "Balanced lifestyles",
+                        "tag": "green",
+                        "description": "Engagement in healthy behaviors (e.g., eating, activity) without fixation on appearance."
+                      },
+                      {
+                        "label": "Mental health and wellbeing",
+                        "tag": "amber",
+                        "description": "Connections between body image and anxiety, depression, or self-worth."
+                      },
+                      {
+                        "label": "Physical health and wellbeing",
+                        "tag": "green",
+                        "description": "How body image influences engagement in health-promoting or harmful behaviors."
+                      }
                     ]
                   },
                   "Support": {
-                    "description": "Efforts to promote positive body image through inclusive representation, education, and care.",
+                    "description": "Positive interventions to build body confidence and challenge harmful norms.",
                     "items": [
-                      { "label": "Diverse representation of body types", "tag": "red" },
-                      { "label": "Body positivity and neutrality", "tag": "red" },
-                      { "label": "Education and awareness", "tag": "red" },
-                      { "label": "Mental and physical health support", "tag": "red" }
+                      {
+                        "label": "Diverse representation of body types",
+                        "tag": "green",
+                        "description": "Showing bodies of all shapes, sizes, and abilities in media, advertising, and leadership roles."
+                      },
+                      {
+                        "label": "Body positivity and neutrality",
+                        "tag": "green",
+                        "description": "Movements that promote self-love or neutral acceptance regardless of conformity to ideals."
+                      },
+                      {
+                        "label": "Education and awareness",
+                        "tag": "green",
+                        "description": "Curricula and public campaigns that address body image literacy and media literacy."
+                      },
+                      {
+                        "label": "Mental and physical health support",
+                        "tag": "green",
+                        "description": "Accessible services and resources that help individuals improve body image and overall health."
+                      }
                     ]
                   }
                 }
@@ -96,7 +180,7 @@ data:
             cache: false
             enableFunctionUse: false
             headers: []
-            maxTokens: 1024
+            maxTokens: 2048
             modalitiesIncludeAudio: false
             modalitiesIncludeText: false
             model: gpt-4o-mini
@@ -137,7 +221,7 @@ data:
 
               You will receive:
               	•	A campaign description (in the user prompt)
-              	•	A gender framework defining the relevant social and cultural dimensions in {{dimensions}}
+              	•	A body image framework defining the relevant social and cultural dimensions in {{dimensions}}
 
               Each dimension includes:
               	•	A section title and sub-items with descriptions
@@ -166,30 +250,29 @@ data:
 
               Return your analysis as a raw JSON object only. Do not include any additional commentary or markdown formatting.
 
+              Each section should be a direct key mapping to an array of items.
+
+              Do not include any wrapper object such as items inside each section.
+
+              Use the following structure:
+
 
               {
-                "title": "Gender",
+                "title": "Body Image",
                 "sections": {
                   "Identity & Experience": [
                     {
                       "label": "Sex vs gender",
                       "score": 10,
-                      "rationale": "This campaign supports gender inclusivity and avoids conflating sex and gender."
-                    },
-                    {
-                      "label": "Gender expression",
-                      "score": 7,
-                      "rationale": "The visuals celebrate diverse expression, but could be more explicit in representing non-traditional roles."
-                    },
-                    ...
+                      "rationale": "This campaign supports gender inclusivity..."
+                    }
                   ],
                   "Cultural Sensitivities": [
                     {
                       "label": "Cultural traditions",
                       "score": 5,
-                      "rationale": "May unintentionally reinforce conservative norms if not balanced with inclusive messaging."
-                    },
-                    ...
+                      "rationale": "May unintentionally reinforce..."
+                    }
                   ]
                 }
               }
@@ -208,52 +291,105 @@ data:
             text: >-
               {
                 "title": "Age",
-                "description": "This theme addresses age-related experiences, from youth to elderly, and explores ageism, support systems, and inclusion strategies.",
+                "description": "This theme explores the diverse experiences and challenges associated with different life stages. It examines ageism, generational roles, physical and cognitive changes, and efforts to create inclusive, age-friendly environments.",
                 "sections": {
                   "Vulnerable Groups": {
-                    "description": "Groups whose age places them at greater risk of exclusion, dependency, or discrimination.",
+                    "description": "Age groups more likely to face exclusion, dependency, or discrimination due to societal attitudes or structural barriers.",
                     "items": [
-                      { "label": "Elderly people", "tag": "green" },
-                      { "label": "Teens and youth", "tag": "amber" },
-                      { "label": "Children", "tag": "amber" }
+                      {
+                        "label": "Elderly people",
+                        "tag": "green",
+                        "description": "Older adults may face challenges related to retirement, healthcare access, or digital exclusion but bring valuable life experience and perspective."
+                      },
+                      {
+                        "label": "Teens and youth",
+                        "tag": "amber",
+                        "description": "Adolescents often encounter negative stereotypes or may be dismissed as inexperienced, despite being crucial voices in cultural and social change."
+                      },
+                      {
+                        "label": "Children",
+                        "tag": "amber",
+                        "description": "Children are often excluded from decision-making and rely on adult advocacy to ensure their safety, education, and development are prioritized."
+                      }
                     ]
                   },
                   "Wellbeing & Ability": {
-                    "description": "How physical and cognitive abilities change with age, and the impact on quality of life and independence.",
+                    "description": "How mental, physical, and emotional capacities evolve across the lifespan, affecting quality of life and autonomy.",
                     "items": [
-                      { "label": "Mobility, dexterity and physical wellbeing", "tag": "green" },
-                      { "label": "Cognitive changes and sensory decline", "tag": "amber" },
-                      { "label": "Emotional well-being (e.g. grief)", "tag": "green" },
-                      { "label": "Independence", "tag": "green" }
+                      {
+                        "label": "Mobility, dexterity and physical wellbeing",
+                        "tag": "green",
+                        "description": "Ageing can reduce physical ability, impacting access to services or spaces unless inclusive design is applied."
+                      },
+                      {
+                        "label": "Cognitive changes and sensory decline",
+                        "tag": "amber",
+                        "description": "Memory, vision, and hearing may change with age, requiring accommodations and inclusive communication strategies."
+                      },
+                      {
+                        "label": "Emotional well-being (e.g. grief)",
+                        "tag": "green",
+                        "description": "Emotional shifts—such as grief, loneliness, or anxiety—can occur at any life stage but may be overlooked in older populations."
+                      },
+                      {
+                        "label": "Independence",
+                        "tag": "green",
+                        "description": "Maintaining autonomy is often key to dignity and mental health across the lifespan, especially in later years."
+                      }
                     ]
                   },
                   "Social & Cultural Norms": {
-                    "description": "The expectations and values that different cultures attach to age, and how these shape roles across life stages.",
+                    "description": "The beliefs, traditions, and expectations societies assign to different age groups and life stages.",
                     "items": [
-                      { "label": "Age roles and expectations", "tag": "green" },
-                      { "label": "Cultural attitudes", "tag": "green" }
+                      {
+                        "label": "Age roles and expectations",
+                        "tag": "green",
+                        "description": "Cultural scripts about what people ‘should’ do at certain ages (e.g. retire, marry) may restrict opportunities or reinforce bias."
+                      },
+                      {
+                        "label": "Cultural attitudes",
+                        "tag": "amber",
+                        "description": "Attitudes toward ageing vary — some cultures revere elders, others prioritize youth, influencing inclusion and respect."
+                      }
                     ]
                   },
                   "Systemic Discrimination": {
-                    "description": "Structural barriers and biases that affect people differently based on their age.",
+                    "description": "Structural inequalities that affect people differently depending on their age, limiting access or reinforcing stereotypes.",
                     "items": [
-                      { "label": "Stereotyping", "tag": "green" },
-                      { "label": "Social stigma and isolation", "tag": "green" },
-                      { "label": "Accessibility (e.g. healthcare, education, technology)", "tag": "green" },
-                      { "label": "Economic disparities", "tag": "amber" }
+                      {
+                        "label": "Stereotyping",
+                        "tag": "amber",
+                        "description": "Generalizations such as ‘older people can’t use tech’ or ‘young people are lazy’ create harmful biases."
+                      },
+                      {
+                        "label": "Social stigma and isolation",
+                        "tag": "red",
+                        "description": "Age-related exclusion—such as elder neglect or teenage dismissal—can lead to profound loneliness or disconnection."
+                      },
+                      {
+                        "label": "Accessibility (e.g. healthcare, education, technology)",
+                        "tag": "amber",
+                        "description": "Services often fail to accommodate all age groups equally, from tech usability to age-biased medical care or school discipline."
+                      },
+                      {
+                        "label": "Economic disparities",
+                        "tag": "amber",
+                        "description": "Age can influence income, employment, and financial security, from youth unemployment to pension poverty."
+                      }
                     ]
                   },
                   "Solutions & Support": {
-                    "description": "Interventions, services, and legal protections designed to address age-related challenges and promote inclusion.",
+                    "description": "Strategies and systems to address age-based exclusion and promote wellbeing and participation for all generations.",
                     "items": [
-                      { "label": "Legislation (e.g. EU Accessibility Act)", "tag": "amber" },
-                      { "label": "Health and social care services", "tag": "amber" },
-                      { "label": "Assistive tools, tech, and accommodations", "tag": "amber" },
-                      { "label": "Education and awareness", "tag": "green" }
-                    ]
-                  }
-                }
-              }
+                      {
+                        "label": "Legislation (e.g. EU Accessibility Act)",
+                        "tag": "green",
+                        "description": "Legal protections that safeguard against age discrimination and support universal access."
+                      },
+                      {
+                        "label": "Health and social care services",
+                        "tag": "amber",
+                        "description": "Essential for ageing populations and vulnerable
           outgoingConnections:
             - output->"Text" Yh_S430KZQ9cvHS9DGV2P/dimensions
           visualData: -515.1432247872826/-13.610079425038919/330/1641//
@@ -268,7 +404,7 @@ data:
             cache: false
             enableFunctionUse: false
             headers: []
-            maxTokens: 1024
+            maxTokens: 2048
             modalitiesIncludeAudio: false
             modalitiesIncludeText: false
             model: gpt-4o-mini
@@ -316,7 +452,7 @@ data:
 
               You will receive:
               	•	A campaign description (in the user prompt)
-              	•	A gender framework defining the relevant social and cultural dimensions in {{dimensions}}
+              	•	An age framework defining the relevant social and cultural dimensions in {{dimensions}}
 
               Each dimension includes:
               	•	A section title and sub-items with descriptions
@@ -343,32 +479,34 @@ data:
               Output Format
 
 
+              Output Format
+
+
               Return your analysis as a raw JSON object only. Do not include any additional commentary or markdown formatting.
+
+              Each section should be a direct key mapping to an array of items.
+
+              Do not include any wrapper object such as items inside each section.
+
+              Use the following structure:
 
 
               {
-                "title": "Gender",
+                "title": "Age",
                 "sections": {
                   "Identity & Experience": [
                     {
                       "label": "Sex vs gender",
                       "score": 10,
-                      "rationale": "This campaign supports gender inclusivity and avoids conflating sex and gender."
-                    },
-                    {
-                      "label": "Gender expression",
-                      "score": 7,
-                      "rationale": "The visuals celebrate diverse expression, but could be more explicit in representing non-traditional roles."
-                    },
-                    ...
+                      "rationale": "This campaign supports gender inclusivity..."
+                    }
                   ],
                   "Cultural Sensitivities": [
                     {
                       "label": "Cultural traditions",
                       "score": 5,
-                      "rationale": "May unintentionally reinforce conservative norms if not balanced with inclusive messaging."
-                    },
-                    ...
+                      "rationale": "May unintentionally reinforce..."
+                    }
                   ]
                 }
               }
@@ -413,7 +551,7 @@ data:
 
               You will receive:
               	•	A campaign description (in the user prompt)
-              	•	A gender framework defining the relevant social and cultural dimensions in {{dimensions}}
+              	•	A sexuality framework defining the relevant social and cultural dimensions in {{dimensions}}
 
               Each dimension includes:
               	•	A section title and sub-items with descriptions
@@ -442,30 +580,29 @@ data:
 
               Return your analysis as a raw JSON object only. Do not include any additional commentary or markdown formatting.
 
+              Each section should be a direct key mapping to an array of items.
+
+              Do not include any wrapper object such as items inside each section.
+
+              Use the following structure:
+
 
               {
-                "title": "Gender",
+                "title": "Sexuality",
                 "sections": {
                   "Identity & Experience": [
                     {
                       "label": "Sex vs gender",
                       "score": 10,
-                      "rationale": "This campaign supports gender inclusivity and avoids conflating sex and gender."
-                    },
-                    {
-                      "label": "Gender expression",
-                      "score": 7,
-                      "rationale": "The visuals celebrate diverse expression, but could be more explicit in representing non-traditional roles."
-                    },
-                    ...
+                      "rationale": "This campaign supports gender inclusivity..."
+                    }
                   ],
                   "Cultural Sensitivities": [
                     {
                       "label": "Cultural traditions",
                       "score": 5,
-                      "rationale": "May unintentionally reinforce conservative norms if not balanced with inclusive messaging."
-                    },
-                    ...
+                      "rationale": "May unintentionally reinforce..."
+                    }
                   ]
                 }
               }
@@ -486,53 +623,141 @@ data:
             text: >-
               {
                 "title": "Sexuality",
-                "description": "This theme explores how diverse sexual orientations are experienced, perceived, and treated in society, including systemic discrimination and advocacy for equality.",
+                "description": "This theme explores the diversity of sexual orientation and identity, societal responses to non-heteronormative expressions, and the systemic efforts or barriers to equality, visibility, and inclusion.",
                 "sections": {
                   "Identity & Experience": {
-                    "description": "Different sexual orientations and how individuals experience and define their sexuality.",
+                    "description": "Sexual orientation is a key aspect of identity, encompassing how individuals understand, express, and relate to romantic and sexual attraction.",
                     "items": [
-                      { "label": "Heterosexuality", "tag": "green" },
-                      { "label": "Homosexuality", "tag": "green" },
-                      { "label": "Bisexuality", "tag": "green" },
-                      { "label": "Pansexuality", "tag": "green" },
-                      { "label": "Asexuality", "tag": "green" }
+                      {
+                        "label": "Heterosexuality",
+                        "tag": "green",
+                        "description": "Often assumed as the default or 'norm', heterosexuality is widely accepted but can obscure the visibility of other identities when treated as the societal baseline."
+                      },
+                      {
+                        "label": "Homosexuality",
+                        "tag": "green",
+                        "description": "Attraction to the same gender; increasingly recognized and represented, though still stigmatized or criminalized in some societies."
+                      },
+                      {
+                        "label": "Bisexuality",
+                        "tag": "green",
+                        "description": "Attraction to more than one gender; often misunderstood or erased due to binary thinking around sexuality."
+                      },
+                      {
+                        "label": "Pansexuality",
+                        "tag": "green",
+                        "description": "Attraction not limited by gender identity; pansexuality challenges rigid gender constructs and expands inclusive understanding of attraction."
+                      },
+                      {
+                        "label": "Asexuality",
+                        "tag": "green",
+                        "description": "Little or no sexual attraction to others; often marginalized or pathologized due to limited societal awareness."
+                      }
                     ]
                   },
                   "Social & Cultural Norms": {
-                    "description": "Cultural expectations and social narratives that influence how sexuality is expressed or perceived.",
+                    "description": "Societal attitudes, traditions, and narratives that define acceptable expressions of sexuality and marginalize those who fall outside the norm.",
                     "items": [
-                      { "label": "Sexuality roles and expectations", "tag": "green" },
-                      { "label": "Cultural traditions", "tag": "green" },
-                      { "label": "Intersectionality", "tag": "green" },
-                      { "label": "Religion", "tag": "red" }
+                      {
+                        "label": "Sexuality roles and expectations",
+                        "tag": "green",
+                        "description": "Cultural norms about how people should behave based on their sexuality, often reinforcing heteronormativity and limiting freedom of expression."
+                      },
+                      {
+                        "label": "Cultural traditions",
+                        "tag": "green",
+                        "description": "Some traditions support acceptance and inclusion; others can reinforce exclusionary views and stigmas based on sexual orientation."
+                      },
+                      {
+                        "label": "Intersectionality",
+                        "tag": "green",
+                        "description": "Experiences of sexuality intersect with other identities—race, gender, class—compounding discrimination or privilege."
+                      },
+                      {
+                        "label": "Religion",
+                        "tag": "red",
+                        "description": "Religious doctrines and interpretations vary widely—some affirming, many restrictive—often influencing social norms and legal rights."
+                      }
                     ]
                   },
                   "Intolerance & Harm": {
-                    "description": "Forms of discrimination, violence, and negative stereotypes that target specific sexual orientations.",
+                    "description": "Negative reactions, prejudice, or violence directed toward people based on their sexual orientation, whether overt or systemic.",
                     "items": [
-                      { "label": "Historical context", "tag": "green" },
-                      { "label": "Stereotyping and microaggressions", "tag": "green" },
-                      { "label": "Hate crimes, violence & intimidation", "tag": "amber" },
-                      { "label": "Online harassment & digital abuse", "tag": "green" },
-                      { "label": "Hateful movements (e.g. Moms for Liberty)", "tag": "red" }
+                      {
+                        "label": "Historical context",
+                        "tag": "green",
+                        "description": "Queer communities have long faced legal persecution, social erasure, and violence—past harms continue to shape rights movements."
+                      },
+                      {
+                        "label": "Stereotyping and microaggressions",
+                        "tag": "green",
+                        "description": "Casual or coded behaviors that reinforce negative assumptions or diminish the validity of non-heterosexual identities."
+                      },
+                      {
+                        "label": "Hate crimes, violence & intimidation",
+                        "tag": "amber",
+                        "description": "Physical and psychological violence remains a reality in many regions, especially for visibly queer or gender-nonconforming individuals."
+                      },
+                      {
+                        "label": "Online harassment & digital abuse",
+                        "tag": "green",
+                        "description": "Queer individuals are frequently targeted with online abuse, especially when advocating for rights or visibility in public discourse."
+                      },
+                      {
+                        "label": "Hateful movements (e.g. Moms for Liberty)",
+                        "tag": "red",
+                        "description": "Organized backlash against LGBTQ+ visibility or rights, often couched in moral or parental protection rhetoric."
+                      }
                     ]
                   },
                   "Systemic Discrimination": {
-                    "description": "Institutional and structural biases that impact rights, access, and representation for sexual minorities.",
+                    "description": "Enduring institutional and policy-based barriers that deny equal access, rights, and protections to those of non-majority sexualities.",
                     "items": [
-                      { "label": "Education and healthcare experiences", "tag": "green" },
-                      { "label": "Lack of representation", "tag": "green" },
-                      { "label": "Economic disparities (e.g pay gap)", "tag": "amber" },
-                      { "label": "Justice system biases", "tag": "red" }
+                      {
+                        "label": "Education and healthcare experiences",
+                        "tag": "green",
+                        "description": "LGBTQ+ people often face stigma, inadequate care, or exclusion in both education systems and health services."
+                      },
+                      {
+                        "label": "Lack of representation",
+                        "tag": "green",
+                        "description": "Sexual minorities remain underrepresented in leadership, media, education, and policy-making—limiting visibility and influence."
+                      },
+                      {
+                        "label": "Economic disparities (e.g pay gap)",
+                        "tag": "amber",
+                        "description": "Disparities in income, hiring bias, and lack of inclusive policies impact financial security and career advancement."
+                      },
+                      {
+                        "label": "Justice system biases",
+                        "tag": "red",
+                        "description": "LGBTQ+ individuals may face unequal treatment under the law—especially in policing, asylum, or legal recognition of identity."
+                      }
                     ]
                   },
                   "Equality": {
-                    "description": "Policies, initiatives, and movements promoting equal treatment and visibility for all sexual orientations.",
+                    "description": "Frameworks and movements seeking to promote equal rights, access, visibility, and safety for all sexual orientations.",
                     "items": [
-                      { "label": "Legislation & Policy", "tag": "amber" },
-                      { "label": "I&D initiatives", "tag": "green" },
-                      { "label": "Education and awareness", "tag": "green" },
-                      { "label": "Social justice movements", "tag": "red" }
+                      {
+                        "label": "Legislation & Policy",
+                        "tag": "amber",
+                        "description": "Legal protections vary widely; even where present, enforcement gaps or loopholes can undermine their intent."
+                      },
+                      {
+                        "label": "I&D initiatives",
+                        "tag": "green",
+                        "description": "Workplace and institutional efforts to support inclusion through training, safe spaces, and policy change."
+                      },
+                      {
+                        "label": "Education and awareness",
+                        "tag": "green",
+                        "description": "Inclusive curricula and public messaging foster understanding, reduce stigma, and build allyship."
+                      },
+                      {
+                        "label": "Social justice movements",
+                        "tag": "red",
+                        "description": "Campaigns advancing LGBTQ+ rights can face resistance or backlash depending on sociopolitical climate."
+                      }
                     ]
                   }
                 }
@@ -546,7 +771,7 @@ data:
             cache: false
             enableFunctionUse: false
             headers: []
-            maxTokens: 1024
+            maxTokens: 2048
             modalitiesIncludeAudio: false
             modalitiesIncludeText: false
             model: gpt-4o-mini
@@ -585,7 +810,7 @@ data:
           data:
             dataType: string
             id: output
-          visualData: 1333.2215647600262/509.0644312952005/330/22/var(--node-color-3)/var(--node-color-3)
+          visualData: 1419.534550481296/486.4072725433672/330/2112/var(--node-color-3)/var(--node-color-3)
         '[FpqFaVz42yF0L29lDfr5J]:text "Text"':
           data:
             normalizeLineEndings: true
@@ -598,7 +823,7 @@ data:
 
               You will receive:
               	•	A campaign description (in the user prompt)
-              	•	A gender framework defining the relevant social and cultural dimensions in {{dimensions}}
+              	•	A race framework defining the relevant social and cultural dimensions in {{dimensions}}
 
               Each dimension includes:
               	•	A section title and sub-items with descriptions
@@ -627,30 +852,29 @@ data:
 
               Return your analysis as a raw JSON object only. Do not include any additional commentary or markdown formatting.
 
+              Each section should be a direct key mapping to an array of items.
+
+              Do not include any wrapper object such as items inside each section.
+
+              Use the following structure:
+
 
               {
-                "title": "Gender",
+                "title": "Race",
                 "sections": {
                   "Identity & Experience": [
                     {
                       "label": "Sex vs gender",
                       "score": 10,
-                      "rationale": "This campaign supports gender inclusivity and avoids conflating sex and gender."
-                    },
-                    {
-                      "label": "Gender expression",
-                      "score": 7,
-                      "rationale": "The visuals celebrate diverse expression, but could be more explicit in representing non-traditional roles."
-                    },
-                    ...
+                      "rationale": "This campaign supports gender inclusivity..."
+                    }
                   ],
                   "Cultural Sensitivities": [
                     {
                       "label": "Cultural traditions",
                       "score": 5,
-                      "rationale": "May unintentionally reinforce conservative norms if not balanced with inclusive messaging."
-                    },
-                    ...
+                      "rationale": "May unintentionally reinforce..."
+                    }
                   ]
                 }
               }
@@ -678,7 +902,7 @@ data:
             cache: false
             enableFunctionUse: false
             headers: []
-            maxTokens: 1024
+            maxTokens: 2048
             modalitiesIncludeAudio: false
             modalitiesIncludeText: false
             model: gpt-4o-mini
@@ -713,44 +937,116 @@ data:
             text: >-
               {
                 "title": "Race",
-                "description": "This theme focuses on racial identity, experiences of racism, systemic barriers, and advocacy for equity and representation.",
+                "description": "This theme focuses on how race and ethnicity shape lived experiences, how racism operates systemically and socially, and the strategies necessary to ensure racial equity, representation, and justice.",
                 "sections": {
                   "Identity & Experience": {
-                    "description": "How race and ethnicity shape identity, lived experience, and personal or collective understanding across time and culture.",
+                    "description": "Race and ethnicity contribute to how individuals understand themselves and are perceived by others, with impacts shaped by culture, history, and personal context.",
                     "items": [
-                      { "label": "Ethnicity", "tag": "amber" },
-                      { "label": "Intersectionality", "tag": "green" },
-                      { "label": "Cultural heritage", "tag": "green" },
-                      { "label": "Personal and collective experiences", "tag": "green" },
-                      { "label": "Current and historical race demographics", "tag": "amber" }
+                      {
+                        "label": "Ethnicity",
+                        "tag": "amber",
+                        "description": "Ethnic identity involves cultural background, language, and heritage—often distinct from racial categorization but frequently conflated in social discourse."
+                      },
+                      {
+                        "label": "Intersectionality",
+                        "tag": "green",
+                        "description": "Experiences of race are often shaped by overlapping identities such as gender, class, or disability, which compound advantages or discrimination."
+                      },
+                      {
+                        "label": "Cultural heritage",
+                        "tag": "green",
+                        "description": "Traditions, customs, and histories that form a collective racial or ethnic identity, offering pride but also vulnerable to appropriation or erasure."
+                      },
+                      {
+                        "label": "Personal and collective experiences",
+                        "tag": "green",
+                        "description": "Racial identity is shaped both by individual experience and broader societal treatment, from belonging to alienation to resistance."
+                      },
+                      {
+                        "label": "Current and historical race demographics",
+                        "tag": "amber",
+                        "description": "Racial dynamics evolve over time; demographic shifts, migration patterns, and historical legacies affect group visibility, power, and representation."
+                      }
                     ]
                   },
                   "Intolerance & Harm": {
-                    "description": "Prejudice, abuse, and violence experienced due to racial identity—online, in person, and across history.",
+                    "description": "Prejudiced attitudes, behaviors, and violence targeting individuals or groups because of race—rooted in bias, fear, and power imbalance.",
                     "items": [
-                      { "label": "Historical context", "tag": "amber" },
-                      { "label": "Stereotyping and microaggressions", "tag": "green" },
-                      { "label": "Hate crimes, violence & intimidation", "tag": "amber" },
-                      { "label": "Online harassment & digital abuse", "tag": "green" },
-                      { "label": "Hateful movements (e.g. white supremacy)", "tag": "red" }
+                      {
+                        "label": "Historical context",
+                        "tag": "amber",
+                        "description": "Colonialism, slavery, and segregation form a legacy of harm that continues to shape contemporary racial inequity and trauma."
+                      },
+                      {
+                        "label": "Stereotyping and microaggressions",
+                        "tag": "green",
+                        "description": "Subtle or overt assumptions based on race that reinforce hierarchies and cause emotional or social harm, especially when normalized."
+                      },
+                      {
+                        "label": "Hate crimes, violence & intimidation",
+                        "tag": "amber",
+                        "description": "Acts of aggression that target people based on race, ranging from verbal abuse to physical harm, often underreported or minimized."
+                      },
+                      {
+                        "label": "Online harassment & digital abuse",
+                        "tag": "green",
+                        "description": "Racial abuse proliferates in digital spaces, where anonymity and algorithms can amplify hate and isolate victims."
+                      },
+                      {
+                        "label": "Hateful movements (e.g. white supremacy)",
+                        "tag": "red",
+                        "description": "Organized ideologies or groups that deny racial equality and actively promote fear, exclusion, or violence."
+                      }
                     ]
                   },
                   "Systemic Discrimination": {
-                    "description": "Institutional and structural forms of racism that affect opportunity, representation, and outcomes.",
+                    "description": "Racial inequity embedded in laws, institutions, and policies that limit opportunity, access, and justice for racialized groups.",
                     "items": [
-                      { "label": "Education and healthcare experiences", "tag": "green" },
-                      { "label": "Lack of representation", "tag": "green" },
-                      { "label": "Economic disparities (e.g. employment discrimination)", "tag": "amber" },
-                      { "label": "Justice system biases", "tag": "red" }
+                      {
+                        "label": "Education and healthcare experiences",
+                        "tag": "green",
+                        "description": "Bias and inequitable treatment in these systems can negatively affect life outcomes, especially for marginalized racial groups."
+                      },
+                      {
+                        "label": "Lack of representation",
+                        "tag": "green",
+                        "description": "People of color are underrepresented in leadership, media, and policymaking—limiting visibility and systemic change."
+                      },
+                      {
+                        "label": "Economic disparities (e.g. employment discrimination)",
+                        "tag": "amber",
+                        "description": "Racial bias contributes to income gaps, hiring discrimination, and unequal access to resources or advancement."
+                      },
+                      {
+                        "label": "Justice system biases",
+                        "tag": "red",
+                        "description": "Racial profiling, sentencing disparities, and over-policing reflect structural racism in law enforcement and legal systems."
+                      }
                     ]
                   },
                   "Equality": {
-                    "description": "Efforts and frameworks aiming to challenge racial inequality and advance inclusive representation.",
+                    "description": "Strategies and movements that work to dismantle racism, promote inclusive representation, and build equitable systems.",
                     "items": [
-                      { "label": "Legislation", "tag": "amber" },
-                      { "label": "I&D initiatives", "tag": "green" },
-                      { "label": "Education and awareness", "tag": "green" },
-                      { "label": "Social justice movements (e.g. BLM)", "tag": "amber" }
+                      {
+                        "label": "Legislation",
+                        "tag": "amber",
+                        "description": "Laws addressing racial discrimination exist, but effectiveness depends on enforcement, awareness, and political will."
+                      },
+                      {
+                        "label": "I&D initiatives",
+                        "tag": "green",
+                        "description": "Inclusion and diversity efforts can improve representation and equity when backed by accountability and systemic reform."
+                      },
+                      {
+                        "label": "Education and awareness",
+                        "tag": "green",
+                        "description": "Public education and anti-racism training can challenge stereotypes, shift culture, and foster allyship."
+                      },
+                      {
+                        "label": "Social justice movements (e.g. BLM)",
+                        "tag": "amber",
+                        "description": "Grassroots campaigns that demand systemic change—widely impactful but sometimes polarized depending on narrative framing."
+                      }
                     ]
                   }
                 }
@@ -923,7 +1219,7 @@ data:
             cache: false
             enableFunctionUse: false
             headers: []
-            maxTokens: 1024
+            maxTokens: 2048
             modalitiesIncludeAudio: false
             modalitiesIncludeText: false
             model: gpt-4o-mini
@@ -991,7 +1287,16 @@ data:
               Output Format
 
 
+              Output Format
+
+
               Return your analysis as a raw JSON object only. Do not include any additional commentary or markdown formatting.
+
+              Each section should be a direct key mapping to an array of items.
+
+              Do not include any wrapper object such as items inside each section.
+
+              Use the following structure:
 
 
               {
@@ -1001,22 +1306,15 @@ data:
                     {
                       "label": "Sex vs gender",
                       "score": 10,
-                      "rationale": "This campaign supports gender inclusivity and avoids conflating sex and gender."
-                    },
-                    {
-                      "label": "Gender expression",
-                      "score": 7,
-                      "rationale": "The visuals celebrate diverse expression, but could be more explicit in representing non-traditional roles."
-                    },
-                    ...
+                      "rationale": "This campaign supports gender inclusivity..."
+                    }
                   ],
                   "Cultural Sensitivities": [
                     {
                       "label": "Cultural traditions",
                       "score": 5,
-                      "rationale": "May unintentionally reinforce conservative norms if not balanced with inclusive messaging."
-                    },
-                    ...
+                      "rationale": "May unintentionally reinforce..."
+                    }
                   ]
                 }
               }
@@ -1035,7 +1333,7 @@ data:
             cache: false
             enableFunctionUse: false
             headers: []
-            maxTokens: 1024
+            maxTokens: 2048
             modalitiesIncludeAudio: false
             modalitiesIncludeText: false
             model: gpt-4o-mini
@@ -1076,7 +1374,7 @@ data:
 
               You will receive:
               	•	A campaign description (in the user prompt)
-              	•	A gender framework defining the relevant social and cultural dimensions in {{dimensions}}
+              	•	A disability framework defining the relevant social and cultural dimensions in {{dimensions}}
 
               Each dimension includes:
               	•	A section title and sub-items with descriptions
@@ -1105,30 +1403,29 @@ data:
 
               Return your analysis as a raw JSON object only. Do not include any additional commentary or markdown formatting.
 
+              Each section should be a direct key mapping to an array of items.
+
+              Do not include any wrapper object such as items inside each section.
+
+              Use the following structure:
+
 
               {
-                "title": "Gender",
+                "title": "Disability",
                 "sections": {
                   "Identity & Experience": [
                     {
                       "label": "Sex vs gender",
                       "score": 10,
-                      "rationale": "This campaign supports gender inclusivity and avoids conflating sex and gender."
-                    },
-                    {
-                      "label": "Gender expression",
-                      "score": 7,
-                      "rationale": "The visuals celebrate diverse expression, but could be more explicit in representing non-traditional roles."
-                    },
-                    ...
+                      "rationale": "This campaign supports gender inclusivity..."
+                    }
                   ],
                   "Cultural Sensitivities": [
                     {
                       "label": "Cultural traditions",
                       "score": 5,
-                      "rationale": "May unintentionally reinforce conservative norms if not balanced with inclusive messaging."
-                    },
-                    ...
+                      "rationale": "May unintentionally reinforce..."
+                    }
                   ]
                 }
               }
@@ -1153,41 +1450,101 @@ data:
             text: >-
               {
                 "title": "Disability",
-                "description": "This theme highlights different types of disabilities and explores social perceptions, discrimination, and pathways to inclusion and support.",
+                "description": "This theme explores the lived experiences of disabled people, addressing types of disability, social perceptions, systemic discrimination, and the efforts required to foster full inclusion, accessibility, and equity.",
                 "sections": {
                   "Types of Disability": {
-                    "description": "Different forms of disability that affect individuals physically, cognitively, or emotionally, shaping their lived experience.",
+                    "description": "Disabilities vary in form and visibility, influencing individuals’ physical, cognitive, emotional, and sensory experiences across daily life.",
                     "items": [
-                      { "label": "Physical disability", "tag": "green" },
-                      { "label": "Sensory disability", "tag": "green" },
-                      { "label": "Cognitive disability", "tag": "green" },
-                      { "label": "Mental health disability", "tag": "green" },
-                      { "label": "Congenital vs acquired", "tag": "green" }
+                      {
+                        "label": "Physical disability",
+                        "tag": "green",
+                        "description": "Impairments affecting mobility, coordination, or physical function, which may require physical access adjustments or personal support."
+                      },
+                      {
+                        "label": "Sensory disability",
+                        "tag": "green",
+                        "description": "Conditions such as blindness, deafness, or sensory processing differences, requiring accommodations in communication and environment."
+                      },
+                      {
+                        "label": "Cognitive disability",
+                        "tag": "green",
+                        "description": "Conditions affecting intellectual functioning, memory, learning, or problem-solving, often requiring tailored education or support systems."
+                      },
+                      {
+                        "label": "Mental health disability",
+                        "tag": "green",
+                        "description": "Psychological conditions such as anxiety, depression, or PTSD that can significantly impact daily life, work, and social participation."
+                      },
+                      {
+                        "label": "Congenital vs acquired",
+                        "tag": "green",
+                        "description": "Some disabilities are present from birth, while others arise through illness, injury, or age—each shaping different needs and identities."
+                      }
                     ]
                   },
                   "Social & Cultural Norms": {
-                    "description": "Cultural values and social perceptions that influence how disability is understood, accepted, or marginalized.",
+                    "description": "The attitudes and expectations that shape how disability is perceived and responded to within society and culture.",
                     "items": [
-                      { "label": "Social isolation", "tag": "green" },
-                      { "label": "Cultural attitudes", "tag": "green" }
+                      {
+                        "label": "Social isolation",
+                        "tag": "amber",
+                        "description": "Disabled individuals are often excluded from public life due to stigma, inaccessibility, or lack of social understanding."
+                      },
+                      {
+                        "label": "Cultural attitudes",
+                        "tag": "amber",
+                        "description": "Beliefs about disability—ranging from pity to heroism—can reinforce marginalization or deny the full humanity of disabled people."
+                      }
                     ]
                   },
                   "Systemic Discrimination": {
-                    "description": "Institutional and structural barriers that limit opportunity, access, and equity for disabled people.",
+                    "description": "Barriers embedded in institutions, systems, and policies that disadvantage disabled people across all aspects of life.",
                     "items": [
-                      { "label": "Stereotyping", "tag": "green" },
-                      { "label": "Social stigma and isolation", "tag": "green" },
-                      { "label": "Accessibility (e.g. healthcare, education, technology)", "tag": "green" },
-                      { "label": "Economic disparities", "tag": "amber" }
+                      {
+                        "label": "Stereotyping",
+                        "tag": "amber",
+                        "description": "Assumptions such as 'disabled people are dependent' or 'unfit to work' perpetuate exclusion and underestimation."
+                      },
+                      {
+                        "label": "Social stigma and isolation",
+                        "tag": "red",
+                        "description": "Prejudice and misunderstanding lead to invisibility, shame, and reduced opportunities for meaningful participation."
+                      },
+                      {
+                        "label": "Accessibility (e.g. healthcare, education, technology)",
+                        "tag": "amber",
+                        "description": "Physical, digital, and institutional spaces often fail to accommodate disabled users, creating widespread inequity."
+                      },
+                      {
+                        "label": "Economic disparities",
+                        "tag": "amber",
+                        "description": "Disabled people face barriers to employment, fair wages, and financial security, often exacerbated by systemic neglect."
+                      }
                     ]
                   },
                   "Solutions & Support": {
-                    "description": "Approaches that address barriers and enable equitable participation and representation for people with disabilities.",
+                    "description": "Policy, infrastructure, and cultural shifts that remove barriers, support autonomy, and promote meaningful inclusion.",
                     "items": [
-                      { "label": "Legislation (e.g. Equality Act)", "tag": "green" },
-                      { "label": "Health and social care services", "tag": "green" },
-                      { "label": "Assistive tools, tech, and accommodations", "tag": "green" },
-                      { "label": "Education and awareness", "tag": "green" }
+                      {
+                        "label": "Legislation (e.g. Equality Act)",
+                        "tag": "green",
+                        "description": "Laws protecting disabled rights are foundational—but enforcement, clarity, and visibility are often inconsistent."
+                      },
+                      {
+                        "label": "Health and social care services",
+                        "tag": "green",
+                        "description": "Accessible, person-centred care is vital, especially when systems integrate mental, physical, and community-based support."
+                      },
+                      {
+                        "label": "Assistive tools, tech, and accommodations",
+                        "tag": "green",
+                        "description": "Innovations like screen readers, ramps, and flexible work setups enable access and independence for disabled individuals."
+                      },
+                      {
+                        "label": "Education and awareness",
+                        "tag": "green",
+                        "description": "Training, campaigns, and representation can challenge stigma, change attitudes, and build more inclusive spaces."
+                      }
                     ]
                   }
                 }
@@ -1213,7 +1570,16 @@ data:
           data:
             dataType: string
             id: output
-          visualData: 2855.104551953548/1515.086830463928/330/1638/var(--node-color-3)/var(--node-color-3)
+          visualData: 3711.0301851269073/909.3039811371337/330/2147/var(--node-color-3)/var(--node-color-3)
+        '[BNRnCDNTEFi7Ppa2Vm0tF]:destructure "Destructure"':
+          data:
+            paths:
+              - $.verdict
+              - $.rationale
+          outgoingConnections:
+            - match_0->"Text" ffV_6OkJmLGS5UQtjaND9/verdict
+            - match_1->"Escape chars" kTW3Bz2iKjKdKsAhgMOOM/input1
+          visualData: 3616.602011598915/1561.8966803892731/280/2138//
         '[EoV_r1xtGsp8X9gFZG0pE]:graphInput "Graph Input"':
           data:
             dataType: string
@@ -1222,11 +1588,12 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Text" K222yqxsIxJZ2klao6h4Q/input
+            - data->"Text" ffV_6OkJmLGS5UQtjaND9/documentId
           visualData: -97.74694763205389/1210.4127376130664/330/1611/var(--node-color-3)/var(--node-color-3)
         '[HfUGqle9i7pr8qj848n3G]:text "Text"':
           data:
             normalizeLineEndings: true
-            text: >-
+            text: >+
               You will see a lage JSON object that includes the results of
               analysis of a campaign through the lens of various aspect of
               cultural / social sensibilites.
@@ -1241,13 +1608,26 @@ data:
               Also flag any areas where it fares badly. Focus most carefully on any items with a zero score.
 
 
-              If any items for have a zero score you should indicate that the campaign should NOT go ahead.
+              If any items for have a zero score you should indicate that the campaign should NOT go ahead (insert "Yes" or "No" in the "verdict" field accordingly).
 
 
-              If there are no zero scores then give an assement of if the campaign should proceed and why.
+              Add in your assement of and rationale for how you have reached that conclusion and put that in the "rationale" field.
+
+
+              Ensure the rationale includes a list of the most positive aspects of the campaign and also a list of the most negative aspects of the campaign, focussing on any items that have received a zero score.
+
+
+              Output JSON and do not include any additional commentary or JSON markdown.
+
+
+              {
+                "verdict": "Yes or No",
+                "rationale": "The rationale you created"
+              }
+
           outgoingConnections:
             - output->"Chat" Q2m7IhfCPokTii1gKdWQS/systemPrompt
-          visualData: 1947/940/330/1642//
+          visualData: 2542.3415012076157/908.303577482002/330/2145//
         '[K222yqxsIxJZ2klao6h4Q]:text "Text"':
           data:
             body: ""
@@ -1282,7 +1662,8 @@ data:
             additionalParameters: []
             cache: false
             enableFunctionUse: false
-            maxTokens: 1024
+            headers: []
+            maxTokens: 4096
             modalitiesIncludeAudio: false
             modalitiesIncludeText: false
             model: gpt-4o-mini
@@ -1309,15 +1690,16 @@ data:
             useUseTopPInput: false
             useUserInput: false
           outgoingConnections:
+            - response->"Extract JSON" meIax3g47d1sk4JhULD6H/input
             - response->"Graph Output" 7bECpNuZaNqWdiRd-g0lY/value
-          visualData: 2432/1152/230/1640//
+          visualData: 2922.605496365535/1207.1242130747792/230/2144//
         '[TDTEld0oaqz2mzvl2SOB7]:subGraph "Subgraph"':
           data:
             graphId: OEo4GQHIIu5hp2WYtsPUs
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
-            - output->"Assemble Message" oqXmgDjtPh_Oj3QMybcAu/part4
+            - output->"Text" lrNUaQwRaD72AhQ4es748/sexuality
           visualData: 1378/1668/330/1649/var(--node-color-1)/var(--node-color-1)
         '[aFrTtHoG2yG3FXakU-lk5]:subGraph "Subgraph"':
           data:
@@ -1325,7 +1707,7 @@ data:
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
-            - output->"Assemble Message" oqXmgDjtPh_Oj3QMybcAu/part6
+            - output->"Text" lrNUaQwRaD72AhQ4es748/race
           visualData: 1380/2159/330/1650/var(--node-color-1)/var(--node-color-1)
         '[cJt8Kh1llnSWVx2nWk5Kn]:subGraph "Subgraph"':
           data:
@@ -1333,32 +1715,94 @@ data:
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
-            - output->"Assemble Message" oqXmgDjtPh_Oj3QMybcAu/part2
+            - output->"Text" lrNUaQwRaD72AhQ4es748/age
           visualData: 1368/1187/330/1647/var(--node-color-1)/var(--node-color-1)
+        '[ffV_6OkJmLGS5UQtjaND9]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |-
+              {
+              "documentId": "{{documentId}}",
+              "verdict": "{{verdict}}",
+              "rationale": "{{rationale}}",
+              {{payload}}
+              }
+          outgoingConnections:
+            - output->"HTTP - Submit Risk navigator logic"
+              gXoUIsUQ6eCfBMvNqEzS-/req_body
+          visualData: 4581.626493934743/1708.2064959632046/330/2149//
+        '[gXoUIsUQ6eCfBMvNqEzS-]:httpCall "HTTP - Submit Risk navigator logic"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: POST
+            url: http://localhost:4015/api/submit-risknavigator
+            useBodyInput: true
+            useHeadersInput: false
+          visualData: 5183.6704735801095/1657.293231396669/280/2148/var(--node-color-4)/var(--node-color-4)
         '[iLHQ2jG4Q9-hjZwbuNd3u]:subGraph "Subgraph"':
           data:
             graphId: mvWfU64xqcVf2vaEVrP6j
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
-            - output->"Assemble Message" oqXmgDjtPh_Oj3QMybcAu/part1
+            - output->"Text" lrNUaQwRaD72AhQ4es748/gender
           visualData: 1371.7975676880947/936.2687198859221/330/1646/var(--node-color-1)/var(--node-color-1)
-        '[oqXmgDjtPh_Oj3QMybcAu]:assembleMessage "Assemble Message"':
+        '[kTW3Bz2iKjKdKsAhgMOOM]:code "Escape chars"':
           data:
-            toolCallId: ""
-            type: user
-            useToolCallIdInput: false
-            useTypeInput: false
+            code: >-
+              const inputText = inputs.input1.value;
+
+
+              const escapedText = inputText
+                .replace(/\r?\n/g, '\\n')   // Replace real line breaks with literal "\n"
+                .replace(/\s+/g, ' ')       // Replace multiple spaces/tabs/newlines with single space
+                .replace(/"/g, '\\"')       // Escape double quotes
+                .trim();                    // Trim leading/trailing whitespace
+
+              return {
+                output1: {
+                  type: 'string',
+                  value: escapedText
+                }
+              };
+            inputNames: input1
+            outputNames: output1
           outgoingConnections:
-            - message->"Chat" Q2m7IhfCPokTii1gKdWQS/prompt
-          visualData: 1889/1436/280/1636//
+            - output1->"Text" ffV_6OkJmLGS5UQtjaND9/rationale
+          visualData: 4082.2951938234282/1455.2302716256972/230/2154/var(--node-color-2)/var(--node-color-2)
+        '[lrNUaQwRaD72AhQ4es748]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: |2-
+                  "risknavigator_logic": [
+                  {{gender}},
+                  {{age}},
+                  {{disability}},
+                  {{sexuality}},
+                  {{bodyimage}},
+                  {{race}}
+                  ]
+          outgoingConnections:
+            - output->"Chat" Q2m7IhfCPokTii1gKdWQS/prompt
+            - output->"Text" ffV_6OkJmLGS5UQtjaND9/payload
+          visualData: 2013.1751626322289/1628.104665110087/330/2133//
+        '[meIax3g47d1sk4JhULD6H]:extractJson "Extract JSON"':
+          outgoingConnections:
+            - output->"Destructure" BNRnCDNTEFi7Ppa2Vm0tF/object
+          visualData: 3218.7639591976463/1494.7088430143701/280/2142//
         '[pjV7872cZkL_RPsbTWJZh]:subGraph "Subgraph"':
           data:
             graphId: 3aKUmShYbDlGcphbTUpBi
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
-            - output->"Assemble Message" oqXmgDjtPh_Oj3QMybcAu/part5
+            - output->"Text" lrNUaQwRaD72AhQ4es748/bodyimage
           visualData: 1384/1917/330/1644/var(--node-color-1)/var(--node-color-1)
         '[xLa5k036ImQFqulwm4l7n]:subGraph "Subgraph"':
           data:
@@ -1366,7 +1810,7 @@ data:
             useAsGraphPartialOutput: false
             useErrorOutput: false
           outgoingConnections:
-            - output->"Assemble Message" oqXmgDjtPh_Oj3QMybcAu/part3
+            - output->"Text" lrNUaQwRaD72AhQ4es748/disability
           visualData: 1375/1435/330/1648/var(--node-color-1)/var(--node-color-1)
   metadata:
     description: ""
