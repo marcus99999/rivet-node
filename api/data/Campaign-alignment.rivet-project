@@ -1,0 +1,1376 @@
+version: 4
+data:
+  attachedData:
+    trivet:
+      testSuites: []
+      version: 1
+  graphs:
+    3aKUmShYbDlGcphbTUpBi:
+      metadata:
+        description: ""
+        id: 3aKUmShYbDlGcphbTUpBi
+        name: Compass - Body image
+      nodes:
+        '[9mFQif8mtvRf8E1SmPDsZ]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1333.2215647600262/509.0644312952005/330/22/var(--node-color-3)/var(--node-color-3)
+        '[ZWf8nwBzr53i32vvwTEv_]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Graph Output" 9mFQif8mtvRf8E1SmPDsZ/value
+          visualData: 874/471/330/20//
+        '[cJf9LW8fa_MbAanbL5nn4]:text "Body image"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                "title": "Body Image",
+                "description": "This theme addresses perceptions, influences, and impacts of body image, including discrimination and strategies to promote self-acceptance and wellbeing.",
+                "sections": {
+                  "Manifestations": {
+                    "description": "How body image issues manifest psychologically and behaviorally, shaping self-perception and daily life.",
+                    "items": [
+                      { "label": "Perceptions about the body (e.g. how one sees themselves)", "tag": "red" },
+                      { "label": "Feelings about the body (e.g. how one feels about themselves)", "tag": "red" },
+                      { "label": "Behaviours (e.g. isolation or disordered eating)", "tag": "red" }
+                    ]
+                  },
+                  "Influences": {
+                    "description": "Factors that shape how individuals view and evaluate their bodies across different contexts.",
+                    "items": [
+                      { "label": "Age and body image", "tag": "red" },
+                      { "label": "Sex and body image", "tag": "red" },
+                      { "label": "Gender expression and body image", "tag": "red" },
+                      { "label": "Social media", "tag": "red" },
+                      { "label": "Social feedback", "tag": "red" },
+                      { "label": "Cultural attitudes", "tag": "red" }
+                    ]
+                  },
+                  "Systemic Discrimination": {
+                    "description": "Ways in which body image biases are reinforced or enabled by systems, structures, and institutions.",
+                    "items": [
+                      { "label": "Stereotyping", "tag": "red" },
+                      { "label": "Social stigma and isolation", "tag": "red" },
+                      { "label": "Accessibility (e.g. healthcare, physical spaces)", "tag": "red" },
+                      { "label": "Economic disparities", "tag": "red" }
+                    ]
+                  },
+                  "Effects on Individuals": {
+                    "description": "The emotional, mental, and physical outcomes for individuals affected by negative body image.",
+                    "items": [
+                      { "label": "Self-acceptance", "tag": "red" },
+                      { "label": "Balanced lifestyles", "tag": "red" },
+                      { "label": "Mental health and wellbeing", "tag": "red" },
+                      { "label": "Physical health and wellbeing", "tag": "red" }
+                    ]
+                  },
+                  "Support": {
+                    "description": "Efforts to promote positive body image through inclusive representation, education, and care.",
+                    "items": [
+                      { "label": "Diverse representation of body types", "tag": "red" },
+                      { "label": "Body positivity and neutrality", "tag": "red" },
+                      { "label": "Education and awareness", "tag": "red" },
+                      { "label": "Mental and physical health support", "tag": "red" }
+                    ]
+                  }
+                }
+              }
+          outgoingConnections:
+            - output->"Text" gu9iC_Mqlfa6_BzJ6Dguk/dimensions
+          visualData: -468.27167723845605/-44.17848000036054/330/1640//
+        '[dUOKLkRPMv_3EkoNGkel5]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat" eOtf0nzdT-lxaZS8vsEVv/prompt
+          visualData: -250.25838264299804/578.7140039447731/330/23/var(--node-color-3)/var(--node-color-3)
+        '[eOtf0nzdT-lxaZS8vsEVv]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" ZWf8nwBzr53i32vvwTEv_/input
+          visualData: 460/360/230/14//
+        '[gu9iC_Mqlfa6_BzJ6Dguk]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You are an advisor in the purpose and sustainability team of a
+              large organization. Your task is to assess whether a proposed
+              campaign aligns with cultural and social indicators relating
+              specifically to body image politics.
+
+
+              You will receive:
+              	•	A campaign description (in the user prompt)
+              	•	A gender framework defining the relevant social and cultural dimensions in {{dimensions}}
+
+              Each dimension includes:
+              	•	A section title and sub-items with descriptions
+              	•	A risk tag for each sub-item:
+              	•	Red - High risk: If the campaign clearly falls into this area, it should be rejected (score = 0)
+              	•	Amber - Medium risk: Proceed with caution; consider the context carefully
+              	•	Green - Low risk: Generally safe and suitable for purpose-led campaigns
+
+              ⸻
+
+
+              Your task
+
+
+              For each sub-item under each section:
+              	1.	Score the campaign on a scale from 0 to 10
+              	•	10 = strong alignment and suitability
+              	•	0 = unsuitable (especially if the topic intersects with a red-flagged area)
+              	2.	Provide a brief rationale explaining the score in the context of the campaign
+
+              ⸻
+
+
+              Output Format
+
+
+              Return your analysis as a raw JSON object only. Do not include any additional commentary or markdown formatting.
+
+
+              {
+                "title": "Gender",
+                "sections": {
+                  "Identity & Experience": [
+                    {
+                      "label": "Sex vs gender",
+                      "score": 10,
+                      "rationale": "This campaign supports gender inclusivity and avoids conflating sex and gender."
+                    },
+                    {
+                      "label": "Gender expression",
+                      "score": 7,
+                      "rationale": "The visuals celebrate diverse expression, but could be more explicit in representing non-traditional roles."
+                    },
+                    ...
+                  ],
+                  "Cultural Sensitivities": [
+                    {
+                      "label": "Cultural traditions",
+                      "score": 5,
+                      "rationale": "May unintentionally reinforce conservative norms if not balanced with inclusive messaging."
+                    },
+                    ...
+                  ]
+                }
+              }
+          outgoingConnections:
+            - output->"Chat" eOtf0nzdT-lxaZS8vsEVv/systemPrompt
+          visualData: -34.168310322156486/62.10453648915187/330/24//
+    ICzX0YVN35nxFu5zZWvAP:
+      metadata:
+        description: ""
+        id: ICzX0YVN35nxFu5zZWvAP
+        name: Compass - Age
+      nodes:
+        '[3ZFd65F2es4kLxV_Ctrff]:text "Age"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                "title": "Age",
+                "description": "This theme addresses age-related experiences, from youth to elderly, and explores ageism, support systems, and inclusion strategies.",
+                "sections": {
+                  "Vulnerable Groups": {
+                    "description": "Groups whose age places them at greater risk of exclusion, dependency, or discrimination.",
+                    "items": [
+                      { "label": "Elderly people", "tag": "green" },
+                      { "label": "Teens and youth", "tag": "amber" },
+                      { "label": "Children", "tag": "amber" }
+                    ]
+                  },
+                  "Wellbeing & Ability": {
+                    "description": "How physical and cognitive abilities change with age, and the impact on quality of life and independence.",
+                    "items": [
+                      { "label": "Mobility, dexterity and physical wellbeing", "tag": "green" },
+                      { "label": "Cognitive changes and sensory decline", "tag": "amber" },
+                      { "label": "Emotional well-being (e.g. grief)", "tag": "green" },
+                      { "label": "Independence", "tag": "green" }
+                    ]
+                  },
+                  "Social & Cultural Norms": {
+                    "description": "The expectations and values that different cultures attach to age, and how these shape roles across life stages.",
+                    "items": [
+                      { "label": "Age roles and expectations", "tag": "green" },
+                      { "label": "Cultural attitudes", "tag": "green" }
+                    ]
+                  },
+                  "Systemic Discrimination": {
+                    "description": "Structural barriers and biases that affect people differently based on their age.",
+                    "items": [
+                      { "label": "Stereotyping", "tag": "green" },
+                      { "label": "Social stigma and isolation", "tag": "green" },
+                      { "label": "Accessibility (e.g. healthcare, education, technology)", "tag": "green" },
+                      { "label": "Economic disparities", "tag": "amber" }
+                    ]
+                  },
+                  "Solutions & Support": {
+                    "description": "Interventions, services, and legal protections designed to address age-related challenges and promote inclusion.",
+                    "items": [
+                      { "label": "Legislation (e.g. EU Accessibility Act)", "tag": "amber" },
+                      { "label": "Health and social care services", "tag": "amber" },
+                      { "label": "Assistive tools, tech, and accommodations", "tag": "amber" },
+                      { "label": "Education and awareness", "tag": "green" }
+                    ]
+                  }
+                }
+              }
+          outgoingConnections:
+            - output->"Text" Yh_S430KZQ9cvHS9DGV2P/dimensions
+          visualData: -515.1432247872826/-13.610079425038919/330/1641//
+        '[9IlhdI8icvDj4y_AlcaPU]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1333.2215647600262/509.0644312952005/330/22/var(--node-color-3)/var(--node-color-3)
+        '[OMNccvzDMsSGVMx4Dn5mI]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" VAUMBIzP-qqq8L5jkB1Bz/input
+          visualData: 460/360/230/14//
+        '[VAUMBIzP-qqq8L5jkB1Bz]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Graph Output" 9IlhdI8icvDj4y_AlcaPU/value
+          visualData: 874/471/330/20//
+        '[Yh_S430KZQ9cvHS9DGV2P]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You are an advisor in the purpose and sustainability team of a
+              large organization. Your task is to assess whether a proposed
+              campaign aligns with cultural and social indicators relating
+              specifically to age politics.
+
+
+              You will receive:
+              	•	A campaign description (in the user prompt)
+              	•	A gender framework defining the relevant social and cultural dimensions in {{dimensions}}
+
+              Each dimension includes:
+              	•	A section title and sub-items with descriptions
+              	•	A risk tag for each sub-item:
+              	•	Red - High risk: If the campaign clearly falls into this area, it should be rejected (score = 0)
+              	•	Amber - Medium risk: Proceed with caution; consider the context carefully
+              	•	Green - Low risk: Generally safe and suitable for purpose-led campaigns
+
+              ⸻
+
+
+              Your task
+
+
+              For each sub-item under each section:
+              	1.	Score the campaign on a scale from 0 to 10
+              	•	10 = strong alignment and suitability
+              	•	0 = unsuitable (especially if the topic intersects with a red-flagged area)
+              	2.	Provide a brief rationale explaining the score in the context of the campaign
+
+              ⸻
+
+
+              Output Format
+
+
+              Return your analysis as a raw JSON object only. Do not include any additional commentary or markdown formatting.
+
+
+              {
+                "title": "Gender",
+                "sections": {
+                  "Identity & Experience": [
+                    {
+                      "label": "Sex vs gender",
+                      "score": 10,
+                      "rationale": "This campaign supports gender inclusivity and avoids conflating sex and gender."
+                    },
+                    {
+                      "label": "Gender expression",
+                      "score": 7,
+                      "rationale": "The visuals celebrate diverse expression, but could be more explicit in representing non-traditional roles."
+                    },
+                    ...
+                  ],
+                  "Cultural Sensitivities": [
+                    {
+                      "label": "Cultural traditions",
+                      "score": 5,
+                      "rationale": "May unintentionally reinforce conservative norms if not balanced with inclusive messaging."
+                    },
+                    ...
+                  ]
+                }
+              }
+          outgoingConnections:
+            - output->"Chat" OMNccvzDMsSGVMx4Dn5mI/systemPrompt
+          visualData: -34.168310322156486/62.10453648915187/330/24//
+        '[yIGp9jpRh6A9ot0XkLoEx]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat" OMNccvzDMsSGVMx4Dn5mI/prompt
+          visualData: -250.25838264299804/578.7140039447731/330/23/var(--node-color-3)/var(--node-color-3)
+    OEo4GQHIIu5hp2WYtsPUs:
+      metadata:
+        description: ""
+        id: OEo4GQHIIu5hp2WYtsPUs
+        name: Compass - Sexuality
+      nodes:
+        '[6myx7JGghzF1X8WIahNAr]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Graph Output" ASB2ddKokPqzaFj9Ik5hF/value
+          visualData: 874/471/330/20//
+        '[ASB2ddKokPqzaFj9Ik5hF]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1333.2215647600262/509.0644312952005/330/22/var(--node-color-3)/var(--node-color-3)
+        '[CQOl6TuOQ35HvXznoA6L3]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You are an advisor in the purpose and sustainability team of a
+              large organization. Your task is to assess whether a proposed
+              campaign aligns with cultural and social indicators relating
+              specifically to sexuality politics.
+
+
+              You will receive:
+              	•	A campaign description (in the user prompt)
+              	•	A gender framework defining the relevant social and cultural dimensions in {{dimensions}}
+
+              Each dimension includes:
+              	•	A section title and sub-items with descriptions
+              	•	A risk tag for each sub-item:
+              	•	Red - High risk: If the campaign clearly falls into this area, it should be rejected (score = 0)
+              	•	Amber - Medium risk: Proceed with caution; consider the context carefully
+              	•	Green - Low risk: Generally safe and suitable for purpose-led campaigns
+
+              ⸻
+
+
+              Your task
+
+
+              For each sub-item under each section:
+              	1.	Score the campaign on a scale from 0 to 10
+              	•	10 = strong alignment and suitability
+              	•	0 = unsuitable (especially if the topic intersects with a red-flagged area)
+              	2.	Provide a brief rationale explaining the score in the context of the campaign
+
+              ⸻
+
+
+              Output Format
+
+
+              Return your analysis as a raw JSON object only. Do not include any additional commentary or markdown formatting.
+
+
+              {
+                "title": "Gender",
+                "sections": {
+                  "Identity & Experience": [
+                    {
+                      "label": "Sex vs gender",
+                      "score": 10,
+                      "rationale": "This campaign supports gender inclusivity and avoids conflating sex and gender."
+                    },
+                    {
+                      "label": "Gender expression",
+                      "score": 7,
+                      "rationale": "The visuals celebrate diverse expression, but could be more explicit in representing non-traditional roles."
+                    },
+                    ...
+                  ],
+                  "Cultural Sensitivities": [
+                    {
+                      "label": "Cultural traditions",
+                      "score": 5,
+                      "rationale": "May unintentionally reinforce conservative norms if not balanced with inclusive messaging."
+                    },
+                    ...
+                  ]
+                }
+              }
+          outgoingConnections:
+            - output->"Chat" _8MwqhMANiVhKx-h5Dtdu/systemPrompt
+          visualData: -34.168310322156486/62.10453648915187/330/24//
+        '[HbgI3bTBOUzfA7RnYDTvo]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat" _8MwqhMANiVhKx-h5Dtdu/prompt
+          visualData: -250.25838264299804/578.7140039447731/330/23/var(--node-color-3)/var(--node-color-3)
+        '[If3iuo3GWMk-R52EccdnG]:text "Sexuality"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                "title": "Sexuality",
+                "description": "This theme explores how diverse sexual orientations are experienced, perceived, and treated in society, including systemic discrimination and advocacy for equality.",
+                "sections": {
+                  "Identity & Experience": {
+                    "description": "Different sexual orientations and how individuals experience and define their sexuality.",
+                    "items": [
+                      { "label": "Heterosexuality", "tag": "green" },
+                      { "label": "Homosexuality", "tag": "green" },
+                      { "label": "Bisexuality", "tag": "green" },
+                      { "label": "Pansexuality", "tag": "green" },
+                      { "label": "Asexuality", "tag": "green" }
+                    ]
+                  },
+                  "Social & Cultural Norms": {
+                    "description": "Cultural expectations and social narratives that influence how sexuality is expressed or perceived.",
+                    "items": [
+                      { "label": "Sexuality roles and expectations", "tag": "green" },
+                      { "label": "Cultural traditions", "tag": "green" },
+                      { "label": "Intersectionality", "tag": "green" },
+                      { "label": "Religion", "tag": "red" }
+                    ]
+                  },
+                  "Intolerance & Harm": {
+                    "description": "Forms of discrimination, violence, and negative stereotypes that target specific sexual orientations.",
+                    "items": [
+                      { "label": "Historical context", "tag": "green" },
+                      { "label": "Stereotyping and microaggressions", "tag": "green" },
+                      { "label": "Hate crimes, violence & intimidation", "tag": "amber" },
+                      { "label": "Online harassment & digital abuse", "tag": "green" },
+                      { "label": "Hateful movements (e.g. Moms for Liberty)", "tag": "red" }
+                    ]
+                  },
+                  "Systemic Discrimination": {
+                    "description": "Institutional and structural biases that impact rights, access, and representation for sexual minorities.",
+                    "items": [
+                      { "label": "Education and healthcare experiences", "tag": "green" },
+                      { "label": "Lack of representation", "tag": "green" },
+                      { "label": "Economic disparities (e.g pay gap)", "tag": "amber" },
+                      { "label": "Justice system biases", "tag": "red" }
+                    ]
+                  },
+                  "Equality": {
+                    "description": "Policies, initiatives, and movements promoting equal treatment and visibility for all sexual orientations.",
+                    "items": [
+                      { "label": "Legislation & Policy", "tag": "amber" },
+                      { "label": "I&D initiatives", "tag": "green" },
+                      { "label": "Education and awareness", "tag": "green" },
+                      { "label": "Social justice movements", "tag": "red" }
+                    ]
+                  }
+                }
+              }
+          outgoingConnections:
+            - output->"Text" CQOl6TuOQ35HvXznoA6L3/dimensions
+          visualData: -469.2906239243001/0.6551741767779049/330/1641//
+        '[_8MwqhMANiVhKx-h5Dtdu]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" 6myx7JGghzF1X8WIahNAr/input
+          visualData: 460/360/230/14//
+    i-btyUeIhHA0XscZuWYwh:
+      metadata:
+        description: ""
+        id: i-btyUeIhHA0XscZuWYwh
+        name: Compass - Race
+      nodes:
+        '[1SGc9dMhtYUoop3Qd-alL]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1333.2215647600262/509.0644312952005/330/22/var(--node-color-3)/var(--node-color-3)
+        '[FpqFaVz42yF0L29lDfr5J]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You are an advisor in the purpose and sustainability team of a
+              large organization. Your task is to assess whether a proposed
+              campaign aligns with cultural and social indicators relating
+              specifically to race politics.
+
+
+              You will receive:
+              	•	A campaign description (in the user prompt)
+              	•	A gender framework defining the relevant social and cultural dimensions in {{dimensions}}
+
+              Each dimension includes:
+              	•	A section title and sub-items with descriptions
+              	•	A risk tag for each sub-item:
+              	•	Red - High risk: If the campaign clearly falls into this area, it should be rejected (score = 0)
+              	•	Amber - Medium risk: Proceed with caution; consider the context carefully
+              	•	Green - Low risk: Generally safe and suitable for purpose-led campaigns
+
+              ⸻
+
+
+              Your task
+
+
+              For each sub-item under each section:
+              	1.	Score the campaign on a scale from 0 to 10
+              	•	10 = strong alignment and suitability
+              	•	0 = unsuitable (especially if the topic intersects with a red-flagged area)
+              	2.	Provide a brief rationale explaining the score in the context of the campaign
+
+              ⸻
+
+
+              Output Format
+
+
+              Return your analysis as a raw JSON object only. Do not include any additional commentary or markdown formatting.
+
+
+              {
+                "title": "Gender",
+                "sections": {
+                  "Identity & Experience": [
+                    {
+                      "label": "Sex vs gender",
+                      "score": 10,
+                      "rationale": "This campaign supports gender inclusivity and avoids conflating sex and gender."
+                    },
+                    {
+                      "label": "Gender expression",
+                      "score": 7,
+                      "rationale": "The visuals celebrate diverse expression, but could be more explicit in representing non-traditional roles."
+                    },
+                    ...
+                  ],
+                  "Cultural Sensitivities": [
+                    {
+                      "label": "Cultural traditions",
+                      "score": 5,
+                      "rationale": "May unintentionally reinforce conservative norms if not balanced with inclusive messaging."
+                    },
+                    ...
+                  ]
+                }
+              }
+          outgoingConnections:
+            - output->"Chat" c8Rv6ZvfgATjsB9F0Esx5/systemPrompt
+          visualData: -34.168310322156486/62.10453648915187/330/24//
+        '[OjnLIPh1WQAnI3_v8HGYc]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Graph Output" 1SGc9dMhtYUoop3Qd-alL/value
+          visualData: 874/471/330/20//
+        '[XjLFlHEAr58rj5ICVKcmk]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat" c8Rv6ZvfgATjsB9F0Esx5/prompt
+          visualData: -250.25838264299804/578.7140039447731/330/23/var(--node-color-3)/var(--node-color-3)
+        '[c8Rv6ZvfgATjsB9F0Esx5]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" OjnLIPh1WQAnI3_v8HGYc/input
+          visualData: 460/360/230/14//
+        '[zgW1Pz9lQYqiraWXUDu7Q]:text "Race"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                "title": "Race",
+                "description": "This theme focuses on racial identity, experiences of racism, systemic barriers, and advocacy for equity and representation.",
+                "sections": {
+                  "Identity & Experience": {
+                    "description": "How race and ethnicity shape identity, lived experience, and personal or collective understanding across time and culture.",
+                    "items": [
+                      { "label": "Ethnicity", "tag": "amber" },
+                      { "label": "Intersectionality", "tag": "green" },
+                      { "label": "Cultural heritage", "tag": "green" },
+                      { "label": "Personal and collective experiences", "tag": "green" },
+                      { "label": "Current and historical race demographics", "tag": "amber" }
+                    ]
+                  },
+                  "Intolerance & Harm": {
+                    "description": "Prejudice, abuse, and violence experienced due to racial identity—online, in person, and across history.",
+                    "items": [
+                      { "label": "Historical context", "tag": "amber" },
+                      { "label": "Stereotyping and microaggressions", "tag": "green" },
+                      { "label": "Hate crimes, violence & intimidation", "tag": "amber" },
+                      { "label": "Online harassment & digital abuse", "tag": "green" },
+                      { "label": "Hateful movements (e.g. white supremacy)", "tag": "red" }
+                    ]
+                  },
+                  "Systemic Discrimination": {
+                    "description": "Institutional and structural forms of racism that affect opportunity, representation, and outcomes.",
+                    "items": [
+                      { "label": "Education and healthcare experiences", "tag": "green" },
+                      { "label": "Lack of representation", "tag": "green" },
+                      { "label": "Economic disparities (e.g. employment discrimination)", "tag": "amber" },
+                      { "label": "Justice system biases", "tag": "red" }
+                    ]
+                  },
+                  "Equality": {
+                    "description": "Efforts and frameworks aiming to challenge racial inequality and advance inclusive representation.",
+                    "items": [
+                      { "label": "Legislation", "tag": "amber" },
+                      { "label": "I&D initiatives", "tag": "green" },
+                      { "label": "Education and awareness", "tag": "green" },
+                      { "label": "Social justice movements (e.g. BLM)", "tag": "amber" }
+                    ]
+                  }
+                }
+              }
+          outgoingConnections:
+            - output->"Text" FpqFaVz42yF0L29lDfr5J/dimensions
+          visualData: -486.0646913827612/-35.41951956947247/330/1641//
+    mvWfU64xqcVf2vaEVrP6j:
+      metadata:
+        description: ""
+        id: mvWfU64xqcVf2vaEVrP6j
+        name: Compass - Gender
+      nodes:
+        '[NgebAdk8mtrOyVaydeCwc]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat" hmEvUPGwd-XKq6ynQ0R5j/prompt
+          visualData: -250.25838264299804/578.7140039447731/330/23/var(--node-color-3)/var(--node-color-3)
+        '[VDNlcYpPcGBoX323X2A1_]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1333.2215647600262/509.0644312952005/330/22/var(--node-color-3)/var(--node-color-3)
+        '[XXZSNsb8VjCdXuDIv_c2W]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Graph Output" VDNlcYpPcGBoX323X2A1_/value
+          visualData: 874/471/330/20//
+        '[eE29NNYJVbkf3XTgK3l4F]:text "Gender"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                "title": "Gender",
+                "description": "This theme explores gender identity, cultural expectations, intolerance, systemic barriers, and efforts toward equality.",
+                "sections": {
+                  "Identity & Experience": {
+                    "description": "Gender identity is how someone personally identifies their gender, whether male, female, non-binary, or beyond traditional labels.",
+                    "items": [
+                      {
+                        "label": "Sex vs gender",
+                        "tag": "amber",
+                        "description": "The distinction between a person's biological attributes and their gender identity or role."
+                      },
+                      {
+                        "label": "Gender expression",
+                        "tag": "amber",
+                        "description": "The way a person outwardly shows their gender, through clothing, behavior, and appearance."
+                      },
+                      {
+                        "label": "Non-binary and fluid identities",
+                        "tag": "amber",
+                        "description": "Gender identities that don't align exclusively with male or female categories."
+                      }
+                    ]
+                  },
+                  "Cultural Sensitivities": {
+                    "description": "Gender cultural sensitivities are the traditions, values, and social norms that shape how different genders are perceived and treated, often influencing opportunities and expectations in society.",
+                    "items": [
+                      {
+                        "label": "Cultural traditions",
+                        "tag": "amber",
+                        "description": "Norms or customs that may reinforce traditional gender roles or limit gender expression."
+                      },
+                      {
+                        "label": "Intersectionality",
+                        "tag": "green",
+                        "description": "The way gender intersects with other identities (race, class, etc.) to shape unique experiences of inequality or privilege."
+                      },
+                      {
+                        "label": "Gender roles and expectations",
+                        "tag": "green",
+                        "description": "Societal expectations about how people should behave based on their gender."
+                      },
+                      {
+                        "label": "Religion",
+                        "tag": "red",
+                        "description": "Religious doctrines or interpretations that can either support or restrict gender equality and expression."
+                      }
+                    ]
+                  },
+                  "Intolerance": {
+                    "description": "Gender intolerance is about harmful attitudes or behaviors toward people because of their gender. It involves abuse, or even violence, fueling hate and perpetuating inequality.",
+                    "items": [
+                      {
+                        "label": "Gender-based violence",
+                        "tag": "amber",
+                        "description": "Violence or threats directed at someone based on their gender or gender expression."
+                      },
+                      {
+                        "label": "Online harassment & abuse",
+                        "tag": "green",
+                        "description": "Digital abuse targeting people for expressing gender diversity or challenging norms."
+                      },
+                      {
+                        "label": "Stereotyping and microaggressions",
+                        "tag": "green",
+                        "description": "Everyday assumptions or insults that reinforce gender biases or marginalize nonconforming individuals."
+                      },
+                      {
+                        "label": "Harmful movements (e.g. incel or anti-transgender)",
+                        "tag": "red",
+                        "description": "Ideologies or groups that actively oppose gender equality or promote gender-based hate."
+                      }
+                    ]
+                  },
+                  "Systemic Discrimination": {
+                    "description": "Gender discrimination is when people are treated unfairly or unequally because of their gender. This can happen in many areas, like the workplace, healthcare, or politics.",
+                    "items": [
+                      {
+                        "label": "Education and healthcare experiences",
+                        "tag": "green",
+                        "description": "Unequal access or biased treatment in education and health systems based on gender."
+                      },
+                      {
+                        "label": "Lack of representation",
+                        "tag": "green",
+                        "description": "Underrepresentation of women and gender-diverse individuals in leadership, media, or policy."
+                      },
+                      {
+                        "label": "Economic disparities (e.g pay gap)",
+                        "tag": "amber",
+                        "description": "Income or opportunity gaps between genders, often reflecting systemic bias or barriers."
+                      },
+                      {
+                        "label": "Justice system biases",
+                        "tag": "red",
+                        "description": "Disparities in legal protections or enforcement of rights based on gender identity."
+                      }
+                    ]
+                  },
+                  "Equality": {
+                    "description": "Equality is about ensuring fair and equal opportunities, treatment, and rights for all. It spans legal protections, I&D initiatives, and public education that challenge unfair systems and drive lasting change.",
+                    "items": [
+                      {
+                        "label": "Legislation & Policy",
+                        "tag": "amber",
+                        "description": "Laws or regulations aimed at promoting gender equity or protecting against discrimination."
+                      },
+                      {
+                        "label": "I&D initiatives",
+                        "tag": "green",
+                        "description": "Inclusion and diversity programs that aim to create equitable and welcoming environments."
+                      },
+                      {
+                        "label": "Education and awareness",
+                        "tag": "green",
+                        "description": "Campaigns and resources to inform the public about gender equality and respectful practices."
+                      },
+                      {
+                        "label": "Social justice movements",
+                        "tag": "red",
+                        "description": "Activist movements promoting gender equality that may be polarizing or misinterpreted depending on context."
+                      }
+                    ]
+                  }
+                }
+              }
+          outgoingConnections:
+            - output->"Text" oLdCYy0tuQupDTCiyhvL9/dimensions
+          visualData: -515/-49/330/18//
+        '[hmEvUPGwd-XKq6ynQ0R5j]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" XXZSNsb8VjCdXuDIv_c2W/input
+          visualData: 460/360/230/14//
+        '[oLdCYy0tuQupDTCiyhvL9]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You are an advisor in the purpose and sustainability team of a
+              large organization. Your task is to assess whether a proposed
+              campaign aligns with cultural and social indicators relating
+              specifically to gender politics.
+
+
+              You will receive:
+              	•	A campaign description (in the user prompt)
+              	•	A gender framework defining the relevant social and cultural dimensions in {{dimensions}}
+
+              Each dimension includes:
+              	•	A section title and sub-items with descriptions
+              	•	A risk tag for each sub-item:
+              	•	Red - High risk: If the campaign clearly falls into this area, it should be rejected (score = 0)
+              	•	Amber - Medium risk: Proceed with caution; consider the context carefully
+              	•	Green - Low risk: Generally safe and suitable for purpose-led campaigns
+
+              ⸻
+
+
+              Your task
+
+
+              For each sub-item under each section:
+              	1.	Score the campaign on a scale from 0 to 10
+              	•	10 = strong alignment and suitability
+              	•	0 = unsuitable (especially if the topic intersects with a red-flagged area)
+              	2.	Provide a brief rationale explaining the score in the context of the campaign
+
+              ⸻
+
+
+              Output Format
+
+
+              Return your analysis as a raw JSON object only. Do not include any additional commentary or markdown formatting.
+
+
+              {
+                "title": "Gender",
+                "sections": {
+                  "Identity & Experience": [
+                    {
+                      "label": "Sex vs gender",
+                      "score": 10,
+                      "rationale": "This campaign supports gender inclusivity and avoids conflating sex and gender."
+                    },
+                    {
+                      "label": "Gender expression",
+                      "score": 7,
+                      "rationale": "The visuals celebrate diverse expression, but could be more explicit in representing non-traditional roles."
+                    },
+                    ...
+                  ],
+                  "Cultural Sensitivities": [
+                    {
+                      "label": "Cultural traditions",
+                      "score": 5,
+                      "rationale": "May unintentionally reinforce conservative norms if not balanced with inclusive messaging."
+                    },
+                    ...
+                  ]
+                }
+              }
+          outgoingConnections:
+            - output->"Chat" hmEvUPGwd-XKq6ynQ0R5j/systemPrompt
+          visualData: -34.168310322156486/62.10453648915187/330/24//
+    oHUuKN0LVf3CPI5jh6hPq:
+      metadata:
+        description: ""
+        id: oHUuKN0LVf3CPI5jh6hPq
+        name: Compass - Disability
+      nodes:
+        '[J28e8Q0-618j5abSp-MxZ]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            headers: []
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" RZMFZv1UrMNnTIGpcXFi7/input
+          visualData: 460/360/230/14//
+        '[NvUe6JeG4Ch73lHNbwmjZ]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You are an advisor in the purpose and sustainability team of a
+              large organization. Your task is to assess whether a proposed
+              campaign aligns with cultural and social indicators relating
+              specifically to disability politics.
+
+
+              You will receive:
+              	•	A campaign description (in the user prompt)
+              	•	A gender framework defining the relevant social and cultural dimensions in {{dimensions}}
+
+              Each dimension includes:
+              	•	A section title and sub-items with descriptions
+              	•	A risk tag for each sub-item:
+              	•	Red - High risk: If the campaign clearly falls into this area, it should be rejected (score = 0)
+              	•	Amber - Medium risk: Proceed with caution; consider the context carefully
+              	•	Green - Low risk: Generally safe and suitable for purpose-led campaigns
+
+              ⸻
+
+
+              Your task
+
+
+              For each sub-item under each section:
+              	1.	Score the campaign on a scale from 0 to 10
+              	•	10 = strong alignment and suitability
+              	•	0 = unsuitable (especially if the topic intersects with a red-flagged area)
+              	2.	Provide a brief rationale explaining the score in the context of the campaign
+
+              ⸻
+
+
+              Output Format
+
+
+              Return your analysis as a raw JSON object only. Do not include any additional commentary or markdown formatting.
+
+
+              {
+                "title": "Gender",
+                "sections": {
+                  "Identity & Experience": [
+                    {
+                      "label": "Sex vs gender",
+                      "score": 10,
+                      "rationale": "This campaign supports gender inclusivity and avoids conflating sex and gender."
+                    },
+                    {
+                      "label": "Gender expression",
+                      "score": 7,
+                      "rationale": "The visuals celebrate diverse expression, but could be more explicit in representing non-traditional roles."
+                    },
+                    ...
+                  ],
+                  "Cultural Sensitivities": [
+                    {
+                      "label": "Cultural traditions",
+                      "score": 5,
+                      "rationale": "May unintentionally reinforce conservative norms if not balanced with inclusive messaging."
+                    },
+                    ...
+                  ]
+                }
+              }
+          outgoingConnections:
+            - output->"Chat" J28e8Q0-618j5abSp-MxZ/systemPrompt
+          visualData: -34.168310322156486/62.10453648915187/330/24//
+        '[RZMFZv1UrMNnTIGpcXFi7]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Graph Output" SdXdKlVyeRWIm5D0Cdquq/value
+          visualData: 874/471/330/20//
+        '[SdXdKlVyeRWIm5D0Cdquq]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1333.2215647600262/509.0644312952005/330/22/var(--node-color-3)/var(--node-color-3)
+        '[X96UFnVJdg4wOyRHDHE3B]:text "Disability"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              {
+                "title": "Disability",
+                "description": "This theme highlights different types of disabilities and explores social perceptions, discrimination, and pathways to inclusion and support.",
+                "sections": {
+                  "Types of Disability": {
+                    "description": "Different forms of disability that affect individuals physically, cognitively, or emotionally, shaping their lived experience.",
+                    "items": [
+                      { "label": "Physical disability", "tag": "green" },
+                      { "label": "Sensory disability", "tag": "green" },
+                      { "label": "Cognitive disability", "tag": "green" },
+                      { "label": "Mental health disability", "tag": "green" },
+                      { "label": "Congenital vs acquired", "tag": "green" }
+                    ]
+                  },
+                  "Social & Cultural Norms": {
+                    "description": "Cultural values and social perceptions that influence how disability is understood, accepted, or marginalized.",
+                    "items": [
+                      { "label": "Social isolation", "tag": "green" },
+                      { "label": "Cultural attitudes", "tag": "green" }
+                    ]
+                  },
+                  "Systemic Discrimination": {
+                    "description": "Institutional and structural barriers that limit opportunity, access, and equity for disabled people.",
+                    "items": [
+                      { "label": "Stereotyping", "tag": "green" },
+                      { "label": "Social stigma and isolation", "tag": "green" },
+                      { "label": "Accessibility (e.g. healthcare, education, technology)", "tag": "green" },
+                      { "label": "Economic disparities", "tag": "amber" }
+                    ]
+                  },
+                  "Solutions & Support": {
+                    "description": "Approaches that address barriers and enable equitable participation and representation for people with disabilities.",
+                    "items": [
+                      { "label": "Legislation (e.g. Equality Act)", "tag": "green" },
+                      { "label": "Health and social care services", "tag": "green" },
+                      { "label": "Assistive tools, tech, and accommodations", "tag": "green" },
+                      { "label": "Education and awareness", "tag": "green" }
+                    ]
+                  }
+                }
+              }
+          outgoingConnections:
+            - output->"Text" NvUe6JeG4Ch73lHNbwmjZ/dimensions
+          visualData: -478.1240409782923/-26.382530985845165/330/1641//
+        '[_d59Oh-lzPX33DqV_rJjf]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat" J28e8Q0-618j5abSp-MxZ/prompt
+          visualData: -250.25838264299804/578.7140039447731/330/23/var(--node-color-3)/var(--node-color-3)
+    ttkuxPI9lGPqK3QAEbmFu:
+      metadata:
+        description: ""
+        id: ttkuxPI9lGPqK3QAEbmFu
+        name: Compass - Master
+      nodes:
+        '[7bECpNuZaNqWdiRd-g0lY]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 2855.104551953548/1515.086830463928/330/1638/var(--node-color-3)/var(--node-color-3)
+        '[EoV_r1xtGsp8X9gFZG0pE]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            defaultValue: zc98gq9rcra9e8k8s5oi4812
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Text" K222yqxsIxJZ2klao6h4Q/input
+          visualData: -97.74694763205389/1210.4127376130664/330/1611/var(--node-color-3)/var(--node-color-3)
+        '[HfUGqle9i7pr8qj848n3G]:text "Text"':
+          data:
+            normalizeLineEndings: true
+            text: >-
+              You will see a lage JSON object that includes the results of
+              analysis of a campaign through the lens of various aspect of
+              cultural / social sensibilites.
+
+
+              Each item is scored.
+
+
+              Can you summarise the output to highlight any areas where the campaign scores particularly well.
+
+
+              Also flag any areas where it fares badly. Focus most carefully on any items with a zero score.
+
+
+              If any items for have a zero score you should indicate that the campaign should NOT go ahead.
+
+
+              If there are no zero scores then give an assement of if the campaign should proceed and why.
+          outgoingConnections:
+            - output->"Chat" Q2m7IhfCPokTii1gKdWQS/systemPrompt
+          visualData: 1947/940/330/1642//
+        '[K222yqxsIxJZ2klao6h4Q]:text "Text"':
+          data:
+            body: ""
+            headers: ""
+            text: https://devoted-cats-3d3ab24394.strapiapp.com/api/scenarios/{{input}}
+          outgoingConnections:
+            - output->"HTTP - Collect scenario" NMfSxWHaYsEfWUlwQaLSy/url
+          visualData: 345.01095777585397/1294.6628962452742/330/1603//
+        '[NMfSxWHaYsEfWUlwQaLSy]:httpCall "HTTP - Collect scenario"':
+          data:
+            body: ""
+            errorOnNon200: true
+            headers: >-
+              {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 2c8cbceae2a59257bc63e614929f26a71fa400bb174bf92506cb50149746d46d8455af51fd3c46f51ba9384058c62ab24ba3228b3ccb24d2faa1ef3a869c750020b77b3cae9f10ee68280ac7049b8d92f902f5adff8e48a93d89202900be018c0a978360b805e2ea7b7d0d8d686d2d7a26784677e55d4e78b186579af6b8cddf"
+              }
+            method: GET
+            text: ""
+            url: ""
+            useUrlInput: true
+          outgoingConnections:
+            - res_body->"Subgraph" TDTEld0oaqz2mzvl2SOB7/input
+            - res_body->"Subgraph" aFrTtHoG2yG3FXakU-lk5/input
+            - res_body->"Subgraph" cJt8Kh1llnSWVx2nWk5Kn/input
+            - res_body->"Subgraph" iLHQ2jG4Q9-hjZwbuNd3u/input
+            - res_body->"Subgraph" pjV7872cZkL_RPsbTWJZh/input
+            - res_body->"Subgraph" xLa5k036ImQFqulwm4l7n/input
+          visualData: 906.500590500717/1367.8531791101882/280/1603/var(--node-color-4)/var(--node-color-4)
+        '[Q2m7IhfCPokTii1gKdWQS]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 1024
+            modalitiesIncludeAudio: false
+            modalitiesIncludeText: false
+            model: gpt-4o-mini
+            outputUsage: false
+            parallelFunctionCalling: true
+            reasoningEffort: ""
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePredictedOutput: false
+            usePresencePenaltyInput: false
+            useReasoningEffortInput: false
+            useServerTokenCalculation: true
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Graph Output" 7bECpNuZaNqWdiRd-g0lY/value
+          visualData: 2432/1152/230/1640//
+        '[TDTEld0oaqz2mzvl2SOB7]:subGraph "Subgraph"':
+          data:
+            graphId: OEo4GQHIIu5hp2WYtsPUs
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Assemble Message" oqXmgDjtPh_Oj3QMybcAu/part4
+          visualData: 1378/1668/330/1649/var(--node-color-1)/var(--node-color-1)
+        '[aFrTtHoG2yG3FXakU-lk5]:subGraph "Subgraph"':
+          data:
+            graphId: i-btyUeIhHA0XscZuWYwh
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Assemble Message" oqXmgDjtPh_Oj3QMybcAu/part6
+          visualData: 1380/2159/330/1650/var(--node-color-1)/var(--node-color-1)
+        '[cJt8Kh1llnSWVx2nWk5Kn]:subGraph "Subgraph"':
+          data:
+            graphId: ICzX0YVN35nxFu5zZWvAP
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Assemble Message" oqXmgDjtPh_Oj3QMybcAu/part2
+          visualData: 1368/1187/330/1647/var(--node-color-1)/var(--node-color-1)
+        '[iLHQ2jG4Q9-hjZwbuNd3u]:subGraph "Subgraph"':
+          data:
+            graphId: mvWfU64xqcVf2vaEVrP6j
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Assemble Message" oqXmgDjtPh_Oj3QMybcAu/part1
+          visualData: 1371.7975676880947/936.2687198859221/330/1646/var(--node-color-1)/var(--node-color-1)
+        '[oqXmgDjtPh_Oj3QMybcAu]:assembleMessage "Assemble Message"':
+          data:
+            toolCallId: ""
+            type: user
+            useToolCallIdInput: false
+            useTypeInput: false
+          outgoingConnections:
+            - message->"Chat" Q2m7IhfCPokTii1gKdWQS/prompt
+          visualData: 1889/1436/280/1636//
+        '[pjV7872cZkL_RPsbTWJZh]:subGraph "Subgraph"':
+          data:
+            graphId: 3aKUmShYbDlGcphbTUpBi
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Assemble Message" oqXmgDjtPh_Oj3QMybcAu/part5
+          visualData: 1384/1917/330/1644/var(--node-color-1)/var(--node-color-1)
+        '[xLa5k036ImQFqulwm4l7n]:subGraph "Subgraph"':
+          data:
+            graphId: oHUuKN0LVf3CPI5jh6hPq
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Assemble Message" oqXmgDjtPh_Oj3QMybcAu/part3
+          visualData: 1375/1435/330/1648/var(--node-color-1)/var(--node-color-1)
+  metadata:
+    description: ""
+    id: 5xRMofPuQMFrUn8nyGAUw
+    title: Campaign alignment
+  plugins: []
+  references: []

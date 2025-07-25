@@ -41,8 +41,6 @@
 <body>
   <h1>Radius Graph Execution</h1>
 
-
-
   <label for="graph">Select graph</label>
   <select id="graph">
     <option>Loading the graphs...</option>
@@ -52,7 +50,6 @@
   
   <label for="string_graph_input">String Graph Input</label>
   <input type="text" id="string_graph_input" value="dky8i30kisowxhuupwo8iz5l" />
-
 
   <button id="run">Run graph</button>
 
@@ -74,16 +71,29 @@
         const json = await res.json();
 
         dropdown.innerHTML = '';
-        const sorted = json.graphs.sort((a, b) => a.name.localeCompare(b.name));
-        sorted.forEach(g => {
-          const option = document.createElement('option');
-          option.value = g.id;
-          option.textContent = g.id === masterGraphId
-            ? `★ ${g.name || 'Untitled'} (Main) (${g.id})`
-            : `  ${g.name || 'Untitled'} (${g.id})`;
-          if (g.id === masterGraphId) dropdown.prepend(option);
-          else dropdown.append(option);
-        });
+        const graphsByFile = {};
+json.graphs.forEach(g => {
+  if (!graphsByFile[g.file]) graphsByFile[g.file] = [];
+  graphsByFile[g.file].push(g);
+});
+
+dropdown.innerHTML = '';
+
+Object.entries(graphsByFile).forEach(([fileName, graphList]) => {
+  const optgroup = document.createElement('optgroup');
+  optgroup.label = fileName;
+
+  graphList.sort((a, b) => a.name.localeCompare(b.name)).forEach(g => {
+    const option = document.createElement('option');
+    option.value = g.id;
+    option.textContent = g.id === masterGraphId
+      ? `★ ${g.name || 'Untitled'} (Main)`
+      : `${g.name || 'Untitled'}`;
+    optgroup.appendChild(option);
+  });
+
+  dropdown.appendChild(optgroup);
+});
       } catch (err) {
         dropdown.innerHTML = '<option>Error loading graphs</option>';
         console.error('Failed to load graphs:', err);
