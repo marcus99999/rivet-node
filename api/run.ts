@@ -41,7 +41,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   console.log("🔐 Received token:", token);
   console.log("🎯 Expected token:", expectedToken);
 
-
   if (!expectedToken || token !== expectedToken) {
     console.warn("🚫 Forbidden request: invalid or missing token.");
     return res.status(403).json({ error: "Forbidden: Invalid or missing token." });
@@ -69,37 +68,50 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(500).json({ error: "Missing OPEN_AI_KEY" });
     }
 
-    const project = path.resolve(__dirname, "data", "Master.rivet-project");
-    console.log("📁 Loading project file from:", project);
+    const projectFiles = ["Master.rivet-project", "Campaign-alignment.rivet-project"];
+    let result = null;
+    let matched = false;
 
-    const datasetProvider = await NodeDatasetProvider.fromProjectFile(project, { save: false });
+    for (const file of projectFiles) {
+      const projectPath = path.resolve(__dirname, "data", file);
+      console.log(`📁 Checking project file: ${file}`);
 
-    const result = await runGraphInFile(project, {
-      graph,
-      remoteDebugger: undefined,
-      inputs,
-      context: {},
-      externalFunctions: {},
-      onUserEvent: {},
-      openAiKey,
-      datasetProvider,
-    } as RunGraphOptions);
+      const datasetProvider = await NodeDatasetProvider.fromProjectFile(projectPath, { save: false });
 
+      try {
+        result = await runGraphInFile(projectPath, {
+          graph,
+          remoteDebugger: undefined,
+          inputs,
+          context: {},
+          externalFunctions: {},
+          onUserEvent: {},
+          openAiKey,
+          datasetProvider,
+        } as RunGraphOptions);
 
-    console.log("✅ Graph executed successfully.");
-    console.log("🟢 Outputs:", result || {});
-    console.log("🟡 Partial outputs:", result.partialOutputs || {});
-    if (result.errors) {
-      console.warn("⚠️ Graph node-level errors:", result.errors);
+        matched = true;
+        console.log(`✅ Found and executed graph in file: ${file}`);
+        break;
+      } catch (err: any) {
+        console.warn(`❌ Could not run graph in ${file}: ${err.message}`);
+        continue;
+      }
     }
 
-    res.status(200).json({
-      message: "Graph executed successfully.",
-      prompt: inputs.stringGraph,
-      outputs: result || {},
-      partialOutputs: result.partialOutputs || {},
-      errors: result.errors || [],
-    });
+    if (matched && result) {
+      res.status(200).json({
+        message: "Graph executed successfully.",
+        prompt: inputs.stringGraph,
+        outputs: result || {},
+        partialOutputs: result.partialOutputs || {},
+        errors: result.errors || [],
+      });
+    } else {
+      res.status(404).json({
+        error: "Graph not found in any project file.",
+      });
+    }
   } catch (err: any) {
     console.error("❌ Exception during graph execution:", err);
     res.status(500).json({
