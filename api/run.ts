@@ -72,51 +72,46 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     let result = null;
     let matched = false;
 
-    for (const file of projectFiles) {
-      const projectPath = path.resolve(__dirname, "data", file);
-      console.log(`📁 Checking project file: ${file}`);
+for (const file of projectFiles) {
+  const projectPath = path.resolve(__dirname, "data", file);
+  console.log(`📁 Checking project file: ${file}`);
 
-      const datasetProvider = await NodeDatasetProvider.fromProjectFile(projectPath, { save: false });
-      
+  const datasetProvider = await NodeDatasetProvider.fromProjectFile(projectPath, { save: false });
 
-const graphsMap = (datasetProvider as any)?.project?.graphs;
+  const graphsMap = (datasetProvider as any)?.project?.graphs;
 
-if (graphsMap && typeof graphsMap === "object") {
-  const graphList = Object.values(graphsMap).map((g: any) => {
-    const label = g?.metadata?.label ?? "(Unnamed)";
-    const id = g?.id ?? "(No ID)";
-    return `${label} (${id})`;
-  });
+  if (graphsMap && typeof graphsMap === "object") {
+    const graphList = Object.values(graphsMap).map((g: any) => {
+      const label = g?.metadata?.label ?? "(Unnamed)";
+      const id = g?.id ?? "(No ID)";
+      return `${label} (${id})`;
+    });
 
-  console.log(`📊 Graphs in ${file}:`, graphList);
-} else {
-  console.warn(`⚠️ No graphs found in datasetProvider.project for file: ${file}`);
+    console.log(`📊 Graphs in ${file}:`, graphList);
+  } else {
+    console.warn(`⚠️ No graphs found in datasetProvider.project for file: ${file}`);
+  }
+
+  try {
+    result = await runGraphInFile(projectPath, {
+      graph,
+      remoteDebugger: undefined,
+      inputs,
+      context: {},
+      externalFunctions: {},
+      onUserEvent: {},
+      openAiKey,
+      datasetProvider,
+    } as RunGraphOptions);
+
+    matched = true;
+    console.log(`✅ Found and executed graph in file: ${file}`);
+    break;
+  } catch (err: any) {
+    console.warn(`❌ Could not run graph in ${file}: ${err.message}`);
+    continue;
+  }
 }
-
-
-      
-
-      try {
-        result = await runGraphInFile(projectPath, {
-          graph,
-          remoteDebugger: undefined,
-          inputs,
-          context: {},
-          externalFunctions: {},
-          onUserEvent: {},
-          openAiKey,
-          datasetProvider,
-        } as RunGraphOptions);
-
-        matched = true;
-        console.log(`✅ Found and executed graph in file: ${file}`);
-        break;
-      } catch (err: any) {
-        console.warn(`❌ Could not run graph in ${file}: ${err.message}`);
-        continue;
-      }
-    }
-
     if (matched && result) {
       res.status(200).json({
         message: "Graph executed successfully.",
