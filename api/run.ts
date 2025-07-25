@@ -78,11 +78,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       const datasetProvider = await NodeDatasetProvider.fromProjectFile(projectPath, { save: false });
       
-      const graphs = datasetProvider.project.graphs;
-const graphList = Object.values(graphs).map(g => `${g.metadata.label || "(Unnamed)"} (${g.id})`);
-console.log(`📊 Graphs in ${file}:`, graphList);
-      
-      
+
+
+const graphsMap = (datasetProvider as any).project?.graphs;
+
+if (graphsMap && typeof graphsMap === "object") {
+  const graphList = Object.values(graphsMap).map((g: any) => {
+    const label = g?.metadata?.label ?? "(Unnamed)";
+    const id = g?.id ?? "(No ID)";
+    return `${label} (${id})`;
+  });
+
+  console.log(`📊 Graphs in ${file}:`, graphList);
+} else {
+  console.warn(`⚠️ No graphs found in ${file}`);
+}
+
+
       
 
       try {
